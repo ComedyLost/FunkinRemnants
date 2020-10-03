@@ -1,0 +1,27 @@
+{
+  "version": "1.1.0",
+  "name": "INIT COMMIT",
+  "author": "ninjamuffin99",
+  "fallback": "funkin",
+  "assets": {
+    "holdNote": {
+      "assetPath": "NOTE_hold_assets_initcommit",
+      "scale": 0.7,
+      "isPixel": true,
+      "offsets": [2, 26],
+      "data": {}
+    },
+    "noteSplash": {
+      "assetPath": "",
+      "data": {
+        "enabled": false
+      }
+    },
+    "holdNoteCover": {
+      "assetPath": "",
+      "data": {
+        "enabled": false
+      }
+    }
+  }
+}

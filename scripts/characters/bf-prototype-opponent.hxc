@@ -1,0 +1,40 @@
+import funkin.play.character.SparrowCharacter;
+import funkin.data.notestyle.NoteStyleRegistry;
+import funkin.ui.FullScreenScaleMode;
+import funkin.play.notes.Strumline;
+import funkin.util.Constants;
+import funkin.play.PlayState;
+import funkin.Preferences;
+
+class BFPrototypeOpponentCharacter extends SparrowCharacter
+{
+  public function new()
+  {
+    super('bf-prototype-opponent');
+  }
+
+  override public function onCreate(event:ScriptEvent):Void
+  {
+    super.onCreate(event);
+
+    if (PlayState.instance != null)
+    {
+      var noteStyle:NoteStyle = NoteStyleRegistry.instance.fetchEntry('init-commit');
+
+      var strumline:Strumline = new Strumline(noteStyle, false, PlayState.instance.currentChart?.scrollSpeed);
+
+      strumline.onNoteIncoming.add(PlayState.instance.onStrumlineNoteIncoming);
+      PlayState.instance.add(strumline);
+
+      final cutoutSize:Float = FullScreenScaleMode.gameCutoutSize.x / 2.5;
+      strumline.x = Constants.STRUMLINE_X_OFFSET + cutoutSize;
+      strumline.y = Preferences.downscroll ? FlxG.height - strumline.height - Constants.STRUMLINE_Y_OFFSET - noteStyle.getStrumlineOffsets()[1] : Constants.STRUMLINE_Y_OFFSET;
+
+      strumline.zIndex = 1000;
+      strumline.cameras = [PlayState.instance.camHUD];
+
+      PlayState.instance.opponentStrumline.destroy();
+      PlayState.instance.opponentStrumline = strumline;
+    }
+  }
+}
