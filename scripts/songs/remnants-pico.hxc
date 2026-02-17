@@ -48,6 +48,7 @@ class RemnantsPicoSong extends Song
     super.onCreate(event);
 
     PlayState.instance.camHUD.alpha = 0;
+    PlayState.instance.disableKeys = true;
     fadeOut = false;
     fadeHud = false;
     playedCutscene = false;
@@ -56,6 +57,8 @@ class RemnantsPicoSong extends Song
   function onSongRetry(event:ScriptEvent)
   {
     super.onSongRetry(event);
+
+    if (PlayState.instance.disableKeys) PlayState.instance.disableKeys = false;
 
     if (fadeOut)
     {
@@ -72,7 +75,7 @@ class RemnantsPicoSong extends Song
     }
     else
     {
-      PlayState.instance.camHUD.visible = false;
+      PlayState.instance.camHUD.alpha = 0;
     }
   }
 
@@ -116,14 +119,16 @@ class RemnantsPicoSong extends Song
       playCutscene();
       playedCutscene = true;
     }
+    else
+    {
+      PlayState.instance.disableKeys = false;
+    }
 
     PlayState.instance.camHUD.alpha = 0;
-    PlayState.instance.camHUD.visible = true;
   }
 
   function playCutscene():Void
   {
-    PlayState.instance.disableKeys = true;
     PlayState.instance.tweenCameraToPosition(620, 515.5, 0);
 
     var cutsceneMusic:FunkinSound = FunkinSound.load(Paths.music("freeplayRandom-remnants/freeplayRandom-remnants"), 0.0, true);
@@ -177,7 +182,6 @@ class RemnantsPicoSong extends Song
           remnantsPico?.destroy();
         });
 
-        // PlayState.instance.disableKeys = false;
         PlayState.instance.startCountdown();
       });
     });
@@ -191,8 +195,7 @@ class RemnantsPicoSong extends Song
       {
         time: Conductor.instance.getBeatTimeInMs(12) / 1000,
         callback: () -> {
-          FlxTween.tween(PlayState.instance.camHUD, {alpha: 1}, 1.7, {ease: FlxEase.linear});
-          PlayState.instance.disableKeys = false;
+          FlxTween.tween(PlayState.instance.camHUD, {alpha: 1}, 1.7);
           fadeHud = true;
         }
       },
@@ -207,9 +210,17 @@ class RemnantsPicoSong extends Song
       },
 
       {
+        time: Conductor.instance.getBeatTimeInMs(208) / 1000,
+        callback: () -> {
+          PlayState.instance.disableKeys = true;
+        }
+      },
+
+      {
         time: Conductor.instance.getBeatTimeInMs(223) / 1000,
         callback: () -> {
           PlayState.instance.camCutscene.fade(0xFF000000, 0.4, true, null, false);
+          PlayState.instance.disableKeys = false;
           fadeOut = false;
           fadeHud = true;
         }

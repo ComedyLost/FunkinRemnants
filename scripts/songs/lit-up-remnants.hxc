@@ -250,12 +250,20 @@ class LitUpRemnantsMixSong extends Song
 
     if (!RemnantsOptions.getPerformanceOption())
     {
-      sequenceData.push({time: Conductor.instance.getBeatTimeInMs(96) / 1000, callback: () -> {
-        mistOn(3);
-      }});
-      sequenceData.push({time: Conductor.instance.getBeatTimeInMs(160) / 1000, callback: () -> {
-        mistOff(3);
-      }});
+      sequenceData.push(
+        {
+          time: Conductor.instance.getBeatTimeInMs(96) / 1000,
+          callback: () -> {
+            mistOn(3);
+          }
+        });
+      sequenceData.push(
+        {
+          time: Conductor.instance.getBeatTimeInMs(160) / 1000,
+          callback: () -> {
+            mistOff(3);
+          }
+        });
     }
 
     sequence = new SongSequence(sequenceData);
