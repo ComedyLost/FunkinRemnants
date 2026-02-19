@@ -8,7 +8,7 @@ on:
 jobs:
   compress:
     name: Run ASTC Compressor
-    runs-on: self-hosted
+    runs-on: [self-hosted, linux]
 
     permissions:
       contents: write
@@ -44,9 +44,12 @@ jobs:
 
       - name: Overwrite PNGs with ASTCs
         run: |
-          rsync -a astc-textures/ ./
-          rm -fr astc-textures/
-          find "./" -name "*.astc" -exec sh -c 'rm "${0%.*}.png"' {} \;
+          find "astc-textures/" -type f | while read -r file; do
+            normalFileLoc="${file#astc-textures/}"
+
+            mv "$file" "$normalFileLoc"
+            rm "${normalFileLoc%.*}.png"
+          done
 
       - name: Push ASTC Files to `mobile` branch
         uses: stefanzweifel/git-auto-commit-action@v6
