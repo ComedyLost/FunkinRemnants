@@ -22,29 +22,28 @@ jobs:
           haxe-version: 4.3.7
 
       - name: Install ASTC Compressor
-        run: haxelib --quiet --always git astc-compressor https://github.com/TechnikTil/astc-compressor fix-cwd
+        run: haxelib --quiet --always git astc-compressor https://github.com/TechnikTil/astc-compressor develop
 
-      # Maybe not, since it keeps stuff that was ignored before...
-      #- name: Retrieve Asset Cache
-      #  id: fetch-asset-cache
-      #  uses: actions/cache/restore@v4
-      #  with:
-      #    path: astc-textures/**
-      #    key: asset-cache
+      - name: Retrieve Asset Cache
+        id: fetch-asset-cache
+        uses: actions/cache/restore@v4
+        with:
+          path: astc-textures/**
+          key: asset-cache
 
       - name: Run ASTC Compressor
         run: haxelib run astc-compressor compress-from-json -json ./astc-compression-data.json
 
-      # - name: Save Asset Cache
-      #  id: save-asset-cache
-      #  uses: actions/cache/save@v4
-      #  with:
-      #    path: astc-textures/**
-      #    key: asset-cache
+      - name: Save Asset Cache
+        id: save-asset-cache
+        uses: actions/cache/save@v4
+        with:
+          path: astc-textures/**
+          key: asset-cache
 
       - name: Overwrite PNGs with ASTCs
         run: |
-          find "astc-textures/" -type f | while read -r file; do
+          find "astc-textures/" -name "*.astc" -type f | while read -r file; do
             normalFileLoc="${file#astc-textures/}"
 
             mv "$file" "$normalFileLoc"
