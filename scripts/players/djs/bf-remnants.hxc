@@ -20,7 +20,7 @@ class BoyfriendRemnantsFreeplayDJ extends AnimateAtlasFreeplayDJ
   public var cartoonSnd:FunkinSound = null;
   public var playingCartoon:Bool = false;
 
-  final CARTOON_CHANNEL_FRAME:Int = 60;
+  var CARTOON_CHANNEL_FRAME:Int = 60;
   final CARTOON_LIST:Array<String> = Assets.list().filter((path) -> return path.startsWith("assets/sounds/cartoons/"));
 
   public function new(x:Float, y:Float, characterId:String)
