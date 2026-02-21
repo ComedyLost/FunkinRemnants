@@ -6,14 +6,18 @@ import funkin.util.FlxColorUtil;
 import funkin.play.PlayState;
 import flixel.tweens.FlxTween;
 import flixel.tweens.FlxEase;
+import openfl.filters.ColorMatrixFilter;
 import funkin.Conductor;
 import flixel.FlxG;
 import Std;
 
 class RemnantsOverlayHandler extends Module
 {
+  public var instantFadeReset:Bool = false;
+
   public var overlay:FunkinSprite;
   public var fadeTween:FlxTween;
+  var isRetro:Bool = false;
 
   var firstEvent:SongEventData;
 
@@ -41,6 +45,7 @@ class RemnantsOverlayHandler extends Module
 
       var white:Bool = firstEvent.getBool("white") ?? false;
       var hud:Bool = firstEvent.getBool("hud") ?? true;
+      isRetro = firstEvent.getBool("retro") ?? false;
 
       overlay.color = white ? 0xFFFFFFFF : 0xFF000000;
       overlay.cameras = [hud ? PlayState.instance.camCutscene : PlayState.instance.camHUD];
@@ -48,6 +53,10 @@ class RemnantsOverlayHandler extends Module
 
       PlayState.instance.refresh();
     }
+
+    var oldAlpha:Float = overlay.alpha;
+    overlay.alpha = 0;
+    setOverlayAlpha(oldAlpha);
   }
 
   override public function onStateChangeEnd(event:StateChangeScriptEvent):Void
@@ -67,7 +76,6 @@ class RemnantsOverlayHandler extends Module
     super.onSongLoaded(event);
 
     var overlayEvents:Array<SongEventData> = event.events.filter((event:SongEventData) -> {
-      if (event.getBool("retro")) throw "Retro fade currently does not properly! Please nag at me until I fix it.";
       return event.eventKind == 'RemnantsOverlay';
     });
 
@@ -98,6 +106,7 @@ class RemnantsOverlayHandler extends Module
     {
       var white:Bool = firstEvent.getBool("white") ?? false;
       var hud:Bool = firstEvent.getBool("hud") ?? true;
+      isRetro = firstEvent.getBool("retro") ?? false;
 
       targetAlpha = firstEvent.getFloat('startOpacity') ?? 0;
       targetColor = white ? 0xFFFFFFFF : 0xFF000000;
@@ -106,27 +115,24 @@ class RemnantsOverlayHandler extends Module
     }
 
     var currentAlpha:Float = overlay.alpha;
-    var currentColor:Int = overlay.color;
 
     overlay.cameras = [targetCamera];
+    overlay.color = targetColor;
 
-    if (fadeTween != null)
+    if (fadeTween != null || instantFadeReset)
     {
       fadeTween?.cancel();
+      fadeTween = null;
 
-      overlay.color = targetColor;
-      overlay.alpha = targetAlpha;
+      setOverlayAlpha(targetAlpha);
       return;
     }
     else
     {
-      fadeTween = FlxTween.num(0, 1, 0.5,
+      fadeTween = FlxTween.num(currentAlpha, targetAlpha, 0.5,
         {
           ease: FlxEase.expoIn
-        }, (value:Float) -> {
-          overlay.color = FlxColorUtil.interpolate(currentColor, targetColor, value);
-          overlay.alpha = currentAlpha + ((targetAlpha - currentAlpha) * value);
-        });
+        }, setOverlayAlpha);
     }
   }
 
@@ -140,7 +146,7 @@ class RemnantsOverlayHandler extends Module
     var startAlpha:Float = data.getFloat('startOpacity') ?? 0;
     var endAlpha:Float = data.getFloat('endOpacity') ?? 1;
 
-    var retro:Bool = data.getBool("retro") ?? false;
+    isRetro = data.getBool("retro") ?? false;
     var retroSteps:Float = data.getFloat("retroSteps") ?? 5;
 
     var white:Bool = data.getBool("white") ?? false;
@@ -158,11 +164,7 @@ class RemnantsOverlayHandler extends Module
 
     var editedEase:Float->Float = (value:Float) -> {
       var easeVal:Float = easeFunction(value);
-
-      if (retro)
-      {
-        easeVal = Math.floor(easeVal * retroSteps) / retroSteps;
-      }
+      if (isRetro) easeVal = Math.floor(easeVal * retroSteps) / retroSteps;
 
       return easeVal;
     };
@@ -177,12 +179,47 @@ class RemnantsOverlayHandler extends Module
         onComplete: (_) -> {
           fadeTween = null;
         }
-      }, (value:Float) -> {
-        overlay.alpha = value;
-      });
+      }, setOverlayAlpha);
 
     overlay.color = white ? 0xFFFFFFFF : 0xFF000000;
     overlay.cameras = [hud ? PlayState.instance.camCutscene : PlayState.instance.camHUD];
+  }
+
+  var colorMatrixFilter:ColorMatrixFilter;
+
+  public function setOverlayAlpha(value:Float):Void
+  {
+    if (overlay == null || overlay.alpha == value) return;
+    overlay.alpha = value;
+
+    overlay.visible = !isRetro;
+
+    if (isRetro)
+    {
+      for (i in FlxG.cameras.list) i?.filters?.remove(colorMatrixFilter);
+      if (value == 0) return;
+
+      var targetCameras:Array<FlxCamera> = [PlayState.instance.camGame];
+      if (overlay.camera == PlayState.instance.camCutscene) targetCameras.push(PlayState.instance.camHUD);
+
+      var white:Bool = overlay.color == 0xFFFFFFFF;
+      var matrixTarget:Float = white ? 255 : -255;
+
+      var matrix:Array<Float> = [
+        1, 0, 0, 0, value * matrixTarget,
+        0, 1, 0, 0, value * matrixTarget,
+        0, 0, 1, 0, value * matrixTarget,
+        0, 0, 0, 1, 0
+      ];
+      colorMatrixFilter = new ColorMatrixFilter(matrix);
+
+      for (i in targetCameras)
+      {
+        if (i?.filters == null) i?.filters = [];
+        i?.filters?.push(colorMatrixFilter);
+        i?.filtersEnabled = true;
+      }
+    }
   }
 
   override public function onPause(event:PauseScriptEvent):Void
