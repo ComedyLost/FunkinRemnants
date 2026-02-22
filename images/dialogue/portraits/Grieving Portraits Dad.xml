@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="Grieving Portraits Dad.png">
+	<!-- Created with Adobe Animate version 23.0.0.407 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="Luis Portrait 10000" x="2" y="2" width="242" height="323"/>
+	<SubTexture name="Luis Portrait 20000" x="246" y="2" width="282" height="316"/>
+</TextureAtlas>

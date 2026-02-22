@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="Grieving Portraits Mom.png">
+	<!-- Created with Adobe Animate version 23.0.0.407 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="Roxanne Portrait 10000" x="2" y="2" width="386" height="548"/>
+	<SubTexture name="Roxanne Portrait 20000" x="390" y="2" width="386" height="548"/>
+	<SubTexture name="Roxanne Portrait 30000" x="778" y="2" width="386" height="548"/>
+</TextureAtlas>

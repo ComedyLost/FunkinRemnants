@@ -1,0 +1,19 @@
+{
+  "version": "1.0.0",
+  "name": "Luis (Remnants)",
+  "assetPath": "dialogue/portraits/Grieving Portraits Dad",
+  "flipX": true,
+  "isPixel": false,
+  "scale": 1.3,
+  "offsets": [300, -100],
+  "animations": [
+    {
+      "name": "mad",
+      "prefix": "Luis Portrait 1"
+    },
+    {
+      "name": "yell",
+      "prefix": "Luis Portrait 2"
+    }
+  ]
+}

@@ -20,40 +20,40 @@
 
   "dialogue": [
     {
-      "speaker": "roxanne-crossed-remnants",
-      "speakerAnimation": "talk",
+      "speaker": "roxanne-remnants",
+      "speakerAnimation": "crossed",
       "box": "remnants",
       "boxAnimation": "left",
 
       "text": ["are we done yet?"]
     },
     {
-      "speaker": "luis-mad-remnants",
-      "speakerAnimation": "talk",
+      "speaker": "luis-remnants",
+      "speakerAnimation": "mad",
       "box": "remnants",
       "boxAnimation": "right",
 
       "text": ["ghh..."]
     },
     {
-      "speaker": "luis-yell-remnants",
-      "speakerAnimation": "talk",
+      "speaker": "luis-remnants",
+      "speakerAnimation": "yell",
       "box": "remnants",
       "boxAnimation": "right-loud",
 
       "text": ["NO!"]
     },
     {
-      "speaker": "roxanne-shock-remnants",
-      "speakerAnimation": "talk",
+      "speaker": "roxanne-remnants",
+      "speakerAnimation": "shock",
       "box": "remnants",
       "boxAnimation": "left",
 
       "text": ["!"]
     },
     {
-      "speaker": "roxanne-worry-remnants",
-      "speakerAnimation": "talk",
+      "speaker": "roxanne-remnants",
+      "speakerAnimation": "worry",
       "box": "remnants",
       "boxAnimation": "left",
 
@@ -64,16 +64,16 @@
       ]
     },
     {
-      "speaker": "luis-mad-remnants",
-      "speakerAnimation": "talk",
+      "speaker": "luis-remnants",
+      "speakerAnimation": "mad",
       "box": "remnants",
       "boxAnimation": "right",
 
       "text": ["another round!"]
     },
     {
-      "speaker": "roxanne-worry-remnants",
-      "speakerAnimation": "talk",
+      "speaker": "roxanne-remnants",
+      "speakerAnimation": "worry",
       "box": "remnants",
       "boxAnimation": "left",
 

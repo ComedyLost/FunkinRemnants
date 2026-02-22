@@ -1,0 +1,23 @@
+{
+  "version": "1.0.0",
+  "name": "Roxanne (Remnants)",
+  "assetPath": "dialogue/portraits/Grieving Portraits Mom",
+  "flipX": false,
+  "isPixel": false,
+  "scale": 1,
+  "offsets": [-370, -50],
+  "animations": [
+    {
+      "name": "crossed",
+      "prefix": "Roxanne Portrait 1"
+    },
+    {
+      "name": "shock",
+      "prefix": "Roxanne Portrait 2"
+    },
+    {
+      "name": "worry",
+      "prefix": "Roxanne Portrait 3"
+    }
+  ]
+}
