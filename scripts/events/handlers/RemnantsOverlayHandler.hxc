@@ -13,7 +13,7 @@ import Std;
 
 class RemnantsOverlayHandler extends Module
 {
-  public var instantFadeReset:Bool = false;
+  public var restartTween:Bool = false;
 
   public var overlay:FunkinSprite;
   public var fadeTween:FlxTween;
@@ -120,7 +120,7 @@ class RemnantsOverlayHandler extends Module
     overlay.cameras = [targetCamera];
     overlay.color = targetColor;
 
-    if (targetAlpha != 0 || instantFadeReset)
+    if (targetAlpha != 0 || !restartTween)
     {
       fadeTween?.cancel();
       fadeTween = null;
@@ -137,7 +137,7 @@ class RemnantsOverlayHandler extends Module
         }, setOverlayAlpha);
     }
 
-    instantFadeReset = false;
+    restartTween = true;
   }
 
   override public function onSongEvent(event:SongEventScriptEvent):Void
@@ -155,7 +155,7 @@ class RemnantsOverlayHandler extends Module
 
     var white:Bool = data.getBool("white") ?? false;
     var hud:Bool = data.getBool("hud") ?? true;
-    instantFadeReset = data.getBool("instantFadeReset") ?? false;
+    restartTween = data.getBool("restartTween") ?? true;
 
     var duration:Float = data.getFloat('duration') ?? 4;
     var ease:String = data.getString('ease') ?? 'linear';
