@@ -115,8 +115,6 @@ class RemnantsOverlayHandler extends Module
       if (!hud) targetCamera = PlayState.instance?.camHUD;
     }
 
-    instantFadeReset = false;
-
     var currentAlpha:Float = overlay.alpha;
 
     overlay.cameras = [targetCamera];
@@ -132,11 +130,14 @@ class RemnantsOverlayHandler extends Module
     }
     else
     {
+      fadeTween?.cancel();
       fadeTween = FlxTween.num(currentAlpha, targetAlpha, 0.5,
         {
           ease: FlxEase.expoIn
         }, setOverlayAlpha);
     }
+
+    instantFadeReset = false;
   }
 
   override public function onSongEvent(event:SongEventScriptEvent):Void
