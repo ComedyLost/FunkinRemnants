@@ -1,0 +1,36 @@
+import funkin.ui.freeplay.Album;
+import funkin.ui.freeplay.FreeplaySongData;
+import funkin.util.ReflectUtil;
+import funkin.Assets;
+import funkin.Paths;
+import flixel.FlxG;
+import haxe.Json;
+
+class RemnantsAlbum extends Album
+{
+  var albumArtJsonObj:Dynamic = {};
+
+  public function new()
+  {
+    super('remnants');
+
+    var albumArtJsonPath:String = Paths.json('ui/freeplay/remnant-album-covers');
+    albumArtJsonObj = Json.parse(Assets.getText(albumArtJsonPath))?.albumCoversList ?? {};
+  }
+
+  override public function getAlbumArtAssetKey():String
+  {
+    var curSelectedFreeplaySong:FreeplaySongData = FlxG.state.subState.currentCapsule.freeplayData;
+
+    var curSongAlbumVariations:Dynamic = ReflectUtil.getProperty(albumArtJsonObj, curSelectedFreeplaySong.songId);
+    var curVariationAlbum:String = ReflectUtil.getProperty(curSongAlbumVariations, curSelectedFreeplaySong.curVariation);
+
+    var albumPath:String = 'freeplay/albumRoll/' + curVariationAlbum;
+    if (curVariationAlbum != null && Assets.exists(Paths.image(albumPath)))
+    {
+      return albumPath;
+    }
+
+    return _data?.albumArtAsset ?? 'freeplay/albumRoll/remnants-placeholder';
+  }
+}
