@@ -22,10 +22,7 @@ class DarnellRemnantsCharacter extends AnimateAtlasCharacter
     {
       FunkinMemory.cacheSound(Paths.sound(snd, "weekend1"));
     }
-  }
 
-  function onCountdownStart(event:CountdownScriptEvent):Void
-  {
     var hasAbot:Bool = false;
     try
     {
