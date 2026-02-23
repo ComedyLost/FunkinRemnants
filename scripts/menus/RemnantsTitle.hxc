@@ -33,7 +33,7 @@ class RemnantsTitle extends Module
 
   public function new()
   {
-    super('RemnantsTitle');
+    super('remnantsTitle', 1000, {state: TitleState});
   }
 
   override function onStateChangeEnd(event:ScriptEvent):Void

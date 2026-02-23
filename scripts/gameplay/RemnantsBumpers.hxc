@@ -80,7 +80,7 @@ class RemnantsBumpers extends Module
 
   public function new()
   {
-    super('RemnantsBumpers', -1000);
+    super('remnantsBumpers', -1000, {state: PlayState});
   }
 
   override public function onCountdownStart(event:CountdownScriptEvent):Void

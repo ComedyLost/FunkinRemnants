@@ -17,7 +17,7 @@ class RemnantsMainMenu extends Module
 {
   public function new()
   {
-    super('RemnantsMainMenu');
+    super('remnantsMainMenu', 1000, {state: MainMenuState});
   }
 
   var backSpr:FunkinSprite = null;
@@ -56,15 +56,7 @@ class RemnantsMainMenu extends Module
   {
     super.onStateChangeEnd(event);
 
-    checkAndReplace(event.targetState);
     addRemnantsMainMenuItems(event.targetState);
-  }
-
-  override public function onSubStateOpenEnd(event:SubStateScriptEvent):Void
-  {
-    super.onSubStateOpenEnd(event);
-
-    checkAndReplace(event.targetState);
   }
 
   public function addRemnantsMainMenuItems(state:FlxState):Void
@@ -149,33 +141,6 @@ class RemnantsMainMenu extends Module
     {
       var creditsMenuItem:FlxSprite = FlxG.state?.menuItems?.getItem('credits');
       newCredits.visible = creditsMenuItem?.visible ?? false;
-    }
-  }
-
-  public function checkAndReplace(group:FlxGroup):Void
-  {
-    if (!RemnantsContentUtil.remnantsContentEnabled() || group?.members == null) return;
-
-    for (basic in group.members)
-    {
-      try
-      {
-        basic.members[0];
-        checkAndReplace(basic.members);
-        continue;
-      }
-      catch (e:Exception) {}
-
-      if (!Std.isOfType(basic, FlxSprite)) continue;
-
-      var assetKey:String = basic.graphic?.assetsKey ?? '';
-      if (!assetKey.startsWith('assets/images/menu')) continue;
-
-      var suffix:String = assetKey.substring('assets/images/menu'.length, assetKey.length - '.png'.length);
-      if (suffix.startsWith('BG')) suffix = suffix.substring('BG'.length);
-
-      var graphic:FlxGraphic = FlxG.bitmap.add(Paths.image('mainMenu/menuBGRemnants' + suffix));
-      basic.frames = graphic?.imageFrame ?? null;
     }
   }
 }

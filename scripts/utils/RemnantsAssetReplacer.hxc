@@ -1,0 +1,53 @@
+import funkin.modding.module.Module;
+import flixel.FlxSprite;
+import flixel.FlxG;
+
+using StringTools;
+
+class RemnantsAssetReplacer extends Module
+{
+  public function new()
+  {
+    super('RemnantsAssetReplacer', 5000);
+  }
+
+  override public function onStateChangeEnd(event:StateChangeScriptEvent):Void
+  {
+    super.onStateChangeEnd(event);
+    checkAndReplace(event.targetState);
+  }
+
+  override public function onSubStateOpenEnd(event:SubStateScriptEvent):Void
+  {
+    super.onSubStateOpenEnd(event);
+    checkAndReplace(event.targetState);
+  }
+
+  public function checkAndReplace(group:FlxGroup):Void
+  {
+    if (!RemnantsContentUtil.remnantsContentEnabled()) return;
+    if (group?.members == null) return;
+
+    for (basic in group.members)
+    {
+      try
+      {
+        basic.members[0];
+        checkAndReplace(basic.members);
+        continue;
+      }
+      catch (e:Exception) {}
+
+      if (!Std.isOfType(basic, FlxSprite)) continue;
+
+      var assetKey:String = basic.graphic?.assetsKey ?? '';
+      if (!assetKey.startsWith('assets/images/menu')) continue;
+
+      var suffix:String = assetKey.substring('assets/images/menu'.length, assetKey.length - '.png'.length);
+      if (suffix.startsWith('BG')) suffix = suffix.substring('BG'.length);
+
+      var graphic:FlxGraphic = FlxG.bitmap.add(Paths.image('mainMenu/menuBGRemnants' + suffix));
+      basic.frames = graphic?.imageFrame ?? null;
+    }
+  }
+}

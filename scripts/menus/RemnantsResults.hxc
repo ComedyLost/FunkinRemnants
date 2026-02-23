@@ -31,7 +31,7 @@ class RemnantsResults extends Module
 
   public function new()
   {
-    super('RemnantsResults');
+    super('remnantsResults', 1000, {state: ResultState});
   }
 
   override function onStateChangeEnd(event:ScriptEvent):Void
