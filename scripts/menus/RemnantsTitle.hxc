@@ -103,13 +103,13 @@ class RemnantsTitle extends Module
 
     var logoBl:FlxSprite = FlxG.state.logoBl;
     logoBl.loadGraphic(Paths.image('titleScreen/remnantsLogo'));
-    logoBl.setGraphicSize(Std.int(logoBl.width * 0.1));
+    logoBl.setGraphicSize(Std.int(logoBl.width * 0.85));
     logoBl.updateHitbox();
     logoBl.screenCenter();
     logoBl.y -= 225;
 
     var logoTrail:FunkinSprite = FunkinSprite.create(0, 0, 'titleScreen/remnantsLogo');
-    logoTrail.setGraphicSize(Std.int(logoTrail.width * 0.1));
+    logoTrail.setGraphicSize(Std.int(logoTrail.width * 0.85));
     logoTrail.setColorTransform(0, 0, 1, 1, 0, 0, 135, 1);
     logoTrail.antialiasing = true;
     logoTrail.color = 0xFF0C2F5D;
