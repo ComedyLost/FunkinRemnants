@@ -1,7 +1,6 @@
 import funkin.modding.module.Module;
-import funkin.ui.freeplay.FreeplayState;
 import funkin.modding.ModStore;
-import flixel.FlxG;
+import lime.app.Application;
 
 class LastRemnantsCharHelper extends Module
 {
@@ -10,22 +9,17 @@ class LastRemnantsCharHelper extends Module
     super('lastRemnantsCharHelper', 0);
   }
 
-  override public function onCreate(event:ScriptEvent):Void
+  public function onCreate(event:ScriptEvent):Void
   {
-    super.onCreate(event);
     RemnantsContentUtil.loadLastRemnantsChar();
-    FlxG.stage.window.onClose.add(save);
-  }
 
-  override public function onDestroy(event:ScriptEvent):Void
-  {
-    super.onDestroy(event);
-    FlxG.stage.window.onClose.remove(save);
-  }
-
-  function save():Void
-  {
-    RemnantsContentUtil.saveLastRemnantsChar();
-    trace('Saved Remnants(?) Char!');
+    if (!ModStore.stores.exists('lastRemnantsCharHelperInit'))
+    {
+      Application.current.onExit.add((exitCode) -> {
+        RemnantsContentUtil.saveLastRemnantsChar();
+        trace('Saved Remnants(?) Char!');
+      });
+      ModStore.register('lastRemnantsCharHelperInit');
+    }
   }
 }
