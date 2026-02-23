@@ -1,0 +1,120 @@
+import funkin.play.event.SongEvent;
+import flixel.tweens.FlxEase;
+
+class RemnantsOverlaySongEvent extends SongEvent
+{
+  public function new()
+  {
+    super('RemnantsOverlay');
+  }
+
+  public override function getTitle():String
+  {
+    return 'Remnants Overlay';
+  }
+
+  override public function handleEvent(data:SongEventData):Void {}
+
+  public override function getEventSchema():SongEventSchema
+  {
+    return [
+      {
+        name: 'opacity',
+        title: 'Opacity',
+        type: 'frame',
+        children: [
+          {
+            name: 'startOpacity',
+            title: 'Start',
+            defaultValue: 0,
+            min: 0,
+            max: 1,
+            step: 0.1,
+            type: "float",
+            units: "alpha"
+          },
+          {
+            name: 'endOpacity',
+            title: 'End',
+            defaultValue: 1,
+            min: 0,
+            max: 1,
+            step: 0.1,
+            type: "float",
+            units: "alpha"
+          }
+        ]
+      },
+      {
+        name: "retroOptions",
+        title: "Retro",
+        type: 'frame',
+        children: [
+          {
+            name: "retro",
+            title: "Enabled?",
+            defaultValue: false,
+            type: "bool"
+          },
+          {
+            name: "retroSteps",
+            title: "Steps",
+            defaultValue: 5,
+            min: 0,
+            step: 1,
+            type: "integer"
+          }
+        ]
+      },
+      {
+        name: "hud",
+        title: "Over HUD?",
+        defaultValue: true,
+        type: "bool"
+      },
+      {
+        name: "white",
+        title: "Is White?",
+        defaultValue: false,
+        type: "bool"
+      },
+      {
+        name: 'duration',
+        title: 'Duration',
+        defaultValue: 4,
+        min: 0,
+        step: 0.5,
+        type: "float",
+        units: 'steps'
+      },
+      {
+        name: 'ease',
+        title: 'Easing Type',
+        defaultValue: "linear",
+        type: "enum",
+        keys: [
+          'Linear' => 'linear',
+          'Sine' => 'sine',
+          'Quad' => 'quad',
+          'Cube' => 'cube',
+          'Quart' => 'quart',
+          'Quint' => 'quint',
+          'Expo' => 'expo',
+          'Smooth Step' => 'smoothStep',
+          'Smoother Step' => 'smootherStep',
+          'Elastic' => 'elastic',
+          'Back' => 'back',
+          'Bounce' => 'bounce',
+          'Circ ' => 'circ'
+        ]
+      },
+      {
+        name: 'easeDir',
+        title: 'Easing Direction',
+        defaultValue: SongEvent.DEFAULT_EASE_DIR,
+        type: "enum",
+        keys: ['In' => 'In', 'Out' => 'Out', 'In/Out' => 'InOut']
+      }
+    ];
+  }
+}

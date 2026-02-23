@@ -1,0 +1,206 @@
+import funkin.modding.module.Module;
+import funkin.graphics.FunkinSprite;
+import funkin.play.event.SongEvent;
+import funkin.util.ReflectUtil;
+import funkin.util.FlxColorUtil;
+import funkin.play.PlayState;
+import flixel.tweens.FlxTween;
+import flixel.tweens.FlxEase;
+import funkin.Conductor;
+import flixel.FlxG;
+import Std;
+
+class RemnantsOverlayHandler extends Module
+{
+  public var overlay:FunkinSprite;
+  public var fadeTween:FlxTween;
+
+  var firstEvent:SongEventData;
+
+  public function new()
+  {
+    super('RemnantsOverlayHandler');
+  }
+
+  public function create():Void
+  {
+    overlay?.destroy();
+    fadeTween?.cancel();
+
+    overlay = new FunkinSprite();
+    overlay.makeSolidColor(FlxG.width * 1.2, FlxG.height * 1.2, 0xFFFFFFFF);
+    overlay.screenCenter();
+    overlay.cameras = [PlayState.instance.camHUD];
+    overlay.alpha = 0;
+    overlay.zIndex = 0;
+    PlayState.instance.add(overlay);
+
+    if (firstEvent != null)
+    {
+      var startAlpha:Float = firstEvent.getFloat('startOpacity') ?? 0;
+
+      var white:Bool = firstEvent.getBool("white") ?? false;
+      var hud:Bool = firstEvent.getBool("hud") ?? true;
+
+      overlay.color = white ? 0xFFFFFFFF : 0xFF000000;
+      overlay.zIndex = hud ? 1500 : 0;
+      overlay.alpha = startAlpha;
+
+      PlayState.instance.refresh();
+    }
+  }
+
+  override public function onStateChangeEnd(event:StateChangeScriptEvent):Void
+  {
+    super.onStateChangeEnd(event);
+    if (Std.isOfType(event.targetState, PlayState)) create();
+  }
+
+  override public function onSubStateOpenEnd(event:SubStateScriptEvent):Void
+  {
+    super.onSubStateOpenEnd(event);
+    if (Std.isOfType(event.targetState, PlayState)) create();
+  }
+
+  override public function onSongLoaded(event:SongLoadScriptEvent):Void
+  {
+    super.onSongLoaded(event);
+
+    var overlayEvents:Array<SongEventData> = event.events.filter((event:SongEventData) -> {
+      if (event.getBool("retro")) throw "Retro fade currently does not properly! Please nag at me until I fix it.";
+      return event.eventKind == 'RemnantsOverlay';
+    });
+
+    firstEvent = null;
+
+    if ((overlayEvents[0]?.time ?? 1) <= 0)
+    {
+      firstEvent = overlayEvents[0];
+    }
+
+    PlayState.instance.refresh();
+  }
+
+  override public function onSongRetry(event:ScriptEvent):Void
+  {
+    super.onSongRetry(event);
+
+    if (overlay == null) return;
+
+    var targetColor:Int = 0xFFFFFFFF;
+    var targetAlpha:Float = 0;
+    var targetZIndex:Int = 0;
+
+    if (firstEvent != null && (PlayState?.instance?.startTimestamp ?? 1) <= 0)
+    {
+      var white:Bool = firstEvent.getBool("white") ?? false;
+      var hud:Bool = firstEvent.getBool("hud") ?? true;
+
+      targetAlpha = firstEvent.getFloat('startOpacity') ?? 0;
+      targetColor = white ? 0xFFFFFFFF : 0xFF000000;
+
+      targetZIndex = hud ? 1500 : 0;
+    }
+
+    var currentAlpha:Float = overlay.alpha;
+    var currentColor:Int = overlay.color;
+
+    overlay.zIndex = targetZIndex;
+    PlayState.instance.refresh();
+
+    if (fadeTween != null)
+    {
+      fadeTween?.cancel();
+
+      overlay.color = targetColor;
+      overlay.alpha = targetAlpha;
+      return;
+    }
+    else
+    {
+      fadeTween = FlxTween.num(0, 1, 0.5,
+        {
+          ease: FlxEase.expoIn
+        }, (value:Float) -> {
+          overlay.color = FlxColorUtil.interpolate(currentColor, targetColor, value);
+          overlay.alpha = currentAlpha + ((targetAlpha - currentAlpha) * value);
+        });
+    }
+  }
+
+  override public function onSongEvent(event:SongEventScriptEvent):Void
+  {
+    var data:SongEventData = event.eventData;
+    super.onSongEvent(event);
+
+    if (data.eventKind != 'RemnantsOverlay') return;
+
+    var startAlpha:Float = data.getFloat('startOpacity') ?? 0;
+    var endAlpha:Float = data.getFloat('endOpacity') ?? 1;
+
+    var retro:Bool = data.getBool("retro") ?? false;
+    var retroSteps:Float = data.getFloat("retroSteps") ?? 5;
+
+    var white:Bool = data.getBool("white") ?? false;
+    var hud:Bool = data.getBool("hud") ?? true;
+
+    var duration:Float = data.getFloat('duration') ?? 4;
+    var ease:String = data.getString('ease') ?? 'linear';
+
+    var easeDir:String = data.getString('easeDir') ?? SongEvent.DEFAULT_EASE_DIR;
+    if (SongEvent.EASE_TYPE_DIR_REGEX.match(ease) || ease == "linear") easeDir = "";
+
+    var easeFunctionName:String = ease + easeDir;
+    var easeFunction:Float->Float = ReflectUtil.getAnonymousField(FlxEase, easeFunctionName);
+    if (easeFunction == null) throw easeFunctionName + " doesn't exist!";
+
+    var editedEase:Float->Float = (value:Float) -> {
+      var easeVal:Float = easeFunction(value);
+
+      if (retro)
+      {
+        easeVal = Math.floor(easeVal * retroSteps) / retroSteps;
+      }
+
+      return easeVal;
+    };
+
+    var durSeconds:Float = Conductor.instance.stepLengthMs * duration / 1000;
+
+    fadeTween?.cancel();
+
+    fadeTween = FlxTween.num(startAlpha, endAlpha, durSeconds,
+      {
+        ease: editedEase,
+        onComplete: (_) -> {
+          fadeTween = null;
+        }
+      }, (value:Float) -> {
+        overlay.alpha = value;
+      });
+
+    overlay.color = white ? 0xFFFFFFFF : 0xFF000000;
+    overlay.zIndex = hud ? 1500 : 0;
+
+    PlayState.instance.refresh();
+  }
+
+  override public function onPause(event:PauseScriptEvent):Void
+  {
+    fadeTween?.active = false;
+    super.onPause(event);
+  }
+
+  override public function onResume(event:PauseScriptEvent):Void
+  {
+    fadeTween?.active = true;
+    super.onResume(event);
+  }
+
+  override public function onDestroy(event:ScriptEvent):Void
+  {
+    fadeTween?.cancel();
+    firstEvent = null;
+    super.onDestroy(event);
+  }
+}
