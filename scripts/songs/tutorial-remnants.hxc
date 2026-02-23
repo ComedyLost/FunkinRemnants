@@ -122,10 +122,6 @@ class TutorialRemnantsMixSong extends Song
 
     switch (event.eventData.value)
     {
-      case 'fadeAwayCam': // Idk if this is needed anymore
-        // TODO: temporary for now, replace with a fade later?
-        black.cameras = [PlayState.instance?.camCutscene];
-
       case 'playIntro':
         intro.anim.play('anim', true);
         intro.alpha = 1;
@@ -165,6 +161,7 @@ class TutorialRemnantsMixSong extends Song
     else
     {
       black.alpha = 1;
+      intro.alpha = 0;
       ending = false;
     }
   }

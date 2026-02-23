@@ -69,11 +69,6 @@
       }
     },
     {
-      "t": 8268,
-      "e": "tutorialEvents",
-      "v": "fadeAwayCam"
-    },
-    {
       "t": 10344.8275862069,
       "e": "ZoomCamera",
       "v": {
