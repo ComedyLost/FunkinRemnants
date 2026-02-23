@@ -305,7 +305,7 @@ class RosesRemnantsMixSong extends Song
               }
             });
 
-          var thingies:Array<FlxSprite> = [for (i in PlayState.instance.currentStage.characters.iterator()) i];
+          var thingies:Array<FlxSprite> = [for (i in PlayState.instance?.currentStage?.characters?.iterator() ?? []) i];
 
           thingies.push(PlayState.instance.iconP1);
           thingies.push(PlayState.instance.iconP2);
