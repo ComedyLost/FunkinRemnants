@@ -1,4 +1,5 @@
-import funkin.play.character.SparrowCharacter;
+import funkin.play.character.AnimateAtlasCharacter;
+import funkin.data.character.CharacterDataParser;
 import funkin.play.character.CharacterType;
 import funkin.graphics.FunkinSprite;
 import funkin.audio.FunkinSound;
@@ -10,7 +11,7 @@ import flixel.math.FlxMath;
 import flixel.FlxG;
 import funkin.FunkinMemory;
 
-class DadRemnantsCharacter extends SparrowCharacter
+class DadRemnantsCharacter extends AnimateAtlasCharacter
 {
   /**
    * How far dad should go when the kick animation is played.

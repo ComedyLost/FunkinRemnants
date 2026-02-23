@@ -1,93 +1,94 @@
 {
   "version": "1.0.0",
   "name": "Remnants Dad",
-  "assetPath": "characters/dad-remnants",
+  "assetPath": "shared:characters/dad-remnants",
+  "renderType": "animateatlas",
+  "offsets": [36, 2],
   "singTime": 8.0,
+  "healthIcon": {
+    "id": "dad-remnants"
+  },
   "animations": [
     {
       "name": "idle",
-      "prefix": "idle0",
-      "offsets": [0, 0]
+      "prefix": "Idle"
     },
     {
       "name": "idle-hold",
-      "prefix": "idle0",
+      "prefix": "Idle",
       "looped": true,
-      "frameIndices": [11, 12],
-      "offsets": [0, 0]
+      "frameIndices": [11, 12]
     },
     {
       "name": "singLEFT",
-      "prefix": "singLEFT0",
-      "offsets": [-10, 10]
+      "prefix": "Left",
+      "offsets": [-7, 0]
     },
     {
       "name": "singLEFT-hold",
-      "prefix": "singLEFT0",
+      "prefix": "Left",
       "looped": true,
-      "frameIndices": [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16],
-      "offsets": [-10, 10]
+      "frameIndices": [2, 3, 4, 5],
+      "offsets": [-7, 0]
+    },
+    {
+      "name": "singLEFT-miss",
+      "prefix": "Left Miss",
+      "offsets": [-7, 0]
     },
     {
       "name": "singDOWN",
-      "prefix": "singDOWN",
-      "offsets": [0, -30]
-    },
-    {
-      "name": "singDOWN-hold",
-      "prefix": "singDOWN0",
-      "looped": true,
-      "frameIndices": [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16],
-      "offsets": [0, -30]
+      "prefix": "Down",
+      "offsets": [6, 5]
     },
     {
       "name": "singUP",
-      "prefix": "singUP0",
-      "offsets": [-6, 50]
+      "prefix": "Up",
+      "offsets": [0, -2]
     },
     {
       "name": "singUP-hold",
-      "prefix": "singUP0",
+      "prefix": "Up",
       "looped": true,
-      "frameIndices": [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16],
-      "offsets": [-6, 50]
+      "frameIndices": [2, 3, 4, 5],
+      "offsets": [0, -2]
     },
     {
       "name": "singRIGHT",
-      "prefix": "singRIGHT0",
-      "offsets": [0, 27]
+      "prefix": "Right",
+      "offsets": [9, 1]
     },
     {
       "name": "singRIGHT-hold",
-      "prefix": "singRIGHT0",
+      "prefix": "Right",
       "looped": true,
-      "frameIndices": [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16],
-      "offsets": [0, 27]
+      "frameIndices": [2, 3, 4, 5],
+      "offsets": [9, 1]
     },
     {
       "name": "grunt",
-      "prefix": "grunt0",
-      "offsets": [-7, -31]
+      "prefix": "Grunt",
+      "offsets": [-7, -1]
     },
     {
       "name": "hit",
-      "prefix": "hit0",
-      "offsets": [71, -16]
+      "prefix": "Hit",
+      "offsets": [-7, 2]
     },
     {
       "name": "preAttack",
-      "prefix": "preAttack0",
-      "offsets": [-5, -25]
+      "prefix": "Pre-Attack",
+      "offsets": [-7, -1]
     },
     {
       "name": "attack",
-      "prefix": "attack0",
-      "offsets": [-2, -4]
+      "prefix": "Attack",
+      "offsets": [-7, -2]
     },
     {
       "name": "block",
-      "prefix": "block0",
-      "offsets": [-5, 17]
+      "prefix": "Block",
+      "offsets": [-7, -2]
     }
   ]
 }
