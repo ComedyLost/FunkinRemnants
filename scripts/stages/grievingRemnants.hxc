@@ -1,0 +1,22 @@
+import funkin.play.stage.Stage;
+import funkin.Preferences;
+
+class GrievingRemnantsStage extends Stage
+{
+  function new()
+  {
+    super('grievingRemnants');
+  }
+
+  override function buildStage():Void
+  {
+    super.buildStage();
+
+    if (!Preferences.naughtyness)
+    {
+      var boobies:StageProp = getNamedProp('BOOBIES');
+      boobies.loadTexture('stages/grievingRemnants/memories/BOOBIES-censored');
+      boobies.updateHitbox();
+    }
+  }
+}

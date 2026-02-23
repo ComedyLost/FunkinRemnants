@@ -8,6 +8,8 @@ import flixel.tweens.FlxEase;
 import funkin.play.PlayState;
 import flixel.FlxG;
 import flixel.addons.display.FlxBackdrop;
+import funkin.util.SongSequence;
+import funkin.Conductor;
 
 class LitUpRemnantsMixSong extends Song
 {
@@ -20,6 +22,7 @@ class LitUpRemnantsMixSong extends Song
   var mist6:FlxBackdrop;
 
   var outro:Bool = false;
+  var sequence:SongSequence;
 
   public function new()
   {
@@ -51,6 +54,36 @@ class LitUpRemnantsMixSong extends Song
     {
       event.cancel();
     }
+
+    var sequenceData = [
+      {
+        time: 323 * (Conductor.instance.beatLengthMs / 1000),
+        callback: () -> {
+          PlayState.instance.camCutscene.fade(0xFF000000, 9.29, false, null, false);
+          FlxTween.tween(PlayState.instance.camHUD, {alpha: 0}, 2.98,
+            {
+              ease: FlxEase.smootherStepIn,
+              onComplete: function(_) {
+                PlayState.instance.disableKeys = true;
+              }
+            });
+          outro = true;
+        }
+      },
+    ];
+
+    if (!RemnantsOptions.getPerformanceOption())
+    {
+      sequenceData.push({time: 96 * (Conductor.instance.beatLengthMs / 1000), callback: () -> {
+        mistOn(3);
+      }});
+      sequenceData.push({time: 160 * (Conductor.instance.beatLengthMs / 1000), callback: () -> {
+        mistOff(3);
+      }});
+    }
+
+    sequence = new SongSequence(sequenceData);
+    sequence.startTime = 0;
   }
 
   function onCreate(event:ScriptEvent):Void
@@ -183,6 +216,7 @@ class LitUpRemnantsMixSong extends Song
   function onSongRetry(event:ScriptEvent)
   {
     super.onSongRetry(event);
+    sequence?.destroy();
 
     if (mist0.alpha > 0 && !RemnantsOptions.getPerformanceOption()) mistOff(1);
 
@@ -202,6 +236,7 @@ class LitUpRemnantsMixSong extends Song
   function onGameOver(event:ScriptEvent):Void
   {
     super.onGameOver(event);
+    sequence?.destroy();
 
     PlayState.instance.camCutscene?.stopFX();
     PlayState.instance.camHUD.alpha = 0;
@@ -230,29 +265,8 @@ class LitUpRemnantsMixSong extends Song
       FlxTweenUtil.resumeTweensOf(scriptGet('mist' + i));
   }
 
-  function onBeatHit(event:ScriptEvent):Void
+  function onDestroy(event:ScriptEvent):Void
   {
-    super.onBeatHit(event);
-
-    if (PlayState.instance.isGameOverState) return;
-    switch (event.beat)
-    {
-      case 96:
-        if (!RemnantsOptions.getPerformanceOption()) mistOn(3);
-
-      case 160:
-        if (!RemnantsOptions.getPerformanceOption()) mistOff(3);
-
-      case 323:
-        PlayState.instance.camCutscene.fade(0xFF000000, 9.29, false, null, false);
-        FlxTween.tween(PlayState.instance.camHUD, {alpha: 0}, 2.98,
-          {
-            ease: FlxEase.smootherStepIn,
-            onComplete: function(_) {
-              PlayState.instance.disableKeys = true;
-            }
-          });
-        outro = true;
-    }
+    sequence?.destroy();
   }
 }
