@@ -141,6 +141,7 @@ class RemnantsMainMenu extends Module
     {
       var creditsMenuItem:FlxSprite = FlxG.state?.menuItems?.getItem('credits');
       newCredits.visible = creditsMenuItem?.visible ?? false;
+      newCredits.alpha = creditsMenuItem?.alpha ?? 0;
     }
   }
 }
