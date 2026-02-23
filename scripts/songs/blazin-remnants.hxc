@@ -83,17 +83,6 @@ class BlazinRemnantsMixSong extends Song
     }
   }
 
-  function onCountdownStart(event:ScriptEvent):Void
-  {
-    super.onCountdownStart(event);
-
-    if (!ModuleHandler.getModule('RemnantsBumpers').scriptCall('getPlayedBumper')
-      && ModuleHandler.getModule('RemnantsBumpers').scriptCall('setupBumper'))
-    {
-      event.cancel();
-    }
-  }
-
   override function onSongRetry()
   {
     if (picoTimer != null) picoTimer.cancel(); // KILL IT!

@@ -50,17 +50,6 @@ class EggnogRemnantsMixSong extends Song
     return false;
   }
 
-  function onCountdownStart(event:ScriptEvent):Void
-  {
-    super.onCountdownStart(event);
-
-    if (!ModuleHandler.getModule('RemnantsBumpers').scriptCall('getPlayedBumper')
-      && ModuleHandler.getModule('RemnantsBumpers').scriptCall('setupBumper'))
-    {
-      event.cancel();
-    }
-  }
-
   public override function onSongEnd(event:CountdownScriptEvent):Void
   {
     super.onSongEnd(event);
@@ -187,7 +176,7 @@ class EggnogRemnantsMixSong extends Song
   {
     super.onUpdate(event);
 
-    if (!ModuleHandler.getModule('RemnantsBumpers').scriptCall('getIsPlaying'))
+    if (!ModuleHandler.getModule('RemnantsBumpers').isPlaying)
     {
       if (FlxG.onMobile)
       {

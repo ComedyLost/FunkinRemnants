@@ -49,12 +49,6 @@ class LitUpRemnantsMixSong extends Song
   {
     super.onCountdownStart(event);
 
-    if (!ModuleHandler.getModule('RemnantsBumpers').scriptCall('getPlayedBumper')
-      && ModuleHandler.getModule('RemnantsBumpers').scriptCall('setupBumper'))
-    {
-      event.cancel();
-    }
-
     var sequenceData = [
       {
         time: 323 * (Conductor.instance.beatLengthMs / 1000),
@@ -74,12 +68,20 @@ class LitUpRemnantsMixSong extends Song
 
     if (!RemnantsOptions.getPerformanceOption())
     {
-      sequenceData.push({time: 96 * (Conductor.instance.beatLengthMs / 1000), callback: () -> {
-        mistOn(3);
-      }});
-      sequenceData.push({time: 160 * (Conductor.instance.beatLengthMs / 1000), callback: () -> {
-        mistOff(3);
-      }});
+      sequenceData.push(
+        {
+          time: 96 * (Conductor.instance.beatLengthMs / 1000),
+          callback: () -> {
+            mistOn(3);
+          }
+        });
+      sequenceData.push(
+        {
+          time: 160 * (Conductor.instance.beatLengthMs / 1000),
+          callback: () -> {
+            mistOff(3);
+          }
+        });
     }
 
     sequence = new SongSequence(sequenceData);

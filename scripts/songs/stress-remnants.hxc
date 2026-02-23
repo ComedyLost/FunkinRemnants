@@ -82,14 +82,7 @@ class StressRemnantsMixSong extends Song
   {
     super.onCountdownStart(event);
 
-    if (!ModuleHandler.getModule('RemnantsBumpers').scriptCall('getPlayedBumper')
-      && ModuleHandler.getModule('RemnantsBumpers').scriptCall('setupBumper'))
-    {
-      bgSprite.alpha = 1;
-
-      event.cancel();
-    }
-    else if (!hasPlayedCutscene)
+    if (!hasPlayedCutscene)
     {
       trace('Pausing countdown to play in-game cutscene (`stress-remnants`)');
 

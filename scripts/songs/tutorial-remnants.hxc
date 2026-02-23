@@ -114,12 +114,7 @@ class TutorialRemnantsMixSong extends Song
 
     if (PlayState.instance.camHUD.alpha < 1) PlayState.instance.camHUD.alpha = 1;
 
-    if (!ModuleHandler.getModule('RemnantsBumpers').scriptCall('getPlayedBumper')
-      && ModuleHandler.getModule('RemnantsBumpers').scriptCall('setupBumper'))
-    {
-      event.cancel();
-    }
-    else
+    if (RemnantsBumpers.playedBumper)
     {
       PlayState.instance.disableKeys = true;
     }

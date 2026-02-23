@@ -8,12 +8,12 @@ class RemnantsBumpers extends Module
   /**
    * Has the bumper been played already?
    */
-  public var playedBumper:Bool = false;
+  public static var playedBumper:Bool = false;
 
   /**
    * Is the bumper currently playing?
    */
-  public var isPlaying:Bool = false;
+  public static var isPlaying:Bool = false;
 
   /**
    * What was the last song played?
@@ -83,6 +83,18 @@ class RemnantsBumpers extends Module
     super('RemnantsBumpers');
   }
 
+  override public function onCountdownStart(event:CountdownScriptEvent):Void
+  {
+    super.onCountdownStart(event);
+
+    trace("Attempting to play the bumper...");
+    if (setupBumper())
+    {
+      trace("setupBumper() returned 'true', stopping the countdown...");
+      event.cancel();
+    }
+  }
+
   /**
    * Sets up the bumper and plays it ONLY if the conditions allows it.
    * Condition 1: The song must be the first one the user plays of the current week.
@@ -98,11 +110,12 @@ class RemnantsBumpers extends Module
 
     currentWeek = getWeek(songLowercase, variation);
     lastWeek = getWeek(lastSong, lastVariation);
+
+    trace("The current week is " + currentWeek);
     hasChangedVariant();
     hasChangedWeek();
 
     setIsFirstOfWeek();
-    trace(currentWeek);
 
     // Prevent the bumper from playing if there's no video.
     if (getWeek(songLowercase) == null) return false;
@@ -114,6 +127,8 @@ class RemnantsBumpers extends Module
     {
       isPlaying = true;
       playedBumper = true;
+      trace("Playing the bumper '" + currentWeek + "'");
+
       VideoCutscene.play(Paths.videos(currentWeek));
       VideoCutscene.onVideoEnded.add(() -> {
         isPlaying = false;
@@ -130,30 +145,6 @@ class RemnantsBumpers extends Module
   }
 
   /**
-   * Returns ??playedBumper??.
-   */
-  public function getPlayedBumper():Bool
-  {
-    return playedBumper;
-  }
-
-  /**
-   * Returns ??isPlaying??.
-   */
-  public function getIsPlaying():Bool
-  {
-    return isPlaying;
-  }
-
-  /**
-   * Returns ??isFirstOfWeek??.
-   */
-  public function getIsFirstOfWeek():Bool
-  {
-    return isFirstOfWeek;
-  }
-
-  /**
    * Checks and sets if ??isFirstOfWeek?? is the first song being played of the week.
    */
   public function setIsFirstOfWeek()
@@ -162,15 +153,6 @@ class RemnantsBumpers extends Module
     {
       isFirstOfWeek = (currentWeek != lastWeek);
     }
-  }
-
-  /**
-   * Sets ??playedBumper?? to the choosen value (Boolean).
-   * @param value Bool type value.
-   */
-  public function setPlayedBumper(value:Bool)
-  {
-    playedBumper = value;
   }
 
   /**
@@ -183,6 +165,7 @@ class RemnantsBumpers extends Module
     {
       if (currentWeek != lastWeek)
       {
+        trace("Week has changed, reseting bumper state...");
         playedBumper = false;
       }
     }
@@ -198,6 +181,7 @@ class RemnantsBumpers extends Module
     {
       if (PlayState.instance.currentVariation != lastVariation)
       {
+        trace("Variation has changed, reseting bumper state...");
         playedBumper = false;
       }
     }

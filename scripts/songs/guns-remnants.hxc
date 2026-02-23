@@ -76,12 +76,7 @@ class GunsRemnantsMixSong extends Song
     PlayState.instance.camHUD.alpha = 0;
     PlayState.instance.camHUD.visible = true;
 
-    if (!ModuleHandler.getModule('RemnantsBumpers').scriptCall('getPlayedBumper')
-      && ModuleHandler.getModule('RemnantsBumpers').scriptCall('setupBumper'))
-    {
-      event.cancel();
-    }
-    else if (!hasPlayedCutscene)
+    if (!hasPlayedCutscene)
     {
       trace('Pausing countdown to play in-game cutscene (`guns`)');
 

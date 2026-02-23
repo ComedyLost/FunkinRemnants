@@ -33,17 +33,6 @@ class BlammedRemnantsMixSong extends Song
     fadeOut = false;
   }
 
-  function onCountdownStart(event:ScriptEvent):Void
-  {
-    super.onCountdownStart(event);
-
-    if (!ModuleHandler.getModule('RemnantsBumpers').scriptCall('getPlayedBumper')
-      && ModuleHandler.getModule('RemnantsBumpers').scriptCall('setupBumper'))
-    {
-      event.cancel();
-    }
-  }
-
   function onSongRetry(event:ScriptEvent)
   {
     super.onSongRetry(event);

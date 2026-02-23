@@ -29,15 +29,4 @@ class PicoRemnantsMixSong extends Song
     }
     if (hasBeatenRemnantsMix) return results;
   }
-
-  function onCountdownStart(event:ScriptEvent):Void
-  {
-    super.onCountdownStart(event);
-
-    if (!ModuleHandler.getModule('RemnantsBumpers').scriptCall('getPlayedBumper')
-      && ModuleHandler.getModule('RemnantsBumpers').scriptCall('setupBumper'))
-    {
-      event.cancel();
-    }
-  }
 }

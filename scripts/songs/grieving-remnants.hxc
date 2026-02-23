@@ -38,12 +38,7 @@ class GrievingRemnantsSong extends Song
   {
     super.onCountdownStart(event);
 
-    if (!ModuleHandler.getModule('RemnantsBumpers').scriptCall('getPlayedBumper')
-      && ModuleHandler.getModule('RemnantsBumpers').scriptCall('setupBumper'))
-    {
-      event.cancel();
-    }
-    else
+    if (RemnantsBumpers.playedBumper)
     {
       PlayState.instance.disableKeys = true;
     }

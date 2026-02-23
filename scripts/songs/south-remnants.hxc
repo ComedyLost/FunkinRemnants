@@ -32,21 +32,6 @@ class SouthRemnantsMixSong extends Song
     return false;
   }
 
-  function onCountdownStart(event:ScriptEvent):Void
-  {
-    super.onCountdownStart(event);
-
-    PlayState.instance.camHUD.alpha = 0;
-
-    if (!ModuleHandler.getModule('RemnantsBumpers').scriptCall('getPlayedBumper')
-      && ModuleHandler.getModule('RemnantsBumpers').scriptCall('setupBumper'))
-    {
-      event.cancel();
-    }
-
-    hasPlayedMonsterCutscene = false;
-  }
-
   function onCreate(event:ScriptEvent):Void
   {
     super.onCreate(event);

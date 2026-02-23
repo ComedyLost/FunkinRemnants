@@ -42,7 +42,7 @@ class RemnantsContentUtil
 
         if (!hasBeatenSong)
         {
-          trace('has not beaten "' + song.songName + '" on "' + variation + '"!');
+          trace('Has not beaten "' + song.songName + '" on "' + variation + '"!');
           return false;
         }
       }

@@ -25,17 +25,6 @@ class SatinPantiesRemnantsMixSong extends Song
     return false;
   }
 
-  function onCountdownStart(event:ScriptEvent):Void
-  {
-    super.onCountdownStart(event);
-
-    if (!ModuleHandler.getModule('RemnantsBumpers').scriptCall('getPlayedBumper')
-      && ModuleHandler.getModule('RemnantsBumpers').scriptCall('setupBumper'))
-    {
-      event.cancel();
-    }
-  }
-
   function onCreate(event:ScriptEvent):Void
   {
     super.onCreate(event);

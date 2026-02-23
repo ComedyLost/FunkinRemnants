@@ -113,7 +113,7 @@ class WinterHorrorlandRemnantsMixSong extends Song
       cutsceneTimerManager.update(event.elapsed);
     }
 
-    if (!ModuleHandler.getModule('RemnantsBumpers').scriptCall('getIsPlaying'))
+    if (!ModuleHandler.getModule('RemnantsBumpers').isPlaying)
     {
       if (FlxG.onMobile)
       {
@@ -211,13 +211,7 @@ class WinterHorrorlandRemnantsMixSong extends Song
   {
     super.onCountdownStart(event);
 
-    if (!ModuleHandler.getModule('RemnantsBumpers').scriptCall('getPlayedBumper')
-      && ModuleHandler.getModule('RemnantsBumpers').scriptCall('setupBumper'))
-    {
-      event.cancel();
-      PlayState.instance.camHUD.visible = false;
-    }
-    else if (!hasPlayedCutscene)
+    if (!hasPlayedCutscene)
     {
       hasPlayedCutscene = true;
       event.cancel();
