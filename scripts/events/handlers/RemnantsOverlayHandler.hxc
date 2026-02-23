@@ -132,7 +132,7 @@ class RemnantsOverlayHandler extends Module
     if (restartTween)
     {
       var editedEase:Float->Float = (value:Float) -> {
-      var easeVal:Float = FlxEase.expoIn(value);
+        var easeVal:Float = FlxEase.expoIn(value);
         if (isRetro) easeVal = Math.floor(easeVal * retroSteps) / retroSteps;
 
         return easeVal;

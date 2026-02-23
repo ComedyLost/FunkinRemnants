@@ -210,7 +210,6 @@ class SouthRemnantsMixSong extends Song
         overlay.color = 0xFF000000;
       });
 
-
       FlxTimer.wait(148 * (1 / 24), () -> {
         mosner.alpha = 0;
         mosner.anim.play('evilAssFace', true);

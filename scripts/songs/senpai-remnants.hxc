@@ -47,8 +47,6 @@ class SenpaiRemnantsMixSong extends Song
   {
     super.onCountdownStart(event);
 
-    if (PlayState.instance.camHUD.alpha < 1) FlxTween.tween(PlayState.instance.camHUD, {alpha: 1}, 0.8, {ease: FlxEase.linear});
-
     // Skip the cutscene if we're playtesting in the Chart Editor.
     if (PlayState.instance.isChartingMode && !hasPlayedDialogue) hasPlayedDialogue = true;
     if (!hasPlayedDialogue)
@@ -70,6 +68,7 @@ class SenpaiRemnantsMixSong extends Song
       event.cancel(); // CANCEL THE COUNTDOWN!
       transitionToDialogue();
     }
+    else if (PlayState.instance.camHUD.alpha < 1) FlxTween.tween(PlayState.instance.camHUD, {alpha: 1}, 0.8);
   }
 
   function transitionToDialogue()
@@ -141,12 +140,6 @@ class SenpaiRemnantsMixSong extends Song
     super.onSongRetry(event);
 
     hasPlayedDialogue = true;
-
-    if (PlayState.instance.isGameOverState)
-    {
-      FlxG.camera.stopFX();
-      RetroCameraFade.fadeBlack(PlayState.instance.camGame, 10, 1);
-    }
   }
 
   /**

@@ -61,10 +61,6 @@ class ThornsRemnantsMixSong extends Song
   {
     super.onCountdownStart(event);
 
-    PlayState.instance.camHUD?.alpha = 0;
-    PlayState.instance.camHUD?.visible = true;
-    PlayState.instance.camGame?.fade(0xFF000000, 0, false, null, false);
-
     PlayState.instance.currentStage?.getNamedProp('pixeloverlay')?.alpha = 0;
 
     // Skip the cutscene if we're playtesting in the Chart Editor.
@@ -87,6 +83,10 @@ class ThornsRemnantsMixSong extends Song
 
         startCutscene();
         event.cancel(); // CANCEL THE COUNTDOWN!
+      }
+      else
+      {
+        PlayState.instance.disableKeys = true;
       }
     }
   }
@@ -338,9 +338,7 @@ class ThornsRemnantsMixSong extends Song
     canSkipCutscene = false;
     hasPlayedCutscene = false;
 
-    FlxG.camera.fade(0xFF000000, 0, false);
     PlayState.instance.camHUD.alpha = 0;
-    fadeOut = false;
   }
 
   function onSongRetry(event:ScriptEvent)
@@ -353,19 +351,7 @@ class ThornsRemnantsMixSong extends Song
     hasPlayedCutscene = true;
 
     FlxTween.cancelTweensOf(PlayState.instance.camHUD);
-    PlayState.instance.disableKeys = true;
-
-    if (fadeOut)
-    {
-      RetroCameraFade.fadeToBlack(PlayState.instance.camGame, 10, 0.5);
-      FlxTween.tween(PlayState.instance.camHUD, {alpha: 0}, 0.5, {ease: FlxEase.linear});
-      fadeOut = false;
-    }
-    else
-    {
-      PlayState.instance.camGame.fade(0xFF000000, 0, false, null, false);
-      PlayState.instance.camHUD.visible = false;
-    }
+    if (!PlayState.instance.disableKeys) PlayState.instance.disableKeys = true;
   }
 
   function onGameOver(event:ScriptEvent):Void
@@ -375,7 +361,6 @@ class ThornsRemnantsMixSong extends Song
 
     FlxTween.cancelTweensOf(PlayState.instance.camHUD);
     PlayState.instance.camHUD.alpha = 0;
-    fadeOut = false;
   }
 
   function onPause(event:ScriptEvent):Void
@@ -390,13 +375,6 @@ class ThornsRemnantsMixSong extends Song
     super.onResume(event);
 
     FlxTweenUtil.resumeTweensOf(PlayState.instance.camHUD);
-  }
-
-  function onSongEnd(event:ScriptEvent):Void
-  {
-    super.onSongEnd(event);
-
-    PlayState.instance.camGame.visible = false;
   }
 
   function onUpdate(event:UpdateScriptEvent)
@@ -444,8 +422,8 @@ class ThornsRemnantsMixSong extends Song
       {
         time: 0,
         callback: () -> {
-          RetroCameraFade.fadeBlack(PlayState.instance.camGame, 15, 3);
-          PlayState.instance.camGame.fade(0xFF000000, 0, true, null, false);
+          PlayState.instance.camHUD.alpha = 0;
+          PlayState.instance.disableKeys = true;
         }
       },
 
@@ -453,19 +431,13 @@ class ThornsRemnantsMixSong extends Song
         time: Conductor.instance.getBeatTimeInMs(24) / 1000,
         callback: () -> {
           PlayState.instance.disableKeys = false;
-          FlxTween.tween(PlayState.instance.camHUD, {alpha: 1}, 2.08,
-            {
-              onComplete: (_) -> {
-                fadeOut = true;
-              }
-            });
+          FlxTween.tween(PlayState.instance.camHUD, {alpha: 1}, 2.08);
         }
       },
 
       {
         time: Conductor.instance.getBeatTimeInMs(128) / 1000,
         callback: () -> {
-          RetroCameraFade.fadeBlack(PlayState.instance.camGame, 4, 0.5);
           PlayState.instance.currentStage.getNamedProp('pixeloverlay').alpha = 1;
         }
       },
@@ -473,47 +445,14 @@ class ThornsRemnantsMixSong extends Song
       {
         time: Conductor.instance.getBeatTimeInMs(192) / 1000,
         callback: () -> {
-          RetroCameraFade.fadeBlack(PlayState.instance.camGame, 4, 0.5);
           PlayState.instance.currentStage.getNamedProp('pixeloverlay').alpha = 0;
-        }
-      },
-
-      {
-        time: Conductor.instance.getBeatTimeInMs(331) / 1000,
-        callback: () -> {
-          RetroCameraFade.fadeToBlack(PlayState.instance.camGame, 4, 0.5);
-          fadeOut = false;
-        }
-      },
-
-      {
-        time: Conductor.instance.getBeatTimeInMs(334) / 1000,
-        callback: () -> {
-          RetroCameraFade.fadeBlack(PlayState.instance.camGame, 4, 0.3);
-          fadeOut = true;
         }
       },
 
       {
         time: Conductor.instance.getBeatTimeInMs(400) / 1000,
         callback: () -> {
-          RetroCameraFade.fadeBlack(PlayState.instance.camGame, 4, 0.5);
           PlayState.instance.currentStage.getNamedProp('pixeloverlay').alpha = 1;
-        }
-      },
-
-      {
-        time: Conductor.instance.getBeatTimeInMs(464) / 1000,
-        callback: () -> {
-          RetroCameraFade.fadeToBlack(PlayState.instance.camGame, 10, 1.04);
-          fadeOut = false;
-        }
-      },
-
-      {
-        time: Conductor.instance.getBeatTimeInMs(468) / 1000,
-        callback: () -> {
-          FlxTween.tween(PlayState.instance.camHUD, {alpha: 0}, 0.2);
         }
       },
     ];

@@ -21,7 +21,6 @@ class RosesRemnantsMixSong extends Song
   var bgSprite:FunkinSprite;
   var hasPlayedCutscene:Bool;
 
-  var fadeOut:Bool = false;
   var outro:Bool = false;
   var color:Bool = false;
   var sequence:SongSequence;
@@ -45,10 +44,6 @@ class RosesRemnantsMixSong extends Song
   public override function onCountdownStart(event:CountdownScriptEvent):Void
   {
     super.onCountdownStart(event);
-
-    PlayState.instance.camGame.fade(0xFF000000, 0, false, null, false);
-
-    if (hasPlayedCutscene && PlayState.instance.camHUD.alpha < 1) FlxTween.tween(PlayState.instance.camHUD, {alpha: 1}, 0.8, {ease: FlxEase.linear});
 
     // Skip the cutscene if we're playtesting in the Chart Editor.
     if (PlayState.instance.isChartingMode && !hasPlayedCutscene) hasPlayedCutscene = true;
@@ -86,6 +81,7 @@ class RosesRemnantsMixSong extends Song
         startDialogue();
       });
     }
+    else if (PlayState.instance.camHUD.alpha < 1) FlxTween.tween(PlayState.instance.camHUD, {alpha: 1}, 0.8);
   }
 
   function startDialogue()
@@ -116,12 +112,10 @@ class RosesRemnantsMixSong extends Song
     super.onCreate(event);
 
     hasPlayedCutscene = false;
-    fadeOut = false;
     outro = false;
     color = false;
 
     PlayState.instance.camHUD.alpha = 0;
-    PlayState.instance.camGame.fade(0xFF000000, 0, false, null, false);
 
     if (!FlxG.onMobile) // Move pop ups
     {
@@ -156,16 +150,6 @@ class RosesRemnantsMixSong extends Song
 
     hasPlayedCutscene = true;
 
-    if (fadeOut)
-    {
-      RetroCameraFade.fadeToBlack(PlayState.instance.camGame, 10, 0.5);
-      fadeOut = false;
-    }
-    else
-    {
-      PlayState.instance.camGame.fade(0xFF000000, 0, false, null, false);
-    }
-
     if (color)
     {
       while (colorTweens.length > 0)
@@ -199,13 +183,7 @@ class RosesRemnantsMixSong extends Song
       }
     }
 
-    if (outro)
-    {
-      FlxTween.cancelTweensOf(PlayState.instance.camHUD);
-      FlxTween.tween(PlayState.instance.camHUD, {alpha: 1}, 0.5, {ease: FlxEase.linear});
-      PlayState.instance.disableKeys = false;
-      outro = false;
-    }
+    if (PlayState.instance.disableKeys) PlayState.instance.disableKeys = false;
   }
 
   public override function onDialogueEnd()
@@ -218,15 +196,6 @@ class RosesRemnantsMixSong extends Song
   {
     super.onGameOver(event);
     sequence?.destroy();
-
-    fadeOut = false;
-
-    if (outro)
-    {
-      FlxTween.cancelTweensOf(PlayState.instance.camHUD);
-      PlayState.instance.camHUD.alpha = 0;
-      RetroCameraFade.fadeBlack(PlayState.instance.camGame, 10, 1);
-    }
   }
 
   function onPause()
@@ -287,9 +256,7 @@ class RosesRemnantsMixSong extends Song
     }
 
     FlxTween.cancelTweensOf(PlayState.instance.currentStage.getNamedProp('black'));
-    RetroCameraFade.fadeBlack(PlayState.instance.camGame, 10, 3);
     PlayState.instance.currentStage.getNamedProp('black').alpha = 0.9;
-    PlayState.instance.camGame.fade(0xFF000000, 0, true, null, false);
   }
 
   function onSongLoaded(event:SongLoadScriptEvent)
@@ -297,19 +264,11 @@ class RosesRemnantsMixSong extends Song
     sequence?.destroy();
 
     var sequenceData = [
-      {
-        time: Conductor.instance.getBeatTimeInMs(30) / 1000,
-        callback: () -> {
-          RetroCameraFade.fadeToBlack(PlayState.instance.camGame, 10, 2);
-        }
-      },
 
       {
         time: Conductor.instance.getBeatTimeInMs(34) / 1000,
         callback: () -> {
-          RetroCameraFade.fadeBlack(PlayState.instance.camGame, 5, 0.25);
           PlayState.instance.currentStage.getNamedProp('black').alpha = 0;
-          fadeOut = true;
         }
       },
 
@@ -337,10 +296,9 @@ class RosesRemnantsMixSong extends Song
           FlxTween.tween(PlayState.instance.currentStage.getNamedProp('skyEvil'), {alpha: 1}, 7.05, {ease: FlxEase.backIn});
           FlxTween.tween(PlayState.instance.currentStage.getNamedProp('sky'), {alpha: 0}, 7.05, {ease: FlxEase.backIn});
 
-          FlxTween.tween(PlayState.instance.currentStage.getNamedProp('black'), {alpha: 0}, 7.05, {ease: FlxEase.linear});
+          FlxTween.tween(PlayState.instance.currentStage.getNamedProp('black'), {alpha: 0}, 7.05);
           FlxTween.tween(PlayState.instance.currentStage.getNamedProp('freaks'), {alpha: 1}, 7.05,
             {
-              ease: FlxEase.linear,
               onComplete: (_) -> {
                 PlayState.instance.currentStage.getNamedProp('freaksColor').alpha = 0;
                 color = false;
@@ -362,7 +320,6 @@ class RosesRemnantsMixSong extends Song
 
             colorTweens.push(FlxTween.num(0, 1, 7.05,
               {
-                ease: FlxEase.linear,
                 onComplete: (t:FlxTween) -> {
                   colorTweens.remove(t);
                 }
@@ -380,21 +337,12 @@ class RosesRemnantsMixSong extends Song
       },
 
       {
-        time: Conductor.instance.getBeatTimeInMs(225) / 1000,
-        callback: () -> {
-          RetroCameraFade.fadeToBlack(PlayState.instance.camGame, 5, 0.4);
-          fadeOut = false;
-        }
-      },
-
-      {
         time: Conductor.instance.getBeatTimeInMs(226) / 1000,
         callback: () -> {
           PlayState.instance.currentStage.getNamedProp('black').zIndex = 110;
           PlayState.instance.currentStage.refresh();
 
           PlayState.instance.currentStage.getNamedProp('black').alpha = 0.9;
-          RetroCameraFade.fadeBlack(PlayState.instance.camGame, 5, 0.4);
         }
       },
 
@@ -402,15 +350,12 @@ class RosesRemnantsMixSong extends Song
         time: Conductor.instance.getBeatTimeInMs(229) / 1000,
         callback: () -> {
           FlxTween.tween(PlayState.instance.currentStage.getNamedProp('black'), {alpha: 0}, 0.55, {ease: FlxEase.backIn});
-          fadeOut = true;
         }
       },
 
       {
         time: Conductor.instance.getBeatTimeInMs(278) / 1000,
         callback: () -> {
-          RetroCameraFade.fadeToBlack(PlayState.instance.camGame, 10, 2);
-          fadeOut = false;
           outro = true;
         }
       },
@@ -418,14 +363,7 @@ class RosesRemnantsMixSong extends Song
       {
         time: Conductor.instance.getBeatTimeInMs(282) / 1000,
         callback: () -> {
-          FlxTween.tween(PlayState.instance.camHUD, {alpha: 0}, 0.2,
-            {
-              ease: FlxEase.linear,
-              onComplete: (_) -> {
-                PlayState.instance.camGame.fade(0xFF000000, 0, false, null, false);
-                PlayState.instance.disableKeys = true;
-              }
-            });
+          PlayState.instance.disableKeys = true;
         }
       },
     ];

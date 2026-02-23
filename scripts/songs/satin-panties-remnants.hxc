@@ -1,11 +1,9 @@
-import funkin.modding.module.ModuleHandler;
 import funkin.util.SongSequence;
 import funkin.play.song.Song;
 import funkin.save.Save;
 import funkin.play.PlayState;
 import funkin.util.FlxTweenUtil;
 import flixel.tweens.FlxTween;
-import flixel.tweens.FlxEase;
 import funkin.util.SongSequence;
 import funkin.Conductor;
 
@@ -45,11 +43,9 @@ class SatinPantiesRemnantsMixSong extends Song
 
     if (!outro) return;
     FlxTween.cancelTweensOf(PlayState.instance.camHUD);
-    PlayState.instance.camCutscene?.stopFX();
 
-    PlayState.instance.camCutscene.fade(0xFF000000, 0.5, true, null, false);
     PlayState.instance.camHUD.alpha = 1;
-    PlayState.instance.tweenCameraToPosition(787, 400, 0, FlxEase.instant);
+    PlayState.instance.tweenCameraToPosition(787, 400, 0);
     PlayState.instance.disableKeys = false;
     outro = false;
   }
@@ -68,7 +64,6 @@ class SatinPantiesRemnantsMixSong extends Song
   {
     super.onPause(event);
 
-    PlayState.instance.camCutscene?.active = false;
     FlxTweenUtil.pauseTweensOf(PlayState.instance.camHUD);
   }
 
@@ -76,7 +71,6 @@ class SatinPantiesRemnantsMixSong extends Song
   {
     super.onResume(event);
 
-    PlayState.instance.camCutscene?.active = true;
     FlxTweenUtil.resumeTweensOf(PlayState.instance.camHUD);
   }
 
@@ -97,15 +91,13 @@ class SatinPantiesRemnantsMixSong extends Song
       {
         time: Conductor.instance.getBeatTimeInMs(176) / 1000,
         callback: () -> {
-          PlayState.instance.camCutscene.fade(0xFF000000, 4.2, false, null, false);
+          outro = true;
           FlxTween.tween(PlayState.instance.camHUD, {alpha: 0}, 1,
             {
-              ease: FlxEase.linear,
-              onComplete: function(_) {
+              onComplete: (_) -> {
                 PlayState.instance.disableKeys = true;
               }
             });
-          outro = true;
         }
       },
     ];
