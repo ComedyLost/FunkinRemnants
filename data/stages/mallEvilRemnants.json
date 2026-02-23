@@ -207,10 +207,11 @@
     {
       "alpha": 1,
       "angle": 0,
-      "animType": "sparrow",
+      "animType": "animateatlas",
       "animations": [
         {
           "assetPath": null,
+          "animType": "symbol",
           "flipX": false,
           "flipY": false,
           "frameIndices": [],
@@ -221,7 +222,7 @@
           "prefix": "Boppers Horrorland Middle"
         }
       ],
-      "assetPath": "remnants/evil/MiddleBoppers",
+      "assetPath": "remnants/boppers",
       "blend": "",
       "color": "#FFFFFF",
       "danceEvery": 1,
@@ -238,10 +239,11 @@
     {
       "alpha": 1,
       "angle": 0,
-      "animType": "sparrow",
+      "animType": "animateatlas",
       "animations": [
         {
           "assetPath": null,
+          "animType": "symbol",
           "flipX": false,
           "flipY": false,
           "frameIndices": [],
@@ -252,7 +254,7 @@
           "prefix": "Plush Escalator"
         }
       ],
-      "assetPath": "remnants/evil/PlushBopper",
+      "assetPath": "remnants/beppers",
       "blend": "",
       "color": "#FFFFFF",
       "danceEvery": 1,
@@ -269,10 +271,11 @@
     {
       "alpha": 1,
       "angle": 0,
-      "animType": "sparrow",
+      "animType": "animateatlas",
       "animations": [
         {
           "assetPath": null,
+          "animType": "symbol",
           "flipX": false,
           "flipY": false,
           "frameIndices": [],
@@ -283,7 +286,7 @@
           "prefix": "Phanto Bop Scared"
         }
       ],
-      "assetPath": "remnants/evil/PhantoBopperScared",
+      "assetPath": "remnants/beppers",
       "blend": "",
       "color": "#FFFFFF",
       "danceEvery": 1,
@@ -300,10 +303,11 @@
     {
       "alpha": 1,
       "angle": 0,
-      "animType": "sparrow",
+      "animType": "animateatlas",
       "animations": [
         {
           "assetPath": null,
+          "animType": "symbol",
           "flipX": false,
           "flipY": false,
           "frameIndices": [],
@@ -311,10 +315,10 @@
           "looped": false,
           "name": "idle",
           "offsets": [0, 0],
-          "prefix": "spg exe boppin"
+          "prefix": "spg exe boppin "
         }
       ],
-      "assetPath": "remnants/evil/SPG64BopperEvil",
+      "assetPath": "remnants/beppers",
       "blend": "",
       "color": "#FFFFFF",
       "danceEvery": 1,
@@ -331,10 +335,11 @@
     {
       "alpha": 1,
       "angle": 0,
-      "animType": "sparrow",
+      "animType": "animateatlas",
       "animations": [
         {
           "assetPath": null,
+          "animType": "symbol",
           "flipX": false,
           "flipY": false,
           "frameIndices": [],
@@ -345,7 +350,7 @@
           "prefix": "lz boppin"
         }
       ],
-      "assetPath": "remnants/evil/LZDigiArtsBopper",
+      "assetPath": "remnants/beppers",
       "blend": "",
       "color": "#FFFFFF",
       "danceEvery": 1,
