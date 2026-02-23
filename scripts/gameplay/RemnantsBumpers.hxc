@@ -123,6 +123,7 @@ class RemnantsBumpers extends Module
     hasChangedWeek();
 
     setIsFirstOfWeek();
+    isPlaying = false;
 
     // Prevent the bumper from playing if there's no video.
     if (getWeek(songLowercase) == null) return false;
