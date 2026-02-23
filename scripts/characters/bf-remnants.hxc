@@ -207,8 +207,12 @@ class BoyfriendRemnantsCharacter extends MultiAnimateAtlasCharacter
         case "censor":
           holdTimer = 0;
           this.playSingAnimation(event.note.noteData.getDirection(), false, 'censor');
-        case "bf-prep", "bf-attack", "bf-dodge":
-          return;
+        case "bf-prep":
+          holdTimer = 0;
+          this.playAnimation('preAttack', true, false);
+        case "bf-attack":
+          holdTimer = 0;
+          this.playAnimation('attack', true, false);
         default:
           super.onNoteHit(event);
       }
@@ -223,7 +227,6 @@ class BoyfriendRemnantsCharacter extends MultiAnimateAtlasCharacter
       case "bf-attack":
         playCanExplodeAnim();
       case "battle-dodge-remnants":
-        this.playAnimation('hit', true, false);
       default:
         super.onNoteMiss(event);
     }
