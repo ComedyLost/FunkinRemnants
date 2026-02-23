@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TextureAtlas imagePath="suntpajim-remnants.png" width="78" height="117">
+<SubTexture name="suntpajim0000" x="0" y="0" width="72" height="106" frameX="-0" frameY="-0" frameWidth="72" frameHeight="106"/>
+<SubTexture name="suntpajim0001" x="0" y="0" width="72" height="106" frameX="-0" frameY="-0" frameWidth="72" frameHeight="106"/>
+<SubTexture name="suntpajim0002" x="0" y="0" width="72" height="106" frameX="-0" frameY="-0" frameWidth="72" frameHeight="106"/>
+<SubTexture name="suntpajim0003" x="0" y="0" width="72" height="106" frameX="-0" frameY="-0" frameWidth="72" frameHeight="106"/>
+<SubTexture name="suntpajim0004" x="0" y="0" width="72" height="106" frameX="-0" frameY="-0" frameWidth="72" frameHeight="106"/>
+<SubTexture name="suntpajim0005" x="0" y="0" width="72" height="106" frameX="-0" frameY="-0" frameWidth="72" frameHeight="106"/>
+</TextureAtlas>

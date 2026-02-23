@@ -78,7 +78,7 @@
       "flipX": false
     },
     {
-      "offsets": [90, 0],
+      "offsets": [65, 8],
       "prefix": "left alt",
       "animType": "framelabel",
       "flipX": false,
@@ -89,7 +89,7 @@
       "frameRate": 24
     },
     {
-      "offsets": [115, 0],
+      "offsets": [65, 8],
       "prefix": "down alt",
       "animType": "framelabel",
       "flipX": false,
@@ -100,7 +100,7 @@
       "frameRate": 24
     },
     {
-      "offsets": [70, 5],
+      "offsets": [65, 8],
       "prefix": "up alt",
       "animType": "framelabel",
       "flipX": false,
@@ -111,7 +111,7 @@
       "frameRate": 24
     },
     {
-      "offsets": [85, 0],
+      "offsets": [65, 8],
       "prefix": "right alt",
       "animType": "framelabel",
       "flipX": false,

@@ -40,7 +40,15 @@
       "name": "sentpajim",
       "prefix": "sentpajim",
       "assetPath": "characters/sentpajim-remnants",
-      "offsets": [-25, -35]
+      "offsets": [-25, -35],
+      "looped": true
+    },
+    {
+      "name": "suntpajim",
+      "prefix": "suntpajim",
+      "assetPath": "characters/suntpajim-remnants",
+      "offsets": [-25, -40],
+      "looped": true
     }
   ]
 }

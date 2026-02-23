@@ -354,6 +354,20 @@ class RosesRemnantsMixSong extends Song
       },
 
       {
+        time: Conductor.instance.getBeatTimeInMs(259) / 1000,
+        callback: () -> {
+          if (!FlxG.random.bool(25)) // Sunflower Real
+          {
+            PlayState.instance.currentStage.getDad().playAnimation('sentpajim', true, false);
+          }
+          else
+          {
+            PlayState.instance.currentStage.getDad().playAnimation('suntpajim', true, false);
+          }
+        }
+      },
+
+      {
         time: Conductor.instance.getBeatTimeInMs(278) / 1000,
         callback: () -> {
           outro = true;
