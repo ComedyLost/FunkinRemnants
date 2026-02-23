@@ -81,21 +81,21 @@ class CocoaRemnantsMixSong extends Song
     FlxTweenUtil.resumeTweensOf(PlayState.instance.camHUD);
   }
 
-  function onSongStart(event:ScriptEvent):Void
-  {
-    super.onSongStart(event);
-
-    PlayState.instance.camCutscene.fade(0xFF000000, 4.8, true, null, false);
-    PlayState.instance.camHUD.fade(0xFF000000, 0, true, null, false);
-    PlayState.instance.camHUD.alpha = 0;
-    PlayState.instance.disableKeys = true;
-  }
-
   function onSongLoaded(event:SongLoadScriptEvent)
   {
     sequence?.destroy();
 
     var sequenceData = [
+      {
+        time: 0,
+        callback: () -> {
+          PlayState.instance.camCutscene.fade(0xFF000000, 4.8, true, null, false);
+          PlayState.instance.camHUD.fade(0xFF000000, 0, true, null, false);
+          PlayState.instance.camHUD.alpha = 0;
+          PlayState.instance.disableKeys = true;
+        }
+      },
+
       {
         time: Conductor.instance.getBeatTimeInMs(60) / 1000,
         callback: () -> {

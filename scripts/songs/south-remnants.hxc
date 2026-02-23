@@ -1,11 +1,9 @@
-import funkin.modding.module.ModuleHandler;
 import funkin.play.song.Song;
 import funkin.play.PlayState;
 import funkin.save.Save;
 import funkin.graphics.FunkinSprite;
 import funkin.util.FlxTweenUtil;
 import flixel.util.FlxTimer;
-import flixel.FlxG;
 import flixel.tweens.FlxTween;
 import flixel.tweens.FlxEase;
 import funkin.audio.FunkinSound;
@@ -14,8 +12,6 @@ import funkin.Conductor;
 
 class SouthRemnantsMixSong extends Song
 {
-  var black:FunkinSprite;
-  var fadeOut:Bool = false;
   var sequence:SongSequence;
 
   var hasPlayedMonsterCutscene:Bool = false;
@@ -41,15 +37,6 @@ class SouthRemnantsMixSong extends Song
 
     mosnerCutsceneAudio = FunkinSound.load(Paths.sound('mosnerCutscene'), 1.0, false, true);
 
-    black = new FunkinSprite(-20, -20);
-    black.makeSolidColor(Std.int(FlxG.width * 1.5), Std.int(FlxG.height * 1.5), 0xFFFFFFFF);
-    black.color = 0xFF000000;
-    black.cameras = [PlayState.instance.camCutscene];
-    PlayState.instance.add(black);
-
-    PlayState.instance.camHUD.alpha = 0;
-    fadeOut = false;
-
     var boyfriend:BaseCharacter = PlayState.instance?.currentStage?.getBoyfriend() ?? null;
     boyfriend.shouldAlternate = true;
     boyfriend.idleSuffix = '-spooky';
@@ -63,20 +50,7 @@ class SouthRemnantsMixSong extends Song
   {
     super.onSongRetry(event);
 
-    FlxG.camera.stopFX();
-    FlxTween.cancelTweensOf(black);
     FlxTween.cancelTweensOf(PlayState.instance.camHUD);
-
-    if (fadeOut)
-    {
-      FlxTween.tween(black, {alpha: 1}, 0.5);
-      FlxTween.tween(PlayState.instance.camHUD, {alpha: 0}, 0.5);
-      fadeOut = false;
-    }
-    else
-    {
-      black.alpha = 1;
-    }
   }
 
   function onGameOver(event:ScriptEvent):Void
@@ -84,18 +58,14 @@ class SouthRemnantsMixSong extends Song
     super.onGameOver(event);
     sequence?.destroy();
 
-    FlxG.camera.stopFX();
     FlxTween.cancelTweensOf(PlayState.instance.camHUD);
     PlayState.instance.camHUD.alpha = 0;
-    fadeOut = false;
   }
 
   function onPause(event:ScriptEvent):Void
   {
     super.onPause(event);
 
-    FlxG.camera?.active = false;
-    FlxTweenUtil.pauseTweensOf(black);
     FlxTweenUtil.pauseTweensOf(PlayState.instance.camHUD);
   }
 
@@ -103,8 +73,6 @@ class SouthRemnantsMixSong extends Song
   {
     super.onResume(event);
 
-    FlxG.camera?.active = true;
-    FlxTweenUtil.resumeTweensOf(black);
     FlxTweenUtil.resumeTweensOf(PlayState.instance.camHUD);
   }
 
@@ -116,7 +84,7 @@ class SouthRemnantsMixSong extends Song
       {
         time: 0,
         callback: () -> {
-          FlxTween.tween(black, {alpha: 0.5}, 5.64, {ease: FlxEase.smootherStepOut});
+          PlayState.instance.camHUD.alpha = 0;
         }
       },
 
@@ -124,30 +92,19 @@ class SouthRemnantsMixSong extends Song
         time: Conductor.instance.getBeatTimeInMs(29) / 1000,
         callback: () -> {
           FlxTween.tween(PlayState.instance.camHUD, {alpha: 1}, 1);
-          fadeOut = true;
         }
       },
 
       {
         time: Conductor.instance.getBeatTimeInMs(32) / 1000,
         callback: () -> {
-          FlxG.camera.flash(0xFFFFFFFF, 0.5);
           PlayState.instance.currentStage.changeAmbiance(true, 0.0001);
-          black.alpha = 0;
-        }
-      },
-
-      {
-        time: Conductor.instance.getBeatTimeInMs(61) / 1000,
-        callback: () -> {
-          FlxTween.tween(black, {alpha: 0.7}, 0.35, {ease: FlxEase.backIn});
         }
       },
 
       {
         time: Conductor.instance.getBeatTimeInMs(64) / 1000,
         callback: () -> {
-          FlxTween.tween(black, {alpha: 0}, 1);
           PlayState.instance.currentStage.changeAmbiance(false, 1);
         }
       },
@@ -155,53 +112,13 @@ class SouthRemnantsMixSong extends Song
       {
         time: Conductor.instance.getBeatTimeInMs(96) / 1000,
         callback: () -> {
-          FlxTween.tween(black, {alpha: 0.5}, 1);
           PlayState.instance.currentStage.changeAmbiance(true, 1);
-        }
-      },
-
-      {
-        time: Conductor.instance.getBeatTimeInMs(123) / 1000,
-        callback: () -> {
-          FlxTween.tween(black, {alpha: 0.7}, 0.3);
-        }
-      },
-
-      {
-        time: Conductor.instance.getBeatTimeInMs(128) / 1000,
-        callback: () -> {
-          FlxTween.tween(black, {alpha: 0.5}, 1);
-        }
-      },
-
-      {
-        time: Conductor.instance.getBeatTimeInMs(155) / 1000,
-        callback: () -> {
-          FlxTween.tween(black, {alpha: 0.7}, 0.3);
-        }
-      },
-
-      {
-        time: Conductor.instance.getBeatTimeInMs(157) / 1000,
-        callback: () -> {
-          FlxTween.tween(black, {alpha: 0.9}, 1);
-          fadeOut = false;
-        }
-      },
-
-      {
-        time: Conductor.instance.getBeatTimeInMs(160) / 1000,
-        callback: () -> {
-          FlxG.camera.flash(0xFFFFFFFF, 0.5);
-          black.alpha = 0.5;
-          fadeOut = true;
         }
       },
 
       {
         time: Conductor.instance.getBeatTimeInMs(192) / 1000,
         callback: () -> {
-          FlxTween.tween(black, {alpha: 0}, 1);
           PlayState.instance.currentStage.changeAmbiance(false, 1);
         }
       },
@@ -209,23 +126,7 @@ class SouthRemnantsMixSong extends Song
       {
         time: Conductor.instance.getBeatTimeInMs(222) / 1000,
         callback: () -> {
-          FlxTween.tween(black, {alpha: 0.7}, 0.3);
           PlayState.instance.currentStage.changeAmbiance(true, 0.3);
-        }
-      },
-
-      {
-        time: Conductor.instance.getBeatTimeInMs(224) / 1000,
-        callback: () -> {
-          FlxTween.tween(black, {alpha: 0}, 0.5);
-        }
-      },
-
-      {
-        time: Conductor.instance.getBeatTimeInMs(239) / 1000,
-        callback: () -> {
-          FlxTween.tween(black, {alpha: 1}, 0.5);
-          fadeOut = false;
         }
       },
     ];
@@ -252,8 +153,10 @@ class SouthRemnantsMixSong extends Song
 
       mosnerCutsceneAudio.play();
 
-      black.color = 0xFFFFFFFF;
-      FlxTween.tween(black, {alpha: 0}, 6 * (1 / 24));
+      /* Til save monser plz
+        black.color = 0xFFFFFFFF;
+        FlxTween.tween(black, {alpha: 0}, 6 * (1 / 24));
+       */
 
       var currentStage:Stage = PlayState.instance?.currentStage;
       currentStage?.changeAmbiance(true, 0.0001);
@@ -297,10 +200,12 @@ class SouthRemnantsMixSong extends Song
 
       currentStage?.refresh();
 
-      FlxTimer.wait(121 * (1 / 24), () -> {
-        FlxTween.tween(black, {alpha: 1}, 15 * (1 / 24));
-        black.color = 0xFF000000;
-      });
+      /* Water water more fixes please!
+        FlxTimer.wait(121 * (1 / 24), () -> {
+          FlxTween.tween(black, {alpha: 1}, 15 * (1 / 24));
+          black.color = 0xFF000000;
+        });
+       */
 
       FlxTimer.wait(148 * (1 / 24), () -> {
         mosner.alpha = 0;
@@ -312,7 +217,7 @@ class SouthRemnantsMixSong extends Song
 
         FlxTween.tween(mosner, {alpha: 0.3}, 6 * (1 / 24));
 
-        black.alpha = 0;
+        // black.alpha = 0; // Monser needs help
         currentStage?.remove(mosner);
         currentStage?.visible = false;
       });

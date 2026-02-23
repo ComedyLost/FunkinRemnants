@@ -1,18 +1,13 @@
-import funkin.modding.module.ModuleHandler;
 import funkin.save.Save;
 import funkin.play.song.Song;
 import funkin.play.PlayState;
 import funkin.util.FlxTweenUtil;
-import funkin.graphics.FunkinSprite;
 import flixel.tweens.FlxTween;
-import flixel.tweens.FlxEase;
-import flixel.util.FlxTimer;
 import funkin.util.SongSequence;
 import funkin.Conductor;
 
 class SpookeezRemnantsMixSong extends Song
 {
-  var fadeOut:Bool = false;
   var sequence:SongSequence;
 
   public function new()
@@ -45,9 +40,6 @@ class SpookeezRemnantsMixSong extends Song
   {
     super.onCreate(event);
 
-    PlayState.instance.camHUD.fade(0xFF000000, 0, false, null, false);
-    fadeOut = false;
-
     var dad:BaseCharacter = PlayState.instance?.currentStage?.getDad() ?? null;
     dad.shouldAlternate = false;
     dad.idleSuffix = '-remnants';
@@ -57,18 +49,7 @@ class SpookeezRemnantsMixSong extends Song
   {
     super.onSongRetry(event);
 
-    PlayState.instance.camCutscene?.stopFX();
     FlxTween.cancelTweensOf(PlayState.instance.camHUD);
-
-    if (fadeOut)
-    {
-      PlayState.instance.camCutscene.fade(0xFF000000, 0.5, false, null, false);
-      fadeOut = false;
-    }
-    else
-    {
-      PlayState.instance.camCutscene.fade(0xFF000000, 0, false, null, false);
-    }
   }
 
   function onGameOver(event:ScriptEvent):Void
@@ -76,17 +57,13 @@ class SpookeezRemnantsMixSong extends Song
     super.onGameOver(event);
     sequence?.destroy();
 
-    PlayState.instance.camCutscene?.stopFX();
     FlxTween.cancelTweensOf(PlayState.instance.camHUD);
     PlayState.instance.camHUD.alpha = 0;
-    fadeOut = false;
   }
 
   function onPause(event:ScriptEvent):Void
   {
     super.onPause(event);
-
-    PlayState.instance.camCutscene?.active = false;
     FlxTweenUtil.pauseTweensOf(PlayState.instance.camHUD);
   }
 
@@ -94,7 +71,6 @@ class SpookeezRemnantsMixSong extends Song
   {
     super.onResume(event);
 
-    PlayState.instance.camCutscene?.active = true;
     FlxTweenUtil.resumeTweensOf(PlayState.instance.camHUD);
   }
 
@@ -106,7 +82,6 @@ class SpookeezRemnantsMixSong extends Song
       {
         time: 0,
         callback: () -> {
-          PlayState.instance.camCutscene.fade(0xFF000000, 3, true, null, false);
           PlayState.instance.camHUD.alpha = 0;
         }
       },
@@ -114,25 +89,14 @@ class SpookeezRemnantsMixSong extends Song
       {
         time: Conductor.instance.getBeatTimeInMs(15) / 1000,
         callback: () -> {
-          FlxTween.tween(PlayState.instance.camHUD, {alpha: 1}, 0.5, {ease: FlxEase.linear});
-          fadeOut = true;
+          FlxTween.tween(PlayState.instance.camHUD, {alpha: 1}, 0.5);
         }
       },
 
       {
-        time: Conductor.instance.getBeatTimeInMs(139) / 1000,
+        time: Conductor.instance.getBeatTimeInMs(139.75) / 1000,
         callback: () -> {
-          new FlxTimer().start(0.3, _ -> {
-            PlayState.instance.currentStage.changeAmbiance(true, 0.1);
-          });
-        }
-      },
-
-      {
-        time: Conductor.instance.getBeatTimeInMs(240) / 1000,
-        callback: () -> {
-          PlayState.instance.camCutscene.fade(0xFF000000, 1.66, false, null, false);
-          fadeOut = false;
+          PlayState.instance.currentStage.changeAmbiance(true, 0.1);
         }
       },
     ];

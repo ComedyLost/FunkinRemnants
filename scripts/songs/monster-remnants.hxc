@@ -1,8 +1,6 @@
-import funkin.modding.module.ModuleHandler;
 import funkin.play.song.Song;
 import funkin.play.PlayState;
 import funkin.save.Save;
-import funkin.graphics.FunkinSprite;
 import funkin.Preferences;
 import funkin.util.FlxTweenUtil;
 import flixel.FlxG;
@@ -14,7 +12,6 @@ import funkin.Conductor;
 
 class MonsterRemnantsMixSong extends Song
 {
-  var black:FunkinSprite;
   var sequence:SongSequence;
 
   public function new()
@@ -34,13 +31,6 @@ class MonsterRemnantsMixSong extends Song
   function onCreate(event:ScriptEvent):Void
   {
     super.onCreate(event);
-
-    black = new FunkinSprite(-20, -20);
-    black.makeSolidColor(Std.int(FlxG.width * 1.5), Std.int(FlxG.height * 1.5), 0xFF000000);
-    black.cameras = [PlayState.instance.camCutscene];
-    PlayState.instance.add(black);
-
-    black.alpha = 1;
 
     if (!FlxG.onMobile) // Move pop ups
     {
@@ -70,11 +60,7 @@ class MonsterRemnantsMixSong extends Song
   {
     super.onSongRetry(event);
 
-    FlxG.camera.stopFX();
-    FlxTween.cancelTweensOf(black);
     FlxTween.cancelTweensOf(PlayState.instance.camHUD);
-
-    black.alpha = 1;
   }
 
   function onGameOver(event:ScriptEvent):Void
@@ -82,17 +68,13 @@ class MonsterRemnantsMixSong extends Song
     super.onGameOver(event);
     sequence?.destroy();
 
-    FlxG.camera.stopFX();
     FlxTween.cancelTweensOf(PlayState.instance.camHUD);
-    PlayState.instance.camHUD.alpha = 0;
   }
 
   function onPause(event:ScriptEvent):Void
   {
     super.onPause(event);
 
-    FlxG.camera?.active = false;
-    FlxTweenUtil.pauseTweensOf(black);
     FlxTweenUtil.pauseTweensOf(PlayState.instance.camHUD);
   }
 
@@ -100,8 +82,6 @@ class MonsterRemnantsMixSong extends Song
   {
     super.onResume(event);
 
-    FlxG.camera?.active = true;
-    FlxTweenUtil.resumeTweensOf(black);
     FlxTweenUtil.resumeTweensOf(PlayState.instance.camHUD);
   }
 
@@ -113,60 +93,21 @@ class MonsterRemnantsMixSong extends Song
       {
         time: 0,
         callback: () -> {
-          PlayState.instance.currentStage.changeAmbiance(true, 0.0000001);
-          FlxTween.tween(black, {alpha: 0.8}, 7, {ease: FlxEase.smootherStepOut});
-        }
-      },
-
-      {
-        time: Conductor.instance.getBeatTimeInMs(60) / 1000,
-        callback: () -> {
-          FlxTween.tween(black, {alpha: 0.5}, 6, {ease: FlxEase.backIn});
-        }
-      },
-
-      {
-        time: Conductor.instance.getBeatTimeInMs(96) / 1000,
-        callback: () -> {
-          FlxTween.tween(black, {alpha: 0.3}, 8, {ease: FlxEase.backIn});
+          if (PlayState.instance.camHUD.alpha != 1) PlayState.instance.camHUD.alpha = 1;
         }
       },
 
       {
         time: Conductor.instance.getBeatTimeInMs(128) / 1000,
         callback: () -> {
-          FlxG.camera.flash(0xFFFFFFFF, 0.5);
-          PlayState.instance.currentStage.changeAmbiance(false, 0.1);
-          black.alpha = 0;
+          PlayState.instance.currentStage.changeAmbiance(false, 0.0001);
         }
       },
 
       {
         time: Conductor.instance.getBeatTimeInMs(227) / 1000,
         callback: () -> {
-          FlxTween.tween(black, {alpha: 0.3}, 0.3);
           PlayState.instance.currentStage.changeAmbiance(true, 0.5);
-        }
-      },
-
-      {
-        time: Conductor.instance.getBeatTimeInMs(322) / 1000,
-        callback: () -> {
-          FlxTween.tween(black, {alpha: 0.5}, 0.5);
-        }
-      },
-
-      {
-        time: Conductor.instance.getBeatTimeInMs(340) / 1000,
-        callback: () -> {
-          FlxTween.tween(black, {alpha: 0.7}, 6);
-        }
-      },
-
-      {
-        time: Conductor.instance.getBeatTimeInMs(356) / 1000,
-        callback: () -> {
-          FlxTween.tween(black, {alpha: 1}, 0.4);
         }
       },
     ];
