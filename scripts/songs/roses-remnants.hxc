@@ -198,8 +198,10 @@ class RosesRemnantsMixSong extends Song
     sequence?.destroy();
   }
 
-  function onPause()
+  function onPause(event:ScriptEvent):Void
   {
+    super.onPause(event);
+
     PlayState.instance.camGame?.active = false;
     FlxTweenUtil.pauseTweensOf(PlayState.instance.camHUD);
     FlxTweenUtil.pauseTweensOf(PlayState.instance.currentStage.getNamedProp('freaks'));
@@ -212,8 +214,10 @@ class RosesRemnantsMixSong extends Song
       i.active = false;
   }
 
-  function onResume()
+  function onResume(event:ScriptEvent):Void
   {
+    super.onResume(event);
+
     PlayState.instance.camGame?.active = true;
     FlxTweenUtil.resumeTweensOf(PlayState.instance.camHUD);
     FlxTweenUtil.resumeTweensOf(PlayState.instance.currentStage.getNamedProp('freaks'));
