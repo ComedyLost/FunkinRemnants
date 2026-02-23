@@ -1,0 +1,53 @@
+import flixel.FlxG;
+import funkin.play.PlayState;
+import funkin.graphics.FunkinSprite;
+import funkin.play.notes.notestyle.NoteStyle;
+import funkin.modding.module.Module;
+import flixel.tweens.FlxTween;
+import funkin.util.TouchUtil;
+import funkin.FunkinMemory;
+import funkin.Highscore;
+import funkin.Conductor;
+
+class RemnantsPlayState extends Module
+{
+  var swappedIcon:Bool = false;
+
+  public function new()
+  {
+    super('RemnantsPlayState');
+  }
+
+  override function onUpdate(event:UpdateScriptEvent)
+  {
+    super.onUpdate(event);
+
+    if (!RemnantsContentUtil.remnantsContentEnabled()) return;
+
+    if (PlayState.instance != null && !PlayState.instance.isGamePaused)
+    {
+      var mobileTap:Bool = (FlxG.onMobile && TouchUtil.justPressed && TouchUtil.overlapsComplex(PlayState.instance.iconP1));
+      if ((FlxG.keys.justPressed.NINE || mobileTap) && PlayState.instance.iconP1 != null)
+      {
+        FlxG.signals.postUpdate.addOnce(remnantsOldIcon);
+      }
+    }
+  }
+
+  function remnantsOldIcon()
+  {
+    if (PlayState.instance == null) return;
+    if (PlayState.instance.iconP1.characterId == "bf-old")
+    {
+      if (!swappedIcon)
+      {
+        swappedIcon = true;
+        PlayState.instance.iconP1.loadCharacter("old-bf-remnants");
+      }
+    }
+    else
+    {
+      swappedIcon = false;
+    }
+  }
+}
