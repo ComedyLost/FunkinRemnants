@@ -176,40 +176,37 @@ class EggnogRemnantsMixSong extends Song
   {
     super.onUpdate(event);
 
-    if (!ModuleHandler.getModule('RemnantsBumpers').isPlaying)
+    if (FlxG.onMobile)
     {
-      if (FlxG.onMobile)
-      {
-        isMobilePauseButtonPressed = TouchUtil.overlapsComplex(PlayState.instance.pauseButton) && TouchUtil.justPressed;
-      }
+      isMobilePauseButtonPressed = TouchUtil.overlapsComplex(PlayState.instance.pauseButton) && TouchUtil.justPressed;
+    }
 
-      if (PlayState.instance.isInCutscene)
+    if (PlayState.instance.isInCutscene)
+    {
+      if ((PlayState.instance.controls.CUTSCENE_ADVANCE || isMobilePauseButtonPressed) && !cutsceneSkipped)
       {
-        if ((PlayState.instance.controls.CUTSCENE_ADVANCE || isMobilePauseButtonPressed) && !cutsceneSkipped)
+        if (!canSkipCutscene)
         {
-          if (!canSkipCutscene)
-          {
-            trace('cant skip yet!');
-            FlxTween.tween(skipText, {alpha: 1}, 0.5, {ease: FlxEase.quadOut});
-            new FlxTimer().start(0.5, _ -> {
-              canSkipCutscene = true;
-              trace('can skip!');
-            });
-          }
+          trace('cant skip yet!');
+          FlxTween.tween(skipText, {alpha: 1}, 0.5, {ease: FlxEase.quadOut});
+          new FlxTimer().start(0.5, _ -> {
+            canSkipCutscene = true;
+            trace('can skip!');
+          });
         }
       }
+    }
 
-      if ((PlayState.instance.controls.CUTSCENE_ADVANCE || isMobilePauseButtonPressed) && canSkipCutscene && !cutsceneSkipped)
-      {
-        PlayState.instance.camCutscene.fade(0xFF000000, 0.5, false, null, true);
-        FlxTween.tween(skipText, {alpha: 0}, 0.5, {ease: FlxEase.quadOut});
-        cutsceneSkipped = true;
-        santaSound.stop();
-        shootSound.stop();
-        new FlxTimer().start(0.5, function(tmr) {
-          PlayState.instance.endSong(true);
-        });
-      }
+    if ((PlayState.instance.controls.CUTSCENE_ADVANCE || isMobilePauseButtonPressed) && canSkipCutscene && !cutsceneSkipped)
+    {
+      PlayState.instance.camCutscene.fade(0xFF000000, 0.5, false, null, true);
+      FlxTween.tween(skipText, {alpha: 0}, 0.5, {ease: FlxEase.quadOut});
+      cutsceneSkipped = true;
+      santaSound.stop();
+      shootSound.stop();
+      new FlxTimer().start(0.5, function(tmr) {
+        PlayState.instance.endSong(true);
+      });
     }
   }
 

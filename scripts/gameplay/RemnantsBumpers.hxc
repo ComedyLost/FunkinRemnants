@@ -80,7 +80,7 @@ class RemnantsBumpers extends Module
 
   public function new()
   {
-    super('RemnantsBumpers');
+    super('RemnantsBumpers', -1000);
   }
 
   override public function onCountdownStart(event:CountdownScriptEvent):Void
@@ -133,6 +133,7 @@ class RemnantsBumpers extends Module
     if (isFirstOfWeek && !playedBumper)
     {
       isPlaying = true;
+      disableUpdateNext = false;
       playedBumper = true;
       trace("Playing the bumper '" + currentWeek + "'");
 
@@ -218,5 +219,19 @@ class RemnantsBumpers extends Module
       }
     }
     return null;
+  }
+
+  var disableUpdateNext:Bool = false;
+
+  override public function onUpdate(event:UpdateScriptEvent):Void
+  {
+    super.onUpdate(event);
+
+    // Don't continue an update call while the bumper is playing.
+    if (isPlaying)
+    {
+      if (disableUpdateNext) event.stopPropagation();
+      disableUpdateNext = true;
+    }
   }
 }
