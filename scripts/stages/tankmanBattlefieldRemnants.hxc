@@ -254,14 +254,20 @@ class TankmanBattlefieldRemnantsStage extends Stage
     tankAngle2 += elapsed * tankSpeed2;
 
     var tankRolling = getNamedProp('tankRolling');
-    tankRolling.angle = tankAngle - 90 + 15;
-    tankRolling.x = tankX + Math.cos(FlxAngle.asRadians((tankAngle * daAngleOffset) + 180)) * 1500;
-    tankRolling.y = 1300 + Math.sin(FlxAngle.asRadians((tankAngle * daAngleOffset) + 180)) * 1100;
+    if (tankRolling != null)
+    {
+      tankRolling.angle = tankAngle - 90 + 15;
+      tankRolling.x = tankX + Math.cos(FlxAngle.asRadians((tankAngle * daAngleOffset) + 180)) * 1500;
+      tankRolling.y = 1300 + Math.sin(FlxAngle.asRadians((tankAngle * daAngleOffset) + 180)) * 1100;
+    }
 
     var tankRollingExtra = getNamedProp('tankRollingExtra');
-    tankRollingExtra.angle = tankAngle2 - 90 + 15;
-    tankRollingExtra.x = tankX + Math.cos(FlxAngle.asRadians((tankAngle2 * daAngleOffset) + 180)) * 1500;
-    tankRollingExtra.y = 1300 + Math.sin(FlxAngle.asRadians((tankAngle2 * daAngleOffset) + 180)) * 1100;
+    if (tankRollingExtra != null)
+    {
+      tankRollingExtra.angle = tankAngle2 - 90 + 15;
+      tankRollingExtra.x = tankX + Math.cos(FlxAngle.asRadians((tankAngle2 * daAngleOffset) + 180)) * 1500;
+      tankRollingExtra.y = 1300 + Math.sin(FlxAngle.asRadians((tankAngle2 * daAngleOffset) + 180)) * 1100;
+    }
   }
 
   function stormOn(duration:Float)
