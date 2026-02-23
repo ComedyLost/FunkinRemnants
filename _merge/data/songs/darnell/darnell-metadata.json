@@ -1,4 +1,10 @@
 [
-  { "op": "add", "path": "/playData/songVariations/-", "value": "remnants" },
-  { "op": "add", "path": "/playData/songVariations/-", "value": "bfremnants" }
+  [
+    { "op": "test", "path": "/playData/songVariations", "inverse": true },
+    { "op": "add", "path": "/playData/songVariations", "value": [] }
+  ],
+  [
+    { "op": "add", "path": "/playData/songVariations/-", "value": "remnants" },
+    { "op": "add", "path": "/playData/songVariations/-", "value": "bfremnants" }
+  ]
 ]

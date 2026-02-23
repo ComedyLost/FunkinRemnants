@@ -205,7 +205,6 @@ class MILFRemnantsMixSong extends Song
       && ModuleHandler.getModule('RemnantsBumpers').scriptCall('setupBumper'))
     {
       event.cancel();
-      ModuleHandler.getModule('RemnantsBumpers').scriptCall('setPlayedBumper', true);
     }
 
     // Properly reset lights and collision when restarting the song.

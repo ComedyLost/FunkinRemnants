@@ -58,7 +58,6 @@ class EggnogRemnantsMixSong extends Song
       && ModuleHandler.getModule('RemnantsBumpers').scriptCall('setupBumper'))
     {
       event.cancel();
-      ModuleHandler.getModule('RemnantsBumpers').scriptCall('setPlayedBumper', true);
     }
   }
 

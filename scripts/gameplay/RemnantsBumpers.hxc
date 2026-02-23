@@ -208,7 +208,7 @@ class RemnantsBumpers extends Module
    * If it fails, it returns null.
    * This is also used for get the bumper video path.
    */
-  function getWeek(song:String, variation:String):String
+  function getWeek(song:String, ?variation:Null<String>):String
   {
     if (song == null || song == '') return null;
     for (weekName in weeks.keys())

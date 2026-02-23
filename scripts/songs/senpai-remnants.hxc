@@ -64,7 +64,6 @@ class SenpaiRemnantsMixSong extends Song
         PlayState.instance.refresh();
       }
 
-      ModuleHandler.getModule('RemnantsBumpers').scriptCall('setPlayedBumper', true);
       event.cancel();
     }
     else

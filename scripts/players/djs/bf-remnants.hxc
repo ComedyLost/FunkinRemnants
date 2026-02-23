@@ -11,6 +11,12 @@ using StringTools;
 
 class BoyfriendRemnantsFreeplayDJ extends AnimateAtlasFreeplayDJ
 {
+  final CARTOON_SOUND_CLICK_FRAME:Int = 76;
+  final CARTOON_SOUND_CARTOON_FRAME:Int = 80;
+  final CARTOON_LOOP_BLINK_FRAME:Int = 107;
+  final CARTOON_LOOP_FRAME:Int = 116;
+  final CARTOON_CHANNEL_CHANGE_FRAME:Int = 63;
+
   public var cartoonSnd:FunkinSound = null;
   public var playingCartoon:Bool = false;
 
@@ -25,8 +31,8 @@ class BoyfriendRemnantsFreeplayDJ extends AnimateAtlasFreeplayDJ
     animation.onFrameChange.add((name, number) -> {
       if (name == playableCharData.getAnimationPrefix('cartoon'))
       {
-        if (number == playableCharData.getCartoonSoundClickFrame()) FunkinSound.playOnce(Paths.sound('remote_click'));
-        if (number == playableCharData.getCartoonSoundCartoonFrame()) runTvLogic();
+        if (number == CARTOON_SOUND_CLICK_FRAME) FunkinSound.playOnce(Paths.sound('remote_click'));
+        if (number == CARTOON_SOUND_CARTOON_FRAME) runTvLogic();
       }
     });
   }
@@ -66,12 +72,12 @@ class BoyfriendRemnantsFreeplayDJ extends AnimateAtlasFreeplayDJ
     {
       // trace('Finished cartoon');
 
-      this.CARTOON_CHANNEL_FRAME = FlxG.random.bool(45) ? (playableCharData.getCartoonLoopBlinkFrame()) : (playableCharData.getCartoonLoopFrame());
+      this.CARTOON_CHANNEL_FRAME = FlxG.random.bool(45) ? CARTOON_LOOP_BLINK_FRAME : CARTOON_LOOP_FRAME;
 
       // Character switches channels when the video ends, or at a 10% chance each time his idle loops.
       if (FlxG.random.bool(10))
       {
-        this.CARTOON_CHANNEL_FRAME = playableCharData.getCartoonChannelChangeFrame();
+        this.CARTOON_CHANNEL_FRAME = CARTOON_CHANNEL_CHANGE_FRAME;
       }
       var animPrefix = playableCharData.getAnimationPrefix('cartoon');
       playFlashAnimation(animPrefix, true, false, false, this.CARTOON_CHANNEL_FRAME);

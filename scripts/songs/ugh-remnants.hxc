@@ -62,7 +62,6 @@ class UghRemnantsMixSong extends Song
     if (!ModuleHandler.getModule('RemnantsBumpers').scriptCall('getPlayedBumper')
       && ModuleHandler.getModule('RemnantsBumpers').scriptCall('setupBumper'))
     {
-      ModuleHandler.getModule('RemnantsBumpers').scriptCall('setPlayedBumper', true);
       event.cancel();
     }
     else if (!hasPlayedCutscene)

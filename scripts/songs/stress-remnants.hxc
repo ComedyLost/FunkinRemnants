@@ -87,7 +87,6 @@ class StressRemnantsMixSong extends Song
     {
       bgSprite.alpha = 1;
 
-      ModuleHandler.getModule('RemnantsBumpers').scriptCall('setPlayedBumper', true);
       event.cancel();
     }
     else if (!hasPlayedCutscene)

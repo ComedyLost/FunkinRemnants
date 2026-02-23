@@ -21,13 +21,6 @@
   "freeplayDJ": {
     "assetPath": "freeplay/freeplay-bf-remnants",
     "scriptClass": "BoyfriendRemnantsFreeplayDJ",
-    "cartoon": {
-      "soundClickFrame": 76,
-      "soundCartoonFrame": 80,
-      "loopBlinkFrame": 107,
-      "loopFrame": 116,
-      "channelChangeFrame": 63
-    },
     "fistPump": {
       "introStartFrame": 0,
       "introEndFrame": 4,

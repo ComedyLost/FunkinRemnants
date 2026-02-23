@@ -216,7 +216,6 @@ class WinterHorrorlandRemnantsMixSong extends Song
     {
       event.cancel();
       PlayState.instance.camHUD.visible = false;
-      ModuleHandler.getModule('RemnantsBumpers').scriptCall('setPlayedBumper', true);
     }
     else if (!hasPlayedCutscene)
     {
