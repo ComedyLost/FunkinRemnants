@@ -236,7 +236,7 @@ class BoyfriendRemnantsCharacter extends MultiAnimateAtlasCharacter
       case "bf-attack":
         playCanExplodeAnim();
       case "battle-dodge-remnants":
-        this.playAnimation('hit', true);
+        this.playAnimation('hit', true, false);
       default:
         super.onNoteMiss(event);
     }

@@ -102,7 +102,7 @@ class DadBattleRemnantsMixSong extends Song
       }
 
       attacker.holdTimer = 0;
-      attacker.playAnimation('attack', true);
+      attacker.playAnimation('attack', true, false);
       attackSound.play(true);
 
       var higher:Int = Math.max(attacker.zIndex, target.zIndex);
@@ -136,7 +136,7 @@ class DadBattleRemnantsMixSong extends Song
     {
       case 'battle-prepare-remnants':
         main.holdTimer = 0;
-        main.playAnimation('preAttack', true);
+        main.playAnimation('preAttack', true, false);
 
       case 'battle-attack-remnants':
         var getsHit:Bool = FlxG.random.bool(50);
@@ -147,8 +147,8 @@ class DadBattleRemnantsMixSong extends Song
         main.holdTimer = 0;
         opposite.holdTimer = 0;
 
-        main.playAnimation('attack', true);
-        opposite.playAnimation(animName, true);
+        main.playAnimation('attack', true, false);
+        opposite.playAnimation(animName, true, false);
 
         var higher:Int = Math.max(main.zIndex, opposite.zIndex);
         var lower:Int = Math.min(main.zIndex, opposite.zIndex);
@@ -184,7 +184,7 @@ class DadBattleRemnantsMixSong extends Song
         var animName:String = main.hasAnimation('block') ? 'block' : 'dodge';
 
         main.holdTimer = 0;
-        main.playAnimation(animName, true);
+        main.playAnimation(animName, true, false);
     }
   }
 
@@ -199,7 +199,7 @@ class DadBattleRemnantsMixSong extends Song
         // Play the hit animation instead of a miss one.
         var boyfriend:BaseCharacter = PlayState.instance.currentStage.getBoyfriend();
         boyfriend.holdTimer = 0;
-        boyfriend.playAnimation('hit', true);
+        boyfriend.playAnimation('hit', true, false);
         event.playSound = false;
     }
   }
