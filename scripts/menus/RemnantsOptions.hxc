@@ -10,7 +10,6 @@ class RemnantsOptions extends Module
   public function new()
   {
     super('RemnantsOptions');
-    remnantsMusic = false;
   }
 
   // Constants to prevent long code...
@@ -56,33 +55,16 @@ class RemnantsOptions extends Module
       Save.instance.modOptions.set('remnantsPerformance', value);
       Save.instance.flush();
     }, Save.instance.modOptions.get('remnantsPerformance'));
-  }
 
-  var remnantsMusic:Bool = false;
+    if (!RemnantsContentUtil.remnantsContentEnabled()) return;
 
-  public function onUpdate(elapsed:Float)
-  {
-    super.onUpdate(elapsed);
+    // Make 'Lag Adjustment' display as 'Input Offsets' like in Funkin' 0.6.x
+    var lagItem = event.targetState.optionsCodex.pages.get('options').items?.getItem("LAG ADJUSTMENT");
+    lagItem?.atlasText?.text = 'INPUT OFFSETS';
+    lagItem?.x += 45;
 
-    if (!Std.isOfType(FlxG.state, OptionsState)) return;
-    if (!RemnantsContentUtil.remnantsContentEnabled())
-    {
-      if (remnantsMusic)
-      {
-        remnantsMusic = false;
-        trace("Changed drumsBG to default audio.");
-        OptionsState.instance.drumsBG = FunkinSound.load(Paths.music('offsetsLoop/drumsLoop'), 0, true, false, false, false);
-      }
-    }
-    else
-    {
-      if (!remnantsMusic)
-      {
-        remnantsMusic = true;
-        trace("Changed drumsBG to remnants audio.");
-        OptionsState.instance.drumsBG = FunkinSound.load(Paths.music('offsetsLoop-remnants/drumsLoop-remnants'), 0, true, false, false, false);
-      }
-    }
+    // Replace the drums with the old ones.
+    event.targetState?.drumsBG = FunkinSound.load(Paths.music('offsetsLoop-remnants/drumsLoop-remnants'), 0, true, false, false, false);
   }
 
   /**
