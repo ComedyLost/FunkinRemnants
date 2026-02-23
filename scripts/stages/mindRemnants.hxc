@@ -43,30 +43,22 @@ class MindRemnantsStage extends Stage
           rim.angle = 120;
           rim.maskThreshold = 0.1;
 
-          character.animation.onFrameChange.add(function() {
-            if (getBoyfriend() != null)
-            {
-              rim.updateFrameInfo(getBoyfriend().frame);
-            }
-          });
-
         case CharacterType.GF:
           rim.angle = 90;
-
-          character.animation.onFrameChange.add(function() {
-            rim.updateFrameInfo(getGirlfriend().frame);
-          });
 
         case CharacterType.DAD:
           rim.angle = 40;
           rim.threshold = 0.1;
-
-          character.animation.onFrameChange.add(function() {
-            rim.updateFrameInfo(getDad().frame);
-          });
-
-        default:
       }
+
+      var character_persist:BaseCharacter = character;
+
+      character.animation.onFrameChange.add(function() {
+        if (character_persist != null)
+        {
+          rim.updateFrameInfo(character_persist.frame);
+        }
+      });
     }
   }
 }
