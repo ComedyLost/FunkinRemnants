@@ -195,7 +195,7 @@ class PicoRemnantsPlayerCharacter extends MultiAnimateAtlasCharacter
 
     if (name == 'firstDeath-explosion')
     {
-      playAnimation('deathLoop-explosion', true);
+      playAnimation('deathLoop-explosion', true, false);
     }
   }
 
