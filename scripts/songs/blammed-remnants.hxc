@@ -45,14 +45,14 @@ class BlammedRemnantsMixSong extends Song
   {
     super.onPause(event);
 
-    FlxTweenUtil.pauseTweensOf(PlayState.instance.camHUD);
+    FlxTweenUtil.pauseTweensOf(PlayState.instance?.camHUD);
   }
 
   function onResume(event:ScriptEvent):Void
   {
     super.onResume(event);
 
-    FlxTweenUtil.resumeTweensOf(PlayState.instance.camHUD);
+    FlxTweenUtil.resumeTweensOf(PlayState.instance?.camHUD);
   }
 
   function onSongLoaded(event:SongLoadScriptEvent)
