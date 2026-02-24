@@ -27,7 +27,7 @@ class TormentorSong extends Song
   function onCountdownStart(event:CountdownScriptEvent):Void
   {
     super.onCreate(event);
-    PlayState.instance.disableKeys = true;
+    if (!PlayState.instance.disableKeys) PlayState.instance.disableKeys = true;
   }
 
   function onCreate(event:ScriptEvent):Void
@@ -43,6 +43,7 @@ class TormentorSong extends Song
     sequence?.destroy();
 
     FlxTween.cancelTweensOf(PlayState.instance.camHUD);
+    if (!PlayState.instance.disableKeys) PlayState.instance.disableKeys = true;
   }
 
   function onGameOver(event:ScriptEvent):Void

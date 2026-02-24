@@ -28,7 +28,8 @@ class CocoaRemnantsMixSong extends Song
   function onCountdownStart(event:CountdownScriptEvent):Void
   {
     super.onCountdownStart(event);
-    PlayState.instance.disableKeys = true;
+
+    if (!PlayState.instance.disableKeys) PlayState.instance.disableKeys = true;
   }
 
   function onSongRetry(event:ScriptEvent)

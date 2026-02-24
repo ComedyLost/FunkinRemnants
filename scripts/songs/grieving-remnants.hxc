@@ -40,7 +40,7 @@ class GrievingRemnantsSong extends Song
   {
     super.onCountdownStart(event);
 
-    PlayState.instance.disableKeys = true;
+    if (!PlayState.instance.disableKeys) PlayState.instance.disableKeys = true;
 
     if (!playedDialogue)
     {
@@ -169,6 +169,7 @@ class GrievingRemnantsSong extends Song
     super.onSongRetry(event);
 
     FlxTween.cancelTweensOf(PlayState.instance.camHUD);
+    if (!PlayState.instance.disableKeys) PlayState.instance.disableKeys = true;
   }
 
   function onGameOver(event:ScriptEvent):Void

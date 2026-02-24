@@ -161,6 +161,8 @@ class MILFRemnantsMixSong extends Song
     boyfriend.shouldAlternate = null;
     boyfriend.idleSuffix = '';
 
+    if (!PlayState.instance.disableKeys) PlayState.instance.disableKeys = true;
+
     // Properly reset lights and collision when restarting the song.
     this.hardResetSong();
     PlayState.instance.currentStage.refresh();
@@ -181,8 +183,9 @@ class MILFRemnantsMixSong extends Song
   {
     super.onCountdownStart(event);
 
+    if (!PlayState.instance.disableKeys) PlayState.instance.disableKeys = true;
+
     // Properly reset lights and collision when restarting the song.
-    PlayState.instance.disableKeys = true;
     this.hardResetSong();
   }
 
