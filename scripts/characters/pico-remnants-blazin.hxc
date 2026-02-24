@@ -451,14 +451,14 @@ class PicoRemnantsBlazinCharacter extends AnimateAtlasCharacter
   function playPunchHighAnim()
   {
     var postfix:String = doAlternate();
-    this.playAnimation('punchHigh' + postfix, true, false);
+    this.playAnimation('punchHigh$postfix', true, false);
     moveToFront();
   }
 
   function playPunchLowAnim()
   {
     var postfix:String = doAlternate();
-    this.playAnimation('punchLow' + postfix, true, false);
+    this.playAnimation('punchLow$postfix', true, false);
     moveToFront();
   }
 
