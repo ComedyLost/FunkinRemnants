@@ -77,7 +77,7 @@ class RemnantsResults extends Module
         FlxTween.tween(gradBG, {alpha: 1}, 1.0, {ease: FlxEase.quartInOut});
 
         curState.insert(curState.members.indexOf(curState.bgFlash), gradBG);
-        curState.bgFlash?.makeGraphic(FlxG.width, FlxG.height, gradientColor);
+        curState.bgFlash?.makeGraphic(FlxG.width, FlxG.height, flashColor);
 
         // Score Text
         var scorePopin = curState.scorePopin;
