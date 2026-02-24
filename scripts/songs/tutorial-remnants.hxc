@@ -113,7 +113,7 @@ class TutorialRemnantsMixSong extends Song
     super.onCountdownStart(event);
 
     if (PlayState.instance.camHUD.alpha < 1) PlayState.instance.camHUD.alpha = 1;
-    PlayState.instance.disableKeys = true;
+    if (!PlayState.instance.disableKeys) PlayState.instance.disableKeys = true;
   }
 
   public function onSongEvent(event:SongEventScriptEvent)
@@ -138,7 +138,7 @@ class TutorialRemnantsMixSong extends Song
 
       case 'ending':
         if (PlayState.instance.currentChart.difficulty == 'easy'
-          || PlayState.instance.currentChart.difficulty == 'normal') // Didnt just do "!= hard" just in case people make fan charts under new diffcutlies
+          || PlayState.instance.currentChart.difficulty == 'normal') // Didnt just do "!= hard" just in case people make fan charts under new difficulties
         {
           FlxTween.tween(black, {alpha: 1}, 6.72, {ease: FlxEase.expoIn});
           ending = true;
@@ -149,6 +149,8 @@ class TutorialRemnantsMixSong extends Song
   function onSongRetry(event:ScriptEvent)
   {
     super.onSongRetry(event);
+
+    if (!PlayState.instance.disableKeys) PlayState.instance.disableKeys = true;
 
     if (black.alpha != 1 && !ending)
     {
