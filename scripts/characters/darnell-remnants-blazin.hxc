@@ -113,7 +113,10 @@ class DarnellRemnantsBlazinCharacter extends AnimateAtlasCharacter
 
       case "weekend-1-bf-blazin": // Nothing.
       case "weekend-1-bf-blazin-dodge":
-        getPico().scriptCall("playCoolSingAnim", [event.note.noteData]);
+        if (!this.debug)
+        {
+          getPico().scriptCall("playCoolSingAnim", [event.note.noteData]);
+        }
 
         if (event.note.noteData.getDirection() == 2 || event.note.noteData.getDirection() == 3)
         {
@@ -237,7 +240,10 @@ class DarnellRemnantsBlazinCharacter extends AnimateAtlasCharacter
         playFakeoutAnim(); // TODO: Which anim?
 
       case "weekend-1-bf-blazin":
-        getPico().scriptCall("playCoolSingAnim", [event.note.noteData]);
+        if (!this.debug)
+        {
+          getPico().scriptCall("playCoolSingAnim", [event.note.noteData]);
+        }
 
         if (event.note.noteData.getDirection() == 2 || event.note.noteData.getDirection() == 3)
         {
@@ -248,7 +254,10 @@ class DarnellRemnantsBlazinCharacter extends AnimateAtlasCharacter
           playPunchHighAnim();
         }
       case "weekend-1-bf-blazin-dodge":
-        getPico().scriptCall("playCoolSingAnim", [event.note.noteData]);
+        if (!this.debug)
+        {
+          getPico().scriptCall("playCoolSingAnim", [event.note.noteData]);
+        }
 
         if (event.note.noteData.getDirection() == 2 || event.note.noteData.getDirection() == 3)
         {
@@ -435,14 +444,14 @@ class DarnellRemnantsBlazinCharacter extends AnimateAtlasCharacter
   function playPunchHighAnim()
   {
     var postfix:String = doAlternate();
-    this.playAnimation('punchHigh' + postfix, true, false);
+    this.playAnimation('punchHigh$postfix', true, false);
     moveToFront();
   }
 
   function playPunchLowAnim()
   {
     var postfix:String = doAlternate();
-    this.playAnimation('punchLow' + postfix, true, false);
+    this.playAnimation('punchLow$postfix', true, false);
     moveToFront();
   }
 
