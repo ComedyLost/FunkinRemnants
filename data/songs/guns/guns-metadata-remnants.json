@@ -2,7 +2,7 @@
   "version": "2.2.4",
   "songName": "Guns (Remnants Mix)",
   "artist": "ZaraJan9th",
-  "charter": "RhysRJJ + Sammy The Goog",
+  "charter": "Sammy The Goog + RhysRJJ",
   "timeFormat": "ms",
   "divisions": 96,
   "offsets": { "instrumental": 0 },
@@ -18,7 +18,7 @@
       "instrumental": "remnants",
       "playerVocals": ["bf-remnants"],
       "opponentVocals": ["tankman-remnants"],
-      "altInstrumentals": ["pico", ""]
+      "altInstrumentals": []
     },
     "stage": "tankmanBattlefieldRemnants",
     "noteStyle": "funkin",
