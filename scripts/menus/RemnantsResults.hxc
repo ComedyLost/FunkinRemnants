@@ -24,14 +24,14 @@ import Std;
 
 class RemnantsResults extends Module
 {
-  var newBG:FlxGradient;
+  var gradBG:FlxGradient;
   var codeWasRun:Bool = false;
   var addedVerText:Bool = false;
   var addedHorText:Bool = false;
 
   public function new()
   {
-    super('remnantsResults', 1000);
+    super('remnantsResults');
   }
 
   override function onStateChangeEnd(event:ScriptEvent):Void
@@ -68,16 +68,15 @@ class RemnantsResults extends Module
         codeWasRun = true;
 
         // Cool Gradient BG
-        newBG = FlxGradient.createGradientFlxSprite(FlxG.width, FlxG.height, [0xFF000000, gradientColor], 90);
-        newBG.cameras = [curState.cameraBG];
-        newBG.scrollFactor.set();
-        newBG.zIndex = 11;
+        gradBG = FlxGradient.createGradientFlxSprite(FlxG.width, FlxG.height, [0xFF000000, gradientColor], 90);
+        gradBG.cameras = [curState.cameraBG];
+        gradBG.scrollFactor.set();
+        gradBG.zIndex = 11;
 
-        newBG.alpha = 0;
-        FlxTween.tween(newBG, {alpha: 1}, 1.0, {ease: FlxEase.quartInOut});
+        gradBG.alpha = 0.000001;
+        FlxTween.tween(gradBG, {alpha: 1}, 1.0, {ease: FlxEase.quartInOut});
 
-        curState.members[0].color = 0xFF000000;
-        curState.insert(curState.members.indexOf(curState.bgFlash), newBG);
+        curState.insert(curState.members.indexOf(curState.bgFlash), gradBG);
         curState.bgFlash?.makeGraphic(FlxG.width, FlxG.height, gradientColor);
 
         // Score Text
@@ -138,9 +137,15 @@ class RemnantsResults extends Module
           }
         });
 
-        // Tallie Numbers & Sound System
+        // Yellow BG, Tallie Numbers & Sound System
         for (object in curState.members)
         {
+          // Yellow BG
+          if (object?.zIndex == 10)
+          {
+            object?.color = 0xFF000000;
+          }
+
           // Tallie Numbers
           if (object?.zIndex == 1200 && (Std.isOfType(object, FlxTypedGroup)))
           {
