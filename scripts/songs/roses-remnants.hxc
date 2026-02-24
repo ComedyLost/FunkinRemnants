@@ -381,7 +381,7 @@ class RosesRemnantsMixSong extends Song
       {
         time: Conductor.instance.getBeatTimeInMs(282) / 1000,
         callback: () -> {
-            FlxTween.tween(PlayState.instance.camHUD, {alpha: 0}, 0.2,
+          FlxTween.tween(PlayState.instance.camHUD, {alpha: 0}, 0.2,
             {
               onComplete: (_) -> {
                 PlayState.instance.camGame.fade(0xFF000000, 0, false, null, false);
