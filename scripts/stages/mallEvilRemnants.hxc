@@ -26,19 +26,11 @@ class MallEvilRemnantsStage extends Stage
   }
 
   var snowGroup:FlxTypedSpriteGroup;
-  var santaDead:ScriptedFunkinSprite;
   var wiggleOverlay:FlxRuntimeShader = null;
 
   override function buildStage()
   {
     super.buildStage();
-
-    santaDead = ScriptedFunkinSprite.init('SantaDiesSpriteRemnants', 0, 0);
-    santaDead.setPosition(-810, -965);
-    santaDead.zIndex = 301;
-    PlayState.instance.currentStage.add(santaDead);
-
-    santaDead.playDeadSanta();
 
     if (!RemnantsOptions.getPerformanceOption())
     {

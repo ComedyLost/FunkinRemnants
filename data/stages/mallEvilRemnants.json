@@ -367,20 +367,43 @@
     {
       "alpha": 1,
       "angle": 0,
-      "animType": "sparrow",
-      "animations": [],
-      "assetPath": "remnants/evil/SantaScaryDead",
+      "animType": "animateatlas",
+      "animations": [
+        {
+          "assetPath": null,
+          "flipX": false,
+          "flipY": false,
+          "frameIndices": [],
+          "frameRate": 24,
+          "looped": false,
+          "name": "cutscene",
+          "offsets": [0, 0],
+          "prefix": "monster"
+        },
+        {
+          "assetPath": null,
+          "flipX": false,
+          "flipY": false,
+          "frameIndices": [],
+          "frameRate": 24,
+          "looped": false,
+          "name": "idle",
+          "offsets": [0, 0],
+          "prefix": "santa shot dead in miami"
+        }
+      ],
+      "assetPath": "remnants/santa",
       "blend": "",
       "color": "#FFFFFF",
-      "danceEvery": 2,
+      "danceEvery": 0,
       "flipX": false,
       "flipY": false,
       "isPixel": false,
       "name": "santaDead",
-      "position": [-950, -725],
+      "position": [-1158, -1350],
       "scale": 1,
       "scroll": [1, 1],
-      "startingAnimation": "",
+      "startingAnimation": "idle",
       "zIndex": 301
     },
     {

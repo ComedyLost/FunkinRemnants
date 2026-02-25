@@ -91,26 +91,14 @@ class EggnogRemnantsMixSong extends Song
     skipText.cameras = [PlayState.instance.camCutscene];
 
     var normalSanta = PlayState.instance.currentStage.getNamedProp('santa');
-    normalSanta.visible = false;
-
-    var santaDead:ScriptedFunkinSprite = ScriptedFunkinSprite.init('SantaDiesSpriteRemnants', 0, 0);
-
-    santaDead.x = -775;
-    santaDead.y = -1000;
-    santaDead.zIndex = normalSanta.zIndex - 1;
-    santaDead.shader = normalSanta.shader;
-
-    PlayState.instance.currentStage.add(santaDead);
-    PlayState.instance.currentStage.refresh(); // Apply z-index.
-
-    santaDead.scriptCall('playSantaSpeaks');
+    normalSanta.playAnimation('cutscene', true);
 
     PlayState.instance.currentStage.getDad().visible = false;
     var parentsShoot:ScriptedFunkinSprite = ScriptedFunkinSprite.init('DadShootsSpriteRemnants', 0, 0);
 
     parentsShoot.x = -813;
     parentsShoot.y = -954;
-    parentsShoot.zIndex = santaDead.zIndex - 1;
+    parentsShoot.zIndex = normalSanta.zIndex - 1;
     parentsShoot.shader = normalSanta.shader;
 
     PlayState.instance.currentStage.add(parentsShoot);
@@ -126,8 +114,8 @@ class EggnogRemnantsMixSong extends Song
     PlayState.instance.currentStage.getBoyfriend().danceEvery = 0;
     PlayState.instance.currentStage.getDad().danceEvery = 0;
 
-    PlayState.instance.tweenCameraToPosition(santaDead.x + 300, santaDead.y, 2.8, FlxEase.expoOut);
-    // PlayState.instance.tweenCameraToPosition(santaDead.x + 300, santaDead.y, 2.8, FlxEase.expoOut);
+    PlayState.instance.tweenCameraToPosition(-475, -1000, 2.8, FlxEase.expoOut);
+    // PlayState.instance.tweenCameraToPosition(-475, -1000, 2.8, FlxEase.expoOut);
     PlayState.instance.tweenCameraZoom(0.73, 2, true, FlxEase.quadInOut);
 
     santaSound = FunkinSound.load(Paths.sound('santa_emotion'), 1);
@@ -140,13 +128,13 @@ class EggnogRemnantsMixSong extends Song
     shootSound.volume = 1;
 
     new FlxTimer().start(2.8, function(tmr) {
-      PlayState.instance.tweenCameraToPosition(santaDead.x + 150, santaDead.y, 9, FlxEase.quartInOut);
+      PlayState.instance.tweenCameraToPosition(-625, -1000, 9, FlxEase.quartInOut);
       PlayState.instance.tweenCameraZoom(0.79, 9, true, FlxEase.quadInOut);
     });
 
     new FlxTimer().start(11.3, function(tmr) {
       // PlayState.instance.tweenCameraZoom(0.73, 0.8, true, FlxEase.backOut);
-      // PlayState.instance.tweenCameraToPosition(santaDead.x + 220, santaDead.y, 0.8, FlxEase.expoOut);
+      // PlayState.instance.tweenCameraToPosition(-555, -1000, 0.8, FlxEase.expoOut);
       // PlayState.instance.camGame.shake(0.007, 0.4);
     });
 
@@ -156,7 +144,7 @@ class EggnogRemnantsMixSong extends Song
 
     new FlxTimer().start(12.83, function(tmr) {
       PlayState.instance.camGame.shake(0.005, 0.2);
-      PlayState.instance.tweenCameraToPosition(santaDead.x + 160, santaDead.y + 80, 5, FlxEase.expoOut);
+      PlayState.instance.tweenCameraToPosition(-615, -920, 5, FlxEase.expoOut);
     });
 
     new FlxTimer().start(15, function(tmr) {

@@ -28,7 +28,6 @@ class WinterHorrorlandRemnantsMixSong extends Song
   var cutsceneTimerManager:FlxTimerManager;
   var isMobilePauseButtonPressed:Bool = false;
 
-  var santaDead:ScriptedFunkinSprite = null;
   var spookBeforeChristmas:FunkinSound = null;
 
   var cutsceneSkipped:Bool = false;
@@ -168,23 +167,13 @@ class WinterHorrorlandRemnantsMixSong extends Song
 
     skipText.cameras = [PlayState.instance.camCutscene];
 
-    try
-    {
-      santaDead = PlayState.instance.currentStage.scriptGet('santaDead');
-    }
-    catch (e:Exception)
-    {
-      PlayState.instance.currentStage.getDad().visible = true;
-      PlayState.instance.camHUD.visible = true;
-      return;
-    }
-
     spookBeforeChristmas = FunkinSound.load(Paths.sound("spookBeforeChristmas"), 1.0);
     spookBeforeChristmas.volume = 1.0;
     spookBeforeChristmas.play(false);
 
-    santaDead.scriptCall('playMonsterComingOut');
-    santaDead.anim.pause();
+    var santaDead:StageProp = PlayState.instance.currentStage.getNamedProp('santaDead');
+    santaDead?.playAnimation('cutscene', true);
+    santaDead?.anim.pause();
 
     var santaPos:Array<Float> = [
       PlayState.instance.currentStage.getDad().cameraFocusPoint.x - 200,
@@ -199,8 +188,8 @@ class WinterHorrorlandRemnantsMixSong extends Song
     PlayState.instance.tweenCameraZoom(1.8, durSeconds, false, FlxEase.smootherStepOut);
 
     new FlxTimer(cutsceneTimerManager).start(3, (tmr:FlxTimer) -> {
-      santaDead.anim.resume();
-      santaDead.anim.onFinish.addOnce((anim:String) -> {
+      santaDead?.anim.resume();
+      santaDead?.anim.onFinish.addOnce((anim:String) -> {
         this.endCutscene();
       });
     });
@@ -232,7 +221,8 @@ class WinterHorrorlandRemnantsMixSong extends Song
     skipText.visible = false;
 
     onSpookChristmas = false;
-    santaDead.scriptCall("playDeadSanta");
+    var santaDead:StageProp = PlayState.instance.currentStage.getNamedProp('santaDead');
+    santaDead?.dance(true);
     PlayState.instance.currentStage.getDad().visible = true;
     PlayState.instance.camHUD.visible = true;
     PlayState.instance.startCountdown();

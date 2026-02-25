@@ -495,7 +495,7 @@
     {
       "alpha": 1,
       "angle": 0,
-      "animType": "sparrow",
+      "animType": "animateatlas",
       "animations": [
         {
           "assetPath": null,
@@ -506,7 +506,18 @@
           "looped": false,
           "name": "idle",
           "offsets": [0, 0],
-          "prefix": "santa idle in fear"
+          "prefix": "idle"
+        },
+        {
+          "assetPath": null,
+          "flipX": false,
+          "flipY": false,
+          "frameIndices": [],
+          "frameRate": 24,
+          "looped": false,
+          "name": "cutscene",
+          "offsets": [0, 0],
+          "prefix": "eggnore"
         }
       ],
       "assetPath": "remnants/santa",
