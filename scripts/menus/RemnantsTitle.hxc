@@ -134,5 +134,10 @@ class RemnantsTitle extends Module
 
     // Cancel the attract mode timer so people is able to listen to the whole theme.
     FlxG.state?.attractTimer?.cancel();
+
+    var fullText:String = Assets.getText(Paths.txt('introText-remnants'));
+    var introTextList:Array<Array<String>> = fullText.split('\n').map((s:String) -> s.split('--'));
+
+    FlxG.state?.curWacky = introTextList[FlxG.random.int(0, introTextList.length - 1)] ?? ['coolswag', 'money money'];
   }
 }
