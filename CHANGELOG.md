@@ -5,11 +5,15 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [1.0.2] - (2026-02-24)
+## [1.0.2] - (2026-02-25)
 
 ### Added
 
 - Added Custom "introText" that appears on Remnants Menu Boot.
+
+### Changes
+
+- Updated Santa to fully use Adobe Animate Atlases.
 
 ### Fixes
 
@@ -21,6 +25,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Removed
 
 - Removed Girlfriend's Sparrow Spritesheet for her "Car" Variation since it went Unused.
+
+
 
 ## [1.0.1] - (2026-02-24)
 
@@ -63,11 +69,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Fixed Backspace Graphic Overlapping QT: Rewired's Plush Pop Up. (Not that it matters anymore!)
 - Fixed Remnants Character Icons being Offset. ([6815404](https://github.com/RemnantsCrew/FunkinRemnants/commit/6815404a8bc95b3d30ecbd46a2109e537b85e0a4)) - by @macohi in [#2](https://github.com/RemnantsCrew/FunkinRemnants/pull/2)
 - Fixed Credits Polymod Exception on Mobile. ([98acc33](https://github.com/RemnantsCrew/FunkinRemnants/commit/98acc334b8dcb2503876c275c51c2697724d568c)) - by @CrusherNotDrip in [#7](https://github.com/RemnantsCrew/FunkinRemnants/pull/7)
+- Fixed Winter Horrorland (Remnants Mix) clipping on Mobile Resolution.
 - Fixed More Offsets! Yayyaayayayayayyyy!!
 - Other Miscellaneous Fixes & Optimizations.
 
 ### Removed
 
+- Removed Guns (Remnants Mix) Alt Instrumentals. (They were off key)
 - Removed Execution (Remnants Mix).
 
 ## New Contributors for 1.0.1
