@@ -12,7 +12,6 @@ import funkin.modding.events.ScriptEventDispatcher;
 import funkin.modding.events.SongTimeScriptEvent;
 import funkin.play.character.CharacterType;
 import funkin.data.song.SongRegistry;
-import funkin.modding.module.ModuleHandler;
 import funkin.modding.base.ScriptedFunkinSprite;
 import funkin.ui.FullScreenScaleMode;
 import funkin.Conductor;

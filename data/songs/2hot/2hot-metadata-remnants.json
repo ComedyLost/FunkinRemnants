@@ -18,7 +18,7 @@
       "instrumental": "remnants",
       "playerVocals": ["pico-remnants-playable"],
       "opponentVocals": ["darnell-remnants"],
-      "altInstrumentals": []
+      "altInstrumentals": ["", "bfremnants"]
     },
     "stage": "phillyStreetsRemnants",
     "noteStyle": "funkin",

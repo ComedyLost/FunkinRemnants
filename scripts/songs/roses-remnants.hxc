@@ -4,15 +4,12 @@ import funkin.play.song.Song;
 import funkin.play.PlayState;
 import funkin.util.HapticUtil;
 import funkin.graphics.FunkinSprite;
-import funkin.modding.module.ModuleHandler;
 import funkin.audio.FunkinSound;
 import funkin.util.FlxTweenUtil;
-import funkin.effects.RetroCameraFade;
 import flixel.tweens.FlxTween;
 import flixel.tweens.FlxEase;
 import flixel.util.FlxTimer;
 import flixel.FlxG;
-import funkin.mobile.input.ControlsHandler;
 import funkin.util.SongSequence;
 import funkin.Conductor;
 

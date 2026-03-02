@@ -1,12 +1,8 @@
 import funkin.play.song.Song;
 import funkin.play.PlayState;
 import funkin.save.Save;
-import funkin.Preferences;
 import funkin.util.FlxTweenUtil;
-import flixel.FlxG;
 import flixel.tweens.FlxTween;
-import flixel.tweens.FlxEase;
-import funkin.mobile.input.ControlsHandler;
 import funkin.util.SongSequence;
 import funkin.Conductor;
 

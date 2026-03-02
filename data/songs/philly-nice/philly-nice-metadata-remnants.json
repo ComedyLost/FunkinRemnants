@@ -18,7 +18,7 @@
       "instrumental": "remnants",
       "playerVocals": ["bf-remnants"],
       "opponentVocals": ["pico-remnants"],
-      "altInstrumentals": []
+      "altInstrumentals": ["erect", ""]
     },
     "stage": "phillyTrainRemnants",
     "noteStyle": "funkin",

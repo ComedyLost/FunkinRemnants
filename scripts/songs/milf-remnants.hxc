@@ -1,5 +1,4 @@
 import funkin.save.Save;
-import funkin.Conductor;
 import funkin.play.song.Song;
 import funkin.play.PlayState;
 import funkin.audio.FunkinSound;
@@ -199,6 +198,13 @@ class MILFRemnantsMixSong extends Song
   {
     var results:Array<String> = super.listAltInstrumentalIds(difficultyId, variationId);
     var hasBeatenRemnantsMix = Save.instance.hasBeatenSong(this.id, null, this.variation);
+
+    if (difficultyId == 'easy' || difficultyId == 'normal' || difficultyId == 'hard')
+    {
+      var hasBeatenDefault = Save.instance.hasBeatenSong(this.id, null, null);
+      if (!hasBeatenDefault) results = [for (id in results) if (id != '') id];
+    }
+
     if (hasBeatenRemnantsMix) return results;
   }
 

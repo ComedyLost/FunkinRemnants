@@ -1,4 +1,3 @@
-import funkin.modding.module.ModuleHandler;
 import funkin.modding.base.ScriptedFlxRuntimeShader;
 import flixel.text.FlxTextBorderStyle;
 import funkin.ui.FullScreenScaleMode;

@@ -4,7 +4,6 @@ import funkin.save.Save;
 import flixel.text.FlxTextBorderStyle;
 import funkin.data.song.SongRegistry;
 import funkin.ui.FullScreenScaleMode;
-import funkin.modding.module.ModuleHandler;
 import funkin.modding.base.ScriptedFlxAtlasSprite;
 import funkin.graphics.FunkinSprite;
 import funkin.util.FlxTweenUtil;
@@ -18,13 +17,12 @@ import flixel.tweens.FlxTween;
 import flixel.text.FlxText;
 import flixel.text.FlxTextBorderStyle;
 import funkin.data.song.SongRegistry;
-import funkin.modding.module.ModuleHandler;
 import funkin.modding.base.ScriptedFunkinSprite;
 import funkin.graphics.FunkinSprite;
 import funkin.audio.FunkinSound;
 import funkin.util.TouchUtil;
-import funkin.Conductor;
 import flixel.FlxG;
+import funkin.Conductor;
 import funkin.util.SongSequence;
 
 class GunsRemnantsMixSong extends Song
@@ -360,9 +358,9 @@ class GunsRemnantsMixSong extends Song
 
     if (!ascension) return;
     FlxTween.cancelTweensOf(PlayState.instance.currentStage.getBoyfriend());
-    FlxTween.tween(PlayState.instance.currentStage.getBoyfriend(), {y: PlayState.instance.currentStage.getBoyfriend().y - 1000}, 0.5, {ease: FlxEase.linear});
-    FlxTween.tween(PlayState.instance.currentStage.getBoyfriend(), {x: PlayState.instance.currentStage.getBoyfriend().x + 50}, 0.5, {ease: FlxEase.linear});
-    FlxTween.tween(PlayState.instance.currentStage.getBoyfriend(), {angle: 720}, 0.5, {ease: FlxEase.linear});
+    FlxTween.tween(PlayState.instance.currentStage.getBoyfriend(), {y: PlayState.instance.currentStage.getBoyfriend().y - 1000}, 0.5);
+    FlxTween.tween(PlayState.instance.currentStage.getBoyfriend(), {x: PlayState.instance.currentStage.getBoyfriend().x + 50}, 0.5);
+    FlxTween.tween(PlayState.instance.currentStage.getBoyfriend(), {angle: 720}, 0.5);
   }
 
   function onPause(event:ScriptEvent):Void

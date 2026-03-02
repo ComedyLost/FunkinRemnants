@@ -1,7 +1,5 @@
 import funkin.graphics.FunkinSprite;
-import funkin.modding.module.ModuleHandler;
 import funkin.modding.base.ScriptedFunkinSprite;
-import funkin.play.cutscene.VideoCutscene;
 import flixel.text.FlxTextBorderStyle;
 import funkin.data.song.SongRegistry;
 import funkin.ui.FullScreenScaleMode;
@@ -65,11 +63,22 @@ class DarnellRemnantsMixSong extends Song
   {
     var results:Array<String> = super.listAltInstrumentalIds(difficultyId, variationId);
     var hasBeatenRemnantsMix = Save.instance.hasBeatenSong(this.id, null, this.variation);
+
     if (difficultyId == 'easy' || difficultyId == 'normal' || difficultyId == 'hard')
     {
+      var hasBeatenBFRemnantsMix = Save.instance.hasBeatenSong(this.id, null, 'bfremnants');
+      if (!hasBeatenBFRemnantsMix) results = [for (id in results) if (id != 'bfremnants') id];
+
+      var hasBeatenDefault = Save.instance.hasBeatenSong(this.id, null, null);
+      if (!hasBeatenDefault) results = [for (id in results) if (id != '') id];
+
       var hasBeatenBFMix = Save.instance.hasBeatenSong(this.id, null, 'bf');
-      if (!hasBeatenBFMix) results.remove('bf');
+      if (!hasBeatenBFMix) results = [for (id in results) if (id != 'bf') id];
+
+      var hasBeatenLumoraMix = Save.instance.hasBeatenSong(this.id, null, 'lumora'); // Trust the process
+      if (!hasBeatenLumoraMix) results = [for (id in results) if (id != 'lumora') id];
     }
+
     if (hasBeatenRemnantsMix) return results;
   }
 

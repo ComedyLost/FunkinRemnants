@@ -3,7 +3,6 @@ import funkin.graphics.FunkinSprite;
 import funkin.modding.base.ScriptedFunkinSprite;
 import funkin.play.song.Song;
 import funkin.play.PlayState;
-import funkin.modding.module.ModuleHandler;
 import funkin.save.Save;
 import funkin.ui.FullScreenScaleMode;
 import funkin.Paths;
@@ -50,11 +49,16 @@ class UghRemnantsMixSong extends Song
   {
     var results:Array<String> = super.listAltInstrumentalIds(difficultyId, variationId);
     var hasBeatenRemnantsMix = Save.instance.hasBeatenSong(this.id, null, this.variation);
+
     if (difficultyId == 'easy' || difficultyId == 'normal' || difficultyId == 'hard')
     {
+      var hasBeatenDefault = Save.instance.hasBeatenSong(this.id, null, null);
+      if (!hasBeatenDefault) results = [for (id in results) if (id != 'default mix remnants cut') id];
+
       var hasBeatenPicoMix = Save.instance.hasBeatenSong(this.id, null, 'pico');
-      if (!hasBeatenPicoMix) results.remove('pico');
+      if (!hasBeatenPicoMix) results = [for (id in results) if (id != 'pico mix remnants cut') id];
     }
+
     if (hasBeatenRemnantsMix) return results;
   }
 

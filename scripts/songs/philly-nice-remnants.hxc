@@ -1,7 +1,6 @@
-import funkin.modding.module.ModuleHandler;
 import funkin.play.song.Song;
-import funkin.play.PlayState;
 import funkin.save.Save;
+import funkin.play.PlayState;
 import funkin.util.FlxTweenUtil;
 import funkin.util.SongSequence;
 import funkin.Conductor;
@@ -24,6 +23,24 @@ class PhillyNiceRemnantsMixSong extends Song
   {
     if (currentVariation == 'remnants') return !Save.instance.hasBeatenSong(this.id, null, this.variation);
     return false;
+  }
+
+  public override function listAltInstrumentalIds(difficultyId:String, variationId:String):Array<String>
+  {
+    var results:Array<String> = super.listAltInstrumentalIds(difficultyId, variationId);
+    var hasBeatenRemnantsMix = Save.instance.hasBeatenSong(this.id, null, this.variation);
+
+    if (difficultyId == 'easy' || difficultyId == 'normal' || difficultyId == 'hard')
+    {
+      var hasBeatenDefault = Save.instance.hasBeatenSong(this.id, null, null);
+      if (!hasBeatenDefault) results = [for (id in results) if (id != '') id];
+
+      var hasBeatenErect = Save.instance.hasBeatenSong(this.id, ['erect', 'nightmare'],
+        null); // TODO: Should add a offset for this alt inst but idk how to merge that so someone else gotta do it :p
+      if (!hasBeatenErect) results = [for (id in results) if (id != 'erect') id];
+    }
+
+    if (hasBeatenRemnantsMix) return results;
   }
 
   function onCountdownStart(event:CountdownScriptEvent):Void
