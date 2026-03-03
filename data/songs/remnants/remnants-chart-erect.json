@@ -1709,7 +1709,7 @@
         "retroSteps": 5,
         "startOpacity": 1,
         "restartTween": false,
-        "duration": 0,
+        "duration": 0.5,
         "retro": false,
         "ease": "linear",
         "easeDir": "In",
