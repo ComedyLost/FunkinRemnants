@@ -29,6 +29,9 @@ class PicoRemnantsMixSong extends Song
 
       var hasBeatenPicoMix = Save.instance.hasBeatenSong(this.id, null, 'pico');
       if (!hasBeatenPicoMix) results = [for (id in results) if (id != 'pico') id];
+
+      var hasBeatenOwenMix = Save.instance.hasBeatenSong(this.id, null, 'owenthemc');
+      if (!hasBeatenOwenMix) results = [for (id in results) if (id != 'owenthemc') id];
     }
 
     if (hasBeatenRemnantsMix) return results;

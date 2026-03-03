@@ -35,6 +35,9 @@ class DarnellBFRemnantsMixSong extends Song
 
       var hasBeatenLumoraMix = Save.instance.hasBeatenSong(this.id, null, 'lumora'); // Trust the process
       if (!hasBeatenLumoraMix) results = [for (id in results) if (id != 'lumora') id];
+
+      var hasBeatenOwenMix = Save.instance.hasBeatenSong(this.id, null, 'owenthemc');
+      if (!hasBeatenOwenMix) results = [for (id in results) if (id != 'owenthemc') id];
     }
 
     if (hasBeatenBFRemnantsMix) return results;

@@ -14,7 +14,7 @@
   [
     {
       "op": "add",
-      "path": "/playData/characters/altInstrumentals/-",
+      "path": "/playData/characters/altInstrumentals/0",
       "value": "remnants alt"
     }
   ]
