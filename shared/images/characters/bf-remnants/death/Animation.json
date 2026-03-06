@@ -8,19 +8,19 @@
           "LN": "Labels",
           "FR": [
             {
-              "N": "Death",
+              "N": "Death Intro",
               "I": 0,
               "DU": 58,
               "E": []
             },
             {
-              "N": "Loop Death",
+              "N": "Death Loop",
               "I": 58,
               "DU": 138,
               "E": []
             },
             {
-              "N": "Retry",
+              "N": "Death Confirm",
               "I": 196,
               "DU": 34,
               "E": []
