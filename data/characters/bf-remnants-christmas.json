@@ -101,20 +101,20 @@
     {
       "assetPath": "shared:characters/bf-remnants/death",
       "name": "firstDeath",
-      "prefix": "Death",
+      "prefix": "Death Intro",
       "offsets": [-8, 41]
     },
     {
       "assetPath": "shared:characters/bf-remnants/death",
       "name": "deathLoop",
-      "prefix": "Loop Death",
+      "prefix": "Death Loop",
       "looped": true,
       "offsets": [-8, 41]
     },
     {
       "assetPath": "shared:characters/bf-remnants/death",
       "name": "deathConfirm",
-      "prefix": "Retry",
+      "prefix": "Death Confirm",
       "offsets": [-8, 41]
     }
   ]
