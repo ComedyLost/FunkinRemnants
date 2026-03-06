@@ -11,7 +11,7 @@
     "uniqueInCache": true
   },
   "cameraOffsets": [57, 149.5],
-  "offsets": [-53, 8],
+  "offsets": [-50, 19.5],
   "death": {
     "cameraZoom": 0.85,
     "cameraOffsets": [70, 25]
@@ -78,28 +78,24 @@
       "offsets": [0, 0]
     },
     {
-      "assetPath": "shared:characters/bf-remnants/miss",
       "name": "singLEFTmiss",
       "prefix": "Miss Left",
-      "offsets": [-304, -260]
+      "offsets": [0, 0]
     },
     {
-      "assetPath": "shared:characters/bf-remnants/miss",
       "name": "singDOWNmiss",
       "prefix": "Miss Down",
-      "offsets": [-304, -260]
+      "offsets": [0, 0]
     },
     {
-      "assetPath": "shared:characters/bf-remnants/miss",
       "name": "singUPmiss",
       "prefix": "Miss Up",
-      "offsets": [-304, -260]
+      "offsets": [0, 0]
     },
     {
-      "assetPath": "shared:characters/bf-remnants/miss",
       "name": "singRIGHTmiss",
       "prefix": "Miss Right",
-      "offsets": [-304, -260]
+      "offsets": [0, 0]
     },
     {
       "name": "singLEFT-censor",
@@ -209,20 +205,20 @@
     {
       "assetPath": "shared:characters/bf-remnants/death",
       "name": "firstDeath",
-      "prefix": "Death",
+      "prefix": "Death Intro",
       "offsets": [-278, -126]
     },
     {
       "assetPath": "shared:characters/bf-remnants/death",
       "name": "deathLoop",
-      "prefix": "Loop Death",
+      "prefix": "Death Loop",
       "looped": true,
       "offsets": [-278, -126]
     },
     {
       "assetPath": "shared:characters/bf-remnants/death",
       "name": "deathConfirm",
-      "prefix": "Retry",
+      "prefix": "Death Confirm",
       "offsets": [-278, -126]
     },
     {
