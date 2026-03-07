@@ -40,51 +40,62 @@
     "text1": "FUNKIN' REMNANTS",
     "text2": "OLD FUNKIN' CONTENT AT YOUR SERVICE",
     "text3": "WIREFRAME IS OUR GAME",
+    "useAnimatePosition": true,
     "animations": [
       {
         "name": "intro",
-        "prefix": "boyfriend dj intro",
-        "offsets": [3.8943, -359.75]
+        "prefix": "Intro",
+        "animType": "framelabel"
       },
       {
         "name": "idle",
-        "prefix": "Boyfriend DJ",
-        "offsets": [10.6, 289.8585]
+        "prefix": "Idle",
+        "animType": "framelabel"
       },
       {
         "name": "idleEasterEgg",
-        "prefix": "bf dj afk",
-        "offsets": [10.5, 127.106]
+        "prefix": "AFK",
+        "animType": "framelabel"
       },
       {
         "name": "confirm",
-        "prefix": "Boyfriend DJ confirm",
-        "offsets": [-39.708, 289.444]
+        "prefix": "Confirm",
+        "animType": "framelabel"
       },
       {
         "name": "fistPump",
-        "prefix": "Boyfriend DJ fist pump",
-        "offsets": [10.6, 278.1951]
-      },
-      {
-        "name": "cartoon",
-        "prefix": "Boyfriend DJ watchin tv OG",
-        "offsets": [-9.3, -167.6297]
+        "prefix": "Fist Pump",
+        "animType": "framelabel"
       },
       {
         "name": "loss",
-        "prefix": "Boyfriend DJ loss reaction 1",
-        "offsets": [10.6, 277.166]
+        "prefix": "Fist Pump Loss",
+        "animType": "framelabel"
       },
       {
         "name": "charSelect",
-        "prefix": "Boyfriend DJ to CS",
-        "offsets": [-51.1036, 210.15]
+        "prefix": "To Character Select",
+        "animType": "framelabel"
+      },
+      {
+        "name": "cartoon",
+        "prefix": "Watching TV",
+        "animType": "framelabel"
+      },
+      {
+        "name": "cartoon1",
+        "prefix": "Watching TV 1",
+        "animType": "framelabel"
+      },
+      {
+        "name": "cartoon2",
+        "prefix": "Watching TV 2",
+        "animType": "framelabel"
       },
       {
         "name": "newUnlock",
-        "prefix": "Boyfriend DJ new character ",
-        "offsets": [-130.5, 12.85]
+        "prefix": "New Unlock",
+        "animType": "framelabel"
       }
     ]
   },
