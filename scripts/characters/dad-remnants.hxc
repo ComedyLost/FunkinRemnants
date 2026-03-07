@@ -25,6 +25,11 @@ class DadRemnantsCharacter extends AnimateAtlasCharacter
   var curKickOffset:Float = 0;
 
   /**
+   * Dick Kicker!
+   */
+  var kick:Bool = false;
+
+  /**
    * Super serect :eyes:
    */
   var slip:Bool = false;
@@ -51,11 +56,13 @@ class DadRemnantsCharacter extends AnimateAtlasCharacter
     if (frameNumber <= 3)
     {
       curKickOffset *= FlxEase.quintOut(frameNumber / 3);
+      kick = true;
       trace(curKickOffset);
     }
     else if (frameNumber >= 6 && frameNumber <= 14)
     {
       curKickOffset *= (1 - FlxEase.quadInOut(FlxMath.remapToRange(frameNumber, 6, 14, 0, 1)));
+      kick = false;
       trace(curKickOffset);
     }
   }
@@ -65,6 +72,15 @@ class DadRemnantsCharacter extends AnimateAtlasCharacter
     var output:FlxPoint = super.getScreenPosition(result, camera);
     output.x += curKickOffset;
     return output;
+  }
+
+  function onGameOver(event:ScriptEvent):Void
+  {
+    super.onGameOver(event);
+
+    if (!kick) return;
+    FlxTween.tween(PlayState.instance.currentStage.getBoyfriend(), {x: PlayState.instance.currentStage.getBoyfriend().originalPosition.x + 1500}, 0.3);
+    FlxTween.tween(PlayState.instance.currentStage.getBoyfriend(), {angle: 180}, 0.3);
   }
 
   var dadFade:FunkinSprite;
@@ -181,6 +197,8 @@ class DadRemnantsCharacter extends AnimateAtlasCharacter
     super.onCreate(event);
 
     FunkinMemory.cacheSound(Paths.sound('crash', "week1"));
+
+    kick = false;
     slip = false;
   }
 
@@ -188,6 +206,7 @@ class DadRemnantsCharacter extends AnimateAtlasCharacter
   {
     super.onSongRetry(event);
 
+    if (kick) kick = false;
     if (slip) this.visible = false;
   }
 
