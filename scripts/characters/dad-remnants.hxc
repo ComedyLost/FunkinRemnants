@@ -10,6 +10,7 @@ import flixel.tweens.FlxEase;
 import flixel.math.FlxMath;
 import flixel.FlxG;
 import funkin.FunkinMemory;
+import flixel.effects.FlxFlicker;
 
 class DadRemnantsCharacter extends AnimateAtlasCharacter
 {
@@ -62,7 +63,7 @@ class DadRemnantsCharacter extends AnimateAtlasCharacter
   override function getScreenPosition(?result:FlxPoint, ?camera:FlxCamera):FlxPoint
   {
     var output:FlxPoint = super.getScreenPosition(result, camera);
-    output.x += curKickOffset; // BUG: This sometimes messes with the secret slip tween and I dont really know how this thingy works so womp womp
+    output.x += curKickOffset;
     return output;
   }
 
@@ -101,6 +102,11 @@ class DadRemnantsCharacter extends AnimateAtlasCharacter
     super.onPause(event);
     if (fadeTween != null) fadeTween.active = false;
     if (slip) FlxTweenUtil.pauseTweensOf(PlayState.instance.currentStage.getDad());
+    if (dadFlicker != null)
+    {
+      dadFlicker.pause();
+      this.visible = true;
+    }
     FlxG.camera?.active = false;
   }
 
@@ -109,6 +115,11 @@ class DadRemnantsCharacter extends AnimateAtlasCharacter
     super.onResume(event);
     if (fadeTween != null) fadeTween.active = true;
     if (slip) FlxTweenUtil.resumeTweensOf(PlayState.instance.currentStage.getDad());
+    if (dadFlicker != null)
+    {
+      dadFlicker.resume();
+      this.visible = true;
+    }
     FlxG.camera?.active = true;
   }
 
@@ -145,6 +156,24 @@ class DadRemnantsCharacter extends AnimateAtlasCharacter
     }
 
     super.onNoteHit(event);
+  }
+
+  var dadFlicker:FlxFlicker = null;
+
+  override function onAnimationFinished(name:String)
+  {
+    super.onAnimationFinished(name);
+
+    if (name == 'hit')
+    {
+      // ERIC: You have to use super instead of this or it breaks.
+      // This is because typeof(this) is PolymodAbstractClass.
+      dadFlicker = FlxFlicker.flicker(super, 1, 1 / 30, true, true, function(_) {
+        dadFlicker = FlxFlicker.flicker(super, 0.5, 1 / 60, true, true, function(_) {
+          dadFlicker = null;
+        });
+      });
+    }
   }
 
   function onCreate(event:ScriptEvent):Void

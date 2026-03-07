@@ -185,11 +185,6 @@
       "offsets": [0, 0]
     },
     {
-      "name": "hitCan",
-      "prefix": "Hurt",
-      "offsets": [0, 0]
-    },
-    {
       "name": "hit",
       "prefix": "Hurt",
       "offsets": [0, 0]

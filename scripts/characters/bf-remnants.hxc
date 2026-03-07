@@ -238,7 +238,7 @@ class BoyfriendRemnantsCharacter extends MultiAnimateAtlasCharacter
    */
   function playCanExplodeAnim()
   {
-    this.playAnimation('hitCan', true, true);
+    this.playAnimation('hit', true, true);
     // Donk.
     FunkinSound.playOnce(Paths.sound('Pico_Bonk'), 1.0);
   }
@@ -254,7 +254,7 @@ class BoyfriendRemnantsCharacter extends MultiAnimateAtlasCharacter
       playAnimation('deathLoop-explosion', true, false);
     }
 
-    if (name == 'hitCan' && PlayState.instance.health > 0.0 && !PlayState.instance.isPlayerDying)
+    if (name == 'hit' && PlayState.instance.health > 0.0 && !PlayState.instance.isPlayerDying)
     {
       // ERIC: You have to use super instead of this or it breaks.
       // This is because typeof(this) is PolymodAbstractClass.
