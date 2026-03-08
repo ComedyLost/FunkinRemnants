@@ -27,41 +27,42 @@
     "charSelect": {
       "transitionDelay": 0.45
     },
+    "useAnimatePosition": true,
     "animations": [
       {
         "name": "intro",
-        "prefix": "pico dj intro",
-        "offsets": [-90.5, -186.7]
+        "prefix": "Intro",
+        "animType": "framelabel"
       },
       {
         "name": "idle",
-        "prefix": "Pico DJ",
-        "offsets": [5.5, 236.3]
+        "prefix": "Idle",
+        "animType": "framelabel"
       },
       {
         "name": "idleEasterEgg",
-        "prefix": "Pico DJ afk",
-        "offsets": [-142.8, 133.9]
+        "prefix": "AFK",
+        "animType": "framelabel"
       },
       {
         "name": "confirm",
-        "prefix": "Pico DJ confirm",
-        "offsets": [-78, 246.7]
+        "prefix": "Confirm",
+        "animType": "framelabel"
       },
       {
         "name": "fistPump",
-        "prefix": "pico cheer",
-        "offsets": [-43, 61.3]
+        "prefix": "Win",
+        "animType": "framelabel"
       },
       {
         "name": "loss",
-        "prefix": "Pico DJ loss",
-        "offsets": [-43, 213.3]
+        "prefix": "Loss",
+        "animType": "framelabel"
       },
       {
         "name": "charSelect",
-        "prefix": "Pico DJ to CS",
-        "offsets": [-96.3, -12.3]
+        "prefix": "To Character Select",
+        "animType": "framelabel"
       }
     ]
   },
