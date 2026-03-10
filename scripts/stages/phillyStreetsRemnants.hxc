@@ -292,7 +292,7 @@ class PhillyStreetsRemnantsStage extends Stage
 
     if (skeleton)
     {
-      paper.loadAnTexture('remnants/paper', 'weekend1');
+      paper.loadTexture('remnants/paper', 'weekend1');
       paper.updateHitbox();
       END_X = -900;
       skeleton = false;
