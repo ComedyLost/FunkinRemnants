@@ -13,7 +13,7 @@
     "difficulties": ["easy", "normal", "hard"],
     "characters": {
       "player": "bf-remnants-holding-gf-remnants",
-      "girlfriend": "pico-speaker-remnants",
+      "girlfriend": "pico-remnants-speaker",
       "opponent": "tankman-remnants",
       "instrumental": "remnants",
       "playerVocals": ["bf-remnants-holding-gf-remnants"],

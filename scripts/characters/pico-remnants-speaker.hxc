@@ -9,14 +9,14 @@ import funkin.Conductor;
 import funkin.util.SortUtil;
 import Lambda;
 
-class PicoSpeakerRemnantsCharacter extends AnimateAtlasCharacter
+class PicoRemnantsSpeakerCharacter extends AnimateAtlasCharacter
 {
   var shootTimes:Array<Float> = [];
   var shootDirs:Array<Int> = [];
 
   function new()
   {
-    super('pico-speaker-remnants');
+    super('pico-remnants-speaker');
 
     ignoreExclusionPref.push("shoot1");
     ignoreExclusionPref.push("shoot2");
