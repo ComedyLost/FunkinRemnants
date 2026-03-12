@@ -82,7 +82,7 @@
     },
     {
       "name": "singDOWNmiss",
-      "prefix": "Left Down",
+      "prefix": "Down Miss",
       "offsets": [0, 0]
     },
     {
