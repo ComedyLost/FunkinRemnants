@@ -2,8 +2,8 @@ import funkin.graphics.FunkinSprite;
 import funkin.play.PlayState;
 import flixel.FlxG;
 import funkin.Paths;
+import flixel.util.FlxSignal;
 import funkin.FunkinMemory;
-import funkin.util.AbstractUtil;
 
 // a unique object for pico and girlfriend in the stress cutscene
 class StressSpeakerCutsceneRemnants extends FunkinSprite
@@ -13,7 +13,7 @@ class StressSpeakerCutsceneRemnants extends FunkinSprite
 
   public function new(x:Float, y:Float)
   {
-    onGirlfriendFell = AbstractUtil.createFlxSignal();
+    onGirlfriendFell = new FlxSignal();
     calledGirlfriendFell = false;
 
     super(x, y);
