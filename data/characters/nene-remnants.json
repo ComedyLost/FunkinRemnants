@@ -1,71 +1,63 @@
 {
   "version": "1.0.0",
   "name": "Remnants Nene",
-  "assetPath": "characters/nene-remnants",
+  "assetPath": "shared:characters/nene-remnants",
   "startingAnimation": "danceRight",
-  "renderType": "sparrow",
-  "offsets": [25, -96],
+  "renderType": "animateatlas",
+  "offsets": [35, -80],
+  "cameraOffsets": [-10, 25],
   "animations": [
     {
       "name": "danceLeft",
-      "prefix": "Idle0",
-      "frameIndices": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],
-      "offsets": [0, 0]
+      "prefix": "Idle",
+      "frameIndices": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
     },
     {
       "name": "danceRight",
-      "prefix": "Idle0",
+      "prefix": "Idle",
       "frameIndices": [
         16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30
-      ],
-      "offsets": [0, 0]
+      ]
     },
     {
       "name": "combo50",
-      "prefix": "ComboCheer0",
-      "offsets": [-120, 50]
+      "prefix": "Cheer"
     },
     {
       "name": "drop70",
-      "prefix": "Laugh0",
+      "prefix": "Laugh",
       "frameIndices": [
         0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 7, 8, 9, 10, 11, 7, 8, 9, 10, 11,
         7, 8, 9, 10, 11, 7, 8, 9, 10, 11, 7, 8, 9, 10, 11
-      ],
-      "offsets": [0, 0]
+      ]
     },
     {
       "name": "laughCutscene",
-      "prefix": "Laugh0",
+      "prefix": "Laugh",
       "frameIndices": [
         0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 7, 8, 9, 10, 11, 7, 8, 9, 10, 11,
         7, 8, 9, 10, 11, 7, 8, 9, 10, 11, 7, 8, 9, 10, 11
-      ],
-      "offsets": [0, 0]
+      ]
     },
     {
       "name": "combo200",
-      "prefix": "ComboFawn0",
+      "prefix": "Fawn",
       "frameIndices": [
         0, 1, 2, 3, 4, 5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6,
         6, 6, 6, 6, 6, 6
-      ],
-      "offsets": [-50, -25]
+      ]
     },
     {
       "name": "raiseKnife",
-      "prefix": "KnifeRaise0",
-      "offsets": [0, 52]
+      "prefix": "KnifeRaise"
     },
     {
       "name": "idleKnife",
-      "prefix": "KnifeIdle0",
-      "offsets": [-99, 52]
+      "prefix": "KnifeIdle"
     },
     {
       "name": "lowerKnife",
-      "prefix": "KnifeLower0",
-      "offsets": [-39, 52]
+      "prefix": "KnifeLower"
     }
   ]
 }
