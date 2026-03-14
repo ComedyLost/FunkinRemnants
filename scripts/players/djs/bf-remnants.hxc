@@ -188,7 +188,7 @@ class BoyfriendRemnantsFreeplayDJ extends AnimateAtlasFreeplayDJ
   {
     if (id == 'Watching TV')
     {
-      if (!playingCartoonAnim) return;
+      if (playingCartoonAnim) return;
       playingCartoonAnim = true;
 
       super.playFlashAnimation('Watching TV ${alternateCartoon ? 2 : 1}', Force, Reverse, Loop, Frame);
