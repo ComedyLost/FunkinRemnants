@@ -44,7 +44,7 @@ class BoyfriendRemnantsFreeplayDJ extends AnimateAtlasFreeplayDJ
     else if (name == playableCharData?.getAnimationPrefix('idle'))
     {
       if (timeIdling >= IDLE_EGG_PERIOD && !seenIdleEasterEgg) currentState = FreeplayDJState.IdleEasterEgg;
-      else if (timeIdling >= 2) currentState = FreeplayDJState.Cartoon;
+      else if (timeIdling >= IDLE_CARTOON_PERIOD) currentState = FreeplayDJState.Cartoon;
     }
     else if (name == playableCharData?.getAnimationPrefix('confirm'))
     {
