@@ -1,9 +1,9 @@
 {
   "version": "1.0.0",
   "name": "Remnants GF",
-  "assetPath": "shared:characters/gf-remnants",
+  "assetPath": "shared:characters/gf-remnants/base",
   "startingAnimation": "danceRight",
-  "renderType": "multianimateatlas",
+  "renderType": "animateatlas",
   "offsets": [-6, -8],
   "cameraOffsets": [0, 13],
   "singTime": 8.0,

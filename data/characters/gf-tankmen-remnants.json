@@ -1,9 +1,9 @@
 {
   "version": "1.0.0",
   "name": "Remnants GF (Tankman Stickup)",
-  "assetPath": "shared:characters/gf-remnants",
+  "assetPath": "shared:characters/gf-remnants/base",
   "startingAnimation": "danceRight",
-  "renderType": "multianimateatlas",
+  "renderType": "animateatlas",
   "animations": [
     {
       "name": "danceLeft",

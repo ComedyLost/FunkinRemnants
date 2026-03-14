@@ -1,9 +1,9 @@
 {
   "version": "1.0.0",
   "name": "Remnants GF (Car)",
-  "assetPath": "shared:characters/gf-remnants",
+  "assetPath": "shared:characters/gf-remnants/base",
   "startingAnimation": "danceRight",
-  "renderType": "multianimateatlas",
+  "renderType": "animateatlas",
   "cameraOffsets": [0, -200],
   "animations": [
     {

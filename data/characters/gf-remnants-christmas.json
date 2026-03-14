@@ -1,44 +1,39 @@
 {
   "version": "1.0.0",
   "name": "Remnants GF (Christmas)",
-  "assetPath": "characters/gfChristmas-remnants",
+  "assetPath": "shared:characters/gf-remnants/christmas",
   "startingAnimation": "danceLeft",
+  "renderType": "animateatlas",
+  "offsets": [0, 5],
+  "cameraOffsets": [0, 5],
   "animations": [
     {
       "name": "danceLeft",
-      "prefix": "GF Dancing Beat",
-      "frameIndices": [30, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14],
-      "offsets": [0, -9]
+      "prefix": "Idle",
+      "frameIndices": [30, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]
     },
     {
       "name": "danceRight",
-      "prefix": "GF Dancing Beat",
+      "prefix": "Idle",
       "frameIndices": [
         15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29
-      ],
-      "offsets": [0, -9]
+      ]
     },
     {
       "name": "sad",
-      "prefix": "gf sad",
-      "frameIndices": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
-      "offsets": [2, -21]
+      "prefix": "Sad"
     },
     {
       "name": "cheer",
-      "prefix": "GF Cheer",
-      "offsets": [0, 0]
+      "prefix": "Cheer"
     },
     {
       "name": "combo50",
-      "prefix": "GF Cheer",
-      "offsets": [0, 0]
+      "prefix": "Cheer"
     },
     {
       "name": "drop70",
-      "prefix": "gf sad",
-      "frameIndices": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
-      "offsets": [2, -21]
+      "prefix": "Sad"
     }
   ]
 }
