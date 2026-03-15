@@ -20,8 +20,9 @@ class PhillyStreetsRemnantsStage extends Stage
   var rainShader:RuntimeRainShader = new RuntimeRainShader();
   var rainShaderFilter:ShaderFilter;
 
+  public var paper:StageProp = null;
+
   var paperInterruptable:Bool = true;
-  var skeleton:Bool = false;
 
   // as song goes on, these are used to make the rain more intense throught the song
   // these values are also used for the rain sound effect volume intensity!
@@ -33,6 +34,7 @@ class PhillyStreetsRemnantsStage extends Stage
 
   // The paper X finish position.
   var END_X:Float = -900;
+  var END_X_SECRET:Float = -1600;
 
   function new()
   {
@@ -51,7 +53,6 @@ class PhillyStreetsRemnantsStage extends Stage
     super.onCreate(event);
 
     paperInterruptable = true;
-    skeleton = false;
 
     if (!RemnantsOptions.getPerformanceOption())
     {
@@ -160,6 +161,9 @@ class PhillyStreetsRemnantsStage extends Stage
       PlayState.instance.currentStage.add(mist5);
       PlayState.instance.currentStage.refresh(); // Apply z-index.
     }
+
+    paper = getNamedProp('paper');
+    addSkeleton();
   }
 
   override public function addCharacter(character:BaseCharacter, charType:CharacterType):Void
@@ -171,6 +175,30 @@ class PhillyStreetsRemnantsStage extends Stage
       character.x += 75;
       character.originalPosition.x = character.x;
     }
+  }
+
+  /**
+   * Adds "Woah did you see that?" to the frame collection.
+   *
+   * Til Fun Fact: Did you know that graphics come with a frame collection? I forgot about it until now!
+   */
+  public function addSkeleton():Void
+  {
+    var graphic:FlxGraphic = FlxG.bitmap.add(Paths.image('remnants/paper-secret'), false);
+
+    // Make sure that the cache system knows that this graphic exists.
+    if (!paper.frames.usedGraphics.contains(graphic))
+    {
+      paper.frames.pushFrame(graphic.imageFrame.frame, true);
+
+      paper.frames.usedGraphics.push(graphic);
+      graphic.incrementUseCount();
+    }
+
+    // Since this "frame" doesn't have a name, I need to add it by the location in the Array.
+    // This is actually what health icons do too, surprisingly enough.
+    var index:Int = paper.frames.frames.indexOf(graphic.imageFrame.frame);
+    paper.animation.add('paperBlow-secret', [index], 1, false);
   }
 
   var _timer:Float = 0;
@@ -210,26 +238,19 @@ class PhillyStreetsRemnantsStage extends Stage
   {
     super.onBeatHit(event);
 
-    var paper:StageProp = getNamedProp('paper');
     if (FlxG.random.bool(1.5) && paperInterruptable)
     {
       if (paper != null)
       {
-        if (FlxG.random.bool(5)) // Did you guys see that? https://x.com/shoppingcart_r/status/2023625177154695661
-        {
-          paper.loadTexture('remnants/paper-secret', 'weekend1');
-          paper.updateHitbox();
-          END_X = -1600;
-          skeleton = true;
-        }
+        var skeleton:Bool = FlxG.random.bool(1); // Did you guys see that? https://x.com/shoppingcart_r/status/2023625177154695661
 
         paper.alpha = 1;
         paperInterruptable = false;
-        paper.animation.play('paperBlow', true);
+        paper.animation.play(skeleton ? 'paperBlow-secret' : 'paperBlow', true);
         paper.y = 608 + FlxG.random.float(-100, 150);
 
         // Do the tween.
-        FlxTween.tween(paper, {x: END_X}, FlxG.random.float(4.5, 5),
+        FlxTween.tween(paper, {x: skeleton ? END_X_SECRET : END_X}, FlxG.random.float(4.5, 5),
           {
             ease: FlxEase.sineInOut,
             onComplete: function(twn) {
@@ -243,22 +264,15 @@ class PhillyStreetsRemnantsStage extends Stage
   public override function onPause(event:PauseScriptEvent)
   {
     super.onPause(event);
-    var paper = getNamedProp('paper');
-    if (paper != null)
-    {
-      FlxTweenUtil.pauseTweensOf(paper);
-    }
+
+    if (paper != null) FlxTweenUtil.pauseTweensOf(paper);
   }
 
   public override function onResume(event:ScriptEvent)
   {
     super.onResume(event);
 
-    var paper = getNamedProp('paper');
-    if (paper != null)
-    {
-      FlxTweenUtil.resumeTweensOf(paper);
-    }
+    if (paper != null) FlxTweenUtil.resumeTweensOf(paper);
   }
 
   override function onGameOver(event:ScriptEvent):Void
@@ -286,17 +300,7 @@ class PhillyStreetsRemnantsStage extends Stage
 
   function resetPaper()
   {
-    var paper:StageProp = getNamedProp('paper');
     paperInterruptable = true;
-    paper?.alpha = 0; // Making sure.
-
-    if (skeleton)
-    {
-      paper.loadTexture('remnants/paper', 'weekend1');
-      paper.updateHitbox();
-      END_X = -900;
-      skeleton = false;
-    }
 
     if (paper != null)
     {
