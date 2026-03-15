@@ -1,9 +1,9 @@
 {
   "version": "1.0.0",
   "name": "Remnants BF (Holding GF)",
-  "assetPath": "shared:characters/bf-remnants/holding",
+  "assetPath": "shared:characters/bf-remnants/holding/base",
   "flipX": true,
-  "renderType": "animateatlas",
+  "renderType": "multianimateatlas",
   "cameraOffsets": [-10, 70],
   "offsets": [6, 33],
   "healthIcon": {
@@ -40,32 +40,38 @@
     },
     {
       "name": "singLEFTmiss",
-      "prefix": "Left-Miss"
+      "prefix": "Left Miss"
     },
     {
       "name": "singDOWNmiss",
-      "prefix": "Down-Miss"
+      "prefix": "Down Miss"
     },
     {
       "name": "singUPmiss",
-      "prefix": "Up-Miss"
+      "prefix": "Up Miss"
     },
     {
       "name": "singRIGHTmiss",
-      "prefix": "Down-Miss"
+      "prefix": "Down Miss"
     },
     {
+      "assetPath": "shared:characters/bf-remnants/holding/death",
       "name": "firstDeath",
-      "prefix": "First Death"
+      "prefix": "Death Intro",
+      "offsets": [-278, -126]
     },
     {
+      "assetPath": "shared:characters/bf-remnants/holding/death",
       "name": "deathLoop",
       "prefix": "Death Loop",
-      "looped": true
+      "looped": true,
+      "offsets": [-278, -126]
     },
     {
+      "assetPath": "shared:characters/bf-remnants/holding/death",
       "name": "deathConfirm",
-      "prefix": "Death Confirm"
+      "prefix": "Death Confirm",
+      "offsets": [-278, -126]
     }
   ]
 }

@@ -1,12 +1,12 @@
 import flixel.FlxG;
 import funkin.util.HapticUtil;
 import funkin.play.PauseSubState;
-import funkin.play.character.AnimateAtlasCharacter;
+import funkin.play.character.MultiAnimateAtlasCharacter;
 import funkin.play.GameOverSubState;
 import funkin.play.PlayState;
 import funkin.Preferences;
 
-class BoyfriendRemnantsHoldingGFCharacter extends AnimateAtlasCharacter
+class BoyfriendRemnantsHoldingGFCharacter extends MultiAnimateAtlasCharacter
 {
   function new()
   {
