@@ -121,7 +121,7 @@ class GunsRemnantsMixSong extends Song
       PlayState.instance.subtitles.assignSubtitles(subtitlesFile, cutsceneTimeDummy);
     }
 
-    cutsceneMusic = FunkinSound.load(Paths.music("DISTORTO/DISTORTO", "week7"), 0.2, true);
+    cutsceneMusic = FunkinSound.load(Paths.music("DISTORTO-remnants/DISTORTO-remnants", "week7"), 0.2, true);
     cutsceneSounds.push(cutsceneMusic);
 
     var tightBarsSound:FunkinSound = FunkinSound.load(Paths.sound("tankSong2", "week7"), 1, false);
