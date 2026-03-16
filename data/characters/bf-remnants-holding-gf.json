@@ -1,11 +1,11 @@
 {
   "version": "1.0.0",
-  "name": "Remnants BF (Holding GF)",
-  "assetPath": "shared:characters/bf-remnants/holding/base",
-  "flipX": true,
   "renderType": "multianimateatlas",
+  "name": "Remnants BF (Holding GF)",
+  "assetPath": "shared:characters/bf-remnants/holding gf/base",
   "cameraOffsets": [-10, 70],
   "offsets": [6, 33],
+  "flipX": true,
   "healthIcon": {
     "id": "bf-remnants"
   },
@@ -16,59 +16,69 @@
   "animations": [
     {
       "name": "idle",
+      "animType": "framelabel",
       "prefix": "Idle"
     },
     {
       "name": "hey",
+      "animType": "framelabel",
       "prefix": "Hey"
     },
     {
       "name": "singLEFT",
+      "animType": "framelabel",
       "prefix": "Left"
     },
     {
       "name": "singDOWN",
+      "animType": "framelabel",
       "prefix": "Down"
     },
     {
       "name": "singUP",
+      "animType": "framelabel",
       "prefix": "Up"
     },
     {
       "name": "singRIGHT",
+      "animType": "framelabel",
       "prefix": "Right"
     },
     {
       "name": "singLEFTmiss",
+      "animType": "framelabel",
       "prefix": "Left Miss"
     },
     {
       "name": "singDOWNmiss",
+      "animType": "framelabel",
       "prefix": "Down Miss"
     },
     {
       "name": "singUPmiss",
+      "animType": "framelabel",
       "prefix": "Up Miss"
     },
     {
       "name": "singRIGHTmiss",
+      "animType": "framelabel",
       "prefix": "Down Miss"
     },
     {
-      "assetPath": "shared:characters/bf-remnants/holding/death",
+      "assetPath": "shared:characters/bf-remnants/holding gf/death",
       "name": "firstDeath",
       "prefix": "Death Intro",
       "offsets": [-278, -126]
     },
     {
-      "assetPath": "shared:characters/bf-remnants/holding/death",
+      "assetPath": "shared:characters/bf-remnants/holding gf/death",
       "name": "deathLoop",
       "prefix": "Death Loop",
       "looped": true,
       "offsets": [-278, -126]
     },
     {
-      "assetPath": "shared:characters/bf-remnants/holding/death",
+      "assetPath": "shared:characters/bf-remnants/holding gf/death",
       "name": "deathConfirm",
       "prefix": "Death Confirm",
       "offsets": [-278, -126]
