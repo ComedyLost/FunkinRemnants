@@ -2,7 +2,6 @@ name: Mobile Compression
 
 on:
   push:
-    branches: [main]
   workflow_dispatch:
 
 jobs:
@@ -15,50 +14,57 @@ jobs:
 
     steps:
       - name: Download Source Code
-        uses: FunkinCrew/ci-checkout@v7.3.3
+        uses: actions/checkout@main
+        with:
+          path: 'repo'
 
-      - uses: FunkinCrew/ci-haxe@v3
+      - uses: krdlab/setup-haxe@master
         with:
           haxe-version: 4.3.7
 
       - name: Install ASTC Compressor
-        run: haxelib --quiet --always git astc-compressor https://github.com/TechnikTil/astc-compressor chore/kill-neko
+        run: haxelib --quiet --always git astc-compressor https://github.com/KarimAkra/astc-compressor develop
+        working-directory: repo
 
       - name: Retrieve Asset Cache
         id: fetch-asset-cache
-        uses: actions/cache/restore@v4
+        uses: actions/cache/restore@main
         with:
-          path: astc-textures/**
+          path: repo/astc-textures/**
           key: asset-cache
 
       - name: Run ASTC Compressor
         run: haxelib run astc-compressor compress-from-json -json ./astc-compression-data.json
+        working-directory: repo
 
       - name: Save Asset Cache
         id: save-asset-cache
-        uses: actions/cache/save@v4
+        uses: actions/cache/save@main
         with:
-          path: astc-textures/**
-          key: asset-cache
+          path: repo/astc-textures/**
+          key: ${{ steps.fetch-asset-cache.outputs.cache-primary-key }}
 
       - name: Overwrite PNGs with ASTCs
         run: |
           find "astc-textures/" -name "*.astc" -type f | while read -r file; do
+            echo "$file"
             normalFileLoc="${file#astc-textures/}"
+            normalFilePng="${normalFileLoc%.*}.png"
 
-            mv "$file" "$normalFileLoc"
-            rm "${normalFileLoc%.*}.png"
+            if [ -f "$normalFilePng" ]; then
+              mv "$file" "$normalFileLoc"
+              rm "${normalFilePng}"
+            else
+              rm "$file"
+            fi
           done
+        working-directory: repo
 
-      - name: Push ASTC Files to `mobile` branch
-        uses: stefanzweifel/git-auto-commit-action@v6
+      - name: Upload Mobile Artifact
+        uses: actions/upload-artifact@main
         with:
-          commit_message: Compress Images using ASTC
-          branch: mobile
-          push_options: '--force'
+          name: mobile
+          path: |
+            repo/
+            !repo/astc-textures/
 
-          file_pattern: '*.astc *.png'
-
-          commit_user_name: github-actions[bot]
-          commit_user_email: 41898282+github-actions[bot]@users.noreply.github.com
-          commit_author: github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
