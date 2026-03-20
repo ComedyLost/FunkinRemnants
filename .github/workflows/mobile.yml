@@ -31,15 +31,16 @@ jobs:
         uses: actions/cache/restore@main
         with:
           path: repo/astc-textures/**
-          key: asset-cache
+          key: astc-${{ hashFiles('repo/**.png') }}
+          restore-keys: astc-
 
       - name: Run ASTC Compressor
         run: haxelib run astc-compressor compress-from-json -json ./astc-compression-data.json
         working-directory: repo
 
       - name: Save Asset Cache
-        id: save-asset-cache
         uses: actions/cache/save@main
+        if: steps.fetch-asset-cache.outputs.cache-hit != 'true'
         with:
           path: repo/astc-textures/**
           key: ${{ steps.fetch-asset-cache.outputs.cache-primary-key }}
