@@ -1,7 +1,7 @@
 {
   "version": "1.0.0",
   "renderType": "multianimateatlas",
-  "offsets": [-27, -1],
+  "offsets": [-27, 10],
   "danceEvery": 1,
   "scale": 1,
   "name": "Remnants Pico (Playable)",

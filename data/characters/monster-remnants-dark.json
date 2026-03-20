@@ -3,7 +3,8 @@
   "name": "Remnants Monster (Dark)",
   "assetPath": "characters/monster-remnants_dark",
   "healthIcon": { "id": "monster-remnants" },
-  "offsets": [2, 25],
+  "offsets": [-7, 0.7],
+  "cameraOffsets": [7, 0],
   "animations": [
     {
       "name": "idle",

@@ -4,7 +4,7 @@
   "assetPath": "shared:characters/gf-remnants/christmas",
   "startingAnimation": "danceLeft",
   "renderType": "animateatlas",
-  "offsets": [0, 5],
+  "offsets": [-0.5, 6.5],
   "cameraOffsets": [0, 5],
   "animations": [
     {

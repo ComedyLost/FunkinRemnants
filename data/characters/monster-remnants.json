@@ -3,7 +3,8 @@
   "name": "Remnants Monster",
   "assetPath": "shared:characters/monster-remnants",
   "renderType": "animateatlas",
-  "offsets": [1.5, 25.7],
+  "offsets": [-7, 1],
+  "cameraOffsets": [7, 12],
   "animations": [
     {
       "name": "idle",

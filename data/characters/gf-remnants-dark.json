@@ -5,9 +5,13 @@
   "startingAnimation": "danceRight",
   "renderType": "animateatlas",
   "singTime": 8.0,
-  "offsets": [-7, 3],
+  "offsets": [0, 11],
+  "cameraOffsets": [0, 13.5],
   "healthIcon": {
     "id": "gf-remnants"
+  },
+  "atlasSettings": {
+    "useRenderTexture": true
   },
   "animations": [
     {

@@ -4,6 +4,7 @@
   "assetPath": "shared:characters/dad-remnants",
   "renderType": "animateatlas",
   "offsets": [36, 2],
+  "cameraOffsets": [-12, 9],
   "singTime": 8.0,
   "healthIcon": {
     "id": "dad-remnants"

@@ -8,7 +8,7 @@
     "id": "mom-remnants"
   },
   "offsets": [-40, 15],
-  "cameraOffsets": [0, -100],
+  "cameraOffsets": [40, -52.5],
   "animations": [
     {
       "name": "idle",

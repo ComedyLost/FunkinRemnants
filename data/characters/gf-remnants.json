@@ -4,9 +4,12 @@
   "assetPath": "shared:characters/gf-remnants/base",
   "startingAnimation": "danceRight",
   "renderType": "animateatlas",
-  "offsets": [-6, -8],
-  "cameraOffsets": [0, 13],
+  "offsets": [0, 0],
+  "cameraOffsets": [0, 12.5],
   "singTime": 8.0,
+  "atlasSettings": {
+    "useRenderTexture": true
+  },
   "animations": [
     {
       "name": "danceLeft",

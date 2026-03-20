@@ -3,6 +3,8 @@
   "name": "Remnants Monster (Christmas)",
   "assetPath": "shared:characters/monster-remnants",
   "renderType": "animateatlas",
+  "offsets": [-7, 0],
+  "cameraOffsets": [7, -4],
   "healthIcon": {
     "id": "monster-remnants"
   },

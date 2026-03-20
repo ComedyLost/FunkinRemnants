@@ -6,7 +6,8 @@
   "healthIcon": {
     "id": "bf-christmas-remnants"
   },
-  "offsets": [9, 3],
+  "offsets": [9, 1],
+  "cameraOffsets": [-9, 60],
   "death": {
     "cameraZoom": 1.45,
     "cameraOffsets": [25, -125]
