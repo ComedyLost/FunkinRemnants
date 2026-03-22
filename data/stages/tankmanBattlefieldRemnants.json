@@ -280,12 +280,12 @@
   "characters": {
     "bf": {
       "zIndex": 101,
-      "position": [1090.5, 885],
+      "position": [1092, 885],
       "cameraOffsets": [-220, -100]
     },
     "dad": {
       "zIndex": 102,
-      "position": [230.5, 996],
+      "position": [275.5, 1026],
       "cameraOffsets": [250, -100]
     },
     "gf": { "zIndex": 100, "position": [660.5, 730], "cameraOffsets": [0, 0] }

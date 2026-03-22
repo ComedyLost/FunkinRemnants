@@ -217,7 +217,7 @@ class StressRemnantsMixSong extends Song
     PlayState.instance.currentStage.getGirlfriend().visible = false;
     PlayState.instance.currentStage.getBoyfriend().visible = false;
 
-    fakeGirlfriend = CharacterDataParser.fetchCharacter('gf-tankmen-remnants');
+    fakeGirlfriend = CharacterDataParser.fetchCharacter('gf-remnants-tankmen');
     setupCharacter(fakeGirlfriend, CharacterType.GF);
     PlayState.instance.currentStage.add(fakeGirlfriend);
 

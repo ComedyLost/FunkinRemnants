@@ -1,11 +1,11 @@
 {
   "renderType": "sparrow",
   "version": "1.0.1",
-  "offsets": [0, 0],
+  "name": "Hex (Remnants)",
+  "offsets": [0, -70],
+  "cameraOffsets": [70, 130],
   "danceEvery": 2,
   "scale": 1,
-  "name": "Hex (Remnants)",
-  "cameraOffsets": [70, 130],
   "flipX": false,
   "isPixel": false,
   "singTime": 6.1,
@@ -19,7 +19,7 @@
     {
       "frameIndices": [],
       "prefix": "Hex crazy idle",
-      "offsets": [-19, -130],
+      "offsets": [-13, -129],
       "frameRate": 24,
       "name": "idle",
       "looped": false
@@ -27,7 +27,7 @@
     {
       "frameIndices": [],
       "prefix": "Hex crazy left",
-      "offsets": [151, -62],
+      "offsets": [137, -67],
       "frameRate": 24,
       "name": "singLEFT",
       "looped": false
@@ -35,7 +35,7 @@
     {
       "frameIndices": [],
       "prefix": "Hex crazy down",
-      "offsets": [33, -194],
+      "offsets": [54, -191],
       "frameRate": 24,
       "name": "singDOWN",
       "looped": false
@@ -43,7 +43,7 @@
     {
       "frameIndices": [],
       "prefix": "Hex crazy up",
-      "offsets": [84, -17],
+      "offsets": [58, -24],
       "frameRate": 24,
       "name": "singUP",
       "looped": false
@@ -51,7 +51,7 @@
     {
       "frameIndices": [],
       "prefix": "Hex crazy right",
-      "offsets": [61, -153],
+      "offsets": [43, -148],
       "frameRate": 24,
       "name": "singRIGHT",
       "looped": false

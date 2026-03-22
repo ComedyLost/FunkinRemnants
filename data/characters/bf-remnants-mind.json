@@ -1,6 +1,14 @@
 {
+  "version": "1.0.1",
+  "name": "Remnants BF (Mind)",
+  "offsets": [12, 2],
+  "cameraOffsets": [-13, 36.5],
+  "danceEvery": 2,
+  "scale": 1,
+  "flipX": true,
+  "isPixel": false,
+  "singTime": 8,
   "renderType": "multianimateatlas",
-  "offsets": [0, 0],
   "applyStageMatrix": false,
   "death": {
     "cameraZoom": 0.95,
@@ -15,14 +23,6 @@
     "id": "bf-remnants",
     "flipX": false
   },
-  "version": "1.0.1",
-  "danceEvery": 2,
-  "scale": 1,
-  "name": "Remnants BF (Mind)",
-  "cameraOffsets": [0, -50],
-  "flipX": true,
-  "isPixel": false,
-  "singTime": 8,
   "atlasSettings": {
     "applyStageMatrix": false,
     "useRenderTexture": false,

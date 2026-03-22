@@ -13,7 +13,7 @@
     "difficulties": ["easy", "normal", "hard"],
     "characters": {
       "player": "bf-remnants",
-      "girlfriend": "gf-tankmen-remnants",
+      "girlfriend": "gf-remnants-tankmen",
       "opponent": "tankman-remnants",
       "instrumental": "remnants",
       "playerVocals": ["bf-remnants"],

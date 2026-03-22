@@ -1,10 +1,10 @@
 {
   "version": "1.0.0",
   "renderType": "multianimateatlas",
-  "name": "Remnants BF (Holding GF)",
+  "name": "Remnants BF (Holding Remnants GF)",
   "assetPath": "shared:characters/bf-remnants/holding gf/base",
-  "cameraOffsets": [-10, 70],
-  "offsets": [6, 33],
+  "offsets": [26, 49],
+  "cameraOffsets": [-26, 45.5],
   "flipX": true,
   "healthIcon": {
     "id": "bf-remnants"

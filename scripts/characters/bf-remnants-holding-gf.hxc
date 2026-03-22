@@ -6,11 +6,11 @@ import funkin.play.GameOverSubState;
 import funkin.play.PlayState;
 import funkin.Preferences;
 
-class BoyfriendRemnantsHoldingGFCharacter extends MultiAnimateAtlasCharacter
+class BoyfriendRemnantsHoldingGFRemnantsCharacter extends MultiAnimateAtlasCharacter
 {
   function new()
   {
-    super('bf-remnants-holding-gf');
+    super('bf-remnants-holding-gf-remnants');
   }
 
   function onCreate(event:ScriptEvent)

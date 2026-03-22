@@ -164,10 +164,8 @@ class PhillyStreetsRemnantsStage extends Stage
 
     if (character.characterId.startsWith('gf') && charType == CharacterType.GF)
     {
-      character.x += 120;
-      character.y += 40;
+      character.x += 75;
       character.originalPosition.x = character.x;
-      character.originalPosition.y = character.y;
     }
   }
 

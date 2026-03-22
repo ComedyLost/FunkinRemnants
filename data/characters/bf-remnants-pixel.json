@@ -6,6 +6,7 @@
   "renderType": "multisparrow",
   "singTime": 8.0,
   "isPixel": true,
+  "cameraOffsets": [0, -27],
   "healthIcon": {
     "id": "bf-pixel-remnants",
     "isPixel": true

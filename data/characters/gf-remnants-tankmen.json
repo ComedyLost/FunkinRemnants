@@ -4,6 +4,7 @@
   "assetPath": "shared:characters/gf-remnants/base",
   "startingAnimation": "danceRight",
   "renderType": "animateatlas",
+  "cameraOffsets": [0, 13.5],
   "animations": [
     {
       "name": "danceLeft",

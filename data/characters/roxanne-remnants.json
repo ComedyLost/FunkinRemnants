@@ -4,14 +4,14 @@
   "renderType": "animateatlas",
   "assetPath": "shared:characters/roxanne-remnants",
   "singTime": 8.0,
+  "offsets": [-37, 9.5],
+  "cameraOffsets": [37, -53],
   "healthIcon": {
     "id": "mom-remnants"
   },
   "atlasSettings": {
     "useRenderTexture": true
   },
-  "cameraOffsets": [0, 100],
-  "offsets": [5, 40],
   "animations": [
     {
       "name": "idle",
