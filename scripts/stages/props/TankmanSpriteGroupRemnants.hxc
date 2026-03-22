@@ -14,19 +14,19 @@ class TankmanSpriteGroupRemnants extends FlxTypedSpriteGroup
 
   var MAX_SIZE = 4;
 
-  var isErect:Bool = false;
-
   var isEasterEgg:Bool = false;
 
-  function new(erect:Bool)
+  function new()
   {
     if (PlayState.instance.currentVariation == 'remnants') MAX_SIZE = 12;
 
     super(0, 0, 4);
     this.zIndex = 30;
 
-    this.isErect = (erect != null) ? erect : false;
-    trace('Initializing TankmanSpriteGroupRemnants... ' + (this.isErect ? ' (erect)' : ' (base)'));
+    trace('Initializing TankmanSpriteGroupRemnants... ');
+
+    // Precache the Tankman sprite.
+    FunkinMemory.cacheTexture(Paths.image('remnants/johnRunning', 'week7'));
   }
 
   public function isValid():Bool
@@ -34,7 +34,7 @@ class TankmanSpriteGroupRemnants extends FlxTypedSpriteGroup
     return group != null;
   }
 
-  function reset()
+  public override function reset():Void
   {
     group.clear();
 
@@ -106,11 +106,6 @@ class TankmanSpriteGroupRemnants extends FlxTypedSpriteGroup
     tankman.scriptSet('runSpeed', FlxG.random.float(0.6, 1));
     tankman.scriptSet('goingRight', goingRight);
 
-    if (isErect)
-    {
-      tankman.scriptCall('addRimlight');
-    }
-
     this.add(tankman);
   }
 
@@ -135,8 +130,8 @@ class TankmanSpriteGroupRemnants extends FlxTypedSpriteGroup
         var nextTime:Float = tankmanTimes.shift();
         var goingRight:Bool = tankmanDirs.shift();
         var xPos = 500;
-        var yPos:Float = isErect ? 350 : (200 + FlxG.random.int(50, 100));
-        var scale:Float = isErect ? 1.10 : 1.0;
+        var yPos:Float = (200 + FlxG.random.int(50, 100));
+        var scale:Float = 0.75;
         createTankman(xPos, yPos, nextTime, goingRight, scale);
       }
       else

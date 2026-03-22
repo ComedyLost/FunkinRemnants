@@ -24,17 +24,15 @@ class TankmanSpriteRemnants extends FunkinSprite
   {
     super();
 
-    if (PlayState.instance.currentVariation == 'remnants') loadSparrow('remnants/tankmanKilled1');
-    else
-      loadSparrow('tankmanKilled1');
+    tankmanFlicker = null;
+    loadTextureAtlas("remnants/johnRunning", "week7");
 
-    animation.addByPrefix('run', 'tankman running', 24, true);
-    animation.addByPrefix('shot', 'John Shot ' + FlxG.random.int(1, 2), 24, false);
+    animation.addByFrameLabel('shot', 'Shot ${FlxG.random.int(1, 2)}${!Preferences.naughtyness ? " Censored" : ""}', 24, false);
+    animation.addByFrameLabel('run', 'Running', 24, true);
 
     initAnim();
 
     setGraphicSize(Std.int(width * 0.4));
-
     updateHitbox();
   }
 
@@ -53,44 +51,12 @@ class TankmanSpriteRemnants extends FunkinSprite
     });
   }
 
-  var rim:DropShadowShader;
-
-  public function addRimlight()
-  {
-    rim = new DropShadowShader();
-
-    rim.baseBrightness = -46;
-    rim.baseHue = -38;
-    rim.baseContrast = -25;
-    rim.baseSaturation = -20;
-
-    rim.threshold = 0.4;
-
-    rim.color = 0xFFDFEF3C;
-
-    shader = rim;
-
-    // rim.attachedSprite = tankman;
-
-    animation.onFrameChange.add(function() {
-      rim.updateFrameInfo(this.frame);
-    });
-
-    // If goingRight is false, 0 degrees = facing right.
-    // If goingRight is true, 0 degrees = facing left.
-
-    rim.angle = 135; // goingRight ? 135 : 45;
-  }
-
   function initAnim()
   {
     // Called when the sprite is created as well as when it is revived.
 
     animation.play('run');
     animation.curAnim.curFrame = FlxG.random.int(0, animation.curAnim.numFrames - 1);
-
-    offset.y = 0;
-    offset.x = 0;
   }
 
   function revive()
@@ -109,13 +75,11 @@ class TankmanSpriteRemnants extends FunkinSprite
     {
       deathFlicker();
     }
+
     // Check if we've reached the time when the tankman should be shot.
     if (Conductor.instance.songPosition >= strumTime && animation.curAnim.name == 'run')
     {
       animation.play('shot');
-
-      offset.y = 200;
-      offset.x = 300;
     }
 
     // Move the sprite while it is running.
