@@ -1,0 +1,73 @@
+import funkin.ui.freeplay.FreeplayState;
+import funkin.ui.freeplay.SongMenuItem;
+import funkin.modding.module.Module;
+
+using StringTools;
+
+class RemnantFreeplay extends Module
+{
+  public function new()
+  {
+    super('remnantFreeplay', 1000, {state: FreeplayState});
+    changedTitles = false;
+  }
+
+  var changedTitles:Bool = false;
+
+  // Change the capsule title depending on the song!
+  function getSongCapsuleTitle(songId:String):String
+  {
+    switch (songId)
+    {
+      case "glitcher-remnants":
+        return "week X";
+      case "tormentor-remnants":
+        return "boyfriend";
+      case "playtime-remnants":
+        return "huggy";
+      case "grieving-remnants":
+        return "epilogue";
+      default:
+        return "coolswag";
+    }
+
+    return "coolswag";
+  }
+
+  // Change the capsule offset depending on the song!
+  function getSongCapsuleOffset(songId:String):Array<Int>
+  {
+    switch (songId)
+    {
+      default:
+        return [0, 0];
+    }
+
+    return [0, 0];
+  }
+
+  override function onUpdate(event:StateChangeScriptEvent):Void
+  {
+    super.onUpdate(event);
+
+    if (!changedTitles)
+    {
+      var filteredCapsules:Array<SongMenuItem> = FlxG.state.subState.grpCapsules.members.filter(function(cap:SongMenuItem) {
+        return cap != null && cap.alive && cap.freeplayData != null && ["remnants-modExtras"].contains(cap.freeplayData.levelId);
+      });
+
+      for (capsule in filteredCapsules)
+      {
+        if (capsule == null || !capsule.alive) continue;
+
+        var weekType:String = getSongCapsuleTitle(capsule.freeplayData.songId);
+
+        capsule.createWeekTextGraphic(weekType);
+        capsule.weekText.loadGraphic(FlxG.bitmap.get(weekType));
+
+        var weekTextOffsets:Array<Float> = getSongCapsuleOffset(capsule.freeplayData.songId);
+        capsule.weekText.offset.set(weekTextOffsets[0], weekTextOffsets[1]);
+      }
+    }
+  }
+}
