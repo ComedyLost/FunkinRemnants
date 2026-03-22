@@ -12,7 +12,7 @@
       "prefix": "shoot 1",
       "offsets": [0, 0],
       "looped": true,
-      "frameIndices": [8, 9, 10]
+      "frameIndices": [7, 8, 9]
     },
     {
       "name": "shoot1",
@@ -24,7 +24,7 @@
       "prefix": "shoot 1",
       "offsets": [0, 0],
       "looped": true,
-      "frameIndices": [8, 9, 10]
+      "frameIndices": [7, 8, 9]
     },
     {
       "name": "shoot2",
@@ -36,7 +36,7 @@
       "prefix": "shoot 2",
       "offsets": [0, 0],
       "looped": true,
-      "frameIndices": [8, 9, 10]
+      "frameIndices": [7, 8, 9]
     },
     {
       "name": "shoot3",
@@ -48,7 +48,7 @@
       "prefix": "shoot 3",
       "offsets": [0, 0],
       "looped": true,
-      "frameIndices": [8, 9, 10]
+      "frameIndices": [7, 8, 9]
     },
     {
       "name": "shoot4",
@@ -60,7 +60,7 @@
       "prefix": "shoot 4",
       "offsets": [0, 0],
       "looped": true,
-      "frameIndices": [8, 9, 10]
+      "frameIndices": [7, 8, 9]
     }
   ]
 }
