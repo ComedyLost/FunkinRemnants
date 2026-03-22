@@ -13,6 +13,11 @@
     "cameraZoom": 0.85,
     "cameraOffsets": [-25, -100]
   },
+  "atlasSettings": {
+    "swfMode": false,
+    "useRenderTexture": true,
+    "uniqueInCache": true
+  },
   "animations": [
     {
       "name": "idle",
