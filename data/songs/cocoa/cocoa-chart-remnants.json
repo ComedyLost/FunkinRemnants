@@ -12,20 +12,20 @@
       "v": {
         "duration": 0,
         "ease": "INSTANT",
+        "zoom": 0.6,
         "easeDir": "Out",
-        "mode": "direct",
-        "zoom": 0.6
+        "mode": "direct"
       }
     },
     {
       "t": 0,
       "e": "FocusCamera",
       "v": {
-        "duration": 0,
         "x": 450,
+        "duration": 0,
         "y": -4587,
-        "char": -1,
         "ease": "INSTANT",
+        "char": -1,
         "easeDir": "Out"
       }
     },
@@ -33,11 +33,11 @@
       "t": 0,
       "e": "FocusCamera",
       "v": {
-        "duration": 240,
         "x": 450,
+        "duration": 240,
         "y": -2000,
-        "char": -1,
         "ease": "smootherStep",
+        "char": -1,
         "easeDir": "InOut"
       }
     },
@@ -47,9 +47,9 @@
       "v": {
         "duration": 240,
         "ease": "smootherStep",
+        "mode": "direct",
         "zoom": 0.23,
-        "easeDir": "InOut",
-        "mode": "direct"
+        "easeDir": "InOut"
       }
     },
     {
@@ -57,15 +57,15 @@
       "e": "RemnantsOverlay",
       "v": {
         "endOpacity": 0,
-        "startOpacity": 1,
-        "retroSteps": 5,
         "white": false,
+        "retroSteps": 5,
+        "startOpacity": 1,
         "restartTween": false,
         "duration": 64,
         "retro": false,
         "ease": "linear",
-        "hud": true,
-        "easeDir": "InOut"
+        "easeDir": "InOut",
+        "hud": true
       }
     },
     {
@@ -73,19 +73,19 @@
       "e": "SetCameraBop",
       "v": {
         "rate": 4,
-        "offset": 0,
-        "intensity": 0
+        "intensity": 0,
+        "offset": 0
       }
     },
     {
       "t": 18000,
       "e": "FocusCamera",
       "v": {
-        "duration": 64,
         "x": 100,
+        "duration": 64,
         "y": 0,
-        "ease": "smootherStep",
         "char": 1,
+        "ease": "smootherStep",
         "easeDir": "InOut"
       }
     },
@@ -95,9 +95,9 @@
       "v": {
         "duration": 64,
         "ease": "smootherStep",
+        "easeDir": "InOut",
         "zoom": 0.5,
-        "mode": "direct",
-        "easeDir": "InOut"
+        "mode": "direct"
       }
     },
     {
@@ -105,8 +105,8 @@
       "e": "SetCameraBop",
       "v": {
         "rate": 2,
-        "offset": 0,
-        "intensity": 0.5
+        "intensity": 0.5,
+        "offset": 0
       }
     },
     {
@@ -114,26 +114,26 @@
       "e": "RemnantsOverlay",
       "v": {
         "endOpacity": 0,
-        "startOpacity": 0,
-        "retroSteps": 5,
         "white": false,
+        "retroSteps": 5,
+        "startOpacity": 0,
         "restartTween": true,
         "duration": 0,
         "retro": false,
         "ease": "linear",
-        "hud": true,
-        "easeDir": "InOut"
+        "easeDir": "InOut",
+        "hud": true
       }
     },
     {
       "t": 28800,
       "e": "FocusCamera",
       "v": {
-        "x": 0,
         "duration": 64,
+        "x": 0,
         "y": 0,
-        "char": 0,
         "ease": "smootherStep",
+        "char": 0,
         "easeDir": "InOut"
       }
     },
@@ -143,20 +143,20 @@
       "v": {
         "duration": 16,
         "ease": "smootherStep",
+        "mode": "direct",
         "easeDir": "Out",
-        "zoom": 0.75,
-        "mode": "direct"
+        "zoom": 0.75
       }
     },
     {
       "t": 37200,
       "e": "FocusCamera",
       "v": {
-        "x": 50,
         "duration": 16,
+        "x": 50,
         "y": 100,
-        "char": 0,
         "ease": "smootherStep",
+        "char": 0,
         "easeDir": "Out"
       }
     },
@@ -166,25 +166,92 @@
       "v": {
         "duration": 32,
         "ease": "smootherStep",
+        "zoom": 0.4,
         "easeDir": "Out",
-        "mode": "direct",
-        "zoom": 0.4
+        "mode": "direct"
       }
     },
     {
       "t": 38400,
       "e": "FocusCamera",
       "v": {
-        "x": 0,
         "duration": 32,
+        "x": 0,
         "y": 0,
-        "char": 1,
         "ease": "smootherStep",
+        "char": 1,
         "easeDir": "Out"
       }
     },
     {
       "t": 40800,
+      "e": "ZoomCamera",
+      "v": {
+        "duration": 12,
+        "ease": "cube",
+        "easeDir": "Out",
+        "zoom": 0.45,
+        "mode": "direct"
+      }
+    },
+    {
+      "t": 42000,
+      "e": "ZoomCamera",
+      "v": {
+        "duration": 12,
+        "ease": "cube",
+        "easeDir": "Out",
+        "zoom": 0.55,
+        "mode": "direct"
+      }
+    },
+    {
+      "t": 43200,
+      "e": "ZoomCamera",
+      "v": {
+        "duration": 16,
+        "ease": "cube",
+        "zoom": 0.4,
+        "mode": "direct",
+        "easeDir": "Out"
+      }
+    },
+    {
+      "t": 45600,
+      "e": "ZoomCamera",
+      "v": {
+        "duration": 12,
+        "ease": "cube",
+        "zoom": 0.5,
+        "mode": "direct",
+        "easeDir": "Out"
+      }
+    },
+    {
+      "t": 46800,
+      "e": "ZoomCamera",
+      "v": {
+        "duration": 16,
+        "ease": "cube",
+        "mode": "direct",
+        "easeDir": "Out",
+        "zoom": 0.4
+      }
+    },
+    {
+      "t": 48000,
+      "e": "FocusCamera",
+      "v": {
+        "duration": 32,
+        "x": 0,
+        "y": 0,
+        "ease": "smootherStep",
+        "char": 0,
+        "easeDir": "Out"
+      }
+    },
+    {
+      "t": 50400,
       "e": "ZoomCamera",
       "v": {
         "duration": 12,
@@ -195,7 +262,7 @@
       }
     },
     {
-      "t": 42000,
+      "t": 51600,
       "e": "ZoomCamera",
       "v": {
         "duration": 12,
@@ -206,7 +273,7 @@
       }
     },
     {
-      "t": 43200,
+      "t": 52800,
       "e": "ZoomCamera",
       "v": {
         "duration": 16,
@@ -217,81 +284,14 @@
       }
     },
     {
-      "t": 45600,
-      "e": "ZoomCamera",
-      "v": {
-        "duration": 12,
-        "ease": "cube",
-        "mode": "direct",
-        "easeDir": "Out",
-        "zoom": 0.5
-      }
-    },
-    {
-      "t": 46800,
-      "e": "ZoomCamera",
-      "v": {
-        "duration": 16,
-        "ease": "cube",
-        "easeDir": "Out",
-        "zoom": 0.4,
-        "mode": "direct"
-      }
-    },
-    {
-      "t": 48000,
-      "e": "FocusCamera",
-      "v": {
-        "x": 0,
-        "duration": 32,
-        "y": 0,
-        "char": 0,
-        "ease": "smootherStep",
-        "easeDir": "Out"
-      }
-    },
-    {
-      "t": 50400,
-      "e": "ZoomCamera",
-      "v": {
-        "duration": 12,
-        "ease": "cube",
-        "mode": "direct",
-        "easeDir": "Out",
-        "zoom": 0.45
-      }
-    },
-    {
-      "t": 51600,
-      "e": "ZoomCamera",
-      "v": {
-        "duration": 12,
-        "ease": "cube",
-        "mode": "direct",
-        "easeDir": "Out",
-        "zoom": 0.55
-      }
-    },
-    {
-      "t": 52800,
-      "e": "ZoomCamera",
-      "v": {
-        "duration": 16,
-        "ease": "cube",
-        "easeDir": "Out",
-        "zoom": 0.4,
-        "mode": "direct"
-      }
-    },
-    {
       "t": 55200,
       "e": "ZoomCamera",
       "v": {
         "duration": 12,
         "ease": "cube",
+        "easeDir": "Out",
         "zoom": 0.5,
-        "mode": "direct",
-        "easeDir": "Out"
+        "mode": "direct"
       }
     },
     {
@@ -300,20 +300,20 @@
       "v": {
         "duration": 16,
         "ease": "cube",
+        "easeDir": "Out",
         "zoom": 0.4,
-        "mode": "direct",
-        "easeDir": "Out"
+        "mode": "direct"
       }
     },
     {
       "t": 57600,
       "e": "FocusCamera",
       "v": {
-        "x": 100,
         "duration": 40,
+        "x": 100,
         "y": 0,
-        "char": 1,
         "ease": "smootherStep",
+        "char": 1,
         "easeDir": "Out"
       }
     },
@@ -323,9 +323,9 @@
       "v": {
         "duration": 40,
         "ease": "smootherStep",
+        "mode": "direct",
         "easeDir": "Out",
-        "zoom": 0.6,
-        "mode": "direct"
+        "zoom": 0.6
       }
     },
     {
@@ -334,9 +334,9 @@
       "v": {
         "duration": 6,
         "ease": "cube",
+        "easeDir": "Out",
         "zoom": 0.65,
-        "mode": "direct",
-        "easeDir": "Out"
+        "mode": "direct"
       }
     },
     {
@@ -345,9 +345,9 @@
       "v": {
         "duration": 6,
         "ease": "cube",
+        "easeDir": "Out",
         "zoom": 0.6,
-        "mode": "direct",
-        "easeDir": "Out"
+        "mode": "direct"
       }
     },
     {
@@ -356,9 +356,9 @@
       "v": {
         "duration": 6,
         "ease": "cube",
+        "easeDir": "Out",
         "zoom": 0.7,
-        "mode": "direct",
-        "easeDir": "Out"
+        "mode": "direct"
       }
     },
     {
@@ -367,9 +367,9 @@
       "v": {
         "duration": 6,
         "ease": "cube",
+        "easeDir": "Out",
         "zoom": 0.6,
-        "mode": "direct",
-        "easeDir": "Out"
+        "mode": "direct"
       }
     },
     {
@@ -378,9 +378,9 @@
       "v": {
         "duration": 8,
         "ease": "cube",
+        "easeDir": "Out",
         "zoom": 0.75,
-        "mode": "direct",
-        "easeDir": "Out"
+        "mode": "direct"
       }
     },
     {
@@ -389,9 +389,9 @@
       "v": {
         "duration": 8,
         "ease": "cube",
+        "mode": "direct",
         "easeDir": "Out",
-        "zoom": 0.6,
-        "mode": "direct"
+        "zoom": 0.6
       }
     },
     {
@@ -400,9 +400,9 @@
       "v": {
         "duration": 6,
         "ease": "cube",
+        "easeDir": "Out",
         "zoom": 0.7,
-        "mode": "direct",
-        "easeDir": "Out"
+        "mode": "direct"
       }
     },
     {
@@ -411,20 +411,20 @@
       "v": {
         "duration": 8,
         "ease": "cube",
+        "mode": "direct",
         "easeDir": "Out",
-        "zoom": 0.6,
-        "mode": "direct"
+        "zoom": 0.6
       }
     },
     {
       "t": 67200,
       "e": "FocusCamera",
       "v": {
-        "x": 0,
         "duration": 40,
+        "x": 0,
         "y": 50,
-        "char": 0,
         "ease": "smootherStep",
+        "char": 0,
         "easeDir": "Out"
       }
     },
@@ -434,9 +434,9 @@
       "v": {
         "duration": 6,
         "ease": "cube",
+        "mode": "direct",
         "easeDir": "Out",
-        "zoom": 0.65,
-        "mode": "direct"
+        "zoom": 0.65
       }
     },
     {
@@ -445,9 +445,9 @@
       "v": {
         "duration": 6,
         "ease": "cube",
+        "mode": "direct",
         "easeDir": "Out",
-        "zoom": 0.6,
-        "mode": "direct"
+        "zoom": 0.6
       }
     },
     {
@@ -456,9 +456,9 @@
       "v": {
         "duration": 6,
         "ease": "cube",
+        "mode": "direct",
         "easeDir": "Out",
-        "zoom": 0.7,
-        "mode": "direct"
+        "zoom": 0.7
       }
     },
     {
@@ -467,9 +467,9 @@
       "v": {
         "duration": 6,
         "ease": "cube",
+        "mode": "direct",
         "easeDir": "Out",
-        "zoom": 0.6,
-        "mode": "direct"
+        "zoom": 0.6
       }
     },
     {
@@ -478,9 +478,9 @@
       "v": {
         "duration": 8,
         "ease": "cube",
+        "mode": "direct",
         "easeDir": "Out",
-        "zoom": 0.75,
-        "mode": "direct"
+        "zoom": 0.75
       }
     },
     {
@@ -489,20 +489,20 @@
       "v": {
         "duration": 6,
         "ease": "cube",
+        "easeDir": "Out",
         "zoom": 0.85,
-        "mode": "direct",
-        "easeDir": "Out"
+        "mode": "direct"
       }
     },
     {
       "t": 76200,
       "e": "FocusCamera",
       "v": {
+        "duration": 8,
         "x": 50,
-        "duration": 8,
         "y": 100,
-        "char": 0,
         "ease": "cube",
+        "char": 0,
         "easeDir": "Out"
       }
     },
@@ -512,20 +512,20 @@
       "v": {
         "duration": 8,
         "ease": "cube",
+        "easeDir": "Out",
         "zoom": 1,
-        "mode": "direct",
-        "easeDir": "Out"
+        "mode": "direct"
       }
     },
     {
       "t": 76800,
       "e": "FocusCamera",
       "v": {
-        "duration": 32,
         "x": 0,
+        "duration": 32,
         "y": 0,
-        "ease": "smootherStep",
         "char": 1,
+        "ease": "smootherStep",
         "easeDir": "Out"
       }
     },
@@ -535,9 +535,9 @@
       "v": {
         "duration": 32,
         "ease": "smootherStep",
+        "easeDir": "Out",
         "mode": "direct",
-        "zoom": 0.4,
-        "easeDir": "Out"
+        "zoom": 0.4
       }
     },
     {
@@ -546,9 +546,9 @@
       "v": {
         "duration": 12,
         "ease": "cube",
+        "zoom": 0.5,
         "easeDir": "Out",
-        "mode": "direct",
-        "zoom": 0.5
+        "mode": "direct"
       }
     },
     {
@@ -557,9 +557,9 @@
       "v": {
         "duration": 8,
         "ease": "cube",
+        "zoom": 0.6,
         "easeDir": "Out",
-        "mode": "direct",
-        "zoom": 0.6
+        "mode": "direct"
       }
     },
     {
@@ -568,20 +568,20 @@
       "v": {
         "duration": 12,
         "ease": "cube",
+        "easeDir": "Out",
         "mode": "direct",
-        "zoom": 0.7,
-        "easeDir": "Out"
+        "zoom": 0.7
       }
     },
     {
       "t": 86400,
       "e": "FocusCamera",
       "v": {
-        "x": 0,
         "duration": 32,
+        "x": 0,
         "y": -250,
-        "char": 2,
         "ease": "smootherStep",
+        "char": 2,
         "easeDir": "Out"
       }
     },
@@ -591,31 +591,31 @@
       "v": {
         "duration": 32,
         "ease": "smootherStep",
+        "mode": "direct",
         "zoom": 0.3,
+        "easeDir": "Out"
+      }
+    },
+    {
+      "t": 96000,
+      "e": "ZoomCamera",
+      "v": {
+        "duration": 32,
+        "ease": "smootherStep",
         "easeDir": "Out",
+        "zoom": 0.5,
         "mode": "direct"
       }
     },
     {
       "t": 96000,
-      "e": "ZoomCamera",
-      "v": {
-        "duration": 32,
-        "ease": "smootherStep",
-        "zoom": 0.5,
-        "mode": "direct",
-        "easeDir": "Out"
-      }
-    },
-    {
-      "t": 96000,
       "e": "FocusCamera",
       "v": {
-        "x": 0,
         "duration": 32,
+        "x": 0,
         "y": 0,
+        "ease": "smootherStep",
         "char": 1,
-        "ease": "smootherStep",
         "easeDir": "Out"
       }
     },
@@ -623,11 +623,11 @@
       "t": 100800,
       "e": "FocusCamera",
       "v": {
-        "x": 0,
         "duration": 32,
+        "x": 0,
         "y": 0,
-        "char": 0,
         "ease": "smootherStep",
+        "char": 0,
         "easeDir": "Out"
       }
     },
@@ -637,9 +637,9 @@
       "v": {
         "duration": 32,
         "ease": "smootherStep",
+        "easeDir": "Out",
         "zoom": 0.6,
-        "mode": "direct",
-        "easeDir": "Out"
+        "mode": "direct"
       }
     },
     {
@@ -647,8 +647,8 @@
       "e": "SetCameraBop",
       "v": {
         "rate": 2,
-        "offset": 0,
-        "intensity": 0.75
+        "intensity": 0.75,
+        "offset": 0
       }
     },
     {
@@ -657,20 +657,20 @@
       "v": {
         "duration": 32,
         "ease": "smootherStep",
+        "easeDir": "Out",
         "zoom": 0.7,
-        "mode": "direct",
-        "easeDir": "Out"
+        "mode": "direct"
       }
     },
     {
       "t": 105600,
       "e": "FocusCamera",
       "v": {
-        "x": 100,
         "duration": 32,
+        "x": 100,
         "y": 0,
-        "char": 1,
         "ease": "smootherStep",
+        "char": 1,
         "easeDir": "Out"
       }
     },
@@ -679,19 +679,19 @@
       "e": "SetCameraBop",
       "v": {
         "rate": 2,
-        "offset": 0,
-        "intensity": 1
+        "intensity": 1,
+        "offset": 0
       }
     },
     {
       "t": 110400,
       "e": "FocusCamera",
       "v": {
-        "x": 0,
         "duration": 32,
+        "x": 0,
         "y": 100,
-        "char": 0,
         "ease": "smootherStep",
+        "char": 0,
         "easeDir": "Out"
       }
     },
@@ -701,9 +701,9 @@
       "v": {
         "duration": 32,
         "ease": "smootherStep",
+        "mode": "direct",
         "easeDir": "Out",
-        "zoom": 0.8,
-        "mode": "direct"
+        "zoom": 0.8
       }
     },
     {
@@ -711,8 +711,8 @@
       "e": "SetCameraBop",
       "v": {
         "rate": 1,
-        "offset": 0,
-        "intensity": 1
+        "intensity": 1,
+        "offset": 0
       }
     },
     {
@@ -720,19 +720,19 @@
       "e": "SetCameraBop",
       "v": {
         "rate": 1,
-        "offset": 0,
-        "intensity": 0
+        "intensity": 0,
+        "offset": 0
       }
     },
     {
       "t": 114000,
       "e": "FocusCamera",
       "v": {
-        "x": -50,
         "duration": 16,
+        "x": -50,
         "y": 50,
-        "ease": "smootherStep",
         "char": 2,
+        "ease": "smootherStep",
         "easeDir": "Out"
       }
     },
@@ -742,9 +742,9 @@
       "v": {
         "duration": 16,
         "ease": "smootherStep",
+        "easeDir": "Out",
         "mode": "direct",
-        "zoom": 0.75,
-        "easeDir": "Out"
+        "zoom": 0.75
       }
     },
     {
@@ -752,19 +752,19 @@
       "e": "SetCameraBop",
       "v": {
         "rate": 2,
-        "offset": 0,
-        "intensity": 1
+        "intensity": 1,
+        "offset": 0
       }
     },
     {
       "t": 115200,
       "e": "FocusCamera",
       "v": {
-        "x": 0,
         "duration": 32,
+        "x": 0,
         "y": -200,
-        "char": 1,
         "ease": "expo",
+        "char": 1,
         "easeDir": "Out"
       }
     },
@@ -774,9 +774,9 @@
       "v": {
         "duration": 32,
         "ease": "expo",
+        "zoom": 0.3,
         "easeDir": "Out",
-        "mode": "direct",
-        "zoom": 0.3
+        "mode": "direct"
       }
     },
     {
@@ -784,61 +784,15 @@
       "e": "ScrollSpeed",
       "v": {
         "duration": 16,
-        "scroll": 1.1,
         "strumline": "both",
+        "scroll": 1.1,
         "ease": "linear",
-        "absolute": false,
-        "easeDir": "Out"
+        "easeDir": "Out",
+        "absolute": false
       }
     },
     {
       "t": 118800,
-      "e": "ZoomCamera",
-      "v": {
-        "duration": 16,
-        "ease": "expo",
-        "mode": "direct",
-        "zoom": 0.4,
-        "easeDir": "Out"
-      }
-    },
-    {
-      "t": 118800,
-      "e": "FocusCamera",
-      "v": {
-        "x": 100,
-        "duration": 16,
-        "y": 50,
-        "ease": "expo",
-        "char": 1,
-        "easeDir": "Out"
-      }
-    },
-    {
-      "t": 120000,
-      "e": "ZoomCamera",
-      "v": {
-        "duration": 32,
-        "ease": "expo",
-        "mode": "direct",
-        "zoom": 0.3,
-        "easeDir": "Out"
-      }
-    },
-    {
-      "t": 120000,
-      "e": "FocusCamera",
-      "v": {
-        "x": 0,
-        "duration": 32,
-        "y": -300,
-        "char": 0,
-        "ease": "expo",
-        "easeDir": "Out"
-      }
-    },
-    {
-      "t": 123600,
       "e": "ZoomCamera",
       "v": {
         "duration": 16,
@@ -849,42 +803,7 @@
       }
     },
     {
-      "t": 123600,
-      "e": "FocusCamera",
-      "v": {
-        "duration": 16,
-        "x": -70,
-        "y": 50,
-        "char": 0,
-        "ease": "expo",
-        "easeDir": "Out"
-      }
-    },
-    {
-      "t": 124800,
-      "e": "ZoomCamera",
-      "v": {
-        "duration": 32,
-        "ease": "expo",
-        "zoom": 0.3,
-        "easeDir": "Out",
-        "mode": "direct"
-      }
-    },
-    {
-      "t": 124800,
-      "e": "FocusCamera",
-      "v": {
-        "duration": 32,
-        "x": 0,
-        "y": -200,
-        "ease": "expo",
-        "char": 1,
-        "easeDir": "Out"
-      }
-    },
-    {
-      "t": 128400,
+      "t": 118800,
       "e": "FocusCamera",
       "v": {
         "duration": 16,
@@ -896,39 +815,7 @@
       }
     },
     {
-      "t": 128400,
-      "e": "ZoomCamera",
-      "v": {
-        "duration": 16,
-        "ease": "expo",
-        "easeDir": "Out",
-        "mode": "direct",
-        "zoom": 0.4
-      }
-    },
-    {
-      "t": 129525,
-      "e": "SetCameraBop",
-      "v": {
-        "rate": 1,
-        "offset": 0,
-        "intensity": 2
-      }
-    },
-    {
-      "t": 129600,
-      "e": "FocusCamera",
-      "v": {
-        "duration": 32,
-        "x": 0,
-        "y": -300,
-        "ease": "expo",
-        "char": 0,
-        "easeDir": "Out"
-      }
-    },
-    {
-      "t": 129600,
+      "t": 120000,
       "e": "ZoomCamera",
       "v": {
         "duration": 32,
@@ -939,14 +826,127 @@
       }
     },
     {
+      "t": 120000,
+      "e": "FocusCamera",
+      "v": {
+        "duration": 32,
+        "x": 0,
+        "y": -300,
+        "ease": "expo",
+        "char": 0,
+        "easeDir": "Out"
+      }
+    },
+    {
+      "t": 123600,
+      "e": "ZoomCamera",
+      "v": {
+        "duration": 16,
+        "ease": "expo",
+        "zoom": 0.4,
+        "easeDir": "Out",
+        "mode": "direct"
+      }
+    },
+    {
+      "t": 123600,
+      "e": "FocusCamera",
+      "v": {
+        "x": -70,
+        "duration": 16,
+        "y": 50,
+        "ease": "expo",
+        "char": 0,
+        "easeDir": "Out"
+      }
+    },
+    {
+      "t": 124800,
+      "e": "ZoomCamera",
+      "v": {
+        "duration": 32,
+        "ease": "expo",
+        "mode": "direct",
+        "zoom": 0.3,
+        "easeDir": "Out"
+      }
+    },
+    {
+      "t": 124800,
+      "e": "FocusCamera",
+      "v": {
+        "x": 0,
+        "duration": 32,
+        "y": -200,
+        "char": 1,
+        "ease": "expo",
+        "easeDir": "Out"
+      }
+    },
+    {
+      "t": 128400,
+      "e": "FocusCamera",
+      "v": {
+        "x": 100,
+        "duration": 16,
+        "y": 50,
+        "ease": "expo",
+        "char": 1,
+        "easeDir": "Out"
+      }
+    },
+    {
+      "t": 128400,
+      "e": "ZoomCamera",
+      "v": {
+        "duration": 16,
+        "ease": "expo",
+        "zoom": 0.4,
+        "easeDir": "Out",
+        "mode": "direct"
+      }
+    },
+    {
+      "t": 129525,
+      "e": "SetCameraBop",
+      "v": {
+        "rate": 1,
+        "intensity": 2,
+        "offset": 0
+      }
+    },
+    {
+      "t": 129600,
+      "e": "FocusCamera",
+      "v": {
+        "x": 0,
+        "duration": 32,
+        "y": -300,
+        "char": 0,
+        "ease": "expo",
+        "easeDir": "Out"
+      }
+    },
+    {
+      "t": 129600,
+      "e": "ZoomCamera",
+      "v": {
+        "duration": 32,
+        "ease": "expo",
+        "zoom": 0.3,
+        "easeDir": "Out",
+        "mode": "direct"
+      }
+    },
+    {
       "t": 132000,
       "e": "FocusCamera",
       "v": {
-        "duration": 16,
         "x": -15,
+        "duration": 16,
         "y": 0,
-        "ease": "expo",
         "char": 0,
+        "ease": "expo",
         "easeDir": "Out"
       }
     },
@@ -956,9 +956,9 @@
       "v": {
         "duration": 16,
         "ease": "expo",
+        "easeDir": "Out",
         "mode": "direct",
-        "zoom": 0.5,
-        "easeDir": "Out"
+        "zoom": 0.5
       }
     },
     {
@@ -966,19 +966,19 @@
       "e": "SetCameraBop",
       "v": {
         "rate": 1,
-        "offset": 0,
-        "intensity": 0.5
+        "intensity": 0.5,
+        "offset": 0
       }
     },
     {
       "t": 133200,
       "e": "FocusCamera",
       "v": {
-        "duration": 16,
         "x": -30,
+        "duration": 16,
         "y": 100,
-        "ease": "expo",
         "char": 0,
+        "ease": "expo",
         "easeDir": "Out"
       }
     },
@@ -988,9 +988,9 @@
       "v": {
         "duration": 16,
         "ease": "expo",
+        "mode": "direct",
         "zoom": 0.6,
-        "easeDir": "Out",
-        "mode": "direct"
+        "easeDir": "Out"
       }
     },
     {
@@ -999,20 +999,20 @@
       "v": {
         "duration": 32,
         "ease": "expo",
+        "zoom": 0.23,
         "easeDir": "Out",
-        "mode": "direct",
-        "zoom": 0.23
+        "mode": "direct"
       }
     },
     {
       "t": 134400,
       "e": "FocusCamera",
       "v": {
-        "x": 450,
         "duration": 32,
+        "x": 450,
         "y": -2000,
-        "ease": "expo",
         "char": -1,
+        "ease": "expo",
         "easeDir": "Out"
       }
     },
@@ -1021,8 +1021,8 @@
       "e": "SetCameraBop",
       "v": {
         "rate": 1,
-        "offset": 0,
-        "intensity": 0
+        "intensity": 0,
+        "offset": 0
       }
     },
     {
@@ -1030,15 +1030,15 @@
       "e": "RemnantsOverlay",
       "v": {
         "endOpacity": 1,
-        "startOpacity": 0,
-        "retroSteps": 5,
         "white": false,
+        "retroSteps": 5,
+        "startOpacity": 0,
         "restartTween": false,
         "duration": 8,
         "retro": false,
         "ease": "sine",
-        "hud": true,
-        "easeDir": "In"
+        "easeDir": "In",
+        "hud": true
       }
     },
     {
@@ -1047,20 +1047,20 @@
       "v": {
         "duration": 8,
         "ease": "sine",
+        "zoom": 0.6,
         "easeDir": "In",
-        "mode": "direct",
-        "zoom": 0.6
+        "mode": "direct"
       }
     },
     {
       "t": 137400,
       "e": "FocusCamera",
       "v": {
-        "duration": 8,
         "x": 450,
+        "duration": 8,
         "y": -4587,
-        "char": -1,
         "ease": "sine",
+        "char": -1,
         "easeDir": "In"
       }
     }
@@ -4662,11 +4662,6 @@
       },
       {
         "t": 106950,
-        "d": 5,
-        "k": "mom"
-      },
-      {
-        "t": 107025,
         "d": 4,
         "k": "mom"
       },
@@ -4900,13 +4895,13 @@
       },
       {
         "t": 116700,
-        "d": 5,
+        "d": 7,
         "k": "mom"
       },
       {
         "t": 116700,
-        "d": 7,
-        "k": "mom"
+        "d": 5,
+        "k": "noanim"
       },
       {
         "t": 117000,
@@ -4954,13 +4949,13 @@
         "k": "mom"
       },
       {
-        "t": 118799.9901,
-        "d": 7,
+        "t": 118800,
+        "d": 5,
         "k": "mom"
       },
       {
         "t": 118800,
-        "d": 5,
+        "d": 7,
         "k": "mom"
       },
       {
@@ -5032,11 +5027,11 @@
       },
       {
         "t": 121800,
-        "d": 1
+        "d": 2
       },
       {
         "t": 121800,
-        "d": 2
+        "d": 1
       },
       {
         "t": 121950,
@@ -5151,7 +5146,8 @@
       },
       {
         "t": 126300,
-        "d": 5
+        "d": 5,
+        "k": "noanim"
       },
       {
         "t": 126600,
@@ -5531,11 +5527,12 @@
       },
       {
         "t": 25200,
-        "d": 5
+        "d": 7
       },
       {
         "t": 25200,
-        "d": 7
+        "d": 5,
+        "k": "noanim"
       },
       {
         "t": 25350,
@@ -5625,7 +5622,8 @@
       {
         "t": 28800,
         "d": 4,
-        "l": 1750.01
+        "l": 1750.01,
+        "k": "noanim"
       },
       {
         "t": 28837.51,
@@ -5740,11 +5738,12 @@
       },
       {
         "t": 34800,
-        "d": 1
+        "d": 3
       },
       {
         "t": 34800,
-        "d": 3
+        "d": 1,
+        "k": "noanim"
       },
       {
         "t": 34950,
@@ -5830,17 +5829,18 @@
       {
         "t": 38400,
         "d": 0,
-        "l": 1150.00999999999
-      },
-      {
-        "t": 38700,
-        "d": 4,
-        "k": "mom"
+        "l": 1150.00999999999,
+        "k": "noanim"
       },
       {
         "t": 38700,
         "d": 7,
         "k": "mom"
+      },
+      {
+        "t": 38700,
+        "d": 4,
+        "k": "noanim"
       },
       {
         "t": 39000,
@@ -5863,7 +5863,7 @@
         "t": 39600,
         "d": 5,
         "l": 412.51,
-        "k": "mom"
+        "k": "noanim"
       },
       {
         "t": 40050,
@@ -5908,14 +5908,14 @@
       },
       {
         "t": 41400,
-        "d": 4,
+        "d": 7,
         "l": 262.51,
         "k": "mom"
       },
       {
         "t": 41400,
-        "d": 7,
-        "l": 262.51,
+        "d": 4,
+        "l": 262.5,
         "k": "mom"
       },
       {
@@ -5938,7 +5938,7 @@
         "t": 42000,
         "d": 5,
         "l": 262.51,
-        "k": "mom"
+        "k": "noanim"
       },
       {
         "t": 42300,
@@ -5947,16 +5947,10 @@
         "k": "mom"
       },
       {
-        "t": 42300,
-        "d": 6,
-        "l": 262.51,
-        "k": "mom"
-      },
-      {
         "t": 42600,
         "d": 4,
         "l": 262.51,
-        "k": "mom"
+        "k": "noanim"
       },
       {
         "t": 42600,
@@ -6004,7 +5998,7 @@
         "t": 43800,
         "d": 5,
         "l": 262.51,
-        "k": "mom"
+        "k": "noanim"
       },
       {
         "t": 44100,
@@ -6061,7 +6055,7 @@
         "t": 45600,
         "d": 5,
         "l": 262.51,
-        "k": "mom"
+        "k": "noanim"
       },
       {
         "t": 45600,
@@ -6161,7 +6155,8 @@
       },
       {
         "t": 48300,
-        "d": 3
+        "d": 3,
+        "k": "noanim"
       },
       {
         "t": 48600,
@@ -6186,7 +6181,8 @@
       {
         "t": 49200,
         "d": 1,
-        "l": 412.5
+        "l": 412.5,
+        "k": "noanim"
       },
       {
         "t": 49200,
@@ -6200,11 +6196,12 @@
       },
       {
         "t": 49800,
-        "d": 1
+        "d": 2
       },
       {
         "t": 49800,
-        "d": 2
+        "d": 1,
+        "k": "noanim"
       },
       {
         "t": 49950,
@@ -6257,16 +6254,12 @@
       {
         "t": 51600,
         "d": 1,
-        "l": 262.5
+        "l": 262.5,
+        "k": "noanim"
       },
       {
         "t": 51900,
         "d": 3,
-        "l": 262.5
-      },
-      {
-        "t": 51900,
-        "d": 2,
         "l": 262.5
       },
       {
@@ -6277,7 +6270,8 @@
       {
         "t": 52200,
         "d": 1,
-        "l": 262.5
+        "l": 262.5,
+        "k": "noanim"
       },
       {
         "t": 52500,
@@ -6311,7 +6305,8 @@
       {
         "t": 53400,
         "d": 1,
-        "l": 262.5
+        "l": 262.5,
+        "k": "noanim"
       },
       {
         "t": 53700,
@@ -6348,11 +6343,12 @@
       },
       {
         "t": 54900,
-        "d": 1
+        "d": 3
       },
       {
         "t": 54900,
-        "d": 3
+        "d": 1,
+        "k": "noanim"
       },
       {
         "t": 55050,
@@ -6364,12 +6360,19 @@
         "l": 262.5
       },
       {
-        "t": 55500,
-        "d": 3
+        "t": 55200,
+        "d": 1,
+        "l": 262.5,
+        "k": "noanim"
       },
       {
         "t": 55500,
         "d": 1
+      },
+      {
+        "t": 55500,
+        "d": 3,
+        "k": "noanim"
       },
       {
         "t": 55650,
@@ -6394,11 +6397,12 @@
       },
       {
         "t": 56400,
-        "d": 0
+        "d": 2
       },
       {
         "t": 56400,
-        "d": 2
+        "d": 0,
+        "k": "noanim"
       },
       {
         "t": 56550,
@@ -6541,12 +6545,13 @@
         "d": 7
       },
       {
-        "t": 64200.02,
-        "d": 6
+        "t": 64200,
+        "d": 5,
+        "k": "noanim"
       },
       {
         "t": 64200.02,
-        "d": 5
+        "d": 6
       },
       {
         "t": 64350.02,
@@ -6585,17 +6590,19 @@
         "d": 6
       },
       {
-        "t": 66150.02,
-        "d": 7
+        "t": 66150,
+        "d": 7,
+        "k": "noanim"
       },
       {
-        "t": 66150.02,
+        "t": 66150,
         "d": 4
       },
       {
         "t": 66300.02,
         "d": 5,
-        "l": 262.479999999999
+        "l": 262.479999999999,
+        "k": "noanim"
       },
       {
         "t": 66300.02,
@@ -6736,12 +6743,13 @@
         "d": 3
       },
       {
-        "t": 73800.02,
-        "d": 2
+        "t": 73800,
+        "d": 1,
+        "k": "noanim"
       },
       {
         "t": 73800.02,
-        "d": 1
+        "d": 2
       },
       {
         "t": 73950.02,
@@ -6760,16 +6768,17 @@
         "d": 1
       },
       {
-        "t": 74550.02,
-        "d": 2
-      },
-      {
-        "t": 74550.02,
+        "t": 74550,
         "d": 0
       },
       {
-        "t": 74850.02,
-        "d": 1
+        "t": 74587.5,
+        "d": 2
+      },
+      {
+        "t": 74850,
+        "d": 1,
+        "k": "noanim"
       },
       {
         "t": 74850.02,
@@ -6780,12 +6789,13 @@
         "d": 2
       },
       {
-        "t": 75300.02,
-        "d": 1
+        "t": 75300,
+        "d": 0,
+        "k": "noanim"
       },
       {
         "t": 75300.02,
-        "d": 0
+        "d": 1
       },
       {
         "t": 75450.02,
@@ -6795,24 +6805,26 @@
       {
         "t": 75450.02,
         "d": 3,
-        "l": 262.479999999999
+        "l": 262.479999999999,
+        "k": "noanim"
       },
       {
-        "t": 75750.02,
-        "d": 3
+        "t": 75750,
+        "d": 3,
+        "k": "noanim"
       },
       {
         "t": 75750.02,
         "d": 0
       },
       {
-        "t": 75900.02,
-        "d": 1,
-        "l": 262.479999999999
+        "t": 75900,
+        "d": 2,
+        "l": 262.5
       },
       {
         "t": 75900.02,
-        "d": 2,
+        "d": 1,
         "l": 262.479999999999
       },
       {
@@ -6859,7 +6871,7 @@
         "t": 77400,
         "d": 5,
         "l": 562.5,
-        "k": "mom"
+        "k": "noanim"
       },
       {
         "t": 77400,
@@ -6871,7 +6883,7 @@
         "t": 78000,
         "d": 6,
         "l": 562.5,
-        "k": "mom"
+        "k": "noanim"
       },
       {
         "t": 78000,
@@ -6895,7 +6907,7 @@
         "t": 78900,
         "d": 4,
         "l": 862.5,
-        "k": "mom"
+        "k": "noanim"
       },
       {
         "t": 78900,
@@ -6931,7 +6943,7 @@
         "t": 81000,
         "d": 5,
         "l": 562.5,
-        "k": "mom"
+        "k": "noanim"
       },
       {
         "t": 81000,
@@ -6947,7 +6959,7 @@
       {
         "t": 81600,
         "d": 4,
-        "k": "mom"
+        "k": "noanim"
       },
       {
         "t": 81750,
@@ -6956,13 +6968,13 @@
       },
       {
         "t": 81900,
-        "d": 5,
+        "d": 4,
         "k": "mom"
       },
       {
         "t": 81900,
-        "d": 4,
-        "k": "mom"
+        "d": 5,
+        "k": "noanim"
       },
       {
         "t": 82050,
@@ -6971,25 +6983,25 @@
       },
       {
         "t": 82200,
-        "d": 5,
-        "l": 262.5,
-        "k": "mom"
-      },
-      {
-        "t": 82200,
         "d": 7,
         "l": 262.5,
         "k": "mom"
       },
       {
-        "t": 82500,
-        "d": 4,
-        "k": "mom"
+        "t": 82200,
+        "d": 5,
+        "l": 262.5,
+        "k": "noanim"
       },
       {
         "t": 82500,
         "d": 6,
         "k": "mom"
+      },
+      {
+        "t": 82500,
+        "d": 4,
+        "k": "noanim"
       },
       {
         "t": 82650,
@@ -6998,23 +7010,17 @@
       },
       {
         "t": 82800,
-        "d": 5,
-        "k": "mom"
-      },
-      {
-        "t": 82800,
         "d": 4,
         "k": "mom"
       },
       {
-        "t": 82950,
-        "d": 6,
-        "k": "mom"
+        "t": 82800,
+        "d": 5,
+        "k": "noanim"
       },
       {
-        "t": 83100,
-        "d": 5,
-        "l": 262.5,
+        "t": 82950,
+        "d": 6,
         "k": "mom"
       },
       {
@@ -7024,14 +7030,20 @@
         "k": "mom"
       },
       {
-        "t": 83400,
-        "d": 4,
-        "k": "mom"
+        "t": 83100,
+        "d": 5,
+        "l": 262.5,
+        "k": "noanim"
       },
       {
         "t": 83400,
         "d": 6,
         "k": "mom"
+      },
+      {
+        "t": 83400,
+        "d": 4,
+        "k": "noanim"
       },
       {
         "t": 83550,
@@ -7081,7 +7093,7 @@
       {
         "t": 84600,
         "d": 6,
-        "k": "mom"
+        "k": "noanim"
       },
       {
         "t": 84750,
@@ -7098,7 +7110,7 @@
         "t": 84900,
         "d": 5,
         "l": 262.5,
-        "k": "mom"
+        "k": "noanim"
       },
       {
         "t": 85200,
@@ -7187,7 +7199,8 @@
       {
         "t": 87000.02,
         "d": 3,
-        "l": 562.479999999999
+        "l": 562.479999999999,
+        "k": "noanim"
       },
       {
         "t": 87150,
@@ -7207,7 +7220,8 @@
       {
         "t": 87600.02,
         "d": 2,
-        "l": 562.479999999999
+        "l": 562.479999999999,
+        "k": "noanim"
       },
       {
         "t": 87600.02,
@@ -7243,7 +7257,8 @@
       {
         "t": 88500.02,
         "d": 0,
-        "l": 862.479999999999
+        "l": 862.479999999999,
+        "k": "noanim"
       },
       {
         "t": 88500.02,
@@ -7333,7 +7348,8 @@
       {
         "t": 90600.02,
         "d": 3,
-        "l": 562.479999999999
+        "l": 562.479999999999,
+        "k": "noanim"
       },
       {
         "t": 90750,
@@ -7360,27 +7376,29 @@
         "t": 91200,
         "d": 7,
         "l": 249.999999999994,
-        "k": "duet"
+        "k": "noanim"
+      },
+      {
+        "t": 91200,
+        "d": 0,
+        "k": "noanim"
       },
       {
         "t": 91200.02,
         "d": 2
       },
       {
-        "t": 91200.02,
-        "d": 0
-      },
-      {
         "t": 91350.02,
         "d": 3
       },
       {
-        "t": 91500.02,
-        "d": 1
+        "t": 91500,
+        "d": 0
       },
       {
-        "t": 91500.02,
-        "d": 0
+        "t": 91500,
+        "d": 1,
+        "k": "noanim"
       },
       {
         "t": 91650,
@@ -7396,12 +7414,13 @@
         "t": 91650,
         "d": 4,
         "l": 249.999999999994,
-        "k": "duet"
+        "k": "noanim"
       },
       {
         "t": 91800,
         "d": 3,
-        "l": 262.5
+        "l": 262.5,
+        "k": "noanim"
       },
       {
         "t": 91800.02,
@@ -7419,16 +7438,18 @@
         "d": 2
       },
       {
-        "t": 92100.02,
-        "d": 0
+        "t": 92100,
+        "d": 0,
+        "k": "noanim"
       },
       {
         "t": 92250,
         "d": 3
       },
       {
-        "t": 92400.02,
-        "d": 1
+        "t": 92400,
+        "d": 1,
+        "k": "noanim"
       },
       {
         "t": 92400.02,
@@ -7445,14 +7466,15 @@
       },
       {
         "t": 92700,
-        "d": 3,
-        "l": 262.5
-      },
-      {
-        "t": 92700,
         "d": 6,
         "l": 262.5,
         "k": "duet"
+      },
+      {
+        "t": 92700,
+        "d": 3,
+        "l": 262.5,
+        "k": "noanim"
       },
       {
         "t": 92700.02,
@@ -7469,8 +7491,9 @@
         "k": "duet"
       },
       {
-        "t": 93000.02,
-        "d": 0
+        "t": 93000,
+        "d": 0,
+        "k": "noanim"
       },
       {
         "t": 93150,
@@ -7512,7 +7535,7 @@
         "t": 93600,
         "d": 4,
         "l": 249.999999999994,
-        "k": "duet"
+        "k": "noanim"
       },
       {
         "t": 93600,
@@ -7536,7 +7559,7 @@
         "t": 94050,
         "d": 5,
         "l": 249.999999999994,
-        "k": "duet"
+        "k": "noanim"
       },
       {
         "t": 94050,
@@ -7549,8 +7572,9 @@
         "d": 0
       },
       {
-        "t": 94200.02,
-        "d": 1
+        "t": 94200,
+        "d": 1,
+        "k": "noanim"
       },
       {
         "t": 94200.02,
@@ -7564,7 +7588,7 @@
         "t": 94500,
         "d": 6,
         "l": 1462.5,
-        "k": "duet"
+        "k": "noanim"
       },
       {
         "t": 94500,
@@ -7573,13 +7597,14 @@
         "k": "duet"
       },
       {
-        "t": 94500.02,
-        "d": 0,
-        "l": 262.479999999999
+        "t": 94500,
+        "d": 1,
+        "l": 262.5,
+        "k": "noanim"
       },
       {
         "t": 94500.02,
-        "d": 1,
+        "d": 0,
         "l": 262.479999999999
       },
       {
@@ -7831,13 +7856,8 @@
       },
       {
         "t": 105600,
-        "d": 6,
-        "k": "mom"
-      },
-      {
-        "t": 105637.5,
         "d": 5,
-        "l": 525,
+        "l": 562.5,
         "k": "mom"
       },
       {
@@ -7848,7 +7868,7 @@
       {
         "t": 106200,
         "d": 4,
-        "k": "mom"
+        "k": "noanim"
       },
       {
         "t": 106500,
@@ -7864,7 +7884,7 @@
       {
         "t": 106800,
         "d": 7,
-        "k": "mom"
+        "k": "noanim"
       },
       {
         "t": 106950,
@@ -7872,7 +7892,7 @@
         "k": "mom"
       },
       {
-        "t": 107025,
+        "t": 106987.5,
         "d": 4,
         "k": "mom"
       },
@@ -7923,7 +7943,7 @@
       {
         "t": 108600,
         "d": 6,
-        "k": "mom"
+        "k": "noanim"
       },
       {
         "t": 108900,
@@ -7987,7 +8007,8 @@
       },
       {
         "t": 111000,
-        "d": 1
+        "d": 1,
+        "k": "noanim"
       },
       {
         "t": 111300,
@@ -8000,7 +8021,8 @@
       },
       {
         "t": 111600,
-        "d": 3
+        "d": 3,
+        "k": "noanim"
       },
       {
         "t": 111750,
@@ -8048,7 +8070,8 @@
       },
       {
         "t": 113400,
-        "d": 2
+        "d": 2,
+        "k": "noanim"
       },
       {
         "t": 113700,
@@ -8115,7 +8138,7 @@
       {
         "t": 115200,
         "d": 5,
-        "k": "mom"
+        "k": "noanim"
       },
       {
         "t": 115350,
@@ -8130,7 +8153,7 @@
       {
         "t": 115500,
         "d": 5,
-        "k": "mom"
+        "k": "noanim"
       },
       {
         "t": 115650,
@@ -8145,7 +8168,7 @@
       {
         "t": 115800,
         "d": 6,
-        "k": "mom"
+        "k": "noanim"
       },
       {
         "t": 115950,
@@ -8160,7 +8183,7 @@
       {
         "t": 116100,
         "d": 6,
-        "k": "mom"
+        "k": "noanim"
       },
       {
         "t": 116250,
@@ -8169,13 +8192,13 @@
       },
       {
         "t": 116400,
-        "d": 5,
+        "d": 4,
         "k": "mom"
       },
       {
         "t": 116400,
-        "d": 4,
-        "k": "mom"
+        "d": 5,
+        "k": "noanim"
       },
       {
         "t": 116550,
@@ -8205,7 +8228,7 @@
       {
         "t": 117000,
         "d": 6,
-        "k": "mom"
+        "k": "noanim"
       },
       {
         "t": 117150,
@@ -8220,7 +8243,7 @@
       {
         "t": 117300,
         "d": 4,
-        "k": "mom"
+        "k": "noanim"
       },
       {
         "t": 117450,
@@ -8230,7 +8253,7 @@
       {
         "t": 117600,
         "d": 7,
-        "k": "mom"
+        "k": "noanim"
       },
       {
         "t": 117600,
@@ -8248,9 +8271,9 @@
         "k": "mom"
       },
       {
-        "t": 117899.9901,
+        "t": 117900,
         "d": 4,
-        "k": "mom"
+        "k": "noanim"
       },
       {
         "t": 118049.9901,
@@ -8259,13 +8282,13 @@
       },
       {
         "t": 118199.9901,
-        "d": 5,
+        "d": 6,
         "k": "mom"
       },
       {
-        "t": 118199.9901,
-        "d": 6,
-        "k": "mom"
+        "t": 118200,
+        "d": 5,
+        "k": "noanim"
       },
       {
         "t": 118349.9901,
@@ -8275,12 +8298,12 @@
       {
         "t": 118500,
         "d": 7,
-        "k": "mom"
+        "k": "noanim"
       },
       {
         "t": 118500,
         "d": 6,
-        "k": "mom"
+        "k": "noanim"
       },
       {
         "t": 118650,
@@ -8310,7 +8333,7 @@
       {
         "t": 119100,
         "d": 7,
-        "k": "mom"
+        "k": "noanim"
       },
       {
         "t": 119249.9901,
@@ -8318,14 +8341,14 @@
         "k": "mom"
       },
       {
-        "t": 119399.9901,
-        "d": 7,
+        "t": 119400,
+        "d": 6,
         "k": "mom"
       },
       {
         "t": 119400,
-        "d": 6,
-        "k": "mom"
+        "d": 7,
+        "k": "noanim"
       },
       {
         "t": 119549.9901,
@@ -8353,7 +8376,8 @@
       },
       {
         "t": 120000,
-        "d": 1
+        "d": 1,
+        "k": "noanim"
       },
       {
         "t": 120037.5,
@@ -8371,7 +8395,8 @@
       },
       {
         "t": 120300,
-        "d": 1
+        "d": 1,
+        "k": "noanim"
       },
       {
         "t": 120450,
@@ -8383,7 +8408,8 @@
       },
       {
         "t": 120600,
-        "d": 2
+        "d": 2,
+        "k": "noanim"
       },
       {
         "t": 120750,
@@ -8391,11 +8417,12 @@
       },
       {
         "t": 120900,
-        "d": 1
+        "d": 2
       },
       {
         "t": 120900,
-        "d": 2
+        "d": 1,
+        "k": "noanim"
       },
       {
         "t": 121050,
@@ -8403,11 +8430,12 @@
       },
       {
         "t": 121200,
-        "d": 1
+        "d": 0
       },
       {
         "t": 121200,
-        "d": 0
+        "d": 1,
+        "k": "noanim"
       },
       {
         "t": 121350,
@@ -8419,7 +8447,8 @@
       },
       {
         "t": 121500,
-        "d": 3
+        "d": 3,
+        "k": "noanim"
       },
       {
         "t": 121650,
@@ -8439,11 +8468,12 @@
       },
       {
         "t": 122100,
-        "d": 1
+        "d": 0
       },
       {
         "t": 122100,
-        "d": 0
+        "d": 1,
+        "k": "noanim"
       },
       {
         "t": 122250,
@@ -8455,7 +8485,8 @@
       },
       {
         "t": 122400,
-        "d": 0
+        "d": 0,
+        "k": "noanim"
       },
       {
         "t": 122550,
@@ -8463,11 +8494,12 @@
       },
       {
         "t": 122699.9901,
-        "d": 1
+        "d": 0
       },
       {
-        "t": 122699.9901,
-        "d": 0
+        "t": 122700,
+        "d": 1,
+        "k": "noanim"
       },
       {
         "t": 122849.9901,
@@ -8475,11 +8507,12 @@
       },
       {
         "t": 122999.9901,
-        "d": 1
+        "d": 2
       },
       {
-        "t": 122999.9901,
-        "d": 2
+        "t": 123000,
+        "d": 1,
+        "k": "noanim"
       },
       {
         "t": 123149.9901,
@@ -8558,11 +8591,12 @@
       },
       {
         "t": 125100,
-        "d": 7
+        "d": 6
       },
       {
         "t": 125100,
-        "d": 6
+        "d": 7,
+        "k": "noanim"
       },
       {
         "t": 125250,
@@ -8570,11 +8604,12 @@
       },
       {
         "t": 125400,
-        "d": 5
+        "d": 6
       },
       {
         "t": 125400,
-        "d": 6
+        "d": 5,
+        "k": "noanim"
       },
       {
         "t": 125550,
@@ -8586,7 +8621,8 @@
       },
       {
         "t": 125700,
-        "d": 5
+        "d": 5,
+        "k": "noanim"
       },
       {
         "t": 125850,
@@ -8618,7 +8654,8 @@
       },
       {
         "t": 126600,
-        "d": 5
+        "d": 5,
+        "k": "noanim"
       },
       {
         "t": 126750,
@@ -8630,7 +8667,8 @@
       },
       {
         "t": 126900,
-        "d": 5
+        "d": 5,
+        "k": "noanim"
       },
       {
         "t": 127050,
@@ -8638,11 +8676,12 @@
       },
       {
         "t": 127200,
-        "d": 5
+        "d": 4
       },
       {
         "t": 127200,
-        "d": 4
+        "d": 5,
+        "k": "noanim"
       },
       {
         "t": 127350,
@@ -8654,7 +8693,8 @@
       },
       {
         "t": 127500,
-        "d": 5
+        "d": 5,
+        "k": "noanim"
       },
       {
         "t": 127650,
@@ -8662,11 +8702,12 @@
       },
       {
         "t": 127800,
-        "d": 5
+        "d": 6
       },
       {
         "t": 127800,
-        "d": 6
+        "d": 5,
+        "k": "noanim"
       },
       {
         "t": 127950,
@@ -8678,7 +8719,8 @@
       },
       {
         "t": 128100,
-        "d": 5
+        "d": 5,
+        "k": "noanim"
       },
       {
         "t": 128250,
@@ -8702,7 +8744,8 @@
       },
       {
         "t": 128700,
-        "d": 6
+        "d": 6,
+        "k": "noanim"
       },
       {
         "t": 128850,
@@ -8714,11 +8757,12 @@
       },
       {
         "t": 129000,
-        "d": 5
+        "d": 4
       },
       {
         "t": 129000,
-        "d": 4
+        "d": 5,
+        "k": "noanim"
       },
       {
         "t": 129150,
@@ -8734,11 +8778,12 @@
       },
       {
         "t": 129300,
-        "d": 4
+        "d": 3
       },
       {
         "t": 129300,
-        "d": 3
+        "d": 4,
+        "k": "noanim"
       },
       {
         "t": 129450,
@@ -8810,23 +8855,23 @@
       },
       {
         "t": 131868.75,
-        "d": 0,
-        "k": "perfect"
+        "d": 2,
+        "k": "noanim"
       },
       {
         "t": 131868.75,
-        "d": 2,
-        "k": "perfect"
-      },
-      {
-        "t": 132000,
-        "d": 3,
+        "d": 0,
         "k": "perfect"
       },
       {
         "t": 132000,
         "d": 1,
         "k": "perfect"
+      },
+      {
+        "t": 132000,
+        "d": 3,
+        "k": "noanim"
       },
       {
         "t": 132075,
@@ -8845,13 +8890,13 @@
       },
       {
         "t": 132300,
-        "d": 2,
+        "d": 1,
         "k": "perfect"
       },
       {
         "t": 132300,
-        "d": 1,
-        "k": "perfect"
+        "d": 2,
+        "k": "noanim"
       },
       {
         "t": 132375,
@@ -8955,13 +9000,13 @@
       },
       {
         "t": 133875,
-        "d": 0,
+        "d": 1,
         "k": "perfect"
       },
       {
         "t": 133875,
-        "d": 1,
-        "k": "perfect"
+        "d": 0,
+        "k": "noanim"
       },
       {
         "t": 133950,
@@ -9000,5 +9045,5 @@
       }
     ]
   },
-  "generatedBy": "Friday Night Funkin' - v0.8.2 (develop : a8e4490) PROTOTYPE"
+  "generatedBy": "Friday Night Funkin' - v0.8.3"
 }
