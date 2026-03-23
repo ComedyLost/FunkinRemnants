@@ -10,11 +10,11 @@
       "t": 0,
       "e": "FocusCamera",
       "v": {
-        "x": 50,
         "duration": 16,
+        "x": 50,
         "y": -90,
-        "char": 2,
         "ease": "cube",
+        "char": 2,
         "easeDir": "Out"
       }
     },
@@ -24,9 +24,9 @@
       "v": {
         "duration": 8,
         "ease": "sine",
+        "easeDir": "Out",
         "zoom": 1.1,
-        "mode": "stage",
-        "easeDir": "Out"
+        "mode": "stage"
       }
     },
     {
@@ -41,35 +41,26 @@
       "t": 6000,
       "e": "PlayAnimation",
       "v": {
-        "target": "dad",
+        "anim": "uppercutPrep",
         "force": false,
-        "anim": "uppercutPrep"
+        "target": "dad"
       }
     },
     {
       "t": 6166.66666666667,
       "e": "PlayAnimation",
       "v": {
-        "target": "dad",
+        "anim": "uppercut",
         "force": false,
-        "anim": "uppercut"
+        "target": "dad"
       }
     },
     {
       "t": 6166.66666666667,
       "e": "PlayAnimation",
       "v": {
-        "target": "boyfriend",
+        "anim": "dodge",
         "force": true,
-        "anim": "dodge"
-      }
-    },
-    {
-      "t": 10500,
-      "e": "PlayAnimation",
-      "v": {
-        "force": false,
-        "anim": "punchHigh1",
         "target": "boyfriend"
       }
     },
@@ -77,9 +68,18 @@
       "t": 10500,
       "e": "PlayAnimation",
       "v": {
-        "force": false,
+        "target": "boyfriend",
+        "anim": "punchHigh1",
+        "force": false
+      }
+    },
+    {
+      "t": 10500,
+      "e": "PlayAnimation",
+      "v": {
+        "target": "dad",
         "anim": "uppercutPrep",
-        "target": "dad"
+        "force": false
       }
     },
     {
@@ -96,247 +96,310 @@
       "v": {
         "duration": 4,
         "ease": "expo",
+        "easeDir": "Out",
         "mode": "stage",
-        "zoom": 1,
-        "easeDir": "Out"
+        "zoom": 1
       }
     },
     {
       "t": 11333.3333333333,
       "e": "PlayAnimation",
       "v": {
-        "target": "boyfriend",
+        "anim": "hitSpin",
         "force": false,
-        "anim": "hitSpin"
-      }
-    },
-    {
-      "t": 11333.3333333333,
-      "e": "PlayAnimation",
-      "v": {
-        "target": "dad",
-        "force": true,
-        "anim": "uppercutPrep"
-      }
-    },
-    {
-      "t": 11500,
-      "e": "PlayAnimation",
-      "v": {
-        "anim": "dodge",
-        "force": true,
         "target": "boyfriend"
       }
     },
     {
+      "t": 11333.3333333333,
+      "e": "PlayAnimation",
+      "v": {
+        "anim": "uppercutPrep",
+        "force": true,
+        "target": "dad"
+      }
+    },
+    {
       "t": 11500,
       "e": "PlayAnimation",
       "v": {
-        "anim": "uppercut",
+        "target": "boyfriend",
         "force": true,
-        "target": "dad"
+        "anim": "dodge"
+      }
+    },
+    {
+      "t": 11500,
+      "e": "PlayAnimation",
+      "v": {
+        "target": "dad",
+        "force": true,
+        "anim": "uppercut"
       }
     },
     {
       "t": 12833.3333333333,
       "e": "PlayAnimation",
       "v": {
-        "target": "dad",
+        "anim": "punchHigh1",
         "force": false,
-        "anim": "punchHigh1"
+        "target": "dad"
       }
     },
     {
       "t": 13333.3333333333,
       "e": "PlayAnimation",
       "v": {
-        "target": "dad",
+        "anim": "punchHigh1",
         "force": false,
-        "anim": "punchHigh1"
+        "target": "dad"
       }
     },
     {
       "t": 13333.3333333333,
       "e": "PlayAnimation",
       "v": {
-        "target": "boyfriend",
+        "anim": "hitSpin",
         "force": false,
-        "anim": "hitSpin"
+        "target": "boyfriend"
       }
     },
     {
       "t": 13375,
       "e": "PlayAnimation",
       "v": {
-        "target": "dad",
+        "anim": "punchHigh2",
         "force": false,
-        "anim": "punchHigh2"
+        "target": "dad"
       }
     },
     {
       "t": 13416.6666666667,
       "e": "PlayAnimation",
       "v": {
-        "target": "dad",
+        "anim": "punchHigh1",
         "force": false,
-        "anim": "punchHigh1"
+        "target": "dad"
       }
     },
     {
       "t": 13458.3333333333,
       "e": "PlayAnimation",
       "v": {
-        "target": "dad",
-        "force": false,
-        "anim": "punchHigh2"
-      }
-    },
-    {
-      "t": 15500,
-      "e": "PlayAnimation",
-      "v": {
-        "target": "boyfriend",
-        "force": false,
-        "anim": "uppercutPrep"
-      }
-    },
-    {
-      "t": 15500,
-      "e": "PlayAnimation",
-      "v": {
-        "target": "dad",
-        "force": false,
-        "anim": "uppercutPrep"
-      }
-    },
-    {
-      "t": 15666.6666666667,
-      "e": "PlayAnimation",
-      "v": {
-        "anim": "uppercut",
-        "force": false,
-        "target": "boyfriend"
-      }
-    },
-    {
-      "t": 15666.6666666667,
-      "e": "PlayAnimation",
-      "v": {
-        "anim": "uppercut",
+        "anim": "punchHigh2",
         "force": false,
         "target": "dad"
       }
     },
     {
-      "t": 15708.3333333333,
+      "t": 15500,
+      "e": "PlayAnimation",
+      "v": {
+        "anim": "uppercutPrep",
+        "force": false,
+        "target": "boyfriend"
+      }
+    },
+    {
+      "t": 15500,
+      "e": "PlayAnimation",
+      "v": {
+        "anim": "uppercutPrep",
+        "force": false,
+        "target": "dad"
+      }
+    },
+    {
+      "t": 15666.6666666667,
       "e": "PlayAnimation",
       "v": {
         "target": "boyfriend",
         "force": false,
-        "anim": "uppercutHit"
+        "anim": "uppercut"
+      }
+    },
+    {
+      "t": 15666.6666666667,
+      "e": "PlayAnimation",
+      "v": {
+        "target": "dad",
+        "force": false,
+        "anim": "uppercut"
       }
     },
     {
       "t": 15708.3333333333,
       "e": "PlayAnimation",
       "v": {
-        "target": "dad",
+        "anim": "uppercutHit",
         "force": false,
-        "anim": "uppercutHit"
+        "target": "boyfriend"
+      }
+    },
+    {
+      "t": 15708.3333333333,
+      "e": "PlayAnimation",
+      "v": {
+        "anim": "uppercutHit",
+        "force": false,
+        "target": "dad"
       }
     },
     {
       "t": 16666.6666666667,
       "e": "PlayAnimation",
       "v": {
-        "target": "dad",
+        "anim": "hitSpin",
         "force": false,
-        "anim": "hitSpin"
+        "target": "dad"
       }
     },
     {
       "t": 16833.3333333333,
       "e": "PlayAnimation",
       "v": {
-        "target": "dad",
+        "anim": "dodge",
         "force": false,
-        "anim": "dodge"
+        "target": "dad"
       }
     },
     {
       "t": 16833.3333333333,
       "e": "PlayAnimation",
       "v": {
-        "target": "boyfriend",
+        "anim": "uppercut",
         "force": false,
-        "anim": "uppercut"
+        "target": "boyfriend"
       }
     },
     {
       "t": 18166.6666666667,
       "e": "PlayAnimation",
       "v": {
-        "target": "boyfriend",
+        "anim": "punchHigh1",
         "force": false,
-        "anim": "punchHigh1"
+        "target": "boyfriend"
       }
     },
     {
       "t": 19833.3333333333,
       "e": "PlayAnimation",
       "v": {
-        "target": "dad",
+        "anim": "uppercutPrep",
         "force": false,
-        "anim": "uppercutPrep"
+        "target": "dad"
       }
     },
     {
       "t": 19833.3333333333,
       "e": "PlayAnimation",
       "v": {
-        "target": "boyfriend",
+        "anim": "punchHigh1",
         "force": false,
-        "anim": "punchHigh1"
+        "target": "boyfriend"
       }
     },
     {
       "t": 19916.6666666667,
       "e": "PlayAnimation",
       "v": {
-        "target": "boyfriend",
+        "anim": "punchHigh2",
         "force": false,
-        "anim": "punchHigh2"
+        "target": "boyfriend"
       }
     },
     {
       "t": 20000,
       "e": "PlayAnimation",
       "v": {
-        "target": "dad",
+        "anim": "uppercut",
         "force": false,
-        "anim": "uppercut"
+        "target": "dad"
       }
     },
     {
       "t": 20000,
       "e": "PlayAnimation",
       "v": {
-        "target": "boyfriend",
+        "anim": "dodge",
         "force": false,
-        "anim": "dodge"
+        "target": "boyfriend"
       }
     },
     {
       "t": 20333.3333333333,
       "e": "PlayAnimation",
       "v": {
+        "anim": "uppercutPrep",
+        "force": false,
+        "target": "boyfriend"
+      }
+    },
+    {
+      "t": 20333.3333333333,
+      "e": "PlayAnimation",
+      "v": {
+        "anim": "punchHigh1",
+        "force": false,
+        "target": "dad"
+      }
+    },
+    {
+      "t": 20500,
+      "e": "PlayAnimation",
+      "v": {
+        "anim": "dodge",
+        "force": false,
+        "target": "dad"
+      }
+    },
+    {
+      "t": 20500,
+      "e": "PlayAnimation",
+      "v": {
+        "anim": "uppercut",
+        "force": false,
+        "target": "boyfriend"
+      }
+    },
+    {
+      "t": 20833.3333333333,
+      "e": "PlayAnimation",
+      "v": {
         "target": "boyfriend",
+        "force": false,
+        "anim": "punchHigh1"
+      }
+    },
+    {
+      "t": 20833.3333333333,
+      "e": "PlayAnimation",
+      "v": {
+        "target": "dad",
         "force": false,
         "anim": "uppercutPrep"
       }
     },
     {
-      "t": 20333.3333333333,
+      "t": 21000,
+      "e": "PlayAnimation",
+      "v": {
+        "anim": "dodge",
+        "force": false,
+        "target": "boyfriend"
+      }
+    },
+    {
+      "t": 21000,
+      "e": "PlayAnimation",
+      "v": {
+        "anim": "uppercut",
+        "force": false,
+        "target": "dad"
+      }
+    },
+    {
+      "t": 21083.3333333333,
       "e": "PlayAnimation",
       "v": {
         "target": "dad",
@@ -345,160 +408,25 @@
       }
     },
     {
-      "t": 20500,
-      "e": "PlayAnimation",
-      "v": {
-        "target": "dad",
-        "force": false,
-        "anim": "dodge"
-      }
-    },
-    {
-      "t": 20500,
+      "t": 21083.3333333333,
       "e": "PlayAnimation",
       "v": {
         "target": "boyfriend",
         "force": false,
-        "anim": "uppercut"
-      }
-    },
-    {
-      "t": 20833.3333333333,
-      "e": "PlayAnimation",
-      "v": {
-        "anim": "punchHigh1",
-        "force": false,
-        "target": "boyfriend"
-      }
-    },
-    {
-      "t": 20833.3333333333,
-      "e": "PlayAnimation",
-      "v": {
-        "anim": "uppercutPrep",
-        "force": false,
-        "target": "dad"
-      }
-    },
-    {
-      "t": 21000,
-      "e": "PlayAnimation",
-      "v": {
-        "target": "boyfriend",
-        "force": false,
-        "anim": "dodge"
-      }
-    },
-    {
-      "t": 21000,
-      "e": "PlayAnimation",
-      "v": {
-        "target": "dad",
-        "force": false,
-        "anim": "uppercut"
-      }
-    },
-    {
-      "t": 21083.3333333333,
-      "e": "PlayAnimation",
-      "v": {
-        "anim": "punchHigh1",
-        "force": false,
-        "target": "dad"
-      }
-    },
-    {
-      "t": 21083.3333333333,
-      "e": "PlayAnimation",
-      "v": {
-        "anim": "uppercutPrep",
-        "force": false,
-        "target": "boyfriend"
+        "anim": "uppercutPrep"
       }
     },
     {
       "t": 21166.6666666667,
       "e": "PlayAnimation",
       "v": {
-        "anim": "punchHigh2",
+        "target": "dad",
         "force": false,
-        "target": "dad"
+        "anim": "punchHigh2"
       }
     },
     {
       "t": 22166.6666666667,
-      "e": "PlayAnimation",
-      "v": {
-        "target": "boyfriend",
-        "force": false,
-        "anim": "uppercut"
-      }
-    },
-    {
-      "t": 22166.6666666667,
-      "e": "PlayAnimation",
-      "v": {
-        "target": "dad",
-        "force": false,
-        "anim": "dodge"
-      }
-    },
-    {
-      "t": 27333.3333333333,
-      "e": "PlayAnimation",
-      "v": {
-        "target": "boyfriend",
-        "force": false,
-        "anim": "punchHigh1"
-      }
-    },
-    {
-      "t": 27333.3333333333,
-      "e": "PlayAnimation",
-      "v": {
-        "target": "dad",
-        "force": false,
-        "anim": "uppercutPrep"
-      }
-    },
-    {
-      "t": 27500,
-      "e": "PlayAnimation",
-      "v": {
-        "target": "dad",
-        "force": false,
-        "anim": "uppercut"
-      }
-    },
-    {
-      "t": 27500,
-      "e": "PlayAnimation",
-      "v": {
-        "target": "boyfriend",
-        "force": false,
-        "anim": "dodge"
-      }
-    },
-    {
-      "t": 30000,
-      "e": "PlayAnimation",
-      "v": {
-        "anim": "uppercutPrep",
-        "force": false,
-        "target": "boyfriend"
-      }
-    },
-    {
-      "t": 30000,
-      "e": "PlayAnimation",
-      "v": {
-        "anim": "punchHigh1",
-        "force": false,
-        "target": "dad"
-      }
-    },
-    {
-      "t": 30166.6666666667,
       "e": "PlayAnimation",
       "v": {
         "anim": "uppercut",
@@ -507,7 +435,7 @@
       }
     },
     {
-      "t": 30166.6666666667,
+      "t": 22166.6666666667,
       "e": "PlayAnimation",
       "v": {
         "anim": "dodge",
@@ -516,7 +444,16 @@
       }
     },
     {
-      "t": 30500,
+      "t": 27333.3333333333,
+      "e": "PlayAnimation",
+      "v": {
+        "anim": "punchHigh1",
+        "force": false,
+        "target": "boyfriend"
+      }
+    },
+    {
+      "t": 27333.3333333333,
       "e": "PlayAnimation",
       "v": {
         "anim": "uppercutPrep",
@@ -525,52 +462,178 @@
       }
     },
     {
+      "t": 27500,
+      "e": "PlayAnimation",
+      "v": {
+        "anim": "uppercut",
+        "force": false,
+        "target": "dad"
+      }
+    },
+    {
+      "t": 27500,
+      "e": "PlayAnimation",
+      "v": {
+        "anim": "dodge",
+        "force": false,
+        "target": "boyfriend"
+      }
+    },
+    {
+      "t": 30000,
+      "e": "PlayAnimation",
+      "v": {
+        "target": "boyfriend",
+        "force": false,
+        "anim": "uppercutPrep"
+      }
+    },
+    {
+      "t": 30000,
+      "e": "PlayAnimation",
+      "v": {
+        "target": "dad",
+        "force": false,
+        "anim": "punchHigh1"
+      }
+    },
+    {
+      "t": 30166.6666666667,
+      "e": "PlayAnimation",
+      "v": {
+        "target": "boyfriend",
+        "force": false,
+        "anim": "uppercut"
+      }
+    },
+    {
+      "t": 30166.6666666667,
+      "e": "PlayAnimation",
+      "v": {
+        "target": "dad",
+        "force": false,
+        "anim": "dodge"
+      }
+    },
+    {
       "t": 30500,
       "e": "PlayAnimation",
       "v": {
-        "anim": "punchHigh1",
+        "target": "dad",
         "force": false,
-        "target": "boyfriend"
+        "anim": "uppercutPrep"
+      }
+    },
+    {
+      "t": 30500,
+      "e": "PlayAnimation",
+      "v": {
+        "target": "boyfriend",
+        "force": false,
+        "anim": "punchHigh1"
       }
     },
     {
       "t": 30583.3333333334,
       "e": "PlayAnimation",
       "v": {
-        "anim": "punchHigh2",
+        "target": "boyfriend",
         "force": false,
-        "target": "boyfriend"
+        "anim": "punchHigh2"
       }
     },
     {
       "t": 30666.6666666667,
       "e": "PlayAnimation",
       "v": {
-        "anim": "uppercut",
+        "target": "dad",
+        "force": false,
+        "anim": "uppercut"
+      }
+    },
+    {
+      "t": 30666.6666666667,
+      "e": "PlayAnimation",
+      "v": {
+        "target": "boyfriend",
+        "force": false,
+        "anim": "dodge"
+      }
+    },
+    {
+      "t": 31000,
+      "e": "PlayAnimation",
+      "v": {
+        "target": "boyfriend",
+        "force": false,
+        "anim": "uppercutPrep"
+      }
+    },
+    {
+      "t": 31000,
+      "e": "PlayAnimation",
+      "v": {
+        "target": "dad",
+        "force": false,
+        "anim": "punchHigh1"
+      }
+    },
+    {
+      "t": 31166.6666666667,
+      "e": "PlayAnimation",
+      "v": {
+        "target": "dad",
+        "force": false,
+        "anim": "dodge"
+      }
+    },
+    {
+      "t": 31166.6666666667,
+      "e": "PlayAnimation",
+      "v": {
+        "target": "boyfriend",
+        "force": false,
+        "anim": "uppercut"
+      }
+    },
+    {
+      "t": 31500,
+      "e": "PlayAnimation",
+      "v": {
+        "anim": "punchHigh1",
+        "force": false,
+        "target": "boyfriend"
+      }
+    },
+    {
+      "t": 31500,
+      "e": "PlayAnimation",
+      "v": {
+        "anim": "uppercutPrep",
         "force": false,
         "target": "dad"
       }
     },
     {
-      "t": 30666.6666666667,
+      "t": 31666.6666666667,
       "e": "PlayAnimation",
       "v": {
-        "anim": "dodge",
+        "target": "boyfriend",
         "force": false,
-        "target": "boyfriend"
+        "anim": "dodge"
       }
     },
     {
-      "t": 31000,
+      "t": 31666.6666666667,
       "e": "PlayAnimation",
       "v": {
-        "anim": "uppercutPrep",
+        "target": "dad",
         "force": false,
-        "target": "boyfriend"
+        "anim": "uppercut"
       }
     },
     {
-      "t": 31000,
+      "t": 31750,
       "e": "PlayAnimation",
       "v": {
         "anim": "punchHigh1",
@@ -579,84 +642,21 @@
       }
     },
     {
-      "t": 31166.6666666667,
-      "e": "PlayAnimation",
-      "v": {
-        "anim": "dodge",
-        "force": false,
-        "target": "dad"
-      }
-    },
-    {
-      "t": 31166.6666666667,
-      "e": "PlayAnimation",
-      "v": {
-        "anim": "uppercut",
-        "force": false,
-        "target": "boyfriend"
-      }
-    },
-    {
-      "t": 31500,
-      "e": "PlayAnimation",
-      "v": {
-        "target": "boyfriend",
-        "force": false,
-        "anim": "punchHigh1"
-      }
-    },
-    {
-      "t": 31500,
-      "e": "PlayAnimation",
-      "v": {
-        "target": "dad",
-        "force": false,
-        "anim": "uppercutPrep"
-      }
-    },
-    {
-      "t": 31666.6666666667,
-      "e": "PlayAnimation",
-      "v": {
-        "anim": "dodge",
-        "force": false,
-        "target": "boyfriend"
-      }
-    },
-    {
-      "t": 31666.6666666667,
-      "e": "PlayAnimation",
-      "v": {
-        "anim": "uppercut",
-        "force": false,
-        "target": "dad"
-      }
-    },
-    {
       "t": 31750,
       "e": "PlayAnimation",
       "v": {
-        "target": "dad",
+        "anim": "uppercutPrep",
         "force": false,
-        "anim": "punchHigh1"
-      }
-    },
-    {
-      "t": 31750,
-      "e": "PlayAnimation",
-      "v": {
-        "target": "boyfriend",
-        "force": false,
-        "anim": "uppercutPrep"
+        "target": "boyfriend"
       }
     },
     {
       "t": 31833.3333333334,
       "e": "PlayAnimation",
       "v": {
-        "target": "dad",
+        "anim": "punchHigh2",
         "force": false,
-        "anim": "punchHigh2"
+        "target": "dad"
       }
     },
     {
@@ -673,9 +673,9 @@
       "v": {
         "duration": 8,
         "ease": "sine",
+        "easeDir": "Out",
         "zoom": 1.1,
-        "mode": "stage",
-        "easeDir": "Out"
+        "mode": "stage"
       }
     },
     {
@@ -683,8 +683,8 @@
       "e": "SetCameraBop",
       "v": {
         "rate": 1,
-        "offset": 0,
-        "intensity": 2
+        "intensity": 2,
+        "offset": 0
       }
     },
     {
@@ -693,9 +693,9 @@
       "v": {
         "duration": 4,
         "ease": "expo",
+        "easeDir": "Out",
         "mode": "stage",
-        "zoom": 1.3,
-        "easeDir": "Out"
+        "zoom": 1.3
       }
     },
     {
@@ -704,9 +704,9 @@
       "v": {
         "duration": 12,
         "ease": "back",
+        "easeDir": "Out",
         "mode": "stage",
-        "zoom": 1,
-        "easeDir": "Out"
+        "zoom": 1
       }
     },
     {
@@ -714,8 +714,8 @@
       "e": "SetCameraBop",
       "v": {
         "rate": 1,
-        "offset": 0,
-        "intensity": 0
+        "intensity": 0,
+        "offset": 0
       }
     },
     {
@@ -723,8 +723,8 @@
       "e": "SetCameraBop",
       "v": {
         "rate": 4,
-        "offset": 0,
-        "intensity": 0.5
+        "intensity": 0.5,
+        "offset": 0
       }
     },
     {
@@ -733,27 +733,27 @@
       "v": {
         "duration": 8,
         "ease": "sine",
+        "easeDir": "Out",
         "mode": "stage",
-        "zoom": 1.1,
-        "easeDir": "Out"
+        "zoom": 1.1
       }
     },
     {
       "t": 47833.3333333333,
       "e": "PlayAnimation",
       "v": {
-        "anim": "uppercutPrep",
+        "target": "dad",
         "force": false,
-        "target": "dad"
+        "anim": "uppercutPrep"
       }
     },
     {
       "t": 47833.3333333333,
       "e": "PlayAnimation",
       "v": {
-        "anim": "punchHigh1",
+        "target": "boyfriend",
         "force": false,
-        "target": "boyfriend"
+        "anim": "punchHigh1"
       }
     },
     {
@@ -761,8 +761,8 @@
       "e": "SetCameraBop",
       "v": {
         "rate": 4,
-        "offset": 0,
-        "intensity": 1
+        "intensity": 1,
+        "offset": 0
       }
     },
     {
@@ -771,34 +771,43 @@
       "v": {
         "duration": 4,
         "ease": "expo",
+        "easeDir": "Out",
         "mode": "stage",
-        "zoom": 1,
-        "easeDir": "Out"
+        "zoom": 1
       }
     },
     {
       "t": 48833.3333333333,
       "e": "PlayAnimation",
       "v": {
-        "target": "dad",
+        "anim": "uppercutPrep",
         "force": false,
-        "anim": "uppercutPrep"
+        "target": "dad"
       }
     },
     {
       "t": 48833.3333333333,
       "e": "PlayAnimation",
       "v": {
-        "target": "boyfriend",
+        "anim": "punchHigh1",
         "force": false,
-        "anim": "punchHigh1"
+        "target": "boyfriend"
       }
     },
     {
       "t": 49083.3333333333,
       "e": "PlayAnimation",
       "v": {
-        "target": "dad",
+        "anim": "uppercutPrep",
+        "force": false,
+        "target": "dad"
+      }
+    },
+    {
+      "t": 52500,
+      "e": "PlayAnimation",
+      "v": {
+        "target": "boyfriend",
         "force": false,
         "anim": "uppercutPrep"
       }
@@ -807,112 +816,139 @@
       "t": 52500,
       "e": "PlayAnimation",
       "v": {
-        "anim": "uppercutPrep",
+        "target": "dad",
+        "force": false,
+        "anim": "uppercutPrep"
+      }
+    },
+    {
+      "t": 52666.6666666667,
+      "e": "PlayAnimation",
+      "v": {
+        "anim": "uppercut",
         "force": false,
         "target": "boyfriend"
       }
     },
     {
-      "t": 52500,
+      "t": 52666.6666666667,
       "e": "PlayAnimation",
       "v": {
-        "anim": "uppercutPrep",
+        "anim": "uppercut",
         "force": false,
         "target": "dad"
       }
     },
     {
-      "t": 52666.6666666667,
+      "t": 52708.3333333333,
       "e": "PlayAnimation",
       "v": {
         "target": "boyfriend",
         "force": false,
-        "anim": "uppercut"
+        "anim": "uppercutHit"
       }
     },
     {
-      "t": 52666.6666666667,
+      "t": 52708.3333333333,
       "e": "PlayAnimation",
       "v": {
         "target": "dad",
         "force": false,
-        "anim": "uppercut"
-      }
-    },
-    {
-      "t": 52708.3333333333,
-      "e": "PlayAnimation",
-      "v": {
-        "anim": "uppercutHit",
-        "force": false,
-        "target": "boyfriend"
-      }
-    },
-    {
-      "t": 52708.3333333333,
-      "e": "PlayAnimation",
-      "v": {
-        "anim": "uppercutHit",
-        "force": false,
-        "target": "dad"
+        "anim": "uppercutHit"
       }
     },
     {
       "t": 54333.3333333333,
       "e": "PlayAnimation",
       "v": {
-        "anim": "punchHigh1",
+        "target": "dad",
         "force": false,
-        "target": "dad"
+        "anim": "punchHigh1"
       }
     },
     {
       "t": 54333.3333333333,
       "e": "PlayAnimation",
       "v": {
-        "anim": "hitSpin",
+        "target": "boyfriend",
         "force": false,
-        "target": "boyfriend"
+        "anim": "hitSpin"
       }
     },
     {
       "t": 54375,
       "e": "PlayAnimation",
       "v": {
-        "anim": "punchHigh2",
+        "target": "dad",
         "force": false,
-        "target": "dad"
+        "anim": "punchHigh2"
       }
     },
     {
       "t": 54416.6666666667,
       "e": "PlayAnimation",
       "v": {
-        "anim": "punchHigh1",
+        "target": "dad",
         "force": false,
-        "target": "dad"
+        "anim": "punchHigh1"
       }
     },
     {
       "t": 54458.3333333333,
       "e": "PlayAnimation",
       "v": {
-        "anim": "punchHigh2",
+        "target": "dad",
         "force": false,
-        "target": "dad"
+        "anim": "punchHigh2"
       }
     },
     {
       "t": 55750,
       "e": "PlayAnimation",
       "v": {
+        "target": "boyfriend",
+        "force": false,
+        "anim": "uppercutPrep"
+      }
+    },
+    {
+      "t": 57916.6666666667,
+      "e": "PlayAnimation",
+      "v": {
         "anim": "uppercutPrep",
+        "force": false,
+        "target": "dad"
+      }
+    },
+    {
+      "t": 57916.6666666667,
+      "e": "PlayAnimation",
+      "v": {
+        "anim": "punchHigh1",
         "force": false,
         "target": "boyfriend"
       }
     },
     {
-      "t": 57916.6666666667,
+      "t": 58250,
+      "e": "PlayAnimation",
+      "v": {
+        "target": "boyfriend",
+        "force": false,
+        "anim": "uppercutPrep"
+      }
+    },
+    {
+      "t": 58250,
+      "e": "PlayAnimation",
+      "v": {
+        "target": "dad",
+        "force": false,
+        "anim": "punchHigh1"
+      }
+    },
+    {
+      "t": 60500,
       "e": "PlayAnimation",
       "v": {
         "target": "dad",
@@ -921,7 +957,7 @@
       }
     },
     {
-      "t": 57916.6666666667,
+      "t": 60500,
       "e": "PlayAnimation",
       "v": {
         "target": "boyfriend",
@@ -930,57 +966,21 @@
       }
     },
     {
-      "t": 58250,
+      "t": 79500,
       "e": "PlayAnimation",
       "v": {
-        "anim": "uppercutPrep",
-        "force": false,
-        "target": "boyfriend"
-      }
-    },
-    {
-      "t": 58250,
-      "e": "PlayAnimation",
-      "v": {
-        "anim": "punchHigh1",
+        "anim": "fakeout",
         "force": false,
         "target": "dad"
-      }
-    },
-    {
-      "t": 60500,
-      "e": "PlayAnimation",
-      "v": {
-        "anim": "uppercutPrep",
-        "force": false,
-        "target": "dad"
-      }
-    },
-    {
-      "t": 60500,
-      "e": "PlayAnimation",
-      "v": {
-        "anim": "punchHigh1",
-        "force": false,
-        "target": "boyfriend"
       }
     },
     {
       "t": 79500,
       "e": "PlayAnimation",
       "v": {
-        "target": "dad",
+        "anim": "fakeout",
         "force": false,
-        "anim": "fakeout"
-      }
-    },
-    {
-      "t": 79500,
-      "e": "PlayAnimation",
-      "v": {
-        "target": "boyfriend",
-        "force": false,
-        "anim": "fakeout"
+        "target": "boyfriend"
       }
     },
     {
@@ -988,8 +988,8 @@
       "e": "SetCameraBop",
       "v": {
         "rate": 1,
-        "offset": 0,
-        "intensity": 2
+        "intensity": 2,
+        "offset": 0
       }
     },
     {
@@ -998,9 +998,9 @@
       "v": {
         "duration": 4,
         "ease": "expo",
+        "easeDir": "Out",
         "mode": "stage",
-        "zoom": 1.2,
-        "easeDir": "Out"
+        "zoom": 1.2
       }
     },
     {
@@ -1008,8 +1008,8 @@
       "e": "SetCameraBop",
       "v": {
         "rate": 1,
-        "offset": 0,
-        "intensity": 0
+        "intensity": 0,
+        "offset": 0
       }
     },
     {
@@ -1018,9 +1018,9 @@
       "v": {
         "duration": 8,
         "ease": "sine",
+        "easeDir": "Out",
         "mode": "stage",
-        "zoom": 1,
-        "easeDir": "Out"
+        "zoom": 1
       }
     },
     {
@@ -1028,27 +1028,27 @@
       "e": "SetCameraBop",
       "v": {
         "rate": 1,
-        "offset": 0,
-        "intensity": 0.5
+        "intensity": 0.5,
+        "offset": 0
       }
     },
     {
       "t": 81000,
       "e": "ZoomCamera",
       "v": {
-        "duration": 4,
         "ease": "linear",
-        "zoom": 1.4,
-        "mode": "stage"
+        "duration": 4,
+        "mode": "stage",
+        "zoom": 1.4
       }
     },
     {
       "t": 81000,
       "e": "PlayAnimation",
       "v": {
-        "target": "dad",
+        "anim": "fakeout",
         "force": false,
-        "anim": "fakeout"
+        "target": "dad"
       }
     },
     {
@@ -1056,8 +1056,8 @@
       "e": "SetCameraBop",
       "v": {
         "rate": 4,
-        "offset": 0,
-        "intensity": 1
+        "intensity": 1,
+        "offset": 0
       }
     },
     {
@@ -1066,45 +1066,45 @@
       "v": {
         "duration": 4,
         "ease": "expo",
+        "easeDir": "Out",
         "mode": "stage",
-        "zoom": 1,
-        "easeDir": "Out"
+        "zoom": 1
       }
     },
     {
       "t": 83916.6666666667,
       "e": "PlayAnimation",
       "v": {
-        "target": "boyfriend",
+        "anim": "punchLow1",
         "force": false,
-        "anim": "punchLow1"
+        "target": "boyfriend"
       }
     },
     {
       "t": 83916.6666666667,
       "e": "PlayAnimation",
       "v": {
-        "target": "dad",
+        "anim": "punchLow1",
         "force": false,
-        "anim": "punchLow1"
+        "target": "dad"
       }
     },
     {
       "t": 84000,
       "e": "PlayAnimation",
       "v": {
-        "target": "boyfriend",
+        "anim": "hitLow",
         "force": false,
-        "anim": "hitLow"
+        "target": "boyfriend"
       }
     },
     {
       "t": 84000,
       "e": "PlayAnimation",
       "v": {
-        "target": "dad",
+        "anim": "hitLow",
         "force": false,
-        "anim": "hitLow"
+        "target": "dad"
       }
     },
     {
@@ -1112,33 +1112,24 @@
       "e": "SetCameraBop",
       "v": {
         "rate": 4,
-        "offset": 0,
-        "intensity": 3
+        "intensity": 3,
+        "offset": 0
       }
     },
     {
       "t": 85250,
       "e": "PlayAnimation",
       "v": {
-        "target": "dad",
+        "anim": "uppercutPrep",
         "force": false,
-        "anim": "uppercutPrep"
+        "target": "dad"
       }
     },
     {
       "t": 85250,
       "e": "PlayAnimation",
       "v": {
-        "target": "boyfriend",
-        "force": false,
-        "anim": "uppercutPrep"
-      }
-    },
-    {
-      "t": 85333.3333333333,
-      "e": "PlayAnimation",
-      "v": {
-        "anim": "uppercut",
+        "anim": "uppercutPrep",
         "force": false,
         "target": "boyfriend"
       }
@@ -1147,45 +1138,54 @@
       "t": 85333.3333333333,
       "e": "PlayAnimation",
       "v": {
-        "anim": "uppercut",
+        "target": "boyfriend",
+        "force": false,
+        "anim": "uppercut"
+      }
+    },
+    {
+      "t": 85333.3333333333,
+      "e": "PlayAnimation",
+      "v": {
+        "target": "dad",
+        "force": false,
+        "anim": "uppercut"
+      }
+    },
+    {
+      "t": 85374.9999999999,
+      "e": "PlayAnimation",
+      "v": {
+        "anim": "uppercutHit",
+        "force": false,
+        "target": "boyfriend"
+      }
+    },
+    {
+      "t": 85374.9999999999,
+      "e": "PlayAnimation",
+      "v": {
+        "anim": "uppercutHit",
         "force": false,
         "target": "dad"
       }
     },
     {
-      "t": 85374.9999999999,
+      "t": 86500,
       "e": "PlayAnimation",
       "v": {
-        "target": "boyfriend",
+        "anim": "punchHigh1",
         "force": false,
-        "anim": "uppercutHit"
-      }
-    },
-    {
-      "t": 85374.9999999999,
-      "e": "PlayAnimation",
-      "v": {
-        "target": "dad",
-        "force": false,
-        "anim": "uppercutHit"
+        "target": "boyfriend"
       }
     },
     {
       "t": 86500,
       "e": "PlayAnimation",
       "v": {
-        "target": "boyfriend",
+        "anim": "uppercutPrep",
         "force": false,
-        "anim": "punchHigh1"
-      }
-    },
-    {
-      "t": 86500,
-      "e": "PlayAnimation",
-      "v": {
-        "target": "dad",
-        "force": false,
-        "anim": "uppercutPrep"
+        "target": "dad"
       }
     },
     {
@@ -1193,71 +1193,71 @@
       "e": "SetCameraBop",
       "v": {
         "rate": 4,
-        "offset": 0,
-        "intensity": 1
+        "intensity": 1,
+        "offset": 0
       }
     },
     {
       "t": 86666.6666666667,
       "e": "PlayAnimation",
       "v": {
-        "target": "boyfriend",
+        "anim": "dodge",
         "force": false,
-        "anim": "dodge"
+        "target": "boyfriend"
       }
     },
     {
       "t": 86666.6666666667,
       "e": "PlayAnimation",
       "v": {
-        "target": "dad",
+        "anim": "uppercut",
         "force": false,
-        "anim": "uppercut"
+        "target": "dad"
       }
     },
     {
       "t": 87291.6666666667,
       "e": "PlayAnimation",
       "v": {
-        "target": "boyfriend",
+        "anim": "uppercutPrep",
         "force": false,
-        "anim": "uppercutPrep"
+        "target": "boyfriend"
       }
     },
     {
       "t": 87291.6666666667,
       "e": "PlayAnimation",
       "v": {
-        "target": "dad",
+        "anim": "punchHigh1",
         "force": false,
-        "anim": "punchHigh1"
+        "target": "dad"
       }
     },
     {
       "t": 87333.3333333333,
       "e": "PlayAnimation",
       "v": {
-        "target": "boyfriend",
+        "anim": "uppercut",
         "force": false,
-        "anim": "uppercut"
+        "target": "boyfriend"
       }
     },
     {
       "t": 87333.3333333333,
       "e": "PlayAnimation",
       "v": {
-        "target": "dad",
+        "anim": "dodge",
         "force": false,
-        "anim": "dodge"
+        "target": "dad"
       }
     },
     {
       "t": 87666.6666666667,
       "e": "PlayAnimation",
       "v": {
-        "target": "dad",
+        "anim": "punchHigh1",
         "force": false,
-        "anim": "punchHigh1"
+        "target": "dad"
       }
     },
     {
@@ -1265,8 +1265,8 @@
       "e": "SetCameraBop",
       "v": {
         "rate": 1,
-        "offset": 0,
-        "intensity": 2
+        "intensity": 2,
+        "offset": 0
       }
     },
     {
@@ -1275,9 +1275,9 @@
       "v": {
         "duration": 8,
         "ease": "cube",
+        "easeDir": "Out",
         "mode": "stage",
-        "zoom": 1.3,
-        "easeDir": "Out"
+        "zoom": 1.3
       }
     },
     {
@@ -1285,8 +1285,8 @@
       "e": "SetCameraBop",
       "v": {
         "rate": 1,
-        "offset": 0,
-        "intensity": 0
+        "intensity": 0,
+        "offset": 0
       }
     },
     {
@@ -1295,27 +1295,27 @@
       "v": {
         "duration": 4,
         "ease": "expo",
+        "easeDir": "Out",
         "mode": "stage",
-        "zoom": 1,
-        "easeDir": "Out"
+        "zoom": 1
       }
     },
     {
       "t": 90666.6666666667,
       "e": "PlayAnimation",
       "v": {
-        "force": false,
+        "target": "dad",
         "anim": "hitSpin",
-        "target": "dad"
+        "force": false
       }
     },
     {
       "t": 90666.6666666667,
       "e": "PlayAnimation",
       "v": {
-        "force": false,
+        "target": "boyfriend",
         "anim": "hitSpin",
-        "target": "boyfriend"
+        "force": false
       }
     },
     {
@@ -1324,9 +1324,9 @@
       "v": {
         "duration": 4,
         "ease": "cube",
+        "easeDir": "Out",
         "mode": "stage",
-        "zoom": 1.1,
-        "easeDir": "Out"
+        "zoom": 1.1
       }
     },
     {
@@ -1334,8 +1334,8 @@
       "e": "SetCameraBop",
       "v": {
         "rate": 4,
-        "offset": 0,
-        "intensity": 1
+        "intensity": 1,
+        "offset": 0
       }
     },
     {
@@ -1344,76 +1344,112 @@
       "v": {
         "duration": 8,
         "ease": "sine",
+        "easeDir": "Out",
         "mode": "stage",
-        "zoom": 1,
-        "easeDir": "Out"
+        "zoom": 1
       }
     },
     {
       "t": 99500.6666666667,
       "e": "PlayAnimation",
       "v": {
-        "anim": "uppercut",
+        "target": "dad",
         "force": true,
+        "anim": "uppercut"
+      }
+    },
+    {
+      "t": 99500.6666666667,
+      "e": "PlayAnimation",
+      "v": {
+        "target": "boyfriend",
+        "force": true,
+        "anim": "dodge"
+      }
+    },
+    {
+      "t": 102500,
+      "e": "PlayAnimation",
+      "v": {
+        "anim": "uppercutPrep",
+        "force": false,
         "target": "dad"
       }
     },
     {
-      "t": 99500.6666666667,
+      "t": 102500,
       "e": "PlayAnimation",
       "v": {
-        "anim": "dodge",
-        "force": true,
+        "anim": "punchHigh1",
+        "force": false,
         "target": "boyfriend"
-      }
-    },
-    {
-      "t": 102500,
-      "e": "PlayAnimation",
-      "v": {
-        "target": "dad",
-        "force": false,
-        "anim": "uppercutPrep"
-      }
-    },
-    {
-      "t": 102500,
-      "e": "PlayAnimation",
-      "v": {
-        "target": "boyfriend",
-        "force": false,
-        "anim": "punchHigh1"
       }
     },
     {
       "t": 102583.333333333,
       "e": "PlayAnimation",
       "v": {
-        "target": "boyfriend",
+        "anim": "punchHigh2",
         "force": false,
-        "anim": "punchHigh2"
+        "target": "boyfriend"
       }
     },
     {
       "t": 102666.666666667,
       "e": "PlayAnimation",
       "v": {
-        "target": "dad",
+        "anim": "uppercut",
         "force": false,
-        "anim": "uppercut"
+        "target": "dad"
       }
     },
     {
       "t": 102666.666666667,
       "e": "PlayAnimation",
       "v": {
-        "target": "boyfriend",
+        "anim": "dodge",
         "force": false,
-        "anim": "dodge"
+        "target": "boyfriend"
       }
     },
     {
       "t": 103000,
+      "e": "PlayAnimation",
+      "v": {
+        "anim": "uppercutPrep",
+        "force": false,
+        "target": "boyfriend"
+      }
+    },
+    {
+      "t": 103000,
+      "e": "PlayAnimation",
+      "v": {
+        "anim": "punchHigh1",
+        "force": false,
+        "target": "dad"
+      }
+    },
+    {
+      "t": 103166.666666667,
+      "e": "PlayAnimation",
+      "v": {
+        "anim": "dodge",
+        "force": false,
+        "target": "dad"
+      }
+    },
+    {
+      "t": 103166.666666667,
+      "e": "PlayAnimation",
+      "v": {
+        "anim": "uppercut",
+        "force": false,
+        "target": "boyfriend"
+      }
+    },
+    {
+      "t": 103666.666666667,
       "e": "PlayAnimation",
       "v": {
         "target": "boyfriend",
@@ -1422,84 +1458,48 @@
       }
     },
     {
-      "t": 103000,
+      "t": 103666.666666667,
       "e": "PlayAnimation",
       "v": {
         "target": "dad",
         "force": false,
-        "anim": "punchHigh1"
+        "anim": "uppercutPrep"
       }
     },
     {
-      "t": 103166.666666667,
+      "t": 103833.333333333,
       "e": "PlayAnimation",
       "v": {
-        "target": "dad",
+        "anim": "uppercut",
+        "force": false,
+        "target": "boyfriend"
+      }
+    },
+    {
+      "t": 103833.333333333,
+      "e": "PlayAnimation",
+      "v": {
+        "anim": "uppercut",
+        "force": false,
+        "target": "dad"
+      }
+    },
+    {
+      "t": 103861.111111111,
+      "e": "PlayAnimation",
+      "v": {
+        "target": "boyfriend",
         "force": false,
         "anim": "dodge"
       }
     },
     {
-      "t": 103166.666666667,
-      "e": "PlayAnimation",
-      "v": {
-        "target": "boyfriend",
-        "force": false,
-        "anim": "uppercut"
-      }
-    },
-    {
-      "t": 103666.666666667,
-      "e": "PlayAnimation",
-      "v": {
-        "anim": "uppercutPrep",
-        "force": false,
-        "target": "boyfriend"
-      }
-    },
-    {
-      "t": 103666.666666667,
-      "e": "PlayAnimation",
-      "v": {
-        "anim": "uppercutPrep",
-        "force": false,
-        "target": "dad"
-      }
-    },
-    {
-      "t": 103833.333333333,
-      "e": "PlayAnimation",
-      "v": {
-        "target": "boyfriend",
-        "force": false,
-        "anim": "uppercut"
-      }
-    },
-    {
-      "t": 103833.333333333,
+      "t": 103861.111111111,
       "e": "PlayAnimation",
       "v": {
         "target": "dad",
         "force": false,
-        "anim": "uppercut"
-      }
-    },
-    {
-      "t": 103861.111111111,
-      "e": "PlayAnimation",
-      "v": {
-        "anim": "dodge",
-        "force": false,
-        "target": "boyfriend"
-      }
-    },
-    {
-      "t": 103861.111111111,
-      "e": "PlayAnimation",
-      "v": {
-        "anim": "dodge",
-        "force": false,
-        "target": "dad"
+        "anim": "dodge"
       }
     },
     {
@@ -1514,11 +1514,11 @@
       "t": 104000,
       "e": "FocusCamera",
       "v": {
-        "x": -50,
         "duration": 32,
+        "x": -50,
         "y": -67.5,
-        "char": 2,
         "ease": "cube",
+        "char": 2,
         "easeDir": "Out"
       }
     },
@@ -1526,10 +1526,10 @@
       "t": 104000,
       "e": "ZoomCamera",
       "v": {
-        "duration": 32,
         "ease": "linear",
-        "zoom": 1.05,
-        "mode": "stage"
+        "duration": 32,
+        "mode": "stage",
+        "zoom": 1.05
       }
     },
     {
@@ -1544,21 +1544,21 @@
       "t": 106666.666666667,
       "e": "ZoomCamera",
       "v": {
-        "duration": 32,
         "ease": "linear",
-        "zoom": 1.15,
-        "mode": "stage"
+        "duration": 32,
+        "mode": "stage",
+        "zoom": 1.15
       }
     },
     {
       "t": 106666.666666667,
       "e": "FocusCamera",
       "v": {
-        "x": 150,
         "duration": 32,
+        "x": 150,
         "y": -45,
-        "char": 2,
         "ease": "cube",
+        "char": 2,
         "easeDir": "Out"
       }
     },
@@ -1574,11 +1574,11 @@
       "t": 109333.333333333,
       "e": "FocusCamera",
       "v": {
-        "x": -50,
         "duration": 32,
+        "x": -50,
         "y": -22.5,
-        "char": 2,
         "ease": "cube",
+        "char": 2,
         "easeDir": "Out"
       }
     },
@@ -1586,10 +1586,10 @@
       "t": 109333.333333333,
       "e": "ZoomCamera",
       "v": {
-        "duration": 32,
         "ease": "linear",
-        "zoom": 1.3,
-        "mode": "stage"
+        "duration": 32,
+        "mode": "stage",
+        "zoom": 1.3
       }
     },
     {
@@ -1604,21 +1604,21 @@
       "t": 112000,
       "e": "ZoomCamera",
       "v": {
-        "duration": 32,
         "ease": "linear",
-        "zoom": 1.5,
-        "mode": "stage"
+        "duration": 32,
+        "mode": "stage",
+        "zoom": 1.5
       }
     },
     {
       "t": 112000,
       "e": "FocusCamera",
       "v": {
-        "x": 200,
         "duration": 32,
+        "x": 200,
         "y": 0,
-        "char": 2,
         "ease": "cube",
+        "char": 2,
         "easeDir": "Out"
       }
     },
@@ -1626,9 +1626,9 @@
       "t": 114437.5,
       "e": "PlayAnimation",
       "v": {
-        "force": true,
+        "target": "boyfriend",
         "anim": "uppercutPrep",
-        "target": "boyfriend"
+        "force": true
       }
     },
     {
@@ -1643,20 +1643,20 @@
       "t": 114652.777777778,
       "e": "PlayAnimation",
       "v": {
-        "force": false,
+        "target": "boyfriend",
         "anim": "uppercut",
-        "target": "boyfriend"
+        "force": false
       }
     },
     {
       "t": 114666.666666667,
       "e": "FocusCamera",
       "v": {
-        "x": 50,
         "duration": 4,
+        "x": 50,
         "y": -90,
-        "char": 2,
         "ease": "elastic",
+        "char": 2,
         "easeDir": "Out"
       }
     },
@@ -1666,9 +1666,9 @@
       "v": {
         "duration": 4,
         "ease": "elastic",
+        "easeDir": "Out",
         "mode": "stage",
-        "zoom": 1,
-        "easeDir": "Out"
+        "zoom": 1
       }
     },
     {
@@ -11273,7 +11273,7 @@
         "k": "weekend-1-hithigh"
       },
       {
-        "t": 19041.6666666667,
+        "t": 19000,
         "d": 2,
         "k": "weekend-1-punchlow"
       },
@@ -15629,5 +15629,5 @@
       }
     ]
   },
-  "generatedBy": "Friday Night Funkin' - v0.8.1"
+  "generatedBy": "Friday Night Funkin' - v0.8.3"
 }
