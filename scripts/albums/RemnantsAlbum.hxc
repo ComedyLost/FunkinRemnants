@@ -20,7 +20,11 @@ class RemnantsAlbum extends Album
 
   override public function getAlbumArtAssetKey():String
   {
-    var curSelectedFreeplaySong:FreeplaySongData = FlxG.state.subState.currentCapsule.freeplayData;
+    var curSelectedFreeplaySong:FreeplaySongData = getFreeplaySongData();
+    if (curSelectedFreeplaySong == null)
+    {
+      return _data?.albumArtAsset ?? 'freeplay/albumRoll/remnants-placeholder';
+    }
 
     var albumPath:String = 'freeplay/albumRoll/' + getRemnantsAlbumAssetKey(curSelectedFreeplaySong.songId, curSelectedFreeplaySong.curVariation);
     if (Assets.exists(Paths.image(albumPath)))
@@ -31,11 +35,29 @@ class RemnantsAlbum extends Album
     return _data?.albumArtAsset ?? 'freeplay/albumRoll/remnants-placeholder';
   }
 
+  override public function getAlbumOSTName():Null<String>
+  {
+    var curSelectedFreeplaySong:FreeplaySongData = getFreeplaySongData();
+
+    return switch (curSelectedFreeplaySong?.songId ?? '')
+    {
+      case 'grieving-remnants':
+        "CINEMA OST";
+      default:
+        _data?.albumOSTName;
+    }
+  }
+
   public function getRemnantsAlbumAssetKey(songId:String, songVariation:String):String
   {
     var curSongAlbumVariations:Dynamic = ReflectUtil.getProperty(albumArtJsonObj, songId);
     var curVariationAlbum:String = ReflectUtil.getProperty(curSongAlbumVariations, songVariation);
 
     return curVariationAlbum ?? 'remnants-placeholder';
+  }
+
+  function getFreeplaySongData():FreeplaySongData
+  {
+    return FlxG.state?.subState?.currentCapsule?.freeplayData ?? null;
   }
 }

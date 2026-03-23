@@ -80,8 +80,6 @@ class PicoRemnantsCard extends BackingCard
 
   public override function onCreate(event:ScriptEvent):Void
   {
-    if (FlxG.state.subState.ostName != null) FlxG.state.subState.ostName.text = "REMNANTS OST";
-
     FlxTween.tween(pinkBack, {x: 0}, 0.6, {ease: FlxEase.quartOut});
     add(pinkBack);
 
