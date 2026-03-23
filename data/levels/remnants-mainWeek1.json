@@ -2,6 +2,9 @@
   "version": "1.0.0",
   "name": "FUNKIN' REMNANTS",
   "titleAsset": "storymenu/titles/remnants",
+  "capsule": {
+    "name": "Remnants!"
+  },
   "props": [
     {
       "assetPath": "storymenu/props/remnantsbf",
