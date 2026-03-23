@@ -4,8 +4,8 @@
   "assetPath": "shared:characters/nene-remnants",
   "startingAnimation": "danceRight",
   "renderType": "animateatlas",
-  "offsets": [10, -81],
-  "cameraOffsets": [-10, 23],
+  "offsets": [10, -84],
+  "cameraOffsets": [-10, 26],
   "animations": [
     {
       "name": "danceLeft",
