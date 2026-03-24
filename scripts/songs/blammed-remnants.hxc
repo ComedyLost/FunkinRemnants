@@ -78,4 +78,11 @@ class BlammedRemnantsMixSong extends Song
     sequence = new SongSequence(sequenceData);
     sequence.startTime = 0;
   }
+
+  function onDestroy(event:ScriptEvent):Void
+  {
+    super.onDestroy(event);
+
+    sequence?.destroy();
+  }
 }
