@@ -2,6 +2,7 @@
   "version": "1.0.0",
   "name": "BASE GAME EXPANSION",
   "titleAsset": "storymenu/titles/remnants",
+  "capsule": { "name": "Expansion" },
   "visible": false,
   "props": [],
   "background": "#D4DBED",
