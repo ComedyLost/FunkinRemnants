@@ -47,7 +47,8 @@ class RemnantsDialogueBox extends DialogueBox
 
   function changeTextVoice(conversation:Conversation)
   {
-    this.textDisplay.sounds = switch(conversation.currentSpeaker?.id) {
+    this.textDisplay.sounds = switch (conversation.currentSpeaker?.id)
+    {
       case 'luis-remnants':
         [luisText];
       case 'roxanne-remnants':
