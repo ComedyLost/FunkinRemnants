@@ -1,0 +1,34 @@
+{
+  "version": "2.2.4",
+  "songName": "SugarCrash! (Remnants Mix)",
+  "artist": "Honton129",
+  "charter": "David Phantom Arcade",
+  "offsets": {},
+  "playData": {
+    "difficulties": ["easy", "normal", "hard"],
+    "characters": {
+      "player": "bf-remnants",
+      "girlfriend": "gf-remnants",
+      "opponent": "bf-remnants",
+      "opponentVocals": ["roxanne-remnants"],
+      "playerVocals": ["luis-remnants"]
+    },
+    "stage": "mainStageRemnants",
+    "noteStyle": "funkin",
+    "ratings": {
+      "easy": 3,
+      "normal": 4,
+      "hard": 5
+    },
+    "album": "remnants"
+  },
+  "generatedBy": "Friday Night Funkin' - v0.8.3",
+  "timeChanges": [
+    {
+      "t": 0,
+      "b": 0,
+      "bpm": 140,
+      "bt": [4, 4, 4, 4]
+    }
+  ]
+}

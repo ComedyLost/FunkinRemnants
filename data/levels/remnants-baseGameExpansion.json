@@ -1,0 +1,9 @@
+{
+  "version": "1.0.0",
+  "name": "BASE GAME EXPANSION",
+  "titleAsset": "storymenu/titles/remnants",
+  "visible": false,
+  "props": [],
+  "background": "#D4DBED",
+  "songs": ["sugarcrash-remnants"]
+}
