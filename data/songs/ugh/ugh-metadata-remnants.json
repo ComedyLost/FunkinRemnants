@@ -3,30 +3,23 @@
   "songName": "Ugh (Remnants Mix)",
   "artist": "fishgarden",
   "charter": "fishgarden",
-  "timeFormat": "ms",
-  "divisions": 96,
-  "offsets": { "instrumental": 0 },
-  "timeChanges": [{ "t": 0, "bpm": 160, "n": 4, "d": 4, "bt": [4, 4, 4, 4] }],
-  "looped": false,
+  "offsets": {},
   "playData": {
-    "songVariations": [],
     "difficulties": ["easy", "normal", "hard"],
     "characters": {
       "player": "bf-remnants",
       "girlfriend": "gf-remnants-tankmen",
       "opponent": "tankman-remnants",
       "instrumental": "remnants",
-      "playerVocals": ["bf-remnants"],
+      "altInstrumentals": ["pico mix remnants cut", "default mix remnants cut"],
       "opponentVocals": ["tankman-remnants"],
-      "altInstrumentals": ["pico mix remnants cut", "default mix remnants cut"]
+      "playerVocals": ["bf-remnants"]
     },
     "stage": "tankmanBattlefieldRemnants",
     "noteStyle": "funkin",
     "ratings": { "easy": 3, "normal": 4, "hard": 5 },
-    "album": "remnants",
-    "stickerPack": null
+    "album": "remnants"
   },
-  "previewStart": 0,
-  "previewEnd": 15000,
-  "generatedBy": "LeGooey (By Hand)"
+  "generatedBy": "Friday Night Funkin' - v0.8.3 (develop : ec868f8) PROTOTYPE",
+  "timeChanges": [{ "t": 0, "b": 0, "bpm": 160, "bt": [4, 4, 4, 4] }]
 }

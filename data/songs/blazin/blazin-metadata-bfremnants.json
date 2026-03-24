@@ -3,20 +3,14 @@
   "songName": "Blazin' (BF Remnants Mix)",
   "artist": "ZaraJan9th",
   "charter": "Plush + Sammy The Goog",
-  "timeFormat": "ms",
-  "divisions": 96,
-  "offsets": { "instrumental": 0 },
-  "timeChanges": [{ "t": 0, "bpm": 180, "n": 4, "d": 4, "bt": [4, 4, 4, 4] }],
-  "looped": false,
+  "offsets": {},
   "playData": {
-    "songVariations": [],
     "difficulties": ["easy", "normal", "hard"],
     "characters": {
       "player": "bf-remnants-blazin",
       "girlfriend": "gf-remnants",
       "opponent": "darnell-remnants-blazin",
-      "instrumental": "bfremnants",
-      "altInstrumentals": []
+      "instrumental": "bfremnants"
     },
     "stage": "phillyBlazinRemnants",
     "noteStyle": "funkin",
@@ -24,7 +18,6 @@
     "album": "remnants",
     "stickerPack": "remnants-weekend1"
   },
-  "previewStart": 0,
-  "previewEnd": 15000,
-  "generatedBy": "LeGooey (By Hand)"
+  "generatedBy": "Friday Night Funkin' - v0.8.3 (develop : ec868f8) PROTOTYPE",
+  "timeChanges": [{ "t": 0, "b": 0, "bpm": 180, "bt": [4, 4, 4, 4] }]
 }

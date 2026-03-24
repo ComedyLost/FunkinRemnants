@@ -3,30 +3,23 @@
   "songName": "Senpai (Remnants Mix)",
   "artist": "fishgarden",
   "charter": "fishgarden",
-  "timeFormat": "ms",
-  "divisions": 96,
-  "offsets": { "instrumental": 0 },
-  "timeChanges": [{ "t": 0, "bpm": 144, "n": 4, "d": 4, "bt": [4, 4, 4, 4] }],
-  "looped": false,
+  "offsets": {},
   "playData": {
-    "songVariations": [],
     "difficulties": ["easy", "normal", "hard"],
     "characters": {
       "player": "bf-remnants-pixel",
       "girlfriend": "gf-remnants-pixel",
       "opponent": "senpai-remnants",
       "instrumental": "remnants",
-      "playerVocals": ["bf-remnants-pixel"],
+      "altInstrumentals": ["pico", ""],
       "opponentVocals": ["senpai-remnants"],
-      "altInstrumentals": ["pico", ""]
+      "playerVocals": ["bf-remnants-pixel"]
     },
     "stage": "schoolRemnants",
     "noteStyle": "pixel",
     "ratings": { "easy": 3, "normal": 4, "hard": 5 },
-    "album": "remnants",
-    "stickerPack": null
+    "album": "remnants"
   },
-  "previewStart": 0,
-  "previewEnd": 13100,
-  "generatedBy": "LeGooey (By Hand)"
+  "generatedBy": "Friday Night Funkin' - v0.8.3 (develop : ec868f8) PROTOTYPE",
+  "timeChanges": [{ "t": 0, "b": 0, "bpm": 144, "bt": [4, 4, 4, 4] }]
 }

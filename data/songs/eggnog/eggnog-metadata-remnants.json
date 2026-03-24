@@ -3,13 +3,8 @@
   "songName": "Eggnog (Remnants Mix)",
   "artist": "Jotacast (ft. TRAF & PrinceLOLZ)",
   "charter": "RhysRJJ",
-  "timeFormat": "ms",
-  "divisions": 96,
-  "offsets": { "instrumental": 0 },
-  "timeChanges": [{ "t": 0, "bpm": 150, "n": 4, "d": 4, "bt": [4, 4, 4, 4] }],
-  "looped": false,
+  "offsets": {},
   "playData": {
-    "songVariations": [],
     "difficulties": ["easy", "normal", "hard"],
     "characters": {
       "player": "bf-remnants-christmas",
@@ -20,10 +15,8 @@
     "stage": "mallXmasRemnants",
     "noteStyle": "funkin",
     "ratings": { "easy": 4, "normal": 5, "hard": 6 },
-    "album": "remnants",
-    "stickerPack": null
+    "album": "remnants"
   },
-  "previewStart": 0,
-  "previewEnd": 15000,
-  "generatedBy": "LeGooey (By Hand)"
+  "generatedBy": "Friday Night Funkin' - v0.8.3 (develop : ec868f8) PROTOTYPE",
+  "timeChanges": [{ "t": 0, "b": 0, "bpm": 150, "bt": [4, 4, 4, 4] }]
 }

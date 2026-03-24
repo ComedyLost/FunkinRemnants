@@ -3,30 +3,21 @@
   "songName": "Tutorial (Remnants Mix)",
   "artist": "LunarzNova (ft. DagaiTai & yusxki)",
   "charter": "SPG64",
-  "timeFormat": "ms",
-  "divisions": 96,
-  "offsets": { "instrumental": 0 },
-  "timeChanges": [{ "t": 0, "bpm": 116, "n": 4, "d": 4, "bt": [4, 4, 4, 4] }],
-  "looped": false,
+  "offsets": {},
   "playData": {
-    "songVariations": [],
     "difficulties": ["easy", "normal", "hard"],
     "characters": {
       "player": "bf-remnants",
-      "girlfriend": "",
       "opponent": "gf-remnants",
       "instrumental": "remnants",
-      "playerVocals": ["bf-remnants"],
       "opponentVocals": ["gf-remnants"],
-      "altInstrumentals": []
+      "playerVocals": ["bf-remnants"]
     },
     "stage": "mainStageRemnants",
     "noteStyle": "funkin",
     "ratings": { "easy": 1, "normal": 1, "hard": 1 },
-    "album": "remnants",
-    "stickerPack": null
+    "album": "remnants"
   },
-  "previewStart": 0,
-  "previewEnd": 15000,
-  "generatedBy": "LeGooey (By Hand)"
+  "generatedBy": "Friday Night Funkin' - v0.8.3 (develop : ec868f8) PROTOTYPE",
+  "timeChanges": [{ "t": 0, "b": 0, "bpm": 116, "bt": [4, 4, 4, 4] }]
 }
