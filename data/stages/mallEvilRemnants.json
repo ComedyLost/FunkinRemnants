@@ -425,7 +425,7 @@
     "bf": {
       "alpha": 1,
       "angle": 0,
-      "cameraOffsets": [-100, -150],
+      "cameraOffsets": [-110, -210],
       "position": [1040.5, -580],
       "scale": 1,
       "scroll": [1, 1],
@@ -434,7 +434,7 @@
     "dad": {
       "alpha": 1,
       "angle": 0,
-      "cameraOffsets": [0, -150],
+      "cameraOffsets": [-11, -147],
       "position": [-243, -575],
       "scale": 1,
       "scroll": [1, 1],
@@ -443,7 +443,7 @@
     "gf": {
       "alpha": 1,
       "angle": 0,
-      "cameraOffsets": [0, 0],
+      "cameraOffsets": [-20, 0],
       "position": [422, -695.5],
       "scale": 1,
       "scroll": [1, 1],
