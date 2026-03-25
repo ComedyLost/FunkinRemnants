@@ -4,6 +4,7 @@ import flixel.group.FlxTypedSpriteGroup;
 import flixel.util.FlxSort;
 import funkin.Conductor;
 import funkin.modding.base.ScriptedFunkinSprite;
+import funkin.FunkinMemory;
 import funkin.play.PlayState;
 import Lambda;
 
