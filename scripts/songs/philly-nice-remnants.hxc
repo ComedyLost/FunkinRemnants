@@ -107,7 +107,7 @@ class PhillyNiceRemnantsMixSong extends Song
       {
         time: Conductor.instance.getBeatTimeInMs(328) / 1000,
         callback: () -> {
-          FlxTween.tween(PlayState.instance.camHUD, {alpha: 0}, 2.74, {ease: FlxEase.smootherStepOut});
+          FlxTween.tween(PlayState.instance.camHUD, {alpha: 0}, 2.74, {ease: FlxEase.smootherStepInOut});
         }
       },
     ];
