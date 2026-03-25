@@ -4,7 +4,8 @@
   "assetPath": "shared:characters/pico/basic-animations",
   "healthIcon": {
     "id": "pico",
-    "flipX": false
+    "flipX": false,
+    "offsets": [0, 13.5]
   },
   "death": {
     "cameraOffsets": [10, -40],

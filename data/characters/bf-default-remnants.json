@@ -8,7 +8,7 @@
   },
   "healthIcon": {
     "isPixel": false,
-    "offsets": [0, 0],
+    "offsets": [0, 8],
     "scale": 1,
     "id": "bf",
     "flipX": false
