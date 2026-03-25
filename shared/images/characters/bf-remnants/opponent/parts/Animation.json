@@ -8,50 +8,16 @@
           "LN": "Layer_1",
           "FR": [
             {
-              "N": "bf body default flipped",
+              "N": "Flipped Symbols/BF Body Down Flipped",
               "I": 0,
               "DU": 1,
               "E": [
                 {
                   "SI": {
-                    "SN": "bf body default flipped",
+                    "SN": "Flipped Symbols/BF Body Down Flipped",
                     "FF": 0,
                     "ST": "G",
-                    "TRP": { "x": 0, "y": 0 },
-                    "LP": "LP",
-                    "MX": [1, 0, 0, 1, -165.7, -124.75]
-                  }
-                }
-              ]
-            },
-            {
-              "N": "bf body default flipped alts",
-              "I": 1,
-              "DU": 1,
-              "E": [
-                {
-                  "SI": {
-                    "SN": "bf body default flipped alts",
-                    "FF": 0,
-                    "ST": "G",
-                    "TRP": { "x": 0, "y": 0 },
-                    "LP": "LP",
-                    "MX": [1, 0, 0, 1, -165.7, -124.8]
-                  }
-                }
-              ]
-            },
-            {
-              "N": "BF Body Down Flipped",
-              "I": 2,
-              "DU": 1,
-              "E": [
-                {
-                  "SI": {
-                    "SN": "BF Body Down Flipped",
-                    "FF": 0,
-                    "ST": "G",
-                    "TRP": { "x": 0, "y": 0 },
+                    "TRP": { "x": 173.5, "y": 130.05 },
                     "LP": "LP",
                     "MX": [1, 0, 0, 1, -173.5, -130.05]
                   }
@@ -59,18 +25,35 @@
               ]
             },
             {
-              "N": "BF Body Up Flipped",
-              "I": 3,
+              "N": "Flipped Symbols/BF Body Up Flipped",
+              "I": 1,
               "DU": 1,
               "E": [
                 {
                   "SI": {
-                    "SN": "BF Body Up Flipped",
+                    "SN": "Flipped Symbols/BF Body Up Flipped",
                     "FF": 0,
                     "ST": "G",
-                    "TRP": { "x": 0, "y": 0 },
+                    "TRP": { "x": 163.8, "y": 135.3 },
                     "LP": "LP",
                     "MX": [1, 0, 0, 1, -163.8, -135.3]
+                  }
+                }
+              ]
+            },
+            {
+              "N": "Flipped Symbols/bf body default alt symbol",
+              "I": 2,
+              "DU": 1,
+              "E": [
+                {
+                  "SI": {
+                    "SN": "Flipped Symbols/bf body default alt symbol",
+                    "FF": 0,
+                    "ST": "G",
+                    "TRP": { "x": 165.7, "y": 124.8 },
+                    "LP": "LP",
+                    "MX": [1, 0, 0, 1, -165.7, -124.8]
                   }
                 }
               ]
@@ -83,71 +66,7 @@
   "SD": {
     "S": [
       {
-        "SN": "bf body default flipped",
-        "TL": {
-          "L": [
-            {
-              "LN": "Layer_2",
-              "FR": [
-                {
-                  "I": 0,
-                  "DU": 1,
-                  "E": [
-                    {
-                      "ASI": {
-                        "MX": [1, 0, 0, 1, -0.25, 0.15],
-                        "N": "0"
-                      }
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        }
-      },
-      {
-        "SN": "bf body default flipped alts",
-        "TL": {
-          "L": [
-            {
-              "LN": "Layer_1",
-              "FR": [
-                {
-                  "I": 0,
-                  "DU": 1,
-                  "E": [
-                    {
-                      "SI": {
-                        "SN": "bf body default flipped",
-                        "FF": 0,
-                        "ST": "G",
-                        "TRP": { "x": 165.7, "y": 124.75 },
-                        "LP": "LP",
-                        "MX": [1, 0, 0, 1, 0, 0]
-                      }
-                    }
-                  ]
-                },
-                {
-                  "I": 1,
-                  "DU": 1,
-                  "E": [
-                    {
-                      "ASI": {
-                        "MX": [1, 0, 0, 1, -0.25, 6.45],
-                        "N": "1"
-                      }
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        }
-      },
-      {
-        "SN": "BF Body Down Flipped",
+        "SN": "Flipped Symbols/BF Body Down Flipped",
         "TL": {
           "L": [
             {
@@ -160,6 +79,42 @@
                     {
                       "ASI": {
                         "MX": [1, 0, 0, 1, -1, -0.15],
+                        "N": "0"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "SN": "Flipped Symbols/BF Body Up Flipped",
+        "TL": {
+          "L": [
+            {
+              "LN": "Layer_1",
+              "FR": [
+                {
+                  "I": 0,
+                  "DU": 1,
+                  "E": [
+                    {
+                      "ASI": {
+                        "MX": [1, 0, 0, 1, 0, 0],
+                        "N": "1"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "I": 1,
+                  "DU": 1,
+                  "E": [
+                    {
+                      "ASI": {
+                        "MX": [1, 0, 0, 1, 0, 0],
                         "N": "2"
                       }
                     }
@@ -171,11 +126,11 @@
         }
       },
       {
-        "SN": "BF Body Up Flipped",
+        "SN": "Flipped Symbols/bf body default alt symbol",
         "TL": {
           "L": [
             {
-              "LN": "Layer_2",
+              "LN": "Layer_1",
               "FR": [
                 {
                   "I": 0,
@@ -183,8 +138,20 @@
                   "E": [
                     {
                       "ASI": {
-                        "MX": [1, 0, 0, 1, 0, 0],
+                        "MX": [1, 0, 0, 1, -0.25, 0.15],
                         "N": "3"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "I": 1,
+                  "DU": 1,
+                  "E": [
+                    {
+                      "ASI": {
+                        "MX": [1, 0, 0, 1, -0.25, 6.45],
+                        "N": "4"
                       }
                     }
                   ]
@@ -200,8 +167,8 @@
     "V": "BTA 1.2.0",
     "N": "remnants bf opponent",
     "BGC": "#151515",
-    "W": 1920,
-    "H": 1080,
+    "W": 1280,
+    "H": 720,
     "ASV": 3,
     "FRT": 24
   }

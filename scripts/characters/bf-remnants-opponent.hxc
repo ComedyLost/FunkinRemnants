@@ -52,13 +52,9 @@ class BFRemnantsOpponentCharacter extends MultiAnimateAtlasCharacter
     trace(collections);
 
     var symbols:Array<Array<String>> = [
-      ["bf body default", "bf body default flipped"],
-      ["edits/bf body default", "bf body default flipped alts"],
-      ["bf body default copy", "bf body default flipped alts"],
-      ["BF Body Down", "BF Body Down Flipped"],
-      ["BF Body Up", "BF Body Up Flipped"],
-      ["BF Body Down copy", "BF Body Down Flipped"],
-      ["BF Body Up copy", "BF Body Up Flipped"]
+      ["Parts/bf body default", "Flipped Symbols/bf body default alt symbol"],
+      ["Parts/BF Body Down", "Flipped Symbols/BF Body Down Flipped"],
+      ["Parts/BF Body Up", "Flipped Symbols/BF Body Up Flipped"]
     ];
 
     for (collection in collections)
@@ -77,7 +73,7 @@ class BFRemnantsOpponentCharacter extends MultiAnimateAtlasCharacter
 
   function flipCensor():Void
   {
-    var symbolInstance:SymbolItem = this.library.getSymbol("mouth censor");
+    var symbolInstance:SymbolItem = this.library.getSymbol("Parts/mouth censor");
     if (symbolInstance == null) return;
 
     var timeline:Timeline = symbolInstance.timeline;
@@ -95,9 +91,6 @@ class BFRemnantsOpponentCharacter extends MultiAnimateAtlasCharacter
           bounds = element.getBounds(0, bounds);
           element.matrix.scale(-1, 1);
           element.matrix.translate(bounds.width, 0);
-
-          // offset fix for the "Uh-Oh!" text
-          if (layer.name == 'Layer 2') element.matrix.translate(-30, 0);
         }
       }
     }
