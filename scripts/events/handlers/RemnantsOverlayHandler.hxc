@@ -29,6 +29,8 @@ class RemnantsOverlayHandler extends Module
 
   public function create():Void
   {
+    if (PlayState.instance.isMinimalMode) return;
+
     overlay?.destroy();
     fadeTween?.cancel();
 
@@ -75,6 +77,7 @@ class RemnantsOverlayHandler extends Module
   override public function onSongLoaded(event:SongLoadScriptEvent):Void
   {
     super.onSongLoaded(event);
+    if (PlayState.instance?.isMinimalMode) return;
 
     var overlayEvents:Array<SongEventData> = event.events.filter((event:SongEventData) -> {
       return event.eventKind == 'RemnantsOverlay';
@@ -97,14 +100,13 @@ class RemnantsOverlayHandler extends Module
   {
     super.onSongRetry(event);
 
-    if (overlay == null) return;
+    if (overlay == null || PlayState.instance?.isMinimalMode) return;
 
     var targetColor:Int = overlay.color;
     var targetAlpha:Float = 0;
     var targetCamera:FlxCamera = PlayState.instance?.camCutscene;
 
     var retroSteps:Float = 5;
-    isRetro = false;
 
     if (firstEvent != null && (PlayState.instance?.startTimestamp ?? 1) <= 0)
     {
@@ -155,7 +157,7 @@ class RemnantsOverlayHandler extends Module
     var data:SongEventData = event.eventData;
     super.onSongEvent(event);
 
-    if (data.eventKind != 'RemnantsOverlay') return;
+    if (data.eventKind != 'RemnantsOverlay' || PlayState.instance?.isMinimalMode) return;
 
     var startAlpha:Float = data.getFloat('startOpacity') ?? 0;
     var endAlpha:Float = data.getFloat('endOpacity') ?? 1;
