@@ -94,6 +94,13 @@
       "offsets": [0, 0]
     },
     {
+      "name": "ayo-hold",
+      "prefix": "Ayo",
+      "frameIndices": [5],
+      "looped": true,
+      "offsets": [0, 0]
+    },
+    {
       "name": "aww",
       "prefix": "Aww",
       "offsets": [0, 0]
