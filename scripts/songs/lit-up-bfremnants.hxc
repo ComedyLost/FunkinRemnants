@@ -33,7 +33,6 @@ class LitUpBFRemnantsMixSong extends Song
     return false;
   }
 
-
   public override function listAltInstrumentalIds(difficultyId:String, variationId:String):Array<String>
   {
     var results:Array<String> = super.listAltInstrumentalIds(difficultyId, variationId);
@@ -42,10 +41,10 @@ class LitUpBFRemnantsMixSong extends Song
     if (difficultyId == 'easy' || difficultyId == 'normal' || difficultyId == 'hard')
     {
       var hasBeatenRemnantsMix = Save.instance.hasBeatenSong(this.id, null, 'remnants');
-      if (!hasBeatenRemnantsMix)  results = [for (id in results) if (id != 'remnants') id];
+      if (!hasBeatenRemnantsMix) results = [for (id in results) if (id != 'remnants') id];
 
       var hasBeatenDefault = Save.instance.hasBeatenSong(this.id, null, null);
-      if (!hasBeatenDefault)  results = [for (id in results) if (id != '') id];
+      if (!hasBeatenDefault) results = [for (id in results) if (id != '') id];
     }
 
     if (hasBeatenBFRemnantsMix) return results;
@@ -143,6 +142,7 @@ class LitUpBFRemnantsMixSong extends Song
 
   function mistOn(duration:Float)
   {
+    if (mist0 == null) return;
     if (duration == null) duration = 1;
 
     // Prevent new tweens from being overridden

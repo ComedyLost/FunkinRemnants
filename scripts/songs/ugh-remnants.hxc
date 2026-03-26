@@ -317,8 +317,7 @@ class UghRemnantsMixSong extends Song
 
     hasPlayedCutscene = true;
 
-    if (!RemnantsOptions.getPerformanceOption()
-      && PlayState.instance.currentStage.scriptGet('storm0').alpha > 0) PlayState.instance.currentStage.stormOff(1);
+    if (PlayState.instance.currentStage.scriptGet('storm0').alpha > 0) PlayState.instance.currentStage.stormOff(1);
   }
 
   function onGameOver(event:ScriptEvent):Void
@@ -326,8 +325,7 @@ class UghRemnantsMixSong extends Song
     super.onGameOver(event);
     sequence?.destroy();
 
-    if (!RemnantsOptions.getPerformanceOption()
-      && PlayState.instance.currentStage.scriptGet('storm0').alpha > 0) PlayState.instance.currentStage.stormOff(0);
+    if (PlayState.instance.currentStage.scriptGet('storm0').alpha > 0) PlayState.instance.currentStage.stormOff(0);
   }
 
   function onCreate(event:ScriptEvent):Void
