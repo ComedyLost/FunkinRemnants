@@ -602,8 +602,8 @@ class StressRemnantsMixSong extends Song
 
     hasPlayedCutscene = true;
 
-    if (PlayState.instance.currentStage.scriptGet('storm0').alpha > 0
-      && !RemnantsOptions.getPerformanceOption()) PlayState.instance.currentStage.stormOff(1);
+    if (!RemnantsOptions.getPerformanceOption()
+      && PlayState.instance.currentStage.scriptGet('storm0').alpha > 0) PlayState.instance.currentStage.stormOff(1);
 
     // resets the tankmen!
     tankmanGroup?.reset(0, 0);
@@ -620,8 +620,8 @@ class StressRemnantsMixSong extends Song
     super.onGameOver(event);
     sequence?.destroy();
 
-    if (PlayState.instance.currentStage.scriptGet('storm0').alpha > 0
-      && !RemnantsOptions.getPerformanceOption()) PlayState.instance.currentStage.stormOff(0);
+    if (!RemnantsOptions.getPerformanceOption()
+      && PlayState.instance.currentStage.scriptGet('storm0').alpha > 0) PlayState.instance.currentStage.stormOff(0);
   }
 
   function kill():Void
