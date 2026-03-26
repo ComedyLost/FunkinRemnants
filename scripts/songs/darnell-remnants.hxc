@@ -138,6 +138,7 @@ class DarnellRemnantsMixSong extends Song
 
     var cutsceneDelay:Float = 2;
     cutsceneSprites = [];
+    cutsceneSounds = [];
 
     cutsceneMusic = FunkinSound.load(Paths.music("darnellCanCutscene/darnellCanCutscene", "weekend1"), true);
     cutsceneMusic.volume = 1;
