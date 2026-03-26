@@ -68,6 +68,7 @@ class RemnantsPlayState extends Module
 
     if (PlayState.instance.opponentStrumline != null)
     {
+      PlayState.instance.opponentStrumline.noteHoldCovers.visible = false;
       for (strum in PlayState.instance.opponentStrumline.strumlineNotes.members)
       {
         var staticAnim = strum.animation.getByName('static')?.frames;
