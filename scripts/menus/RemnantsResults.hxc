@@ -128,7 +128,7 @@ class RemnantsResults extends Module
 
             for (i in 0...10)
             {
-              numb?.animation.addByPrefix(Std.string(i), i + ' small', 24, false);
+              numb?.animation.addByPrefix(i, 'number $i ', 24, false);
             }
 
             // Replay the animation.
@@ -166,7 +166,7 @@ class RemnantsResults extends Module
                             num?.frames = Paths.getSparrowAtlas("resultScreen/tallieNumber-remnants");
                             for (i in 0...10)
                             {
-                              num?.animation.addByPrefix(Std.string(i), i + " small", 24, false);
+                              num?.animation.addByPrefix(i, '$i small', 24, false);
                             }
                             num?.updateHitbox();
                           }
