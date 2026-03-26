@@ -130,7 +130,7 @@
   "characters": {
     "bf": {
       "zIndex": 300,
-      "cameraOffsets": [-550, -150],
+      "cameraOffsets": [-550, -175],
       "position": [2076.5, 1390]
     },
     "gf": {
