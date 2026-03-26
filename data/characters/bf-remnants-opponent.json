@@ -1,7 +1,7 @@
 {
   "version": "1.0.0",
   "renderType": "multianimateatlas",
-  "offsets": [55, 9],
+  "offsets": [55, 19],
   "danceEvery": 1,
   "applyStageMatrix": false,
   "scale": 1,
