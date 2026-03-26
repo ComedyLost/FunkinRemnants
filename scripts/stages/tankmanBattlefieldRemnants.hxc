@@ -290,6 +290,7 @@ class TankmanBattlefieldRemnantsStage extends Stage
 
   function stormOff(duration:Float)
   {
+    if (storm0 == null) return;
     if (duration == null) duration = 1;
 
     // Prevent new tweens from being overridden

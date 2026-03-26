@@ -160,6 +160,7 @@ class LitUpBFRemnantsMixSong extends Song
 
   function mistOff(duration:Float)
   {
+    if (mist0 == null) return;
     if (duration == null) duration = 1;
 
     // Prevent new tweens from being overridden
