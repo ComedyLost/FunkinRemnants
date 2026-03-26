@@ -171,7 +171,7 @@ class BoyfriendRemnantsCharacter extends MultiAnimateAtlasCharacter
   {
     switch (PlayState.instance?.currentStage?.getDad()?.characterId)
     {
-      case "tankman":
+      case "tankman-remnants":
         var randomCensor:Array<Int> = [];
 
         if (!Preferences.naughtyness)
