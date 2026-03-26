@@ -443,38 +443,6 @@
           "looped": false,
           "name": "idle",
           "offsets": [0, 0],
-          "prefix": "zara boppin"
-        }
-      ],
-      "assetPath": "remnants/beppers",
-      "blend": "",
-      "color": "#FFFFFF",
-      "danceEvery": 2,
-      "flipX": false,
-      "flipY": false,
-      "isPixel": false,
-      "name": "zaraBop",
-      "position": [1950, -1465],
-      "scale": 1,
-      "scroll": [1, 1],
-      "startingAnimation": "idle",
-      "zIndex": 13
-    },
-    {
-      "alpha": 1,
-      "angle": 0,
-      "animType": "animateatlas",
-      "animations": [
-        {
-          "assetPath": null,
-          "animType": "symbol",
-          "flipX": false,
-          "flipY": false,
-          "frameIndices": [],
-          "frameRate": 24,
-          "looped": false,
-          "name": "idle",
-          "offsets": [0, 0],
           "prefix": "These guys"
         }
       ],
