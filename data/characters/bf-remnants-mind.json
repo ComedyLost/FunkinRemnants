@@ -3,13 +3,12 @@
   "name": "Remnants BF (Mind)",
   "offsets": [12, 2],
   "cameraOffsets": [-13, 36.5],
-  "danceEvery": 2,
+  "danceEvery": 1,
   "scale": 1,
   "flipX": true,
   "isPixel": false,
-  "singTime": 8,
+  "singTime": 8.0,
   "renderType": "multianimateatlas",
-  "applyStageMatrix": false,
   "death": {
     "cameraZoom": 0.95,
     "cameraOffsets": [0, -75]
@@ -28,7 +27,7 @@
     "useRenderTexture": false,
     "filterQuality": 1,
     "cacheOnLoad": false,
-    "swfMode": true
+    "swfMode": false
   },
   "animations": [
     {
