@@ -5,7 +5,7 @@
   "charter": "David Phantom Arcade (ft. TechnikTil)",
   "offsets": {},
   "playData": {
-    "difficulties": ["hard"],
+    "difficulties": ["normal"],
     "characters": {
       "player": "bf-remnants-pfp",
       "girlfriend": null,

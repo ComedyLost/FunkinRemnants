@@ -1,0 +1,23 @@
+import funkin.ui.story.Level;
+import funkin.save.Save;
+
+class RemnantsBaseGameExpansionLevel extends Level
+{
+  function new()
+  {
+    super('remnants-baseGameExpansion');
+  }
+
+  override function isUnlocked():Bool
+  {
+    return true;
+  }
+
+  // Reveal the name after beating the week ;)
+  override function getSongDisplayNames(difficultyId:String):Array<String>
+  {
+    if (!Save.instance.hasBeatenSong('sugarcrash-remnants')) return ["???"];
+    else
+      return ["SugarCrash! (Remnants Mix)"];
+  }
+}
