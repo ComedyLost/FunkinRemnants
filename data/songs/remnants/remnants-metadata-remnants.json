@@ -21,7 +21,9 @@
       "normal": 9,
       "hard": 10
     },
-    "album": "remnants"
+    "album": "remnants",
+    "previewStart": 0.0560756501,
+    "previewEnd": 0.170141844
   },
   "generatedBy": "Friday Night Funkin' - v0.8.4",
   "timeChanges": [
