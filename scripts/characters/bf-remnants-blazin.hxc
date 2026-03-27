@@ -152,7 +152,7 @@ class BFRemnantsBlazinCharacter extends AnimateAtlasCharacter
   {
     holdTimer = 0;
 
-    while(flickerTimers.length > 0)
+    while (flickerTimers.length > 0)
     {
       flickerTimers.shift()?.cancel();
       this.blend = null;

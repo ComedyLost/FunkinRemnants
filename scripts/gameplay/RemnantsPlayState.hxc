@@ -8,6 +8,8 @@ import funkin.util.TouchUtil;
 import funkin.FunkinMemory;
 import funkin.Highscore;
 import funkin.Conductor;
+import funkin.play.notes.StrumlineNote;
+import funkin.util.tools.StringTools;
 
 class RemnantsPlayState extends Module
 {
@@ -16,6 +18,14 @@ class RemnantsPlayState extends Module
   public function new()
   {
     super('RemnantsPlayState');
+  }
+
+  override function onCountdownStart(event:CountdownScriptEvent)
+  {
+    super.onCountdownStart(event);
+
+    if (!RemnantsContentUtil.remnantsContentEnabled()) return;
+    this.legacyOpponentStrum();
   }
 
   override function onUpdate(event:UpdateScriptEvent)
@@ -48,6 +58,23 @@ class RemnantsPlayState extends Module
     else
     {
       swappedIcon = false;
+    }
+  }
+
+  function legacyOpponentStrum()
+  {
+    if (PlayState.instance == null) return;
+    if (!RemnantsContentUtil.remnantsContentEnabled()) return;
+
+    if (PlayState.instance.opponentStrumline != null)
+    {
+      PlayState.instance.opponentStrumline.noteHoldCovers.visible = false;
+      for (strum in PlayState.instance.opponentStrumline.strumlineNotes.members)
+      {
+        var staticAnim = strum.animation.getByName('static')?.frames;
+        strum.animation.add('confirm-hold', staticAnim, 0, false);
+        strum.animation.add('confirm', staticAnim, 0, false);
+      }
     }
   }
 }

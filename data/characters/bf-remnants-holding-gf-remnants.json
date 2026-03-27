@@ -1,0 +1,92 @@
+{
+  "version": "1.0.0",
+  "renderType": "multianimateatlas",
+  "name": "Remnants BF (Holding Remnants GF)",
+  "assetPath": "shared:characters/bf-remnants/holding gf/base",
+  "offsets": [26, 49],
+  "cameraOffsets": [-26, 45.5],
+  "flipX": true,
+  "healthIcon": {
+    "id": "bf-remnants"
+  },
+  "death": {
+    "cameraZoom": 0.85,
+    "cameraOffsets": [275, 50]
+  },
+  "atlasSettings": {
+    "swfMode": false,
+    "useRenderTexture": true,
+    "uniqueInCache": true
+  },
+  "animations": [
+    {
+      "name": "idle",
+      "animType": "framelabel",
+      "prefix": "Idle"
+    },
+    {
+      "name": "hey",
+      "animType": "framelabel",
+      "prefix": "Hey"
+    },
+    {
+      "name": "singLEFT",
+      "animType": "framelabel",
+      "prefix": "Left"
+    },
+    {
+      "name": "singDOWN",
+      "animType": "framelabel",
+      "prefix": "Down"
+    },
+    {
+      "name": "singUP",
+      "animType": "framelabel",
+      "prefix": "Up"
+    },
+    {
+      "name": "singRIGHT",
+      "animType": "framelabel",
+      "prefix": "Right"
+    },
+    {
+      "name": "singLEFTmiss",
+      "animType": "framelabel",
+      "prefix": "Left Miss"
+    },
+    {
+      "name": "singDOWNmiss",
+      "animType": "framelabel",
+      "prefix": "Down Miss"
+    },
+    {
+      "name": "singUPmiss",
+      "animType": "framelabel",
+      "prefix": "Up Miss"
+    },
+    {
+      "name": "singRIGHTmiss",
+      "animType": "framelabel",
+      "prefix": "Down Miss"
+    },
+    {
+      "assetPath": "shared:characters/bf-remnants/holding gf/death",
+      "name": "firstDeath",
+      "prefix": "Death Intro",
+      "offsets": [-278, -126]
+    },
+    {
+      "assetPath": "shared:characters/bf-remnants/holding gf/death",
+      "name": "deathLoop",
+      "prefix": "Death Loop",
+      "looped": true,
+      "offsets": [-278, -126]
+    },
+    {
+      "assetPath": "shared:characters/bf-remnants/holding gf/death",
+      "name": "deathConfirm",
+      "prefix": "Death Confirm",
+      "offsets": [-278, -126]
+    }
+  ]
+}

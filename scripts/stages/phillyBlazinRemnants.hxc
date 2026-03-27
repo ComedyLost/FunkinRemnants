@@ -107,7 +107,7 @@ class PhillyBlazinRemnantsStage extends Stage
     {
       if (character.characterId.startsWith('gf'))
       {
-        character.x += 121;
+        character.x += 50;
         character.originalPosition.x = character.x;
       }
 

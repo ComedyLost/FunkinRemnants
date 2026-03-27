@@ -435,7 +435,7 @@
   "characters": {
     "bf": {
       "zIndex": 300,
-      "position": [1217.5, 592],
+      "position": [1247.5, 592],
       "cameraOffsets": [-300, -100]
     },
     "gf": {
@@ -446,7 +446,7 @@
     "dad": {
       "zIndex": 200,
       "position": [360, 875],
-      "cameraOffsets": [150, 0]
+      "cameraOffsets": [150, -5]
     }
   },
   "name": "Limo Ride (Remnants)",

@@ -1,7 +1,6 @@
 import flixel.FlxG;
 import flixel.tweens.FlxEase;
 import funkin.graphics.FunkinSprite;
-import funkin.modding.module.ModuleHandler;
 import funkin.effects.RetroCameraFade;
 import flixel.tweens.FlxTween;
 import funkin.play.PlayState;
@@ -35,11 +34,16 @@ class SenpaiRemnantsMixSong extends Song
   {
     var results:Array<String> = super.listAltInstrumentalIds(difficultyId, variationId);
     var hasBeatenRemnantsMix = Save.instance.hasBeatenSong(this.id, null, this.variation);
+
     if (difficultyId == 'easy' || difficultyId == 'normal' || difficultyId == 'hard')
     {
+      var hasBeatenDefault = Save.instance.hasBeatenSong(this.id, null, null);
+      if (!hasBeatenDefault) results = [for (id in results) if (id != '') id];
+
       var hasBeatenPicoMix = Save.instance.hasBeatenSong(this.id, null, 'pico');
-      if (!hasBeatenPicoMix) results.remove('pico');
+      if (!hasBeatenPicoMix) results = [for (id in results) if (id != 'pico') id];
     }
+
     if (hasBeatenRemnantsMix) return results;
   }
 

@@ -3,6 +3,8 @@
   "name": "Remnants Mom and Dad (Festive)",
   "assetPath": "shared:characters/parents-christmas-remnants",
   "renderType": "multianimateatlas",
+  "offsets": [1, -1],
+  "cameraOffsets": [-0.5, 21],
   "healthIcon": {
     "id": "parents-remnants"
   },

@@ -3,7 +3,6 @@ import funkin.graphics.FunkinSprite;
 import funkin.modding.base.ScriptedFunkinSprite;
 import funkin.play.song.Song;
 import funkin.play.PlayState;
-import funkin.modding.module.ModuleHandler;
 import funkin.save.Save;
 import funkin.ui.FullScreenScaleMode;
 import funkin.Paths;
@@ -50,11 +49,16 @@ class UghRemnantsMixSong extends Song
   {
     var results:Array<String> = super.listAltInstrumentalIds(difficultyId, variationId);
     var hasBeatenRemnantsMix = Save.instance.hasBeatenSong(this.id, null, this.variation);
+
     if (difficultyId == 'easy' || difficultyId == 'normal' || difficultyId == 'hard')
     {
+      var hasBeatenDefault = Save.instance.hasBeatenSong(this.id, null, null);
+      if (!hasBeatenDefault) results = [for (id in results) if (id != 'default mix remnants cut') id];
+
       var hasBeatenPicoMix = Save.instance.hasBeatenSong(this.id, null, 'pico');
-      if (!hasBeatenPicoMix) results.remove('pico');
+      if (!hasBeatenPicoMix) results = [for (id in results) if (id != 'pico mix remnants cut') id];
     }
+
     if (hasBeatenRemnantsMix) return results;
   }
 
@@ -119,7 +123,7 @@ class UghRemnantsMixSong extends Song
       PlayState.instance.subtitles.assignSubtitles(subtitlesFile, cutsceneTimeDummy);
     }
 
-    cutsceneMusic = FunkinSound.load(Paths.music("DISTORTO/DISTORTO", "week7"), 0.2, true);
+    cutsceneMusic = FunkinSound.load(Paths.music("DISTORTO-remnants/DISTORTO-remnants", "week7"), 0.2, true);
     cutsceneSounds.push(cutsceneMusic);
 
     var wellWellWellSound:FunkinSound = FunkinSound.load(Paths.sound("wellWellWell", "week7"), 1, false);
@@ -134,7 +138,7 @@ class UghRemnantsMixSong extends Song
     var dadPosition:FlxPoint = PlayState.instance.currentStage.getDadPosition();
     PlayState.instance.currentStage.getDad().visible = false;
 
-    tankmanCutscene = ScriptedFunkinSprite.init('TankCutsceneRemnants', dadPosition.x - 276, dadPosition.y - 695);
+    tankmanCutscene = ScriptedFunkinSprite.init('TankCutsceneRemnants', dadPosition.x - 316, dadPosition.y - 725);
     tankmanCutscene.zIndex = PlayState.instance.currentStage.getDad().zIndex;
     PlayState.instance.currentStage.add(tankmanCutscene);
     PlayState.instance.currentStage.refresh();
@@ -313,8 +317,7 @@ class UghRemnantsMixSong extends Song
 
     hasPlayedCutscene = true;
 
-    if (PlayState.instance.currentStage.scriptGet('storm0').alpha > 0
-      && !RemnantsOptions.getPerformanceOption()) PlayState.instance.currentStage.stormOff(1);
+    if (PlayState.instance.currentStage.scriptGet('storm0').alpha > 0) PlayState.instance.currentStage.stormOff(1);
   }
 
   function onGameOver(event:ScriptEvent):Void
@@ -322,8 +325,7 @@ class UghRemnantsMixSong extends Song
     super.onGameOver(event);
     sequence?.destroy();
 
-    if (PlayState.instance.currentStage.scriptGet('storm0').alpha > 0
-      && !RemnantsOptions.getPerformanceOption()) PlayState.instance.currentStage.stormOff(0);
+    if (PlayState.instance.currentStage.scriptGet('storm0').alpha > 0) PlayState.instance.currentStage.stormOff(0);
   }
 
   function onCreate(event:ScriptEvent):Void

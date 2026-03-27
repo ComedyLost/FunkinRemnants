@@ -4,28 +4,8 @@
       {
         "SPRITE": {
           "name": "0",
-          "x": 1,
-          "y": 264,
-          "w": 252,
-          "h": 334,
-          "rotated": true
-        }
-      },
-      {
-        "SPRITE": {
-          "name": "1",
-          "x": 253,
-          "y": 331,
-          "w": 334,
-          "h": 245,
-          "rotated": false
-        }
-      },
-      {
-        "SPRITE": {
-          "name": "2",
-          "x": 1,
-          "y": 1,
+          "x": 2,
+          "y": 2,
           "w": 351,
           "h": 263,
           "rotated": false
@@ -33,22 +13,52 @@
       },
       {
         "SPRITE": {
-          "name": "3",
-          "x": 352,
-          "y": 1,
+          "name": "1",
+          "x": 354,
+          "y": 2,
+          "w": 330,
+          "h": 273,
+          "rotated": false
+        }
+      },
+      {
+        "SPRITE": {
+          "name": "2",
+          "x": 685,
+          "y": 2,
           "w": 273,
           "h": 330,
           "rotated": true
+        }
+      },
+      {
+        "SPRITE": {
+          "name": "3",
+          "x": 2,
+          "y": 266,
+          "w": 334,
+          "h": 252,
+          "rotated": false
+        }
+      },
+      {
+        "SPRITE": {
+          "name": "4",
+          "x": 337,
+          "y": 276,
+          "w": 334,
+          "h": 245,
+          "rotated": false
         }
       }
     ]
   },
   "meta": {
     "app": "Adobe Animate (Better TA Extension)",
-    "version": "23.0.0.407",
+    "version": "23.0.15.4",
     "image": "spritemap1.png",
     "format": "RGBA8888",
-    "size": { "w": 626, "h": 599 },
+    "size": { "w": 960, "h": 523 },
     "resolution": "1"
   }
 }

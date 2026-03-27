@@ -443,38 +443,6 @@
           "looped": false,
           "name": "idle",
           "offsets": [0, 0],
-          "prefix": "zara boppin"
-        }
-      ],
-      "assetPath": "remnants/beppers",
-      "blend": "",
-      "color": "#FFFFFF",
-      "danceEvery": 2,
-      "flipX": false,
-      "flipY": false,
-      "isPixel": false,
-      "name": "zaraBop",
-      "position": [1950, -1465],
-      "scale": 1,
-      "scroll": [1, 1],
-      "startingAnimation": "idle",
-      "zIndex": 13
-    },
-    {
-      "alpha": 1,
-      "angle": 0,
-      "animType": "animateatlas",
-      "animations": [
-        {
-          "assetPath": null,
-          "animType": "symbol",
-          "flipX": false,
-          "flipY": false,
-          "frameIndices": [],
-          "frameRate": 24,
-          "looped": false,
-          "name": "idle",
-          "offsets": [0, 0],
           "prefix": "These guys"
         }
       ],
@@ -540,7 +508,7 @@
       "alpha": 1,
       "angle": 0,
       "cameraOffsets": [-100, -150],
-      "position": [1009.5, -578],
+      "position": [1040.5, -580],
       "scale": 1,
       "scroll": [1, 1],
       "zIndex": 300
@@ -549,7 +517,7 @@
       "alpha": 1,
       "angle": 0,
       "cameraOffsets": [0, -150],
-      "position": [-255, -575],
+      "position": [-256, -574],
       "scale": 1,
       "scroll": [1, 1],
       "zIndex": 200
@@ -558,7 +526,7 @@
       "alpha": 1,
       "angle": 0,
       "cameraOffsets": [0, 0],
-      "position": [421.5, -694],
+      "position": [422, -695.5],
       "scale": 1,
       "scroll": [1, 1],
       "zIndex": 100

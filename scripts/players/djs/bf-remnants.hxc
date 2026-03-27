@@ -11,17 +11,14 @@ using StringTools;
 
 class BoyfriendRemnantsFreeplayDJ extends AnimateAtlasFreeplayDJ
 {
-  final CARTOON_SOUND_CLICK_FRAME:Int = 76;
-  final CARTOON_SOUND_CARTOON_FRAME:Int = 80;
-  final CARTOON_LOOP_BLINK_FRAME:Int = 107;
-  final CARTOON_LOOP_FRAME:Int = 116;
-  final CARTOON_CHANNEL_CHANGE_FRAME:Int = 63;
-
-  public var cartoonSnd:FunkinSound = null;
-  public var playingCartoon:Bool = false;
-
-  var CARTOON_CHANNEL_FRAME:Int = 60;
+  var alternateCartoon:Bool = FlxG.random.bool(50); // 50% chance of the cartoon anim change
   final CARTOON_LIST:Array<String> = Assets.list().filter((path) -> return path.startsWith("assets/sounds/cartoons/"));
+  final CARTOON_SYMBOL:String = 'Animations/Boyfriend DJ watchin tv';
+
+  var currentCartoonFrame:Int = 60;
+  var cartoonSnd:Null<FunkinSound> = null;
+  var playingCartoonAnim:Bool = false;
+  var playingCartoon:Bool = false;
 
   public function new(x:Float, y:Float, characterId:String)
   {
@@ -29,10 +26,10 @@ class BoyfriendRemnantsFreeplayDJ extends AnimateAtlasFreeplayDJ
     this.cartoonSnd?.destroy();
 
     animation.onFrameChange.add((name, number) -> {
-      if (name == playableCharData.getAnimationPrefix('cartoon'))
+      if (name == playableCharData.getAnimationPrefix('cartoon${alternateCartoon ? 2 : 1}'))
       {
-        if (number == CARTOON_SOUND_CLICK_FRAME) FunkinSound.playOnce(Paths.sound('remote_click'));
-        if (number == CARTOON_SOUND_CARTOON_FRAME) runTvLogic();
+        if (number == getCartoonFrame('REMOTE_CLICK')) FunkinSound.playOnce(Paths.sound('remote_click'));
+        if (number == getCartoonFrame('TV_SOUND')) _runTVLogic();
       }
     });
   }
@@ -68,19 +65,20 @@ class BoyfriendRemnantsFreeplayDJ extends AnimateAtlasFreeplayDJ
       // trace('Finished loss reaction');
       currentState = FreeplayDJState.Idle;
     }
-    else if (name == playableCharData?.getAnimationPrefix('cartoon'))
+    else if (name == playableCharData?.getAnimationPrefix('cartoon${alternateCartoon ? 2 : 1}'))
     {
       // trace('Finished cartoon');
 
-      this.CARTOON_CHANNEL_FRAME = FlxG.random.bool(45) ? CARTOON_LOOP_BLINK_FRAME : CARTOON_LOOP_FRAME;
+      this.currentCartoonFrame = FlxG.random.bool(33) ? getCartoonFrame('BLINK') : getCartoonFrame('LOOP');
 
       // Character switches channels when the video ends, or at a 10% chance each time his idle loops.
       if (FlxG.random.bool(10))
       {
-        this.CARTOON_CHANNEL_FRAME = CARTOON_CHANNEL_CHANGE_FRAME;
+        this.currentCartoonFrame = getCartoonFrame('CHANGE_CHANNEL');
       }
-      var animPrefix = playableCharData.getAnimationPrefix('cartoon');
-      playFlashAnimation(animPrefix, true, false, false, this.CARTOON_CHANNEL_FRAME);
+
+      var animationPrefix:String = playableCharData.getAnimationPrefix('cartoon${alternateCartoon ? 2 : 1}');
+      playFlashAnimation(animationPrefix, true, false, false, this.currentCartoonFrame);
     }
     else if (name == playableCharData?.getAnimationPrefix('newUnlock'))
     {
@@ -96,9 +94,9 @@ class BoyfriendRemnantsFreeplayDJ extends AnimateAtlasFreeplayDJ
     }
   }
 
-  public function runTvLogic():Void
+  function _runTVLogic():Void
   {
-    if (this.cartoonSnd == null)
+    if (cartoonSnd == null)
     {
       // tv is OFF, but getting turned on
       FunkinSound.playOnce(Paths.sound('tv_on'), 1.0, () -> {
@@ -114,21 +112,27 @@ class BoyfriendRemnantsFreeplayDJ extends AnimateAtlasFreeplayDJ
     }
   }
 
+  public function getCartoonFrame(frameLabel:String):Int
+  {
+    var cartoonSymbol:Null<SymbolItem> = this.library.getSymbol(CARTOON_SYMBOL + ' ${alternateCartoon ? 2 : 1}');
+    var cartoonFrame:Null<Frame> = this.getFrameLabel(frameLabel, cartoonSymbol.timeline);
+
+    return cartoonFrame.index;
+  }
+
   public function loadCartoon():Void
   {
-    var cartoonSndPersist:FunkinSound = cartoonSnd;
     playingCartoon = true;
 
-    // Krue... or Kralse...?
-    if (cartoonSndPersist != null)
+    if (cartoonSnd != null)
     {
-      cartoonSndPersist.stop();
-      cartoonSndPersist = null;
+      cartoonSnd.stop();
+      cartoonSnd = null;
     }
 
-    this.cartoonSnd = FunkinSound.load(Paths.sound(getRandomFlashToon()), 1.0, false, true, true, () -> {
-      var animPrefix = playableCharData.getAnimationPrefix('cartoon');
-      if (animPrefix != null) playFlashAnimation(animPrefix, true, false, false, 60);
+    cartoonSnd = FunkinSound.load(Paths.sound(getRandomFlashToon()), 1.0, false, true, true, () -> {
+      var animationPrefix:String = playableCharData.getAnimationPrefix('cartoon${alternateCartoon ? 2 : 1}');
+      if (animationPrefix != null) playFlashAnimation(animationPrefix, true, false, false, getCartoonFrame('CHANGE_CHANNEL'));
     });
 
     // Fade out music to 40% volume over 1 second.
@@ -136,7 +140,7 @@ class BoyfriendRemnantsFreeplayDJ extends AnimateAtlasFreeplayDJ
     FlxG.sound.music.fadeOut(1.0, 0.1);
 
     // Play the cartoon at a random time between the start and 5 seconds from the end.
-    if (this.cartoonSnd != null) this.cartoonSnd.time = FlxG.random.float(0, Math.max(this.cartoonSnd.length - (5 * Constants.MS_PER_SEC), 0.0));
+    if (cartoonSnd != null) cartoonSnd.time = FlxG.random.float(0, Math.max(cartoonSnd.length - (5 * Constants.MS_PER_SEC), 0.0));
   }
 
   function getRandomFlashToon():String
@@ -177,6 +181,21 @@ class BoyfriendRemnantsFreeplayDJ extends AnimateAtlasFreeplayDJ
       this.cartoonSnd.stop();
       this.cartoonSnd.destroy();
       this.cartoonSnd = null;
+    }
+  }
+
+  override public function playFlashAnimation(id:String, Force:Bool = false, Reverse:Bool = false, Loop:Bool = false, Frame:Int = 0):Void
+  {
+    if (id == 'Watching TV')
+    {
+      if (playingCartoonAnim) return;
+      playingCartoonAnim = true;
+
+      super.playFlashAnimation('Watching TV ${alternateCartoon ? 2 : 1}', Force, Reverse, Loop, Frame);
+    }
+    else
+    {
+      super.playFlashAnimation(id, Force, Reverse, Loop, Frame);
     }
   }
 }

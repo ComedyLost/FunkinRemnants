@@ -235,7 +235,7 @@ class DarnellRemnantsBlazinCharacter extends AnimateAtlasCharacter
       case "weekend-1-taunt":
         playPissedConditionalAnim();
       case "weekend-1-tauntforce":
-        playPissed();
+        playPissedAnim();
       case "weekend-1-reversefakeout":
         playFakeoutAnim(); // TODO: Which anim?
 

@@ -1,7 +1,6 @@
 import flixel.util.FlxTimer;
 import funkin.util.HapticUtil;
 import flixel.tweens.FlxTween;
-import funkin.modding.module.ModuleHandler;
 import funkin.modding.base.ScriptedFunkinSprite;
 import funkin.graphics.FunkinSprite;
 import funkin.play.GameOverSubState;
@@ -24,6 +23,29 @@ class TwoHOTRemnantsBFMixSong extends Song
     hasPlayedCutscene = false;
   }
 
+  public override function isSongNew(currentDifficulty:String, currentVariation:String):Bool
+  {
+    if (currentVariation == 'bfremnants') return !Save.instance.hasBeatenSong(this.id, null, this.variation);
+    return false;
+  }
+
+  public override function listAltInstrumentalIds(difficultyId:String, variationId:String):Array<String>
+  {
+    var results:Array<String> = super.listAltInstrumentalIds(difficultyId, variationId);
+    var hasBeatenBFRemnantsMix = Save.instance.hasBeatenSong(this.id, null, this.variation);
+
+    if (difficultyId == 'easy' || difficultyId == 'normal' || difficultyId == 'hard')
+    {
+      var hasBeatenRemnantsMix = Save.instance.hasBeatenSong(this.id, null, 'remnants');
+      if (!hasBeatenRemnantsMix) results = [for (id in results) if (id != 'remnants') id];
+
+      var hasBeatenDefault = Save.instance.hasBeatenSong(this.id, null, null);
+      if (!hasBeatenDefault) results = [for (id in results) if (id != '') id];
+    }
+
+    if (hasBeatenBFRemnantsMix) return results;
+  }
+
   var bfAttackSound:FunkinSound;
 
   function onCreate(event:ScriptEvent)
@@ -37,12 +59,6 @@ class TwoHOTRemnantsBFMixSong extends Song
     FunkinMemory.cacheTexture(Paths.image("CanImpactParticle"));
     FunkinMemory.cacheTexture(Paths.image("spraypaintExplosionEZ"));
     FunkinMemory.cacheTexture(Paths.image("remnants/spraycans/spraycanAtlas/spritemap1"));
-  }
-
-  public override function isSongNew(currentDifficulty:String, currentVariation:String):Bool
-  {
-    if (currentVariation == 'bfremnants') return !Save.instance.hasBeatenSong(this.id, null, this.variation);
-    return false;
   }
 
   function onSongRetry(event:ScriptEvent)

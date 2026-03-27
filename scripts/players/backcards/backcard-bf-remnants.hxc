@@ -100,8 +100,6 @@ class BFRemnantsCard extends BackingCard
     alsoOrangeLOL.color = 0xFF000000;
     orangeBackShit.color = 0xFF000000;
 
-    if (FlxG.state.subState.ostName != null) FlxG.state.subState.ostName.text = "REMNANTS OST";
-
     FlxSpriteUtil.alphaMaskFlxSprite(orangeBackShit, pinkBack, orangeBackShit);
     orangeBackShit.visible = false;
     alsoOrangeLOL.visible = false;

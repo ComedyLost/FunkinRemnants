@@ -1,4 +1,3 @@
-import funkin.util.SongSequence;
 import funkin.play.song.Song;
 import funkin.save.Save;
 import funkin.play.PlayState;

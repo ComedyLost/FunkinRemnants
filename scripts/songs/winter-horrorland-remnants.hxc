@@ -1,8 +1,9 @@
-import funkin.modding.module.ModuleHandler;
 import funkin.modding.base.ScriptedFlxRuntimeShader;
+import funkin.modding.module.ModuleHandler;
 import flixel.text.FlxTextBorderStyle;
 import funkin.ui.FullScreenScaleMode;
 import funkin.graphics.FunkinSprite;
+import funkin.data.song.SongRegistry;
 import flixel.util.FlxTimerManager;
 import openfl.filters.ShaderFilter;
 import funkin.audio.FunkinSound;
@@ -99,6 +100,12 @@ class WinterHorrorlandRemnantsMixSong extends Song
     hasPlayedCutscene = false;
     overlay = false;
 
+    var bumperModule:Module = ModuleHandler.getModule("remnantsBumpers");
+    bumperModule?.disableAutoPlay = true;
+
+    var whBaseSong:Song = SongRegistry.instance.fetchEntry("winter-horrorland");
+    whBaseSong.onCreate(event);
+
     var redShader:FlxRuntimeShader = ScriptedFlxRuntimeShader.init('OneColorShader');
     redShader.setColor(0xFFFF0000);
     redFilter = new ShaderFilter(redShader);
@@ -149,6 +156,7 @@ class WinterHorrorlandRemnantsMixSong extends Song
     onSpookChristmas = true;
     PlayState.instance.currentStage.getDad().visible = false;
     PlayState.instance.camHUD.visible = false;
+    PlayState.instance.isInCutscene = true;
 
     cutsceneTimerManager = new FlxTimerManager();
 
@@ -197,9 +205,21 @@ class WinterHorrorlandRemnantsMixSong extends Song
 
   function onCountdownStart(event:ScriptEvent):Void
   {
+    PlayState.instance.isInCutscene = false;
     super.onCountdownStart(event);
 
-    if (!hasPlayedCutscene)
+    var whBaseSong:Song = SongRegistry.instance.fetchEntry("winter-horrorland");
+    whBaseSong.onCountdownStart(event);
+    if (event.eventCanceled) return;
+
+    var bumperModule:Module = ModuleHandler.getModule("remnantsBumpers");
+
+    if (bumperModule.setupBumper())
+    {
+      trace("setupBumper() returned 'true', stopping the countdown...");
+      event.cancel();
+    }
+    else if (!hasPlayedCutscene)
     {
       hasPlayedCutscene = true;
       event.cancel();
@@ -219,6 +239,8 @@ class WinterHorrorlandRemnantsMixSong extends Song
     cutsceneSkipped = true;
     canSkipCutscene = false;
     skipText.visible = false;
+
+    PlayState.instance.isInCutscene = true;
 
     onSpookChristmas = false;
     var santaDead:StageProp = PlayState.instance.currentStage.getNamedProp('santaDead');
@@ -308,6 +330,9 @@ class WinterHorrorlandRemnantsMixSong extends Song
   function onDestroy(event:ScriptEvent):Void
   {
     super.onDestroy(event);
+
+    var bumperModule:Module = ModuleHandler.getModule("remnantsBumpers");
+    bumperModule?.disableAutoPlay = false;
 
     sequence?.destroy();
   }

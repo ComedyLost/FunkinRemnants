@@ -1,4 +1,3 @@
-import funkin.modding.module.ModuleHandler;
 import funkin.play.song.Song;
 import funkin.save.Save;
 
@@ -20,8 +19,15 @@ class FreshRemnantsMixSong extends Song
 
   public override function listAltInstrumentalIds(difficultyId:String, variationId:String):Array<String>
   {
-    var hasBeatenRemnantsMix = Save.instance.hasBeatenSong(this.id, null, this.variation);
     var results:Array<String> = super.listAltInstrumentalIds(difficultyId, variationId);
+    var hasBeatenRemnantsMix = Save.instance.hasBeatenSong(this.id, null, this.variation);
+
+    if (difficultyId == 'easy' || difficultyId == 'normal' || difficultyId == 'hard')
+    {
+      var hasBeatenDefault = Save.instance.hasBeatenSong(this.id, null, null);
+      if (!hasBeatenDefault) results = [for (id in results) if (id != 'default mix remnants cut') id];
+    }
+
     if (hasBeatenRemnantsMix) return results;
   }
 }

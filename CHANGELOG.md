@@ -5,6 +5,46 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.3] - (2026-03-26)
+
+### Added
+
+- Added new overlay events to Tormentor (Remnants Mix).
+- Added alternate GF bop animation during the ending of Cocoa (Remnants Mix).
+- Added a ton of new Alt Instrumentals to other songs & mods.
+- Added Alt Instrumental unlock checks so that you have to beat songs to unlock their instrumentals.
+- Added blue blood to running bg tankmen in Stress (Remnants Mix) when Naughtyness is off.
+- Added funni Game Overs to DadBattle and M.I.L.F's mechanics.
+- Added No Animation Notes to Cocoa (Remnants Mix).
+- Added Script Parenting to Remnants Pico and Remnants Nene's character scripts.
+- Added Censored version of the Roses Secret Dialogue.
+- Added new secret random chances to Remnants! (Pico Mix), & Weekend 1.
+
+### Changes
+
+- Updated a ton of characters to use Adobe Animate Atlases.
+- Updated BF's Adobe Animate Atlases to be more optimized.
+- Updated Monster (Remnants Mix) Difficulty Ratings by incrementing them by 1.
+- Updated all character offsets to be consistent with base game's.
+- Updated Credits Video.
+
+### Fixes
+
+- Fixed charting errors in Remnants!, Remnants Erect!, DadBattle, Monster, Philly Nice, Satin Panties, Cocoa, Eggnog, 2hot, 2hot BF, & Blazin'.
+- Fixed Blazin' (Remnants Mix) Giga Punch secret triggering on every pico uppercut if rolled.
+- Fixed the Remnants Overlay Event not resetting Retro Fades properly when resetting mid fade while "Tween On Restart?" is on.
+- Fixed Pico Speaker's animations spazing out.
+- Fixed Results Text being offset.
+- Fixed Flying Tanks during Week 7 cutscenes.
+- Fixed many other minor stuffs.
+
+### Removed
+
+- Removed Note Hit Glow from the Opponent's Strumline.
+- Removed Some Problematic Media.
+
+
+
 ## [1.0.2] - (2026-02-25)
 
 ### Added

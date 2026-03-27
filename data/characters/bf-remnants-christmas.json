@@ -6,7 +6,8 @@
   "healthIcon": {
     "id": "bf-christmas-remnants"
   },
-  "offsets": [25, 0],
+  "offsets": [9, 1],
+  "cameraOffsets": [-9, 60],
   "death": {
     "cameraZoom": 1.45,
     "cameraOffsets": [25, -125]
@@ -24,62 +25,62 @@
     },
     {
       "name": "singLEFT",
-      "prefix": "Pose Left",
+      "prefix": "Left",
       "offsets": [0, 0]
     },
     {
       "name": "singDOWN",
-      "prefix": "Pose Down",
+      "prefix": "Down",
       "offsets": [0, 0]
     },
     {
       "name": "singUP",
-      "prefix": "Pose Up",
+      "prefix": "Up",
       "offsets": [0, 0]
     },
     {
       "name": "singRIGHT",
-      "prefix": "Pose Right",
+      "prefix": "Right",
       "offsets": [0, 0]
     },
     {
       "name": "singLEFT-perfect",
-      "prefix": "Perfect Left",
+      "prefix": "Left Perfect",
       "offsets": [0, 0]
     },
     {
       "name": "singDOWN-perfect",
-      "prefix": "Perfect Down",
+      "prefix": "Down Perfect",
       "offsets": [0, 0]
     },
     {
       "name": "singUP-perfect",
-      "prefix": "Perfect Up",
+      "prefix": "Up Perfect",
       "offsets": [0, 0]
     },
     {
       "name": "singRIGHT-perfect",
-      "prefix": "Perfect Right",
+      "prefix": "Right Perfect",
       "offsets": [0, 0]
     },
     {
       "name": "singLEFTmiss",
-      "prefix": "Miss Left",
+      "prefix": "Left Miss",
       "offsets": [0, 0]
     },
     {
       "name": "singDOWNmiss",
-      "prefix": "Miss Down",
+      "prefix": "Down Miss",
       "offsets": [0, 0]
     },
     {
       "name": "singUPmiss",
-      "prefix": "Miss Up",
+      "prefix": "Up Miss",
       "offsets": [0, 0]
     },
     {
       "name": "singRIGHTmiss",
-      "prefix": "Miss Right",
+      "prefix": "Right Miss",
       "offsets": [0, 0]
     },
     {
@@ -93,6 +94,13 @@
       "offsets": [0, 0]
     },
     {
+      "name": "ayo-hold",
+      "prefix": "Ayo",
+      "frameIndices": [5],
+      "looped": true,
+      "offsets": [0, 0]
+    },
+    {
       "name": "aww",
       "prefix": "Aww",
       "offsets": [0, 0]
@@ -100,20 +108,20 @@
     {
       "assetPath": "shared:characters/bf-remnants/death",
       "name": "firstDeath",
-      "prefix": "Death",
+      "prefix": "Death Intro",
       "offsets": [-8, 41]
     },
     {
       "assetPath": "shared:characters/bf-remnants/death",
       "name": "deathLoop",
-      "prefix": "Loop Death",
+      "prefix": "Death Loop",
       "looped": true,
       "offsets": [-8, 41]
     },
     {
       "assetPath": "shared:characters/bf-remnants/death",
       "name": "deathConfirm",
-      "prefix": "Retry",
+      "prefix": "Death Confirm",
       "offsets": [-8, 41]
     }
   ]

@@ -128,7 +128,7 @@
       "alpha": 1,
       "angle": 0,
       "cameraOffsets": [200, -200],
-      "position": [300, 900],
+      "position": [200, 900],
       "scale": 1,
       "scroll": [1, 1],
       "zIndex": 200

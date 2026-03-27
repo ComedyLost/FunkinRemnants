@@ -3,30 +3,23 @@
   "songName": "Darnell (BF Remnants Mix)",
   "artist": "Loopy",
   "charter": "TRWario",
-  "timeFormat": "ms",
-  "divisions": 96,
   "offsets": { "instrumental": -10 },
-  "timeChanges": [{ "t": 0, "bpm": 155, "n": 4, "d": 4, "bt": [4, 4, 4, 4] }],
-  "looped": false,
   "playData": {
-    "songVariations": [],
     "difficulties": ["easy", "normal", "hard"],
     "characters": {
       "player": "bf-remnants",
       "girlfriend": "gf-remnants",
       "opponent": "darnell-remnants",
       "instrumental": "bfremnants",
+      "altInstrumentals": ["bf", "", "remnants"],
       "opponentVocals": ["darnell-remnants"],
-      "playerVocals": ["bf-remnants"],
-      "altInstrumentals": ["bf", "", "remnants"]
+      "playerVocals": ["bf-remnants"]
     },
     "stage": "phillyStreetsRemnants",
     "noteStyle": "funkin",
     "ratings": { "easy": 8, "normal": 9, "hard": 10 },
-    "album": "remnants",
-    "stickerPack": null
+    "album": "remnants"
   },
-  "previewStart": 0,
-  "previewEnd": 15000,
-  "generatedBy": "LeGooey (By Hand)"
+  "generatedBy": "Friday Night Funkin' - v0.8.3 (develop : ec868f8) PROTOTYPE",
+  "timeChanges": [{ "t": 0, "b": 0, "bpm": 155, "bt": [4, 4, 4, 4] }]
 }

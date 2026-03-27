@@ -1,10 +1,10 @@
 import funkin.data.character.CharacterDataParser;
-import funkin.play.character.SparrowCharacter;
+import funkin.play.character.AnimateAtlasCharacter;
 import funkin.play.character.BaseCharacter;
 import funkin.play.character.CharacterType;
 import funkin.play.PlayState;
 
-class GirlfriendRemnantsPotDarkCharacter extends SparrowCharacter
+class GirlfriendRemnantsPotDarkCharacter extends AnimateAtlasCharacter
 {
   function new()
   {

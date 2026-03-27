@@ -3,30 +3,22 @@
   "songName": "Thorns (Remnants Mix)",
   "artist": "LunarzNova",
   "charter": "RhysRJJ",
-  "timeFormat": "ms",
-  "divisions": 96,
-  "offsets": { "instrumental": 0 },
-  "timeChanges": [{ "t": 0, "bpm": 230, "n": 4, "d": 4, "bt": [4, 4, 4, 4] }],
-  "looped": false,
+  "offsets": {},
   "playData": {
-    "songVariations": [],
     "difficulties": ["easy", "normal", "hard"],
     "characters": {
       "player": "bf-remnants-pixel",
       "girlfriend": "gf-remnants-pixel",
       "opponent": "spirit-remnants",
       "instrumental": "remnants",
-      "playerVocals": ["bf-remnants-pixel"],
       "opponentVocals": ["spirit-remnants"],
-      "altInstrumentals": []
+      "playerVocals": ["bf-remnants-pixel"]
     },
     "stage": "schoolEvilRemnants",
     "noteStyle": "pixel",
     "ratings": { "easy": 10, "normal": 12, "hard": 13 },
-    "album": "remnants",
-    "stickerPack": null
+    "album": "remnants"
   },
-  "previewStart": 0,
-  "previewEnd": 13100,
-  "generatedBy": "LeGooey (By Hand)"
+  "generatedBy": "Friday Night Funkin' - v0.8.3 (develop : ec868f8) PROTOTYPE",
+  "timeChanges": [{ "t": 0, "b": 0, "bpm": 230, "bt": [4, 4, 4, 4] }]
 }

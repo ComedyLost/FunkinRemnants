@@ -1,5 +1,3 @@
-import funkin.modding.module.ModuleHandler;
-import funkin.ui.FullScreenScaleMode;
 import funkin.graphics.FunkinSprite;
 import funkin.util.FlxTweenUtil;
 import funkin.play.song.Song;
@@ -8,8 +6,6 @@ import flixel.tweens.FlxEase;
 import funkin.play.PlayState;
 import funkin.save.Save;
 import flixel.FlxG;
-import funkin.Preferences;
-import funkin.mobile.input.ControlsHandler;
 
 class TutorialRemnantsMixSong extends Song
 {

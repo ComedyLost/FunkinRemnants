@@ -4,15 +4,12 @@ import funkin.play.song.Song;
 import funkin.play.PlayState;
 import funkin.util.HapticUtil;
 import funkin.graphics.FunkinSprite;
-import funkin.modding.module.ModuleHandler;
 import funkin.audio.FunkinSound;
 import funkin.util.FlxTweenUtil;
-import funkin.effects.RetroCameraFade;
 import flixel.tweens.FlxTween;
 import flixel.tweens.FlxEase;
 import flixel.util.FlxTimer;
 import flixel.FlxG;
-import funkin.mobile.input.ControlsHandler;
 import funkin.util.SongSequence;
 import funkin.Conductor;
 
@@ -88,14 +85,12 @@ class RosesRemnantsMixSong extends Song
   {
     var targetDialogue = 'roses-remnants'; // Normal dialogue
 
-    if (!FlxG.random.bool(10))
-    {
-      if (!Preferences.naughtyness) targetDialogue += "-censored"; // Adds censored dialogue
-    }
-    else
+    if (FlxG.random.bool(10))
     {
       targetDialogue += "-secret"; // Adds BEE MOVIE
     }
+
+    if (!Preferences.naughtyness) targetDialogue += "-censored"; // Adds censored dialogue
 
     FunkinSound.playOnce(Paths.sound('ANGRY'), 1);
     PlayState.instance.disableKeys = false;

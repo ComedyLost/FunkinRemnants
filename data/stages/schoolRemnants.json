@@ -231,7 +231,7 @@
   "characters": {
     "bf": {
       "zIndex": 300,
-      "cameraOffsets": [-200, -94],
+      "cameraOffsets": [-200, -67],
       "position": [1168, 900]
     },
     "dad": { "zIndex": 200, "cameraOffsets": [160, 0], "position": [306, 960] },

@@ -8,8 +8,8 @@
   "healthIcon": {
     "id": "bf-remnants"
   },
-  "offsets": [10, 10],
-  "cameraOffsets": [15, 20],
+  "offsets": [-5, 12],
+  "cameraOffsets": [5, 30],
   "death": {
     "cameraZoom": 0.9,
     "cameraOffsets": [45, -60]
@@ -68,7 +68,7 @@
     {
       "name": "singLEFT-hold",
       "prefix": "Pose Left",
-      "frameIndices": [10, 11, 12, 13],
+      "frameIndices": [2, 3, 4, 5],
       "looped": true,
       "offsets": [0, 0]
     },
@@ -80,7 +80,7 @@
     {
       "name": "singDOWN-hold",
       "prefix": "Pose Down",
-      "frameIndices": [10, 11, 12, 13],
+      "frameIndices": [2, 3, 4, 5],
       "looped": true,
       "offsets": [0, 0]
     },
@@ -92,7 +92,7 @@
     {
       "name": "singUP-hold",
       "prefix": "Pose Up",
-      "frameIndices": [10, 11, 12, 13],
+      "frameIndices": [2, 3, 4, 5],
       "looped": true,
       "offsets": [0, 0]
     },
@@ -104,7 +104,7 @@
     {
       "name": "singRIGHT-hold",
       "prefix": "Pose Right",
-      "frameIndices": [10, 11, 12, 13],
+      "frameIndices": [2, 3, 4, 5],
       "looped": true,
       "offsets": [0, 0]
     },
@@ -116,7 +116,7 @@
     {
       "name": "singLEFT-perfect-hold",
       "prefix": "Perfect Left",
-      "frameIndices": [10, 11, 12, 13],
+      "frameIndices": [2, 3, 4, 5],
       "looped": true,
       "offsets": [0, 0]
     },
@@ -128,7 +128,7 @@
     {
       "name": "singDOWN-perfect-hold",
       "prefix": "Perfect Down",
-      "frameIndices": [10, 11, 12, 13],
+      "frameIndices": [2, 3, 4, 5],
       "looped": true,
       "offsets": [0, 0]
     },
@@ -140,7 +140,7 @@
     {
       "name": "singUP-perfect-hold",
       "prefix": "Perfect Up",
-      "frameIndices": [10, 11, 12, 13],
+      "frameIndices": [2, 3, 4, 5],
       "looped": true,
       "offsets": [0, 0]
     },
@@ -152,33 +152,29 @@
     {
       "name": "singRIGHT-perfect-hold",
       "prefix": "Perfect Right",
-      "frameIndices": [10, 11, 12, 13],
+      "frameIndices": [2, 3, 4, 5],
       "looped": true,
       "offsets": [0, 0]
     },
     {
-      "assetPath": "shared:characters/bf-remnants/miss",
       "name": "singLEFTmiss",
       "prefix": "Miss Left",
-      "offsets": [-90, -44]
+      "offsets": [0, 0]
     },
     {
-      "assetPath": "shared:characters/bf-remnants/miss",
       "name": "singDOWNmiss",
       "prefix": "Miss Down",
-      "offsets": [-90, -44]
+      "offsets": [0, 0]
     },
     {
-      "assetPath": "shared:characters/bf-remnants/miss",
       "name": "singUPmiss",
       "prefix": "Miss Up",
-      "offsets": [-90, -44]
+      "offsets": [0, 0]
     },
     {
-      "assetPath": "shared:characters/bf-remnants/miss",
       "name": "singRIGHTmiss",
       "prefix": "Miss Right",
-      "offsets": [-90, -44]
+      "offsets": [0, 0]
     },
     {
       "name": "dodge",
@@ -193,20 +189,20 @@
     {
       "assetPath": "shared:characters/bf-remnants/death",
       "name": "firstDeath",
-      "prefix": "Death",
+      "prefix": "Death Intro",
       "offsets": [-64, 90]
     },
     {
       "assetPath": "shared:characters/bf-remnants/death",
       "name": "deathLoop",
-      "prefix": "Loop Death",
+      "prefix": "Death Loop",
       "looped": true,
       "offsets": [-64, 90]
     },
     {
       "assetPath": "shared:characters/bf-remnants/death",
       "name": "deathConfirm",
-      "prefix": "Retry",
+      "prefix": "Death Confirm",
       "offsets": [-64, 90]
     }
   ]

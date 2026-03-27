@@ -5,12 +5,11 @@
   "assetPath": "shared:characters/bf-remnants/dark",
   "flipX": true,
   "singTime": 8.0,
-  "offsets": [-1, 1],
   "healthIcon": {
     "id": "bf-remnants"
   },
-  "offsets": [9.5, 14.3],
-  "cameraOffsets": [3, 41],
+  "offsets": [9, 26.3],
+  "cameraOffsets": [-9.3, 41.8],
   "death": {
     "cameraZoom": 0.85,
     "cameraOffsets": [250, 75]
@@ -27,14 +26,12 @@
     },
     {
       "name": "danceLeft-spooky",
-      "prefix": "Spooky Dance",
-      "frameIndices": [0, 1, 2, 3, 4, 5, 6, 7],
+      "prefix": "Spooky Dance Left",
       "offsets": [0, 0]
     },
     {
       "name": "danceRight-spooky",
-      "prefix": "Spooky Dance",
-      "frameIndices": [8, 9, 10, 11, 12, 13, 14, 15],
+      "prefix": "Spooky Dance Right",
       "offsets": [0, 0]
     },
     {
@@ -115,20 +112,20 @@
     {
       "assetPath": "shared:characters/bf-remnants/death",
       "name": "firstDeath",
-      "prefix": "Death",
+      "prefix": "Death Intro",
       "offsets": [-278, -126]
     },
     {
       "assetPath": "shared:characters/bf-remnants/death",
       "name": "deathLoop",
-      "prefix": "Loop Death",
+      "prefix": "Death Loop",
       "looped": true,
       "offsets": [-278, -126]
     },
     {
       "assetPath": "shared:characters/bf-remnants/death",
       "name": "deathConfirm",
-      "prefix": "Retry",
+      "prefix": "Death Confirm",
       "offsets": [-278, -126]
     },
     {

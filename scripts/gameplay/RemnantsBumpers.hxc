@@ -8,12 +8,17 @@ class RemnantsBumpers extends Module
   /**
    * Has the bumper been played already?
    */
-  public static var playedBumper:Bool = false;
+  public var playedBumper:Bool = false;
 
   /**
    * Is the bumper currently playing?
    */
-  public static var isPlaying:Bool = false;
+  public var isPlaying:Bool = false;
+
+  /**
+   * If we should automatically play the bumper.
+   */
+  public var disableAutoPlay:Bool = false;
 
   /**
    * What was the last song played?
@@ -86,6 +91,7 @@ class RemnantsBumpers extends Module
   override public function onCountdownStart(event:CountdownScriptEvent):Void
   {
     super.onCountdownStart(event);
+    if (disableAutoPlay) return;
 
     if (!RemnantsContentUtil.isRemnantsSong())
     {

@@ -3,30 +3,22 @@
   "songName": "High (Remnants Mix)",
   "artist": "TRAF (ft. Loopy & LunarzNova)",
   "charter": "Plush + Sammy The Goog",
-  "timeFormat": "ms",
-  "divisions": 96,
-  "offsets": { "instrumental": 0 },
-  "timeChanges": [{ "t": 0, "bpm": 132, "n": 4, "d": 4, "bt": [4, 4, 4, 4] }],
-  "looped": false,
+  "offsets": {},
   "playData": {
-    "songVariations": [],
     "difficulties": ["easy", "normal", "hard"],
     "characters": {
       "player": "bf-remnants-car",
       "girlfriend": "gf-remnants-car",
       "opponent": "mom-remnants-car",
       "instrumental": "remnants",
-      "playerVocals": ["bf-remnants-car"],
       "opponentVocals": ["mom-remnants-car"],
-      "altInstrumentals": []
+      "playerVocals": ["bf-remnants-car"]
     },
     "stage": "limoRideRemnants",
     "noteStyle": "funkin",
     "ratings": { "easy": 4, "normal": 5, "hard": 6 },
-    "album": "remnants",
-    "stickerPack": null
+    "album": "remnants"
   },
-  "previewStart": 0,
-  "previewEnd": 15000,
-  "generatedBy": "LeGooey (By Hand)"
+  "generatedBy": "Friday Night Funkin' - v0.8.3 (develop : ec868f8) PROTOTYPE",
+  "timeChanges": [{ "t": 0, "b": 0, "bpm": 132, "bt": [4, 4, 4, 4] }]
 }

@@ -1,7 +1,6 @@
-import funkin.modding.module.ModuleHandler;
 import funkin.play.song.Song;
-import funkin.play.PlayState;
 import funkin.save.Save;
+import funkin.play.PlayState;
 import funkin.util.FlxTweenUtil;
 import funkin.util.SongSequence;
 import funkin.Conductor;
@@ -24,6 +23,29 @@ class PhillyNiceRemnantsMixSong extends Song
   {
     if (currentVariation == 'remnants') return !Save.instance.hasBeatenSong(this.id, null, this.variation);
     return false;
+  }
+
+  public override function listAltInstrumentalIds(difficultyId:String, variationId:String):Array<String>
+  {
+    var results:Array<String> = super.listAltInstrumentalIds(difficultyId, variationId);
+    var hasBeatenRemnantsMix = Save.instance.hasBeatenSong(this.id, null, this.variation);
+
+    if (difficultyId == 'easy' || difficultyId == 'normal' || difficultyId == 'hard')
+    {
+      var hasBeatenDefault = Save.instance.hasBeatenSong(this.id, null, null);
+      if (!hasBeatenDefault) results = [for (id in results) if (id != '') id];
+
+      /* // TODO: Should add a offset for this alt inst but idk how to merge that so someone else gotta do it :p
+        var hasBeatenErect = Save.instance.hasBeatenSong(this.id, ['erect', 'nightmare'],
+          null);
+        if (!hasBeatenErect) results = [for (id in results) if (id != 'erect') id];
+       */
+
+      var hasBeatenOwenMix = Save.instance.hasBeatenSong(this.id, null, 'owenthemc');
+      if (!hasBeatenOwenMix) results = [for (id in results) if (id != 'owenthemc') id];
+    }
+
+    if (hasBeatenRemnantsMix) return results;
   }
 
   function onCountdownStart(event:CountdownScriptEvent):Void
@@ -87,7 +109,7 @@ class PhillyNiceRemnantsMixSong extends Song
       {
         time: Conductor.instance.getBeatTimeInMs(328) / 1000,
         callback: () -> {
-          FlxTween.tween(PlayState.instance.camHUD, {alpha: 0}, 2.74, {ease: FlxEase.smootherStepOut});
+          FlxTween.tween(PlayState.instance.camHUD, {alpha: 0}, 2.74, {ease: FlxEase.smootherStepInOut});
         }
       },
     ];

@@ -31,12 +31,16 @@ class RemnantsSong extends Song
   public override function listAltInstrumentalIds(difficultyId:String, variationId:String):Array<String>
   {
     var results:Array<String> = super.listAltInstrumentalIds(difficultyId, variationId);
+    var hasBeatenDefault = Save.instance.hasBeatenSong(this.id, null, this.variation);
+
     if (difficultyId == 'easy' || difficultyId == 'normal' || difficultyId == 'hard')
     {
       var hasBeatenPicoMix = Save.instance.hasBeatenSong(this.id, null, 'pico');
-      if (!hasBeatenPicoMix) results.remove('pico');
+
+      if (!hasBeatenPicoMix) results = [for (id in results) if (id != 'pico') id];
     }
-    return results;
+
+    if (hasBeatenDefault) return results;
   }
 
   public function listDifficulties(variationId:String, variationIds:Array<String>, showLocked:Bool):Array<String>

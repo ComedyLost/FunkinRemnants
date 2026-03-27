@@ -1,8 +1,8 @@
-import funkin.play.character.MultiSparrowCharacter;
+import funkin.play.character.AnimateAtlasCharacter;
 import funkin.play.character.CharacterType;
 import funkin.play.PlayState;
 
-class GirlfriendRemnantsPotCharacter extends MultiSparrowCharacter
+class GirlfriendRemnantsPotCharacter extends AnimateAtlasCharacter
 {
   function new()
   {

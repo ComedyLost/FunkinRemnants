@@ -1,14 +1,27 @@
+import flixel.FlxSprite;
+import flixel.text.FlxText;
 import funkin.play.song.Song;
 import funkin.play.PlayState;
 import funkin.save.Save;
 import funkin.util.FlxTweenUtil;
 import flixel.tweens.FlxTween;
 import funkin.util.SongSequence;
+import flixel.util.FlxTimer;
+import funkin.save.Save;
 import funkin.Conductor;
 
 class TormentorSong extends Song
 {
   var sequence:SongSequence;
+
+  var soulText:FlxText = null;
+  var textOverlay:FlxSprite = null;
+
+  final TEXT_TIME:Float = 0.25;
+
+  var spikesOverlay:FlxSprite = null;
+
+  var spikeTimer:FlxTimer = null;
 
   public function new()
   {
@@ -24,6 +37,13 @@ class TormentorSong extends Song
     return false;
   }
 
+  public override function listAltInstrumentalIds(difficultyId:String, variationId:String):Array<String>
+  {
+    var results:Array<String> = super.listAltInstrumentalIds(difficultyId, variationId);
+    var hasBeatenRemnantsMix = Save.instance.hasBeatenSong(this.id, null, this.variation);
+    if (hasBeatenRemnantsMix) return results;
+  }
+
   function onCountdownStart(event:CountdownScriptEvent):Void
   {
     super.onCreate(event);
@@ -35,6 +55,47 @@ class TormentorSong extends Song
     super.onCreate(event);
 
     PlayState.instance.camHUD.alpha = 0;
+
+    textOverlay = new FlxSprite().loadGraphic(Paths.image('stages/soulRemnants/textOverlay'));
+    textOverlay.cameras = [PlayState.instance.camCutscene];
+    textOverlay.setGraphicSize(FlxG.width);
+    textOverlay.scrollFactor.set();
+    textOverlay.alpha = 0.00001;
+    textOverlay.updateHitbox();
+    textOverlay.screenCenter();
+
+    soulText = new FlxText(0, 0, 0, 'coolswag');
+    soulText.setFormat(Paths.font('tw-cen-mt.ttf'), 60, 0xFFFFFFFF, 'center');
+    soulText.cameras = [PlayState.instance.camCutscene];
+    soulText.scrollFactor.set();
+    soulText.alpha = 0.00001;
+    soulText.screenCenter();
+
+    spikesOverlay = new FlxSprite().loadGraphic(Paths.image('stages/soulRemnants/spikesOverlay'));
+    spikesOverlay.cameras = [PlayState.instance.camHUD];
+    spikesOverlay.setGraphicSize(FlxG.width);
+    spikesOverlay.scrollFactor.set();
+    spikesOverlay.updateHitbox();
+    spikesOverlay.screenCenter();
+
+    tweenSpikes(false);
+
+    PlayState.instance.add(spikesOverlay);
+    PlayState.instance.add(textOverlay);
+    PlayState.instance.add(soulText);
+  }
+
+  function tweenSpikes( in:Bool)
+  {
+    FlxTween.tween(spikesOverlay, {alpha: in ?1: 0}, 1.5,
+      {
+        onComplete: (_) -> {
+          spikeTimer = new FlxTimer().start( in ?0.5:5, _ -> {
+            spikeTimer = null;
+            tweenSpikes(! in);
+          });
+        }
+      });
   }
 
   function onSongRetry(event:ScriptEvent)
@@ -59,25 +120,104 @@ class TormentorSong extends Song
   {
     super.onPause(event);
 
+    spikeTimer?.active = false;
     FlxTweenUtil.pauseTweensOf(PlayState.instance.camHUD);
+    FlxTweenUtil.pauseTweensOf(spikesOverlay);
+    FlxTweenUtil.pauseTweensOf(textOverlay);
+    FlxTweenUtil.pauseTweensOf(soulText);
   }
 
   function onResume(event:ScriptEvent):Void
   {
     super.onResume(event);
 
+    spikeTimer?.active = true;
     FlxTweenUtil.resumeTweensOf(PlayState.instance.camHUD);
+    FlxTweenUtil.resumeTweensOf(spikesOverlay);
+    FlxTweenUtil.resumeTweensOf(textOverlay);
+    FlxTweenUtil.resumeTweensOf(soulText);
   }
 
   function onSongLoaded(event:SongLoadScriptEvent)
   {
     sequence?.destroy();
 
+    if (PlayState.instance == null)
+    {
+      super.onSongLoaded(event);
+      return;
+    };
+
     var sequenceData = [
       {
         time: 0,
         callback: () -> {
           PlayState.instance.camHUD.alpha = 0;
+        }
+      },
+
+      // Confinement.
+      {
+        time: Conductor.instance.getStepTimeInMs(2) / 1000,
+        callback: () -> {
+          soulText.text = "Confinement.";
+          soulText.screenCenter();
+
+          FlxTween.cancelTweensOf(soulText);
+          FlxTween.tween(soulText, {alpha: 0.95}, TEXT_TIME);
+          FlxTween.cancelTweensOf(textOverlay);
+          FlxTween.tween(textOverlay, {alpha: 1}, TEXT_TIME);
+        }
+      },
+
+      // Paralysis.
+      {
+        time: Conductor.instance.getStepTimeInMs(8) / 1000,
+        callback: () -> {
+          soulText.text = "Paralysis.";
+          soulText.screenCenter();
+        }
+      },
+
+      // Loss of control.
+      {
+        time: Conductor.instance.getStepTimeInMs(16) / 1000,
+        callback: () -> {
+          soulText.text = "Loss of control.";
+          soulText.screenCenter();
+        }
+      },
+
+      // Is this where you want to be?
+      {
+        time: Conductor.instance.getStepTimeInMs(24) / 1000,
+        callback: () -> {
+          soulText.text = "Is this where you want to be?";
+          soulText.screenCenter();
+        }
+      },
+
+      // Wake up.
+      {
+        time: Conductor.instance.getStepTimeInMs(32) / 1000,
+        callback: () -> {
+          soulText.text = "Wake up.";
+          soulText.screenCenter();
+
+          tweenText(false);
+        }
+      },
+
+      // WAKE UP
+      {
+        time: Conductor.instance.getBeatTimeInMs(12) / 1000,
+        callback: () -> {
+          soulText.size = 100;
+          soulText.text = "WAKE UP";
+          soulText.screenCenter();
+
+          tweenText(false);
+          tweenText(true);
         }
       },
 
@@ -95,6 +235,79 @@ class TormentorSong extends Song
         }
       },
 
+      // Not enough.
+      {
+        time: Conductor.instance.getBeatTimeInMs(48) / 1000,
+        callback: () -> {
+          soulText.size = 60;
+          soulText.text = "Not enough.";
+          soulText.screenCenter();
+
+          tweenText(false);
+          tweenText(true);
+        }
+      },
+
+      // Too easy.
+      {
+        time: Conductor.instance.getBeatTimeInMs(64) / 1000,
+        callback: () -> {
+          soulText.text = "Too easy.";
+          soulText.screenCenter();
+
+          tweenText(false);
+          tweenText(true);
+        }
+      },
+
+      // Again.
+      {
+        time: Conductor.instance.getBeatTimeInMs(96) / 1000,
+        callback: () -> {
+          soulText.text = "Again.";
+          soulText.screenCenter();
+
+          tweenText(false);
+          tweenText(true);
+        }
+      },
+
+      // You.
+      {
+        time: Conductor.instance.getBeatTimeInMs(128) / 1000,
+        callback: () -> {
+          soulText.text = "You.";
+          soulText.screenCenter();
+
+          tweenText(false);
+          tweenText(true);
+        }
+      },
+
+      // Try this.
+      {
+        time: Conductor.instance.getBeatTimeInMs(160) / 1000,
+        callback: () -> {
+          soulText.text = "Try this.";
+          soulText.screenCenter();
+
+          tweenText(false);
+          tweenText(true);
+        }
+      },
+
+      // Focus.
+      {
+        time: Conductor.instance.getBeatTimeInMs(192) / 1000,
+        callback: () -> {
+          soulText.text = "Focus.";
+          soulText.screenCenter();
+
+          tweenText(false);
+          tweenText(true);
+        }
+      },
+
       {
         time: Conductor.instance.getBeatTimeInMs(320) / 1000,
         callback: () -> {
@@ -105,6 +318,20 @@ class TormentorSong extends Song
 
     sequence = new SongSequence(sequenceData);
     sequence.startTime = 0;
+  }
+
+  function tweenText(overlay:Bool)
+  {
+    var target = overlay ? textOverlay : soulText;
+    if (target == null) return;
+
+    FlxTween.cancelTweensOf(target);
+    FlxTween.tween(target, {alpha: overlay ? 1 : 0.95}, TEXT_TIME,
+      {
+        onComplete: (_) -> {
+          FlxTween.tween(target, {alpha: 0}, TEXT_TIME, {startDelay: 0.4});
+        }
+      });
   }
 
   function onDestroy(event:ScriptEvent):Void

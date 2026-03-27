@@ -1,10 +1,36 @@
 [
   [
+    {
+      "op": "test",
+      "path": "/playData/characters/altInstrumentals",
+      "inverse": true
+    },
+    {
+      "op": "add",
+      "path": "/playData/characters/altInstrumentals",
+      "value": []
+    }
+  ],
+  [
     { "op": "test", "path": "/playData/songVariations", "inverse": true },
     { "op": "add", "path": "/playData/songVariations", "value": [] }
   ],
   [
     { "op": "add", "path": "/playData/songVariations/-", "value": "remnants" },
-    { "op": "add", "path": "/playData/songVariations/-", "value": "bfremnants" }
+    {
+      "op": "add",
+      "path": "/playData/songVariations/-",
+      "value": "bfremnants"
+    },
+    {
+      "op": "add",
+      "path": "/playData/characters/altInstrumentals/0",
+      "value": "remnants"
+    },
+    {
+      "op": "add",
+      "path": "/playData/characters/altInstrumentals/0",
+      "value": "bfremnants"
+    }
   ]
 ]

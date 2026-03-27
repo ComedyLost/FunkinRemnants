@@ -1,5 +1,4 @@
 import funkin.save.Save;
-import funkin.Conductor;
 import funkin.play.song.Song;
 import funkin.play.PlayState;
 import funkin.audio.FunkinSound;
@@ -96,6 +95,7 @@ class MILFRemnantsMixSong extends Song
   // Sound variables.
   var playerHit:FunkinSound = null;
   var henchmenWipe:FunkinSound = null;
+  var Lamp:Bool = false;
 
   function initPoleTimes():Void
   {
@@ -148,6 +148,8 @@ class MILFRemnantsMixSong extends Song
 
     // Refresh the stage to reorganize props by z-index.
     PlayState.instance.currentStage.refresh();
+
+    lamp = false;
   }
 
   /**
@@ -166,6 +168,8 @@ class MILFRemnantsMixSong extends Song
     // Properly reset lights and collision when restarting the song.
     this.hardResetSong();
     PlayState.instance.currentStage.refresh();
+
+    if (lamp) lamp = false;
   }
 
   override function onGameOver(event:ScriptEvent):Void
@@ -177,6 +181,11 @@ class MILFRemnantsMixSong extends Song
     PlayState.instance.currentStage.refresh();
 
     PlayState.instance.camHUD.alpha = 0;
+
+    if (!lamp) return;
+    FlxTween.tween(PlayState.instance.currentStage.getBoyfriend(), {x: PlayState.instance.currentStage.getBoyfriend().originalPosition.x + 1000}, 0.4);
+    FlxTween.tween(PlayState.instance.currentStage.getBoyfriend(), {y: PlayState.instance.currentStage.getBoyfriend().originalPosition.y + 700}, 0.4);
+    FlxTween.tween(PlayState.instance.currentStage.getBoyfriend(), {angle: 360}, 0.4);
   }
 
   function onCountdownStart(event:ScriptEvent)
@@ -199,6 +208,13 @@ class MILFRemnantsMixSong extends Song
   {
     var results:Array<String> = super.listAltInstrumentalIds(difficultyId, variationId);
     var hasBeatenRemnantsMix = Save.instance.hasBeatenSong(this.id, null, this.variation);
+
+    if (difficultyId == 'easy' || difficultyId == 'normal' || difficultyId == 'hard')
+    {
+      var hasBeatenDefault = Save.instance.hasBeatenSong(this.id, null, null);
+      if (!hasBeatenDefault) results = [for (id in results) if (id != '') id];
+    }
+
     if (hasBeatenRemnantsMix) return results;
   }
 
@@ -206,6 +222,7 @@ class MILFRemnantsMixSong extends Song
   {
     super.onNoteHit(event);
 
+    if (lamp) lamp = false;
     if (PlayState.instance.currentStage == null) return;
     if (event.note.noteData.getMustHitNote() && event.note.kind == 'week4-lightpole')
     {
@@ -595,6 +612,7 @@ class MILFRemnantsMixSong extends Song
 
       // Play the miss animation.
       PlayState.instance.currentStage.getBoyfriend().playAnimation('hit', true, false);
+      lamp = true;
     }
   }
 

@@ -10,6 +10,7 @@ import flixel.tweens.FlxEase;
 import flixel.math.FlxMath;
 import flixel.FlxG;
 import funkin.FunkinMemory;
+import flixel.effects.FlxFlicker;
 
 class DadRemnantsCharacter extends AnimateAtlasCharacter
 {
@@ -22,6 +23,11 @@ class DadRemnantsCharacter extends AnimateAtlasCharacter
    * Extra offset factor for kicking.
    */
   var curKickOffset:Float = 0;
+
+  /**
+   * Dick Kicker!
+   */
+  var kick:Bool = false;
 
   /**
    * Super serect :eyes:
@@ -50,11 +56,13 @@ class DadRemnantsCharacter extends AnimateAtlasCharacter
     if (frameNumber <= 3)
     {
       curKickOffset *= FlxEase.quintOut(frameNumber / 3);
+      kick = true;
       trace(curKickOffset);
     }
     else if (frameNumber >= 6 && frameNumber <= 14)
     {
       curKickOffset *= (1 - FlxEase.quadInOut(FlxMath.remapToRange(frameNumber, 6, 14, 0, 1)));
+      kick = false;
       trace(curKickOffset);
     }
   }
@@ -62,8 +70,17 @@ class DadRemnantsCharacter extends AnimateAtlasCharacter
   override function getScreenPosition(?result:FlxPoint, ?camera:FlxCamera):FlxPoint
   {
     var output:FlxPoint = super.getScreenPosition(result, camera);
-    output.x += curKickOffset; // BUG: This sometimes messes with the secret slip tween and I dont really know how this thingy works so womp womp
+    output.x += curKickOffset;
     return output;
+  }
+
+  function onGameOver(event:ScriptEvent):Void
+  {
+    super.onGameOver(event);
+
+    if (!kick) return;
+    FlxTween.tween(PlayState.instance.currentStage.getBoyfriend(), {x: PlayState.instance.currentStage.getBoyfriend().originalPosition.x + 1500}, 0.3);
+    FlxTween.tween(PlayState.instance.currentStage.getBoyfriend(), {angle: 180}, 0.3);
   }
 
   var dadFade:FunkinSprite;
@@ -101,6 +118,11 @@ class DadRemnantsCharacter extends AnimateAtlasCharacter
     super.onPause(event);
     if (fadeTween != null) fadeTween.active = false;
     if (slip) FlxTweenUtil.pauseTweensOf(PlayState.instance.currentStage.getDad());
+    if (dadFlicker != null)
+    {
+      dadFlicker.pause();
+      this.visible = true;
+    }
     FlxG.camera?.active = false;
   }
 
@@ -109,6 +131,11 @@ class DadRemnantsCharacter extends AnimateAtlasCharacter
     super.onResume(event);
     if (fadeTween != null) fadeTween.active = true;
     if (slip) FlxTweenUtil.resumeTweensOf(PlayState.instance.currentStage.getDad());
+    if (dadFlicker != null)
+    {
+      dadFlicker.resume();
+      this.visible = true;
+    }
     FlxG.camera?.active = true;
   }
 
@@ -147,11 +174,31 @@ class DadRemnantsCharacter extends AnimateAtlasCharacter
     super.onNoteHit(event);
   }
 
+  var dadFlicker:FlxFlicker = null;
+
+  override function onAnimationFinished(name:String)
+  {
+    super.onAnimationFinished(name);
+
+    if (name == 'hit')
+    {
+      // ERIC: You have to use super instead of this or it breaks.
+      // This is because typeof(this) is PolymodAbstractClass.
+      dadFlicker = FlxFlicker.flicker(super, 1, 1 / 30, true, true, function(_) {
+        dadFlicker = FlxFlicker.flicker(super, 0.5, 1 / 60, true, true, function(_) {
+          dadFlicker = null;
+        });
+      });
+    }
+  }
+
   function onCreate(event:ScriptEvent):Void
   {
     super.onCreate(event);
 
     FunkinMemory.cacheSound(Paths.sound('crash', "week1"));
+
+    kick = false;
     slip = false;
   }
 
@@ -159,6 +206,7 @@ class DadRemnantsCharacter extends AnimateAtlasCharacter
   {
     super.onSongRetry(event);
 
+    if (kick) kick = false;
     if (slip) this.visible = false;
   }
 

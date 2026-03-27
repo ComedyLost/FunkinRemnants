@@ -23,6 +23,29 @@ class TwoHOTRemnantsMixSong extends Song
     hasPlayedCutscene = false;
   }
 
+  public override function isSongNew(currentDifficulty:String, currentVariation:String):Bool
+  {
+    if (currentVariation == 'remnants') return !Save.instance.hasBeatenSong(this.id, null, this.variation);
+    return false;
+  }
+
+  public override function listAltInstrumentalIds(difficultyId:String, variationId:String):Array<String>
+  {
+    var results:Array<String> = super.listAltInstrumentalIds(difficultyId, variationId);
+    var hasBeatenRemnantsMix = Save.instance.hasBeatenSong(this.id, null, this.variation);
+
+    if (difficultyId == 'easy' || difficultyId == 'normal' || difficultyId == 'hard')
+    {
+      var hasBeatenRemnantsBFMix = Save.instance.hasBeatenSong(this.id, null, 'bfremnants');
+      if (!hasBeatenRemnantsBFMix) results = [for (id in results) if (id != 'bfremnants') id];
+
+      var hasBeatenDefault = Save.instance.hasBeatenSong(this.id, null, null);
+      if (!hasBeatenDefault) results = [for (id in results) if (id != '') id];
+    }
+
+    if (hasBeatenRemnantsMix) return results;
+  }
+
   function onCreate(event:ScriptEvent)
   {
     super.onCreate(event);
@@ -31,12 +54,6 @@ class TwoHOTRemnantsMixSong extends Song
     FunkinMemory.cacheTexture(Paths.image("CanImpactParticle"));
     FunkinMemory.cacheTexture(Paths.image("spraypaintExplosionEZ"));
     FunkinMemory.cacheTexture(Paths.image("remnants/spraycans/spraycanAtlas/spritemap1"));
-  }
-
-  public override function isSongNew(currentDifficulty:String, currentVariation:String):Bool
-  {
-    if (currentVariation == 'remnants') return !Save.instance.hasBeatenSong(this.id, null, this.variation);
-    return false;
   }
 
   function onSongRetry(event:ScriptEvent)

@@ -1,20 +1,16 @@
 import flixel.FlxG;
 import funkin.util.HapticUtil;
-import funkin.graphics.FunkinSprite;
-import funkin.audio.FunkinSound;
 import funkin.play.PauseSubState;
-import funkin.play.character.MultiSparrowCharacter;
+import funkin.play.character.MultiAnimateAtlasCharacter;
 import funkin.play.GameOverSubState;
 import funkin.play.PlayState;
 import funkin.Preferences;
-import flixel.tweens.FlxEase;
-import flixel.tweens.FlxTween;
 
-class BoyfriendRemnantsHoldingGFCharacter extends MultiSparrowCharacter
+class BoyfriendRemnantsHoldingGFRemnantsCharacter extends MultiAnimateAtlasCharacter
 {
   function new()
   {
-    super('bf-remnants-holding-gf');
+    super('bf-remnants-holding-gf-remnants');
   }
 
   function onCreate(event:ScriptEvent)

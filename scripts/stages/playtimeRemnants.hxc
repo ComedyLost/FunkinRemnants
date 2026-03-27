@@ -45,11 +45,6 @@ class PlaytimeRmenantsStage extends Stage
   {
     super.onCreate(event);
 
-    zara = FunkinSprite.create(-400, 2500);
-    zara.loadGraphic(Paths.image('remnants/ZaraBopper', 'week5'));
-    zara.cameras = [PlayState.instance.camGame];
-    PlayState.instance.add(zara);
-
     if (!RemnantsOptions.getPerformanceOption())
     {
       rainShader.scale = FlxG.height / 300; // Increase rain scale

@@ -1,39 +1,42 @@
-import flixel.effects.FlxFlicker;
 import flixel.FlxG;
-import flixel.group.FlxTypedSpriteGroup;
 import flixel.tweens.FlxTween;
 import flixel.util.FlxTimer;
 import funkin.audio.FunkinSound;
 import funkin.graphics.FunkinSprite;
-import funkin.modding.base.ScriptedFunkinSprite;
-import funkin.modding.module.ModuleHandler;
-import funkin.play.character.CharacterType;
-import flixel.graphics.FlxGraphic;
-import funkin.play.character.MultiAnimateAtlasCharacter;
+import flixel.group.FlxTypedSpriteGroup;
+import funkin.play.character.PicoPlayerBaseCharacter;
 import funkin.play.GameOverSubState;
 import funkin.play.PauseSubState;
+import flixel.effects.FlxFlicker;
+import funkin.util.HapticUtil;
 import funkin.play.PlayState;
 import funkin.util.Constants;
-import funkin.util.HapticUtil;
-import funkin.Preferences;
 import funkin.FunkinMemory;
+import funkin.Preferences;
 
 using StringTools;
 
-class PicoRemnantsPlayerCharacter extends MultiAnimateAtlasCharacter
+class PicoRemnantsPlayerCharacter extends PicoPlayerBaseCharacter
 {
+  override function get_CACHE_IMAGE_PATHS():Array<String>
+  {
+    return [
+      "characters/neneKnife-remnants",
+      "shared:characters/pico-remnants/explosion-death/spritemap1",
+      "weekend1:remnants/spraycans/PicoBullet"
+    ];
+  }
+
   function new()
   {
     super('pico-remnants-playable');
-    ignoreExclusionPref.push("shoot");
+
     ignoreExclusionPref.push("fire");
   }
 
-  function onCreate(event:ScriptEvent)
+  override function onCreate(event:ScriptEvent)
   {
-    super.onCreate(event);
-
-    // NOTE: this.x and this.y are not properly set here.
+    super.onCreate(event); // Pico becomes a haxel logo without this super for some reason
 
     GameOverSubState.musicSuffix = '-remnants-pico';
     GameOverSubState.blueBallSuffix = '-pico';
@@ -41,16 +44,7 @@ class PicoRemnantsPlayerCharacter extends MultiAnimateAtlasCharacter
 
     PauseSubState.musicSuffix = '-remnants-pico';
 
-    // Precache images and sounds.
-    var imgs:Array<String> = [
-      "characters/neneKnife-remnants",
-      "shared:characters/pico-remnants/explosion-death/spritemap1",
-      "weekend1:remnants/spraycans/PicoBullet"
-    ];
-
-    var snds:Array<String> = ["singed_loop", "Gun_Prep", "Pico_Bonk", "shot1", "shot2", "shot3", "shot4"];
-
-    for (img in imgs)
+    for (img in CACHE_IMAGE_PATHS)
     {
       var lib:String = Paths.getLibrary(img);
       var file:String = Paths.stripLibrary(img);
@@ -67,20 +61,18 @@ class PicoRemnantsPlayerCharacter extends MultiAnimateAtlasCharacter
     // We don't need these sounds outside of Weekend 1.
     if (Paths.currentLevel == "weekend1")
     {
-      for (snd in snds)
+      for (snd in CACHE_SOUND_PATHS)
       {
         FunkinMemory.cacheSound(Paths.sound(snd, "weekend1"));
       }
     }
   }
 
-  var deathSpriteNene:FunkinSprite;
-
   /**
      * Initialize and cache sprites used for the death animation,
    * for use later.
    */
-  function createDeathSprites()
+  override function createDeathSprites()
   {
     deathSpriteNene = FunkinSprite.createSparrow(0, 0, "characters/neneKnife-remnants");
     var gf = PlayState.instance?.currentStage.getGirlfriend();
@@ -94,58 +86,9 @@ class PicoRemnantsPlayerCharacter extends MultiAnimateAtlasCharacter
     });
   }
 
-  function onNoteHit(event:HitNoteScriptEvent)
+  override function playAnimation(name:String, restart:Bool = false, ignoreOther:Bool = false, reversed:Bool = false):Void
   {
-    if (event.eventCanceled)
-    {
-      // onNoteHit event was cancelled by the gameplay module.
-      return;
-    }
-
-    // Override the hit note animation.
-    switch (event.note.kind)
-    {
-      case "hey":
-        holdTimer = 0;
-        this.playAnimation('hey', true, true);
-        return;
-      case "cheer":
-        holdTimer = 0;
-        this.playAnimation('cheer', true, true);
-        return;
-      case "censor":
-        holdTimer = 0;
-        this.playSingAnimation(event.note.noteData.getDirection(), false, 'censor');
-        return;
-      case "weekend-1-cockgun": // HE'S PULLING HIS COCK OUT
-        holdTimer = 0;
-        playCockGunAnim();
-      case "weekend-1-firegun":
-        holdTimer = 0;
-        playFireGunAnim();
-      default:
-        super.onNoteHit(event);
-    }
-  }
-
-  function onNoteMiss(event:NoteScriptEvent)
-  {
-    // Override the miss note animation.
-    switch (event.note.kind)
-    {
-      case "weekend-1-cockgun":
-        // playCockMissAnim();
-      case "weekend-1-firegun":
-        playCanExplodeAnim();
-      default:
-        super.onNoteMiss(event);
-    }
-  }
-
-  function playAnimation(name:String, restart:Bool, ignoreOther:Bool)
-  {
-    // restore vocal volume to ensure burps always play
-    // not needed on the dark variant because this one always exists anyway..
+    // restore vocal volume to ensure emotes always play
     if (name == "hey" || name == "cheer" || name == "burpSmile" || name == "burpSmileLong" || name == "burpShit") PlayState.instance?.vocals?.playerVolume = 1;
 
     // Bugfix!
@@ -173,25 +116,12 @@ class PicoRemnantsPlayerCharacter extends MultiAnimateAtlasCharacter
       doExplosionConfirm();
     }
 
-    super.playAnimation(name, restart, ignoreOther);
+    super.playAnimation(name, restart, ignoreOther, reversed);
   }
-
-  var picoFlicker:FlxFlicker = null;
 
   override function onAnimationFinished(name:String)
   {
     super.onAnimationFinished(name);
-
-    if (name == 'shootMISS' && PlayState.instance.health > 0.0 && !PlayState.instance.isPlayerDying)
-    {
-      // ERIC: You have to use super instead of this or it breaks.
-      // This is because typeof(this) is PolymodAbstractClass.
-      picoFlicker = FlxFlicker.flicker(super, 1, 1 / 30, true, true, function(_) {
-        picoFlicker = FlxFlicker.flicker(super, 0.5, 1 / 60, true, true, function(_) {
-          picoFlicker = null;
-        });
-      });
-    }
 
     if (name == 'firstDeath-explosion')
     {
@@ -204,11 +134,6 @@ class PicoRemnantsPlayerCharacter extends MultiAnimateAtlasCharacter
     super.onPause(event);
 
     if (fadeTween != null) fadeTween.active = false;
-    if (picoFlicker != null)
-    {
-      picoFlicker.pause();
-      this.visible = true;
-    }
   }
 
   public override function onResume(event:ScriptEvent)
@@ -216,10 +141,6 @@ class PicoRemnantsPlayerCharacter extends MultiAnimateAtlasCharacter
     super.onResume(event);
 
     if (fadeTween != null) fadeTween.active = true;
-    if (picoFlicker != null)
-    {
-      picoFlicker.resume();
-    }
   }
 
   public override function getDeathCameraOffsets():Array<Float>
@@ -234,7 +155,7 @@ class PicoRemnantsPlayerCharacter extends MultiAnimateAtlasCharacter
     return [result[0], result[1]];
   }
 
-  function doExplosionDeath():Void
+  override function doExplosionDeath():Void
   {
     if (picoFlicker != null)
     {
@@ -255,30 +176,8 @@ class PicoRemnantsPlayerCharacter extends MultiAnimateAtlasCharacter
     new FlxTimer().start(3.0, afterPicoDeathExplosionIntro);
   }
 
-  var singed:FunkinSound;
-
-  function afterPicoDeathExplosionIntro(timer:FlxTimer):Void
-  {
-    // Start the (standard) death music, 3.5 seconds after the explosion starts,
-    // not when the explosion sound finishes or when the loop starts.
-    GameOverSubState.instance.startDeathMusic(1.0, false);
-    singed = FunkinSound.load(Paths.sound('singed_loop'), true, false, true);
-    // singed.fadeIn(0.5, 0.3, 1.0);
-  }
-
-  function doExplosionConfirm():Void
-  {
-    if (singed != null)
-    {
-      singed.stop();
-      singed = null;
-    }
-  }
-
   override function onSongRetry(event:ScriptEvent):Void
   {
-    super.onSongRetry(event);
-
     // Don't let these pile up.
     clearCasings();
 
@@ -289,10 +188,8 @@ class PicoRemnantsPlayerCharacter extends MultiAnimateAtlasCharacter
     PauseSubState.musicSuffix = '-remnants-pico';
   }
 
-  function onAnimationFrame(name:String, frameNumber:Int, frameIndex:Int)
+  override function onAnimationFrame(name:String, frameNumber:Int, frameIndex:Int)
   {
-    super.onAnimationFrame(name, frameNumber, frameIndex);
-
     if (name == "firstDeath" && frameNumber == 36 - 1)
     {
       GameOverSubState.instance.startDeathMusic(1.0, false);
@@ -307,7 +204,7 @@ class PicoRemnantsPlayerCharacter extends MultiAnimateAtlasCharacter
       createCasing();
     }
 
-    if (!HapticUtil.hapticsAvailable) return;
+    if (!HapticUtil.hapticsAvailable || GameOverSubState.blueBallSuffix == '-pico-explode-remnants') return;
 
     // Pico falls on his back.
     if (name == 'firstDeath' && frameNumber == 20)
@@ -325,9 +222,7 @@ class PicoRemnantsPlayerCharacter extends MultiAnimateAtlasCharacter
     }
   }
 
-  var casingGroup:FlxTypedSpriteGroup;
-
-  function createCasing():Void
+  override function createCasing():Void
   {
     if (casingGroup == null)
     {
@@ -338,24 +233,13 @@ class PicoRemnantsPlayerCharacter extends MultiAnimateAtlasCharacter
       addToStage(casingGroup);
     }
 
-    var casing = ScriptedFunkinSprite.init('CasingSpriteRemnants', 0, 0);
+    var casing = new CasingSpriteRemnants(0, 0);
     if (casing != null) casingGroup.add(casing);
   }
 
-  function clearCasings():Void
-  {
-    // Clear the casing group.
-    if (casingGroup != null)
-    {
-      casingGroup.clear();
-      casingGroup = null;
-    }
-  }
-
-  var picoFade:FunkinSprite;
   var fadeTween:FlxTween;
 
-  function playCockGunAnim():Void
+  override function playCockGunAnim():Void
   {
     this.playAnimation('cock', true, true);
     FunkinSound.playOnce(Paths.sound('Gun_Prep'), 1);
@@ -387,7 +271,7 @@ class PicoRemnantsPlayerCharacter extends MultiAnimateAtlasCharacter
   /**
    * Play the animations where Pico shoots the can successfully.
    */
-  function playFireGunAnim():Void
+  override function playFireGunAnim():Void
   {
     if (FlxG.random.bool(50))
     {
@@ -399,58 +283,5 @@ class PicoRemnantsPlayerCharacter extends MultiAnimateAtlasCharacter
     }
 
     FunkinSound.playOnce(Paths.soundRandom('shot', 1, 4));
-  }
-
-  /**
-   * Play the animation where Pico is hit by the exploding can.
-   */
-  function playCanExplodeAnim():Void
-  {
-    this.playAnimation('shootMISS', true, true);
-    // Donk.
-    FunkinSound.playOnce(Paths.sound('Pico_Bonk'), 1.0);
-  }
-
-  function addToStage(sprite:FunkinSprite):Void
-  {
-    if (this.debug)
-    {
-      // We are in the chart editor or something.
-      // TODO: Make this work properly.
-    }
-    else if (PlayState.instance?.currentStage != null)
-    {
-      PlayState.instance.currentStage.add(sprite);
-    }
-    else
-    {
-      trace('Could not add Pico sprite to stage.');
-    }
-  }
-
-  function getDeathQuote():Null<String>
-  {
-    switch (PlayState.instance?.currentStage?.getDad()?.characterId)
-    {
-      case "tankman":
-        var randomCensor:Array<Int> = [];
-
-        if (!Preferences.naughtyness)
-        {
-          // 4 - fucking
-          // 7 - goddamn, ass
-          // 8 - fuck
-          // 9 - ass, bitch
-          randomCensor = [4, 7, 8, 9];
-        }
-        else if (Constants.CENSOR_EXPLETIVES)
-        {
-          randomCensor = [4, 8];
-        }
-
-        return Paths.sound('jeffGameover-pico/jeffGameover-' + FlxG.random.int(1, 10, randomCensor));
-      default:
-        return null;
-    }
   }
 }

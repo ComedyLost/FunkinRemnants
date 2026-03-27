@@ -1,7 +1,5 @@
 import funkin.graphics.FunkinSprite;
-import funkin.modding.module.ModuleHandler;
 import funkin.modding.base.ScriptedFunkinSprite;
-import funkin.play.cutscene.VideoCutscene;
 import flixel.text.FlxTextBorderStyle;
 import funkin.data.song.SongRegistry;
 import funkin.ui.FullScreenScaleMode;
@@ -26,16 +24,8 @@ class DarnellRemnantsMixSong extends Song
   var cutsceneSkipped:Bool = false;
   var canSkipCutscene:Bool = false;
 
-  // Cutscene sounds
-  var canKnee:FunkinSound;
-  var canKick:FunkinSound;
-  var fireLight:FunkinSound;
-
-  var gunCock:FunkinSound; // Devious sound name...
-  var gunShoot:FunkinSound;
-
-  var darnellLaugh:FunkinSound;
-  var neneLaugh:FunkinSound;
+  var cutsceneSprites:Array<FunkinSprite>;
+  var cutsceneSounds:Array<FunkinSound>;
 
   //
   var cutsceneTimerManager:FlxTimerManager;
@@ -65,11 +55,25 @@ class DarnellRemnantsMixSong extends Song
   {
     var results:Array<String> = super.listAltInstrumentalIds(difficultyId, variationId);
     var hasBeatenRemnantsMix = Save.instance.hasBeatenSong(this.id, null, this.variation);
+
     if (difficultyId == 'easy' || difficultyId == 'normal' || difficultyId == 'hard')
     {
+      var hasBeatenBFRemnantsMix = Save.instance.hasBeatenSong(this.id, null, 'bfremnants');
+      if (!hasBeatenBFRemnantsMix) results = [for (id in results) if (id != 'bfremnants') id];
+
+      var hasBeatenDefault = Save.instance.hasBeatenSong(this.id, null, null);
+      if (!hasBeatenDefault) results = [for (id in results) if (id != '') id];
+
       var hasBeatenBFMix = Save.instance.hasBeatenSong(this.id, null, 'bf');
-      if (!hasBeatenBFMix) results.remove('bf');
+      if (!hasBeatenBFMix) results = [for (id in results) if (id != 'bf') id];
+
+      var hasBeatenLumoraMix = Save.instance.hasBeatenSong(this.id, null, 'lumora'); // Trust the process
+      if (!hasBeatenLumoraMix) results = [for (id in results) if (id != 'lumora') id];
+
+      var hasBeatenOwenMix = Save.instance.hasBeatenSong(this.id, null, 'owenthemc');
+      if (!hasBeatenOwenMix) results = [for (id in results) if (id != 'owenthemc') id];
     }
+
     if (hasBeatenRemnantsMix) return results;
   }
 
@@ -133,6 +137,8 @@ class DarnellRemnantsMixSong extends Song
     ];
 
     var cutsceneDelay:Float = 2;
+    cutsceneSprites = [];
+    cutsceneSounds = [];
 
     cutsceneMusic = FunkinSound.load(Paths.music("darnellCanCutscene/darnellCanCutscene", "weekend1"), true);
     cutsceneMusic.volume = 1;
@@ -152,6 +158,7 @@ class DarnellRemnantsMixSong extends Song
     cutsceneCan.animation.addByPrefix('up', "can kicked up0", 24, false);
     PlayState.instance.currentStage.add(cutsceneCan);
     cutsceneCan.visible = false;
+    cutsceneSprites.push(cutsceneCan);
 
     var spraycanPile = PlayState.instance.currentStage.getNamedProp('spraycanPile');
     cutsceneCan.x = spraycanPile.x + 30;
@@ -169,6 +176,7 @@ class DarnellRemnantsMixSong extends Song
       PlayState.instance.currentStage.add(newCan);
       PlayState.instance.currentStage.refresh();
       newCan.visible = false;
+      cutsceneSprites.push(newCan);
     }
     PlayState.instance.currentStage.getBoyfriend().playAnimation('intro1', true, false);
 
@@ -195,9 +203,10 @@ class DarnellRemnantsMixSong extends Song
 
     // darnell lights up a can
     new FlxTimer(cutsceneTimerManager).start(cutsceneDelay + 3, function(_) {
-      fireLight = FunkinSound.load(Paths.sound('Darnell_Lighter'), 1);
+      var fireLight:FunkinSound = FunkinSound.load(Paths.sound('Darnell_Lighter'), 1);
       fireLight.volume = 1;
       fireLight.play(false);
+      cutsceneSounds.push(fireLight);
 
       PlayState.instance.currentStage.getDad().playAnimation('lightCan', true, false);
     });
@@ -207,18 +216,20 @@ class DarnellRemnantsMixSong extends Song
       PlayState.instance.currentStage.getBoyfriend().playAnimation('cock', true, false);
       PlayState.instance.tweenCameraToPosition(darnellPos[0] + 180, darnellPos[1], 0.4, FlxEase.backOut);
 
-      gunCock = FunkinSound.load(Paths.sound('Gun_Prep'), 1);
+      var gunCock:FunkinSound = FunkinSound.load(Paths.sound('Gun_Prep'), 1);
       gunCock.volume = 1;
       gunCock.play(false);
+      cutsceneSounds.push(gunCock);
     });
 
     // darnell kicks the can up
     new FlxTimer(cutsceneTimerManager).start(cutsceneDelay + 4.4, function(_) {
       PlayState.instance.currentStage.getDad().playAnimation('kickCan', true, false);
 
-      canKnee = FunkinSound.load(Paths.sound('Kick_Can_UP'), 1);
+      var canKnee:FunkinSound = FunkinSound.load(Paths.sound('Kick_Can_UP'), 1);
       canKnee.volume = 1;
       canKnee.play(false);
+      cutsceneSounds.push(canKnee);
 
       cutsceneCan.animation.play('up');
       cutsceneCan.visible = true;
@@ -228,9 +239,10 @@ class DarnellRemnantsMixSong extends Song
     new FlxTimer(cutsceneTimerManager).start(cutsceneDelay + 4.9, function(_) {
       PlayState.instance.currentStage.getDad().playAnimation('kneeCan', true, false);
 
-      canKick = FunkinSound.load(Paths.sound('Kick_Can_FORWARD'), 1);
+      var canKick:FunkinSound = FunkinSound.load(Paths.sound('Kick_Can_FORWARD'), 1);
       canKick.volume = 1;
       canKick.play(false);
+      cutsceneSounds.push(canKick);
 
       cutsceneCan.animation.play('forward');
     });
@@ -244,9 +256,10 @@ class DarnellRemnantsMixSong extends Song
       canSkipCutscene = false;
       FlxTween.tween(skipText, {alpha: 0}, 0.5, {ease: FlxEase.quadOut});
 
-      gunShoot = FunkinSound.load(Paths.soundRandom('shot', 1, 4), 1);
+      var gunShoot:FunkinSound = FunkinSound.load(Paths.soundRandom('shot', 1, 4), 1);
       gunShoot.volume = 1;
       gunShoot.play(false);
+      cutsceneSounds.push(gunShoot);
 
       PlayState.instance.tweenCameraToPosition(darnellPos[0] + 100, darnellPos[1], 1, FlxEase.quadInOut);
 
@@ -261,18 +274,20 @@ class DarnellRemnantsMixSong extends Song
     new FlxTimer(cutsceneTimerManager).start(cutsceneDelay + 5.9, function(_) {
       PlayState.instance.currentStage.getDad().playAnimation('laughCutscene', true, false);
 
-      darnellLaugh = FunkinSound.load(Paths.sound('cutscene/remnants/darnell_laugh'), 0.6);
+      var darnellLaugh:FunkinSound = FunkinSound.load(Paths.sound('cutscene/remnants/darnell_laugh'), 0.6);
       darnellLaugh.volume = 0.6;
       darnellLaugh.play(false);
+      cutsceneSounds.push(darnellLaugh);
     });
 
     // nene spits and laughs
     new FlxTimer(cutsceneTimerManager).start(cutsceneDelay + 6.2, function(_) {
       PlayState.instance.currentStage.getGirlfriend().playAnimation('laughCutscene', true, false);
 
-      neneLaugh = FunkinSound.load(Paths.sound('cutscene/remnants/nene_laugh'), 0.6);
+      var neneLaugh:FunkinSound = FunkinSound.load(Paths.sound('cutscene/remnants/nene_laugh'), 0.6);
       neneLaugh.volume = 0.6;
       neneLaugh.play(false);
+      cutsceneSounds.push(neneLaugh);
     });
 
     // camera returns to normal, cutscene flags set and countdown starts.
@@ -378,17 +393,22 @@ class DarnellRemnantsMixSong extends Song
       skipText = null;
     }
 
-    canKnee?.stop();
-    canKick?.stop();
-    fireLight?.stop();
-
     cutsceneMusic?.stop();
+    cutsceneMusic?.destroy();
+    cutsceneMusic = null;
 
-    gunCock?.stop();
-    gunShoot?.stop();
+    while (cutsceneSounds.length > 0)
+    {
+      var sound:FunkinSound = cutsceneSounds.shift();
+      sound.stop();
+      sound.destroy();
+    }
 
-    darnellLaugh?.stop();
-    neneLaugh?.stop();
+    while (cutsceneSprites.length > 0)
+    {
+      var sprite:FunkinSprite = cutsceneSprites.shift();
+      sprite.destroy();
+    }
 
     PlayState.instance.isInCutscene = false;
     PlayState.instance.mayPauseGame = true;

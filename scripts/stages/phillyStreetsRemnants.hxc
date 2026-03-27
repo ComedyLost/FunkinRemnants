@@ -20,6 +20,8 @@ class PhillyStreetsRemnantsStage extends Stage
   var rainShader:RuntimeRainShader = new RuntimeRainShader();
   var rainShaderFilter:ShaderFilter;
 
+  public var paper:StageProp = null;
+
   var paperInterruptable:Bool = true;
 
   // as song goes on, these are used to make the rain more intense throught the song
@@ -32,6 +34,7 @@ class PhillyStreetsRemnantsStage extends Stage
 
   // The paper X finish position.
   var END_X:Float = -900;
+  var END_X_SECRET:Float = -1600;
 
   function new()
   {
@@ -48,6 +51,8 @@ class PhillyStreetsRemnantsStage extends Stage
   override function onCreate(event:ScriptEvent):Void
   {
     super.onCreate(event);
+
+    paperInterruptable = true;
 
     if (!RemnantsOptions.getPerformanceOption())
     {
@@ -156,6 +161,9 @@ class PhillyStreetsRemnantsStage extends Stage
       PlayState.instance.currentStage.add(mist5);
       PlayState.instance.currentStage.refresh(); // Apply z-index.
     }
+
+    paper = getNamedProp('paper');
+    addSkeleton();
   }
 
   override public function addCharacter(character:BaseCharacter, charType:CharacterType):Void
@@ -164,11 +172,33 @@ class PhillyStreetsRemnantsStage extends Stage
 
     if (character.characterId.startsWith('gf') && charType == CharacterType.GF)
     {
-      character.x += 120;
-      character.y += 40;
+      character.x += 75;
       character.originalPosition.x = character.x;
-      character.originalPosition.y = character.y;
     }
+  }
+
+  /**
+   * Adds "Woah did you see that?" to the frame collection.
+   *
+   * Til Fun Fact: Did you know that graphics come with a frame collection? I forgot about it until now!
+   */
+  public function addSkeleton():Void
+  {
+    var graphic:FlxGraphic = FlxG.bitmap.add(Paths.image('remnants/paper-secret'), false);
+
+    // Make sure that the cache system knows that this graphic exists.
+    if (!paper.frames.usedGraphics.contains(graphic))
+    {
+      paper.frames.pushFrame(graphic.imageFrame.frame, true);
+
+      paper.frames.usedGraphics.push(graphic);
+      graphic.incrementUseCount();
+    }
+
+    // Since this "frame" doesn't have a name, I need to add it by the location in the Array.
+    // This is actually what health icons do too, surprisingly enough.
+    var index:Int = paper.frames.frames.indexOf(graphic.imageFrame.frame);
+    paper.animation.add('paperBlow-secret', [index], 1, false);
   }
 
   var _timer:Float = 0;
@@ -208,18 +238,19 @@ class PhillyStreetsRemnantsStage extends Stage
   {
     super.onBeatHit(event);
 
-    var paper = getNamedProp('paper');
     if (FlxG.random.bool(1.5) && paperInterruptable)
     {
       if (paper != null)
       {
+        var skeleton:Bool = FlxG.random.bool(1); // Did you guys see that? https://x.com/shoppingcart_r/status/2023625177154695661
+
         paper.alpha = 1;
         paperInterruptable = false;
-        paper.animation.play('paperBlow', true);
+        paper.animation.play(skeleton ? 'paperBlow-secret' : 'paperBlow', true);
         paper.y = 608 + FlxG.random.float(-100, 150);
 
         // Do the tween.
-        FlxTween.tween(paper, {x: END_X}, FlxG.random.float(4.5, 5),
+        FlxTween.tween(paper, {x: skeleton ? END_X_SECRET : END_X}, FlxG.random.float(4.5, 5),
           {
             ease: FlxEase.sineInOut,
             onComplete: function(twn) {
@@ -233,22 +264,15 @@ class PhillyStreetsRemnantsStage extends Stage
   public override function onPause(event:PauseScriptEvent)
   {
     super.onPause(event);
-    var paper = getNamedProp('paper');
-    if (paper != null)
-    {
-      FlxTweenUtil.pauseTweensOf(paper);
-    }
+
+    if (paper != null) FlxTweenUtil.pauseTweensOf(paper);
   }
 
   public override function onResume(event:ScriptEvent)
   {
     super.onResume(event);
 
-    var paper = getNamedProp('paper');
-    if (paper != null)
-    {
-      FlxTweenUtil.resumeTweensOf(paper);
-    }
+    if (paper != null) FlxTweenUtil.resumeTweensOf(paper);
   }
 
   override function onGameOver(event:ScriptEvent):Void
@@ -276,9 +300,7 @@ class PhillyStreetsRemnantsStage extends Stage
 
   function resetPaper()
   {
-    var paper = getNamedProp('paper');
     paperInterruptable = true;
-    paper?.alpha = 0; // Making sure.
 
     if (paper != null)
     {

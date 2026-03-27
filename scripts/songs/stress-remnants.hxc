@@ -12,7 +12,6 @@ import funkin.modding.events.ScriptEventDispatcher;
 import funkin.modding.events.SongTimeScriptEvent;
 import funkin.play.character.CharacterType;
 import funkin.data.song.SongRegistry;
-import funkin.modding.module.ModuleHandler;
 import funkin.modding.base.ScriptedFunkinSprite;
 import funkin.ui.FullScreenScaleMode;
 import funkin.Conductor;
@@ -113,7 +112,7 @@ class StressRemnantsMixSong extends Song
     if (tankmanGroup != null)
     {
       // resets the tankmen!
-      tankmanGroup.scriptCall('reset');
+      tankmanGroup.reset(0, 0);
 
       tankmanGroup.zIndex = 30;
       PlayState.instance.currentStage.add(tankmanGroup);
@@ -166,7 +165,7 @@ class StressRemnantsMixSong extends Song
     cutsceneTimerManager = new FlxTimerManager();
     cutsceneSounds = [];
 
-    cutsceneMusic = FunkinSound.load(Paths.music("klaskiiRomper/klaskiiRomper", "week7"), 0, true);
+    cutsceneMusic = FunkinSound.load(Paths.music("klaskiiRomper-remnants/klaskiiRomper-remnants", "week7"), 0, true);
     cutsceneSounds.push(cutsceneMusic);
 
     if (PlayState.instance.subtitles != null)
@@ -217,7 +216,7 @@ class StressRemnantsMixSong extends Song
     PlayState.instance.currentStage.getGirlfriend().visible = false;
     PlayState.instance.currentStage.getBoyfriend().visible = false;
 
-    fakeGirlfriend = CharacterDataParser.fetchCharacter('gf-tankmen-remnants');
+    fakeGirlfriend = CharacterDataParser.fetchCharacter('gf-remnants-tankmen');
     setupCharacter(fakeGirlfriend, CharacterType.GF);
     PlayState.instance.currentStage.add(fakeGirlfriend);
 
@@ -603,14 +602,10 @@ class StressRemnantsMixSong extends Song
 
     hasPlayedCutscene = true;
 
-    if (PlayState.instance.currentStage.scriptGet('storm0').alpha > 0
-      && !RemnantsOptions.getPerformanceOption()) PlayState.instance.currentStage.stormOff(1);
+    if (PlayState.instance.currentStage.scriptGet('storm0').alpha > 0) PlayState.instance.currentStage.stormOff(1);
 
     // resets the tankmen!
-    if (tankmanGroup != null)
-    {
-      tankmanGroup.scriptCall('reset');
-    }
+    tankmanGroup?.reset(0, 0);
 
     if (PlayState.instance.currentStage?.getGirlfriend() != null)
     {
@@ -624,8 +619,7 @@ class StressRemnantsMixSong extends Song
     super.onGameOver(event);
     sequence?.destroy();
 
-    if (PlayState.instance.currentStage.scriptGet('storm0').alpha > 0
-      && !RemnantsOptions.getPerformanceOption()) PlayState.instance.currentStage.stormOff(0);
+    if (PlayState.instance.currentStage.scriptGet('storm0').alpha > 0) PlayState.instance.currentStage.stormOff(0);
   }
 
   function kill():Void

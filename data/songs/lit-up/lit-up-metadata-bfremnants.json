@@ -3,22 +3,16 @@
   "songName": "Lit Up (BF Remnants Mix)",
   "artist": "LunarzNova",
   "charter": "RhysRJJ",
-  "timeFormat": "ms",
-  "divisions": 96,
-  "offsets": { "instrumental": 0 },
-  "timeChanges": [{ "t": 0, "bpm": 176, "n": 4, "d": 4, "bt": [4, 4, 4, 4] }],
-  "looped": false,
+  "offsets": {},
   "playData": {
-    "songVariations": [],
     "difficulties": ["easy", "normal", "hard"],
     "characters": {
       "player": "bf-remnants",
       "girlfriend": "gf-remnants",
       "opponent": "darnell-remnants",
       "instrumental": "bfremnants",
-      "playerVocals": ["bf-remnants"],
       "opponentVocals": ["darnell-remnants"],
-      "altInstrumentals": []
+      "playerVocals": ["bf-remnants"]
     },
     "stage": "phillyStreetsRemnants",
     "noteStyle": "funkin",
@@ -26,7 +20,6 @@
     "album": "remnants",
     "stickerPack": "remnants-weekend1"
   },
-  "previewStart": 0,
-  "previewEnd": 15000,
-  "generatedBy": "LeGooey (By Hand)"
+  "generatedBy": "Friday Night Funkin' - v0.8.3 (develop : ec868f8) PROTOTYPE",
+  "timeChanges": [{ "t": 0, "b": 0, "bpm": 176, "bt": [4, 4, 4, 4] }]
 }

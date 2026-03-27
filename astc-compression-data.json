@@ -18,22 +18,6 @@
       "blocksize": "4x4"
     },
     {
-      "asset": "shared/images/holdCoverBlue_corruption.png",
-      "blocksize": "4x4"
-    },
-    {
-      "asset": "shared/images/holdCoverGreen_corruption.png",
-      "blocksize": "4x4"
-    },
-    {
-      "asset": "shared/images/holdCoverPurple_corruption.png",
-      "blocksize": "4x4"
-    },
-    {
-      "asset": "shared/images/holdCoverRed_corruption.png",
-      "blocksize": "4x4"
-    },
-    {
       "asset": "shared/images/noteSplashes_corruption.png",
       "blocksize": "4x4"
     },

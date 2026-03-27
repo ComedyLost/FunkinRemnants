@@ -3,7 +3,6 @@ import funkin.play.song.Song;
 import funkin.play.PlayState;
 import funkin.util.FlxTweenUtil;
 import flixel.tweens.FlxTween;
-import flixel.tweens.FlxEase;
 import funkin.util.SongSequence;
 import funkin.Conductor;
 

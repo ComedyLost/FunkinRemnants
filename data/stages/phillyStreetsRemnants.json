@@ -130,18 +130,18 @@
   "characters": {
     "bf": {
       "zIndex": 300,
-      "cameraOffsets": [-550, -180],
-      "position": [2082.5, 1411]
+      "cameraOffsets": [-550, -175],
+      "position": [2076.5, 1390]
     },
     "gf": {
       "zIndex": 100,
-      "position": [1315, 1310],
+      "position": [1341, 1314],
       "cameraOffsets": [0, 0]
     },
     "dad": {
       "zIndex": 200,
-      "cameraOffsets": [300, -125],
-      "position": [950, 1550]
+      "cameraOffsets": [311, -210.5],
+      "position": [928, 1509]
     }
   },
   "name": "Philly Streets (Remnants)",

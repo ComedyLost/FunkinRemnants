@@ -1,17 +1,18 @@
 import flixel.FlxG;
 import flixel.util.FlxTimer;
 import flixel.tweens.FlxTween;
-import funkin.modding.module.ModuleHandler;
 import funkin.graphics.FunkinSprite;
 import funkin.audio.FunkinSound;
 import funkin.play.song.Song;
 import funkin.play.PlayState;
 import funkin.save.Save;
+import funkin.util.SongSequence;
+import funkin.Conductor;
 
 class BlazinRemnantsMixSong extends Song
 {
   var gigacut:Bool = false;
-  var gigadone:Bool = false;
+  var sequence:SongSequence;
 
   public function new()
   {
@@ -24,6 +25,12 @@ class BlazinRemnantsMixSong extends Song
     this.hasPlayedCutscene = false;
   }
 
+  public override function isSongNew(currentDifficulty:String, currentVariation:String):Bool
+  {
+    if (currentVariation == 'remnants') return !Save.instance.hasBeatenSong(this.id, null, this.variation);
+    return false;
+  }
+
   function onCreate(event:ScriptEvent):Void
   {
     super.onCreate(event);
@@ -31,27 +38,14 @@ class BlazinRemnantsMixSong extends Song
     this.hasHidden = false;
     this.hasPlayedCutscene = false;
     gigacut = false;
-    gigadone = false;
-  }
-
-  function onCountdownStart(event:ScriptEvent):Void
-  {
-    super.onCountdownStart(event);
-
-    gigacut = FlxG.random.bool(25);
   }
 
   function onDestroy(event:ScriptEvent):Void
   {
     super.onDestroy(event);
+    sequence?.destroy();
 
     this.hasHidden = false;
-  }
-
-  public override function isSongNew(currentDifficulty:String, currentVariation:String):Bool
-  {
-    if (currentVariation == 'remnants') return !Save.instance.hasBeatenSong(this.id, null, this.variation);
-    return false;
   }
 
   var hasHidden = false;
@@ -92,11 +86,34 @@ class BlazinRemnantsMixSong extends Song
     }
   }
 
+  function onSongLoaded(event:SongLoadScriptEvent)
+  {
+    sequence?.destroy();
+
+    var sequenceData = [
+      {
+        time: Conductor.instance.getBeatTimeInMs(343) / 1000,
+        callback: () -> {
+          gigacut = FlxG.random.bool(25);
+        }
+      },
+    ];
+
+    sequence = new SongSequence(sequenceData);
+    sequence.startTime = 0;
+  }
+
+  function onGameOver(event:ScriptEvent):Void
+  {
+    super.onGameOver(event);
+    sequence?.destroy();
+  }
+
   override function onSongRetry()
   {
     if (picoTimer != null) picoTimer.cancel(); // KILL IT!
 
-    if (!gigadone) return;
+    if (!gigacut) return;
     FlxG.camera.fade(0xFF000000, 1, true);
     PlayState.instance.disableKeys = false;
     PlayState.instance.currentStage.getDad().velocity.y = 0;
@@ -104,7 +121,7 @@ class BlazinRemnantsMixSong extends Song
     PlayState.instance.currentStage.getBoyfriend().velocity.y = 0;
     PlayState.instance.currentStage.getBoyfriend().velocity.x = 0;
     PlayState.instance.currentStage.getBoyfriend().visible = true;
-    gigadone = false;
+    gigacut = false;
   }
 
   function onNoteHit(event:HitNoteScriptEvent):Void // Super awesome easter egg good ending
@@ -119,7 +136,6 @@ class BlazinRemnantsMixSong extends Song
         FunkinSound.playOnce(Paths.sound('gameplay/secret/goodEnd'), 1);
         FunkinSound.playOnce(Paths.sound('gameplay/secret/secret', "shared"), 1);
         gigaPicoPunch();
-        gigadone = true;
     }
   }
 
@@ -146,7 +162,6 @@ class BlazinRemnantsMixSong extends Song
 
         gigaDarnellPunch();
         PlayState.instance.disableKeys = true;
-        gigadone = true;
 
         picoTimer = new FlxTimer().start(3, function() {
           PlayState.instance.disableKeys = false;

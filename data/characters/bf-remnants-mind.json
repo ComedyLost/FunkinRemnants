@@ -1,7 +1,14 @@
 {
+  "version": "1.0.1",
+  "name": "Remnants BF (Mind)",
+  "offsets": [12, 2],
+  "cameraOffsets": [-13, 36.5],
+  "danceEvery": 1,
+  "scale": 1,
+  "flipX": true,
+  "isPixel": false,
+  "singTime": 8.0,
   "renderType": "multianimateatlas",
-  "offsets": [0, 0],
-  "applyStageMatrix": false,
   "death": {
     "cameraZoom": 0.95,
     "cameraOffsets": [0, -75]
@@ -15,20 +22,12 @@
     "id": "bf-remnants",
     "flipX": false
   },
-  "version": "1.0.1",
-  "danceEvery": 2,
-  "scale": 1,
-  "name": "Remnants BF (Mind)",
-  "cameraOffsets": [0, -50],
-  "flipX": true,
-  "isPixel": false,
-  "singTime": 8,
   "atlasSettings": {
     "applyStageMatrix": false,
     "useRenderTexture": false,
     "filterQuality": 1,
     "cacheOnLoad": false,
-    "swfMode": true
+    "swfMode": false
   },
   "animations": [
     {
@@ -150,24 +149,21 @@
     },
     {
       "assetPath": "shared:characters/bf-remnants/death",
-      "animType": "framelabel",
       "name": "firstDeath",
-      "prefix": "Death",
+      "prefix": "Death Intro",
       "offsets": [7, 93]
     },
     {
       "assetPath": "shared:characters/bf-remnants/death",
-      "animType": "framelabel",
       "name": "deathLoop",
-      "prefix": "Loop Death",
+      "prefix": "Death Loop",
       "looped": true,
       "offsets": [7, 93]
     },
     {
       "assetPath": "shared:characters/bf-remnants/death",
       "name": "deathConfirm",
-      "animType": "framelabel",
-      "prefix": "Retry",
+      "prefix": "Death Confirm",
       "offsets": [7, 93]
     }
   ]

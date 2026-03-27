@@ -4,5 +4,6 @@
   "artists": ["Funkin' Remnants Mix Team"],
   "albumArtAsset": "freeplay/albumRoll/remnants-placeholder",
   "albumTitleAsset": "freeplay/albumRoll/remnants-text",
-  "albumTitleOffsets": [-15, 0]
+  "albumTitleOffsets": [-15, 0],
+  "albumOSTName": "REMNANTS OST"
 }
