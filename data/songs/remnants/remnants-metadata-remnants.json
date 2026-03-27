@@ -1,0 +1,27 @@
+{
+  "version": "2.2.4",
+  "songName": "Remnants! (Remnants Mix)",
+  "artist": "fishgarden",
+  "charter": "Sammy The Goog",
+  "offsets": {},
+  "playData": {
+    "difficulties": ["easy", "normal", "hard"],
+    "characters": {
+      "player": "bf-remnants",
+      "girlfriend": "podium-girls",
+      "opponent": "bf-prototype-opponent",
+      "instrumental": "remnants",
+      "altInstrumentals": [""],
+      "opponentVocals": ["bf-prototype-opponent"],
+      "playerVocals": ["bf-remnants"]
+    },
+    "stage": "sketchRemnants",
+    "noteStyle": "funkin",
+    "ratings": { "easy": 2, "normal": 3, "hard": 4 },
+    "album": "remnants",
+    "stickerPack": "remnants-test",
+    "previewEnd": 15000
+  },
+  "generatedBy": "Friday Night Funkin' - v0.8.3 (develop : ec868f8) PROTOTYPE",
+  "timeChanges": [{ "t": 0, "b": 0, "bpm": 140, "bt": [4, 4, 4, 4] }]
+}
