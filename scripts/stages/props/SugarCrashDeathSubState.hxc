@@ -1,0 +1,52 @@
+import funkin.graphics.video.FunkinVideoSprite;
+import funkin.ui.MusicBeatSubState;
+import funkin.play.PlayState;
+
+class SugarCrashDeathSubState extends MusicBeatSubState
+{
+  var video:FunkinSprite;
+
+  override public function create():Void
+  {
+    PlayState.instance.persistentUpdate = false;
+    PlayState.instance.persistentDraw = false;
+
+    cameras = [PlayState.instance.camCutscene];
+    super.create();
+
+    video = new FunkinVideoSprite();
+    video.bitmap.onFormatSetup.add(() -> {
+      video.setGraphicSize(FlxG.initialWidth, FlxG.initialHeight);
+      video.updateHitbox();
+      video.screenCenter();
+    });
+
+    add(video);
+
+    video.bitmap.onEndReached.add(() -> {
+      close();
+    });
+
+    var filePath:String = Paths.videos("fuck you more dark offsets.mp4");
+    if (video.load(filePath)) video.play();
+  }
+
+  override public function update(elapsed:Float):Void
+  {
+    if (controls.ACCEPT) close();
+    super.update(elapsed);
+  }
+
+  override function close():Void
+  {
+    PlayState.instance.needsReset = true;
+
+    PlayState.instance.persistentUpdate = true;
+    PlayState.instance.persistentDraw = true;
+
+    remove(video, true);
+    video.destroy();
+
+    super.close();
+  }
+}

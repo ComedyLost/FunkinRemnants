@@ -4,6 +4,7 @@
   "renderType": "animateatlas",
   "assetPath": "shared:characters/bf-remnants/pfp",
   "flipX": true,
+  "cameraOffsets": [0, -70],
   "healthIcon": {
     "id": "bf-remnants"
   },

@@ -5,28 +5,11 @@
   },
   "events": [
     {
-      "t": 0,
+      "t": -50000,
       "e": "FocusCamera",
       "v": {
-        "x": 80,
-        "duration": 4,
-        "y": 10,
         "char": 0,
-        "ease": "INSTANT",
-        "easeDir": "In"
-      }
-    },
-    {
-      "t": 0,
-      "e": "ZoomCamera",
-      "v": {
-        "duration": 4,
-        "widescreenScaleX": 0,
-        "widescreenScaleY": 0,
-        "ease": "INSTANT",
-        "easeDir": "In",
-        "zoom": 1.5,
-        "mode": "direct"
+        "ease": "INSTANT"
       }
     },
     {

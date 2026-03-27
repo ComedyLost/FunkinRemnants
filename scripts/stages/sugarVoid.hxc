@@ -1,0 +1,24 @@
+import funkin.play.stage.Stage;
+import funkin.play.PlayState;
+import funkin.play.Countdown;
+
+class SugarCrashVoidStage extends Stage
+{
+  public function new()
+  {
+    super("sugarVoid");
+  }
+
+  override public function onGameOver(event:ScriptEvent):Void
+  {
+    event.cancel();
+
+    PlayState.instance.isPlayerDying = true;
+    PlayState.instance.moveToGameOver();
+
+    // Replace the substate with our own.
+    PlayState.instance._requestedSubState = new SugarCrashDeathSubState();
+
+    super.onGameOver(event);
+  }
+}
