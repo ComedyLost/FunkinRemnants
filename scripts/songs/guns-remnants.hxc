@@ -130,7 +130,7 @@ class GunsRemnantsMixSong extends Song
     var dadPosition:FlxPoint = PlayState.instance.currentStage.getDadPosition();
     PlayState.instance.currentStage.getDad().visible = false;
 
-    tankmanCutscene = ScriptedFunkinSprite.init('TankCutsceneRemnants', dadPosition.x - 276, dadPosition.y - 695);
+    tankmanCutscene = ScriptedFunkinSprite.init('TankCutsceneRemnants', dadPosition.x - 316, dadPosition.y - 725);
     tankmanCutscene.zIndex = PlayState.instance.currentStage.getDad().zIndex;
     PlayState.instance.currentStage.add(tankmanCutscene);
     PlayState.instance.currentStage.refresh();
