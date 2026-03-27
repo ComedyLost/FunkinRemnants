@@ -91,7 +91,7 @@
       "position": [300, 300],
       "scale": [1, 1],
       "zIndex": 22,
-      "scroll": [0.45, 0.45],
+      "scroll": [0.45, 1.0],
       "animations": [
         { "name": "roll", "prefix": "BG extra tank w lighting", "looped": true }
       ],
@@ -103,7 +103,7 @@
       "position": [300, 300],
       "scale": [1, 1],
       "zIndex": 22,
-      "scroll": [0.5, 0.5],
+      "scroll": [0.5, 1.0],
       "animations": [
         { "name": "roll", "prefix": "BG tank w lighting", "looped": true }
       ],

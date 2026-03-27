@@ -253,12 +253,13 @@ class TankmanBattlefieldRemnantsStage extends Stage
     tankAngle += elapsed * tankSpeed;
     tankAngle2 += elapsed * tankSpeed2;
 
+    final TANK_Y:Int = 1425;
     var tankRolling = getNamedProp('tankRolling');
     if (tankRolling != null)
     {
       tankRolling.angle = tankAngle - 90 + 15;
       tankRolling.x = tankX + Math.cos(FlxAngle.asRadians((tankAngle * daAngleOffset) + 180)) * 1500;
-      tankRolling.y = 1300 + Math.sin(FlxAngle.asRadians((tankAngle * daAngleOffset) + 180)) * 1100;
+      tankRolling.y = TANK_Y + Math.sin(FlxAngle.asRadians((tankAngle * daAngleOffset) + 180)) * 1100;
     }
 
     var tankRollingExtra = getNamedProp('tankRollingExtra');
@@ -266,7 +267,7 @@ class TankmanBattlefieldRemnantsStage extends Stage
     {
       tankRollingExtra.angle = tankAngle2 - 90 + 15;
       tankRollingExtra.x = tankX + Math.cos(FlxAngle.asRadians((tankAngle2 * daAngleOffset) + 180)) * 1500;
-      tankRollingExtra.y = 1300 + Math.sin(FlxAngle.asRadians((tankAngle2 * daAngleOffset) + 180)) * 1100;
+      tankRollingExtra.y = TANK_Y + Math.sin(FlxAngle.asRadians((tankAngle2 * daAngleOffset) + 180)) * 1100;
     }
   }
 
