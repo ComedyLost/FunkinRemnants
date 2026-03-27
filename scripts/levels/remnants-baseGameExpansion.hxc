@@ -16,8 +16,8 @@ class RemnantsBaseGameExpansionLevel extends Level
   // Reveal the name after beating the week ;)
   override function getSongDisplayNames(difficultyId:String):Array<String>
   {
-    if (!Save.instance.hasBeatenSong('sugarcrash-remnants')) return ["???"];
+    if (!Save.instance.hasBeatenSong('sugarcrash-remnants')) return ["Ridge", "(Remnants Mix)", "Smash", "(Remnants Mix)"];
     else
-      return ["SugarCrash! (Remnants Mix)"];
+      return ["SugarCrash!", "(Remnants Mix)", "Remnants!", "(Remnants Mix)"];
   }
 }
