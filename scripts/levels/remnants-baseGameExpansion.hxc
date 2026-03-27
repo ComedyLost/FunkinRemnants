@@ -1,3 +1,4 @@
+import funkin.ui.story.StoryMenuState;
 import funkin.ui.story.Level;
 import funkin.save.Save;
 
@@ -8,16 +9,34 @@ class RemnantsBaseGameExpansionLevel extends Level
     super('remnants-baseGameExpansion');
   }
 
-  override function isUnlocked():Bool
+  override function isVisible():Bool
   {
-    return true;
+    return !Save.instance.hasBeatenLevel("remnants-baseGameExpansion");
   }
 
-  // Reveal the name after beating the week ;)
   override function getSongDisplayNames(difficultyId:String):Array<String>
   {
-    if (!Save.instance.hasBeatenSong('sugarcrash-remnants')) return ["Ridge", "(Remnants Mix)", "Smash", "(Remnants Mix)"];
-    else
-      return ["SugarCrash!", "(Remnants Mix)", "Remnants!", "(Remnants Mix)"];
+    return ["Ridge", "(Remnants Mix)", "Smash", "(Remnants Mix)"];
+  }
+
+  override public function getSongs():Array<String>
+  {
+    var songs:Array<String> = super.getSongs();
+
+    if (!Std.isOfType(FlxG.state, StoryMenuState))
+    {
+      if (Save.instance.hasBeatenLevel("remnants-baseGameExpansion"))
+      {
+        // We don't want multiple "Remnants!" entries in the Freeplay Menu.
+        songs.remove("remnants");
+      }
+      else
+      {
+        // Don't show the songs if the week hasn't been beaten yet.
+        songs = [];
+      }
+    }
+
+    return songs;
   }
 }

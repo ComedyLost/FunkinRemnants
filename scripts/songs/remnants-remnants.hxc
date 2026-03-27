@@ -1,3 +1,4 @@
+import funkin.play.PlayState;
 import funkin.play.song.Song;
 import funkin.save.Save;
 
@@ -9,6 +10,21 @@ class RemnantsRemnantsMixSong extends Song
       {
         variation: 'remnants'
       });
+  }
+
+  override public function onCreate(event:ScriptEvent):Void
+  {
+    // Workaround for forcing the variation in Story Mode.
+    PlayState.instance.currentInstrumental = "remnants";
+
+    super.onCreate(event);
+  }
+
+  override public function onCountdownStart(event:CountdownScriptEvent):Void
+  {
+    trace(PlayState.instance.currentInstrumental);
+
+    super.onCreate(event);
   }
 
   public function listDifficulties(variationId:String, variationIds:Array<String>, showLocked:Bool):Array<String>
