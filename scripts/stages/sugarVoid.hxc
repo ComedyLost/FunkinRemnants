@@ -9,6 +9,18 @@ class SugarCrashVoidStage extends Stage
     super("sugarVoid");
   }
 
+  override public function onCountdownStart(event:CountdownScriptEvent):Void
+  {
+    super.onCountdownStart(event);
+
+    if (PlayState.instance != null)
+    {
+      var bfPoint:FlxPoint = getBoyfriend().cameraFocusPoint;
+      PlayState.instance.cameraFollowPoint.setPosition(bfPoint.x, bfPoint.y);
+      PlayState.instance.resetCamera(true, true, true);
+    }
+  }
+
   override public function onGameOver(event:ScriptEvent):Void
   {
     event.cancel();
