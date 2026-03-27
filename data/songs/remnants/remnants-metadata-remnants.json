@@ -8,7 +8,7 @@
     "difficulties": ["easy", "normal", "hard"],
     "characters": {
       "player": "bf-remnants",
-      "girlfriend": "podium-girls",
+      "girlfriend": "podium-women",
       "opponent": "bf-prototype-opponent",
       "instrumental": "remnants",
       "altInstrumentals": [""],
