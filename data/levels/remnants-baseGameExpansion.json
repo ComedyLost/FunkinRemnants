@@ -7,7 +7,7 @@
     {
       "assetPath": "storymenu/props/remnantsbf",
       "scale": 0.8,
-      "offsets": [427.5, 36],
+      "offsets": [445, 39],
       "animations": [
         {
           "name": "idle",
