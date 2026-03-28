@@ -50,78 +50,41 @@ class GrievingRemnantsSong extends Song
       });
     }
 
+    var currentStage:Stage = PlayState.instance.currentStage;
+
     if (emotional)
     {
-      FlxTween.cancelTweensOf(PlayState.instance.currentStage.getBoyfriend());
-      FlxTween.cancelTweensOf(PlayState.instance.currentStage.getGirlfriend());
-      FlxTween.cancelTweensOf(PlayState.instance.currentStage.getDad());
-      FlxTween.cancelTweensOf(PlayState.instance.currentStage.getNamedProp('TheGrievingLands'));
+      for (character in currentStage.characters.iterator())
+      {
+        FlxTween.cancelTweensOf(character);
+        character.alpha = 1;
+      }
 
-      PlayState.instance.currentStage.getNamedProp('TheGrievingLands').alpha = 1;
-      PlayState.instance.currentStage.getGirlfriend().alpha = 1;
-      PlayState.instance.currentStage.getBoyfriend().alpha = 1;
-      PlayState.instance.currentStage.getDad().alpha = 1;
+      for (dataProp in currentStage._data.props)
+      {
+        var propSprite:StageProp = currentStage.getNamedProp(dataProp.name);
+        FlxTween.cancelTweensOf(propSprite);
+
+        propSprite.x = dataProp.position[0];
+        propSprite.y = dataProp.position[1];
+
+        switch (dataProp.scale)
+        {
+          case Left(value):
+            propSprite.scale.set(value, value);
+
+          case Right(values):
+            propSprite.scale.set(values[0], values[1]);
+        }
+        propSprite.updateHitbox();
+
+        propSprite.alpha = dataProp.alpha;
+
+        propSprite.scrollFactor.x = dataProp.scroll[0];
+        propSprite.scrollFactor.y = dataProp.scroll[1];
+      }
+
       emotional = false;
-
-      // Only reset the memories if they've been changed
-      if (PlayState.instance.currentStage.getNamedProp('Hangout').x != -2800)
-      {
-        FlxTween.cancelTweensOf(PlayState.instance.currentStage.getNamedProp('Hangout'));
-        PlayState.instance.currentStage.getNamedProp('Hangout').alpha = 0;
-        PlayState.instance.currentStage.getNamedProp('Hangout').setPosition(-2800, 200);
-
-        if (PlayState.instance.currentStage.getNamedProp('Hangout').scale != 3)
-        {
-          PlayState.instance.currentStage.getNamedProp('Hangout').scale.x = 3;
-          PlayState.instance.currentStage.getNamedProp('Hangout').scale.y = 3;
-        }
-      }
-
-      if (PlayState.instance.currentStage.getNamedProp('BOOBIES').x != 2650)
-      {
-        FlxTween.cancelTweensOf(PlayState.instance.currentStage.getNamedProp('BOOBIES'));
-        PlayState.instance.currentStage.getNamedProp('BOOBIES').alpha = 0;
-        PlayState.instance.currentStage.getNamedProp('BOOBIES').setPosition(2650, 50);
-
-        if (PlayState.instance.currentStage.getNamedProp('BOOBIES').scale != 3)
-        {
-          PlayState.instance.currentStage.getNamedProp('BOOBIES').scale.x = 3;
-          PlayState.instance.currentStage.getNamedProp('BOOBIES').scale.y = 3;
-        }
-      }
-
-      if (PlayState.instance.currentStage.getNamedProp('Lovers').x != -2950)
-      {
-        FlxTween.cancelTweensOf(PlayState.instance.currentStage.getNamedProp('Lovers'));
-        PlayState.instance.currentStage.getNamedProp('Lovers').alpha = 0;
-        PlayState.instance.currentStage.getNamedProp('Lovers').setPosition(-2950, 0);
-
-        if (PlayState.instance.currentStage.getNamedProp('Lovers').scale != 3)
-        {
-          PlayState.instance.currentStage.getNamedProp('Lovers').scale.x = 3;
-          PlayState.instance.currentStage.getNamedProp('Lovers').scale.y = 3;
-        }
-      }
-
-      if (PlayState.instance.currentStage.getNamedProp('Singing').x != 2600)
-      {
-        FlxTween.cancelTweensOf(PlayState.instance.currentStage.getNamedProp('Singing'));
-        PlayState.instance.currentStage.getNamedProp('Singing').alpha = 0;
-        PlayState.instance.currentStage.getNamedProp('Singing').setPosition(2600, -100);
-
-        if (PlayState.instance.currentStage.getNamedProp('Singing').scale != 3)
-        {
-          PlayState.instance.currentStage.getNamedProp('Singing').scale.x = 3;
-          PlayState.instance.currentStage.getNamedProp('Singing').scale.y = 3;
-        }
-      }
-
-      if (PlayState.instance.currentStage.getNamedProp('Sleeping').x != 2600)
-      {
-        FlxTween.cancelTweensOf(PlayState.instance.currentStage.getNamedProp('Sleeping'));
-        PlayState.instance.currentStage.getNamedProp('Sleeping').alpha = 0;
-        PlayState.instance.currentStage.getNamedProp('Sleeping').setPosition(2600, -600);
-      }
     }
 
     utterShock = FlxG.random.bool(1);
@@ -181,17 +144,18 @@ class GrievingRemnantsSong extends Song
     var playState:PlayState = PlayState.instance;
     var stage:Stage = playState?.currentStage;
 
-    playState?.camCutscene?.active = false;
-
     var props:Array<Dynamic> = [for (i in stage?.characters?.iterator() ?? []) i];
 
-    for (i in ['TheGrievingLands', 'Hangout', 'BOOBIES', 'Lovers', 'Singing', 'Sleeping'])
+    for (dataProp in stage?._data.props)
     {
-      props.push(stage.getNamedProp(i));
+      var prop:StageProp = stage.getNamedProp(dataProp.name);
+      props.push(prop);
     }
 
     for (i in props)
+    {
       FlxTweenUtil.pauseTweensOf(i);
+    }
   }
 
   function onResume(event:ScriptEvent):Void
@@ -200,17 +164,18 @@ class GrievingRemnantsSong extends Song
     var playState:PlayState = PlayState.instance;
     var stage:Stage = playState?.currentStage;
 
-    playState?.camCutscene?.active = true;
-
     var props:Array<Dynamic> = [for (i in stage?.characters?.iterator() ?? []) i];
 
-    for (i in ['TheGrievingLands', 'Hangout', 'BOOBIES', 'Lovers', 'Singing', 'Sleeping'])
+    for (dataProp in stage?._data.props)
     {
-      props.push(stage.getNamedProp(i));
+      var prop:StageProp = stage.getNamedProp(dataProp.name);
+      props.push(prop);
     }
 
     for (i in props)
+    {
       FlxTweenUtil.resumeTweensOf(i);
+    }
   }
 
   function onNoteHit(event:HitNoteScriptEvent)
@@ -280,14 +245,7 @@ class GrievingRemnantsSong extends Song
         time: Conductor.instance.getBeatTimeInMs(224) / 1000,
         callback: () -> {
           FlxTween.tween(PlayState.instance.currentStage.getDad(), {alpha: 1}, 2.57);
-          FlxTween.tween(PlayState.instance.currentStage.getNamedProp('Hangout'), {x: 1500}, 6.5);
-          FlxTween.tween(PlayState.instance.currentStage.getNamedProp('Hangout'), {alpha: 1}, 6.5,
-            {
-              ease: FlxEase.linear,
-              onComplete: (_) -> {
-                PlayState.instance.currentStage.getNamedProp('Hangout').alpha = 0;
-              }
-            });
+          tweenMemory('Hangout', 1500, 6.5);
         }
       },
 
@@ -300,15 +258,7 @@ class GrievingRemnantsSong extends Song
               ease: FlxEase.linear,
               onComplete: function(_) {
                 FlxTween.tween(PlayState.instance.currentStage.getBoyfriend(), {alpha: 1}, 1.71);
-
-                FlxTween.tween(PlayState.instance.currentStage.getNamedProp('BOOBIES'), {x: -1800}, 6.5);
-                FlxTween.tween(PlayState.instance.currentStage.getNamedProp('BOOBIES'), {alpha: 1}, 6.5,
-                  {
-                    ease: FlxEase.linear,
-                    onComplete: (_) -> {
-                      PlayState.instance.currentStage.getNamedProp('BOOBIES').alpha = 0;
-                    }
-                  });
+                tweenMemory('BOOBIES', -1800, 6.5);
               }
             });
         }
@@ -322,15 +272,7 @@ class GrievingRemnantsSong extends Song
               ease: FlxEase.linear,
               onComplete: function(_) {
                 FlxTween.tween(PlayState.instance.currentStage.getDad(), {alpha: 1}, 1.71);
-
-                FlxTween.tween(PlayState.instance.currentStage.getNamedProp('Lovers'), {x: 1500}, 6.5);
-                FlxTween.tween(PlayState.instance.currentStage.getNamedProp('Lovers'), {alpha: 1}, 6.5,
-                  {
-                    ease: FlxEase.linear,
-                    onComplete: (_) -> {
-                      PlayState.instance.currentStage.getNamedProp('Lovers').alpha = 0;
-                    }
-                  });
+                tweenMemory('Lovers', 1500, 6.5);
               }
             });
         }
@@ -344,15 +286,7 @@ class GrievingRemnantsSong extends Song
               ease: FlxEase.linear,
               onComplete: function(_) {
                 FlxTween.tween(PlayState.instance.currentStage.getBoyfriend(), {alpha: 1}, 1.71);
-
-                FlxTween.tween(PlayState.instance.currentStage.getNamedProp('Singing'), {x: -2300}, 6.5);
-                FlxTween.tween(PlayState.instance.currentStage.getNamedProp('Singing'), {alpha: 1}, 6.5,
-                  {
-                    ease: FlxEase.linear,
-                    onComplete: (_) -> {
-                      PlayState.instance.currentStage.getNamedProp('Singing').alpha = 0;
-                    }
-                  });
+                tweenMemory('Singing', -2300, 6.5);
               }
             });
         }
@@ -383,29 +317,16 @@ class GrievingRemnantsSong extends Song
           FlxTween.tween(PlayState.instance.currentStage.getGirlfriend(), {alpha: 0}, 1.71);
           emotional = true;
 
-          PlayState.instance.currentStage.getNamedProp('Hangout').scale.x = 5;
-          PlayState.instance.currentStage.getNamedProp('Hangout').scale.y = 5;
-          PlayState.instance.currentStage.getNamedProp('Hangout').setPosition(-3400, 100);
-          FlxTween.tween(PlayState.instance.currentStage.getNamedProp('Hangout'), {x: 3100}, 4.2);
-          FlxTween.tween(PlayState.instance.currentStage.getNamedProp('Hangout'), {alpha: 1}, 4.2,
-            {
-              ease: FlxEase.linear,
-              onComplete: (_) -> {
-                PlayState.instance.currentStage.getNamedProp('Hangout').alpha = 0;
-              }
-            });
+          var hangout:StageProp = PlayState.instance.currentStage.getNamedProp('Hangout');
+          var boobies:StageProp = PlayState.instance.currentStage.getNamedProp('BOOBIES');
+          for (prop in [hangout, boobies])
+            prop.scale.set(5, 5);
 
-          PlayState.instance.currentStage.getNamedProp('BOOBIES').scale.x = 5;
-          PlayState.instance.currentStage.getNamedProp('BOOBIES').scale.y = 5;
-          PlayState.instance.currentStage.getNamedProp('BOOBIES').setPosition(3150, 50);
-          FlxTween.tween(PlayState.instance.currentStage.getNamedProp('BOOBIES'), {x: -3550}, 4.2);
-          FlxTween.tween(PlayState.instance.currentStage.getNamedProp('BOOBIES'), {alpha: 1}, 4.2,
-            {
-              ease: FlxEase.linear,
-              onComplete: (_) -> {
-                PlayState.instance.currentStage.getNamedProp('BOOBIES').alpha = 0;
-              }
-            });
+          hangout.setPosition(-3400, 100);
+          tweenMemory('Hangout', 3100, 4.2);
+
+          boobies.setPosition(3150, 50);
+          tweenMemory('BOOBIES', -3550, 4.2);
         }
       },
 
@@ -419,119 +340,66 @@ class GrievingRemnantsSong extends Song
       {
         time: Conductor.instance.getBeatTimeInMs(357) / 1000,
         callback: () -> {
-          PlayState.instance.currentStage.getNamedProp('Lovers').scale.x = 5;
-          PlayState.instance.currentStage.getNamedProp('Lovers').scale.y = 5;
-          PlayState.instance.currentStage.getNamedProp('Lovers').setPosition(-3600, -50);
-          FlxTween.tween(PlayState.instance.currentStage.getNamedProp('Lovers'), {x: 3150}, 4.2);
-          FlxTween.tween(PlayState.instance.currentStage.getNamedProp('Lovers'), {alpha: 1}, 4.2,
-            {
-              ease: FlxEase.linear,
-              onComplete: (_) -> {
-                PlayState.instance.currentStage.getNamedProp('Lovers').alpha = 0;
-              }
-            });
+          var lovers:StageProp = PlayState.instance.currentStage.getNamedProp('Lovers');
+          var singing:StageProp = PlayState.instance.currentStage.getNamedProp('Singing');
+          for (prop in [lovers, singing])
+            prop.scale.set(5, 5);
 
-          PlayState.instance.currentStage.getNamedProp('Singing').scale.x = 5;
-          PlayState.instance.currentStage.getNamedProp('Singing').scale.y = 5;
-          PlayState.instance.currentStage.getNamedProp('Singing').setPosition(3100, -200);
-          FlxTween.tween(PlayState.instance.currentStage.getNamedProp('Singing'), {x: -4200}, 4.2);
-          FlxTween.tween(PlayState.instance.currentStage.getNamedProp('Singing'), {alpha: 1}, 4.2,
-            {
-              ease: FlxEase.linear,
-              onComplete: (_) -> {
-                PlayState.instance.currentStage.getNamedProp('Singing').alpha = 0;
-              }
-            });
+          lovers.setPosition(-3600, -50);
+          tweenMemory('Lovers', 3150, 4.2);
+
+          singing.setPosition(3100, -200);
+          tweenMemory('Singing', -4200, 4.2);
         }
       },
 
       {
         time: Conductor.instance.getBeatTimeInMs(362) / 1000,
         callback: () -> {
-          PlayState.instance.currentStage.getNamedProp('Hangout').setPosition(-3400, 100);
-          FlxTween.tween(PlayState.instance.currentStage.getNamedProp('Hangout'), {x: 3100}, 4.2);
-          FlxTween.tween(PlayState.instance.currentStage.getNamedProp('Hangout'), {alpha: 1}, 4.2,
-            {
-              ease: FlxEase.linear,
-              onComplete: (_) -> {
-                PlayState.instance.currentStage.getNamedProp('Hangout').alpha = 0;
-              }
-            });
+          var hangout:StageProp = PlayState.instance.currentStage.getNamedProp('Hangout');
+          var boobies:StageProp = PlayState.instance.currentStage.getNamedProp('BOOBIES');
 
-          PlayState.instance.currentStage.getNamedProp('BOOBIES').setPosition(3150, 50);
-          FlxTween.tween(PlayState.instance.currentStage.getNamedProp('BOOBIES'), {x: -3550}, 4.2);
-          FlxTween.tween(PlayState.instance.currentStage.getNamedProp('BOOBIES'), {alpha: 1}, 4.2,
-            {
-              ease: FlxEase.linear,
-              onComplete: (_) -> {
-                PlayState.instance.currentStage.getNamedProp('BOOBIES').alpha = 0;
-              }
-            });
+          hangout.setPosition(-3400, 100);
+          tweenMemory('Hangout', 3100, 4.2);
+
+          boobies.setPosition(3150, 50);
+          tweenMemory('BOOBIES', -3550, 4.2);
         }
       },
 
       {
         time: Conductor.instance.getBeatTimeInMs(367) / 1000,
         callback: () -> {
-          PlayState.instance.currentStage.getNamedProp('Lovers').setPosition(-3600, -50);
-          FlxTween.tween(PlayState.instance.currentStage.getNamedProp('Lovers'), {x: 3150}, 4.2);
-          FlxTween.tween(PlayState.instance.currentStage.getNamedProp('Lovers'), {alpha: 1}, 4.2,
-            {
-              ease: FlxEase.linear,
-              onComplete: (_) -> {
-                PlayState.instance.currentStage.getNamedProp('Lovers').alpha = 0;
-              }
-            });
+          var lovers:StageProp = PlayState.instance.currentStage.getNamedProp('Lovers');
+          lovers.setPosition(-3600, -50);
+          tweenMemory('Lovers', 3150, 4.2);
         }
       },
 
       {
         time: Conductor.instance.getBeatTimeInMs(372) / 1000,
         callback: () -> {
-          PlayState.instance.currentStage.getNamedProp('Hangout').setPosition(-3400, 100);
-          FlxTween.tween(PlayState.instance.currentStage.getNamedProp('Hangout'), {x: 3100}, 4.2);
-          FlxTween.tween(PlayState.instance.currentStage.getNamedProp('Hangout'), {alpha: 1}, 4.2,
-            {
-              ease: FlxEase.linear,
-              onComplete: (_) -> {
-                PlayState.instance.currentStage.getNamedProp('Hangout').alpha = 0;
-              }
-            });
+          var hangout:StageProp = PlayState.instance.currentStage.getNamedProp('Hangout');
+          var boobies:StageProp = PlayState.instance.currentStage.getNamedProp('BOOBIES');
 
-          PlayState.instance.currentStage.getNamedProp('BOOBIES').setPosition(3150, 50);
-          FlxTween.tween(PlayState.instance.currentStage.getNamedProp('BOOBIES'), {x: -3550}, 4.2);
-          FlxTween.tween(PlayState.instance.currentStage.getNamedProp('BOOBIES'), {alpha: 1}, 4.2,
-            {
-              ease: FlxEase.linear,
-              onComplete: (_) -> {
-                PlayState.instance.currentStage.getNamedProp('BOOBIES').alpha = 0;
-              }
-            });
+          hangout.setPosition(-3400, 100);
+          tweenMemory('Hangout', 3100, 4.2);
+
+          boobies.setPosition(3150, 50);
+          tweenMemory('BOOBIES', -3550, 4.2);
         }
       },
 
       {
         time: Conductor.instance.getBeatTimeInMs(377) / 1000,
         callback: () -> {
-          PlayState.instance.currentStage.getNamedProp('Lovers').setPosition(-3600, -50);
-          FlxTween.tween(PlayState.instance.currentStage.getNamedProp('Lovers'), {x: 3150}, 4.2);
-          FlxTween.tween(PlayState.instance.currentStage.getNamedProp('Lovers'), {alpha: 1}, 4.2,
-            {
-              ease: FlxEase.linear,
-              onComplete: (_) -> {
-                PlayState.instance.currentStage.getNamedProp('Lovers').alpha = 0;
-              }
-            });
+          var lovers:StageProp = PlayState.instance.currentStage.getNamedProp('Lovers');
+          lovers.setPosition(-3600, -50);
+          tweenMemory('BOOBIES', 3150, 4.2);
 
-          PlayState.instance.currentStage.getNamedProp('Singing').setPosition(3100, -200);
-          FlxTween.tween(PlayState.instance.currentStage.getNamedProp('Singing'), {x: -4200}, 4.2);
-          FlxTween.tween(PlayState.instance.currentStage.getNamedProp('Singing'), {alpha: 1}, 4.2,
-            {
-              ease: FlxEase.linear,
-              onComplete: (_) -> {
-                PlayState.instance.currentStage.getNamedProp('Singing').alpha = 0;
-              }
-            });
+          var singing:StageProp = PlayState.instance.currentStage.getNamedProp('Singing');
+          singing.setPosition(3100, -200);
+          tweenMemory('Singing', -4200, 4.2);
         }
       },
 
@@ -539,21 +407,28 @@ class GrievingRemnantsSong extends Song
         time: Conductor.instance.getBeatTimeInMs(384) / 1000,
         callback: () -> {
           FlxTween.tween(PlayState.instance.currentStage.getDad(), {alpha: 0}, 1.71);
-
-          FlxTween.tween(PlayState.instance.currentStage.getNamedProp('Sleeping'), {x: -2300}, 10);
-          FlxTween.tween(PlayState.instance.currentStage.getNamedProp('Sleeping'), {alpha: 1}, 10,
-            {
-              ease: FlxEase.linear,
-              onComplete: (_) -> {
-                PlayState.instance.currentStage.getNamedProp('Sleeping').alpha = 0;
-              }
-            });
+          tweenMemory('Sleeping', -2300, 10);
         }
       },
     ];
 
     sequence = new SongSequence(sequenceData);
     sequence.startTime = 0;
+  }
+
+  function tweenMemory(propName:String, x:Float, time:Float):Void
+  {
+    var prop:StageProp = PlayState.instance?.currentStage?.getNamedProp(propName);
+    if (prop == null) return;
+
+    prop.alpha = 0;
+    FlxTween.tween(prop, {x: x}, time);
+    FlxTween.tween(prop, {alpha: 1}, time,
+      {
+        onComplete: (_) -> {
+          prop.alpha = 0;
+        }
+      });
   }
 
   function onDestroy(event:ScriptEvent):Void
