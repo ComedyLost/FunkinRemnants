@@ -1,26 +1,24 @@
 {
   "version": "1.0.0",
-  "name": "BASE GAME EXPANSION",
+  "name": "REMNANTS BASE GAME EXPANSION",
   "titleAsset": "storymenu/titles/remnants",
   "capsule": { "name": "Expansion" },
   "props": [
     {
-      "assetPath": "storymenu/props/remnantsbf",
+      "assetPath": "storymenu/props/remnantsbfplayable",
       "scale": 0.8,
-      "offsets": [445, 39],
+      "offsets": [427, 37],
       "animations": [
         {
           "name": "idle",
           "prefix": "remnants bf idle",
-          "frameRate": 24,
-          "flipX": true
+          "frameRate": 24
         },
         {
           "name": "confirm",
           "prefix": "remnants bf hey",
-          "offsets": [5, 5],
-          "frameRate": 24,
-          "flipX": true
+          "offsets": [0, 5],
+          "frameRate": 24
         }
       ]
     }

@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="remnantsbfplayable.png">
+	<!-- Created with Adobe Animate version 24.0.3.19 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="remnants bf hey BLUE LINE0000" x="2" y="2" width="395" height="416" frameX="0" frameY="0" frameWidth="415" frameHeight="418"/>
+	<SubTexture name="remnants bf hey BLUE LINE0001" x="2" y="2" width="395" height="416" frameX="0" frameY="0" frameWidth="415" frameHeight="418"/>
+	<SubTexture name="remnants bf hey BLUE LINE0002" x="399" y="2" width="413" height="410" frameX="-1" frameY="-8" frameWidth="415" frameHeight="418"/>
+	<SubTexture name="remnants bf hey BLUE LINE0003" x="399" y="2" width="413" height="410" frameX="-1" frameY="-8" frameWidth="415" frameHeight="418"/>
+	<SubTexture name="remnants bf hey BLUE LINE0004" x="814" y="2" width="414" height="412" frameX="-1" frameY="-6" frameWidth="415" frameHeight="418"/>
+	<SubTexture name="remnants bf hey BLUE LINE0005" x="814" y="2" width="414" height="412" frameX="-1" frameY="-6" frameWidth="415" frameHeight="418"/>
+	<SubTexture name="remnants bf hey BLUE LINE0006" x="814" y="2" width="414" height="412" frameX="-1" frameY="-6" frameWidth="415" frameHeight="418"/>
+	<SubTexture name="remnants bf hey BLUE LINE0007" x="814" y="2" width="414" height="412" frameX="-1" frameY="-6" frameWidth="415" frameHeight="418"/>
+	<SubTexture name="remnants bf hey BLUE LINE0008" x="814" y="2" width="414" height="412" frameX="-1" frameY="-6" frameWidth="415" frameHeight="418"/>
+	<SubTexture name="remnants bf hey BLUE LINE0009" x="814" y="2" width="414" height="412" frameX="-1" frameY="-6" frameWidth="415" frameHeight="418"/>
+	<SubTexture name="remnants bf hey BLUE LINE0010" x="814" y="2" width="414" height="412" frameX="-1" frameY="-6" frameWidth="415" frameHeight="418"/>
+	<SubTexture name="remnants bf hey BLUE LINE0011" x="814" y="2" width="414" height="412" frameX="-1" frameY="-6" frameWidth="415" frameHeight="418"/>
+	<SubTexture name="remnants bf hey BLUE LINE0012" x="814" y="2" width="414" height="412" frameX="-1" frameY="-6" frameWidth="415" frameHeight="418"/>
+	<SubTexture name="remnants bf hey BLUE LINE0013" x="814" y="2" width="414" height="412" frameX="-1" frameY="-6" frameWidth="415" frameHeight="418"/>
+	<SubTexture name="remnants bf hey BLUE LINE0014" x="814" y="2" width="414" height="412" frameX="-1" frameY="-6" frameWidth="415" frameHeight="418"/>
+	<SubTexture name="remnants bf hey BLUE LINE0015" x="814" y="2" width="414" height="412" frameX="-1" frameY="-6" frameWidth="415" frameHeight="418"/>
+	<SubTexture name="remnants bf hey BLUE LINE0016" x="814" y="2" width="414" height="412" frameX="-1" frameY="-6" frameWidth="415" frameHeight="418"/>
+	<SubTexture name="remnants bf hey BLUE LINE0017" x="814" y="2" width="414" height="412" frameX="-1" frameY="-6" frameWidth="415" frameHeight="418"/>
+	<SubTexture name="remnants bf hey BLUE LINE0018" x="814" y="2" width="414" height="412" frameX="-1" frameY="-6" frameWidth="415" frameHeight="418"/>
+	<SubTexture name="remnants bf hey BLUE LINE0019" x="814" y="2" width="414" height="412" frameX="-1" frameY="-6" frameWidth="415" frameHeight="418"/>
+	<SubTexture name="remnants bf hey BLUE LINE0020" x="814" y="2" width="414" height="412" frameX="-1" frameY="-6" frameWidth="415" frameHeight="418"/>
+	<SubTexture name="remnants bf hey BLUE LINE0021" x="814" y="2" width="414" height="412" frameX="-1" frameY="-6" frameWidth="415" frameHeight="418"/>
+	<SubTexture name="remnants bf hey BLUE LINE0022" x="814" y="2" width="414" height="412" frameX="-1" frameY="-6" frameWidth="415" frameHeight="418"/>
+	<SubTexture name="remnants bf hey BLUE LINE0023" x="814" y="2" width="414" height="412" frameX="-1" frameY="-6" frameWidth="415" frameHeight="418"/>
+	<SubTexture name="remnants bf hey BLUE LINE0024" x="814" y="2" width="414" height="412" frameX="-1" frameY="-6" frameWidth="415" frameHeight="418"/>
+	<SubTexture name="remnants bf hey BLUE LINE0025" x="814" y="2" width="414" height="412" frameX="-1" frameY="-6" frameWidth="415" frameHeight="418"/>
+	<SubTexture name="remnants bf idle BLUE LINE0000" x="1230" y="2" width="406" height="391" frameX="-1" frameY="-21" frameWidth="411" frameHeight="412"/>
+	<SubTexture name="remnants bf idle BLUE LINE0001" x="1230" y="2" width="406" height="391" frameX="-1" frameY="-21" frameWidth="411" frameHeight="412"/>
+	<SubTexture name="remnants bf idle BLUE LINE0002" x="2" y="420" width="408" height="393" frameX="0" frameY="-19" frameWidth="411" frameHeight="412"/>
+	<SubTexture name="remnants bf idle BLUE LINE0003" x="2" y="420" width="408" height="393" frameX="0" frameY="-19" frameWidth="411" frameHeight="412"/>
+	<SubTexture name="remnants bf idle BLUE LINE0004" x="412" y="420" width="405" height="398" frameX="-3" frameY="-14" frameWidth="411" frameHeight="412"/>
+	<SubTexture name="remnants bf idle BLUE LINE0005" x="412" y="420" width="405" height="398" frameX="-3" frameY="-14" frameWidth="411" frameHeight="412"/>
+	<SubTexture name="remnants bf idle BLUE LINE0006" x="819" y="420" width="410" height="410" frameX="-1" frameY="-2" frameWidth="411" frameHeight="412"/>
+	<SubTexture name="remnants bf idle BLUE LINE0007" x="819" y="420" width="410" height="410" frameX="-1" frameY="-2" frameWidth="411" frameHeight="412"/>
+	<SubTexture name="remnants bf idle BLUE LINE0008" x="1231" y="420" width="408" height="412" frameX="-2" frameY="0" frameWidth="411" frameHeight="412"/>
+	<SubTexture name="remnants bf idle BLUE LINE0009" x="1231" y="420" width="408" height="412" frameX="-2" frameY="0" frameWidth="411" frameHeight="412"/>
+	<SubTexture name="remnants bf idle BLUE LINE0010" x="1231" y="420" width="408" height="412" frameX="-2" frameY="0" frameWidth="411" frameHeight="412"/>
+	<SubTexture name="remnants bf idle BLUE LINE0011" x="1231" y="420" width="408" height="412" frameX="-2" frameY="0" frameWidth="411" frameHeight="412"/>
+	<SubTexture name="remnants bf idle BLUE LINE0012" x="1231" y="420" width="408" height="412" frameX="-2" frameY="0" frameWidth="411" frameHeight="412"/>
+	<SubTexture name="remnants bf idle BLUE LINE0013" x="1231" y="420" width="408" height="412" frameX="-2" frameY="0" frameWidth="411" frameHeight="412"/>
+</TextureAtlas>
