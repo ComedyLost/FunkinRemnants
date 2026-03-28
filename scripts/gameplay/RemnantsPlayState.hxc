@@ -24,7 +24,7 @@ class RemnantsPlayState extends Module
     super.onCountdownStart(event);
 
     if (!RemnantsContentUtil.remnantsContentEnabled()) return;
-    this.legacyOpponentStrum();
+    #if !mobile this.legacyOpponentStrum(); #end
   }
 
   override function onUpdate(event:UpdateScriptEvent)
@@ -65,6 +65,7 @@ class RemnantsPlayState extends Module
     }
   }
 
+  #if !mobile
   function legacyOpponentStrum()
   {
     if (PlayState.instance == null) return;
@@ -81,4 +82,5 @@ class RemnantsPlayState extends Module
       }
     }
   }
+  #end
 }
