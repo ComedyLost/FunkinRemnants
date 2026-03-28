@@ -1,5 +1,6 @@
 import funkin.play.character.AnimateAtlasCharacter;
 import funkin.data.notestyle.NoteStyleRegistry;
+import openfl.filters.DropShadowFilter;
 import funkin.ui.FullScreenScaleMode;
 import funkin.play.notes.Strumline;
 import funkin.util.Constants;
@@ -17,6 +18,9 @@ class BFPrototypeOpponentCharacter extends AnimateAtlasCharacter
   override public function onCreate(event:ScriptEvent):Void
   {
     super.onCreate(event);
+
+    var dropShadowFilter:DropShadowFilter = new DropShadowFilter(0, 0, 0x000000, 1, 15, 15, 255);
+    filters = [dropShadowFilter];
 
     if (PlayState.instance != null)
     {
