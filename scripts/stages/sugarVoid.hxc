@@ -18,6 +18,8 @@ class SugarCrashVoidStage extends Stage
       var bfPoint:FlxPoint = getBoyfriend().cameraFocusPoint;
       PlayState.instance.cameraFollowPoint.setPosition(bfPoint.x, bfPoint.y);
       PlayState.instance.resetCamera(true, true, true);
+
+      PlayState.instance.opponentStrumline.visible = false;
     }
   }
 
