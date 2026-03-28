@@ -8,7 +8,8 @@
   "offsets": [1, -0.5],
   "singTime": 8.0,
   "atlasSettings": {
-    "swfMode": false
+    "swfMode": false,
+    "uniqueInCache": true
   },
   "animations": [
     {

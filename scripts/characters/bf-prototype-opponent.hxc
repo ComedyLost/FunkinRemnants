@@ -1,5 +1,6 @@
 import funkin.play.character.AnimateAtlasCharacter;
 import funkin.data.notestyle.NoteStyleRegistry;
+import funkin.play.character.CharacterType;
 import openfl.filters.DropShadowFilter;
 import funkin.ui.FullScreenScaleMode;
 import funkin.play.notes.Strumline;
@@ -21,6 +22,11 @@ class BFPrototypeOpponentCharacter extends AnimateAtlasCharacter
 
     var dropShadowFilter:DropShadowFilter = new DropShadowFilter(0, 0, 0x000000, 1, 15, 15, 255);
     filters = [dropShadowFilter];
+  }
+
+  override public function onAdd(event:ScriptEvent):Void
+  {
+    super.onAdd(event);
 
     if (PlayState.instance != null)
     {
@@ -31,21 +37,45 @@ class BFPrototypeOpponentCharacter extends AnimateAtlasCharacter
       strumline.onNoteIncoming.add(PlayState.instance.onStrumlineNoteIncoming);
       PlayState.instance.add(strumline);
 
-      final cutoutSize:Float = FullScreenScaleMode.gameCutoutSize.x / 2.5;
-      strumline.x = Constants.STRUMLINE_X_OFFSET + cutoutSize;
       strumline.y = Preferences.downscroll ? FlxG.height - strumline.height - Constants.STRUMLINE_Y_OFFSET - noteStyle.getStrumlineOffsets()[1] : Constants.STRUMLINE_Y_OFFSET;
+
+      final cutoutSize = FullScreenScaleMode.gameCutoutSize.x / 2.5;
+      strumline.x = switch (characterType)
+      {
+        case CharacterType.DAD:
+          Constants.STRUMLINE_X_OFFSET + cutoutSize;
+
+        default:
+          (FlxG.width / 2 + Constants.STRUMLINE_X_OFFSET) + (cutoutSize / 2.0);
+      }
 
       strumline.zIndex = 1000;
       strumline.cameras = [PlayState.instance.camHUD];
 
-      PlayState.instance.opponentStrumline.destroy();
-      PlayState.instance.opponentStrumline = strumline;
+      if (characterType == CharacterType.DAD)
+      {
+        PlayState.instance.opponentStrumline.destroy();
+        PlayState.instance.opponentStrumline = strumline;
+      }
+      else if (characterType == CharacterType.BF)
+      {
+        PlayState.instance.playerStrumline.destroy();
+        PlayState.instance.playerStrumline = strumline;
+      }
     }
   }
 
   override public function onCountdownStart(event:CountdownScriptEvent):Void
   {
-    for (arrow in PlayState.instance.opponentStrumline.strumlineNotes.members)
+    var strumline:Strumline = switch (characterType)
+    {
+      case CharacterType.DAD:
+        PlayState.instance?.opponentStrumline;
+      default:
+        PlayState.instance?.playerStrumline;
+    }
+
+    for (arrow in strumline?.strumlineNotes.members ?? [])
     {
       FlxTween.completeTweensOf(arrow);
     }
