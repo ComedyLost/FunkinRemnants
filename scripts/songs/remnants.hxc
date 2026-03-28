@@ -35,21 +35,6 @@ class RemnantsSong extends Song
     if (hasBeatenDefault) return results;
   }
 
-  override public function getFirstValidVariation(?diffId:String, ?currentCharacter:PlayableCharacter, ?possibleVariations:Array<String>):Null<String>
-  {
-    if (isRemnantsExpansionLevel()) return "remnants";
-    return super.getFirstValidVariation(diffId, currentCharacter, possibleVariations);
-  }
-
-  override public function hasDifficulty(diffId:String, ?variationId:String, ?variationIds:Array<String>):Bool
-  {
-    if (variationIds == null) variationIds = [];
-    if (variationId != null) variationIds.push(variationId);
-
-    if (variationIds.contains("default") && isRemnantsExpansionLevel()) return false;
-    return super.hasDifficulty(diffId, null, variationIds);
-  }
-
   public function listDifficulties(variationId:String, variationIds:Array<String>, showLocked:Bool):Array<String>
   {
     if (showLocked || Save.instance.hasBeatenSong(this.id, null, this.variation))
@@ -59,11 +44,6 @@ class RemnantsSong extends Song
 
     // Hide all difficulties if the player has not beaten the week.
     return [];
-  }
-
-  function isRemnantsExpansionLevel():Bool
-  {
-    return PlayStatePlaylist.isStoryMode && PlayStatePlaylist.campaignId == "remnants-baseGameExpansion";
   }
 
   function onCreate(event:ScriptEvent):Void

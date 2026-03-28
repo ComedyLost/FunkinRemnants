@@ -1,7 +1,10 @@
 {
   "version": "1.0.0",
-  "name": "MODS!!",
+  "name": "REMNANTS EXTRAS",
   "titleAsset": "storymenu/titles/remnants",
+  "capsule": {
+    "name": "Extras"
+  },
   "visible": false,
   "props": [],
   "background": "#D4DBED",

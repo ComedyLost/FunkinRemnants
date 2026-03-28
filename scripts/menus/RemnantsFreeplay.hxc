@@ -9,10 +9,14 @@ class RemnantFreeplay extends Module
   public function new()
   {
     super('remnantFreeplay', 1000, {state: FreeplayState});
-    changedTitles = false;
   }
 
-  var changedTitles:Bool = false;
+  function filterCapsules(levelId:String)
+  {
+    return FlxG.state.subState.grpCapsules.members.filter(function(cap:SongMenuItem) {
+      return cap != null && cap.alive && cap.freeplayData != null && [levelId].contains(cap.freeplayData.levelId);
+    });
+  }
 
   // Change the capsule title depending on the song!
   function getSongCapsuleTitle(songId:String):String
@@ -20,18 +24,18 @@ class RemnantFreeplay extends Module
     switch (songId)
     {
       case "glitcher-remnants":
-        return "week X";
+        return "Week X";
       case "tormentor-remnants":
-        return "boyfriend";
+        return "Boyfriend";
       case "playtime-remnants":
-        return "huggy";
+        return "Huggy";
       case "grieving-remnants":
-        return "epilogue";
+        return "Epilogue";
       default:
-        return "coolswag";
+        return "Coolswag";
     }
 
-    return "coolswag";
+    return "Colswag";
   }
 
   // Change the capsule offset depending on the song!
@@ -50,24 +54,17 @@ class RemnantFreeplay extends Module
   {
     super.onUpdate(event);
 
-    if (!changedTitles)
+    for (capsule in this.filterCapsules('remnants-modExtras'))
     {
-      var filteredCapsules:Array<SongMenuItem> = FlxG.state.subState.grpCapsules.members.filter(function(cap:SongMenuItem) {
-        return cap != null && cap.alive && cap.freeplayData != null && ["remnants-modExtras"].contains(cap.freeplayData.levelId);
-      });
+      if (capsule == null || !capsule.alive) continue;
 
-      for (capsule in filteredCapsules)
-      {
-        if (capsule == null || !capsule.alive) continue;
+      var weekType:String = getSongCapsuleTitle(capsule.freeplayData.songId);
 
-        var weekType:String = getSongCapsuleTitle(capsule.freeplayData.songId);
+      capsule.createWeekTextGraphic(weekType);
+      capsule.weekText.loadGraphic(FlxG.bitmap.get(weekType));
 
-        capsule.createWeekTextGraphic(weekType);
-        capsule.weekText.loadGraphic(FlxG.bitmap.get(weekType));
-
-        var weekTextOffsets:Array<Float> = getSongCapsuleOffset(capsule.freeplayData.songId);
-        capsule.weekText.offset.set(weekTextOffsets[0], weekTextOffsets[1]);
-      }
+      var weekTextOffsets:Array<Float> = getSongCapsuleOffset(capsule.freeplayData.songId);
+      capsule.weekText.offset.set(weekTextOffsets[0], weekTextOffsets[1]);
     }
   }
 }

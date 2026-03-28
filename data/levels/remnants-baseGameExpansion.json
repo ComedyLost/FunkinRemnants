@@ -2,27 +2,11 @@
   "version": "1.0.0",
   "name": "REMNANTS BASE GAME EXPANSION",
   "titleAsset": "storymenu/titles/remnantsexpansion",
-  "capsule": { "name": "Expansion" },
-  "props": [
-    {
-      "assetPath": "storymenu/props/remnantsbfplayable",
-      "scale": 0.8,
-      "offsets": [427, 37],
-      "animations": [
-        {
-          "name": "idle",
-          "prefix": "remnants bf idle",
-          "frameRate": 24
-        },
-        {
-          "name": "confirm",
-          "prefix": "remnants bf hey",
-          "offsets": [0, 5],
-          "frameRate": 24
-        }
-      ]
-    }
-  ],
-  "background": "#000000",
-  "songs": ["sugarcrash-remnants", "remnants"]
+  "capsule": {
+    "name": "Expansion"
+  },
+  "visible": false,
+  "props": [],
+  "background": "#D4DBED",
+  "songs": ["sugarcrash-remnants"]
 }
