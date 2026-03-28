@@ -10,6 +10,6 @@ class BFRemnantsPlayableCharacter extends PlayableCharacter
 
   override function isUnlocked():Bool
   {
-    return Save.instance.hasBeatenLevel('remnants-mainWeek1');
+    return Save.instance.hasBeatenSong('remnants');
   }
 }
