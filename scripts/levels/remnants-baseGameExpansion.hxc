@@ -11,7 +11,7 @@ class RemnantsBaseGameExpansionLevel extends Level
 
   override function isVisible():Bool
   {
-    return !Save.instance.hasBeatenLevel("remnants-baseGameExpansion");
+    return !Save.instance.hasBeatenSong("sugarcrash-remnants");
   }
 
   override function getSongDisplayNames(difficultyId:String):Array<String>
@@ -25,7 +25,7 @@ class RemnantsBaseGameExpansionLevel extends Level
 
     if (!Std.isOfType(FlxG.state, StoryMenuState))
     {
-      if (Save.instance.hasBeatenLevel("remnants-baseGameExpansion"))
+      if (Save.instance.hasBeatenSong("sugarcrash-remnants"))
       {
         // We don't want multiple "Remnants!" entries in the Freeplay Menu.
         songs.remove("remnants");
