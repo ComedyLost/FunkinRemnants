@@ -1,7 +1,7 @@
 {
   "version": "1.0.0",
   "name": "REMNANTS BASE GAME EXPANSION",
-  "titleAsset": "storymenu/titles/remnants",
+  "titleAsset": "storymenu/titles/remnantsexpansion",
   "capsule": { "name": "Expansion" },
   "props": [
     {
