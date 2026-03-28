@@ -86,7 +86,7 @@
       "default": "remnants-general",
       "erect": "remnants-general",
       "pico": "remnants-pico",
-      "remnants": "remnants-expansion"
+      "remnants": "remnants-remnants"
     },
     "sugarcrash-remnants": {
       "default": "remnants-expansion"
