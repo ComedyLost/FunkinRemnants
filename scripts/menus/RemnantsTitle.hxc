@@ -1,7 +1,8 @@
 import flixel.FlxSprite;
 import funkin.graphics.FunkinSprite;
 import funkin.modding.module.Module;
-import funkin.ui.FullScreenScaleMode import funkin.ui.title.TitleState;
+import funkin.ui.FullScreenScaleMode;
+import funkin.ui.title.TitleState;
 import flixel.tweens.FlxEase;
 import flixel.tweens.FlxTween;
 import Std;
