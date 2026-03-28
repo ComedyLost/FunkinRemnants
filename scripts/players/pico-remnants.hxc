@@ -1,0 +1,15 @@
+import funkin.ui.freeplay.charselect.PlayableCharacter;
+import funkin.save.Save;
+
+class PicoRemnantsPlayableCharacter extends PlayableCharacter
+{
+  function new()
+  {
+    super('pico-remnants');
+  }
+
+  override function isUnlocked():Bool
+  {
+    return Save.instance.hasBeatenSong('remnants', null, 'pico');
+  }
+}
