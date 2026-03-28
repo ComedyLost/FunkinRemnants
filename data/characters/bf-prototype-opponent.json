@@ -1,44 +1,41 @@
 {
   "version": "1.0.0",
   "name": "Prototype BF (Opponent)",
-  "renderType": "sparrow",
-  "assetPath": "characters/bf-prototype-opponent",
+  "renderType": "animateatlas",
+  "assetPath": "shared:characters/proto-bf",
   "flipX": false,
   "singTime": 8.0,
   "healthIcon": {
     "id": "bf-prototype",
     "isPixel": false
   },
+  "atlasSettings": {
+    "swfMode": false
+  },
   "animations": [
     {
       "name": "idle",
-      "prefix": "Idle0",
-      "offsets": [0, 0]
+      "prefix": "Idle"
     },
     {
       "name": "singLEFT",
-      "prefix": "Left0",
-      "offsets": [20, -10]
+      "prefix": "Left"
     },
     {
       "name": "singDOWN",
-      "prefix": "Down0",
-      "offsets": [20, -50]
+      "prefix": "Down"
     },
     {
       "name": "singUP",
-      "prefix": "Up0",
-      "offsets": [-10, 35]
+      "prefix": "Up"
     },
     {
       "name": "singRIGHT",
-      "prefix": "Right0",
-      "offsets": [0, -15]
+      "prefix": "Right"
     },
     {
       "name": "hey",
-      "prefix": "Hey0",
-      "offsets": [0, 0]
+      "prefix": "Hey"
     }
   ]
 }
