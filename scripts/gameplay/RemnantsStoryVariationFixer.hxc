@@ -19,13 +19,10 @@ class RemnantsStoryVariationFixer extends Module
 
     if (currentSong != PlayState.instance.currentSong)
     {
-      PlayState.instance.currentSong.onDestroy(event);
-      PlayState.instance.currentSong = currentSong;
-      currentSong.onCreate(event);
-
       PlayState.lastParams.targetSong = currentSong;
       PlayState.lastParams.targetDifficulty = difficulty;
       PlayState.lastParams.targetVariation = variation;
+      FlxG.resetState(PlayState.lastParams);
     }
 
     super.onStateChangeEnd(event);
