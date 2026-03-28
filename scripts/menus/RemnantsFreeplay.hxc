@@ -50,9 +50,9 @@ class RemnantFreeplay extends Module
     return [0, 0];
   }
 
-  override function onUpdate(event:StateChangeScriptEvent):Void
+  override function onDifficultySwitch(event:ScriptEvent):Void
   {
-    super.onUpdate(event);
+    super.onDifficultySwitch(event);
 
     for (capsule in this.filterCapsules('remnants-modExtras'))
     {
