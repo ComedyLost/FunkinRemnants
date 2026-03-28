@@ -40,6 +40,8 @@ class RemnantsAlbum extends Album
     {
       case 'grieving-remnants':
         "CINEMA OST";
+      case 'sugarcrash-remnants':
+        "BACON CHEESE";
       default:
         _data?.albumOSTName;
     }

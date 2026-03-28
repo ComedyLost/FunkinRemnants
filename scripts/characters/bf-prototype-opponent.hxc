@@ -3,6 +3,7 @@ import funkin.data.notestyle.NoteStyleRegistry;
 import funkin.ui.FullScreenScaleMode;
 import funkin.play.notes.Strumline;
 import funkin.util.Constants;
+import flixel.tweens.FlxTween;
 import funkin.play.PlayState;
 import funkin.Preferences;
 
@@ -35,6 +36,14 @@ class BFPrototypeOpponentCharacter extends SparrowCharacter
 
       PlayState.instance.opponentStrumline.destroy();
       PlayState.instance.opponentStrumline = strumline;
+    }
+  }
+
+  override public function onCountdownStart(event:CountdownScriptEvent):Void
+  {
+    for (arrow in PlayState.instance.opponentStrumline.strumlineNotes.members)
+    {
+      FlxTween.completeTweensOf(arrow);
     }
   }
 }
