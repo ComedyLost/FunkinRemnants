@@ -22,7 +22,7 @@ class RemnantsStoryVariationFixer extends Module
       PlayState.lastParams.targetSong = currentSong;
       PlayState.lastParams.targetDifficulty = difficulty;
       PlayState.lastParams.targetVariation = variation;
-      FlxG.resetState(PlayState.lastParams);
+      FlxG.resetState();
     }
 
     super.onStateChangeEnd(event);
