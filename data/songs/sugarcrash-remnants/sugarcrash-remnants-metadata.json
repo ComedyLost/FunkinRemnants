@@ -2,25 +2,25 @@
   "version": "2.2.4",
   "songName": "SugarCrash! (Remnants Mix)",
   "artist": "Honton129 (ft. Lunarznova, katsuki & .json)",
-  "charter": "David Phantom Arcade (ft. TechnikTil)",
+  "charter": "David Phantom Arcade + TechnikTil + Sammy The Goog",
   "offsets": {},
   "playData": {
-    "difficulties": ["normal"],
+    "difficulties": ["easy", "normal", "hard"],
     "characters": {
       "player": "bf-remnants-pfp",
-      "girlfriend": null,
-      "opponent": null,
       "opponentVocals": [],
-      "playerVocals": ["bf-remnants"]
+      "playerVocals": ["bf-remnants-pfp"]
     },
     "stage": "sugarVoid",
     "noteStyle": "funkin",
     "ratings": {
-      "normal": 67
+      "easy": 99,
+      "normal": 67,
+      "hard": 69
     },
     "album": "remnants"
   },
-  "generatedBy": "Friday Night Funkin' - v0.8.3",
+  "generatedBy": "Friday Night Funkin' - v0.8.4",
   "timeChanges": [
     {
       "t": 0,
