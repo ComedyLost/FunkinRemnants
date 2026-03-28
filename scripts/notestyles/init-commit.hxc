@@ -5,6 +5,8 @@ import flixel.util.FlxColor;
 
 class InitCommitNoteStyle extends NoteStyle
 {
+  final COLORS:Array<FlxColor> = [FlxColor.GREEN, FlxColor.RED, FlxColor.BLUE, FlxColor.PURPLE];
+
   public var colorScroll:Array<String> = [];
 
   public function new()
@@ -15,8 +17,6 @@ class InitCommitNoteStyle extends NoteStyle
 
   override public function buildNoteSprite(target:NoteSprite):Void
   {
-    var colors:Array<FlxColor> = [FlxColor.GREEN, FlxColor.RED, FlxColor.BLUE, FlxColor.PURPLE];
-
     target.makeSolidColor(50, 50, FlxColor.WHITE);
     target.antialiasing = false;
 
@@ -27,7 +27,7 @@ class InitCommitNoteStyle extends NoteStyle
 
     target_persist.animation.onFrameChange.add((animName:String, _, __) -> {
       var i:Int = colorScroll.indexOf(animName);
-      target_persist.color = colors[i];
+      target_persist.color = COLORS[i];
     });
   }
 
@@ -37,7 +37,7 @@ class InitCommitNoteStyle extends NoteStyle
     target.antialiasing = false;
   }
 
-  override public function applyStrumlineAnimations(target:StrumlineNote, dir:NoteDirection):Void
+  override public function applyStrumlineAnimations(target:StrumlineNote, dir:Int):Void
   {
     var animIndex:Int = switch (dir)
     {
@@ -50,7 +50,16 @@ class InitCommitNoteStyle extends NoteStyle
     }
 
     for (name in ['static', 'press', 'confirm', 'confirm-hold'])
-      target.animation.add(name, [animIndex]);
+      target.animation.add(name, [for (i in 0...4) animIndex], 12, false);
+
+    #if mobile
+    var target_persist:StrumlineNote = target;
+    var dir_persist:Int = dir;
+    target_persist.animation.onFrameChange.add((animName:String, _, __) -> {
+      var color:FlxColor = (animName == 'confirm' || animName == 'confirm-hold') ? COLORS[dir_persist] : FlxColor.WHITE;
+      target_persist.color = color;
+    });
+    #end
   }
 
   override public function applyStrumlineOffsets(target:StrumlineNote):Void
