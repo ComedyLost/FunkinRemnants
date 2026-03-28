@@ -7,8 +7,8 @@
   "playData": {
     "difficulties": ["easy", "normal", "hard"],
     "characters": {
-      "opponent": "bacon-cheese",
       "player": "bf-remnants-pfp",
+      "opponent": "bacon-cheese",
       "opponentVocals": [],
       "playerVocals": ["bf-remnants-pfp"]
     },
@@ -19,7 +19,9 @@
       "normal": 67,
       "hard": 69
     },
-    "album": "remnants"
+    "album": "remnants",
+    "previewStart": 0.729752517,
+    "previewEnd": 0.8503694887
   },
   "generatedBy": "Friday Night Funkin' - v0.8.4",
   "timeChanges": [
