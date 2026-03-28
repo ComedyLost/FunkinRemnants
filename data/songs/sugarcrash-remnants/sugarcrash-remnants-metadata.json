@@ -7,6 +7,7 @@
   "playData": {
     "difficulties": ["easy", "normal", "hard"],
     "characters": {
+      "opponent": "bacon-cheese",
       "player": "bf-remnants-pfp",
       "opponentVocals": [],
       "playerVocals": ["bf-remnants-pfp"]

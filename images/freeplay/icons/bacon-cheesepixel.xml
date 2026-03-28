@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TextureAtlas imagePath="bacon-cheesepixel.png">
+	<SubTexture name="idle0000" x="0" y="0" width="33" height="28" frameX="0" frameY="0" frameWidth="33" frameHeight="28" />
+
+	<SubTexture name="confirm0000" x="0" y="0" width="33" height="28" frameX="0" frameY="0" frameWidth="33" frameHeight="28" />
+	<SubTexture name="confirm0001" x="34" y="0" width="33" height="28" frameX="0" frameY="0" frameWidth="33" frameHeight="28" />
+	<SubTexture name="confirm0002" x="68" y="0" width="33" height="28" frameX="0" frameY="0" frameWidth="33" frameHeight="28" />
+	<SubTexture name="confirm0003" x="0" y="29" width="33" height="28" frameX="0" frameY="0" frameWidth="33" frameHeight="28" />
+	<SubTexture name="confirm0004" x="34" y="29" width="33" height="28" frameX="0" frameY="0" frameWidth="33" frameHeight="28" />
+	<SubTexture name="confirm0005" x="68" y="29" width="33" height="28" frameX="0" frameY="0" frameWidth="33" frameHeight="28" />
+	<SubTexture name="confirm0006" x="0" y="0" width="33" height="28" frameX="0" frameY="0" frameWidth="33" frameHeight="28" />
+
+	<SubTexture name="confirm-hold0000" x="0" y="0" width="33" height="28" frameX="0" frameY="0" frameWidth="33" frameHeight="28" />
+</TextureAtlas>
