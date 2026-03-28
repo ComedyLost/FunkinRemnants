@@ -11,7 +11,7 @@ class RemnantsBaseGameExpansionLevel extends Level
 
   override function isVisible():Bool
   {
-    return !Save.instance.hasBeatenSong("sugarcrash-remnants") || !Save.instance.hasBeatenSong("sugarcrash-remnants");
+    return !Save.instance.hasBeatenSong("sugarcrash-remnants") || !Save.instance.hasBeatenSong("remnants", null, "remnants");
   }
 
   override function getSongDisplayNames(difficultyId:String):Array<String>
