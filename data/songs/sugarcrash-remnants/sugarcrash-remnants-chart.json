@@ -7,12 +7,21 @@
   },
   "events": [
     {
-      "t": 1132.07547169811,
+      "t": 919.811320754717,
       "e": "SetCameraBop",
       "v": {
         "rate": 1,
+        "offset": 0.5,
+        "intensity": 10
+      }
+    },
+    {
+      "t": 1132.07547169811,
+      "e": "SetCameraBop",
+      "v": {
+        "rate": 69420,
         "offset": 0,
-        "intensity": 1.015
+        "intensity": 0
       }
     },
     {
@@ -21,7 +30,475 @@
       "v": {
         "rate": 4,
         "offset": 0,
-        "intensity": 1.015
+        "intensity": 1
+      }
+    },
+    {
+      "t": 20448.1132075472,
+      "e": "SetCameraBop",
+      "v": {
+        "rate": 1,
+        "offset": 0.5,
+        "intensity": 1
+      }
+    },
+    {
+      "t": 20872.641509434,
+      "e": "SetCameraBop",
+      "v": {
+        "rate": 0.5,
+        "offset": 0,
+        "intensity": 1
+      }
+    },
+    {
+      "t": 21297.1698113208,
+      "e": "SetCameraBop",
+      "v": {
+        "rate": 0.25,
+        "offset": 0,
+        "intensity": 1
+      }
+    },
+    {
+      "t": 21863.2075471698,
+      "e": "SetCameraBop",
+      "v": {
+        "rate": 1,
+        "offset": 0,
+        "intensity": 0.5
+      }
+    },
+    {
+      "t": 23136.7924528302,
+      "e": "SetCameraBop",
+      "v": {
+        "rate": 1,
+        "offset": 0.5,
+        "intensity": 0.5
+      }
+    },
+    {
+      "t": 24622.641509434,
+      "e": "SetCameraBop",
+      "v": {
+        "rate": 1,
+        "offset": 0,
+        "intensity": 0.5
+      }
+    },
+    {
+      "t": 25400.9433962264,
+      "e": "SetCameraBop",
+      "v": {
+        "rate": 1,
+        "offset": 0.5,
+        "intensity": 0.5
+      }
+    },
+    {
+      "t": 26886.7924528302,
+      "e": "SetCameraBop",
+      "v": {
+        "rate": 6940,
+        "offset": 0,
+        "intensity": 0
+      }
+    },
+    {
+      "t": 30707.5471698113,
+      "e": "SetCameraBop",
+      "v": {
+        "rate": 1,
+        "offset": 0,
+        "intensity": 20
+      }
+    },
+    {
+      "t": 31061.320754717,
+      "e": "SetCameraBop",
+      "v": {
+        "rate": 69420,
+        "offset": 0,
+        "intensity": 0
+      }
+    },
+    {
+      "t": 31768.8679245283,
+      "e": "SetCameraBop",
+      "v": {
+        "rate": 4,
+        "offset": 0,
+        "intensity": 1
+      }
+    },
+    {
+      "t": 38419.8113207547,
+      "e": "SetCameraBop",
+      "v": {
+        "rate": 69420,
+        "offset": 0,
+        "intensity": 0
+      }
+    },
+    {
+      "t": 39693.3962264151,
+      "e": "SetCameraBop",
+      "v": {
+        "rate": 1,
+        "offset": 0.5,
+        "intensity": 6.9
+      }
+    },
+    {
+      "t": 42806.6037735849,
+      "e": "SetCameraBop",
+      "v": {
+        "rate": 69420,
+        "intensity": 0,
+        "offset": 0
+      }
+    },
+    {
+      "t": 44363.2075471698,
+      "e": "SetCameraBop",
+      "v": {
+        "rate": 1,
+        "intensity": 6.9,
+        "offset": 0
+      }
+    },
+    {
+      "t": 44433.9622641509,
+      "e": "SetCameraBop",
+      "v": {
+        "rate": 69420,
+        "intensity": 0,
+        "offset": 0
+      }
+    },
+    {
+      "t": 45636.7924528302,
+      "e": "SetCameraBop",
+      "v": {
+        "rate": 1,
+        "offset": 0.5,
+        "intensity": 13.8
+      }
+    },
+    {
+      "t": 45706.9622641509,
+      "e": "SetCameraBop",
+      "v": {
+        "rate": 69420,
+        "offset": 0,
+        "intensity": 0
+      }
+    },
+    {
+      "t": 47688.679245283,
+      "e": "SetCameraBop",
+      "v": {
+        "rate": 0.25,
+        "offset": 0,
+        "intensity": 20.7
+      }
+    },
+    {
+      "t": 47759.4339622641,
+      "e": "SetCameraBop",
+      "v": {
+        "rate": 69420,
+        "offset": 0,
+        "intensity": 0
+      }
+    },
+    {
+      "t": 48608.4905660377,
+      "e": "SetCameraBop",
+      "v": {
+        "rate": 1,
+        "intensity": 3.45,
+        "offset": 0
+      }
+    },
+    {
+      "t": 48679.4339622641,
+      "e": "SetCameraBop",
+      "v": {
+        "rate": 69420,
+        "intensity": 0,
+        "offset": 0
+      }
+    },
+    {
+      "t": 49032.8301886792,
+      "e": "SetCameraBop",
+      "v": {
+        "rate": 0.5,
+        "offset": 0,
+        "intensity": 3.45
+      }
+    },
+    {
+      "t": 49103.7735849057,
+      "e": "SetCameraBop",
+      "v": {
+        "rate": 69420,
+        "offset": 0,
+        "intensity": 0
+      }
+    },
+    {
+      "t": 49457.5471698113,
+      "e": "SetCameraBop",
+      "v": {
+        "rate": 1,
+        "offset": 0,
+        "intensity": 3.45
+      }
+    },
+    {
+      "t": 49528.4905660377,
+      "e": "SetCameraBop",
+      "v": {
+        "rate": 69420,
+        "offset": 0,
+        "intensity": 0
+      }
+    },
+    {
+      "t": 49882.8301886792,
+      "e": "SetCameraBop",
+      "v": {
+        "rate": 0.5,
+        "intensity": 3.45,
+        "offset": 0
+      }
+    },
+    {
+      "t": 49953.7735849057,
+      "e": "SetCameraBop",
+      "v": {
+        "rate": 69420,
+        "intensity": 0,
+        "offset": 0
+      }
+    },
+    {
+      "t": 50306.4150943396,
+      "e": "SetCameraBop",
+      "v": {
+        "rate": 1,
+        "intensity": 3.45,
+        "offset": 0
+      }
+    },
+    {
+      "t": 50377.358490566,
+      "e": "SetCameraBop",
+      "v": {
+        "rate": 69420,
+        "intensity": 0,
+        "offset": 0
+      }
+    },
+    {
+      "t": 50448.1132075472,
+      "e": "SetCameraBop",
+      "v": {
+        "rate": 0.5,
+        "intensity": 6.9,
+        "offset": 0
+      }
+    },
+    {
+      "t": 50518.8679245283,
+      "e": "SetCameraBop",
+      "v": {
+        "rate": 69420,
+        "intensity": 0,
+        "offset": 0
+      }
+    },
+    {
+      "t": 50943.3962264151,
+      "e": "SetCameraBop",
+      "v": {
+        "rate": 0.25,
+        "intensity": 2,
+        "offset": 0
+      }
+    },
+    {
+      "t": 51155.6603773585,
+      "e": "SetCameraBop",
+      "v": {
+        "rate": 69420,
+        "intensity": 0,
+        "offset": 0
+      }
+    },
+    {
+      "t": 51509.4339622641,
+      "e": "SetCameraBop",
+      "v": {
+        "rate": 0.25,
+        "intensity": 2,
+        "offset": 0
+      }
+    },
+    {
+      "t": 51580.1886792453,
+      "e": "SetCameraBop",
+      "v": {
+        "rate": 69420,
+        "intensity": 0,
+        "offset": 0
+      }
+    },
+    {
+      "t": 52358.4339622641,
+      "e": "SetCameraBop",
+      "v": {
+        "rate": 0.25,
+        "offset": 0,
+        "intensity": 2
+      }
+    },
+    {
+      "t": 52429.2452830189,
+      "e": "SetCameraBop",
+      "v": {
+        "rate": 69420,
+        "offset": 0,
+        "intensity": 0
+      }
+    },
+    {
+      "t": 52853.4339622641,
+      "e": "SetCameraBop",
+      "v": {
+        "rate": 0.25,
+        "offset": 0,
+        "intensity": 2
+      }
+    },
+    {
+      "t": 52924.1886792453,
+      "e": "SetCameraBop",
+      "v": {
+        "rate": 69420,
+        "offset": 0,
+        "intensity": 0
+      }
+    },
+    {
+      "t": 52995.4339622641,
+      "e": "SetCameraBop",
+      "v": {
+        "rate": 0.25,
+        "offset": 0,
+        "intensity": 2
+      }
+    },
+    {
+      "t": 53136.7924528302,
+      "e": "SetCameraBop",
+      "v": {
+        "rate": 69420,
+        "offset": 0,
+        "intensity": 0
+      }
+    },
+    {
+      "t": 53207.5471698113,
+      "e": "SetCameraBop",
+      "v": {
+        "rate": 4,
+        "offset": 0,
+        "intensity": 1
+      }
+    },
+    {
+      "t": 58231.1320754717,
+      "e": "SetCameraBop",
+      "v": {
+        "rate": 0.5,
+        "offset": 0,
+        "intensity": 1.25
+      }
+    },
+    {
+      "t": 62759.4339622641,
+      "e": "SetCameraBop",
+      "v": {
+        "rate": 0.25,
+        "offset": 0,
+        "intensity": 1.25
+      }
+    },
+    {
+      "t": 63183.9622641509,
+      "e": "SetCameraBop",
+      "v": {
+        "rate": 0.5,
+        "offset": 0,
+        "intensity": 1.25
+      }
+    },
+    {
+      "t": 63891.5094339623,
+      "e": "SetCameraBop",
+      "v": {
+        "rate": 0.25,
+        "offset": 0,
+        "intensity": 1.25
+      }
+    },
+    {
+      "t": 64174.5283018868,
+      "e": "SetCameraBop",
+      "v": {
+        "rate": 0.5,
+        "offset": 0,
+        "intensity": 1.25
+      }
+    },
+    {
+      "t": 64386.7924528302,
+      "e": "SetCameraBop",
+      "v": {
+        "rate": 0.25,
+        "offset": 0,
+        "intensity": 1.25
+      }
+    },
+    {
+      "t": 67287.7358490566,
+      "e": "SetCameraBop",
+      "v": {
+        "rate": 0.5,
+        "offset": 0,
+        "intensity": 1.25
+      }
+    },
+    {
+      "t": 68419.8113207547,
+      "e": "SetCameraBop",
+      "v": {
+        "rate": 0.25,
+        "offset": 0,
+        "intensity": 1.25
+      }
+    },
+    {
+      "t": 69775.9433962264,
+      "e": "SetCameraBop",
+      "v": {
+        "rate": 0.25,
+        "offset": 0,
+        "intensity": 2
       }
     },
     {
@@ -37,21 +514,84 @@
       }
     },
     {
-      "t": 69775.9433962264,
+      "t": 69834.9056603774,
+      "e": "SetCameraBop",
+      "v": {
+        "rate": 2,
+        "offset": 0,
+        "intensity": 1
+      }
+    },
+    {
+      "t": 76910.3773584906,
       "e": "SetCameraBop",
       "v": {
         "rate": 1,
         "offset": 0,
-        "intensity": 1.015
+        "intensity": 1
       }
     },
     {
-      "t": 81367.9245283019,
+      "t": 77617.9245283019,
       "e": "SetCameraBop",
       "v": {
-        "rate": 4,
+        "rate": 0.25,
         "offset": 0,
-        "intensity": 1.015
+        "intensity": 1
+      }
+    },
+    {
+      "t": 77830.1886792453,
+      "e": "SetCameraBop",
+      "v": {
+        "rate": 69420,
+        "offset": 0,
+        "intensity": 0
+      }
+    },
+    {
+      "t": 78750,
+      "e": "SetCameraBop",
+      "v": {
+        "rate": 0.25,
+        "offset": 0,
+        "intensity": 1
+      }
+    },
+    {
+      "t": 79103.7735849057,
+      "e": "SetCameraBop",
+      "v": {
+        "rate": 0.25,
+        "offset": 0,
+        "intensity": 2
+      }
+    },
+    {
+      "t": 79174.5283018868,
+      "e": "SetCameraBop",
+      "v": {
+        "rate": 2,
+        "offset": 1,
+        "intensity": 1
+      }
+    },
+    {
+      "t": 81438.679245283,
+      "e": "SetCameraBop",
+      "v": {
+        "rate": 0.25,
+        "offset": 0,
+        "intensity": 1
+      }
+    },
+    {
+      "t": 81863.2075471698,
+      "e": "SetCameraBop",
+      "v": {
+        "rate": 69420,
+        "offset": 0,
+        "intensity": 0
       }
     },
     {
@@ -67,12 +607,75 @@
       }
     },
     {
-      "t": 91273.5849056604,
+      "t": 83561.320754717,
       "e": "SetCameraBop",
       "v": {
-        "rate": 1000000,
+        "rate": 1,
+        "intensity": 100,
+        "offset": 0.5
+      }
+    },
+    {
+      "t": 83632.0754716981,
+      "e": "SetCameraBop",
+      "v": {
+        "rate": 69420,
+        "intensity": 0,
+        "offset": 0
+      }
+    },
+    {
+      "t": 88089.6226415094,
+      "e": "SetCameraBop",
+      "v": {
+        "rate": 1,
+        "intensity": 2,
+        "offset": 0.5
+      }
+    },
+    {
+      "t": 88160.3773584906,
+      "e": "SetCameraBop",
+      "v": {
+        "rate": 1,
+        "intensity": 0,
+        "offset": 0.5
+      }
+    },
+    {
+      "t": 88655.6603773585,
+      "e": "SetCameraBop",
+      "v": {
+        "rate": 0.5,
+        "intensity": 2,
+        "offset": 0
+      }
+    },
+    {
+      "t": 89929.2452830189,
+      "e": "SetCameraBop",
+      "v": {
+        "rate": 0.25,
+        "intensity": 2,
+        "offset": 0
+      }
+    },
+    {
+      "t": 90990.5660377359,
+      "e": "SetCameraBop",
+      "v": {
+        "rate": 69420,
+        "intensity": 0,
+        "offset": 0
+      }
+    },
+    {
+      "t": 91344.3396226415,
+      "e": "SetCameraBop",
+      "v": {
+        "rate": 1,
         "offset": 0,
-        "intensity": 1
+        "intensity": 100
       }
     },
     {
@@ -83,9 +686,9 @@
         "white": false,
         "retroSteps": 5,
         "startOpacity": 0,
-        "restartTween": false,
-        "duration": 0.1,
-        "ease": "expo",
+        "restartTween": true,
+        "duration": 2,
+        "ease": "linear",
         "retro": false,
         "easeDir": "Out",
         "hud": true
