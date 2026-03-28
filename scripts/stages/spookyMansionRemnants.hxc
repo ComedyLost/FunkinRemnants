@@ -1,10 +1,8 @@
-import flixel.FlxG;
 import flixel.tweens.FlxEase;
 import flixel.tweens.FlxTween;
 import flixel.util.FlxTimer;
 import funkin.audio.FunkinSound;
 import funkin.graphics.FunkinSprite;
-import funkin.ui.FullScreenScaleMode;
 import funkin.play.stage.Stage;
 import funkin.play.PlayState;
 import funkin.util.HapticUtil;

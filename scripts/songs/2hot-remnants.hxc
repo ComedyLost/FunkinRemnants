@@ -1,7 +1,6 @@
 import flixel.util.FlxTimer;
 import funkin.util.HapticUtil;
 import flixel.tweens.FlxTween;
-import funkin.modding.module.ModuleHandler;
 import funkin.modding.base.ScriptedFunkinSprite;
 import funkin.graphics.FunkinSprite;
 import funkin.play.GameOverSubState;
@@ -106,14 +105,14 @@ class TwoHOTRemnantsMixSong extends Song
         // This creates the can and starts the animation.
         // We define the behavior of the can in a separate scripted class,
         // which allows the can to track and manage its own properties.
-        var newCan:ScriptedFunkinSprite = ScriptedFunkinSprite.init('SpraycanAtlasSpriteRemnants', 0, 0);
+        var newCan:SpraycanAtlasSpriteRemnants = new SpraycanAtlasSpriteRemnants(0, 0);
         var spraycanPile = PlayState.instance.currentStage.getNamedProp('spraycanPile');
 
         newCan.x = spraycanPile.x - 100;
         newCan.y = spraycanPile.y - 550;
         newCan.zIndex = spraycanPile.zIndex - 1;
 
-        newCan.scriptCall('playCanStart');
+        newCan.playCanStart();
 
         PlayState.instance.currentStage.add(newCan);
         PlayState.instance.currentStage.refresh(); // Apply z-index.
@@ -149,7 +148,7 @@ class TwoHOTRemnantsMixSong extends Song
     for (index in 0...spawnedCans.length)
     {
       var can = spawnedCans[index];
-      var canState = can.scriptGet('currentState');
+      var canState = can.currentState;
 
       if (canState == desiredState)
       {
@@ -264,8 +263,8 @@ class TwoHOTRemnantsMixSong extends Song
 
     if (can != null)
     {
-      can.scriptSet('currentState', STATE_SHOT);
-      can.scriptCall('playCanShot');
+      can.currentState = STATE_SHOT;
+      can.playCanShot();
 
       new FlxTimer().start(1 / 24, function(tmr) {
         darkenStageProps();
@@ -279,7 +278,7 @@ class TwoHOTRemnantsMixSong extends Song
 
     if (can != null)
     {
-      can.scriptSet('currentState', STATE_IMPACTED);
+      can.currentState = STATE_IMPACTED;
     }
   }
 

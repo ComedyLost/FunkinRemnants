@@ -1,22 +1,11 @@
-import flixel.FlxG;
-import funkin.play.PlayState;
 import funkin.play.stage.Stage;
 import flixel.addons.display.FlxBackdrop;
 import flixel.group.FlxTypedSpriteGroup;
-import funkin.modding.base.ScriptedFunkinSprite;
 import funkin.util.FlxTweenUtil;
 import flixel.tweens.FlxTween;
 import flixel.tweens.FlxEase;
 import funkin.graphics.shaders.WiggleEffectRuntime;
 import funkin.graphics.shaders.WiggleEffectType;
-import flixel.FlxSprite;
-import flixel.addons.display.FlxRuntimeShader;
-import flixel.sound.FlxSound;
-import funkin.Conductor;
-import funkin.modding.base.ScriptedFlxRuntimeShader;
-import flixel.addons.effects.FlxTrail;
-import funkin.play.Countdown;
-import funkin.play.character.CharacterType;
 
 class MallEvilRemnantsStage extends Stage
 {
@@ -41,7 +30,7 @@ class MallEvilRemnantsStage extends Stage
         snowGroup.scrollFactor.set(1.5, 1.5);
         snowGroup.zIndex = 401;
 
-        PlayState.instance.currentStage.add(snowGroup);
+        add(snowGroup);
       }
 
       for (snow in 1...8)
@@ -133,7 +122,7 @@ class MallEvilRemnantsStage extends Stage
         wiggleOverlay = new WiggleEffectRuntime(2, 20, 1, WiggleEffectType.DREAMY);
         getNamedProp('overlay').shader = wiggleOverlay;
 
-        PlayState.instance.currentStage.refresh(); // Apply z-index.
+        refresh(); // Apply z-index.
       }
     }
   }

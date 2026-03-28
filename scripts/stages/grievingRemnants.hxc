@@ -1,5 +1,4 @@
 import funkin.play.stage.Stage;
-import funkin.Preferences;
 
 class GrievingRemnantsStage extends Stage
 {

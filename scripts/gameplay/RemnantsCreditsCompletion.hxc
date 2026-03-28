@@ -3,7 +3,6 @@ import funkin.save.Save;
 import funkin.play.PlayState;
 import funkin.ui.credits.CreditsState;
 import funkin.ui.freeplay.FreeplayState;
-import flixel.FlxG;
 
 class RemnantsCreditsCompletion extends Module
 {

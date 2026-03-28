@@ -1,27 +1,16 @@
 import funkin.play.song.Song;
 import funkin.play.PlayState;
 import funkin.save.Save;
-import flixel.text.FlxTextBorderStyle;
-import funkin.data.song.SongRegistry;
 import funkin.ui.FullScreenScaleMode;
-import funkin.modding.base.ScriptedFlxAtlasSprite;
-import funkin.graphics.FunkinSprite;
 import funkin.util.FlxTweenUtil;
-import funkin.audio.FunkinSound;
-import funkin.util.TouchUtil;
-import funkin.Conductor;
 import flixel.util.FlxTimer;
 import flixel.util.FlxTimerManager;
 import flixel.tweens.FlxEase;
 import flixel.tweens.FlxTween;
 import flixel.text.FlxText;
-import flixel.text.FlxTextBorderStyle;
-import funkin.data.song.SongRegistry;
-import funkin.modding.base.ScriptedFunkinSprite;
 import funkin.graphics.FunkinSprite;
 import funkin.audio.FunkinSound;
 import funkin.util.TouchUtil;
-import flixel.FlxG;
 import funkin.Conductor;
 import funkin.util.SongSequence;
 
@@ -96,11 +85,12 @@ class GunsRemnantsMixSong extends Song
 
     skipText = new FlxText(936 * FullScreenScaleMode.wideScale.x, 618 * FullScreenScaleMode.wideScale.y, 0,
       'Skip [ ' + PlayState.instance.controls.getDialogueNameFromToken("CUTSCENE_ADVANCE", true) + ' ]', 20);
-    if (FlxG.onMobile)
-    {
-      skipText.text = 'Skip [Pause Button]';
-      skipText.x -= 136;
-    }
+
+    #if mobile
+    skipText.text = 'Skip [Pause Button]';
+    skipText.x -= 136;
+    #end
+
     skipText.setFormat(Paths.font('vcr.ttf'), 40, 0xFFFFFFFF, "right", FlxTextBorderStyle.OUTLINE, 0xFF000000);
     skipText.scrollFactor.set();
     skipText.borderSize = 2;
@@ -130,7 +120,7 @@ class GunsRemnantsMixSong extends Song
     var dadPosition:FlxPoint = PlayState.instance.currentStage.getDadPosition();
     PlayState.instance.currentStage.getDad().visible = false;
 
-    tankmanCutscene = ScriptedFunkinSprite.init('TankCutsceneRemnants', dadPosition.x - 316, dadPosition.y - 725);
+    tankmanCutscene = new TankCutsceneRemnants(dadPosition.x - 316, dadPosition.y - 725);
     tankmanCutscene.zIndex = PlayState.instance.currentStage.getDad().zIndex;
     PlayState.instance.currentStage.add(tankmanCutscene);
     PlayState.instance.currentStage.refresh();
@@ -261,10 +251,9 @@ class GunsRemnantsMixSong extends Song
       cutsceneTimeDummy.time += event.elapsed * 1000;
     }
 
-    if (FlxG.onMobile)
-    {
-      isMobilePauseButtonPressed = TouchUtil.overlapsComplex(PlayState.instance.pauseButton) && TouchUtil.justPressed;
-    }
+    #if mobile
+    isMobilePauseButtonPressed = TouchUtil.overlapsComplex(PlayState.instance.pauseButton) && TouchUtil.justPressed;
+    #end
 
     if ((PlayState.instance.controls.CUTSCENE_ADVANCE || isMobilePauseButtonPressed) && !cutsceneSkipped)
     {
@@ -296,7 +285,7 @@ class GunsRemnantsMixSong extends Song
 
     FlxTween.cancelTweensOf(PlayState.instance.camHUD);
 
-    if (PlayState.instance.currentStage.scriptGet('storm0').alpha < 1) PlayState.instance.currentStage.stormOn(1);
+    if (PlayState.instance.currentStage.storm0.alpha < 1) PlayState.instance.currentStage.stormOn(1);
 
     if (fadeHud)
     {
@@ -352,7 +341,7 @@ class GunsRemnantsMixSong extends Song
     fadeOut = true;
     fadeHud = false;
 
-    if (PlayState.instance.currentStage.scriptGet('storm0').alpha < 1) PlayState.instance.currentStage.stormOn(0);
+    if (PlayState.instance.currentStage.storm0.alpha < 1) PlayState.instance.currentStage.stormOn(0);
 
     if (!ascension) return;
     FlxTween.cancelTweensOf(PlayState.instance.currentStage.getBoyfriend());

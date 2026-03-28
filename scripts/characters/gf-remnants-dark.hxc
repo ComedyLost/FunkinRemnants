@@ -11,17 +11,6 @@ class GirlfriendRemnantsDarkCharacter extends AnimateAtlasCharacter
     super('gf-remnants-dark');
   }
 
-  override function dance(force:Bool)
-  {
-    // Fix animation glitches with Week 3.
-    // Wait for 'hairBlow' to play, preventing dancing from interrupting it.
-    if (!force && ['hairBlow'].contains(getCurrentAnimation())) return;
-    // Wait for 'hairFall' to finish, preventing dancing from interrupting it.
-    if (!force && ['hairFall'].contains(getCurrentAnimation()) && !isAnimationFinished()) return;
-
-    super.dance(force);
-  }
-
   var normalChar:BaseCharacter;
 
   override function set_alpha(val:Float):Float

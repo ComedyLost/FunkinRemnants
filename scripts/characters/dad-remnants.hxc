@@ -1,5 +1,4 @@
 import funkin.play.character.AnimateAtlasCharacter;
-import funkin.data.character.CharacterDataParser;
 import funkin.play.character.CharacterType;
 import funkin.graphics.FunkinSprite;
 import funkin.audio.FunkinSound;
@@ -8,7 +7,6 @@ import funkin.play.PlayState;
 import flixel.tweens.FlxTween;
 import flixel.tweens.FlxEase;
 import flixel.math.FlxMath;
-import flixel.FlxG;
 import funkin.FunkinMemory;
 import flixel.effects.FlxFlicker;
 
@@ -57,13 +55,11 @@ class DadRemnantsCharacter extends AnimateAtlasCharacter
     {
       curKickOffset *= FlxEase.quintOut(frameNumber / 3);
       kick = true;
-      trace(curKickOffset);
     }
     else if (frameNumber >= 6 && frameNumber <= 14)
     {
       curKickOffset *= (1 - FlxEase.quadInOut(FlxMath.remapToRange(frameNumber, 6, 14, 0, 1)));
       kick = false;
-      trace(curKickOffset);
     }
   }
 

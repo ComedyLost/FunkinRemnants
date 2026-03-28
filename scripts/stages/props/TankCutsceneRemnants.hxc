@@ -1,7 +1,5 @@
 import funkin.graphics.FunkinSprite;
 import funkin.play.PlayState;
-import funkin.Preferences;
-import flixel.FlxG;
 
 // a unique object for tankman talking in his cutscenes
 class TankCutsceneRemnants extends FunkinSprite

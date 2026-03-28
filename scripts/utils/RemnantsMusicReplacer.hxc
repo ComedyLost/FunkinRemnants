@@ -2,10 +2,7 @@ import funkin.ui.freeplay.FreeplayState;
 import funkin.data.song.SongRegistry;
 import funkin.modding.module.Module;
 import funkin.audio.FunkinSound;
-import funkin.util.ReflectUtil;
 import funkin.Conductor;
-import funkin.Paths;
-import flixel.FlxG;
 import StringTools;
 
 /**

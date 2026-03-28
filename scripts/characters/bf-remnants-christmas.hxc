@@ -1,14 +1,8 @@
-import flixel.FlxG;
 import funkin.util.HapticUtil;
-import funkin.audio.FunkinSound;
 import funkin.play.PauseSubState;
 import funkin.play.character.MultiAnimateAtlasCharacter;
-import funkin.play.character.CharacterType;
 import funkin.play.GameOverSubState;
-import funkin.graphics.FunkinSprite;
 import funkin.play.PlayState;
-import flixel.tweens.FlxEase;
-import flixel.tweens.FlxTween;
 
 class BoyfriendRemnantsChristmasCharacter extends MultiAnimateAtlasCharacter
 {

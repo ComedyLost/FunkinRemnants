@@ -1,5 +1,4 @@
 import funkin.play.PlayState;
-import funkin.modding.module.ModuleHandler;
 import funkin.play.cutscene.VideoCutscene;
 import funkin.modding.module.Module;
 

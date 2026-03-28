@@ -6,7 +6,6 @@ import flixel.tweens.FlxTween;
 import flixel.tweens.FlxEase;
 import funkin.audio.FunkinSound;
 import flixel.util.FlxTimer;
-import flixel.FlxG;
 import funkin.util.SongSequence;
 import funkin.Conductor;
 
@@ -137,28 +136,22 @@ class GrievingRemnantsSong extends Song
 
     playedDialogue = false;
 
-    if (!FlxG.onMobile) // Move pop ups
-    {
-      if (!Preferences.downscroll) PlayState.instance.comboPopUps.offsets = [550, 350]; // Upscroll PC Offset
+    #if !mobile
+    if (!Preferences.downscroll) PlayState.instance.comboPopUps.offsets = [550, 350]; // Upscroll PC Offset
 
-      if (Preferences.downscroll) PlayState.instance.comboPopUps.offsets = [550, -190]; // Downscroll PC Offset
-    }
-    else
-    {
-      if (FlxG.onMobile
-        && Preferences.controlsScheme == "Arrows"
-        && !ControlsHandler.usingExternalInputDevice) PlayState.instance.comboPopUps.offsets = [30, 350]; // Middle Mobile Offset
+    if (Preferences.downscroll) PlayState.instance.comboPopUps.offsets = [550, -190]; // Downscroll PC Offset
+    #else
+    if (Preferences.controlsScheme == "Arrows"
+      && !ControlsHandler.usingExternalInputDevice) PlayState.instance.comboPopUps.offsets = [30, 350]; // Middle Mobile Offset
 
-      if (FlxG.onMobile
-        && !Preferences.downscroll
-        && Preferences.controlsScheme == "Arrows"
-        && ControlsHandler.usingExternalInputDevice) PlayState.instance.comboPopUps.offsets = [725, -350]; // Upscroll Side Mobile Offset
+    if (!Preferences.downscroll
+      && Preferences.controlsScheme == "Arrows"
+      && ControlsHandler.usingExternalInputDevice) PlayState.instance.comboPopUps.offsets = [725, -350]; // Upscroll Side Mobile Offset
 
-      if (FlxG.onMobile
-        && Preferences.downscroll
-        && Preferences.controlsScheme == "Arrows"
-        && ControlsHandler.usingExternalInputDevice) PlayState.instance.comboPopUps.offsets = [725, -190]; // Downscroll Side Mobile Offset
-    }
+    if (Preferences.downscroll
+      && Preferences.controlsScheme == "Arrows"
+      && ControlsHandler.usingExternalInputDevice) PlayState.instance.comboPopUps.offsets = [725, -190]; // Downscroll Side Mobile Offset
+    #end
   }
 
   function onSongRetry(event:ScriptEvent)

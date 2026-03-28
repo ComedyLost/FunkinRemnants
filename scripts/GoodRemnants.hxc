@@ -1,5 +1,4 @@
 import funkin.modding.module.Module;
-import flixel.FlxG;
 import Math;
 
 class GoodRemnantsModule extends Module

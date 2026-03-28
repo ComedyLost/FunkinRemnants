@@ -10,6 +10,6 @@ class PicoRemnantsPlayableCharacter extends PlayableCharacter
 
   override function isUnlocked():Bool
   {
-    return Save.instance.hasBeatenSong('remnants', null, 'pico');
+    return Save.instance.hasBeatenSong('remnants');
   }
 }

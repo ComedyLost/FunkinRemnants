@@ -9,7 +9,6 @@ import flixel.tweens.FlxTween;
 import flixel.tweens.FlxEase;
 import flixel.util.FlxSort;
 import flixel.FlxSprite;
-import flixel.FlxG;
 import funkin.util.SongSequence;
 import funkin.Conductor;
 

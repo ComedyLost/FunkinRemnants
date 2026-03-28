@@ -1,11 +1,9 @@
 import funkin.audio.FunkinSound;
 import funkin.graphics.FunkinSprite;
-import funkin.modding.base.ScriptedFunkinSprite;
 import funkin.play.song.Song;
 import funkin.play.PlayState;
 import funkin.save.Save;
 import funkin.ui.FullScreenScaleMode;
-import funkin.Paths;
 import flixel.text.FlxText;
 import flixel.text.FlxTextBorderStyle;
 import funkin.util.TouchUtil;
@@ -13,7 +11,6 @@ import flixel.tweens.FlxTween;
 import flixel.tweens.FlxEase;
 import flixel.util.FlxTimer;
 import flixel.util.FlxTimerManager;
-import flixel.FlxG;
 import funkin.util.SongSequence;
 import funkin.Conductor;
 
@@ -98,11 +95,12 @@ class UghRemnantsMixSong extends Song
 
     skipText = new FlxText(936 * FullScreenScaleMode.wideScale.x, 618 * FullScreenScaleMode.wideScale.y, 0,
       'Skip [ ' + PlayState.instance.controls.getDialogueNameFromToken("CUTSCENE_ADVANCE", true) + ' ]', 20);
-    if (FlxG.onMobile)
-    {
-      skipText.text = 'Skip [Pause Button]';
-      skipText.x -= 136;
-    }
+
+    #if mobile
+    skipText.text = 'Skip [Pause Button]';
+    skipText.x -= 136;
+    #end
+
     skipText.setFormat(Paths.font('vcr.ttf'), 40, 0xFFFFFFFF, "right", FlxTextBorderStyle.OUTLINE, 0xFF000000);
     skipText.scrollFactor.set();
     skipText.borderSize = 2;
@@ -138,7 +136,7 @@ class UghRemnantsMixSong extends Song
     var dadPosition:FlxPoint = PlayState.instance.currentStage.getDadPosition();
     PlayState.instance.currentStage.getDad().visible = false;
 
-    tankmanCutscene = ScriptedFunkinSprite.init('TankCutsceneRemnants', dadPosition.x - 316, dadPosition.y - 725);
+    tankmanCutscene = new TankCutsceneRemnants(dadPosition.x - 316, dadPosition.y - 725);
     tankmanCutscene.zIndex = PlayState.instance.currentStage.getDad().zIndex;
     PlayState.instance.currentStage.add(tankmanCutscene);
     PlayState.instance.currentStage.refresh();
@@ -284,10 +282,9 @@ class UghRemnantsMixSong extends Song
       cutsceneTimeDummy.time += event.elapsed * 1000;
     }
 
-    if (FlxG.onMobile)
-    {
-      isMobilePauseButtonPressed = TouchUtil.overlapsComplex(PlayState.instance.pauseButton) && TouchUtil.justPressed;
-    }
+    #if mobile
+    isMobilePauseButtonPressed = TouchUtil.overlapsComplex(PlayState.instance.pauseButton) && TouchUtil.justPressed;
+    #end
 
     if ((PlayState.instance.controls.CUTSCENE_ADVANCE || isMobilePauseButtonPressed) && !cutsceneSkipped)
     {
@@ -317,7 +314,7 @@ class UghRemnantsMixSong extends Song
 
     hasPlayedCutscene = true;
 
-    if (PlayState.instance.currentStage.scriptGet('storm0').alpha > 0) PlayState.instance.currentStage.stormOff(1);
+    if (PlayState.instance.currentStage.storm0.alpha > 0) PlayState.instance.currentStage.stormOff(1);
   }
 
   function onGameOver(event:ScriptEvent):Void
@@ -325,7 +322,7 @@ class UghRemnantsMixSong extends Song
     super.onGameOver(event);
     sequence?.destroy();
 
-    if (PlayState.instance.currentStage.scriptGet('storm0').alpha > 0) PlayState.instance.currentStage.stormOff(0);
+    if (PlayState.instance.currentStage.storm0.alpha > 0) PlayState.instance.currentStage.stormOff(0);
   }
 
   function onCreate(event:ScriptEvent):Void

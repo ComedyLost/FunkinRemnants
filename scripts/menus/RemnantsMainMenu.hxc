@@ -8,7 +8,6 @@ import flixel.util.FlxTimer;
 import funkin.ui.UIState;
 import funkin.save.Save;
 import flixel.FlxSprite;
-import flixel.FlxG;
 import Std;
 
 using StringTools;
@@ -24,6 +23,7 @@ class RemnantsMainMenu extends Module
   var newCredits:FunkinSprite = null;
   var backSpaced:Bool = false;
 
+  #if !mobile
   override public function onStateChangeBegin(event:StateChangeScriptEvent):Void
   {
     super.onStateChangeBegin(event);
@@ -31,7 +31,6 @@ class RemnantsMainMenu extends Module
     if (backSpaced
       || backSpr == null
       || !RemnantsContentUtil.remnantsContentEnabled()
-      || FlxG.onMobile
       || !Std.isOfType(FlxG.state, MainMenuState)
       || !FlxG.state.uiStateMachine.is(UIState.Exiting)
       || !FlxG.state.controls.BACK_P) return;
@@ -51,6 +50,7 @@ class RemnantsMainMenu extends Module
 
     event.cancel();
   }
+  #end
 
   override public function onStateChangeEnd(event:StateChangeScriptEvent):Void
   {
@@ -63,24 +63,19 @@ class RemnantsMainMenu extends Module
   {
     if (!RemnantsContentUtil.remnantsContentEnabled() || !Std.isOfType(state, MainMenuState)) return;
 
-    if (!FlxG.onMobile)
-    {
-      backSpr = FunkinSprite.createSparrow(0, 0, 'mainMenu/backspace');
-      backSpr.animation.addByPrefix('press', 'backspace PRESSED', 24, false);
-      backSpr.animation.addByPrefix('idle', 'backspace to exit', 24, true);
-      backSpr.animation.play('idle', true);
+    #if !mobile
+    backSpr = FunkinSprite.createSparrow(0, 0, 'mainMenu/backspace');
+    backSpr.animation.addByPrefix('press', 'backspace PRESSED', 24, false);
+    backSpr.animation.addByPrefix('idle', 'backspace to exit', 24, true);
+    backSpr.animation.play('idle', true);
 
-      // QT Plush Button appears on top of the back button.
-      // So we just move our button to the top corner instead!
-      // This only happens if the button exists in the user's build.
-      var qtPlush = ModuleHandler.getModule("QtPlushMenuButton")?.plushButton;
-      backSpr.setPosition(FlxG.width - backSpr.width + 15, qtPlush == null ? FlxG.height - backSpr.height + 50 : 50);
+    backSpr.setPosition(FlxG.width - backSpr.width + 15, FlxG.height - backSpr.height + 50);
 
-      backSpr.scrollFactor.set();
-      state.add(backSpr);
+    backSpr.scrollFactor.set();
+    state.add(backSpr);
 
-      backSpaced = false;
-    }
+    backSpaced = false;
+    #end
 
     // Only change the merch sprite if the user has upgraded.
     if (state.hasUpgraded)

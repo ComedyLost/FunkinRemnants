@@ -1,6 +1,5 @@
 import funkin.ui.freeplay.AlbumRoll;
 import funkin.modding.module.Module;
-import flixel.FlxG;
 
 class RemnantsAlbumUpdate extends Module
 {

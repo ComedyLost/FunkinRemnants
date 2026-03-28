@@ -1,4 +1,3 @@
-import flixel.FlxG;
 import funkin.ui.freeplay.backcards.BackingCard;
 import flixel.math.FlxMath;
 import flixel.FlxSprite;

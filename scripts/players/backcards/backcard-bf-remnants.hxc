@@ -8,7 +8,6 @@ import flixel.tweens.FlxTween;
 import flixel.util.FlxSpriteUtil;
 import funkin.audio.FunkinSound;
 import funkin.data.freeplay.player.PlayerRegistry;
-import flixel.FlxG;
 
 class BFRemnantsCard extends BackingCard
 {

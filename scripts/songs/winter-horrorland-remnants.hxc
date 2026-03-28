@@ -1,4 +1,3 @@
-import funkin.modding.base.ScriptedFlxRuntimeShader;
 import funkin.modding.module.ModuleHandler;
 import flixel.text.FlxTextBorderStyle;
 import funkin.ui.FullScreenScaleMode;
@@ -17,8 +16,6 @@ import flixel.util.FlxTimer;
 import flixel.text.FlxText;
 import funkin.save.Save;
 import funkin.Conductor;
-import flixel.FlxSprite;
-import flixel.FlxG;
 import funkin.util.SongSequence;
 
 class WinterHorrorlandRemnantsMixSong extends Song
@@ -106,7 +103,7 @@ class WinterHorrorlandRemnantsMixSong extends Song
     var whBaseSong:Song = SongRegistry.instance.fetchEntry("winter-horrorland");
     whBaseSong.onCreate(event);
 
-    var redShader:FlxRuntimeShader = ScriptedFlxRuntimeShader.init('OneColorShader');
+    var redShader:FlxRuntimeShader = new OneColorShader();
     redShader.setColor(0xFFFF0000);
     redFilter = new ShaderFilter(redShader);
     PlayState.instance.camHUD.filters = [];
@@ -121,10 +118,9 @@ class WinterHorrorlandRemnantsMixSong extends Song
       cutsceneTimerManager.update(event.elapsed);
     }
 
-    if (FlxG.onMobile)
-    {
-      isMobilePauseButtonPressed = TouchUtil.overlapsComplex(PlayState.instance.pauseButton) && TouchUtil.justPressed;
-    }
+    #if mobile
+    isMobilePauseButtonPressed = TouchUtil.overlapsComplex(PlayState.instance.pauseButton) && TouchUtil.justPressed;
+    #end
 
     if (onSpookChristmas)
     {
@@ -162,11 +158,12 @@ class WinterHorrorlandRemnantsMixSong extends Song
 
     skipText = new FlxText(936 * FullScreenScaleMode.wideScale.x, 618 * FullScreenScaleMode.wideScale.y, 0,
       'Skip [ ' + PlayState.instance.controls.getDialogueNameFromToken("CUTSCENE_ADVANCE", true) + ' ]', 20);
-    if (FlxG.onMobile)
-    {
-      skipText.text = 'Skip [Pause Button]';
-      skipText.x -= 136;
-    }
+
+    #if mobile
+    skipText.text = 'Skip [Pause Button]';
+    skipText.x -= 136;
+    #end
+
     skipText.setFormat(Paths.font('vcr.ttf'), 40, 0xFFFFFFFF, "right", FlxTextBorderStyle.OUTLINE, 0xFF000000);
     skipText.scrollFactor.set();
     skipText.borderSize = 2;

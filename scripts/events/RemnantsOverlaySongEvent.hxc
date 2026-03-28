@@ -1,5 +1,4 @@
 import funkin.play.event.SongEvent;
-import flixel.tweens.FlxEase;
 
 class RemnantsOverlaySongEvent extends SongEvent
 {

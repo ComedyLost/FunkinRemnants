@@ -1,9 +1,6 @@
 import funkin.ui.freeplay.Album;
 import funkin.ui.freeplay.FreeplaySongData;
 import funkin.util.ReflectUtil;
-import funkin.Assets;
-import funkin.Paths;
-import flixel.FlxG;
 import haxe.Json;
 
 class RemnantsAlbum extends Album
