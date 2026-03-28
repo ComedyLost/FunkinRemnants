@@ -1,3 +1,4 @@
+import funkin.ui.transition.LoadingState;
 import funkin.data.song.SongRegistry;
 import funkin.modding.module.Module;
 import funkin.play.PlayState;
@@ -22,7 +23,7 @@ class RemnantsStoryVariationFixer extends Module
       PlayState.lastParams.targetSong = currentSong;
       PlayState.lastParams.targetDifficulty = difficulty;
       PlayState.lastParams.targetVariation = variation;
-      FlxG.resetState();
+      LoadingState.loadPlayState(PlayState.lastParams);
     }
 
     super.onStateChangeEnd(event);
