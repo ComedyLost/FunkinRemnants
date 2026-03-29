@@ -1,23 +1,10 @@
 import funkin.play.song.Song;
 import funkin.save.Save;
 
-class SugarCrashRemnantsSong extends Song
+class SugarCrashRemnantsSong extends RemnantsRemnantsSong
 {
   public function new()
   {
-    super('sugarcrash-remnants');
-  }
-
-  public override function isSongNew(currentDifficulty:String, currentVariation:String):Bool
-  {
-    return !Save.instance.hasBeatenSong(this.id, null, this.variation);
-  }
-
-  override public function getBaseInstrumentalId(difficultyId:String, variationId:String):String
-  {
-    trace(RemnantsFreeplay.instance?.isSongSecret(this.id, variationId));
-    if (RemnantsFreeplay.instance?.isSongSecret(this.id, variationId)) return 'weed';
-
-    return super.getBaseInstrumentalId(difficultyId, variationId);
+    super('sugarcrash-remnants', {});
   }
 }
