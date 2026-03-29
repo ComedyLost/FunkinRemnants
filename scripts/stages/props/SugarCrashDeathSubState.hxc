@@ -6,6 +6,7 @@ import funkin.ui.MusicBeatSubState;
 import funkin.play.PlayState;
 #if mobile
 import funkin.util.TouchUtil;
+import flixel.util.FlxColor;
 #end
 
 class SugarCrashDeathSubState extends MusicBeatSubState
@@ -52,8 +53,6 @@ class SugarCrashDeathSubState extends MusicBeatSubState
   {
     persistentUpdate = false;
 
-    var targetState:StickerSubState->FlxState = (sticker) -> FreeplayState.build(null, sticker);
-
     var stickerPackId:Null<String> = PlayState.instance?.currentChart?.stickerPack;
 
     if (stickerPackId == null)
@@ -67,7 +66,7 @@ class SugarCrashDeathSubState extends MusicBeatSubState
       }
     }
 
-    openSubState(new StickerSubState({targetState: targetState, stickerPack: stickerPackId}));
+    openSubState(new StickerSubState({targetState: (sticker) -> FreeplayState.build(null, sticker), stickerPack: stickerPackId}));
   }
 
   override function close():Void
