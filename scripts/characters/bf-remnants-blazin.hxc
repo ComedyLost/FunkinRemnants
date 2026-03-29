@@ -30,6 +30,12 @@ class BFRemnantsBlazinCharacter extends AnimateAtlasCharacter
     this.zIndex = 2000;
   }
 
+  function resetCharacter(resetCamera:Bool = true):Void
+  {
+    super.resetCharacter(resetCamera);
+    this.danceEvery = 0;
+  }
+
   var cantUppercut = false;
 
   function onNoteHit(event:HitNoteScriptEvent)
