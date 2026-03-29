@@ -1,4 +1,5 @@
 import funkin.play.song.Song;
+import funkin.play.PlayState;
 import funkin.save.Save;
 
 class RemnantsRemnantsSong extends Song
@@ -28,6 +29,28 @@ class RemnantsRemnantsSong extends Song
     originalPreviewEnd = metadata?.playData?.previewEnd ?? Constants.DEFAULT_PREVIEW_END_TIME;
     trace(originalPreviewStart);
     trace(originalPreviewEnd);
+  }
+
+  function onCreate(event:ScriptEvent):Void
+  {
+    super.onCreate(event);
+
+    #if !mobile
+    if (!Preferences.downscroll) PlayState.instance.comboPopUps.offsets = [550, 350]; // Upscroll PC Offset
+
+    if (Preferences.downscroll) PlayState.instance.comboPopUps.offsets = [550, -190]; // Downscroll PC Offset
+    #else
+    if (Preferences.controlsScheme == "Arrows"
+      && !ControlsHandler.usingExternalInputDevice) PlayState.instance.comboPopUps.offsets = [30, 350]; // Middle Mobile Offset
+
+    if (!Preferences.downscroll
+      && Preferences.controlsScheme == "Arrows"
+      && ControlsHandler.usingExternalInputDevice) PlayState.instance.comboPopUps.offsets = [725, -350]; // Upscroll Side Mobile Offset
+
+    if (Preferences.downscroll
+      && Preferences.controlsScheme == "Arrows"
+      && ControlsHandler.usingExternalInputDevice) PlayState.instance.comboPopUps.offsets = [725, -190]; // Downscroll Side Mobile Offset
+    #end
   }
 
   public override function isSongNew(currentDifficulty:String, currentVariation:String):Bool
