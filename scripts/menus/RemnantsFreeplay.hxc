@@ -1,70 +1,142 @@
 import funkin.ui.freeplay.FreeplayState;
 import funkin.ui.freeplay.SongMenuItem;
 import funkin.modding.module.Module;
+import funkin.ui.freeplay.AlbumRoll;
+import funkin.audio.FunkinSound;
+import funkin.util.ReflectUtil;
+import flixel.util.FlxTimer;
+import funkin.save.Save;
+import haxe.Json;
 
 using StringTools;
 
-class RemnantFreeplay extends Module
+class RemnantsFreeplay extends Module
 {
+  var freeplayJson:Dynamic = {};
+
   public function new()
   {
-    super('remnantFreeplay', 1000, {state: FreeplayState});
+    super('remnantsFreeplay', 1000, {state: FreeplayState});
+
+    var freeplayPath:String = Paths.json('ui/freeplay/remnants-freeplay');
+    freeplayJson = Json.parse(Assets.getText(freeplayPath)) ?? {};
   }
 
-  function filterCapsules(levelId:String)
+  function customCapsules(event:CapsuleScriptEvent)
   {
-    return FlxG.state.subState.grpCapsules.members.filter(function(cap:SongMenuItem) {
-      return cap != null && cap.alive && cap.freeplayData != null && [levelId].contains(cap.freeplayData.levelId);
-    });
-  }
-
-  // Change the capsule title depending on the song!
-  function getSongCapsuleTitle(songId:String):String
-  {
-    switch (songId)
+    for (capsule in FlxG.state.subState.grpCapsules.members)
     {
-      case "glitcher-remnants":
-        return "Week X";
-      case "tormentor-remnants":
-        return "Boyfriend";
-      case "playtime-remnants":
-        return "Huggy";
-      case "grieving-remnants":
-        return "Epilogue";
-      default:
-        return "Coolswag";
-    }
+      if (capsule == null || !capsule.alive || capsule.freeplayData == null) continue;
 
-    return "Colswag";
+      var freeplayData:FreeplaySongData = capsule.freeplayData;
+      var newData:Dynamic = getReplaceSongData(freeplayData.songId, freeplayData.curVariation);
+      if (newData == null) continue;
+
+      if (newData.capsuleTitle != null)
+      {
+        capsule.createWeekTextGraphic(newData.capsuleTitle);
+        capsule.weekText.loadGraphic(FlxG.bitmap.get(newData.capsuleTitle));
+
+        if (newData.capsuleOffset != null)
+        {
+          capsule.weekText.offset.set(newData.capsuleOffset[0], newData.capsuleOffset[1]);
+        }
+      }
+
+      var variationId:String = freeplayData.curVariation;
+      if (variationId == Constants.DEFAULT_VARIATION) variationId = '';
+
+      if (newData.secret != null && !Save.instance.hasBeatenSong(freeplayData.songId, null, variationId))
+      {
+        var replacedSongName:String = newData.secret.name ?? capsule.songText.text;
+        if (capsule.songText.text != replacedSongName)
+        {
+          capsule.songText.text = replacedSongName;
+          capsule.songText.clipWidth = capsule.songText.clipWidth;
+          capsule.updateSelected();
+        }
+
+        if (newData.secret.difficulty != null)
+        {
+          var rating:Int = ReflectUtil.getProperty(newData.secret.difficulty, event.difficultyId);
+          if (rating != null)
+          {
+            if (capsule.selected) FlxG.state.subState.albumRoll.setDifficultyStars(rating);
+            capsule.updateDifficultyRating(rating);
+          }
+        }
+
+        if (newData.secret.bpm != null) capsule.updateBPM(newData.secret.bpm);
+        if (newData.secret.hideIcon ?? false) capsule.pixelIcon.alpha = 0;
+      }
+    }
   }
 
-  // Change the capsule offset depending on the song!
-  function getSongCapsuleOffset(songId:String):Array<Int>
-  {
-    switch (songId)
-    {
-      default:
-        return [0, 0];
-    }
-
-    return [0, 0];
-  }
-
-  override function onDifficultySwitch(event:ScriptEvent):Void
+  override function onDifficultySwitch(event:CapsuleScriptEvent):Void
   {
     super.onDifficultySwitch(event);
+    this.customCapsules(event);
+  }
 
-    for (capsule in this.filterCapsules('remnants-modExtras'))
+  var previousAlbumKey:String = null;
+
+  override function onCapsuleSelected(event:CapsuleScriptEvent):Void
+  {
+    // Replace the random capsule theme if we are on it.
+    if (FlxG.state.subState.curSelected == 0)
     {
-      if (capsule == null || !capsule.alive) continue;
+      // Check if the random capsule was hovered over before replacing the sound.
+      // It's similar to the previous check but this doesn't crash the game...
+      if (event.capsule.freeplayData != null) return;
 
-      var weekType:String = getSongCapsuleTitle(capsule.freeplayData.songId);
+      // Replace the sound with a bit more of delay so it actually overrides it every time it needs to play.
+      new FlxTimer().start(0.3, _ -> {
+        FlxG.state.subState.clearPreviews();
 
-      capsule.createWeekTextGraphic(weekType);
-      capsule.weekText.loadGraphic(FlxG.bitmap.get(weekType));
+        var previewVolume:Float = 0.7;
+        if (FlxG.state.subState.dj != null) previewVolume *= FlxG.state.subState.dj.getMusicPreviewMult();
 
-      var weekTextOffsets:Array<Float> = getSongCapsuleOffset(capsule.freeplayData.songId);
-      capsule.weekText.offset.set(weekTextOffsets[0], weekTextOffsets[1]);
+        // Check if this music is already playing before fading it in, in case the player is just scrolling through variations while on the capsule.
+        var shouldFade:Bool = FunkinSound.playMusic('freeplayRandom-remnants',
+          {
+            startingVolume: 0.0,
+            overrideExisting: true,
+            restartTrack: false
+          });
+
+        if (shouldFade) FlxG.sound.music.fadeIn(2, 0, previewVolume);
+      });
     }
+
+    if (event?.capsule?.freeplayData?.data?.getAlbumId(event.difficultyId, event.variationId) == 'remnants')
+    {
+      var albumRoll:AlbumRoll = FlxG.state.subState.albumRoll;
+
+      if (albumRoll.albumData == null)
+      {
+        return;
+      }
+
+      var albumRollKey:String = albumRoll?.albumData?.getAlbumArtAssetKey();
+
+      if (albumRollKey != previousAlbumKey || previousAlbumKey == null)
+      {
+        albumRoll.updateAlbum();
+        albumRoll.skipIntro();
+      }
+
+      previousAlbumKey = albumRollKey;
+    }
+
+    super.onCapsuleSelected(event);
+    this.customCapsules(event);
+  }
+
+  public function getReplaceSongData(songId:String, variationId:String):Dynamic
+  {
+    var curSong:Dynamic = ReflectUtil.getProperty(freeplayJson, songId);
+    var curVariation:Dynamic = ReflectUtil.getProperty(curSong, curVariation);
+
+    return curVariation;
   }
 }

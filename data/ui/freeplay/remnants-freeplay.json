@@ -1,0 +1,93 @@
+{
+  "bopeebo": { "remnants": { "albumCover": "remnants-week1" } },
+  "remnants": {
+    "remnants": {
+      "albumCover": "remnants-remnants",
+      "secret": {
+        "hideAlbum": true,
+        "difficulty": { "easy": 1, "hard": 3, "normal": 2 },
+        "name": "Ridge (Remnants Mix)",
+        "hideIcon": true,
+        "bpm": 145
+      },
+      "capsuleTitle": "Expansion"
+    },
+    "default": { "albumCover": "remnants-general" },
+    "erect": { "albumCover": "remnants-general" },
+    "pico": { "albumCover": "remnants-pico" }
+  },
+  "eggnog": { "remnants": { "albumCover": "remnants-week5" } },
+  "lit-up": {
+    "bfremnants": { "albumCover": "remnants-weekend1-bf" },
+    "remnants": { "albumCover": "remnants-weekend1" }
+  },
+  "philly-nice": { "remnants": { "albumCover": "remnants-week3" } },
+  "high": { "remnants": { "albumCover": "remnants-week4" } },
+  "guns": { "remnants": { "albumCover": "remnants-week7" } },
+  "roses": { "remnants": { "albumCover": "remnants-week6" } },
+  "stress": { "remnants": { "albumCover": "remnants-week7" } },
+  "pico": { "remnants": { "albumCover": "remnants-week3" } },
+  "tormentor-remnants": {
+    "default": {
+      "albumCover": "remnants-corruption",
+      "capsuleTitle": "Boyfriend"
+    }
+  },
+  "blammed": { "remnants": { "albumCover": "remnants-week3" } },
+  "milf": { "remnants": { "albumCover": "remnants-week4" } },
+  "ugh": { "remnants": { "albumCover": "remnants-week7" } },
+  "blazin": {
+    "bfremnants": { "albumCover": "remnants-weekend1-bf" },
+    "remnants": { "albumCover": "remnants-weekend1" }
+  },
+  "cocoa": { "remnants": { "albumCover": "remnants-week5" } },
+  "monster": { "remnants": { "albumCover": "remnants-week2-scary" } },
+  "grieving-remnants": {
+    "default": {
+      "albumCover": "remnants-grieving",
+      "ostName": "CINEMA OST",
+      "capsuleTitle": "Epilogue"
+    }
+  },
+  "2hot": {
+    "bfremnants": { "albumCover": "remnants-weekend1-bf" },
+    "remnants": { "albumCover": "remnants-weekend1" }
+  },
+  "glitcher-remnants": {
+    "default": {
+      "albumCover": "remnants-glitcher",
+      "capsuleOffset": [0, 0],
+      "capsuleTitle": "Week X"
+    }
+  },
+  "spookeez": { "remnants": { "albumCover": "remnants-week2" } },
+  "senpai": { "remnants": { "albumCover": "remnants-week6" } },
+  "thorns": { "remnants": { "albumCover": "remnants-week6" } },
+  "darnell": {
+    "bfremnants": { "albumCover": "remnants-weekend1-bf" },
+    "remnants": { "albumCover": "remnants-weekend1" }
+  },
+  "sugarcrash-remnants": {
+    "default": {
+      "ostName": "BACON CHEESE",
+      "albumCover": "remnants-expansion",
+      "secret": {
+        "albumCover": "remnants-general",
+        "difficulty": { "easy": 4, "hard": 6, "normal": 5 },
+        "name": "Smash (Remnants Mix)",
+        "hideOSTName": true,
+        "hideIcon": true,
+        "bpm": 144
+      }
+    }
+  },
+  "playtime-remnants": {
+    "default": { "albumCover": "remnants-huggy", "capsuleTitle": "Huggy" }
+  },
+  "winter-horrorland": { "remnants": { "albumCover": "remnants-week5-scary" } },
+  "south": { "remnants": { "albumCover": "remnants-week2" } },
+  "satin-panties": { "remnants": { "albumCover": "remnants-week4" } },
+  "fresh": { "remnants": { "albumCover": "remnants-week1" } },
+  "tutorial": { "remnants": { "albumCover": "remnants-tutorial" } },
+  "dadbattle": { "remnants": { "albumCover": "remnants-week1" } }
+}

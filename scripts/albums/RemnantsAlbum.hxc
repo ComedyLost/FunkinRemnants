@@ -1,18 +1,15 @@
 import funkin.ui.freeplay.Album;
+import funkin.modding.module.ModuleHandler;
 import funkin.ui.freeplay.FreeplaySongData;
 import funkin.util.ReflectUtil;
+import funkin.save.Save;
 import haxe.Json;
 
 class RemnantsAlbum extends Album
 {
-  var albumArtJsonObj:Dynamic = {};
-
   public function new()
   {
     super('remnants');
-
-    var albumArtJsonPath:String = Paths.json('ui/freeplay/remnant-album-covers');
-    albumArtJsonObj = Json.parse(Assets.getText(albumArtJsonPath))?.albumCoversList ?? {};
   }
 
   override public function getAlbumArtAssetKey():String
@@ -35,24 +32,35 @@ class RemnantsAlbum extends Album
   override public function getAlbumOSTName():Null<String>
   {
     var curSelectedFreeplaySong:FreeplaySongData = getFreeplaySongData();
+    if (curSelectedFreeplaySong == null) return _data?.albumOSTName;
 
-    return switch (curSelectedFreeplaySong?.songId ?? '')
+    var songId:String = curSelectedFreeplaySong.songId;
+    var variationId:String = curSelectedFreeplaySong.curVariation;
+
+    var remnantsFreeplay:RemnantsFreeplay = ModuleHandler.getModule('remnantsFreeplay');
+    var json:Dynamic = remnantsFreeplay?.getReplaceSongData(songId, variationId);
+
+    var albumOSTName:String = json?.ostName;
+
+    if (!Save.instance.hasBeatenSong(songId, null, variationId) && json?.secret?.hideOSTName ?? false)
     {
-      case 'grieving-remnants':
-        "CINEMA OST";
-      case 'sugarcrash-remnants':
-        "BACON CHEESE";
-      default:
-        _data?.albumOSTName;
+      albumOSTName = null;
     }
+
+    return json?.ostName ?? _data?.albumOSTName;
   }
 
   public function getRemnantsAlbumAssetKey(songId:String, songVariation:String):String
   {
-    var curSongAlbumVariations:Dynamic = ReflectUtil.getProperty(albumArtJsonObj, songId);
-    var curVariationAlbum:String = ReflectUtil.getProperty(curSongAlbumVariations, songVariation);
+    var remnantsFreeplay:RemnantsFreeplay = ModuleHandler.getModule('remnantsFreeplay');
+    var json:Dynamic = remnantsFreeplay?.getReplaceSongData(songId, songVariation);
 
-    return curVariationAlbum ?? 'remnants-placeholder';
+    if (json?.secret?.albumCover != null && !Save.instance.hasBeatenSong(songId, null, songVariation))
+    {
+      return json.secret.albumCover;
+    }
+
+    return json?.albumCover ?? 'remnants-placeholder';
   }
 
   function getFreeplaySongData():FreeplaySongData

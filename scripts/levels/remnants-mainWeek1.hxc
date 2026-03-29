@@ -13,4 +13,9 @@ class RemnantsWeekLevel extends Level
   {
     return Save.instance.hasBeatenSong('remnants') ? ["Remnants!"] : ["???"];
   }
+
+  override function getDifficulties():Array<String>
+  {
+    return Constants.DEFAULT_DIFFICULTY_LIST;
+  }
 }
