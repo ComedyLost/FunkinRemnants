@@ -1,65 +1,52 @@
 {
   "version": "1.0.0",
   "name": "Remnants GF (Car)",
-  "assetPath": "shared:characters/gf-remnants/base",
+  "assetPath": "shared:characters/gf-remnants/car",
   "startingAnimation": "danceRight",
   "renderType": "animateatlas",
-  "cameraOffsets": [0, -187],
+  "cameraOffsets": [0, -196.5],
   "animations": [
     {
       "name": "danceLeft",
-      "prefix": "GF Dancing Beat Hair blowing CAR",
-      "frameIndices": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14],
-      "offsets": [44, -1]
+      "prefix": "Dance Left Car"
     },
     {
       "name": "danceRight",
-      "prefix": "GF Dancing Beat Hair blowing CAR",
-      "frameIndices": [
-        15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29
-      ],
-      "offsets": [44, -1]
+      "prefix": "Dance Right Car"
     },
     {
       "name": "idle-hold",
-      "prefix": "GF Dancing Beat Hair blowing CAR",
-      "looped": true,
+      "prefix": "Dance Car Full",
       "frameIndices": [10, 11, 12, 25, 26, 27],
-      "offsets": [44, -1]
+      "looped": true
     },
     {
       "name": "duck",
-      "prefix": "GF Duck Hair Blowing",
-      "frameIndices": [0, 1, 2, 3, 4, 5, 6, 7, 4, 5, 6, 7, 4, 5, 6, 7, 4, 5],
-      "offsets": [44, -1]
+      "prefix": "Duck Car",
+      "frameIndices": [0, 1, 2, 3, 4, 5, 6, 7, 4, 5, 6, 7, 4, 5, 6, 7, 4, 5]
     },
     {
       "name": "duck-hold",
-      "prefix": "GF Duck Hair Blowing",
-      "frameIndices": [2, 3, 5, 6, 7],
-      "offsets": [44, -1]
+      "prefix": "Duck Car",
+      "frameIndices": [2, 3, 5, 6, 7]
     },
     {
       "name": "cheer",
-      "prefix": "GF Cheer CAR",
-      "offsets": [44, -1]
+      "prefix": "Cheer Car"
     },
     {
       "name": "sad",
-      "prefix": "gf sad CAR",
-      "frameIndices": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
-      "offsets": [44, -1]
+      "prefix": "Sad Car",
+      "frameIndices": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
     },
     {
       "name": "combo50",
-      "prefix": "GF Cheer CAR",
-      "offsets": [44, -1]
+      "prefix": "Cheer Car"
     },
     {
       "name": "drop70",
-      "prefix": "gf sad CAR",
-      "frameIndices": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
-      "offsets": [44, -1]
+      "prefix": "Sad Car",
+      "frameIndices": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
     }
   ]
 }
