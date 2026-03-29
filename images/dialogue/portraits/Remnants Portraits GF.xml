@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TextureAtlas imagePath="Remnants Portraits GF.png" width="315" height="303">
+<SubTexture name="GF Remnants Portrait 10000" x="3" y="3" width="309" height="297" frameX="-0" frameY="-0" frameWidth="309" frameHeight="297"/>
+</TextureAtlas>

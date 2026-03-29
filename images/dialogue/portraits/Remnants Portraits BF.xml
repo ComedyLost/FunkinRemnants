@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TextureAtlas imagePath="Remnants Portraits BF.png">
+<SubTexture name="BF Remnants Portrait 10000" x="0" y="0" width="343" height="263" frameX="0" frameY="0" frameWidth="339" frameHeight="259" />
+<SubTexture name="BF Remnants Portrait 20000" x="0" y="263" width="343" height="257" frameX="0" frameY="0" frameWidth="339" frameHeight="253" />
+<SubTexture name="BF Remnants Portrait 30000" x="0" y="520" width="373" height="268" frameX="0" frameY="0" frameWidth="369" frameHeight="264" />
+</TextureAtlas>
