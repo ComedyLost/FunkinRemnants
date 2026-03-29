@@ -1,12 +1,49 @@
 import funkin.play.cutscene.dialogue.DialogueBox;
 import funkin.audio.FunkinSound;
 import funkin.play.PlayState;
+import haxe.ds.StringMap;
 
 class RemnantsDialogueBox extends DialogueBox
 {
-  var luisText:FunkinSound;
-  var roxanneText:FunkinSound;
-  var defaultText:FunkinSound;
+  final DIALOGUE_NOISES:StringMap<Dynamic> = [
+    'luis-remnants' =>
+    {
+      noises: ['dialogueNoises/luisText'],
+      volume: 0.6
+    },
+    'roxanne-remnants' =>
+    {
+      noises: ['dialogueNoises/roxanneText'],
+      volume: 0.6
+    },
+    'bf-remnants' =>
+    {
+      noises: [for (i in 0...5) 'dialogueNoises/bfNoise/BF_$i'],
+      volume: 0.8
+    },
+    'gf-remnants' =>
+    {
+      noises: [for (i in 0...5) 'dialogueNoises/gfNoise/GF_$i'],
+      volume: 0.9
+    },
+    'proto-bf' =>
+    {
+      noises: [for (i in 0...5) 'dialogueNoises/protoBf/badnoise$i'],
+      volume: 0.45
+    },
+    'proto-gf' =>
+    {
+      noises: [for (i in 0...5) 'dialogueNoises/protoGf/GF_$i'],
+      volume: 0.65
+    },
+    'default' =>
+    {
+      noises: ['week6:pixelText'],
+      volume: 0.6
+    }
+  ];
+
+  public var cachedNoises:StringMap<Array<String>> = [];
 
   function new()
   {
@@ -17,17 +54,31 @@ class RemnantsDialogueBox extends DialogueBox
   {
     super.onCreate(event);
 
-    luisText = FunkinSound.load(Paths.sound('dialogueNoises/luisText'), 0.6);
-    roxanneText = FunkinSound.load(Paths.sound('dialogueNoises/roxanneText'), 0.6);
-    defaultText = FunkinSound.load(Paths.sound('pixelText', 'week6'), 0.6);
+    cachedNoises = new StringMap();
+    for (key in DIALOGUE_NOISES.keys())
+    {
+      var data:Dynamic = DIALOGUE_NOISES.get(key);
+      cachedNoises.set(key, [for (sound in data.noises) getNoise(sound, data)]);
+    }
+  }
+
+  function getNoise(sound:String, data:Dynamic):FunkinSound
+  {
+    var library:String = Paths.getLibrary(sound);
+    if (library == 'preload') library = null;
+
+    var key:String = Paths.stripLibrary(sound);
+    var sound:String = Paths.sound(key, library);
+    return FunkinSound.load(sound, data.volume);
   }
 
   override function applyAnimationOffsets(name:String):Void
   {
-    var textX:Float = super.textDisplay.x;
-    var textY:Float = super.textDisplay.y;
     super.applyAnimationOffsets(name);
-    super.textDisplay.setPosition(textX, textY);
+
+    // The game doesn't play nice with text display offsets currently.
+    // So we force the position until it's resolved.
+    this.textDisplay.setPosition(110, 480);
   }
 
   override function loadText():Void
@@ -50,34 +101,9 @@ class RemnantsDialogueBox extends DialogueBox
 
   function changeTextVoice(conversation:Conversation)
   {
-    this.textDisplay.sounds = switch (conversation.currentSpeaker?.id)
-    {
-      case 'luis-remnants':
-        [luisText];
-      case 'roxanne-remnants':
-        [roxanneText];
-      case 'bf-remnants':
-        [
-          for (i in 1...5)
-            FunkinSound.load(Paths.sound('dialogueNoises/bfNoise/BF_$i'), 0.8)
-        ];
-      case 'gf-remnants':
-        [
-          for (i in 1...5)
-            FunkinSound.load(Paths.sound('dialogueNoises/gfNoise/GF_$i'), 0.9)
-        ];
-      case 'proto-bf':
-        [
-          for (i in 1...4)
-            FunkinSound.load(Paths.sound('dialogueNoises/protoBf/badnoise$i'), 0.45)
-        ];
-      case 'proto-gf':
-        [
-          for (i in 1...5)
-            FunkinSound.load(Paths.sound('dialogueNoises/protoGf/GF_$i'), 0.65)
-        ];
-      default:
-        [defaultText];
-    }
+    var sounds:Array<FunkinSound> = cachedNoises.get(conversation.currentSpeaker?.id ?? 'default');
+    if (sounds == null) sounds = cachedNoises.get('default');
+
+    this.textDisplay.sounds = sounds;
   }
 }
