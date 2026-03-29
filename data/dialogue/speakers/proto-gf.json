@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0",
+  "name": "Prototype GF",
+  "assetPath": "dialogue/portraits/Prototype Portraits GF",
+  "flipX": false,
+  "isPixel": false,
+  "scale": 1,
+  "offsets": [-370, -50],
+  "animations": [
+    {
+      "name": "normal",
+      "prefix": "GF Prototype Portrait 1"
+    }
+  ]
+}

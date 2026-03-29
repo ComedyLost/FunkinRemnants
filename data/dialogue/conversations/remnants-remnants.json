@@ -1,0 +1,159 @@
+{
+  "version": "1.0.0",
+
+  "backdrop": {
+    "type": "solid",
+    "fadeTime": 1.0,
+    "color": "#00000000"
+  },
+
+  "music": {
+    "asset": "",
+    "fadeTime": 0,
+    "looped": false
+  },
+
+  "outro": {
+    "type": "fade",
+    "fadeTime": 1.0
+  },
+
+  "dialogue": [
+    {
+      "speaker": "bf-remnants",
+      "speakerAnimation": "normal",
+      "box": "remnants",
+      "boxAnimation": "right",
+
+      "text": ["Beep bop skdoo beh..?"]
+    },
+    {
+      "speaker": "gf-remnants",
+      "speakerAnimation": "normal",
+      "box": "remnants",
+      "boxAnimation": "right",
+
+      "text": ["Uh... I'm not sure where we are right now."]
+    },
+    {
+      "speaker": "gf-remnants",
+      "speakerAnimation": "normal",
+      "box": "remnants",
+      "boxAnimation": "right",
+
+      "text": ["I feel like we're entering some sort of uncharted territory."]
+    },
+    {
+      "speaker": "proto-bf",
+      "speakerAnimation": "normal",
+      "box": "remnants",
+      "boxAnimation": "left",
+
+      "text": ["Bep."]
+    },
+    {
+      "speaker": "bf-remnants",
+      "speakerAnimation": "normal",
+      "box": "remnants",
+      "boxAnimation": "right",
+
+      "text": ["Beep sk- wait..."]
+    },
+    {
+      "speaker": "bf-remnants",
+      "speakerAnimation": "admire",
+      "box": "remnants",
+      "boxAnimation": "right",
+
+      "text": ["Oh my god you're like a Funkin' Remnant."]
+    },
+    {
+      "speaker": "gf-remnants",
+      "speakerAnimation": "normal",
+      "box": "remnants",
+      "boxAnimation": "right",
+
+      "text": ["You did not just make that joke right now."]
+    },
+    {
+      "speaker": "proto-gf",
+      "speakerAnimation": "normal",
+      "box": "remnants",
+      "boxAnimation": "left",
+
+      "text": ["Hey I'm here too."]
+    },
+    {
+      "speaker": "proto-bf",
+      "speakerAnimation": "normal",
+      "box": "remnants",
+      "boxAnimation": "left",
+
+      "text": ["You don't resemble the old content you claim to represent."]
+    },
+    {
+      "speaker": "proto-bf",
+      "speakerAnimation": "normal",
+      "box": "remnants",
+      "boxAnimation": "left",
+
+      "text": ["Sing with me and we'll prove that I'm better than you."]
+    },
+    {
+      "speaker": "gf-remnants",
+      "speakerAnimation": "normal",
+      "box": "remnants",
+      "boxAnimation": "right",
+
+      "text": ["I think this guy means business", ",\nwe might be chopped."]
+    },
+    {
+      "speaker": "bf-remnants",
+      "speakerAnimation": "normal",
+      "box": "remnants",
+      "boxAnimation": "right",
+
+      "text": ["You might be right."]
+    },
+    {
+      "speaker": "proto-gf",
+      "speakerAnimation": "normal",
+      "box": "remnants",
+      "boxAnimation": "left",
+
+      "text": ["You should call yourselves\nFunkin' Wireframes instead."]
+    },
+    {
+      "speaker": "bf-remnants",
+      "speakerAnimation": "normal",
+      "box": "remnants",
+      "boxAnimation": "right",
+
+      "text": ["That name has no sauce I'm sorry."]
+    },
+    {
+      "speaker": "proto-bf",
+      "speakerAnimation": "normal",
+      "box": "remnants",
+      "boxAnimation": "left",
+
+      "text": ["You cannot be saying that."]
+    },
+    {
+      "speaker": "bf-remnants",
+      "speakerAnimation": "normal",
+      "box": "remnants",
+      "boxAnimation": "right",
+
+      "text": ["Enough talk."]
+    },
+    {
+      "speaker": "bf-remnants",
+      "speakerAnimation": "excited",
+      "box": "remnants",
+      "boxAnimation": "right-loud",
+
+      "text": ["Let's get this started!"]
+    }
+  ]
+}

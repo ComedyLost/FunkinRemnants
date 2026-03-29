@@ -1,9 +1,16 @@
+import funkin.util.SongSequence;
 import funkin.play.song.Song;
 import funkin.play.PlayState;
+import flixel.util.FlxTimer;
 import funkin.save.Save;
+import funkin.Conductor;
 
 class RemnantsRemnantsSong extends Song
 {
+  var playedDialogue:Bool = false;
+
+  var sequence:SongSequence;
+
   var originalPreviewStart:Float;
   var originalPreviewEnd:Float;
 
@@ -31,9 +38,72 @@ class RemnantsRemnantsSong extends Song
     trace(originalPreviewEnd);
   }
 
+  function onCountdownStart(event:ScriptEvent):Void
+  {
+    super.onCountdownStart(event);
+
+    if (PlayState.instance.isChartingMode && !playedDialogue) playedDialogue = true;
+    if (!PlayState.instance.disableKeys) PlayState.instance.disableKeys = true;
+
+    if (!playedDialogue)
+    {
+      trace('Pausing countdown to play dialogue... (`remnants-remnants`)');
+      playedDialogue = true;
+      event.cancel();
+
+      FlxTimer.wait(1, () -> {
+        PlayState.instance.disableKeys = false;
+        PlayState.instance.startConversation('remnants-remnants');
+      });
+    }
+  }
+
+  function onGameOver(event:ScriptEvent):Void
+  {
+    super.onGameOver(event);
+    sequence?.destroy();
+  }
+
+  function onSongRetry(event:ScriptEvent):Void
+  {
+    super.onSongRetry(event);
+    PlayState.instance.disableKeys = true;
+  }
+
+  function onSongLoaded(event:SongLoadScriptEvent)
+  {
+    sequence?.destroy();
+
+    var sequenceData = [
+      {
+        time: Conductor.instance.getBeatTimeInMs(4) / 1000,
+        callback: () -> {
+          PlayState.instance.disableKeys = false;
+        }
+      }
+    ];
+
+    sequence = new SongSequence(sequenceData);
+    sequence.startTime = 0;
+  }
+
+  function onDestroy(event:ScriptEvent):Void
+  {
+    super.onDestroy(event);
+    sequence?.destroy();
+  }
+
+  public override function onDialogueEnd()
+  {
+    // We may need to wait for the outro to play.
+    Countdown.performCountdown();
+  }
+
   function onCreate(event:ScriptEvent):Void
   {
     super.onCreate(event);
+
+    playedDialogue = false;
 
     #if !mobile
     if (!Preferences.downscroll) PlayState.instance.comboPopUps.offsets = [550, 350]; // Upscroll PC Offset

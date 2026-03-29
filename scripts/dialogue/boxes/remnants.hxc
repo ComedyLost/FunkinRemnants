@@ -6,6 +6,7 @@ class RemnantsDialogueBox extends DialogueBox
 {
   var luisText:FunkinSound;
   var roxanneText:FunkinSound;
+  var defaultText:FunkinSound;
 
   function new()
   {
@@ -15,8 +16,10 @@ class RemnantsDialogueBox extends DialogueBox
   override public function onCreate(event:ScriptEvent):Void
   {
     super.onCreate(event);
+
     luisText = FunkinSound.load(Paths.sound('dialogueNoises/luisText'), 0.6);
     roxanneText = FunkinSound.load(Paths.sound('dialogueNoises/roxanneText'), 0.6);
+    defaultText = FunkinSound.load(Paths.sound('pixelText', 'week6'), 0.6);
   }
 
   override function applyAnimationOffsets(name:String):Void
@@ -53,8 +56,28 @@ class RemnantsDialogueBox extends DialogueBox
         [luisText];
       case 'roxanne-remnants':
         [roxanneText];
+      case 'bf-remnants':
+        [
+          for (i in 1...5)
+            FunkinSound.load(Paths.sound('dialogueNoises/bfNoise/BF_$i'), 0.8)
+        ];
+      case 'gf-remnants':
+        [
+          for (i in 1...5)
+            FunkinSound.load(Paths.sound('dialogueNoises/gfNoise/GF_$i'), 0.9)
+        ];
+      case 'proto-bf':
+        [
+          for (i in 1...4)
+            FunkinSound.load(Paths.sound('dialogueNoises/protoBf/badnoise$i'), 0.45)
+        ];
+      case 'proto-gf':
+        [
+          for (i in 1...5)
+            FunkinSound.load(Paths.sound('dialogueNoises/protoGf/GF_$i'), 0.65)
+        ];
       default:
-        null;
+        [defaultText];
     }
   }
 }
