@@ -1,41 +1,19 @@
 import funkin.util.SongSequence;
-import funkin.play.song.Song;
 import funkin.play.PlayState;
 import flixel.util.FlxTimer;
 import funkin.save.Save;
 import funkin.Conductor;
 
-class RemnantsRemnantsSong extends Song
+class RemnantsRemnantsSong extends SugarCrashRemnantsSong
 {
   var playedDialogue:Bool = false;
 
-  var sequence:SongSequence;
-
-  var originalPreviewStart:Float;
-  var originalPreviewEnd:Float;
-
-  public function new(songId:String, ?params:SongEntryParams)
+  public function new()
   {
-    if (songId == 'unknown')
-    {
-      songId = 'remnants';
-    }
-
-    if (params == null)
-    {
-      params =
-        {
-          variation: 'remnants'
-        };
-    }
-
-    super(songId, params);
-
-    var metadata:SongMetadata = _metadata.get(this.variation ?? Constants.DEFAULT_VARIATION);
-    originalPreviewStart = metadata?.playData?.previewStart ?? Constants.DEFAULT_PREVIEW_START_TIME;
-    originalPreviewEnd = metadata?.playData?.previewEnd ?? Constants.DEFAULT_PREVIEW_END_TIME;
-    trace(originalPreviewStart);
-    trace(originalPreviewEnd);
+    super('remnants',
+      {
+        variation: 'remnants'
+      });
   }
 
   function onCountdownStart(event:ScriptEvent):Void
@@ -43,12 +21,12 @@ class RemnantsRemnantsSong extends Song
     super.onCountdownStart(event);
 
     if (PlayState.instance.isChartingMode && !playedDialogue) playedDialogue = true;
-    if (!PlayState.instance.disableKeys) PlayState.instance.disableKeys = true;
 
     if (!playedDialogue)
     {
       trace('Pausing countdown to play dialogue... (`remnants-remnants`)');
       playedDialogue = true;
+      PlayState.instance.disableKeys = true;
       event.cancel();
 
       FlxTimer.wait(1, () -> {
@@ -56,47 +34,6 @@ class RemnantsRemnantsSong extends Song
         PlayState.instance.startConversation('remnants-remnants');
       });
     }
-  }
-
-  function onGameOver(event:ScriptEvent):Void
-  {
-    super.onGameOver(event);
-    sequence?.destroy();
-  }
-
-  function onSongRetry(event:ScriptEvent):Void
-  {
-    super.onSongRetry(event);
-    PlayState.instance.disableKeys = true;
-  }
-
-  function onSongLoaded(event:SongLoadScriptEvent)
-  {
-    sequence?.destroy();
-
-    var sequenceData = [
-      {
-        time: Conductor.instance.getBeatTimeInMs(4) / 1000,
-        callback: () -> {
-          PlayState.instance.disableKeys = false;
-        }
-      }
-    ];
-
-    sequence = new SongSequence(sequenceData);
-    sequence.startTime = 0;
-  }
-
-  function onDestroy(event:ScriptEvent):Void
-  {
-    super.onDestroy(event);
-    sequence?.destroy();
-  }
-
-  public override function onDialogueEnd()
-  {
-    // We may need to wait for the outro to play.
-    Countdown.performCountdown();
   }
 
   function onCreate(event:ScriptEvent):Void
@@ -121,29 +58,5 @@ class RemnantsRemnantsSong extends Song
       && Preferences.controlsScheme == "Arrows"
       && ControlsHandler.usingExternalInputDevice) PlayState.instance.comboPopUps.offsets = [725, -190]; // Downscroll Side Mobile Offset
     #end
-  }
-
-  public override function isSongNew(currentDifficulty:String, currentVariation:String):Bool
-  {
-    return !Save.instance.hasBeatenSong(this.id, null, this.variation);
-  }
-
-  override public function getBaseInstrumentalId(difficultyId:String, variationId:String):String
-  {
-    var original:String = super.getBaseInstrumentalId(difficultyId, variationId);
-    var metadata:SongMetadata = _metadata.get(variationId);
-
-    if (RemnantsFreeplay.instance?.isSongSecret(this.id, variationId))
-    {
-      metadata?.playData?.previewStart = 0;
-      metadata?.playData?.previewEnd = 1;
-
-      return original.length == 0 ? 'fake' : '$original-fake';
-    }
-
-    metadata?.playData?.previewStart = originalPreviewStart;
-    metadata?.playData?.previewEnd = originalPreviewEnd;
-
-    return super.getBaseInstrumentalId(difficultyId, variationId);
   }
 }

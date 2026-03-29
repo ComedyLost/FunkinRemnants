@@ -1,10 +1,46 @@
 import funkin.play.song.Song;
 import funkin.save.Save;
 
-class SugarCrashRemnantsSong extends RemnantsRemnantsSong
+/**
+ * Even though this looks like just the sugarcrash song script.
+ * This makes sure we play the fake preview in Freeplay!
+ */
+class SugarCrashRemnantsSong extends Song
 {
-  public function new()
+  var originalPreviewStart:Float;
+  var originalPreviewEnd:Float;
+
+  public function new(songId:String, ?params:SongEntryParams)
   {
-    super('sugarcrash-remnants', {});
+    if (songId == 'unknown') songId = 'sugarcrash-remnants';
+    super(songId, params);
+
+    var metadata:SongMetadata = _metadata.get(this.variation ?? Constants.DEFAULT_VARIATION);
+    originalPreviewStart = metadata?.playData?.previewStart ?? Constants.DEFAULT_PREVIEW_START_TIME;
+    originalPreviewEnd = metadata?.playData?.previewEnd ?? Constants.DEFAULT_PREVIEW_END_TIME;
+  }
+
+  override public function getBaseInstrumentalId(difficultyId:String, variationId:String):String
+  {
+    var original:String = super.getBaseInstrumentalId(difficultyId, variationId);
+    var metadata:SongMetadata = _metadata.get(variationId);
+
+    if (RemnantsFreeplay.instance?.isSongSecret(this.id, variationId))
+    {
+      metadata?.playData?.previewStart = 0;
+      metadata?.playData?.previewEnd = 1;
+
+      return original.length == 0 ? 'fake' : '$original-fake';
+    }
+
+    metadata?.playData?.previewStart = originalPreviewStart;
+    metadata?.playData?.previewEnd = originalPreviewEnd;
+
+    return super.getBaseInstrumentalId(difficultyId, variationId);
+  }
+
+  override public function isSongNew(currentDifficulty:String, currentVariation:String):Bool
+  {
+    return !Save.instance.hasBeatenSong(this.id, null, this.variation);
   }
 }
