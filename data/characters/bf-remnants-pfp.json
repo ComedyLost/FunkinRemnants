@@ -11,27 +11,52 @@
   "animations": [
     {
       "name": "idle",
-      "prefix": "Idle",
+      "prefix": "idle",
       "offsets": [0, 0]
     },
     {
       "name": "singLEFT",
-      "prefix": "Left",
+      "prefix": "left",
       "offsets": [0, 0]
     },
     {
       "name": "singDOWN",
-      "prefix": "Down",
+      "prefix": "down",
       "offsets": [0, 0]
     },
     {
       "name": "singUP",
-      "prefix": "Up",
+      "prefix": "up",
       "offsets": [0, 0]
     },
     {
       "name": "singRIGHT",
-      "prefix": "Right",
+      "prefix": "right",
+      "offsets": [0, 0]
+    },
+    {
+      "name": "idle-evil",
+      "prefix": "evil idle",
+      "offsets": [0, 0]
+    },
+    {
+      "name": "singLEFT-evil",
+      "prefix": "evil left",
+      "offsets": [0, 0]
+    },
+    {
+      "name": "singDOWN-evil",
+      "prefix": "evil down",
+      "offsets": [0, 0]
+    },
+    {
+      "name": "singUP-evil",
+      "prefix": "evil up",
+      "offsets": [0, 0]
+    },
+    {
+      "name": "singRIGHT-evil",
+      "prefix": "evil right",
       "offsets": [0, 0]
     }
   ]

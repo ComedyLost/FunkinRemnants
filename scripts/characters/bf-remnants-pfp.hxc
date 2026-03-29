@@ -1,0 +1,72 @@
+import funkin.play.character.AnimateAtlasCharacter;
+import funkin.play.character.CharacterType;
+import funkin.play.PlayState;
+
+class BfRemnantsPFPCharacter extends AnimateAtlasCharacter
+{
+  public var isEvil(default, set):Bool;
+  public var oneColor:OneColorShader;
+
+  public function new()
+  {
+    super('bf-remnants-pfp');
+  }
+
+  override public function onCreate(event:ScriptEvent):Void
+  {
+    super.onCreate(event);
+
+    isEvil = false;
+
+    oneColor = new OneColorShader();
+    oneColor.setColor(0xFFFF0000);
+  }
+
+  function set_isEvil(value:Bool):Bool
+  {
+    if (isEvil != value && [CharacterType.DAD, CharacterType.BF].contains(this.characterType))
+    {
+      isEvil = value;
+      initHealthIcon(this.characterType == CharacterType.DAD);
+    }
+    else
+    {
+      isEvil = value;
+    }
+
+    return isEvil;
+  }
+
+  override public function resetCharacter(resetCamera:Bool = true):Void
+  {
+    super.resetCharacter(resetCamera);
+    isEvil = false;
+  }
+
+  override public function playAnimation(name:String, restart:Bool = false, ignoreOther:Bool = false, reversed:Bool = false):Void
+  {
+    var realName:String = name;
+    if (isEvil) realName += '-evil';
+
+    super.playAnimation(realName, restart, ignoreOther, reversed);
+  }
+
+  override public function onSongEvent(event:SongEventScriptEvent)
+  {
+    super.onSongEvent(event);
+
+    if (event.eventData.eventKind == "TurnEvil")
+    {
+      isEvil = true;
+    }
+  }
+
+  override public function initHealthIcon(isOpponent:Bool):Void
+  {
+    super.initHealthIcon(isOpponent);
+
+    var shader:FlxRuntimeShader = isEvil ? oneColor : null;
+    var icon:HealthIcon = isOpponent ? PlayState.instance.iconP2 : PlayState.instance.iconP1;
+    icon.shader = shader;
+  }
+}
