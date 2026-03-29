@@ -4,7 +4,7 @@
   "renderType": "animateatlas",
   "assetPath": "shared:characters/proto-bf",
   "flipX": false,
-  "singTime": 8.0,
+  "singTime": 4.0,
   "healthIcon": {
     "id": "bf-prototype",
     "isPixel": false
@@ -15,7 +15,8 @@
   "animations": [
     {
       "name": "idle",
-      "prefix": "Idle"
+      "prefix": "Idle",
+      "looped": true
     },
     {
       "name": "singLEFT",

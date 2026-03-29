@@ -65,6 +65,35 @@ class BFPrototypeOpponentCharacter extends AnimateAtlasCharacter
     }
   }
 
+  var isSustain:Bool = false;
+
+  function onStepHit(event:SongTimeScriptEvent)
+  {
+    super.onStepHit(event);
+
+    if (PlayState.instance == null || this.debug) return;
+
+    var strumline:Strumline = switch (characterType)
+    {
+      case CharacterType.DAD:
+        PlayState.instance?.opponentStrumline;
+      default:
+        PlayState.instance?.playerStrumline;
+    }
+
+    for (hold in strumline.holdNotes.group.members)
+    {
+      if (hold == null || !hold.alive) continue;
+      if (hold.hitNote) this.isSustain = hold.sustainLength > 0;
+    }
+
+    if (this.isSustain)
+    {
+      this.isSustain = false;
+      this.animation.play(this.animation.name, true);
+    }
+  }
+
   override public function onCountdownStart(event:CountdownScriptEvent):Void
   {
     var strumline:Strumline = switch (characterType)
