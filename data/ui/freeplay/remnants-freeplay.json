@@ -4,13 +4,13 @@
     "remnants": {
       "albumCover": "remnants-remnants",
       "secret": {
-        "hideAlbum": true,
+        "albumCover": "remnants-general",
         "difficulty": { "easy": 1, "hard": 3, "normal": 2 },
         "name": "Ridge (Remnants Mix)",
         "hideIcon": true,
-        "bpm": 145
-      },
-      "capsuleTitle": "Expansion"
+        "bpm": 145,
+        "capsuleTitle": "Expansion"
+      }
     },
     "default": { "albumCover": "remnants-general" },
     "erect": { "albumCover": "remnants-general" },

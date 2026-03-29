@@ -18,10 +18,7 @@ class RemnantsRemnantsSong extends Song
 
   override public function getBaseInstrumentalId(difficultyId:String, variationId:String):String
   {
-    if (!Save.instance.hasBeatenSong(this.id, null, this.variation))
-    {
-      return 'weed';
-    }
+    if (RemnantsFreeplay.instance?.isSongSecret(this.id, variationId)) return 'weed';
 
     return super.getBaseInstrumentalId(difficultyId, variationId);
   }

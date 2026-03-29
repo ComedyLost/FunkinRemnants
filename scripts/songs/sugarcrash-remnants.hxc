@@ -15,10 +15,8 @@ class SugarCrashRemnantsSong extends Song
 
   override public function getBaseInstrumentalId(difficultyId:String, variationId:String):String
   {
-    if (!Save.instance.hasBeatenSong(this.id, null, this.variation))
-    {
-      return 'weed';
-    }
+    trace(RemnantsFreeplay.instance?.isSongSecret(this.id, variationId));
+    if (RemnantsFreeplay.instance?.isSongSecret(this.id, variationId)) return 'weed';
 
     return super.getBaseInstrumentalId(difficultyId, variationId);
   }
