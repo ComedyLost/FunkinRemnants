@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TextureAtlas imagePath="ridge-remnantspixel.png">
+  <SubTexture name="idle0001" x="0" y="0"  width="49" height="21"/>
+
+  <SubTexture name="confirm0001" x="0" y="0"  width="49" height="21"/>
+  <SubTexture name="confirm0002" x="49" y="0"  width="49" height="21"/>
+  <SubTexture name="confirm0003" x="98" y="0"  width="49" height="21"/>
+  <SubTexture name="confirm0004" x="147" y="0"  width="49" height="21"/>
+
+  <SubTexture name="confirm-hold0001" x="0" y="21"  width="49" height="21"/>
+  <SubTexture name="confirm-hold0002" x="49" y="21"  width="49" height="21"/>
+  <SubTexture name="confirm-hold0003" x="98" y="21"  width="49" height="21"/>
+  <SubTexture name="confirm-hold0004" x="147" y="21"  width="49" height="21"/>
+</TextureAtlas>

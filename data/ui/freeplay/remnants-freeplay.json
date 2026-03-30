@@ -7,7 +7,7 @@
         "albumCover": "remnants-general",
         "difficulty": { "easy": 1, "hard": 3, "normal": 2 },
         "name": "Ridge (Remnants Mix)",
-        "hideIcon": true,
+        "icon": "ridge-remnants",
         "bpm": 145,
         "capsuleTitle": "Expansion"
       }
@@ -56,7 +56,6 @@
   "glitcher-remnants": {
     "default": {
       "albumCover": "remnants-glitcher",
-      "capsuleOffset": [0, 0],
       "capsuleTitle": "Week X"
     }
   },
@@ -76,7 +75,7 @@
         "difficulty": { "easy": 4, "hard": 6, "normal": 5 },
         "name": "Smash (Remnants Mix)",
         "hideOSTName": true,
-        "hideIcon": true,
+        "icon": "smash-remnants",
         "bpm": 144
       }
     }

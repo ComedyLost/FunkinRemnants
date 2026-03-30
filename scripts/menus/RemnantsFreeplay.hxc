@@ -76,8 +76,8 @@ class RemnantsFreeplay extends Module
           }
         }
 
+        if (newData.secret.icon != null) capsule.pixelIcon.setCharacter(newData.secret.icon);
         if (newData.secret.bpm != null) capsule.updateBPM(newData.secret.bpm);
-        if (newData.secret.hideIcon ?? false) capsule.pixelIcon.alpha = 0;
       }
     }
   }
