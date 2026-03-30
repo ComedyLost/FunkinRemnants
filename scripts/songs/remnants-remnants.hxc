@@ -34,7 +34,7 @@ class RemnantsRemnantsSong extends SugarCrashRemnantsSong
 
       FlxTimer.wait(1, () -> {
         PlayState.instance.disableKeys = false;
-        PlayState.instance.startConversation('remnants-remnants');
+        PlayState.instance.startConversation('remnants-remnants${Preferences.naughtyness ? '-censored' : ''}');
       });
     }
   }
