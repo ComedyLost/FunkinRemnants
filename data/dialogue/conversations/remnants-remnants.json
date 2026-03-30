@@ -105,7 +105,7 @@
       "box": "remnants",
       "boxAnimation": "right",
 
-      "text": ["I think this guy means business", ",\nwe might be chopped."]
+      "text": ["I think this guy means business,", "\nwe might be chopped."]
     },
     {
       "speaker": "bf-remnants",
