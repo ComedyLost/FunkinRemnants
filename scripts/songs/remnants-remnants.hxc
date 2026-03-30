@@ -35,7 +35,7 @@ class RemnantsRemnantsSong extends SugarCrashRemnantsSong
       FlxTimer.wait(1, () -> {
         var targetDialogue = 'remnants-remnants'; // Normal dialogue
 
-        if (FlxG.random.bool(6))
+        if (FlxG.random.bool(1))
         {
           targetDialogue += "-secret"; // Adds secret dialogue
         }
