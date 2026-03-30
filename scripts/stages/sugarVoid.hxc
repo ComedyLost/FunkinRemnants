@@ -1,7 +1,6 @@
 import funkin.play.stage.Stage;
 import funkin.play.PlayState;
 import funkin.play.Countdown;
-import funkin.mobile.input.ControlsHandler;
 
 class SugarCrashVoidStage extends Stage
 {
@@ -15,29 +14,6 @@ class SugarCrashVoidStage extends Stage
     super.onCreate(event);
 
     PlayState.instance.opponentStrumline.visible = false;
-
-    if (!FlxG.onMobile) // Move pop ups
-    {
-      if (!Preferences.downscroll) PlayState.instance.comboPopUps.offsets = [0, -145]; // Upscroll PC Offset
-
-      if (Preferences.downscroll) PlayState.instance.comboPopUps.offsets = [0, 355]; // Downscroll PC Offset
-    }
-    else
-    {
-      if (FlxG.onMobile
-        && Preferences.controlsScheme == "Arrows"
-        && !ControlsHandler.usingExternalInputDevice) PlayState.instance.comboPopUps.offsets = [30, 350]; // Middle Mobile Offset
-
-      if (FlxG.onMobile
-        && !Preferences.downscroll
-        && Preferences.controlsScheme == "Arrows"
-        && ControlsHandler.usingExternalInputDevice) PlayState.instance.comboPopUps.offsets = [0, -145]; // Upscroll Controller Mobile Offset
-
-      if (FlxG.onMobile
-        && Preferences.downscroll
-        && Preferences.controlsScheme == "Arrows"
-        && ControlsHandler.usingExternalInputDevice) PlayState.instance.comboPopUps.offsets = [0, 355]; // Downscroll Controller Mobile Offset
-    }
   }
 
   override public function onCountdownStart(event:CountdownScriptEvent):Void

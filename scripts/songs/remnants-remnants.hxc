@@ -44,7 +44,10 @@ class RemnantsRemnantsSong extends SugarCrashRemnantsSong
     super.onCreate(event);
 
     playedDialogue = false;
+  }
 
+  override function moveComboPopUps():Void
+  {
     #if !mobile
     if (!Preferences.downscroll) PlayState.instance.comboPopUps.offsets = [550, 350]; // Upscroll PC Offset
 

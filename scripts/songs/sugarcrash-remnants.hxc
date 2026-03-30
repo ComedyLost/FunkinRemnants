@@ -1,5 +1,8 @@
 import funkin.play.song.Song;
 import funkin.save.Save;
+#if mobile
+import funkin.mobile.input.ControlsHandler;
+#end
 
 /**
  * Even though this looks like just the sugarcrash song script.
@@ -18,6 +21,32 @@ class SugarCrashRemnantsSong extends Song
     var metadata:SongMetadata = _metadata.get(this.variation ?? Constants.DEFAULT_VARIATION);
     originalPreviewStart = metadata?.playData?.previewStart ?? Constants.DEFAULT_PREVIEW_START_TIME;
     originalPreviewEnd = metadata?.playData?.previewEnd ?? Constants.DEFAULT_PREVIEW_END_TIME;
+  }
+
+  override public function onCreate(event:ScriptEvent):Void
+  {
+    super.onCreate(event);
+    moveComboPopUps();
+  }
+
+  public function moveComboPopUps():Void
+  {
+    #if !mobile
+    if (!Preferences.downscroll) PlayState.instance.comboPopUps.offsets = [0, -145]; // Upscroll PC Offset
+
+    if (Preferences.downscroll) PlayState.instance.comboPopUps.offsets = [0, 355]; // Downscroll PC Offset
+    #else
+    if (Preferences.controlsScheme == "Arrows"
+      && !ControlsHandler.usingExternalInputDevice) PlayState.instance.comboPopUps.offsets = [30, 350]; // Middle Mobile Offset
+
+    if (!Preferences.downscroll
+      && Preferences.controlsScheme == "Arrows"
+      && ControlsHandler.usingExternalInputDevice) PlayState.instance.comboPopUps.offsets = [0, -145]; // Upscroll Controller Mobile Offset
+
+    if (Preferences.downscroll
+      && Preferences.controlsScheme == "Arrows"
+      && ControlsHandler.usingExternalInputDevice) PlayState.instance.comboPopUps.offsets = [0, 355]; // Downscroll Controller Mobile Offset
+    #end
   }
 
   override public function getBaseInstrumentalId(difficultyId:String, variationId:String):String
