@@ -10,6 +10,7 @@ import flixel.tweens.FlxEase;
 import flixel.util.FlxTimer;
 import funkin.util.SongSequence;
 import funkin.Conductor;
+import funkin.mobile.input.ControlsHandler;
 
 class RosesRemnantsMixSong extends Song
 {

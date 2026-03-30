@@ -5,6 +5,7 @@ import flixel.tweens.FlxTween;
 import flixel.tweens.FlxEase;
 import funkin.play.PlayState;
 import funkin.save.Save;
+import funkin.mobile.input.ControlsHandler;
 
 class TutorialRemnantsMixSong extends Song
 {
