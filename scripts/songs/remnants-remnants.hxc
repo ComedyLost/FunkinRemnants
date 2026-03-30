@@ -3,6 +3,9 @@ import funkin.play.PlayState;
 import flixel.util.FlxTimer;
 import funkin.save.Save;
 import funkin.Conductor;
+#if mobile
+import funkin.mobile.input.ControlsHandler;
+#end
 
 class RemnantsRemnantsSong extends SugarCrashRemnantsSong
 {
