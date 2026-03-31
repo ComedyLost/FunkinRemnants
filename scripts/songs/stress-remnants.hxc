@@ -91,33 +91,34 @@ class StressRemnantsMixSong extends Song
       FlxTween.tween(bgSprite, {alpha: 0}, 1);
     }
 
-    if (tankmanGroup != null && !tankmanGroup.isValid())
+    if (!PlayState.instance.isMinimalMode)
     {
-      // Destroy the tankman group if it's not valid.
-      tankmanGroup.destroy();
-      PlayState.instance.currentStage.remove(tankmanGroup);
-      tankmanGroup = null;
-    }
+      if (tankmanGroup != null && !tankmanGroup.isValid())
+      {
+        // Destroy the tankman group if it's not valid.
+        cleanupTankmanGroup();
+      }
 
-    if (tankmanGroup == null)
-    {
-      // Initialize the tankman group if it's not available.
-      trace('Initializing tankman group...');
-      tankmanGroup = TankmanSpriteGroupRemnants(false);
-    }
+      if (tankmanGroup == null)
+      {
+        // Initialize the tankman group if it's not available.
+        trace('Initializing tankman remnants group...');
+        tankmanGroup = new TankmanSpriteGroupRemnants(false);
+      }
 
-    if (tankmanGroup != null)
-    {
-      // resets the tankmen!
-      tankmanGroup.reset(0, 0);
+      if (tankmanGroup != null)
+      {
+        // resets the tankmen!
+        tankmanGroup.reset(0, 0);
 
-      tankmanGroup.zIndex = 30;
-      PlayState.instance.currentStage.add(tankmanGroup);
-      PlayState.instance.currentStage.refresh();
-    }
-    else
-    {
-      trace('Failed to initialize tankman group!');
+        tankmanGroup.zIndex = 30;
+        PlayState.instance.currentStage.add(tankmanGroup);
+        PlayState.instance.currentStage.refresh();
+      }
+      else
+      {
+        trace('Failed to initialize tankman group!');
+      }
     }
   }
 
@@ -619,21 +620,6 @@ class StressRemnantsMixSong extends Song
     if (PlayState.instance.currentStage.storm0.alpha > 0) PlayState.instance.currentStage.stormOff(0);
   }
 
-  function kill():Void
-  {
-    cleanupTankmanGroup();
-  }
-
-  function cleanupTankmanGroup():Void
-  {
-    if (tankmanGroup != null)
-    {
-      PlayState.instance.currentStage.remove(tankmanGroup);
-      tankmanGroup.destroy();
-      tankmanGroup = null;
-    }
-  }
-
   function onSongLoaded(event:SongLoadScriptEvent)
   {
     sequence?.destroy();
@@ -669,6 +655,17 @@ class StressRemnantsMixSong extends Song
   {
     super.onDestroy(event);
 
+    cleanupTankmanGroup();
     sequence?.destroy();
+  }
+
+  function cleanupTankmanGroup():Void
+  {
+    if (tankmanGroup != null)
+    {
+      PlayState.instance.currentStage.remove(tankmanGroup);
+      tankmanGroup.destroy();
+      tankmanGroup = null;
+    }
   }
 }
