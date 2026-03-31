@@ -76,9 +76,8 @@ class RemnantsDialogueBox extends DialogueBox
   {
     super.applyAnimationOffsets(name);
 
-    // The game doesn't play nice with text display offsets currently.
-    // So we force the position until it's resolved.
-    this.textDisplay.setPosition(110, 480);
+    this.textDisplay.x = this.globalOffsets[0] + this.originalPosition[0] + this._data.text.offsets[0];
+    this.textDisplay.y = this.globalOffsets[1] + this.originalPosition[1] + this._data.text.offsets[1];
   }
 
   override function loadText():Void
