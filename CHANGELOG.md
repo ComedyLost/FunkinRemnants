@@ -69,12 +69,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Fixed Flying Tanks during Week 7 cutscenes.
 - Fixed Results Text being offset.
 - Fixed Glitcher Characters not being alined properly.
+- Fixed the Remnants Player Save from throwing a Null Object Reference due to removing the mod. ([1d8ba2e](https://github.com/RemnantsCrew/FunkinRemnants/commit/1d8ba2ef13bd32a3da3a5ddec0a8d24eec60c91f) & [c568438](https://github.com/RemnantsCrew/FunkinRemnants/commit/c56843861151ad584d3e930b311399d2290f9683)) - by @ComedyLost in [#12](https://github.com/RemnantsCrew/FunkinRemnants/pull/12) & [#25](https://github.com/RemnantsCrew/FunkinRemnants/pull/25)
 - Fixed many other minor stuffs.
 
 ### Removed
 
 - Removed Note Hit Glow from the Opponent's Strumline.
 - Removed Some Problematic Media.
+
+## New Contributors for 1.0.3
+
+* @ComedyLost made their first contribution in [#12](https://github.com/RemnantsCrew/FunkinRemnants/pull/12)
 
 
 
