@@ -422,8 +422,11 @@
     },
     {
       "t": 54622,
-      "e": "TurnEvil",
-      "v": {}
+      "e": "RemnantsSNES",
+      "v": {
+        "color": "RED",
+        "suffix": "evil"
+      }
     },
     {
       "t": 58231.1320754717,

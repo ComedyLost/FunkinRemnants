@@ -1,11 +1,14 @@
 import funkin.play.character.AnimateAtlasCharacter;
 import funkin.play.character.CharacterType;
 import funkin.play.PlayState;
+import flixel.util.FlxColor;
 
 class BfRemnantsPFPCharacter extends AnimateAtlasCharacter
 {
-  public var isEvil(default, set):Bool;
-  public var oneColor:OneColorShader;
+  public var iconColor(default, set):Int = FlxColor.WHITE;
+  public var suffix(default, set):String = '';
+
+  var oneColor:OneColorShader;
 
   public function new()
   {
@@ -16,37 +19,44 @@ class BfRemnantsPFPCharacter extends AnimateAtlasCharacter
   {
     super.onCreate(event);
 
-    isEvil = false;
-
     oneColor = new OneColorShader();
-    oneColor.setColor(0xFFFF0000);
   }
 
-  function set_isEvil(value:Bool):Bool
+  function set_iconColor(value:Int):Int
   {
-    if (isEvil != value && [CharacterType.DAD, CharacterType.BF].contains(this.characterType))
+    var isNew:Bool = iconColor != value;
+    iconColor = value;
+    oneColor.setColor(iconColor);
+
+    if (isNew && [CharacterType.DAD, CharacterType.BF].contains(this.characterType))
     {
-      isEvil = value;
       initHealthIcon(this.characterType == CharacterType.DAD);
     }
-    else
-    {
-      isEvil = value;
-    }
 
-    return isEvil;
+    return iconColor;
+  }
+
+  function set_suffix(value:String):String
+  {
+    var isNew:Bool = suffix != value;
+    suffix = value;
+
+    if (isNew) this.dance(true);
+    return suffix;
   }
 
   override public function resetCharacter(resetCamera:Bool = true):Void
   {
     super.resetCharacter(resetCamera);
-    isEvil = false;
+
+    iconColor = FlxColor.WHITE;
+    suffix = '';
   }
 
   override public function playAnimation(name:String, restart:Bool = false, ignoreOther:Bool = false, reversed:Bool = false):Void
   {
     var realName:String = name;
-    if (isEvil) realName += '-evil';
+    if (suffix.length > 0) realName += '-$suffix';
 
     super.playAnimation(realName, restart, ignoreOther, reversed);
   }
@@ -55,9 +65,13 @@ class BfRemnantsPFPCharacter extends AnimateAtlasCharacter
   {
     super.onSongEvent(event);
 
-    if (event.eventData.eventKind == "TurnEvil")
+    if (event.eventData.eventKind == "RemnantsSNES")
     {
-      isEvil = true;
+      var color:String = event.eventData.getString('color') ?? 'WHITE';
+      var suffix:String = event.eventData.getString('suffix') ?? '';
+
+      iconColor = FlxColor.fromString(color);
+      suffix = suffix;
     }
   }
 
@@ -65,7 +79,7 @@ class BfRemnantsPFPCharacter extends AnimateAtlasCharacter
   {
     super.initHealthIcon(isOpponent);
 
-    var shader:FlxRuntimeShader = isEvil ? oneColor : null;
+    var shader:FlxRuntimeShader = iconColor != FlxColor.WHITE ? oneColor : null;
     var icon:HealthIcon = isOpponent ? PlayState.instance.iconP2 : PlayState.instance.iconP1;
     icon.shader = shader;
   }
