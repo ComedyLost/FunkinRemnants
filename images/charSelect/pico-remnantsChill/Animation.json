@@ -123,7 +123,7 @@
               "E": [
                 {
                   "SI": {
-                    "SN": "pico cs idle",
+                    "SN": "Animations/pico cs idle",
                     "FF": 0,
                     "ST": "G",
                     "TRP": { "x": 143.75, "y": 179 },
@@ -144,7 +144,7 @@
               "E": [
                 {
                   "SI": {
-                    "SN": "pico cs confirm",
+                    "SN": "Animations/pico cs confirm",
                     "FF": 0,
                     "ST": "G",
                     "TRP": { "x": 0, "y": 0 },
@@ -160,7 +160,7 @@
               "E": [
                 {
                   "SI": {
-                    "SN": "pico cs deselect",
+                    "SN": "Animations/pico cs deselect",
                     "FF": 0,
                     "ST": "G",
                     "TRP": { "x": 143.75, "y": 180.4 },
@@ -176,7 +176,7 @@
               "E": [
                 {
                   "SI": {
-                    "SN": "pico slide out",
+                    "SN": "Animations/pico slide out",
                     "FF": 0,
                     "ST": "G",
                     "TRP": { "x": 0, "y": 0 },
@@ -192,7 +192,7 @@
               "E": [
                 {
                   "SI": {
-                    "SN": "pico slide in",
+                    "SN": "Animations/pico slide in",
                     "FF": 0,
                     "ST": "G",
                     "TRP": { "x": 0, "y": 0 },
@@ -208,7 +208,7 @@
               "E": [
                 {
                   "SI": {
-                    "SN": "pico unlocked",
+                    "SN": "Animations/pico unlocked",
                     "FF": 0,
                     "ST": "G",
                     "TRP": { "x": 0, "y": 0 },
@@ -226,7 +226,7 @@
   "SD": {
     "S": [
       {
-        "SN": "pico cs idle",
+        "SN": "Animations/pico cs idle",
         "TL": {
           "L": [
             {
@@ -238,7 +238,7 @@
                   "E": [
                     {
                       "SI": {
-                        "SN": "hand pico",
+                        "SN": "Parts/hand pico",
                         "FF": 0,
                         "ST": "G",
                         "TRP": { "x": 49.25, "y": 25.85 },
@@ -254,7 +254,7 @@
                   "E": [
                     {
                       "SI": {
-                        "SN": "hand pico",
+                        "SN": "Parts/hand pico",
                         "FF": 0,
                         "ST": "G",
                         "TRP": { "x": 49.15, "y": 25.75 },
@@ -270,7 +270,7 @@
                   "E": [
                     {
                       "SI": {
-                        "SN": "hand pico",
+                        "SN": "Parts/hand pico",
                         "FF": 0,
                         "ST": "G",
                         "TRP": { "x": 49.1, "y": 25.7 },
@@ -286,7 +286,7 @@
                   "E": [
                     {
                       "SI": {
-                        "SN": "hand pico",
+                        "SN": "Parts/hand pico",
                         "FF": 0,
                         "ST": "G",
                         "TRP": { "x": 49.15, "y": 25.6 },
@@ -302,7 +302,7 @@
                   "E": [
                     {
                       "SI": {
-                        "SN": "hand pico",
+                        "SN": "Parts/hand pico",
                         "FF": 0,
                         "ST": "G",
                         "TRP": { "x": 39.05, "y": 39.4 },
@@ -323,7 +323,7 @@
                   "E": [
                     {
                       "SI": {
-                        "SN": "head pico",
+                        "SN": "Parts/head pico",
                         "FF": 0,
                         "ST": "G",
                         "TRP": { "x": 95.9, "y": 77.8 },
@@ -333,7 +333,7 @@
                     },
                     {
                       "SI": {
-                        "SN": "face pico",
+                        "SN": "Parts/face pico",
                         "FF": 0,
                         "ST": "G",
                         "TRP": { "x": 43.6, "y": 28.25 },
@@ -349,7 +349,7 @@
                   "E": [
                     {
                       "SI": {
-                        "SN": "head pico",
+                        "SN": "Parts/head pico",
                         "FF": 0,
                         "ST": "G",
                         "TRP": { "x": 95.85, "y": 77.7 },
@@ -359,7 +359,7 @@
                     },
                     {
                       "SI": {
-                        "SN": "face pico",
+                        "SN": "Parts/face pico",
                         "FF": 0,
                         "ST": "G",
                         "TRP": { "x": 43.7, "y": 28.3 },
@@ -375,7 +375,7 @@
                   "E": [
                     {
                       "SI": {
-                        "SN": "head pico",
+                        "SN": "Parts/head pico",
                         "FF": 0,
                         "ST": "G",
                         "TRP": { "x": 95.85, "y": 77.8 },
@@ -385,7 +385,7 @@
                     },
                     {
                       "SI": {
-                        "SN": "face pico",
+                        "SN": "Parts/face pico",
                         "FF": 0,
                         "ST": "G",
                         "TRP": { "x": 43.8, "y": 28.2 },
@@ -401,7 +401,7 @@
                   "E": [
                     {
                       "SI": {
-                        "SN": "head pico",
+                        "SN": "Parts/head pico",
                         "FF": 0,
                         "ST": "G",
                         "TRP": { "x": 95.8, "y": 77.8 },
@@ -411,7 +411,7 @@
                     },
                     {
                       "SI": {
-                        "SN": "face pico",
+                        "SN": "Parts/face pico",
                         "FF": 0,
                         "ST": "G",
                         "TRP": { "x": 43.75, "y": 28.2 },
@@ -427,7 +427,7 @@
                   "E": [
                     {
                       "SI": {
-                        "SN": "head pico",
+                        "SN": "Parts/head pico",
                         "FF": 0,
                         "ST": "G",
                         "TRP": { "x": 95.9, "y": 77.8 },
@@ -437,7 +437,7 @@
                     },
                     {
                       "SI": {
-                        "SN": "face pico",
+                        "SN": "Parts/face pico",
                         "FF": 0,
                         "ST": "G",
                         "TRP": { "x": 43.7, "y": 28.25 },
@@ -458,7 +458,7 @@
                   "E": [
                     {
                       "SI": {
-                        "SN": "arm piece top",
+                        "SN": "Parts/arm piece top",
                         "FF": 0,
                         "ST": "G",
                         "TRP": { "x": 55.35, "y": 0.5 },
@@ -474,7 +474,7 @@
                   "E": [
                     {
                       "SI": {
-                        "SN": "arm piece top",
+                        "SN": "Parts/arm piece top",
                         "FF": 0,
                         "ST": "G",
                         "TRP": { "x": 55.3, "y": 0.5 },
@@ -490,7 +490,7 @@
                   "E": [
                     {
                       "SI": {
-                        "SN": "arm piece top",
+                        "SN": "Parts/arm piece top",
                         "FF": 0,
                         "ST": "G",
                         "TRP": { "x": 55.25, "y": 0.5 },
@@ -506,7 +506,7 @@
                   "E": [
                     {
                       "SI": {
-                        "SN": "arm piece top",
+                        "SN": "Parts/arm piece top",
                         "FF": 0,
                         "ST": "G",
                         "TRP": { "x": 55.25, "y": 0.4 },
@@ -522,7 +522,7 @@
                   "E": [
                     {
                       "SI": {
-                        "SN": "arm piece top",
+                        "SN": "Parts/arm piece top",
                         "FF": 0,
                         "ST": "G",
                         "TRP": { "x": 37.7, "y": 25.4 },
@@ -543,7 +543,7 @@
                   "E": [
                     {
                       "SI": {
-                        "SN": "gun",
+                        "SN": "Parts/gun",
                         "FF": 0,
                         "ST": "G",
                         "TRP": { "x": 60.25, "y": 193.35 },
@@ -559,7 +559,7 @@
                   "E": [
                     {
                       "SI": {
-                        "SN": "gun",
+                        "SN": "Parts/gun",
                         "FF": 0,
                         "ST": "G",
                         "TRP": { "x": 60.15, "y": 193.3 },
@@ -575,7 +575,7 @@
                   "E": [
                     {
                       "SI": {
-                        "SN": "gun",
+                        "SN": "Parts/gun",
                         "FF": 0,
                         "ST": "G",
                         "TRP": { "x": 59.9, "y": 193.2 },
@@ -591,7 +591,7 @@
                   "E": [
                     {
                       "SI": {
-                        "SN": "gun",
+                        "SN": "Parts/gun",
                         "FF": 0,
                         "ST": "G",
                         "TRP": { "x": 59.9, "y": 83.7 },
@@ -607,7 +607,7 @@
                   "E": [
                     {
                       "SI": {
-                        "SN": "gun",
+                        "SN": "Parts/gun",
                         "FF": 0,
                         "ST": "G",
                         "TRP": { "x": 59.9, "y": 83.7 },
@@ -628,7 +628,7 @@
                   "E": [
                     {
                       "SI": {
-                        "SN": "shoe pico right",
+                        "SN": "Parts/shoe pico right",
                         "FF": 0,
                         "ST": "G",
                         "TRP": { "x": 62, "y": 119.4 },
@@ -644,7 +644,7 @@
                   "E": [
                     {
                       "SI": {
-                        "SN": "shoe pico right",
+                        "SN": "Parts/shoe pico right",
                         "FF": 0,
                         "ST": "G",
                         "TRP": { "x": 61.85, "y": 119.25 },
@@ -660,7 +660,7 @@
                   "E": [
                     {
                       "SI": {
-                        "SN": "shoe pico right",
+                        "SN": "Parts/shoe pico right",
                         "FF": 0,
                         "ST": "G",
                         "TRP": { "x": 61.7, "y": 119 },
@@ -676,7 +676,7 @@
                   "E": [
                     {
                       "SI": {
-                        "SN": "shoe pico right",
+                        "SN": "Parts/shoe pico right",
                         "FF": 0,
                         "ST": "G",
                         "TRP": { "x": 63.75, "y": 59.05 },
@@ -692,7 +692,7 @@
                   "E": [
                     {
                       "SI": {
-                        "SN": "shoe pico right",
+                        "SN": "Parts/shoe pico right",
                         "FF": 0,
                         "ST": "G",
                         "TRP": { "x": 63.75, "y": 59.05 },
@@ -713,7 +713,7 @@
                   "E": [
                     {
                       "SI": {
-                        "SN": "body pico",
+                        "SN": "Parts/body pico",
                         "FF": 0,
                         "ST": "G",
                         "TRP": { "x": 101, "y": 224.45 },
@@ -729,7 +729,7 @@
                   "E": [
                     {
                       "SI": {
-                        "SN": "body pico",
+                        "SN": "Parts/body pico",
                         "FF": 0,
                         "ST": "G",
                         "TRP": { "x": 101.1, "y": 224.35 },
@@ -745,7 +745,7 @@
                   "E": [
                     {
                       "SI": {
-                        "SN": "body pico",
+                        "SN": "Parts/body pico",
                         "FF": 0,
                         "ST": "G",
                         "TRP": { "x": 101.2, "y": 224.1 },
@@ -761,7 +761,7 @@
                   "E": [
                     {
                       "SI": {
-                        "SN": "body pico",
+                        "SN": "Parts/body pico",
                         "FF": 0,
                         "ST": "G",
                         "TRP": { "x": 100.75, "y": 111.75 },
@@ -777,7 +777,7 @@
                   "E": [
                     {
                       "SI": {
-                        "SN": "body pico",
+                        "SN": "Parts/body pico",
                         "FF": 0,
                         "ST": "G",
                         "TRP": { "x": 100.75, "y": 111.75 },
@@ -798,42 +798,42 @@
                   "E": [
                     {
                       "SI": {
-                        "SN": "arm extended pico",
+                        "SN": "Parts/arm extended pico",
                         "FF": 0,
                         "ST": "G",
-                        "TRP": { "x": 54.75, "y": 35.1 },
+                        "TRP": { "x": 54.7, "y": 35.15 },
                         "LP": "LP",
-                        "MX": [-1, -0.008, -0.008, 1, 135.6, 110]
+                        "MX": [-1, 0, 0, 1, 135.9, 109.65]
                       }
                     },
                     {
                       "SI": {
-                        "SN": "smoke char select",
+                        "SN": "Parts/smoke char select",
                         "FF": 0,
                         "ST": "G",
-                        "TRP": { "x": 350.25, "y": -7.05 },
+                        "TRP": { "x": 350.15, "y": -7.1 },
                         "LP": "LP",
-                        "MX": [-0.738, -0.675, -0.623, 0.369, 292.95, 231.95]
+                        "MX": [-0.743, -0.669, -0.62, 0.374, 294.2, 230.3]
                       }
                     },
                     {
                       "SI": {
-                        "SN": "cigarette",
+                        "SN": "Parts/cigarette",
                         "FF": 0,
                         "ST": "G",
-                        "TRP": { "x": 11.9, "y": 6.3 },
+                        "TRP": { "x": 11.85, "y": 6.3 },
                         "LP": "LP",
-                        "MX": [0.703, -1.213, -1.213, -0.703, 49.4, 60.8]
+                        "MX": [0.693, -1.219, -1.219, -0.693, 49.3, 61.15]
                       }
                     },
                     {
                       "SI": {
-                        "SN": "hand cig",
+                        "SN": "Parts/hand cig",
                         "FF": 0,
                         "ST": "G",
-                        "TRP": { "x": 39.1, "y": 49.75 },
+                        "TRP": { "x": 39, "y": 49.85 },
                         "LP": "LP",
-                        "MX": [-1, -0.008, -0.008, 1, 75.4, 29.7]
+                        "MX": [-1, 0, 0, 1, 75.05, 29.8]
                       }
                     }
                   ]
@@ -844,7 +844,7 @@
                   "E": [
                     {
                       "SI": {
-                        "SN": "arm extended pico",
+                        "SN": "Parts/arm extended pico",
                         "FF": 0,
                         "ST": "G",
                         "TRP": { "x": 54.75, "y": 35.15 },
@@ -854,7 +854,7 @@
                     },
                     {
                       "SI": {
-                        "SN": "smoke char select",
+                        "SN": "Parts/smoke char select",
                         "FF": 8,
                         "ST": "G",
                         "TRP": { "x": 350.25, "y": -7 },
@@ -864,7 +864,7 @@
                     },
                     {
                       "SI": {
-                        "SN": "cigarette",
+                        "SN": "Parts/cigarette",
                         "FF": 2,
                         "ST": "G",
                         "TRP": { "x": 11.8, "y": 6.3 },
@@ -874,7 +874,7 @@
                     },
                     {
                       "SI": {
-                        "SN": "hand cig",
+                        "SN": "Parts/hand cig",
                         "FF": 0,
                         "ST": "G",
                         "TRP": { "x": 38.95, "y": 49.85 },
@@ -890,7 +890,7 @@
                   "E": [
                     {
                       "SI": {
-                        "SN": "arm extended pico",
+                        "SN": "Parts/arm extended pico",
                         "FF": 0,
                         "ST": "G",
                         "TRP": { "x": 54.7, "y": 35.15 },
@@ -900,7 +900,7 @@
                     },
                     {
                       "SI": {
-                        "SN": "smoke char select",
+                        "SN": "Parts/smoke char select",
                         "FF": 16,
                         "ST": "G",
                         "TRP": { "x": 350.2, "y": -7.05 },
@@ -910,17 +910,17 @@
                     },
                     {
                       "SI": {
-                        "SN": "cigarette",
+                        "SN": "Parts/cigarette",
                         "FF": 0,
                         "ST": "G",
-                        "TRP": { "x": 11.8, "y": 6.25 },
+                        "TRP": { "x": 11.8, "y": 6.3 },
                         "LP": "LP",
-                        "MX": [0.622, -1.256, -1.256, -0.622, 41.05, 61.3]
+                        "MX": [0.622, -1.256, -1.256, -0.622, 39.05, 62.1]
                       }
                     },
                     {
                       "SI": {
-                        "SN": "hand cig",
+                        "SN": "Parts/hand cig",
                         "FF": 0,
                         "ST": "G",
                         "TRP": { "x": 39.05, "y": 49.85 },
@@ -936,7 +936,7 @@
                   "E": [
                     {
                       "SI": {
-                        "SN": "arm extended pico",
+                        "SN": "Parts/arm extended pico",
                         "FF": 0,
                         "ST": "G",
                         "TRP": { "x": 54.8, "y": 35.2 },
@@ -946,32 +946,32 @@
                     },
                     {
                       "SI": {
-                        "SN": "smoke char select",
+                        "SN": "Parts/smoke char select",
                         "FF": 24,
                         "ST": "G",
-                        "TRP": { "x": 350.3, "y": -7.1 },
+                        "TRP": { "x": 350.25, "y": -7.15 },
                         "LP": "LP",
-                        "MX": [-0.763, -0.646, -0.608, 0.393, 293.5, 219.35]
+                        "MX": [-0.788, -0.615, -0.592, 0.416, 297.35, 211.3]
                       }
                     },
                     {
                       "SI": {
-                        "SN": "cigarette",
+                        "SN": "Parts/cigarette",
                         "FF": 2,
                         "ST": "G",
-                        "TRP": { "x": 11.8, "y": 6.25 },
+                        "TRP": { "x": 11.85, "y": 6.25 },
                         "LP": "LP",
-                        "MX": [0.656, -1.239, -1.239, -0.656, 43.5, 57.7]
+                        "MX": [0.607, -1.264, -1.264, -0.607, 41.25, 59.55]
                       }
                     },
                     {
                       "SI": {
-                        "SN": "hand cig",
+                        "SN": "Parts/hand cig",
                         "FF": 0,
                         "ST": "G",
-                        "TRP": { "x": 39, "y": 49.75 },
+                        "TRP": { "x": 38.9, "y": 49.8 },
                         "LP": "LP",
-                        "MX": [-1, 0.031, 0.031, 1, 68.25, 25.65]
+                        "MX": [-0.998, 0.07, 0.07, 0.998, 64.7, 26.55]
                       }
                     }
                   ]
@@ -982,42 +982,42 @@
                   "E": [
                     {
                       "SI": {
-                        "SN": "arm extended pico",
+                        "SN": "Parts/arm extended pico",
                         "FF": 0,
                         "ST": "G",
                         "TRP": { "x": 54.75, "y": 35.15 },
                         "LP": "LP",
-                        "MX": [-1, 0.012, 0.012, 1, 134.3, 102.9]
+                        "MX": [-1, 0.012, 0.012, 1, 133.1, 103.3]
                       }
                     },
                     {
                       "SI": {
-                        "SN": "smoke char select",
+                        "SN": "Parts/smoke char select",
                         "FF": 27,
                         "ST": "G",
-                        "TRP": { "x": 350.3, "y": -7.1 },
+                        "TRP": { "x": 350.3, "y": -7.05 },
                         "LP": "LP",
-                        "MX": [-0.751, -0.66, -0.615, 0.382, 292.7, 221.65]
+                        "MX": [-0.751, -0.66, -0.615, 0.382, 293.35, 222.95]
                       }
                     },
                     {
                       "SI": {
-                        "SN": "cigarette",
+                        "SN": "Parts/cigarette",
                         "FF": 0,
                         "ST": "G",
-                        "TRP": { "x": 11.9, "y": 6.3 },
+                        "TRP": { "x": 11.85, "y": 6.35 },
                         "LP": "LP",
-                        "MX": [0.678, -1.227, -1.227, -0.678, 45.75, 55.45]
+                        "MX": [0.678, -1.227, -1.227, -0.678, 46.4, 56.75]
                       }
                     },
                     {
                       "SI": {
-                        "SN": "hand cig",
+                        "SN": "Parts/hand cig",
                         "FF": 0,
                         "ST": "G",
                         "TRP": { "x": 39.05, "y": 49.8 },
                         "LP": "LP",
-                        "MX": [-1, 0.012, 0.012, 1, 71.1, 23.85]
+                        "MX": [-1, 0.012, 0.012, 1, 71.75, 25.15]
                       }
                     }
                   ]
@@ -1028,7 +1028,7 @@
         }
       },
       {
-        "SN": "pico cs confirm",
+        "SN": "Animations/pico cs confirm",
         "TL": {
           "L": [
             {
@@ -1040,7 +1040,7 @@
                   "E": [
                     {
                       "SI": {
-                        "SN": "middle finger hand",
+                        "SN": "Parts/middle finger hand",
                         "FF": 13,
                         "ST": "G",
                         "TRP": { "x": 41.25, "y": 111.9 },
@@ -1056,7 +1056,7 @@
                   "E": [
                     {
                       "SI": {
-                        "SN": "middle finger hand",
+                        "SN": "Parts/middle finger hand",
                         "FF": 15,
                         "ST": "G",
                         "TRP": { "x": 41.25, "y": 111.9 },
@@ -1077,7 +1077,7 @@
                   "E": [
                     {
                       "SI": {
-                        "SN": "head pico",
+                        "SN": "Parts/head pico",
                         "FF": 0,
                         "ST": "G",
                         "TRP": { "x": 95.85, "y": 77.75 },
@@ -1087,7 +1087,7 @@
                     },
                     {
                       "SI": {
-                        "SN": "confirm face snap pico",
+                        "SN": "Parts/confirm face snap pico",
                         "FF": 0,
                         "ST": "G",
                         "TRP": { "x": 48.3, "y": 28.75 },
@@ -1103,7 +1103,7 @@
                   "E": [
                     {
                       "SI": {
-                        "SN": "head pico",
+                        "SN": "Parts/head pico",
                         "FF": 0,
                         "ST": "G",
                         "TRP": { "x": 95.85, "y": 77.7 },
@@ -1113,7 +1113,7 @@
                     },
                     {
                       "SI": {
-                        "SN": "confirm face pico",
+                        "SN": "Parts/confirm face pico",
                         "FF": 0,
                         "ST": "G",
                         "TRP": { "x": 47.9, "y": 31.25 },
@@ -1134,7 +1134,7 @@
                   "E": [
                     {
                       "SI": {
-                        "SN": "arm piece top",
+                        "SN": "Parts/arm piece top",
                         "FF": 0,
                         "ST": "G",
                         "TRP": { "x": 58.9, "y": 7.1 },
@@ -1150,7 +1150,7 @@
                   "E": [
                     {
                       "SI": {
-                        "SN": "arm piece top",
+                        "SN": "Parts/arm piece top",
                         "FF": 0,
                         "ST": "G",
                         "TRP": { "x": 58.9, "y": 7.05 },
@@ -1171,7 +1171,7 @@
                   "E": [
                     {
                       "SI": {
-                        "SN": "gun",
+                        "SN": "Parts/gun",
                         "FF": 0,
                         "ST": "G",
                         "TRP": { "x": 58.9, "y": 194.15 },
@@ -1187,7 +1187,7 @@
                   "E": [
                     {
                       "SI": {
-                        "SN": "gun",
+                        "SN": "Parts/gun",
                         "FF": 0,
                         "ST": "G",
                         "TRP": { "x": 58.9, "y": 194.15 },
@@ -1208,7 +1208,7 @@
                   "E": [
                     {
                       "SI": {
-                        "SN": "shoe pico right",
+                        "SN": "Parts/shoe pico right",
                         "FF": 0,
                         "ST": "G",
                         "TRP": { "x": 65.3, "y": 121.05 },
@@ -1224,7 +1224,7 @@
                   "E": [
                     {
                       "SI": {
-                        "SN": "shoe pico right",
+                        "SN": "Parts/shoe pico right",
                         "FF": 0,
                         "ST": "G",
                         "TRP": { "x": 65.25, "y": 121.15 },
@@ -1245,7 +1245,7 @@
                   "E": [
                     {
                       "SI": {
-                        "SN": "body pico",
+                        "SN": "Parts/body pico",
                         "FF": 0,
                         "ST": "G",
                         "TRP": { "x": 21.1, "y": 218.65 },
@@ -1261,7 +1261,7 @@
                   "E": [
                     {
                       "SI": {
-                        "SN": "body pico",
+                        "SN": "Parts/body pico",
                         "FF": 0,
                         "ST": "G",
                         "TRP": { "x": 20.55, "y": 220.65 },
@@ -1282,42 +1282,42 @@
                   "E": [
                     {
                       "SI": {
-                        "SN": "arm extended pico",
+                        "SN": "Parts/arm extended pico",
                         "FF": 0,
                         "ST": "G",
                         "TRP": { "x": 54.85, "y": 34.9 },
                         "LP": "LP",
-                        "MX": [-0.998, 0.056, 0.056, 0.998, -184.25, -59.85]
+                        "MX": [-0.998, 0.056, 0.056, 0.998, -184.25, -57.9]
                       }
                     },
                     {
                       "SI": {
-                        "SN": "smoke char select",
+                        "SN": "Parts/smoke char select",
                         "FF": 0,
                         "ST": "G",
-                        "TRP": { "x": 350.3, "y": -6.7 },
+                        "TRP": { "x": 350.35, "y": -6.75 },
                         "LP": "LP",
-                        "MX": [-0.826, -0.564, -0.565, 0.453, -12.25, 33.15]
+                        "MX": [-0.826, -0.564, -0.565, 0.453, -12.25, 35.1]
                       }
                     },
                     {
                       "SI": {
-                        "SN": "cigarette",
+                        "SN": "Parts/cigarette",
                         "FF": 0,
                         "ST": "G",
                         "TRP": { "x": 11.85, "y": 6.5 },
                         "LP": "LP",
-                        "MX": [0.525, -1.3, -1.3, -0.525, -277.55, -101.9]
+                        "MX": [0.525, -1.3, -1.3, -0.525, -277.55, -99.95]
                       }
                     },
                     {
                       "SI": {
-                        "SN": "hand cig",
+                        "SN": "Parts/hand cig",
                         "FF": 0,
                         "ST": "G",
                         "TRP": { "x": 39.15, "y": 49.65 },
                         "LP": "LP",
-                        "MX": [-0.991, 0.133, 0.133, 0.991, -256.2, -136.35]
+                        "MX": [-0.991, 0.133, 0.133, 0.991, -256.2, -134.4]
                       }
                     }
                   ]
@@ -1328,7 +1328,7 @@
                   "E": [
                     {
                       "SI": {
-                        "SN": "arm extended pico",
+                        "SN": "Parts/arm extended pico",
                         "FF": 0,
                         "ST": "G",
                         "TRP": { "x": 54.9, "y": 35 },
@@ -1338,7 +1338,7 @@
                     },
                     {
                       "SI": {
-                        "SN": "smoke char select",
+                        "SN": "Parts/smoke char select",
                         "FF": 8,
                         "ST": "G",
                         "TRP": { "x": 350.35, "y": -7 },
@@ -1348,7 +1348,7 @@
                     },
                     {
                       "SI": {
-                        "SN": "cigarette",
+                        "SN": "Parts/cigarette",
                         "FF": 0,
                         "ST": "G",
                         "TRP": { "x": 11.9, "y": 6.4 },
@@ -1358,7 +1358,7 @@
                     },
                     {
                       "SI": {
-                        "SN": "hand cig",
+                        "SN": "Parts/hand cig",
                         "FF": 0,
                         "ST": "G",
                         "TRP": { "x": 39.15, "y": 49.7 },
@@ -1374,7 +1374,7 @@
         }
       },
       {
-        "SN": "pico cs deselect",
+        "SN": "Animations/pico cs deselect",
         "TL": {
           "L": [
             {
@@ -1386,7 +1386,7 @@
                   "E": [
                     {
                       "SI": {
-                        "SN": "middle finger hand",
+                        "SN": "Parts/middle finger hand",
                         "FF": 22,
                         "ST": "G",
                         "TRP": { "x": 79.55, "y": 92.35 },
@@ -1402,7 +1402,7 @@
                   "E": [
                     {
                       "SI": {
-                        "SN": "middle finger hand",
+                        "SN": "Parts/middle finger hand",
                         "FF": 22,
                         "ST": "G",
                         "TRP": { "x": 79.6, "y": 92.35 },
@@ -1423,7 +1423,7 @@
                   "E": [
                     {
                       "SI": {
-                        "SN": "head pico",
+                        "SN": "Parts/head pico",
                         "FF": 0,
                         "ST": "G",
                         "TRP": { "x": 95.65, "y": 77.9 },
@@ -1433,7 +1433,7 @@
                     },
                     {
                       "SI": {
-                        "SN": "face meh pico",
+                        "SN": "Parts/face meh pico",
                         "FF": 0,
                         "ST": "G",
                         "TRP": { "x": 37.5, "y": 31.45 },
@@ -1449,7 +1449,7 @@
                   "E": [
                     {
                       "SI": {
-                        "SN": "head pico",
+                        "SN": "Parts/head pico",
                         "FF": 0,
                         "ST": "G",
                         "TRP": { "x": 95.75, "y": 77.75 },
@@ -1459,7 +1459,7 @@
                     },
                     {
                       "SI": {
-                        "SN": "face meh pico",
+                        "SN": "Parts/face meh pico",
                         "FF": 0,
                         "ST": "G",
                         "TRP": { "x": 37.4, "y": 31.45 },
@@ -1480,7 +1480,7 @@
                   "E": [
                     {
                       "SI": {
-                        "SN": "arm piece top",
+                        "SN": "Parts/arm piece top",
                         "FF": 0,
                         "ST": "G",
                         "TRP": { "x": 58.9, "y": 7.15 },
@@ -1496,7 +1496,7 @@
                   "E": [
                     {
                       "SI": {
-                        "SN": "arm piece top",
+                        "SN": "Parts/arm piece top",
                         "FF": 0,
                         "ST": "G",
                         "TRP": { "x": 58.85, "y": 7.15 },
@@ -1517,7 +1517,7 @@
                   "E": [
                     {
                       "SI": {
-                        "SN": "gun",
+                        "SN": "Parts/gun",
                         "FF": 0,
                         "ST": "G",
                         "TRP": { "x": 58.95, "y": 194.2 },
@@ -1533,7 +1533,7 @@
                   "E": [
                     {
                       "SI": {
-                        "SN": "gun",
+                        "SN": "Parts/gun",
                         "FF": 0,
                         "ST": "G",
                         "TRP": { "x": 58.75, "y": 194.35 },
@@ -1554,7 +1554,7 @@
                   "E": [
                     {
                       "SI": {
-                        "SN": "shoe pico right",
+                        "SN": "Parts/shoe pico right",
                         "FF": 0,
                         "ST": "G",
                         "TRP": { "x": 65.2, "y": 121.25 },
@@ -1570,7 +1570,7 @@
                   "E": [
                     {
                       "SI": {
-                        "SN": "shoe pico right",
+                        "SN": "Parts/shoe pico right",
                         "FF": 0,
                         "ST": "G",
                         "TRP": { "x": 64.9, "y": 121.3 },
@@ -1591,7 +1591,7 @@
                   "E": [
                     {
                       "SI": {
-                        "SN": "body pico",
+                        "SN": "Parts/body pico",
                         "FF": 0,
                         "ST": "G",
                         "TRP": { "x": 20.95, "y": 218.75 },
@@ -1607,7 +1607,7 @@
                   "E": [
                     {
                       "SI": {
-                        "SN": "body pico",
+                        "SN": "Parts/body pico",
                         "FF": 0,
                         "ST": "G",
                         "TRP": { "x": 90.75, "y": 222.7 },
@@ -1628,7 +1628,7 @@
                   "E": [
                     {
                       "SI": {
-                        "SN": "arm extended pico",
+                        "SN": "Parts/arm extended pico",
                         "FF": 0,
                         "ST": "G",
                         "TRP": { "x": 54.9, "y": 35.15 },
@@ -1638,7 +1638,7 @@
                     },
                     {
                       "SI": {
-                        "SN": "smoke char select",
+                        "SN": "Parts/smoke char select",
                         "FF": 0,
                         "ST": "G",
                         "TRP": { "x": 350.15, "y": -6.85 },
@@ -1648,7 +1648,7 @@
                     },
                     {
                       "SI": {
-                        "SN": "cigarette",
+                        "SN": "Parts/cigarette",
                         "FF": 0,
                         "ST": "G",
                         "TRP": { "x": 11.85, "y": 6.3 },
@@ -1658,7 +1658,7 @@
                     },
                     {
                       "SI": {
-                        "SN": "hand cig",
+                        "SN": "Parts/hand cig",
                         "FF": 0,
                         "ST": "G",
                         "TRP": { "x": 2.15, "y": 87.9 },
@@ -1674,7 +1674,7 @@
                   "E": [
                     {
                       "SI": {
-                        "SN": "arm extended pico",
+                        "SN": "Parts/arm extended pico",
                         "FF": 0,
                         "ST": "G",
                         "TRP": { "x": 54.85, "y": 35.1 },
@@ -1684,7 +1684,7 @@
                     },
                     {
                       "SI": {
-                        "SN": "smoke char select",
+                        "SN": "Parts/smoke char select",
                         "FF": 8,
                         "ST": "G",
                         "TRP": { "x": 350.25, "y": -7 },
@@ -1694,7 +1694,7 @@
                     },
                     {
                       "SI": {
-                        "SN": "cigarette",
+                        "SN": "Parts/cigarette",
                         "FF": 0,
                         "ST": "G",
                         "TRP": { "x": 11.85, "y": 6.45 },
@@ -1704,7 +1704,7 @@
                     },
                     {
                       "SI": {
-                        "SN": "hand cig",
+                        "SN": "Parts/hand cig",
                         "FF": 0,
                         "ST": "G",
                         "TRP": { "x": 39.15, "y": 49.75 },
@@ -1720,7 +1720,7 @@
         }
       },
       {
-        "SN": "pico slide out",
+        "SN": "Animations/pico slide out",
         "TL": {
           "L": [
             {
@@ -1732,7 +1732,7 @@
                   "E": [
                     {
                       "SI": {
-                        "SN": "pico cs idle",
+                        "SN": "Animations/pico cs idle",
                         "FF": 13,
                         "ST": "G",
                         "TRP": { "x": 138.75, "y": 347.95 },
@@ -1748,7 +1748,7 @@
                   "E": [
                     {
                       "SI": {
-                        "SN": "pico lean back",
+                        "SN": "Parts/pico lean back",
                         "FF": 0,
                         "ST": "G",
                         "TRP": { "x": 201.45, "y": 344.4 },
@@ -1764,7 +1764,7 @@
         }
       },
       {
-        "SN": "pico slide in",
+        "SN": "Animations/pico slide in",
         "TL": {
           "L": [
             {
@@ -1776,7 +1776,7 @@
                   "E": [
                     {
                       "SI": {
-                        "SN": "pico lean back",
+                        "SN": "Parts/pico lean back",
                         "FF": 0,
                         "ST": "G",
                         "TRP": { "x": 201.45, "y": 344.4 },
@@ -1792,7 +1792,7 @@
                   "E": [
                     {
                       "SI": {
-                        "SN": "pico lean back",
+                        "SN": "Parts/pico lean back",
                         "FF": 0,
                         "ST": "G",
                         "TRP": { "x": 196.4, "y": 341.3 },
@@ -1808,7 +1808,7 @@
                   "E": [
                     {
                       "SI": {
-                        "SN": "pico lean forward",
+                        "SN": "Parts/pico lean forward",
                         "FF": 0,
                         "ST": "G",
                         "TRP": { "x": 153.1, "y": 349.15 },
@@ -1824,7 +1824,7 @@
                   "E": [
                     {
                       "SI": {
-                        "SN": "pico lean forward",
+                        "SN": "Parts/pico lean forward",
                         "FF": 0,
                         "ST": "G",
                         "TRP": { "x": 163.05, "y": 350.2 },
@@ -1840,7 +1840,7 @@
                   "E": [
                     {
                       "SI": {
-                        "SN": "pico cs idle",
+                        "SN": "Animations/pico cs idle",
                         "FF": 2,
                         "ST": "G",
                         "TRP": { "x": 128.75, "y": 340.05 },
@@ -1856,7 +1856,7 @@
                   "E": [
                     {
                       "SI": {
-                        "SN": "pico cs idle",
+                        "SN": "Animations/pico cs idle",
                         "FF": 4,
                         "ST": "G",
                         "TRP": { "x": 143.75, "y": 179 },
@@ -1872,11 +1872,11 @@
         }
       },
       {
-        "SN": "pico unlocked",
+        "SN": "Animations/pico unlocked",
         "TL": {
           "L": [
             {
-              "LN": "bf slide in Layer",
+              "LN": "Capa_2",
               "FR": [
                 {
                   "I": 0,
@@ -1884,101 +1884,11 @@
                   "E": [
                     {
                       "SI": {
-                        "SN": "arm back piece",
-                        "FF": 0,
-                        "ST": "G",
-                        "TRP": { "x": 32.3, "y": 24 },
-                        "LP": "LP",
-                        "MX": [0.827, -0.21, -0.165, -1.057, 312.7, 30.8]
-                      }
-                    },
-                    {
-                      "SI": {
-                        "SN": "hand free pico",
-                        "FF": 0,
-                        "ST": "G",
-                        "TRP": { "x": 35.05, "y": 33.45 },
-                        "LP": "LP",
-                        "MX": [0.842, -0.109, 0.085, 1.076, 240.9, -23.2]
-                      }
-                    },
-                    {
-                      "SI": {
-                        "SN": "body mad bent pico",
-                        "FF": 0,
-                        "ST": "G",
-                        "TRP": { "x": 46.7, "y": 51.15 },
-                        "LP": "LP",
-                        "MX": [0.847, -0.019, 0.015, 1.082, 329.95, -51.65]
-                      }
-                    },
-                    {
-                      "SI": {
-                        "SN": "pants half pico",
-                        "FF": 0,
-                        "ST": "G",
-                        "TRP": { "x": 81, "y": 44.75 },
-                        "LP": "LP",
-                        "MX": [0.843, -0.095, 0.074, 1.078, 272.35, 16.05]
-                      }
-                    },
-                    {
-                      "SI": {
-                        "SN": "foot right upwards",
-                        "FF": 0,
-                        "ST": "G",
-                        "TRP": { "x": 139.05, "y": 40.65 },
-                        "LP": "LP",
-                        "MX": [0.829, -0.169, 0.207, 1.061, 206.85, 61.05]
-                      }
-                    },
-                    {
-                      "SI": {
-                        "SN": "leg left up",
-                        "FF": 0,
-                        "ST": "G",
-                        "TRP": { "x": 48.1, "y": 24.35 },
-                        "LP": "LP",
-                        "MX": [0.843, 0.077, -0.107, 1.076, 350.8, 42.25]
-                      }
-                    },
-                    {
-                      "SI": {
-                        "SN": "arm up pico",
-                        "FF": 0,
-                        "ST": "G",
-                        "TRP": { "x": 17.7, "y": 26.6 },
-                        "LP": "LP",
-                        "MX": [0.623, 0.687, -0.461, 0.959, 396.4, -67.9]
-                      }
-                    },
-                    {
-                      "SI": {
-                        "SN": "head pico",
-                        "FF": 0,
-                        "ST": "G",
-                        "TRP": { "x": 96.05, "y": 77.8 },
-                        "LP": "LP",
-                        "MX": [-0.72, 0.512, 0.394, 0.987, 372, -199.5]
-                      }
-                    },
-                    {
-                      "SI": {
-                        "SN": "face fall pico 2",
-                        "FF": 0,
-                        "ST": "G",
-                        "TRP": { "x": 44.2, "y": 34.55 },
-                        "LP": "LP",
-                        "MX": [0.821, -0.214, 0.231, 1.055, 282.95, -47.15]
-                      }
-                    },
-                    {
-                      "SI": {
-                        "SN": "gun face semi right",
+                        "SN": "Parts/gun face semi right",
                         "FF": 0,
                         "ST": "G",
                         "TRP": { "x": 65.85, "y": 89.1 },
-                        "LP": "LP",
+                        "LP": "SF",
                         "MX": [0.869, 0, -0.144, 1, 162.4, 25.9]
                       }
                     }
@@ -1990,101 +1900,11 @@
                   "E": [
                     {
                       "SI": {
-                        "SN": "arm back piece",
-                        "FF": 0,
-                        "ST": "G",
-                        "TRP": { "x": 32.35, "y": 24 },
-                        "LP": "LP",
-                        "MX": [0.98, -0.177, -0.177, -0.98, 303, -10.25]
-                      }
-                    },
-                    {
-                      "SI": {
-                        "SN": "hand free pico",
-                        "FF": 0,
-                        "ST": "G",
-                        "TRP": { "x": 35, "y": 33.3 },
-                        "LP": "LP",
-                        "MX": [1, 0, 0, 1, 221.9, -72.7]
-                      }
-                    },
-                    {
-                      "SI": {
-                        "SN": "body mad bent pico",
-                        "FF": 0,
-                        "ST": "G",
-                        "TRP": { "x": 46.7, "y": 51.15 },
-                        "LP": "LP",
-                        "MX": [1, 0, 0, 1, 324.75, -86.1]
-                      }
-                    },
-                    {
-                      "SI": {
-                        "SN": "pants half pico",
-                        "FF": 0,
-                        "ST": "G",
-                        "TRP": { "x": 81.05, "y": 44.65 },
-                        "LP": "LP",
-                        "MX": [1, 0, 0, 1, 257.85, -33.7]
-                      }
-                    },
-                    {
-                      "SI": {
-                        "SN": "foot right upwards",
-                        "FF": 0,
-                        "ST": "G",
-                        "TRP": { "x": 132.9, "y": 31 },
-                        "LP": "LP",
-                        "MX": [0.998, -0.063, 0.063, 0.998, 180.45, -0.45]
-                      }
-                    },
-                    {
-                      "SI": {
-                        "SN": "leg left up",
-                        "FF": 0,
-                        "ST": "G",
-                        "TRP": { "x": 56.7, "y": 72.6 },
-                        "LP": "LP",
-                        "MX": [1, 0, 0, 1, 349.3, -12.45]
-                      }
-                    },
-                    {
-                      "SI": {
-                        "SN": "arm up pico",
-                        "FF": 1,
-                        "ST": "G",
-                        "TRP": { "x": 61.25, "y": 46.4 },
-                        "LP": "LP",
-                        "MX": [1, 0, 0, 1, 386.85, -107.55]
-                      }
-                    },
-                    {
-                      "SI": {
-                        "SN": "head pico",
-                        "FF": 0,
-                        "ST": "G",
-                        "TRP": { "x": 95.9, "y": 77.8 },
-                        "LP": "LP",
-                        "MX": [-0.959, 0.291, 0.204, 0.977, 415.6, -224.9]
-                      }
-                    },
-                    {
-                      "SI": {
-                        "SN": "face fall pico 2",
-                        "FF": 0,
-                        "ST": "G",
-                        "TRP": { "x": 44.2, "y": 34.45 },
-                        "LP": "LP",
-                        "MX": [1, 0, 0, 1, 274.5, -109.15]
-                      }
-                    },
-                    {
-                      "SI": {
-                        "SN": "gun face semi right",
+                        "SN": "Parts/gun face semi right",
                         "FF": 0,
                         "ST": "G",
                         "TRP": { "x": 65.7, "y": 89.05 },
-                        "LP": "LP",
+                        "LP": "SF",
                         "MX": [0.98, -0.199, 0.199, 0.98, 110.1, -71.2]
                       }
                     }
@@ -2096,101 +1916,11 @@
                   "E": [
                     {
                       "SI": {
-                        "SN": "arm back piece",
-                        "FF": 0,
-                        "ST": "G",
-                        "TRP": { "x": 59.3, "y": 32.8 },
-                        "LP": "LP",
-                        "MX": [0.989, -0.12, -0.12, -0.989, 301.65, -26.75]
-                      }
-                    },
-                    {
-                      "SI": {
-                        "SN": "hand free pico",
-                        "FF": 0,
-                        "ST": "G",
-                        "TRP": { "x": 35, "y": 33.3 },
-                        "LP": "LP",
-                        "MX": [0.997, 0.075, -0.075, 0.997, 224.25, -94.15]
-                      }
-                    },
-                    {
-                      "SI": {
-                        "SN": "body mad bent pico",
-                        "FF": 0,
-                        "ST": "G",
-                        "TRP": { "x": 46.7, "y": 51.15 },
-                        "LP": "LP",
-                        "MX": [1, 0.027, -0.027, 1, 326.7, -99.75]
-                      }
-                    },
-                    {
-                      "SI": {
-                        "SN": "pants half pico",
-                        "FF": 0,
-                        "ST": "G",
-                        "TRP": { "x": 30.65, "y": 9.5 },
-                        "LP": "LP",
-                        "MX": [0.993, 0.111, -0.111, 0.993, 261.1, -55.8]
-                      }
-                    },
-                    {
-                      "SI": {
-                        "SN": "foot right upwards",
-                        "FF": 0,
-                        "ST": "G",
-                        "TRP": { "x": 132.75, "y": 42.3 },
-                        "LP": "LP",
-                        "MX": [0.995, -0.088, 0.088, 0.995, 177.75, -16.8]
-                      }
-                    },
-                    {
-                      "SI": {
-                        "SN": "leg left up",
-                        "FF": 0,
-                        "ST": "G",
-                        "TRP": { "x": 56.75, "y": 72.6 },
-                        "LP": "LP",
-                        "MX": [1, 0.027, -0.027, 1, 349.25, -26.15]
-                      }
-                    },
-                    {
-                      "SI": {
-                        "SN": "arm up pico",
-                        "FF": 3,
-                        "ST": "G",
-                        "TRP": { "x": 14.05, "y": 26.35 },
-                        "LP": "LP",
-                        "MX": [0.999, -0.039, 0.039, 0.999, 387.65, -119.1]
-                      }
-                    },
-                    {
-                      "SI": {
-                        "SN": "head pico",
-                        "FF": 0,
-                        "ST": "G",
-                        "TRP": { "x": 95.9, "y": 77.7 },
-                        "LP": "LP",
-                        "MX": [-0.974, 0.233, 0.146, 0.987, 426.3, -235.2]
-                      }
-                    },
-                    {
-                      "SI": {
-                        "SN": "face fall pico 2",
-                        "FF": 0,
-                        "ST": "G",
-                        "TRP": { "x": 44.2, "y": 34.35 },
-                        "LP": "LP",
-                        "MX": [0.998, 0.059, -0.059, 0.998, 278.65, -128.05]
-                      }
-                    },
-                    {
-                      "SI": {
-                        "SN": "gun face semi right",
+                        "SN": "Parts/gun face semi right",
                         "FF": 0,
                         "ST": "G",
                         "TRP": { "x": 65.7, "y": 89 },
-                        "LP": "LP",
+                        "LP": "SF",
                         "MX": [0.968, -0.25, 0.25, 0.968, 106.4, -81.35]
                       }
                     }
@@ -2202,101 +1932,11 @@
                   "E": [
                     {
                       "SI": {
-                        "SN": "arm back piece",
-                        "FF": 0,
-                        "ST": "G",
-                        "TRP": { "x": 59.35, "y": 32.85 },
-                        "LP": "LP",
-                        "MX": [0.995, 0.011, 0.011, -0.995, 299.95, -34.5]
-                      }
-                    },
-                    {
-                      "SI": {
-                        "SN": "hand free pico",
-                        "FF": 0,
-                        "ST": "G",
-                        "TRP": { "x": 35, "y": 33.35 },
-                        "LP": "LP",
-                        "MX": [0.983, 0.18, -0.18, 0.983, 231.1, -108.1]
-                      }
-                    },
-                    {
-                      "SI": {
-                        "SN": "body mad bent pico",
-                        "FF": 0,
-                        "ST": "G",
-                        "TRP": { "x": 46.8, "y": 51.2 },
-                        "LP": "LP",
-                        "MX": [0.997, 0.072, -0.072, 0.997, 331.3, -101.25]
-                      }
-                    },
-                    {
-                      "SI": {
-                        "SN": "pants half pico",
-                        "FF": 0,
-                        "ST": "G",
-                        "TRP": { "x": 30.7, "y": 9.45 },
-                        "LP": "LP",
-                        "MX": [0.98, 0.194, -0.194, 0.98, 266.55, -64.75]
-                      }
-                    },
-                    {
-                      "SI": {
-                        "SN": "foot right upwards",
-                        "FF": 0,
-                        "ST": "G",
-                        "TRP": { "x": 132.7, "y": 42.2 },
-                        "LP": "LP",
-                        "MX": [0.999, -0.004, 0.004, 0.999, 180.25, -32.95]
-                      }
-                    },
-                    {
-                      "SI": {
-                        "SN": "leg left up",
-                        "FF": 0,
-                        "ST": "G",
-                        "TRP": { "x": 51.2, "y": 9.75 },
-                        "LP": "LP",
-                        "MX": [0.997, 0.072, -0.072, 0.997, 350.35, -24.7]
-                      }
-                    },
-                    {
-                      "SI": {
-                        "SN": "arm up pico",
-                        "FF": 6,
-                        "ST": "G",
-                        "TRP": { "x": 14.1, "y": 26.3 },
-                        "LP": "LP",
-                        "MX": [0.995, -0.086, 0.086, 0.995, 390.7, -114.45]
-                      }
-                    },
-                    {
-                      "SI": {
-                        "SN": "head pico",
-                        "FF": 0,
-                        "ST": "G",
-                        "TRP": { "x": 95.95, "y": 77.7 },
-                        "LP": "LP",
-                        "MX": [-0.99, 0.154, 0.066, 0.996, 442.4, -231]
-                      }
-                    },
-                    {
-                      "SI": {
-                        "SN": "face fall pico 2",
-                        "FF": 0,
-                        "ST": "G",
-                        "TRP": { "x": 44.2, "y": 34.3 },
-                        "LP": "LP",
-                        "MX": [0.99, 0.139, -0.139, 0.99, 286.6, -136.1]
-                      }
-                    },
-                    {
-                      "SI": {
-                        "SN": "gun face semi right",
+                        "SN": "Parts/gun face semi right",
                         "FF": 0,
                         "ST": "G",
                         "TRP": { "x": 65.8, "y": 89 },
-                        "LP": "LP",
+                        "LP": "SF",
                         "MX": [0.976, -0.216, 0.216, 0.976, 108.9, -71.7]
                       }
                     }
@@ -2308,101 +1948,11 @@
                   "E": [
                     {
                       "SI": {
-                        "SN": "arm back piece",
-                        "FF": 0,
-                        "ST": "G",
-                        "TRP": { "x": 59.35, "y": 32.8 },
-                        "LP": "LP",
-                        "MX": [0.994, 0.056, 0.056, -0.994, 303.5, -32.15]
-                      }
-                    },
-                    {
-                      "SI": {
-                        "SN": "hand free pico",
-                        "FF": 0,
-                        "ST": "G",
-                        "TRP": { "x": 34.85, "y": 33.45 },
-                        "LP": "LP",
-                        "MX": [0.914, 0.403, -0.403, 0.914, 247.15, -120.95]
-                      }
-                    },
-                    {
-                      "SI": {
-                        "SN": "body mad bent pico",
-                        "FF": 0,
-                        "ST": "G",
-                        "TRP": { "x": 47.4, "y": 91.45 },
-                        "LP": "LP",
-                        "MX": [0.993, 0.116, -0.189, 0.984, 344.5, -94.65]
-                      }
-                    },
-                    {
-                      "SI": {
-                        "SN": "pants half pico",
-                        "FF": 0,
-                        "ST": "G",
-                        "TRP": { "x": 30.75, "y": 9.45 },
-                        "LP": "LP",
-                        "MX": [0.954, 0.297, -0.297, 0.954, 276.4, -68.7]
-                      }
-                    },
-                    {
-                      "SI": {
-                        "SN": "foot right upwards",
-                        "FF": 0,
-                        "ST": "G",
-                        "TRP": { "x": 132.6, "y": 42.25 },
-                        "LP": "LP",
-                        "MX": [0.988, 0.142, -0.142, 0.988, 189.7, -55.25]
-                      }
-                    },
-                    {
-                      "SI": {
-                        "SN": "leg left up",
-                        "FF": 0,
-                        "ST": "G",
-                        "TRP": { "x": 51.25, "y": 9.75 },
-                        "LP": "LP",
-                        "MX": [0.993, 0.116, -0.116, 0.993, 353.2, -6.15]
-                      }
-                    },
-                    {
-                      "SI": {
-                        "SN": "arm up pico",
-                        "FF": 9,
-                        "ST": "G",
-                        "TRP": { "x": 14.15, "y": 26.25 },
-                        "LP": "LP",
-                        "MX": [0.994, -0.094, 0.094, 0.994, 397.35, -107.1]
-                      }
-                    },
-                    {
-                      "SI": {
-                        "SN": "head pico",
-                        "FF": 0,
-                        "ST": "G",
-                        "TRP": { "x": 96.05, "y": 77.75 },
-                        "LP": "LP",
-                        "MX": [-1, 0.057, -0.032, 0.997, 462.45, -216.65]
-                      }
-                    },
-                    {
-                      "SI": {
-                        "SN": "face fall pico 2",
-                        "FF": 0,
-                        "ST": "G",
-                        "TRP": { "x": 44.25, "y": 34.25 },
-                        "LP": "LP",
-                        "MX": [0.971, 0.235, -0.235, 0.971, 298.2, -137.4]
-                      }
-                    },
-                    {
-                      "SI": {
-                        "SN": "gun face semi right",
+                        "SN": "Parts/gun face semi right",
                         "FF": 0,
                         "ST": "G",
                         "TRP": { "x": 65.85, "y": 89 },
-                        "LP": "LP",
+                        "LP": "SF",
                         "MX": [0.983, -0.182, 0.182, 0.983, 111.45, -51.1]
                       }
                     }
@@ -2414,101 +1964,11 @@
                   "E": [
                     {
                       "SI": {
-                        "SN": "arm back piece",
-                        "FF": 0,
-                        "ST": "G",
-                        "TRP": { "x": 59.4, "y": 32.95 },
-                        "LP": "LP",
-                        "MX": [0.967, 0.233, 0.233, -0.967, 302.85, -20.3]
-                      }
-                    },
-                    {
-                      "SI": {
-                        "SN": "hand free pico",
-                        "FF": 0,
-                        "ST": "G",
-                        "TRP": { "x": 35.05, "y": 33.45 },
-                        "LP": "LP",
-                        "MX": [0.785, 0.614, -0.614, 0.785, 276.1, -115.7]
-                      }
-                    },
-                    {
-                      "SI": {
-                        "SN": "body mad bent pico",
-                        "FF": 0,
-                        "ST": "G",
-                        "TRP": { "x": 47.35, "y": 91.45 },
-                        "LP": "LP",
-                        "MX": [0.984, 0.173, -0.323, 0.958, 358.3, -73.3]
-                      }
-                    },
-                    {
-                      "SI": {
-                        "SN": "pants half pico",
-                        "FF": 0,
-                        "ST": "G",
-                        "TRP": { "x": 30.8, "y": 9.4 },
-                        "LP": "LP",
-                        "MX": [0.902, 0.428, -0.428, 0.902, 290.45, -57.1]
-                      }
-                    },
-                    {
-                      "SI": {
-                        "SN": "foot right upwards",
-                        "FF": 0,
-                        "ST": "G",
-                        "TRP": { "x": 132.6, "y": 42.3 },
-                        "LP": "LP",
-                        "MX": [0.948, 0.309, -0.309, 0.948, 207.4, -60.4]
-                      }
-                    },
-                    {
-                      "SI": {
-                        "SN": "leg left up",
-                        "FF": 0,
-                        "ST": "G",
-                        "TRP": { "x": 51.2, "y": 9.7 },
-                        "LP": "LP",
-                        "MX": [0.984, 0.173, -0.188, 1.073, 353.8, 18.45]
-                      }
-                    },
-                    {
-                      "SI": {
-                        "SN": "arm up pico",
-                        "FF": 11,
-                        "ST": "G",
-                        "TRP": { "x": 14.15, "y": 26.3 },
-                        "LP": "LP",
-                        "MX": [0.936, -0.36, 0.265, 0.962, 405.4, -77.45]
-                      }
-                    },
-                    {
-                      "SI": {
-                        "SN": "head pico",
-                        "FF": 0,
-                        "ST": "G",
-                        "TRP": { "x": 95.95, "y": 77.7 },
-                        "LP": "LP",
-                        "MX": [-1, -0.049, -0.137, 0.988, 487.5, -186.7]
-                      }
-                    },
-                    {
-                      "SI": {
-                        "SN": "face fall pico 2",
-                        "FF": 0,
-                        "ST": "G",
-                        "TRP": { "x": 44.25, "y": 34.25 },
-                        "LP": "LP",
-                        "MX": [0.941, 0.336, -0.336, 0.941, 315.9, -125.25]
-                      }
-                    },
-                    {
-                      "SI": {
-                        "SN": "gun face semi right",
+                        "SN": "Parts/gun face semi right",
                         "FF": 0,
                         "ST": "G",
                         "TRP": { "x": 65.85, "y": 89 },
-                        "LP": "LP",
+                        "LP": "SF",
                         "MX": [0.991, -0.135, 0.135, 0.991, 115.15, -27.8]
                       }
                     }
@@ -2520,7 +1980,609 @@
                   "E": [
                     {
                       "SI": {
-                        "SN": "arm back piece",
+                        "SN": "Parts/gun face semi right",
+                        "FF": 0,
+                        "ST": "G",
+                        "TRP": { "x": 66.4, "y": 211.4 },
+                        "LP": "SF",
+                        "MX": [0.873, -0.031, 0.038, 1.077, 131.2, 2]
+                      }
+                    }
+                  ]
+                },
+                {
+                  "I": 14,
+                  "DU": 15,
+                  "E": []
+                }
+              ]
+            },
+            {
+              "LN": "bf slide in Layer",
+              "FR": [
+                {
+                  "I": 0,
+                  "DU": 1,
+                  "E": [
+                    {
+                      "SI": {
+                        "SN": "Parts/arm back piece",
+                        "FF": 0,
+                        "ST": "G",
+                        "TRP": { "x": 32.3, "y": 24 },
+                        "LP": "LP",
+                        "MX": [0.827, -0.21, -0.165, -1.057, 312.7, 30.8]
+                      }
+                    },
+                    {
+                      "SI": {
+                        "SN": "Parts/hand free pico",
+                        "FF": 0,
+                        "ST": "G",
+                        "TRP": { "x": 35.05, "y": 33.45 },
+                        "LP": "LP",
+                        "MX": [0.842, -0.109, 0.085, 1.076, 240.9, -23.2]
+                      }
+                    },
+                    {
+                      "SI": {
+                        "SN": "Parts/body mad bent pico",
+                        "FF": 0,
+                        "ST": "G",
+                        "TRP": { "x": 46.7, "y": 51.15 },
+                        "LP": "LP",
+                        "MX": [0.847, -0.019, 0.015, 1.082, 329.95, -51.65]
+                      }
+                    },
+                    {
+                      "SI": {
+                        "SN": "Parts/pants half pico",
+                        "FF": 0,
+                        "ST": "G",
+                        "TRP": { "x": 81, "y": 44.75 },
+                        "LP": "LP",
+                        "MX": [0.843, -0.095, 0.074, 1.078, 272.35, 16.05]
+                      }
+                    },
+                    {
+                      "SI": {
+                        "SN": "Parts/foot right upwards",
+                        "FF": 0,
+                        "ST": "G",
+                        "TRP": { "x": 139.05, "y": 40.65 },
+                        "LP": "LP",
+                        "MX": [0.829, -0.169, 0.207, 1.061, 206.85, 61.05]
+                      }
+                    },
+                    {
+                      "SI": {
+                        "SN": "Parts/leg left up",
+                        "FF": 0,
+                        "ST": "G",
+                        "TRP": { "x": 48.1, "y": 24.35 },
+                        "LP": "LP",
+                        "MX": [0.843, 0.077, -0.107, 1.076, 350.8, 42.25]
+                      }
+                    },
+                    {
+                      "SI": {
+                        "SN": "Parts/arm up pico",
+                        "FF": 0,
+                        "ST": "G",
+                        "TRP": { "x": 17.7, "y": 26.6 },
+                        "LP": "LP",
+                        "MX": [0.623, 0.687, -0.461, 0.959, 396.4, -67.9]
+                      }
+                    },
+                    {
+                      "SI": {
+                        "SN": "Parts/head pico",
+                        "FF": 0,
+                        "ST": "G",
+                        "TRP": { "x": 96.05, "y": 77.8 },
+                        "LP": "LP",
+                        "MX": [-0.72, 0.512, 0.394, 0.987, 372, -199.5]
+                      }
+                    },
+                    {
+                      "SI": {
+                        "SN": "Parts/face fall pico 2",
+                        "FF": 0,
+                        "ST": "G",
+                        "TRP": { "x": 44.2, "y": 34.55 },
+                        "LP": "LP",
+                        "MX": [0.821, -0.214, 0.231, 1.055, 282.95, -47.15]
+                      }
+                    }
+                  ]
+                },
+                {
+                  "I": 1,
+                  "DU": 2,
+                  "E": [
+                    {
+                      "SI": {
+                        "SN": "Parts/arm back piece",
+                        "FF": 0,
+                        "ST": "G",
+                        "TRP": { "x": 32.35, "y": 24 },
+                        "LP": "LP",
+                        "MX": [0.98, -0.177, -0.177, -0.98, 303, -10.25]
+                      }
+                    },
+                    {
+                      "SI": {
+                        "SN": "Parts/hand free pico",
+                        "FF": 0,
+                        "ST": "G",
+                        "TRP": { "x": 35, "y": 33.3 },
+                        "LP": "LP",
+                        "MX": [1, 0, 0, 1, 221.9, -72.7]
+                      }
+                    },
+                    {
+                      "SI": {
+                        "SN": "Parts/body mad bent pico",
+                        "FF": 0,
+                        "ST": "G",
+                        "TRP": { "x": 46.7, "y": 51.15 },
+                        "LP": "LP",
+                        "MX": [1, 0, 0, 1, 324.75, -86.1]
+                      }
+                    },
+                    {
+                      "SI": {
+                        "SN": "Parts/pants half pico",
+                        "FF": 0,
+                        "ST": "G",
+                        "TRP": { "x": 81.05, "y": 44.65 },
+                        "LP": "LP",
+                        "MX": [1, 0, 0, 1, 257.85, -33.7]
+                      }
+                    },
+                    {
+                      "SI": {
+                        "SN": "Parts/foot right upwards",
+                        "FF": 0,
+                        "ST": "G",
+                        "TRP": { "x": 132.9, "y": 31 },
+                        "LP": "LP",
+                        "MX": [0.998, -0.063, 0.063, 0.998, 180.45, -0.45]
+                      }
+                    },
+                    {
+                      "SI": {
+                        "SN": "Parts/leg left up",
+                        "FF": 0,
+                        "ST": "G",
+                        "TRP": { "x": 56.7, "y": 72.6 },
+                        "LP": "LP",
+                        "MX": [1, 0, 0, 1, 349.3, -12.45]
+                      }
+                    },
+                    {
+                      "SI": {
+                        "SN": "Parts/arm up pico",
+                        "FF": 1,
+                        "ST": "G",
+                        "TRP": { "x": 61.25, "y": 46.4 },
+                        "LP": "LP",
+                        "MX": [1, 0, 0, 1, 386.85, -107.55]
+                      }
+                    },
+                    {
+                      "SI": {
+                        "SN": "Parts/head pico",
+                        "FF": 0,
+                        "ST": "G",
+                        "TRP": { "x": 95.9, "y": 77.8 },
+                        "LP": "LP",
+                        "MX": [-0.959, 0.291, 0.204, 0.977, 415.6, -224.9]
+                      }
+                    },
+                    {
+                      "SI": {
+                        "SN": "Parts/face fall pico 2",
+                        "FF": 0,
+                        "ST": "G",
+                        "TRP": { "x": 44.2, "y": 34.45 },
+                        "LP": "LP",
+                        "MX": [1, 0, 0, 1, 274.5, -109.15]
+                      }
+                    }
+                  ]
+                },
+                {
+                  "I": 3,
+                  "DU": 3,
+                  "E": [
+                    {
+                      "SI": {
+                        "SN": "Parts/arm back piece",
+                        "FF": 0,
+                        "ST": "G",
+                        "TRP": { "x": 59.3, "y": 32.8 },
+                        "LP": "LP",
+                        "MX": [0.989, -0.12, -0.12, -0.989, 301.65, -26.75]
+                      }
+                    },
+                    {
+                      "SI": {
+                        "SN": "Parts/hand free pico",
+                        "FF": 0,
+                        "ST": "G",
+                        "TRP": { "x": 35, "y": 33.3 },
+                        "LP": "LP",
+                        "MX": [0.997, 0.075, -0.075, 0.997, 224.25, -94.15]
+                      }
+                    },
+                    {
+                      "SI": {
+                        "SN": "Parts/body mad bent pico",
+                        "FF": 0,
+                        "ST": "G",
+                        "TRP": { "x": 46.7, "y": 51.15 },
+                        "LP": "LP",
+                        "MX": [1, 0.027, -0.027, 1, 326.7, -99.75]
+                      }
+                    },
+                    {
+                      "SI": {
+                        "SN": "Parts/pants half pico",
+                        "FF": 0,
+                        "ST": "G",
+                        "TRP": { "x": 30.65, "y": 9.5 },
+                        "LP": "LP",
+                        "MX": [0.993, 0.111, -0.111, 0.993, 261.1, -55.8]
+                      }
+                    },
+                    {
+                      "SI": {
+                        "SN": "Parts/foot right upwards",
+                        "FF": 0,
+                        "ST": "G",
+                        "TRP": { "x": 132.75, "y": 42.3 },
+                        "LP": "LP",
+                        "MX": [0.995, -0.088, 0.088, 0.995, 177.75, -16.8]
+                      }
+                    },
+                    {
+                      "SI": {
+                        "SN": "Parts/leg left up",
+                        "FF": 0,
+                        "ST": "G",
+                        "TRP": { "x": 56.75, "y": 72.6 },
+                        "LP": "LP",
+                        "MX": [1, 0.027, -0.027, 1, 349.25, -26.15]
+                      }
+                    },
+                    {
+                      "SI": {
+                        "SN": "Parts/arm up pico",
+                        "FF": 3,
+                        "ST": "G",
+                        "TRP": { "x": 14.05, "y": 26.35 },
+                        "LP": "LP",
+                        "MX": [0.999, -0.039, 0.039, 0.999, 387.65, -119.1]
+                      }
+                    },
+                    {
+                      "SI": {
+                        "SN": "Parts/head pico",
+                        "FF": 0,
+                        "ST": "G",
+                        "TRP": { "x": 95.9, "y": 77.7 },
+                        "LP": "LP",
+                        "MX": [-0.974, 0.233, 0.146, 0.987, 426.3, -235.2]
+                      }
+                    },
+                    {
+                      "SI": {
+                        "SN": "Parts/face fall pico 2",
+                        "FF": 0,
+                        "ST": "G",
+                        "TRP": { "x": 44.2, "y": 34.35 },
+                        "LP": "LP",
+                        "MX": [0.998, 0.059, -0.059, 0.998, 278.65, -128.05]
+                      }
+                    }
+                  ]
+                },
+                {
+                  "I": 6,
+                  "DU": 3,
+                  "E": [
+                    {
+                      "SI": {
+                        "SN": "Parts/arm back piece",
+                        "FF": 0,
+                        "ST": "G",
+                        "TRP": { "x": 59.35, "y": 32.85 },
+                        "LP": "LP",
+                        "MX": [0.995, 0.011, 0.011, -0.995, 299.95, -34.5]
+                      }
+                    },
+                    {
+                      "SI": {
+                        "SN": "Parts/hand free pico",
+                        "FF": 0,
+                        "ST": "G",
+                        "TRP": { "x": 35, "y": 33.35 },
+                        "LP": "LP",
+                        "MX": [0.983, 0.18, -0.18, 0.983, 231.1, -108.1]
+                      }
+                    },
+                    {
+                      "SI": {
+                        "SN": "Parts/body mad bent pico",
+                        "FF": 0,
+                        "ST": "G",
+                        "TRP": { "x": 46.8, "y": 51.2 },
+                        "LP": "LP",
+                        "MX": [0.997, 0.072, -0.072, 0.997, 331.3, -101.25]
+                      }
+                    },
+                    {
+                      "SI": {
+                        "SN": "Parts/pants half pico",
+                        "FF": 0,
+                        "ST": "G",
+                        "TRP": { "x": 30.7, "y": 9.45 },
+                        "LP": "LP",
+                        "MX": [0.98, 0.194, -0.194, 0.98, 266.55, -64.75]
+                      }
+                    },
+                    {
+                      "SI": {
+                        "SN": "Parts/foot right upwards",
+                        "FF": 0,
+                        "ST": "G",
+                        "TRP": { "x": 132.7, "y": 42.2 },
+                        "LP": "LP",
+                        "MX": [0.999, -0.004, 0.004, 0.999, 180.25, -32.95]
+                      }
+                    },
+                    {
+                      "SI": {
+                        "SN": "Parts/leg left up",
+                        "FF": 0,
+                        "ST": "G",
+                        "TRP": { "x": 51.2, "y": 9.75 },
+                        "LP": "LP",
+                        "MX": [0.997, 0.072, -0.072, 0.997, 350.35, -24.7]
+                      }
+                    },
+                    {
+                      "SI": {
+                        "SN": "Parts/arm up pico",
+                        "FF": 6,
+                        "ST": "G",
+                        "TRP": { "x": 14.1, "y": 26.3 },
+                        "LP": "LP",
+                        "MX": [0.995, -0.086, 0.086, 0.995, 391.4, -117]
+                      }
+                    },
+                    {
+                      "SI": {
+                        "SN": "Parts/head pico",
+                        "FF": 0,
+                        "ST": "G",
+                        "TRP": { "x": 95.95, "y": 77.7 },
+                        "LP": "LP",
+                        "MX": [-0.99, 0.154, 0.066, 0.996, 442.4, -231]
+                      }
+                    },
+                    {
+                      "SI": {
+                        "SN": "Parts/face fall pico 2",
+                        "FF": 0,
+                        "ST": "G",
+                        "TRP": { "x": 44.2, "y": 34.3 },
+                        "LP": "LP",
+                        "MX": [0.99, 0.139, -0.139, 0.99, 286.6, -136.1]
+                      }
+                    }
+                  ]
+                },
+                {
+                  "I": 9,
+                  "DU": 2,
+                  "E": [
+                    {
+                      "SI": {
+                        "SN": "Parts/arm back piece",
+                        "FF": 0,
+                        "ST": "G",
+                        "TRP": { "x": 59.35, "y": 32.8 },
+                        "LP": "LP",
+                        "MX": [0.994, 0.056, 0.056, -0.994, 303.5, -32.15]
+                      }
+                    },
+                    {
+                      "SI": {
+                        "SN": "Parts/hand free pico",
+                        "FF": 0,
+                        "ST": "G",
+                        "TRP": { "x": 34.85, "y": 33.45 },
+                        "LP": "LP",
+                        "MX": [0.914, 0.403, -0.403, 0.914, 247.15, -120.95]
+                      }
+                    },
+                    {
+                      "SI": {
+                        "SN": "Parts/body mad bent pico",
+                        "FF": 0,
+                        "ST": "G",
+                        "TRP": { "x": 47.4, "y": 91.45 },
+                        "LP": "LP",
+                        "MX": [0.993, 0.116, -0.189, 0.984, 344.5, -94.65]
+                      }
+                    },
+                    {
+                      "SI": {
+                        "SN": "Parts/pants half pico",
+                        "FF": 0,
+                        "ST": "G",
+                        "TRP": { "x": 30.75, "y": 9.45 },
+                        "LP": "LP",
+                        "MX": [0.954, 0.297, -0.297, 0.954, 276.4, -68.7]
+                      }
+                    },
+                    {
+                      "SI": {
+                        "SN": "Parts/foot right upwards",
+                        "FF": 0,
+                        "ST": "G",
+                        "TRP": { "x": 132.6, "y": 42.25 },
+                        "LP": "LP",
+                        "MX": [0.988, 0.142, -0.142, 0.988, 189.7, -55.25]
+                      }
+                    },
+                    {
+                      "SI": {
+                        "SN": "Parts/leg left up",
+                        "FF": 0,
+                        "ST": "G",
+                        "TRP": { "x": 51.25, "y": 9.75 },
+                        "LP": "LP",
+                        "MX": [0.993, 0.116, -0.116, 0.993, 353.2, -6.15]
+                      }
+                    },
+                    {
+                      "SI": {
+                        "SN": "Parts/arm up pico",
+                        "FF": 9,
+                        "ST": "G",
+                        "TRP": { "x": 14.15, "y": 26.3 },
+                        "LP": "LP",
+                        "MX": [0.994, -0.094, 0.094, 0.994, 397.05, -108.2]
+                      }
+                    },
+                    {
+                      "SI": {
+                        "SN": "Parts/head pico",
+                        "FF": 0,
+                        "ST": "G",
+                        "TRP": { "x": 96.05, "y": 77.75 },
+                        "LP": "LP",
+                        "MX": [-1, 0.057, -0.032, 0.997, 462.45, -216.65]
+                      }
+                    },
+                    {
+                      "SI": {
+                        "SN": "Parts/face fall pico 2",
+                        "FF": 0,
+                        "ST": "G",
+                        "TRP": { "x": 44.25, "y": 34.25 },
+                        "LP": "LP",
+                        "MX": [0.971, 0.235, -0.235, 0.971, 298.2, -137.4]
+                      }
+                    }
+                  ]
+                },
+                {
+                  "I": 11,
+                  "DU": 1,
+                  "E": [
+                    {
+                      "SI": {
+                        "SN": "Parts/arm back piece",
+                        "FF": 0,
+                        "ST": "G",
+                        "TRP": { "x": 59.4, "y": 32.95 },
+                        "LP": "LP",
+                        "MX": [0.967, 0.233, 0.233, -0.967, 302.85, -20.3]
+                      }
+                    },
+                    {
+                      "SI": {
+                        "SN": "Parts/hand free pico",
+                        "FF": 0,
+                        "ST": "G",
+                        "TRP": { "x": 35.05, "y": 33.45 },
+                        "LP": "LP",
+                        "MX": [0.785, 0.614, -0.614, 0.785, 276.1, -115.7]
+                      }
+                    },
+                    {
+                      "SI": {
+                        "SN": "Parts/body mad bent pico",
+                        "FF": 0,
+                        "ST": "G",
+                        "TRP": { "x": 47.35, "y": 91.45 },
+                        "LP": "LP",
+                        "MX": [0.984, 0.173, -0.323, 0.958, 358.3, -73.3]
+                      }
+                    },
+                    {
+                      "SI": {
+                        "SN": "Parts/pants half pico",
+                        "FF": 0,
+                        "ST": "G",
+                        "TRP": { "x": 30.8, "y": 9.4 },
+                        "LP": "LP",
+                        "MX": [0.902, 0.428, -0.428, 0.902, 290.45, -57.1]
+                      }
+                    },
+                    {
+                      "SI": {
+                        "SN": "Parts/foot right upwards",
+                        "FF": 0,
+                        "ST": "G",
+                        "TRP": { "x": 132.6, "y": 42.3 },
+                        "LP": "LP",
+                        "MX": [0.948, 0.309, -0.309, 0.948, 207.4, -60.4]
+                      }
+                    },
+                    {
+                      "SI": {
+                        "SN": "Parts/leg left up",
+                        "FF": 0,
+                        "ST": "G",
+                        "TRP": { "x": 51.2, "y": 9.7 },
+                        "LP": "LP",
+                        "MX": [0.984, 0.173, -0.188, 1.073, 353.8, 18.45]
+                      }
+                    },
+                    {
+                      "SI": {
+                        "SN": "Parts/arm up pico",
+                        "FF": 11,
+                        "ST": "G",
+                        "TRP": { "x": 14.15, "y": 26.35 },
+                        "LP": "LP",
+                        "MX": [0.936, -0.36, 0.265, 0.962, 407.25, -79.75]
+                      }
+                    },
+                    {
+                      "SI": {
+                        "SN": "Parts/head pico",
+                        "FF": 0,
+                        "ST": "G",
+                        "TRP": { "x": 95.95, "y": 77.7 },
+                        "LP": "LP",
+                        "MX": [-1, -0.049, -0.137, 0.988, 487.5, -186.7]
+                      }
+                    },
+                    {
+                      "SI": {
+                        "SN": "Parts/face fall pico 2",
+                        "FF": 0,
+                        "ST": "G",
+                        "TRP": { "x": 44.25, "y": 34.25 },
+                        "LP": "LP",
+                        "MX": [0.941, 0.336, -0.336, 0.941, 315.9, -125.25]
+                      }
+                    }
+                  ]
+                },
+                {
+                  "I": 12,
+                  "DU": 2,
+                  "E": [
+                    {
+                      "SI": {
+                        "SN": "Parts/arm back piece",
                         "FF": 0,
                         "ST": "G",
                         "TRP": { "x": 59.45, "y": 32.9 },
@@ -2530,17 +2592,17 @@
                     },
                     {
                       "SI": {
-                        "SN": "hand free pico",
+                        "SN": "Parts/hand free pico",
                         "FF": 0,
                         "ST": "G",
-                        "TRP": { "x": 35.1, "y": 33.5 },
+                        "TRP": { "x": 35.1, "y": 33.45 },
                         "LP": "LP",
-                        "MX": [0.785, 0.614, -0.614, 0.785, 291.1, -101.35]
+                        "MX": [0.785, 0.614, -0.614, 0.785, 289.45, -66.75]
                       }
                     },
                     {
                       "SI": {
-                        "SN": "body mad bent pico",
+                        "SN": "Parts/body mad bent pico",
                         "FF": 0,
                         "ST": "G",
                         "TRP": { "x": 47.35, "y": 91.3 },
@@ -2550,7 +2612,7 @@
                     },
                     {
                       "SI": {
-                        "SN": "pants half pico",
+                        "SN": "Parts/pants half pico",
                         "FF": 0,
                         "ST": "G",
                         "TRP": { "x": 136, "y": 45.5 },
@@ -2560,17 +2622,17 @@
                     },
                     {
                       "SI": {
-                        "SN": "leg left up",
+                        "SN": "Parts/leg left up",
                         "FF": 0,
                         "ST": "G",
-                        "TRP": { "x": 50.5, "y": 123.55 },
+                        "TRP": { "x": 50.45, "y": 123.55 },
                         "LP": "LP",
-                        "MX": [0.881, 0.076, -0.096, 1.117, 352.7, 58.9]
+                        "MX": [0.881, 0.076, -0.096, 1.117, 358.4, 61]
                       }
                     },
                     {
                       "SI": {
-                        "SN": "head pico",
+                        "SN": "Parts/head pico",
                         "FF": 0,
                         "ST": "G",
                         "TRP": { "x": 95.9, "y": 77.65 },
@@ -2580,7 +2642,17 @@
                     },
                     {
                       "SI": {
-                        "SN": "face fall pico 2",
+                        "SN": "Parts/arm up pico",
+                        "FF": 12,
+                        "ST": "G",
+                        "TRP": { "x": 14.2, "y": 26.25 },
+                        "LP": "LP",
+                        "MX": [0.984, -0.206, 0.267, 0.955, 411, -24.15]
+                      }
+                    },
+                    {
+                      "SI": {
+                        "SN": "Parts/face fall pico 2",
                         "FF": 0,
                         "ST": "G",
                         "TRP": { "x": 44.25, "y": 34.25 },
@@ -2590,32 +2662,12 @@
                     },
                     {
                       "SI": {
-                        "SN": "arm up pico smear",
-                        "FF": 12,
-                        "ST": "G",
-                        "TRP": { "x": 14.1, "y": 26.3 },
-                        "LP": "LP",
-                        "MX": [0.772, -0.644, 0.684, 0.718, 403.65, -23.05]
-                      }
-                    },
-                    {
-                      "SI": {
-                        "SN": "foot right upwards",
+                        "SN": "Parts/foot right upwards",
                         "FF": 0,
                         "ST": "G",
                         "TRP": { "x": 147.3, "y": 24.2 },
                         "LP": "LP",
                         "MX": [0.999, -0.037, 0.133, 0.987, 182.25, 15.65]
-                      }
-                    },
-                    {
-                      "SI": {
-                        "SN": "gun face semi right",
-                        "FF": 0,
-                        "ST": "G",
-                        "TRP": { "x": 66.4, "y": 211.4 },
-                        "LP": "LP",
-                        "MX": [0.873, -0.031, 0.038, 1.077, 131.2, 2]
                       }
                     }
                   ]
@@ -2626,7 +2678,7 @@
                   "E": [
                     {
                       "SI": {
-                        "SN": "body forward pico",
+                        "SN": "Parts/body forward pico",
                         "FF": 0,
                         "ST": "G",
                         "TRP": { "x": 265.8, "y": 160.55 },
@@ -2636,27 +2688,17 @@
                     },
                     {
                       "SI": {
-                        "SN": "arm up pico smear",
-                        "FF": 14,
-                        "ST": "G",
-                        "TRP": { "x": 14.3, "y": 26.45 },
-                        "LP": "LP",
-                        "MX": [1.188, 0.085, 0.179, 1.147, 363.5, 13.35]
-                      }
-                    },
-                    {
-                      "SI": {
-                        "SN": "gun face semi right smear",
+                        "SN": "Parts/gun face semi right",
                         "FF": 0,
                         "ST": "G",
                         "TRP": { "x": 137.65, "y": 3.15 },
-                        "LP": "LP",
+                        "LP": "SF",
                         "MX": [0.857, 0.166, -0.256, 0.817, 191.05, 47.6]
                       }
                     },
                     {
                       "SI": {
-                        "SN": "arm piece top",
+                        "SN": "Parts/arm piece top",
                         "FF": 0,
                         "ST": "G",
                         "TRP": { "x": 55.05, "y": 0.5 },
@@ -2666,7 +2708,47 @@
                     },
                     {
                       "SI": {
-                        "SN": "head down pico",
+                        "SN": "Parts/arm back piece",
+                        "FF": 0,
+                        "ST": "G",
+                        "TRP": { "x": 4.1, "y": 9.6 },
+                        "LP": "LP",
+                        "MX": [1.339, -0.244, -0.225, -1.059, 362.5, 52.85]
+                      }
+                    },
+                    {
+                      "SI": {
+                        "SN": "Parts/smoke char select",
+                        "FF": 0,
+                        "ST": "G",
+                        "TRP": { "x": 350.35, "y": -6.85 },
+                        "LP": "LP",
+                        "MX": [0.721, -0.693, 0.632, 0.353, 195.55, 133.5]
+                      }
+                    },
+                    {
+                      "SI": {
+                        "SN": "Parts/cigarette",
+                        "FF": 0,
+                        "ST": "G",
+                        "TRP": { "x": 11.95, "y": 6.55 },
+                        "LP": "LP",
+                        "MX": [-0.733, -1.195, 1.195, -0.733, 434.7, -43.5]
+                      }
+                    },
+                    {
+                      "SI": {
+                        "SN": "Parts/hand cig",
+                        "FF": 0,
+                        "ST": "G",
+                        "TRP": { "x": 39.2, "y": 49.6 },
+                        "LP": "LP",
+                        "MX": [0.999, -0.033, 0.033, 0.999, 407.95, -73.95]
+                      }
+                    },
+                    {
+                      "SI": {
+                        "SN": "Parts/head down pico",
                         "FF": 0,
                         "ST": "G",
                         "TRP": { "x": 140.15, "y": 151.55 },
@@ -2676,7 +2758,7 @@
                     },
                     {
                       "SI": {
-                        "SN": "face lean forward",
+                        "SN": "Parts/face lean forward",
                         "FF": 0,
                         "ST": "G",
                         "TRP": { "x": 50.1, "y": 18.55 },
@@ -2686,7 +2768,7 @@
                     },
                     {
                       "SI": {
-                        "SN": "hand forward pico",
+                        "SN": "Parts/hand forward pico",
                         "FF": 0,
                         "ST": "G",
                         "TRP": { "x": 41.5, "y": 2.05 },
@@ -2702,7 +2784,7 @@
                   "E": [
                     {
                       "SI": {
-                        "SN": "arm extended pico",
+                        "SN": "Parts/arm extended pico",
                         "FF": 0,
                         "ST": "G",
                         "TRP": { "x": 54.95, "y": 34.95 },
@@ -2712,37 +2794,37 @@
                     },
                     {
                       "SI": {
-                        "SN": "smoke char select",
+                        "SN": "Parts/smoke char select",
                         "FF": 0,
                         "ST": "G",
-                        "TRP": { "x": 350.45, "y": -6.95 },
+                        "TRP": { "x": 350.45, "y": -6.85 },
                         "LP": "LP",
-                        "MX": [0.897, -0.441, 0.494, 0.529, 162.55, 58.2]
+                        "MX": [0.951, -0.307, 0.413, 0.594, 158.15, 21.5]
                       }
                     },
                     {
                       "SI": {
-                        "SN": "cigarette",
+                        "SN": "Parts/cigarette",
                         "FF": 0,
                         "ST": "G",
-                        "TRP": { "x": 11.85, "y": 6.45 },
+                        "TRP": { "x": 11.9, "y": 6.5 },
                         "LP": "LP",
-                        "MX": [-0.335, -1.361, 1.361, -0.335, 444.25, -37.7]
+                        "MX": [-0.136, -1.395, 1.395, -0.136, 450.7, -32.95]
                       }
                     },
                     {
                       "SI": {
-                        "SN": "hand cig",
+                        "SN": "Parts/hand cig",
                         "FF": 0,
                         "ST": "G",
-                        "TRP": { "x": 39.2, "y": 49.65 },
+                        "TRP": { "x": 39.2, "y": 49.6 },
                         "LP": "LP",
-                        "MX": [0.962, 0.273, -0.273, 0.962, 428.05, -74.8]
+                        "MX": [0.913, 0.408, -0.408, 0.913, 440, -72]
                       }
                     },
                     {
                       "SI": {
-                        "SN": "body pico",
+                        "SN": "Parts/body pico",
                         "FF": 0,
                         "ST": "G",
                         "TRP": { "x": 100.9, "y": 224.2 },
@@ -2752,7 +2834,7 @@
                     },
                     {
                       "SI": {
-                        "SN": "shoe pico right",
+                        "SN": "Parts/shoe pico right",
                         "FF": 0,
                         "ST": "G",
                         "TRP": { "x": 61.35, "y": 119.25 },
@@ -2762,7 +2844,7 @@
                     },
                     {
                       "SI": {
-                        "SN": "gun",
+                        "SN": "Parts/gun",
                         "FF": 0,
                         "ST": "G",
                         "TRP": { "x": 59.6, "y": 193.4 },
@@ -2772,7 +2854,7 @@
                     },
                     {
                       "SI": {
-                        "SN": "arm piece top",
+                        "SN": "Parts/arm piece top",
                         "FF": 0,
                         "ST": "G",
                         "TRP": { "x": 55.15, "y": 0.55 },
@@ -2782,7 +2864,7 @@
                     },
                     {
                       "SI": {
-                        "SN": "hand forward pico",
+                        "SN": "Parts/hand forward pico",
                         "FF": 0,
                         "ST": "G",
                         "TRP": { "x": 35.85, "y": 36.85 },
@@ -2792,7 +2874,7 @@
                     },
                     {
                       "SI": {
-                        "SN": "head down pico",
+                        "SN": "Parts/head down pico",
                         "FF": 0,
                         "ST": "G",
                         "TRP": { "x": 99.3, "y": 89.6 },
@@ -2802,7 +2884,7 @@
                     },
                     {
                       "SI": {
-                        "SN": "face lean forward",
+                        "SN": "Parts/face lean forward",
                         "FF": 0,
                         "ST": "G",
                         "TRP": { "x": 50.05, "y": 18.5 },
@@ -2818,7 +2900,7 @@
                   "E": [
                     {
                       "SI": {
-                        "SN": "arm extended pico",
+                        "SN": "Parts/arm extended pico",
                         "FF": 0,
                         "ST": "G",
                         "TRP": { "x": 54.85, "y": 34.95 },
@@ -2828,7 +2910,7 @@
                     },
                     {
                       "SI": {
-                        "SN": "smoke char select",
+                        "SN": "Parts/smoke char select",
                         "FF": 6,
                         "ST": "G",
                         "TRP": { "x": 350.3, "y": -6.7 },
@@ -2838,7 +2920,7 @@
                     },
                     {
                       "SI": {
-                        "SN": "cigarette",
+                        "SN": "Parts/cigarette",
                         "FF": 0,
                         "ST": "G",
                         "TRP": { "x": 11.95, "y": 6.45 },
@@ -2848,7 +2930,7 @@
                     },
                     {
                       "SI": {
-                        "SN": "hand cig",
+                        "SN": "Parts/hand cig",
                         "FF": 0,
                         "ST": "G",
                         "TRP": { "x": 39.25, "y": 49.55 },
@@ -2858,7 +2940,7 @@
                     },
                     {
                       "SI": {
-                        "SN": "body pico",
+                        "SN": "Parts/body pico",
                         "FF": 0,
                         "ST": "G",
                         "TRP": { "x": 101.15, "y": 224.2 },
@@ -2868,7 +2950,7 @@
                     },
                     {
                       "SI": {
-                        "SN": "shoe pico right",
+                        "SN": "Parts/shoe pico right",
                         "FF": 0,
                         "ST": "G",
                         "TRP": { "x": 61.45, "y": 119.25 },
@@ -2878,7 +2960,7 @@
                     },
                     {
                       "SI": {
-                        "SN": "gun",
+                        "SN": "Parts/gun",
                         "FF": 0,
                         "ST": "G",
                         "TRP": { "x": 59.75, "y": 193.25 },
@@ -2888,7 +2970,7 @@
                     },
                     {
                       "SI": {
-                        "SN": "arm piece top",
+                        "SN": "Parts/arm piece top",
                         "FF": 0,
                         "ST": "G",
                         "TRP": { "x": 55.25, "y": 0.5 },
@@ -2898,7 +2980,7 @@
                     },
                     {
                       "SI": {
-                        "SN": "head pico",
+                        "SN": "Parts/head pico",
                         "FF": 0,
                         "ST": "G",
                         "TRP": { "x": 95.9, "y": 77.65 },
@@ -2908,7 +2990,7 @@
                     },
                     {
                       "SI": {
-                        "SN": "hand pico",
+                        "SN": "Parts/hand pico",
                         "FF": 0,
                         "ST": "G",
                         "TRP": { "x": 53.2, "y": 8.7 },
@@ -2918,7 +3000,7 @@
                     },
                     {
                       "SI": {
-                        "SN": "face lean forward",
+                        "SN": "Parts/face lean forward",
                         "FF": 0,
                         "ST": "G",
                         "TRP": { "x": 3.9, "y": 20.75 },
@@ -2934,7 +3016,7 @@
                   "E": [
                     {
                       "SI": {
-                        "SN": "arm extended pico",
+                        "SN": "Parts/arm extended pico",
                         "FF": 0,
                         "ST": "G",
                         "TRP": { "x": 54.85, "y": 35 },
@@ -2944,7 +3026,7 @@
                     },
                     {
                       "SI": {
-                        "SN": "smoke char select",
+                        "SN": "Parts/smoke char select",
                         "FF": 12,
                         "ST": "G",
                         "TRP": { "x": 350.45, "y": -6.9 },
@@ -2954,7 +3036,7 @@
                     },
                     {
                       "SI": {
-                        "SN": "cigarette",
+                        "SN": "Parts/cigarette",
                         "FF": 0,
                         "ST": "G",
                         "TRP": { "x": 11.9, "y": 6.45 },
@@ -2964,7 +3046,7 @@
                     },
                     {
                       "SI": {
-                        "SN": "hand cig",
+                        "SN": "Parts/hand cig",
                         "FF": 0,
                         "ST": "G",
                         "TRP": { "x": 39.15, "y": 49.65 },
@@ -2974,7 +3056,7 @@
                     },
                     {
                       "SI": {
-                        "SN": "body pico",
+                        "SN": "Parts/body pico",
                         "FF": 0,
                         "ST": "G",
                         "TRP": { "x": 101.25, "y": 224.05 },
@@ -2984,7 +3066,7 @@
                     },
                     {
                       "SI": {
-                        "SN": "shoe pico right",
+                        "SN": "Parts/shoe pico right",
                         "FF": 0,
                         "ST": "G",
                         "TRP": { "x": 61.65, "y": 119.05 },
@@ -2994,7 +3076,7 @@
                     },
                     {
                       "SI": {
-                        "SN": "gun",
+                        "SN": "Parts/gun",
                         "FF": 0,
                         "ST": "G",
                         "TRP": { "x": 59.85, "y": 193.2 },
@@ -3004,7 +3086,7 @@
                     },
                     {
                       "SI": {
-                        "SN": "arm piece top",
+                        "SN": "Parts/arm piece top",
                         "FF": 0,
                         "ST": "G",
                         "TRP": { "x": 55.25, "y": 0.5 },
@@ -3014,7 +3096,7 @@
                     },
                     {
                       "SI": {
-                        "SN": "head pico",
+                        "SN": "Parts/head pico",
                         "FF": 0,
                         "ST": "G",
                         "TRP": { "x": 95.8, "y": 77.75 },
@@ -3024,7 +3106,7 @@
                     },
                     {
                       "SI": {
-                        "SN": "face pico",
+                        "SN": "Parts/face pico",
                         "FF": 0,
                         "ST": "G",
                         "TRP": { "x": 43.7, "y": 28.2 },
@@ -3034,7 +3116,7 @@
                     },
                     {
                       "SI": {
-                        "SN": "hand pico",
+                        "SN": "Parts/hand pico",
                         "FF": 0,
                         "ST": "G",
                         "TRP": { "x": 53.25, "y": 8.7 },
@@ -3050,7 +3132,7 @@
                   "E": [
                     {
                       "SI": {
-                        "SN": "arm extended pico",
+                        "SN": "Parts/arm extended pico",
                         "FF": 0,
                         "ST": "G",
                         "TRP": { "x": 54.8, "y": 35 },
@@ -3060,7 +3142,7 @@
                     },
                     {
                       "SI": {
-                        "SN": "smoke char select",
+                        "SN": "Parts/smoke char select",
                         "FF": 15,
                         "ST": "G",
                         "TRP": { "x": 350.45, "y": -7 },
@@ -3070,7 +3152,7 @@
                     },
                     {
                       "SI": {
-                        "SN": "cigarette",
+                        "SN": "Parts/cigarette",
                         "FF": 2,
                         "ST": "G",
                         "TRP": { "x": 11.9, "y": 6.45 },
@@ -3080,7 +3162,7 @@
                     },
                     {
                       "SI": {
-                        "SN": "hand cig",
+                        "SN": "Parts/hand cig",
                         "FF": 0,
                         "ST": "G",
                         "TRP": { "x": 39.15, "y": 49.7 },
@@ -3090,7 +3172,7 @@
                     },
                     {
                       "SI": {
-                        "SN": "body pico",
+                        "SN": "Parts/body pico",
                         "FF": 0,
                         "ST": "G",
                         "TRP": { "x": 101.25, "y": 224.05 },
@@ -3100,7 +3182,7 @@
                     },
                     {
                       "SI": {
-                        "SN": "shoe pico right",
+                        "SN": "Parts/shoe pico right",
                         "FF": 0,
                         "ST": "G",
                         "TRP": { "x": 61.65, "y": 119.05 },
@@ -3110,7 +3192,7 @@
                     },
                     {
                       "SI": {
-                        "SN": "gun",
+                        "SN": "Parts/gun",
                         "FF": 0,
                         "ST": "G",
                         "TRP": { "x": 59.9, "y": 193.15 },
@@ -3120,7 +3202,7 @@
                     },
                     {
                       "SI": {
-                        "SN": "arm piece top",
+                        "SN": "Parts/arm piece top",
                         "FF": 0,
                         "ST": "G",
                         "TRP": { "x": 55.2, "y": 0.5 },
@@ -3130,7 +3212,7 @@
                     },
                     {
                       "SI": {
-                        "SN": "head pico",
+                        "SN": "Parts/head pico",
                         "FF": 0,
                         "ST": "G",
                         "TRP": { "x": 95.8, "y": 77.8 },
@@ -3140,7 +3222,7 @@
                     },
                     {
                       "SI": {
-                        "SN": "face pico",
+                        "SN": "Parts/face pico",
                         "FF": 0,
                         "ST": "G",
                         "TRP": { "x": 43.75, "y": 28.2 },
@@ -3150,7 +3232,7 @@
                     },
                     {
                       "SI": {
-                        "SN": "hand pico",
+                        "SN": "Parts/hand pico",
                         "FF": 0,
                         "ST": "G",
                         "TRP": { "x": 49.1, "y": 25.75 },
@@ -3166,7 +3248,7 @@
                   "E": [
                     {
                       "SI": {
-                        "SN": "arm extended pico",
+                        "SN": "Parts/arm extended pico",
                         "FF": 0,
                         "ST": "G",
                         "TRP": { "x": 54.8, "y": 35 },
@@ -3176,7 +3258,7 @@
                     },
                     {
                       "SI": {
-                        "SN": "smoke char select",
+                        "SN": "Parts/smoke char select",
                         "FF": 18,
                         "ST": "G",
                         "TRP": { "x": 350.45, "y": -7 },
@@ -3186,7 +3268,7 @@
                     },
                     {
                       "SI": {
-                        "SN": "cigarette",
+                        "SN": "Parts/cigarette",
                         "FF": 0,
                         "ST": "G",
                         "TRP": { "x": 11.85, "y": 6.45 },
@@ -3196,7 +3278,7 @@
                     },
                     {
                       "SI": {
-                        "SN": "hand cig",
+                        "SN": "Parts/hand cig",
                         "FF": 0,
                         "ST": "G",
                         "TRP": { "x": 39.15, "y": 49.7 },
@@ -3206,7 +3288,7 @@
                     },
                     {
                       "SI": {
-                        "SN": "body pico",
+                        "SN": "Parts/body pico",
                         "FF": 0,
                         "ST": "G",
                         "TRP": { "x": 101.25, "y": 224.05 },
@@ -3216,7 +3298,7 @@
                     },
                     {
                       "SI": {
-                        "SN": "shoe pico right",
+                        "SN": "Parts/shoe pico right",
                         "FF": 0,
                         "ST": "G",
                         "TRP": { "x": 61.65, "y": 119.05 },
@@ -3226,7 +3308,7 @@
                     },
                     {
                       "SI": {
-                        "SN": "gun",
+                        "SN": "Parts/gun",
                         "FF": 0,
                         "ST": "G",
                         "TRP": { "x": 59.9, "y": 193.15 },
@@ -3236,7 +3318,7 @@
                     },
                     {
                       "SI": {
-                        "SN": "arm piece top",
+                        "SN": "Parts/arm piece top",
                         "FF": 0,
                         "ST": "G",
                         "TRP": { "x": 55.25, "y": 0.5 },
@@ -3246,7 +3328,7 @@
                     },
                     {
                       "SI": {
-                        "SN": "head pico",
+                        "SN": "Parts/head pico",
                         "FF": 0,
                         "ST": "G",
                         "TRP": { "x": 95.85, "y": 77.8 },
@@ -3256,7 +3338,7 @@
                     },
                     {
                       "SI": {
-                        "SN": "face pico",
+                        "SN": "Parts/face pico",
                         "FF": 0,
                         "ST": "G",
                         "TRP": { "x": 43.75, "y": 28.15 },
@@ -3266,7 +3348,7 @@
                     },
                     {
                       "SI": {
-                        "SN": "hand pico",
+                        "SN": "Parts/hand pico",
                         "FF": 0,
                         "ST": "G",
                         "TRP": { "x": 49.1, "y": 25.7 },
@@ -3282,7 +3364,7 @@
         }
       },
       {
-        "SN": "hand pico",
+        "SN": "Parts/hand pico",
         "TL": {
           "L": [
             {
@@ -3295,7 +3377,7 @@
                     {
                       "ASI": {
                         "MX": [1, 0, 0, 1, -5, -2.45],
-                        "N": "3"
+                        "N": "2"
                       }
                     }
                   ]
@@ -3306,7 +3388,7 @@
         }
       },
       {
-        "SN": "head pico",
+        "SN": "Parts/head pico",
         "TL": {
           "L": [
             {
@@ -3319,7 +3401,7 @@
                     {
                       "ASI": {
                         "MX": [0.995, 0, 0, 0.941, -2.7, -0.7],
-                        "N": "4"
+                        "N": "3"
                       }
                     }
                   ]
@@ -3330,7 +3412,7 @@
         }
       },
       {
-        "SN": "face pico",
+        "SN": "Parts/face pico",
         "TL": {
           "L": [
             {
@@ -3354,7 +3436,7 @@
         }
       },
       {
-        "SN": "arm piece top",
+        "SN": "Parts/arm piece top",
         "TL": {
           "L": [
             {
@@ -3367,7 +3449,7 @@
                     {
                       "ASI": {
                         "MX": [0.969, 0, 0, 1, 0, -5.05],
-                        "N": "5"
+                        "N": "4"
                       }
                     }
                   ]
@@ -3378,7 +3460,7 @@
         }
       },
       {
-        "SN": "gun",
+        "SN": "Parts/gun",
         "TL": {
           "L": [
             {
@@ -3391,7 +3473,7 @@
                     {
                       "ASI": {
                         "MX": [0.913, 0, 0, 1, 0, 0],
-                        "N": "6"
+                        "N": "5"
                       }
                     }
                   ]
@@ -3402,7 +3484,7 @@
         }
       },
       {
-        "SN": "shoe pico right",
+        "SN": "Parts/shoe pico right",
         "TL": {
           "L": [
             {
@@ -3415,7 +3497,7 @@
                     {
                       "ASI": {
                         "MX": [0.942, 0, 0, 1, 0, 0.95],
-                        "N": "7"
+                        "N": "6"
                       }
                     }
                   ]
@@ -3426,7 +3508,7 @@
         }
       },
       {
-        "SN": "body pico",
+        "SN": "Parts/body pico",
         "TL": {
           "L": [
             {
@@ -3439,7 +3521,7 @@
                     {
                       "ASI": {
                         "MX": [0.937, 0, 0, 1, 0, 0],
-                        "N": "8"
+                        "N": "7"
                       }
                     }
                   ]
@@ -3450,7 +3532,7 @@
         }
       },
       {
-        "SN": "arm extended pico",
+        "SN": "Parts/arm extended pico",
         "TL": {
           "L": [
             {
@@ -3463,7 +3545,7 @@
                     {
                       "ASI": {
                         "MX": [1, 0, 0, 1, -31.55, 0],
-                        "N": "9"
+                        "N": "8"
                       }
                     }
                   ]
@@ -3474,7 +3556,7 @@
         }
       },
       {
-        "SN": "smoke char select",
+        "SN": "Parts/smoke char select",
         "TL": {
           "L": [
             {
@@ -3487,7 +3569,7 @@
                     {
                       "ASI": {
                         "MX": [1, 0, 0, 1.381, 321.1, -295.35],
-                        "N": "10"
+                        "N": "9"
                       }
                     }
                   ]
@@ -3499,7 +3581,7 @@
                     {
                       "ASI": {
                         "MX": [1, 0, 0, 1.381, 320, -297.7],
-                        "N": "11"
+                        "N": "10"
                       }
                     }
                   ]
@@ -3511,7 +3593,7 @@
                     {
                       "ASI": {
                         "MX": [1, 0, 0, 1.381, 306.5, -312.2],
-                        "N": "12"
+                        "N": "11"
                       }
                     }
                   ]
@@ -3523,7 +3605,7 @@
                     {
                       "ASI": {
                         "MX": [1, 0, 0, 1.381, 294.55, -324.55],
-                        "N": "13"
+                        "N": "12"
                       }
                     }
                   ]
@@ -3535,7 +3617,7 @@
                     {
                       "ASI": {
                         "MX": [1, 0, 0, 1.381, 300.25, -351],
-                        "N": "14"
+                        "N": "13"
                       }
                     }
                   ]
@@ -3547,7 +3629,7 @@
                     {
                       "ASI": {
                         "MX": [1, 0, 0, 1.381, 296.75, -371.3],
-                        "N": "15"
+                        "N": "14"
                       }
                     }
                   ]
@@ -3559,7 +3641,7 @@
                     {
                       "ASI": {
                         "MX": [1, 0, 0, 1.381, 305.05, -375.6],
-                        "N": "16"
+                        "N": "15"
                       }
                     }
                   ]
@@ -3571,7 +3653,7 @@
                     {
                       "ASI": {
                         "MX": [1, 0, 0, 1.381, 303.1, -390.6],
-                        "N": "17"
+                        "N": "16"
                       }
                     }
                   ]
@@ -3583,7 +3665,7 @@
                     {
                       "ASI": {
                         "MX": [1, 0, 0, 1.381, 304.3, -366.85],
-                        "N": "18"
+                        "N": "17"
                       }
                     }
                   ]
@@ -3595,7 +3677,7 @@
                     {
                       "ASI": {
                         "MX": [1, 0, 0, 1.381, 297.9, -303.7],
-                        "N": "19"
+                        "N": "18"
                       }
                     }
                   ]
@@ -3607,7 +3689,7 @@
                     {
                       "ASI": {
                         "MX": [1, 0, 0, 1.381, 286.45, -349.1],
-                        "N": "20"
+                        "N": "19"
                       }
                     }
                   ]
@@ -3619,7 +3701,7 @@
                     {
                       "ASI": {
                         "MX": [1, 0, 0, 1.381, 275.65, -341.5],
-                        "N": "21"
+                        "N": "20"
                       }
                     }
                   ]
@@ -3631,7 +3713,7 @@
                     {
                       "ASI": {
                         "MX": [1, 0, 0, 1.381, 272.85, -381.1],
-                        "N": "22"
+                        "N": "21"
                       }
                     }
                   ]
@@ -3643,7 +3725,7 @@
                     {
                       "ASI": {
                         "MX": [1, 0, 0, 1.381, 270.2, -394.2],
-                        "N": "23"
+                        "N": "22"
                       }
                     }
                   ]
@@ -3655,7 +3737,7 @@
                     {
                       "ASI": {
                         "MX": [1, 0, 0, 1.381, 319.55, -381.85],
-                        "N": "24"
+                        "N": "23"
                       }
                     }
                   ]
@@ -3667,7 +3749,7 @@
                     {
                       "ASI": {
                         "MX": [1, 0, 0, 1.381, 323.35, -365.85],
-                        "N": "25"
+                        "N": "24"
                       }
                     }
                   ]
@@ -3679,7 +3761,7 @@
                     {
                       "ASI": {
                         "MX": [1, 0, 0, 1.381, 321.1, -335.6],
-                        "N": "26"
+                        "N": "25"
                       }
                     }
                   ]
@@ -3691,7 +3773,7 @@
                     {
                       "ASI": {
                         "MX": [1, 0, 0, 1.381, 320, -332.1],
-                        "N": "27"
+                        "N": "26"
                       }
                     }
                   ]
@@ -3703,7 +3785,7 @@
                     {
                       "ASI": {
                         "MX": [1, 0, 0, 1.381, 300.25, -366.9],
-                        "N": "28"
+                        "N": "27"
                       }
                     }
                   ]
@@ -3715,7 +3797,7 @@
                     {
                       "ASI": {
                         "MX": [1, 0, 0, 1.381, 296.75, -382.4],
-                        "N": "29"
+                        "N": "28"
                       }
                     }
                   ]
@@ -3727,7 +3809,7 @@
                     {
                       "ASI": {
                         "MX": [1, 0, 0, 1.381, 303.9, -387.6],
-                        "N": "30"
+                        "N": "29"
                       }
                     }
                   ]
@@ -3739,7 +3821,7 @@
                     {
                       "ASI": {
                         "MX": [1, 0, 0, 1.381, 317.4, -350.85],
-                        "N": "31"
+                        "N": "30"
                       }
                     }
                   ]
@@ -3750,7 +3832,7 @@
         }
       },
       {
-        "SN": "cigarette",
+        "SN": "Parts/cigarette",
         "TL": {
           "L": [
             {
@@ -3762,7 +3844,7 @@
                   "E": [
                     {
                       "SI": {
-                        "SN": "_bta_asi_32",
+                        "SN": "_bta_asi_31",
                         "ST": "MC",
                         "TRP": { "x": 4.75, "y": 5 },
                         "C": {
@@ -3781,7 +3863,7 @@
                   "E": [
                     {
                       "SI": {
-                        "SN": "_bta_asi_33",
+                        "SN": "_bta_asi_32",
                         "ST": "MC",
                         "TRP": { "x": 4.75, "y": 5 },
                         "MX": [1, 0.022, -0.022, 1, 39.2, 17.1],
@@ -3802,7 +3884,7 @@
                     {
                       "ASI": {
                         "MX": [0.713, 0, 0, 0.713, 41.75, 20.3],
-                        "N": "34"
+                        "N": "33"
                       }
                     }
                   ]
@@ -3819,7 +3901,7 @@
                     {
                       "ASI": {
                         "MX": [0.713, 0, 0, 0.713, 0, 0],
-                        "N": "35"
+                        "N": "34"
                       }
                     }
                   ]
@@ -3830,7 +3912,7 @@
         }
       },
       {
-        "SN": "hand cig",
+        "SN": "Parts/hand cig",
         "TL": {
           "L": [
             {
@@ -3843,7 +3925,7 @@
                     {
                       "ASI": {
                         "MX": [1, 0, 0, 1, 0, 0],
-                        "N": "36"
+                        "N": "35"
                       }
                     }
                   ]
@@ -3854,7 +3936,7 @@
         }
       },
       {
-        "SN": "middle finger hand",
+        "SN": "Parts/middle finger hand",
         "TL": {
           "L": [
             {
@@ -3867,7 +3949,7 @@
                     {
                       "ASI": {
                         "MX": [0.955, 0, 0, 0.955, 0, 0],
-                        "N": "37"
+                        "N": "36"
                       }
                     }
                   ]
@@ -3879,7 +3961,7 @@
                     {
                       "ASI": {
                         "MX": [0.955, 0, 0, 0.955, -0.95, 1.1],
-                        "N": "38"
+                        "N": "37"
                       }
                     }
                   ]
@@ -3891,7 +3973,7 @@
                     {
                       "ASI": {
                         "MX": [0.955, 0, 0, 0.955, -0.4, 0],
-                        "N": "39"
+                        "N": "38"
                       }
                     }
                   ]
@@ -3903,7 +3985,7 @@
                     {
                       "ASI": {
                         "MX": [0.955, 0, 0, 0.955, 3.3, 41.4],
-                        "N": "40"
+                        "N": "39"
                       }
                     }
                   ]
@@ -3914,7 +3996,7 @@
         }
       },
       {
-        "SN": "confirm face snap pico",
+        "SN": "Parts/confirm face snap pico",
         "TL": {
           "L": [
             {
@@ -3927,7 +4009,7 @@
                     {
                       "ASI": {
                         "MX": [1.001, 0, 0, 1.001, 0, 0],
-                        "N": "41"
+                        "N": "40"
                       }
                     }
                   ]
@@ -3938,7 +4020,7 @@
         }
       },
       {
-        "SN": "confirm face pico",
+        "SN": "Parts/confirm face pico",
         "TL": {
           "L": [
             {
@@ -3951,7 +4033,7 @@
                     {
                       "ASI": {
                         "MX": [1, 0, 0, 1, 0, 0],
-                        "N": "42"
+                        "N": "41"
                       }
                     }
                   ]
@@ -3962,7 +4044,7 @@
         }
       },
       {
-        "SN": "face meh pico",
+        "SN": "Parts/face meh pico",
         "TL": {
           "L": [
             {
@@ -3975,7 +4057,7 @@
                     {
                       "ASI": {
                         "MX": [1, 0, 0, 1, 0, 0],
-                        "N": "43"
+                        "N": "42"
                       }
                     }
                   ]
@@ -3987,7 +4069,7 @@
                     {
                       "ASI": {
                         "MX": [1, 0, 0, 1, 0.1, 0],
-                        "N": "44"
+                        "N": "43"
                       }
                     }
                   ]
@@ -3998,7 +4080,7 @@
         }
       },
       {
-        "SN": "pico lean back",
+        "SN": "Parts/pico lean back",
         "TL": {
           "L": [
             {
@@ -4022,7 +4104,7 @@
         }
       },
       {
-        "SN": "pico lean forward",
+        "SN": "Parts/pico lean forward",
         "TL": {
           "L": [
             {
@@ -4034,7 +4116,7 @@
                   "E": [
                     {
                       "SI": {
-                        "SN": "hand forward pico",
+                        "SN": "Parts/hand forward pico",
                         "FF": 0,
                         "ST": "G",
                         "TRP": { "x": 35.75, "y": 36.85 },
@@ -4055,7 +4137,7 @@
                   "E": [
                     {
                       "SI": {
-                        "SN": "head down pico",
+                        "SN": "Parts/head down pico",
                         "FF": 0,
                         "ST": "G",
                         "TRP": { "x": 99.3, "y": 89.6 },
@@ -4065,7 +4147,7 @@
                     },
                     {
                       "SI": {
-                        "SN": "face lean forward",
+                        "SN": "Parts/face lean forward",
                         "FF": 0,
                         "ST": "G",
                         "TRP": { "x": 50.05, "y": 18.5 },
@@ -4086,7 +4168,7 @@
                   "E": [
                     {
                       "SI": {
-                        "SN": "arm extended pico",
+                        "SN": "Parts/arm extended pico",
                         "FF": 0,
                         "ST": "G",
                         "TRP": { "x": 54.9, "y": 35.1 },
@@ -4096,7 +4178,7 @@
                     },
                     {
                       "SI": {
-                        "SN": "smoke char select",
+                        "SN": "Parts/smoke char select",
                         "FF": 0,
                         "ST": "G",
                         "TRP": { "x": 343.95, "y": -15.8 },
@@ -4106,7 +4188,7 @@
                     },
                     {
                       "SI": {
-                        "SN": "cigarette",
+                        "SN": "Parts/cigarette",
                         "FF": 0,
                         "ST": "G",
                         "TRP": { "x": 11.8, "y": 6.35 },
@@ -4116,7 +4198,7 @@
                     },
                     {
                       "SI": {
-                        "SN": "hand cig",
+                        "SN": "Parts/hand cig",
                         "FF": 0,
                         "ST": "G",
                         "TRP": { "x": 39.15, "y": 49.8 },
@@ -4126,7 +4208,7 @@
                     },
                     {
                       "SI": {
-                        "SN": "body pico",
+                        "SN": "Parts/body pico",
                         "FF": 0,
                         "ST": "G",
                         "TRP": { "x": 72.85, "y": 222.85 },
@@ -4136,7 +4218,7 @@
                     },
                     {
                       "SI": {
-                        "SN": "shoe pico right",
+                        "SN": "Parts/shoe pico right",
                         "FF": 0,
                         "ST": "G",
                         "TRP": { "x": 63.35, "y": 117.45 },
@@ -4146,7 +4228,7 @@
                     },
                     {
                       "SI": {
-                        "SN": "gun",
+                        "SN": "Parts/gun",
                         "FF": 0,
                         "ST": "G",
                         "TRP": { "x": 61.45, "y": 187.75 },
@@ -4156,7 +4238,7 @@
                     },
                     {
                       "SI": {
-                        "SN": "arm piece top",
+                        "SN": "Parts/arm piece top",
                         "FF": 0,
                         "ST": "G",
                         "TRP": { "x": 42.9, "y": 51.05 },
@@ -4172,7 +4254,7 @@
         }
       },
       {
-        "SN": "arm back piece",
+        "SN": "Parts/gun face semi right",
         "TL": {
           "L": [
             {
@@ -4184,7 +4266,31 @@
                   "E": [
                     {
                       "ASI": {
-                        "MX": [1.004, 0, 0, 0.935, 0, 0],
+                        "MX": [1, 0, 0, 0.928, 67.05, -5.4],
+                        "N": "44"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "SN": "Parts/arm back piece",
+        "TL": {
+          "L": [
+            {
+              "LN": "Layer 1",
+              "FR": [
+                {
+                  "I": 0,
+                  "DU": 1,
+                  "E": [
+                    {
+                      "ASI": {
+                        "MX": [0.735, 0, 0, 0.924, 0, -2.05],
                         "N": "45"
                       }
                     }
@@ -4196,7 +4302,7 @@
         }
       },
       {
-        "SN": "hand free pico",
+        "SN": "Parts/hand free pico",
         "TL": {
           "L": [
             {
@@ -4220,7 +4326,7 @@
         }
       },
       {
-        "SN": "body mad bent pico",
+        "SN": "Parts/body mad bent pico",
         "TL": {
           "L": [
             {
@@ -4244,7 +4350,7 @@
         }
       },
       {
-        "SN": "pants half pico",
+        "SN": "Parts/pants half pico",
         "TL": {
           "L": [
             {
@@ -4268,7 +4374,7 @@
         }
       },
       {
-        "SN": "foot right upwards",
+        "SN": "Parts/foot right upwards",
         "TL": {
           "L": [
             {
@@ -4292,7 +4398,7 @@
         }
       },
       {
-        "SN": "leg left up",
+        "SN": "Parts/leg left up",
         "TL": {
           "L": [
             {
@@ -4316,7 +4422,7 @@
         }
       },
       {
-        "SN": "arm up pico",
+        "SN": "Parts/arm up pico",
         "TL": {
           "L": [
             {
@@ -4328,7 +4434,7 @@
                   "E": [
                     {
                       "ASI": {
-                        "MX": [0.997, 0, 0, 0.94, 0, 0],
+                        "MX": [0.995, 0, 0, 0.94, 0, 0],
                         "N": "51"
                       }
                     }
@@ -4345,7 +4451,7 @@
                   "E": [
                     {
                       "SI": {
-                        "SN": "cigarette",
+                        "SN": "Parts/cigarette",
                         "FF": 0,
                         "ST": "G",
                         "TRP": { "x": 11.7, "y": 6.5 },
@@ -4366,12 +4472,12 @@
                   "E": [
                     {
                       "SI": {
-                        "SN": "smoke char select",
+                        "SN": "Parts/smoke char select",
                         "FF": 0,
                         "ST": "G",
-                        "TRP": { "x": 350.3, "y": -7 },
+                        "TRP": { "x": 350.3, "y": -6.95 },
                         "LP": "LP",
-                        "MX": [0.743, -0.669, 0.62, 0.374, -128.2, 232.65]
+                        "MX": [0.743, -0.669, 0.62, 0.374, -125.95, 236.75]
                       }
                     }
                   ]
@@ -4382,7 +4488,7 @@
         }
       },
       {
-        "SN": "face fall pico 2",
+        "SN": "Parts/face fall pico 2",
         "TL": {
           "L": [
             {
@@ -4406,11 +4512,11 @@
         }
       },
       {
-        "SN": "gun face semi right",
+        "SN": "Parts/body forward pico",
         "TL": {
           "L": [
             {
-              "LN": "Layer 1",
+              "LN": "MergedLayer_1",
               "FR": [
                 {
                   "I": 0,
@@ -4418,7 +4524,7 @@
                   "E": [
                     {
                       "ASI": {
-                        "MX": [1, 0, 0, 0.928, 67.05, -5.4],
+                        "MX": [1.024, 0, 0, 0.976, 53.4, -0.1],
                         "N": "53"
                       }
                     }
@@ -4430,134 +4536,7 @@
         }
       },
       {
-        "SN": "arm up pico smear",
-        "TL": {
-          "L": [
-            {
-              "LN": "Layer 1",
-              "FR": [
-                {
-                  "I": 0,
-                  "DU": 43,
-                  "E": [
-                    {
-                      "ASI": {
-                        "MX": [0.839, 0, 0, 0.861, 0, -32.35],
-                        "N": "54"
-                      }
-                    },
-                    {
-                      "SI": {
-                        "SN": "_bta_asi_55",
-                        "ST": "MC",
-                        "TRP": { "x": 4.7, "y": 5 },
-                        "C": {
-                          "M": "CA",
-                          "AM": 0.76
-                        },
-                        "MX": [1, 0, 0, 1, 119.7, 3.45],
-                        "B": 0
-                      }
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "LN": "Layer 2",
-              "FR": [
-                {
-                  "I": 0,
-                  "DU": 43,
-                  "E": [
-                    {
-                      "SI": {
-                        "SN": "cigarette",
-                        "FF": 0,
-                        "ST": "G",
-                        "TRP": { "x": 11.3, "y": 6.75 },
-                        "LP": "LP",
-                        "MX": [0.312, -1.081, 1.162, 0.367, 84.85, 47.35]
-                      }
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "LN": "Layer 3",
-              "FR": [
-                {
-                  "I": 0,
-                  "DU": 43,
-                  "E": [
-                    {
-                      "SI": {
-                        "SN": "smoke char select",
-                        "FF": 0,
-                        "ST": "G",
-                        "TRP": { "x": 350.25, "y": -6.9 },
-                        "LP": "LP",
-                        "MX": [0.713, -0.225, 0.409, 0.597, -111.3, 88.6]
-                      }
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        }
-      },
-      {
-        "SN": "body forward pico",
-        "TL": {
-          "L": [
-            {
-              "LN": "Layer 1",
-              "FR": [
-                {
-                  "I": 0,
-                  "DU": 1,
-                  "E": [
-                    {
-                      "ASI": {
-                        "MX": [1.024, 0, 0, 0.976, 53.4, -0.1],
-                        "N": "2"
-                      }
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        }
-      },
-      {
-        "SN": "gun face semi right smear",
-        "TL": {
-          "L": [
-            {
-              "LN": "Layer 1",
-              "FR": [
-                {
-                  "I": 0,
-                  "DU": 1,
-                  "E": [
-                    {
-                      "ASI": {
-                        "MX": [1.145, 0, 0, 1.168, 18.2, -16.7],
-                        "N": "56"
-                      }
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        }
-      },
-      {
-        "SN": "head down pico",
+        "SN": "Parts/head down pico",
         "TL": {
           "L": [
             {
@@ -4570,7 +4549,7 @@
                     {
                       "ASI": {
                         "MX": [0.975, 0, 0, 0.976, 0, 0],
-                        "N": "57"
+                        "N": "54"
                       }
                     }
                   ]
@@ -4581,7 +4560,7 @@
         }
       },
       {
-        "SN": "face lean forward",
+        "SN": "Parts/face lean forward",
         "TL": {
           "L": [
             {
@@ -4594,7 +4573,7 @@
                     {
                       "ASI": {
                         "MX": [0.975, 0, 0, 0.786, 0, 0],
-                        "N": "58"
+                        "N": "55"
                       }
                     }
                   ]
@@ -4605,7 +4584,7 @@
         }
       },
       {
-        "SN": "hand forward pico",
+        "SN": "Parts/hand forward pico",
         "TL": {
           "L": [
             {
@@ -4618,7 +4597,31 @@
                     {
                       "ASI": {
                         "MX": [0.975, 0, 0, 0.999, -11.35, -1.85],
-                        "N": "59"
+                        "N": "56"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "SN": "_bta_asi_31",
+        "TL": {
+          "L": [
+            {
+              "LN": "Layer 1",
+              "FR": [
+                {
+                  "I": 0,
+                  "DU": 1,
+                  "E": [
+                    {
+                      "ASI": {
+                        "MX": [0.713, 0, 0, 0.713, -5, -5],
+                        "N": "31"
                       }
                     }
                   ]
@@ -4643,54 +4646,6 @@
                       "ASI": {
                         "MX": [0.713, 0, 0, 0.713, -5, -5],
                         "N": "32"
-                      }
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        }
-      },
-      {
-        "SN": "_bta_asi_33",
-        "TL": {
-          "L": [
-            {
-              "LN": "Layer 1",
-              "FR": [
-                {
-                  "I": 0,
-                  "DU": 1,
-                  "E": [
-                    {
-                      "ASI": {
-                        "MX": [0.713, 0, 0, 0.713, -5, -5],
-                        "N": "33"
-                      }
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        }
-      },
-      {
-        "SN": "_bta_asi_55",
-        "TL": {
-          "L": [
-            {
-              "LN": "Layer 1",
-              "FR": [
-                {
-                  "I": 0,
-                  "DU": 1,
-                  "E": [
-                    {
-                      "ASI": {
-                        "MX": [0.839, 0, 0, 0.861, -5, -5],
-                        "N": "55"
                       }
                     }
                   ]
