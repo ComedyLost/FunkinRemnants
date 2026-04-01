@@ -376,8 +376,13 @@ class GrievingRemnantsSong extends Song
         time: Conductor.instance.getBeatTimeInMs(367) / 1000,
         callback: () -> {
           var lovers:StageProp = PlayState.instance.currentStage.getNamedProp('Lovers');
+          var singing:StageProp = PlayState.instance.currentStage.getNamedProp('Singing');
+
           lovers.setPosition(-3600, -50);
           tweenMemory('Lovers', 3150, 4.2);
+
+          singing.setPosition(3100, -200);
+          tweenMemory('Singing', -4200, 4.2);
         }
       },
 
@@ -400,7 +405,7 @@ class GrievingRemnantsSong extends Song
         callback: () -> {
           var lovers:StageProp = PlayState.instance.currentStage.getNamedProp('Lovers');
           lovers.setPosition(-3600, -50);
-          tweenMemory('BOOBIES', 3150, 4.2);
+          tweenMemory('Lovers', 3150, 4.2);
 
           var singing:StageProp = PlayState.instance.currentStage.getNamedProp('Singing');
           singing.setPosition(3100, -200);
