@@ -8,18 +8,6 @@
   "events": [
     {
       "t": 0,
-      "e": "FocusCamera",
-      "v": {
-        "duration": 4,
-        "x": 0,
-        "y": -150,
-        "ease": "INSTANT",
-        "char": 2,
-        "easeDir": "In"
-      }
-    },
-    {
-      "t": 0,
       "e": "ZoomCamera",
       "v": {
         "duration": 4,
@@ -33,13 +21,25 @@
     },
     {
       "t": 0,
+      "e": "FocusCamera",
+      "v": {
+        "duration": 4,
+        "x": 0,
+        "y": -150,
+        "ease": "INSTANT",
+        "char": 2,
+        "easeDir": "In"
+      }
+    },
+    {
+      "t": 0,
       "e": "RemnantsOverlay",
       "v": {
         "endOpacity": 0,
         "white": false,
         "retroSteps": 4,
         "startOpacity": 1,
-        "restartTween": true,
+        "restartTween": false,
         "duration": 64,
         "ease": "sine",
         "retro": false,
@@ -122,6 +122,22 @@
         "rate": 2,
         "offset": 1,
         "intensity": 1.015
+      }
+    },
+    {
+      "t": 9600,
+      "e": "RemnantsOverlay",
+      "v": {
+        "endOpacity": 0,
+        "white": false,
+        "retroSteps": 4,
+        "startOpacity": 0,
+        "restartTween": true,
+        "duration": 1,
+        "ease": "linear",
+        "retro": false,
+        "easeDir": "In",
+        "hud": true
       }
     },
     {
@@ -3910,15 +3926,18 @@
     },
     {
       "t": 163200,
-      "e": "ZoomCamera",
+      "e": "RemnantsOverlay",
       "v": {
-        "duration": 20,
-        "widescreenScaleX": 0,
-        "widescreenScaleY": 0,
+        "endOpacity": 1,
+        "startOpacity": 0,
+        "retroSteps": 5,
+        "white": false,
+        "restartTween": false,
+        "duration": 10,
         "ease": "quad",
-        "easeDir": "Out",
-        "zoom": 1,
-        "mode": "stage"
+        "retro": false,
+        "hud": true,
+        "easeDir": "Out"
       }
     },
     {
@@ -3935,18 +3954,15 @@
     },
     {
       "t": 163200,
-      "e": "RemnantsOverlay",
+      "e": "ZoomCamera",
       "v": {
-        "endOpacity": 1,
-        "startOpacity": 0,
-        "retroSteps": 5,
-        "white": false,
-        "restartTween": true,
-        "duration": 10,
+        "duration": 20,
+        "widescreenScaleX": 0,
+        "widescreenScaleY": 0,
         "ease": "quad",
-        "retro": false,
-        "hud": true,
-        "easeDir": "Out"
+        "easeDir": "Out",
+        "zoom": 1,
+        "mode": "stage"
       }
     }
   ],
