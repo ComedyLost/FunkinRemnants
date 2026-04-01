@@ -5,6 +5,9 @@
   "healthIcon": { "id": "monster-remnants" },
   "offsets": [-6.5, 0.3],
   "cameraOffsets": [7, 0],
+  "atlasSettings": {
+    "useRenderTexture": true
+  },
   "animations": [
     {
       "name": "idle",
