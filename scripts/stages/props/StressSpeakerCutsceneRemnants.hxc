@@ -1,7 +1,5 @@
 import funkin.graphics.FunkinSprite;
 import funkin.play.PlayState;
-import flixel.FlxG;
-import funkin.Paths;
 import flixel.util.FlxSignal;
 import funkin.FunkinMemory;
 

@@ -1,7 +1,6 @@
-import funkin.ui.freeplay.ScriptedAlbum;
+import funkin.data.freeplay.album.AlbumRegistry;
 import funkin.modding.module.Module;
 import funkin.play.PlayState;
-import StringTools;
 
 class RemnantsDiscordHelper extends Module
 {
@@ -41,7 +40,7 @@ class RemnantsDiscordHelper extends Module
   {
     if (!RemnantsContentUtil.isRemnantsSong()) return;
 
-    var remnantsAlbum = ScriptedAlbum.init('RemnantsAlbum', PlayState.instance?.currentChart?.album ?? 'remnants');
+    var remnantsAlbum:Album = AlbumRegistry.instance.fetchEntry('remnants');
     var album:String = 'album-' + remnantsAlbum.getRemnantsAlbumAssetKey(PlayState.instance?.currentSong.id, PlayState.instance?.currentVariation);
     PlayState.instance.discordRPCAlbum = ASSETS_URL + album + RAW_EXTENSION;
   }

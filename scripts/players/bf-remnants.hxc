@@ -3,13 +3,18 @@ import funkin.save.Save;
 
 class BFRemnantsPlayableCharacter extends PlayableCharacter
 {
-  function new()
+  public function new(charId:String)
   {
-    super('bf-remnants');
+    if (charId == 'unknown')
+    {
+      charId = 'bf-remnants';
+    }
+
+    super(charId);
   }
 
-  override function isUnlocked():Bool
+  override public function isUnlocked():Bool
   {
-    return Save.instance.hasBeatenLevel('remnants-mainWeek1');
+    return Save.instance.hasBeatenSong('remnants');
   }
 }

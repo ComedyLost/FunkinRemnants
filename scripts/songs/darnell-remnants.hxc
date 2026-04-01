@@ -1,5 +1,4 @@
 import funkin.graphics.FunkinSprite;
-import funkin.modding.base.ScriptedFunkinSprite;
 import flixel.text.FlxTextBorderStyle;
 import funkin.data.song.SongRegistry;
 import funkin.ui.FullScreenScaleMode;
@@ -16,7 +15,6 @@ import flixel.util.FlxTimer;
 import flixel.text.FlxText;
 import funkin.save.Save;
 import funkin.Conductor;
-import flixel.FlxG;
 
 class DarnellRemnantsMixSong extends Song
 {
@@ -114,11 +112,12 @@ class DarnellRemnantsMixSong extends Song
 
     skipText = new FlxText(936 * FullScreenScaleMode.wideScale.x, 618 * FullScreenScaleMode.wideScale.y, 0,
       'Skip [ ' + PlayState.instance.controls.getDialogueNameFromToken("CUTSCENE_ADVANCE", true) + ' ]', 20);
-    if (FlxG.onMobile)
-    {
-      skipText.text = 'Skip [Pause Button]';
-      skipText.x -= 136;
-    }
+
+    #if mobile
+    skipText.text = 'Skip [Pause Button]';
+    skipText.x -= 136;
+    #end
+
     skipText.setFormat(Paths.font('vcr.ttf'), 40, 0xFFFFFFFF, "right", FlxTextBorderStyle.OUTLINE, 0xFF000000);
     skipText.scrollFactor.set();
     skipText.borderSize = 2;
@@ -166,7 +165,7 @@ class DarnellRemnantsMixSong extends Song
     cutsceneCan.zIndex = spraycanPile.zIndex - 1;
     PlayState.instance.currentStage.refresh();
 
-    var newCan:ScriptedFunkinSprite = ScriptedFunkinSprite.init('SpraycanAtlasSpriteRemnants', 0, 0);
+    var newCan:SpraycanAtlasSpriteRemnants = new SpraycanAtlasSpriteRemnants(0, 0);
     var spraycanPile = PlayState.instance.currentStage.getNamedProp('spraycanPile');
     if (newCan != null)
     {
@@ -263,7 +262,7 @@ class DarnellRemnantsMixSong extends Song
 
       PlayState.instance.tweenCameraToPosition(darnellPos[0] + 100, darnellPos[1], 1, FlxEase.quadInOut);
 
-      newCan.scriptCall('playCanShot');
+      newCan.playCanShot();
       newCan.visible = true;
 
       cutsceneCan.visible = false;
@@ -479,10 +478,9 @@ class DarnellRemnantsMixSong extends Song
       cutsceneTimerManager.update(event.elapsed);
     }
 
-    if (FlxG.onMobile)
-    {
-      isMobilePauseButtonPressed = TouchUtil.overlapsComplex(PlayState.instance.pauseButton) && TouchUtil.justPressed;
-    }
+    #if mobile
+    isMobilePauseButtonPressed = TouchUtil.overlapsComplex(PlayState.instance.pauseButton) && TouchUtil.justPressed;
+    #end
 
     if (PlayState.instance.isInCutscene)
     {

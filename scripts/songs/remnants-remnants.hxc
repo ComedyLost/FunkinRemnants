@@ -1,0 +1,76 @@
+import funkin.util.SongSequence;
+import funkin.play.PlayState;
+import flixel.util.FlxTimer;
+import funkin.save.Save;
+import funkin.Conductor;
+#if mobile
+import funkin.mobile.input.ControlsHandler;
+#end
+
+class RemnantsRemnantsSong extends SugarCrashRemnantsSong
+{
+  var playedDialogue:Bool = false;
+
+  public function new()
+  {
+    super('remnants',
+      {
+        variation: 'remnants'
+      });
+  }
+
+  function onCountdownStart(event:ScriptEvent):Void
+  {
+    super.onCountdownStart(event);
+
+    if (PlayState.instance.isChartingMode && !playedDialogue) playedDialogue = true;
+
+    if (!playedDialogue)
+    {
+      trace('Pausing countdown to play dialogue... (`remnants-remnants`)');
+      playedDialogue = true;
+      PlayState.instance.disableKeys = true;
+      event.cancel();
+
+      FlxTimer.wait(1, () -> {
+        var targetDialogue = 'remnants-remnants'; // Normal dialogue
+
+        if (FlxG.random.bool(4))
+        {
+          targetDialogue += "-secret"; // Adds secret dialogue
+        }
+        else if (!Preferences.naughtyness) targetDialogue += "-censored"; // Adds censored dialogue
+
+        PlayState.instance.disableKeys = false;
+        PlayState.instance.startConversation(targetDialogue);
+      });
+    }
+  }
+
+  function onCreate(event:ScriptEvent):Void
+  {
+    super.onCreate(event);
+
+    playedDialogue = false;
+  }
+
+  override function moveComboPopUps():Void
+  {
+    #if !mobile
+    if (!Preferences.downscroll) PlayState.instance.comboPopUps.offsets = [550, 350]; // Upscroll PC Offset
+
+    if (Preferences.downscroll) PlayState.instance.comboPopUps.offsets = [550, -190]; // Downscroll PC Offset
+    #else
+    if (Preferences.controlsScheme == "Arrows"
+      && !ControlsHandler.usingExternalInputDevice) PlayState.instance.comboPopUps.offsets = [30, 350]; // Middle Mobile Offset
+
+    if (!Preferences.downscroll
+      && Preferences.controlsScheme == "Arrows"
+      && ControlsHandler.usingExternalInputDevice) PlayState.instance.comboPopUps.offsets = [725, -350]; // Upscroll Side Mobile Offset
+
+    if (Preferences.downscroll
+      && Preferences.controlsScheme == "Arrows"
+      && ControlsHandler.usingExternalInputDevice) PlayState.instance.comboPopUps.offsets = [725, -190]; // Downscroll Side Mobile Offset
+    #end
+  }
+}

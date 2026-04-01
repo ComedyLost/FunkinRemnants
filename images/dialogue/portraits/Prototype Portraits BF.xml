@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TextureAtlas imagePath="Prototype Portraits BF.png" width="310" height="308">
+<SubTexture name="BF Prototype Portrait 10000" x="3" y="3" width="304" height="302" frameX="-0" frameY="-0" frameWidth="304" frameHeight="302"/>
+</TextureAtlas>

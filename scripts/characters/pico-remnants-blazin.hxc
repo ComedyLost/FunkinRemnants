@@ -1,9 +1,7 @@
-import flixel.FlxG;
 import flixel.util.FlxTimer;
 import funkin.util.HapticUtil;
 import funkin.play.PlayState;
 import funkin.play.PauseSubState;
-import funkin.graphics.FunkinSprite;
 import funkin.play.character.AnimateAtlasCharacter;
 import funkin.play.GameOverSubState;
 import funkin.FunkinMemory;
@@ -35,6 +33,12 @@ class PicoRemnantsBlazinCharacter extends AnimateAtlasCharacter
 
     // Precache the death anim.
     FunkinMemory.cacheTexture(Paths.image('characters/picoBlazinDeathConfirm-remnants', 'shared'));
+  }
+
+  function resetCharacter(resetCamera:Bool = true):Void
+  {
+    super.resetCharacter(resetCamera);
+    this.danceEvery = 0;
   }
 
   var cantUppercut = false;

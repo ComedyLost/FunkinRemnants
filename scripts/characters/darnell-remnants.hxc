@@ -3,7 +3,6 @@ import funkin.play.character.CharacterType;
 import funkin.play.PlayState;
 import funkin.audio.FunkinSound;
 import funkin.Conductor;
-import flixel.FlxG;
 import funkin.FunkinMemory;
 
 class DarnellRemnantsCharacter extends AnimateAtlasCharacter
@@ -28,14 +27,7 @@ class DarnellRemnantsCharacter extends AnimateAtlasCharacter
 
   function checkAbotArm():Void
   {
-    var hasAbot:Bool = false;
-    try
-    {
-      // This line will throw an exception if abot doesn't exist. We use that for our advantage here.
-      PlayState.instance.currentStage.getGirlfriend().scriptGet('abot');
-      hasAbot = true;
-    }
-    catch (e:Exception) {}
+    var hasAbot:Bool = PlayState.instance?.currentStage?.getGirlfriend()?.scriptHas('abot') ?? true;
 
     for (symbolName in ["abot arm", "abot hand"])
     {

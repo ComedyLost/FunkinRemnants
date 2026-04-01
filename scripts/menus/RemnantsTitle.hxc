@@ -1,28 +1,10 @@
-import flixel.FlxG;
 import flixel.FlxSprite;
-import flixel.util.FlxColor;
-import flixel.util.FlxGradient;
 import funkin.graphics.FunkinSprite;
 import funkin.modding.module.Module;
-import funkin.ui.freeplay.FreeplayState;
-import funkin.data.freeplay.player.PlayerRegistry;
 import funkin.ui.FullScreenScaleMode;
-import flixel.addons.display.FlxBackdrop;
-import funkin.graphics.shaders.TextureSwap;
-import flixel.graphics.frames.FlxBitmapFont;
 import funkin.ui.title.TitleState;
-import funkin.graphics.FunkinCamera;
-import flixel.effects.FlxFlicker;
-import flixel.math.FlxBasePoint;
-import funkin.play.ResultState;
-import funkin.play.PlayState;
-import funkin.util.Constants;
-import flixel.util.FlxTimer;
 import flixel.tweens.FlxEase;
 import flixel.tweens.FlxTween;
-import funkin.util.TouchUtil;
-import funkin.util.SwipeUtil;
-import StringTools;
 import Std;
 
 class RemnantsTitle extends Module

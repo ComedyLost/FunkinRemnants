@@ -1,0 +1,7 @@
+class PicoRemnantsPlayableCharacter extends BFRemnantsPlayableCharacter
+{
+  function new()
+  {
+    super('pico-remnants');
+  }
+}

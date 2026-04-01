@@ -1,0 +1,37 @@
+{
+  "version": "1.0.0",
+  "name": "Prototype Podium Girlfriends",
+  "assetPath": "shared:characters/podium-women",
+  "startingAnimation": "danceRight",
+  "renderType": "animateatlas",
+  "cameraOffsets": [1, 12.5],
+  "offsets": [1, -0.5],
+  "singTime": 8.0,
+  "atlasSettings": {
+    "swfMode": false,
+    "uniqueInCache": true
+  },
+  "animations": [
+    {
+      "name": "danceLeft",
+      "prefix": "Idle Left"
+    },
+    {
+      "name": "danceRight",
+      "prefix": "Idle Right"
+    },
+    {
+      "name": "cheer",
+      "prefix": "Cheer"
+    },
+    {
+      "name": "combo50",
+      "prefix": "Cheer"
+    },
+    {
+      "name": "drop70",
+      "prefix": "Cry",
+      "frameIndices": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+    }
+  ]
+}

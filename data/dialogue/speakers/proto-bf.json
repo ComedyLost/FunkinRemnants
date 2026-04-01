@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0",
+  "name": "Prototype BF",
+  "assetPath": "dialogue/portraits/Prototype Portraits BF",
+  "flipX": false,
+  "isPixel": false,
+  "scale": 1,
+  "offsets": [-370, -50],
+  "animations": [
+    {
+      "name": "normal",
+      "prefix": "BF Prototype Portrait 1"
+    }
+  ]
+}

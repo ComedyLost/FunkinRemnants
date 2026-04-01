@@ -214,6 +214,12 @@
       "url": "https://techniktil.tilnotdrip.org"
     },
     {
+      "name": "Pixlexia",
+      "role": "Artist, Animator",
+      "email": null,
+      "url": "https://x.com/PixIexia_"
+    },
+    {
       "name": "LeGooey",
       "role": "Coder, Modpack Compatibility, Texture Atlas Exports",
       "email": null,
@@ -233,6 +239,6 @@
     }
   ],
   "api_version": "0.8.4",
-  "mod_version": "1.0.3",
+  "mod_version": "1.1.0-expansion",
   "license": "CC BY-NC-ND 4.0"
 }

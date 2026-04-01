@@ -1,0 +1,86 @@
+import funkin.play.character.AnimateAtlasCharacter;
+import funkin.play.character.CharacterType;
+import funkin.play.PlayState;
+import flixel.util.FlxColor;
+
+class BfRemnantsPFPCharacter extends AnimateAtlasCharacter
+{
+  public var iconColor(default, set):Int = FlxColor.WHITE;
+  public var suffix(default, set):String = '';
+
+  var oneColor:OneColorShader;
+
+  public function new()
+  {
+    super('bf-remnants-pfp');
+  }
+
+  override public function onCreate(event:ScriptEvent):Void
+  {
+    super.onCreate(event);
+
+    oneColor = new OneColorShader();
+  }
+
+  function set_iconColor(value:Int):Int
+  {
+    var isNew:Bool = iconColor != value;
+    iconColor = value;
+    oneColor.setColor(iconColor);
+
+    if (isNew && [CharacterType.DAD, CharacterType.BF].contains(this.characterType))
+    {
+      initHealthIcon(this.characterType == CharacterType.DAD);
+    }
+
+    return iconColor;
+  }
+
+  function set_suffix(value:String):String
+  {
+    var isNew:Bool = suffix != value;
+    suffix = value;
+
+    if (isNew) this.dance(true);
+    return suffix;
+  }
+
+  override public function resetCharacter(resetCamera:Bool = true):Void
+  {
+    super.resetCharacter(resetCamera);
+
+    iconColor = FlxColor.WHITE;
+    suffix = '';
+  }
+
+  override public function playAnimation(name:String, restart:Bool = false, ignoreOther:Bool = false, reversed:Bool = false):Void
+  {
+    var realName:String = name;
+    if (suffix.length > 0) realName += '-$suffix';
+
+    super.playAnimation(realName, restart, ignoreOther, reversed);
+  }
+
+  override public function onSongEvent(event:SongEventScriptEvent)
+  {
+    super.onSongEvent(event);
+
+    if (event.eventData.eventKind == "RemnantsSNES")
+    {
+      var color:String = event.eventData.getString('color') ?? 'WHITE';
+      var suffix:String = event.eventData.getString('suffix') ?? '';
+
+      iconColor = FlxColor.fromString(color);
+      suffix = suffix;
+    }
+  }
+
+  override public function initHealthIcon(isOpponent:Bool):Void
+  {
+    super.initHealthIcon(isOpponent);
+
+    var shader:FlxRuntimeShader = iconColor != FlxColor.WHITE ? oneColor : null;
+    var icon:HealthIcon = isOpponent ? PlayState.instance.iconP2 : PlayState.instance.iconP1;
+    icon.shader = shader;
+  }
+}

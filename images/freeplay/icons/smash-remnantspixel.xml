@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TextureAtlas imagePath="smash-remnantspixel.png">
+  <SubTexture name="idle0001" x="0" y="0"  width="30" height="34" frameX="-12" frameY="-5" frameWidth="33" frameHeight="28" />
+
+  <SubTexture name="confirm0001" x="0" y="0"  width="30" height="34" frameX="-12" frameY="-5" frameWidth="33" frameHeight="28" />
+  <SubTexture name="confirm0002" x="30" y="0"  width="30" height="34" frameX="-12" frameY="-5" frameWidth="33" frameHeight="28" />
+  <SubTexture name="confirm0003" x="60" y="0"  width="30" height="34" frameX="-12" frameY="-5" frameWidth="33" frameHeight="28" />
+  <SubTexture name="confirm0004" x="90" y="0"  width="30" height="34" frameX="-12" frameY="-5" frameWidth="33" frameHeight="28" />
+
+  <SubTexture name="confirm-hold0001" x="90" y="0"  width="30" height="34" frameX="-12" frameY="-5" frameWidth="33" frameHeight="28" />
+</TextureAtlas>

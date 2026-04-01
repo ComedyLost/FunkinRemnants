@@ -1,14 +1,7 @@
-import flixel.FlxG;
 import flixel.FlxSprite;
-import flixel.util.FlxTimer;
 import funkin.audio.FunkinSound;
 import funkin.play.stage.Stage;
-import flixel.addons.display.FlxRuntimeShader;
-import flixel.sound.FlxSound;
-import funkin.Conductor;
-import funkin.modding.base.ScriptedFlxRuntimeShader;
 import funkin.graphics.shaders.AdjustColorShader;
-import funkin.play.PlayState;
 import funkin.graphics.shaders.OverlayBlend;
 import flixel.addons.display.FlxBackdrop;
 import funkin.util.HapticUtil;
@@ -103,12 +96,12 @@ class LimoRideRemnantsStage extends Stage
       mist5.velocity.x = 100;
       mist5.scale.set(1.5, 1.5);
 
-      PlayState.instance.currentStage.add(mist1);
-      PlayState.instance.currentStage.add(mist2);
-      PlayState.instance.currentStage.add(mist3);
-      PlayState.instance.currentStage.add(mist4);
-      PlayState.instance.currentStage.add(mist5);
-      PlayState.instance.currentStage.refresh(); // Apply z-index.
+      add(mist1);
+      add(mist2);
+      add(mist3);
+      add(mist4);
+      add(mist5);
+      refresh(); // Apply z-index.
 
       // Apply sky shader.
       var skyOverlay:OverlayBlend = new OverlayBlend();

@@ -4,7 +4,6 @@ import flixel.tweens.FlxEase;
 import flixel.tweens.FlxTween;
 import funkin.play.GameOverSubState;
 import funkin.modding.module.Module;
-import funkin.util.Constants;
 
 using StringTools;
 

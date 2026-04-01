@@ -8,7 +8,6 @@ import flixel.tweens.FlxTween;
 import flixel.util.FlxSpriteUtil;
 import funkin.audio.FunkinSound;
 import funkin.data.freeplay.player.PlayerRegistry;
-import flixel.FlxG;
 
 class BFRemnantsCard extends BackingCard
 {
@@ -270,7 +269,6 @@ class BFRemnantsCard extends BackingCard
 
   var prevSongID:String = '';
 
-  // Thank you Sonic JAM... (Had to fix something)
   public function onCapsuleSelected(event:CapsuleScriptEvent)
   {
     super.onCapsuleSelected(event);
@@ -301,31 +299,5 @@ class BFRemnantsCard extends BackingCard
 
     // Save the previous song ID.
     prevSongID = curSongID;
-
-    // Replace the random capsule theme if we are on it.
-    if (this.instance.curSelected == 0)
-    {
-      // Check if the random capsule was hovered over before replacing the sound.
-      // It's similar to the previous check but this doesn't crash the game...
-      if (event.capsule.freeplayData != null) return;
-
-      // Replace the sound with a bit more of delay so it actually overrides it every time it needs to play.
-      new FlxTimer().start(0.3, _ -> {
-        this.instance.clearPreviews();
-
-        var previewVolume:Float = 0.7;
-        if (instance.dj != null) previewVolume *= instance.dj.getMusicPreviewMult();
-
-        // Check if this music is already playing before fading it in, in case the player is just scrolling through variations while on the capsule.
-        var shouldFade:Bool = FunkinSound.playMusic('freeplayRandom-remnants',
-          {
-            startingVolume: 0.0,
-            overrideExisting: true,
-            restartTrack: false
-          });
-
-        if (shouldFade) FlxG.sound.music.fadeIn(2, 0, previewVolume);
-      });
-    }
   }
 }

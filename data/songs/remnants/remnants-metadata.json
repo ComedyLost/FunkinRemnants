@@ -5,7 +5,7 @@
   "charter": "RhysRJJ + Plush + Sammy The Goog",
   "offsets": {},
   "playData": {
-    "songVariations": ["erect", "pico"],
+    "songVariations": ["erect", "pico", "remnants"],
     "difficulties": ["easy", "normal", "hard"],
     "characters": {
       "player": "bf-default-remnants",

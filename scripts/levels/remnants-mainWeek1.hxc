@@ -11,6 +11,11 @@ class RemnantsWeekLevel extends Level
   // Reveal the name after beating the week ;)
   override function getSongDisplayNames(difficultyId:String):Array<String>
   {
-    return Save.instance.hasBeatenLevel('remnants-mainWeek1') ? ["Remnants!"] : ["???"];
+    return Save.instance.hasBeatenSong('remnants') ? ["Remnants!"] : ["???"];
+  }
+
+  override function getDifficulties():Array<String>
+  {
+    return Constants.DEFAULT_DIFFICULTY_LIST;
   }
 }

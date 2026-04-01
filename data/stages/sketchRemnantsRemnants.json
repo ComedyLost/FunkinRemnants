@@ -1,0 +1,120 @@
+{
+  "props": [
+    {
+      "danceEvery": 0,
+      "zIndex": 50,
+      "position": [560, -875],
+      "scale": [1, 1],
+      "animType": "sparrow",
+      "name": "stageSketch",
+      "isPixel": false,
+      "assetPath": "stages/sketchRemnants/remnants/StageDividerRemnants",
+      "scroll": [0.9, 0.9],
+      "animations": []
+    },
+    {
+      "danceEvery": 0,
+      "zIndex": 45,
+      "position": [-1525, 1090],
+      "scale": [1, 1],
+      "animType": "sparrow",
+      "name": "stageSketch",
+      "isPixel": false,
+      "assetPath": "stages/sketchRemnants/remnants/PrototypeCrowd1",
+      "scroll": [0.93, 0.83],
+      "animations": []
+    },
+    {
+      "danceEvery": 0,
+      "zIndex": 40,
+      "position": [-1525, 1070],
+      "scale": [1, 1],
+      "animType": "sparrow",
+      "name": "stageSketch",
+      "isPixel": false,
+      "assetPath": "stages/sketchRemnants/remnants/PrototypeCrowd2",
+      "scroll": [0.96, 0.86],
+      "animations": []
+    },
+    {
+      "danceEvery": 0,
+      "zIndex": 35,
+      "position": [-1510, 950],
+      "scale": [1, 1],
+      "animType": "sparrow",
+      "name": "stageSketch",
+      "isPixel": false,
+      "assetPath": "stages/sketchRemnants/remnants/PrototypeCrowd3",
+      "scroll": [0.98, 0.88],
+      "animations": []
+    },
+    {
+      "danceEvery": 0,
+      "zIndex": 30,
+      "position": [-590, -330],
+      "scale": [1, 1],
+      "animType": "sparrow",
+      "name": "stageSketch",
+      "isPixel": false,
+      "assetPath": "stages/sketchRemnants/remnants/StageLightRemnants",
+      "scroll": [1.1, 1.1],
+      "animations": []
+    },
+    {
+      "danceEvery": 0,
+      "zIndex": 25,
+      "position": [-1525, -875],
+      "scale": [1, 1],
+      "animType": "sparrow",
+      "name": "stageSketch",
+      "isPixel": false,
+      "assetPath": "stages/sketchRemnants/remnants/StageCurtainRemnants",
+      "scroll": [0.95, 0.95],
+      "animations": []
+    },
+    {
+      "danceEvery": 0,
+      "zIndex": 20,
+      "position": [-1525, 680],
+      "scale": [1, 1],
+      "animType": "sparrow",
+      "name": "stageSketch",
+      "isPixel": false,
+      "assetPath": "stages/sketchRemnants/remnants/StageRemnants",
+      "scroll": [0.9, 0.9],
+      "animations": []
+    },
+    {
+      "danceEvery": 0,
+      "zIndex": 15,
+      "position": [-1525, -875],
+      "scale": [1, 1],
+      "animType": "sparrow",
+      "name": "stageSketch",
+      "isPixel": false,
+      "assetPath": "stages/sketchRemnants/remnants/StageBackRemnants",
+      "scroll": [0.9, 0.9],
+      "animations": []
+    }
+  ],
+  "cameraZoom": 0.45,
+  "version": "1.0.0",
+  "characters": {
+    "bf": {
+      "zIndex": 300,
+      "position": [1100, 885],
+      "cameraOffsets": [-100, -100]
+    },
+    "dad": {
+      "zIndex": 200,
+      "position": [100, 885],
+      "cameraOffsets": [150, -100]
+    },
+    "gf": {
+      "zIndex": 100,
+      "cameraOffsets": [0, 0],
+      "position": [600, 750]
+    }
+  },
+  "name": "Sketch Stage (Remnants)"
+}

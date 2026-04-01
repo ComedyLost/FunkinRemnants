@@ -1,0 +1,86 @@
+import funkin.play.character.AnimateAtlasCharacter;
+import animate.internal.elements.FlxSpriteElement;
+import openfl.filters.DropShadowFilter;
+import funkin.graphics.FunkinSprite;
+import animate.internal.Frame;
+import animate.internal.Layer;
+import animate.internal.Timeline;
+
+class PodiumWomenCharacter extends AnimateAtlasCharacter
+{
+  final SYMBOLS:Array<String> = ["Animations/GF Cheer", "Animations/GF Dancing Beat", "Animations/gf sad"];
+
+  public var sprites:Array<FunkinSprite> = [];
+
+  public function new()
+  {
+    super('podium-women');
+  }
+
+  override public function onCreate(event:ScriptEvent):Void
+  {
+    super.onCreate(event);
+
+    var dropShadowFilter:DropShadowFilter = new DropShadowFilter(0, 0, 0x000000, 1, 15, 15, 255);
+
+    for (symbolName in SYMBOLS)
+    {
+      var offsets:Array<Float> = switch (symbolName)
+      {
+        case 'Animations/GF Cheer':
+          [69.15, -295.65];
+        case 'Animations/GF Dancing Beat':
+          [64.55, -287.25];
+        case 'Animations/gf sad':
+          [67.65, -283.3];
+        default:
+          [0, 0];
+      };
+
+      var symbol:SymbolItem = library.getSymbol(symbolName);
+
+      var sprite:FunkinSprite = new FunkinSprite(offsets[0], offsets[1]);
+      sprite.frames = frames;
+      sprite.anim.addByTimeline('anim', symbol.timeline);
+      sprite.anim.play('anim');
+      sprite.filters = [dropShadowFilter];
+
+      var timeline:Timeline = new Timeline(null, this.library, symbol.timeline.name);
+      timeline.frameCount = symbol.timeline.frameCount;
+
+      var layer:Layer = new Layer(timeline);
+      timeline.layers.push(layer);
+
+      var frame:Frame = new Frame(layer);
+      frame.duration = symbol.timeline.frameCount;
+
+      var element:FlxSpriteElement = new FlxSpriteElement(sprite);
+      element.active = false;
+      frame.add(element);
+
+      layer.frames.push(frame);
+
+      for (_ in 0...frame.duration)
+        layer.frameIndices.push(0);
+
+      timeline._bounds = timeline.getWholeBounds(false, timeline._bounds);
+
+      symbol.timeline = timeline;
+
+      sprites.push(sprite);
+    }
+  }
+
+  override public function draw():Void
+  {
+    for (sprite in sprites)
+    {
+      if (sprite.animation.frameIndex != animation.frameIndex)
+      {
+        sprite.animation.frameIndex = animation.frameIndex;
+      }
+    }
+
+    super.draw();
+  }
+}

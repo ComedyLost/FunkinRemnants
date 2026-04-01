@@ -38,14 +38,14 @@
       "prefix": "speech bubble loud0",
       "looped": true,
       "flipX": true,
-      "offsets": [-30, -130],
+      "offsets": [-30, -135],
       "frameRate": 24
     },
     {
       "name": "right-loud",
       "prefix": "speech bubble loud0",
       "looped": true,
-      "offsets": [-30, -130],
+      "offsets": [-30, -135],
       "frameRate": 24
     }
   ]

@@ -1,12 +1,6 @@
 import funkin.modding.module.Module;
 import funkin.ui.charSelect.CharSelectSubState;
-import funkin.ui.MusicBeatSubState;
 import funkin.ui.PixelatedIcon;
-import funkin.util.ReflectUtil;
-import flixel.util.FlxTimer;
-import flixel.FlxG;
-import flixel.tweens.FlxTween;
-import flixel.tweens.FlxEase;
 
 using funkin.util.tools.StringTools;
 

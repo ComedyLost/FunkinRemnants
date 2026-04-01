@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0",
+  "name": "Remnants GF",
+  "assetPath": "dialogue/portraits/Remnants Portraits GF",
+  "flipX": false,
+  "isPixel": false,
+  "scale": 1.1,
+  "offsets": [300, -75],
+  "animations": [
+    {
+      "name": "normal",
+      "prefix": "GF Remnants Portrait 1"
+    }
+  ]
+}

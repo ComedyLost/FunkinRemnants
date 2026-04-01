@@ -1,4 +1,3 @@
-import flixel.FlxG;
 import funkin.play.PlayState;
 import funkin.play.character.AnimateAtlasCharacter;
 import StringTools;
@@ -16,6 +15,12 @@ class DarnellRemnantsBlazinCharacter extends AnimateAtlasCharacter
 
     this.danceEvery = 0;
     this.playAnimation('idle', true, false);
+  }
+
+  function resetCharacter(resetCamera:Bool = true):Void
+  {
+    super.resetCharacter(resetCamera);
+    this.danceEvery = 0;
   }
 
   var cantUppercut = false;
@@ -115,7 +120,7 @@ class DarnellRemnantsBlazinCharacter extends AnimateAtlasCharacter
       case "weekend-1-bf-blazin-dodge":
         if (!this.debug)
         {
-          getPico().scriptCall("playCoolSingAnim", [event.note.noteData]);
+          getPico().playCoolSingAnim(event.note.noteData);
         }
 
         if (event.note.noteData.getDirection() == 2 || event.note.noteData.getDirection() == 3)
@@ -242,7 +247,7 @@ class DarnellRemnantsBlazinCharacter extends AnimateAtlasCharacter
       case "weekend-1-bf-blazin":
         if (!this.debug)
         {
-          getPico().scriptCall("playCoolSingAnim", [event.note.noteData]);
+          getPico().playCoolSingAnim(event.note.noteData);
         }
 
         if (event.note.noteData.getDirection() == 2 || event.note.noteData.getDirection() == 3)
@@ -256,7 +261,7 @@ class DarnellRemnantsBlazinCharacter extends AnimateAtlasCharacter
       case "weekend-1-bf-blazin-dodge":
         if (!this.debug)
         {
-          getPico().scriptCall("playCoolSingAnim", [event.note.noteData]);
+          getPico().playCoolSingAnim(event.note.noteData);
         }
 
         if (event.note.noteData.getDirection() == 2 || event.note.noteData.getDirection() == 3)

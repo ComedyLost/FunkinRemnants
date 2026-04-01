@@ -1,12 +1,15 @@
 {
   "version": "1.0.0",
   "name": "Remnants GF (Pot Dark)",
-  "assetPath": "shared:characters/gf-remnants/pot dark",
+  "assetPath": "shared:characters/gf-remnants/pot/dark",
   "startingAnimation": "danceRight",
   "renderType": "animateatlas",
   "singTime": 8.0,
-  "offsets": [-6, 3],
+  "offsets": [-6.25, 2],
   "cameraOffsets": [5, 10],
+  "atlasSettings": {
+    "useRenderTexture": true
+  },
   "animations": [
     {
       "name": "danceLeft",

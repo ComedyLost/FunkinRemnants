@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TextureAtlas imagePath="noteStrumline_initcommit.png">
+  <SubTexture name="start" x="0" y="0" width="116" height="14" />
+  <SubTexture name="middle" x="3" y="0" width="116" height="14" />
+  <SubTexture name="end" x="5" y="0" width="116" height="14" />
+</TextureAtlas>

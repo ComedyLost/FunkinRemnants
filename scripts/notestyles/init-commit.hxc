@@ -1,0 +1,75 @@
+import funkin.play.notes.notestyle.NoteStyle;
+import funkin.play.notes.NoteSprite;
+import funkin.play.notes.Strumline;
+import flixel.util.FlxColor;
+
+class InitCommitNoteStyle extends NoteStyle
+{
+  final COLORS:Array<FlxColor> = [FlxColor.GREEN, FlxColor.RED, FlxColor.BLUE, FlxColor.PURPLE];
+
+  public var colorScroll:Array<String> = [];
+
+  public function new()
+  {
+    super("init-commit");
+    colorScroll = NoteSprite.DIRECTION_COLORS.map(i -> '${i}Scroll');
+  }
+
+  override public function buildNoteSprite(target:NoteSprite):Void
+  {
+    target.makeSolidColor(50, 50, FlxColor.WHITE);
+    target.antialiasing = false;
+
+    for (name in colorScroll)
+      target.animation.add(name, [0]);
+
+    var target_persist:NoteSprite = target;
+
+    target_persist.animation.onFrameChange.add((animName:String, _, __) -> {
+      var i:Int = colorScroll.indexOf(animName);
+      target_persist.color = COLORS[i];
+    });
+  }
+
+  override public function applyStrumlineFrames(target:StrumlineNote):Void
+  {
+    target.loadSparrow('noteStrumline_initcommit');
+    target.antialiasing = false;
+  }
+
+  override public function applyStrumlineAnimations(target:StrumlineNote, dir:Int):Void
+  {
+    var animIndex:Int = switch (dir)
+    {
+      case 0:
+        0;
+      case 3:
+        2;
+      default:
+        1;
+    }
+
+    for (name in ['static', 'press', 'confirm', 'confirm-hold'])
+      target.animation.add(name, [for (i in 0...4) animIndex], 12, false);
+
+    #if mobile
+    var target_persist:StrumlineNote = target;
+    var dir_persist:Int = dir;
+    target_persist.animation.onFrameChange.add((animName:String, _, __) -> {
+      var color:FlxColor = (animName == 'confirm' || animName == 'confirm-hold') ? COLORS[dir_persist] : FlxColor.WHITE;
+      target_persist.color = color;
+    });
+    #end
+  }
+
+  override public function applyStrumlineOffsets(target:StrumlineNote):Void
+  {
+    target.x -= Strumline.INITIAL_OFFSET;
+    target.y += (Strumline.STRUMLINE_SIZE - target.height) / 2;
+  }
+
+  override public function getStrumlineScale():Float
+  {
+    return 1;
+  }
+}

@@ -1,0 +1,76 @@
+import funkin.play.song.Song;
+import funkin.play.PlayState;
+import funkin.save.Save;
+#if mobile
+import funkin.mobile.input.ControlsHandler;
+#end
+
+/**
+ * Even though this looks like just the sugarcrash song script.
+ * This makes sure we play the fake preview in Freeplay!
+ */
+class SugarCrashRemnantsSong extends Song
+{
+  var originalPreviewStart:Float;
+  var originalPreviewEnd:Float;
+
+  public function new(songId:String, ?params:SongEntryParams)
+  {
+    if (songId == 'unknown') songId = 'sugarcrash-remnants';
+    super(songId, params);
+
+    var metadata:SongMetadata = _metadata.get(this.variation ?? Constants.DEFAULT_VARIATION);
+    originalPreviewStart = metadata?.playData?.previewStart ?? Constants.DEFAULT_PREVIEW_START_TIME;
+    originalPreviewEnd = metadata?.playData?.previewEnd ?? Constants.DEFAULT_PREVIEW_END_TIME;
+  }
+
+  override public function onCreate(event:ScriptEvent):Void
+  {
+    super.onCreate(event);
+    moveComboPopUps();
+  }
+
+  public function moveComboPopUps():Void
+  {
+    #if !mobile
+    if (!Preferences.downscroll) PlayState.instance.comboPopUps.offsets = [0, -145]; // Upscroll PC Offset
+
+    if (Preferences.downscroll) PlayState.instance.comboPopUps.offsets = [0, 355]; // Downscroll PC Offset
+    #else
+    if (Preferences.controlsScheme == "Arrows"
+      && !ControlsHandler.usingExternalInputDevice) PlayState.instance.comboPopUps.offsets = [30, 350]; // Middle Mobile Offset
+
+    if (!Preferences.downscroll
+      && Preferences.controlsScheme == "Arrows"
+      && ControlsHandler.usingExternalInputDevice) PlayState.instance.comboPopUps.offsets = [0, -145]; // Upscroll Controller Mobile Offset
+
+    if (Preferences.downscroll
+      && Preferences.controlsScheme == "Arrows"
+      && ControlsHandler.usingExternalInputDevice) PlayState.instance.comboPopUps.offsets = [0, 355]; // Downscroll Controller Mobile Offset
+    #end
+  }
+
+  override public function getBaseInstrumentalId(difficultyId:String, variationId:String):String
+  {
+    var original:String = super.getBaseInstrumentalId(difficultyId, variationId);
+    var metadata:SongMetadata = _metadata.get(variationId);
+
+    if (RemnantsFreeplay.instance?.isSongSecret(this.id, variationId))
+    {
+      metadata?.playData?.previewStart = 0;
+      metadata?.playData?.previewEnd = 1;
+
+      return original.length == 0 ? 'fake' : '$original-fake';
+    }
+
+    metadata?.playData?.previewStart = originalPreviewStart;
+    metadata?.playData?.previewEnd = originalPreviewEnd;
+
+    return super.getBaseInstrumentalId(difficultyId, variationId);
+  }
+
+  override public function isSongNew(currentDifficulty:String, currentVariation:String):Bool
+  {
+    return !Save.instance.hasBeatenSong(this.id, null, this.variation);
+  }
+}

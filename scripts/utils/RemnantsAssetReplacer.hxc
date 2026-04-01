@@ -1,6 +1,5 @@
 import funkin.modding.module.Module;
 import flixel.FlxSprite;
-import flixel.FlxG;
 
 using StringTools;
 

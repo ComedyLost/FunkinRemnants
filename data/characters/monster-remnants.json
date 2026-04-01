@@ -5,6 +5,9 @@
   "renderType": "animateatlas",
   "offsets": [-7, 1],
   "cameraOffsets": [7, 12],
+  "atlasSettings": {
+    "useRenderTexture": true
+  },
   "animations": [
     {
       "name": "idle",

@@ -1,5 +1,3 @@
-import flixel.FlxG;
-import funkin.Conductor;
 import funkin.util.HapticUtil;
 import funkin.graphics.FunkinSprite;
 import funkin.audio.FunkinSound;
@@ -11,9 +9,7 @@ import funkin.play.GameOverSubState;
 import funkin.play.PlayState;
 import flixel.tweens.FlxTween;
 import flixel.util.FlxTimer;
-import funkin.util.Constants;
 import funkin.FunkinMemory;
-import funkin.Preferences;
 
 class BoyfriendRemnantsCharacter extends MultiAnimateAtlasCharacter
 {

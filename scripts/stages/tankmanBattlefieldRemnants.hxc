@@ -1,10 +1,7 @@
-import flixel.FlxG;
 import flixel.math.FlxAngle;
-import funkin.play.PlayState;
 import funkin.play.stage.Stage;
 import flixel.addons.display.FlxBackdrop;
 import flixel.addons.display.FlxTiledSprite;
-import flixel.group.FlxTypedSpriteGroup;
 import funkin.util.FlxTweenUtil;
 import flixel.tweens.FlxTween;
 import flixel.tweens.FlxEase;
@@ -139,18 +136,18 @@ class TankmanBattlefieldRemnantsStage extends Stage
 
       FlxTween.tween(boxParachute2, {angle: 30}, 3, {ease: FlxEase.quadInOut, type: 4});
 
-      PlayState.instance.currentStage.add(storm0);
-      PlayState.instance.currentStage.add(storm1);
-      PlayState.instance.currentStage.add(storm2);
-      PlayState.instance.currentStage.add(storm3);
-      PlayState.instance.currentStage.add(storm4);
-      PlayState.instance.currentStage.add(storm5);
+      add(storm0);
+      add(storm1);
+      add(storm2);
+      add(storm3);
+      add(storm4);
+      add(storm5);
 
-      PlayState.instance.currentStage.add(tankParachute1);
-      PlayState.instance.currentStage.add(tankParachute2);
-      PlayState.instance.currentStage.add(tankParachute3);
-      PlayState.instance.currentStage.add(boxParachute1);
-      PlayState.instance.currentStage.add(boxParachute2);
+      add(tankParachute1);
+      add(tankParachute2);
+      add(tankParachute3);
+      add(boxParachute1);
+      add(boxParachute2);
 
       clouds = new FlxTiledSprite(Paths.image('remnants/tankClouds'), 3200, 235, true, false);
       clouds.setPosition(-1100, 20);
@@ -159,8 +156,8 @@ class TankmanBattlefieldRemnantsStage extends Stage
 
       clouds.velocity.x = 8;
 
-      PlayState.instance.currentStage.add(clouds);
-      PlayState.instance.currentStage.refresh(); // Apply z-index.
+      add(clouds);
+      refresh(); // Apply z-index.
 
       tankAngle = FlxG.random.int(-90, 45);
       tankSpeed = FlxG.random.float(5, 7);

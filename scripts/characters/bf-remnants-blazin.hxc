@@ -1,8 +1,5 @@
-import flixel.FlxG;
 import flixel.util.FlxTimer;
 import funkin.play.PlayState;
-import funkin.play.PauseSubState;
-import funkin.graphics.FunkinSprite;
 import funkin.play.character.AnimateAtlasCharacter;
 import funkin.play.GameOverSubState;
 import funkin.play.PauseSubState;
@@ -31,6 +28,12 @@ class BFRemnantsBlazinCharacter extends AnimateAtlasCharacter
     PauseSubState.musicSuffix = '-remnants';
 
     this.zIndex = 2000;
+  }
+
+  function resetCharacter(resetCamera:Bool = true):Void
+  {
+    super.resetCharacter(resetCamera);
+    this.danceEvery = 0;
   }
 
   var cantUppercut = false;

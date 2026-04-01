@@ -1,0 +1,154 @@
+{
+  "version": "1.0.0",
+
+  "backdrop": {
+    "type": "solid",
+    "fadeTime": 1.0,
+    "color": "#00000000"
+  },
+
+  "music": {
+    "asset": "",
+    "fadeTime": 0,
+    "looped": false
+  },
+
+  "outro": {
+    "type": "fade",
+    "fadeTime": 1.0
+  },
+
+  "dialogue": [
+    {
+      "speaker": "bf-remnants",
+      "speakerAnimation": "normal",
+      "box": "remnants",
+      "boxAnimation": "right",
+
+      "text": ["We are not doing this right now."]
+    },
+    {
+      "speaker": "gf-remnants",
+      "speakerAnimation": "normal",
+      "box": "remnants",
+      "boxAnimation": "right",
+
+      "text": [
+        "I'm afraid we are.",
+        " We have to do this to beat the lazy reskin mod allegations."
+      ]
+    },
+    {
+      "speaker": "proto-bf",
+      "speakerAnimation": "normal",
+      "box": "remnants",
+      "boxAnimation": "left",
+
+      "text": ["Yeah listen to your girl buddy."]
+    },
+    {
+      "speaker": "bf-remnants",
+      "speakerAnimation": "normal",
+      "box": "remnants",
+      "boxAnimation": "left",
+
+      "text": [
+        "Guess I can't call myself Remnants if I can't beat the original remnant."
+      ]
+    },
+    {
+      "speaker": "bf-remnants",
+      "speakerAnimation": "admire",
+      "box": "remnants",
+      "boxAnimation": "right",
+
+      "text": ["At least I have my awesome Girlfriend here to support me."]
+    },
+    {
+      "speaker": "gf-remnants",
+      "speakerAnimation": "normal",
+      "box": "remnants",
+      "boxAnimation": "right",
+
+      "text": ["I love you babe! <3"]
+    },
+    {
+      "speaker": "proto-gf",
+      "speakerAnimation": "normal",
+      "box": "remnants",
+      "boxAnimation": "left",
+
+      "text": ["Well my Boyfriend has me to support them too."]
+    },
+    {
+      "speaker": "proto-bf",
+      "speakerAnimation": "normal",
+      "box": "remnants",
+      "boxAnimation": "left",
+
+      "text": [
+        "Yeah exactly.",
+        " You're really not as special as you think you are."
+      ]
+    },
+    {
+      "speaker": "gf-remnants",
+      "speakerAnimation": "normal",
+      "box": "remnants",
+      "boxAnimation": "right",
+
+      "text": ["Are you sure about that though?"]
+    },
+    {
+      "speaker": "bf-remnants",
+      "speakerAnimation": "normal",
+      "box": "remnants",
+      "boxAnimation": "right",
+
+      "text": ["Yeah honestly both of the girls do look pretty similar."]
+    },
+    {
+      "speaker": "proto-gf",
+      "speakerAnimation": "normal",
+      "box": "remnants",
+      "boxAnimation": "left",
+
+      "text": ["I'm taking this as an insult."]
+    },
+    {
+      "speaker": "bf-remnants",
+      "speakerAnimation": "normal",
+      "box": "remnants",
+      "boxAnimation": "right",
+
+      "text": ["Man I thought you guys would be more chill."]
+    },
+    {
+      "speaker": "proto-bf",
+      "speakerAnimation": "normal",
+      "box": "remnants",
+      "boxAnimation": "left",
+
+      "text": ["You're still not beating the lazy reskin mod allegations."]
+    },
+    {
+      "speaker": "bf-remnants",
+      "speakerAnimation": "normal",
+      "box": "remnants",
+      "boxAnimation": "right",
+
+      "text": [
+        "Fine.",
+        " I'll beat you in this battle and prove you wrong then."
+      ]
+    },
+    {
+      "speaker": "bf-remnants",
+      "speakerAnimation": "excited",
+      "box": "remnants",
+      "boxAnimation": "right-loud",
+
+      "text": ["Bring it on Prototype!"]
+    }
+  ]
+}

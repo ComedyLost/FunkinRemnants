@@ -1,9 +1,7 @@
-import flixel.FlxG;
 import funkin.save.Save;
 import funkin.modding.module.Module;
 import funkin.ui.options.OptionsState;
 import funkin.audio.FunkinSound;
-import funkin.util.ReflectUtil;
 
 class RemnantsOptions extends Module
 {

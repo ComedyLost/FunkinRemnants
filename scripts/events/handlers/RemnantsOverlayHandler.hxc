@@ -6,9 +6,7 @@ import funkin.play.PlayState;
 import flixel.tweens.FlxTween;
 import flixel.tweens.FlxEase;
 import openfl.filters.ColorMatrixFilter;
-import flixel.math.FlxMath;
 import funkin.Conductor;
-import flixel.FlxG;
 import Std;
 
 class RemnantsOverlayHandler extends Module

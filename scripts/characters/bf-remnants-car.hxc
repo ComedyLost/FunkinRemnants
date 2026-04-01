@@ -1,15 +1,7 @@
-import flixel.FlxG;
 import funkin.util.HapticUtil;
-import flixel.tweens.FlxTween;
-import flixel.tweens.FlxEase;
-import funkin.audio.FunkinSound;
 import funkin.play.PauseSubState;
-import funkin.graphics.FunkinSprite;
 import funkin.play.character.MultiAnimateAtlasCharacter;
-import funkin.play.character.CharacterType;
 import funkin.play.GameOverSubState;
-import funkin.play.PlayState;
-import funkin.Preferences;
 
 class BoyfriendRemnantsCarCharacter extends MultiAnimateAtlasCharacter
 {

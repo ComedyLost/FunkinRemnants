@@ -1,0 +1,113 @@
+{
+  "version": "1.0.0",
+  "name": "Remnants BF (PFP)",
+  "renderType": "animateatlas",
+  "assetPath": "shared:characters/bf-remnants/pfp",
+  "flipX": true,
+  "cameraOffsets": [0, -70],
+  "healthIcon": {
+    "id": "bf-remnants"
+  },
+  "animations": [
+    {
+      "name": "idle",
+      "prefix": "idle",
+      "offsets": [0, 0]
+    },
+    {
+      "name": "singLEFT",
+      "prefix": "left",
+      "offsets": [0, 0]
+    },
+    {
+      "name": "singDOWN",
+      "prefix": "down",
+      "offsets": [0, 0]
+    },
+    {
+      "name": "singUP",
+      "prefix": "up",
+      "offsets": [0, 0]
+    },
+    {
+      "name": "singRIGHT",
+      "prefix": "right",
+      "offsets": [0, 0]
+    },
+    {
+      "name": "idle-evil",
+      "prefix": "evil idle",
+      "offsets": [0, 0]
+    },
+    {
+      "name": "singLEFT-evil",
+      "prefix": "evil left",
+      "offsets": [0, 0]
+    },
+    {
+      "name": "singDOWN-evil",
+      "prefix": "evil down",
+      "offsets": [0, 0]
+    },
+    {
+      "name": "singUP-evil",
+      "prefix": "evil up",
+      "offsets": [0, 0]
+    },
+    {
+      "name": "singRIGHT-evil",
+      "prefix": "evil right",
+      "offsets": [0, 0]
+    },
+    {
+      "name": "idle-yellow",
+      "prefix": "yellow idle",
+      "offsets": [0, 0]
+    },
+    {
+      "name": "singLEFT-yellow",
+      "prefix": "yellow left",
+      "offsets": [0, 0]
+    },
+    {
+      "name": "singDOWN-yellow",
+      "prefix": "yellow down",
+      "offsets": [0, 0]
+    },
+    {
+      "name": "singUP-yellow",
+      "prefix": "yellow up",
+      "offsets": [0, 0]
+    },
+    {
+      "name": "singRIGHT-yellow",
+      "prefix": "yellow right",
+      "offsets": [0, 0]
+    },
+    {
+      "name": "idle-whatsapp",
+      "prefix": "whatsapp idle",
+      "offsets": [0, 0]
+    },
+    {
+      "name": "singLEFT-whatsapp",
+      "prefix": "whatsapp left",
+      "offsets": [0, 0]
+    },
+    {
+      "name": "singDOWN-whatsapp",
+      "prefix": "whatsapp down",
+      "offsets": [0, 0]
+    },
+    {
+      "name": "singUP-whatsapp",
+      "prefix": "whatsapp up",
+      "offsets": [0, 0]
+    },
+    {
+      "name": "singRIGHT-whatsapp",
+      "prefix": "whatsapp right",
+      "offsets": [0, 0]
+    }
+  ]
+}

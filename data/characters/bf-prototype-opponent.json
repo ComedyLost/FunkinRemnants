@@ -1,0 +1,42 @@
+{
+  "version": "1.0.0",
+  "name": "Prototype BF (Opponent)",
+  "renderType": "animateatlas",
+  "assetPath": "shared:characters/proto-bf",
+  "flipX": false,
+  "singTime": 4.0,
+  "healthIcon": {
+    "id": "bf-prototype",
+    "isPixel": false
+  },
+  "atlasSettings": {
+    "swfMode": false
+  },
+  "animations": [
+    {
+      "name": "idle",
+      "prefix": "Idle",
+      "looped": true
+    },
+    {
+      "name": "singLEFT",
+      "prefix": "Left"
+    },
+    {
+      "name": "singDOWN",
+      "prefix": "Down"
+    },
+    {
+      "name": "singUP",
+      "prefix": "Up"
+    },
+    {
+      "name": "singRIGHT",
+      "prefix": "Right"
+    },
+    {
+      "name": "hey",
+      "prefix": "Hey"
+    }
+  ]
+}

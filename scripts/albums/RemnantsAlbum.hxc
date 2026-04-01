@@ -1,59 +1,50 @@
 import funkin.ui.freeplay.Album;
 import funkin.ui.freeplay.FreeplaySongData;
 import funkin.util.ReflectUtil;
-import funkin.Assets;
-import funkin.Paths;
-import flixel.FlxG;
+import funkin.save.Save;
 import haxe.Json;
 
 class RemnantsAlbum extends Album
 {
-  var albumArtJsonObj:Dynamic = {};
-
   public function new()
   {
     super('remnants');
-
-    var albumArtJsonPath:String = Paths.json('ui/freeplay/remnant-album-covers');
-    albumArtJsonObj = Json.parse(Assets.getText(albumArtJsonPath))?.albumCoversList ?? {};
   }
 
   override public function getAlbumArtAssetKey():String
   {
     var curSelectedFreeplaySong:FreeplaySongData = getFreeplaySongData();
-    if (curSelectedFreeplaySong == null)
-    {
-      return _data?.albumArtAsset ?? 'freeplay/albumRoll/remnants-placeholder';
-    }
+    if (curSelectedFreeplaySong == null) return super.getAlbumArtAssetKey();
 
-    var albumPath:String = 'freeplay/albumRoll/' + getRemnantsAlbumAssetKey(curSelectedFreeplaySong.songId, curSelectedFreeplaySong.curVariation);
-    if (Assets.exists(Paths.image(albumPath)))
-    {
-      return albumPath;
-    }
+    var albumKey:String = getRemnantsAlbumAssetKey(curSelectedFreeplaySong.songId, curSelectedFreeplaySong.curVariation);
+    var albumPath:String = 'freeplay/albumRoll/$albumKey';
+    if (Assets.exists(Paths.image(albumPath))) return albumPath;
 
-    return _data?.albumArtAsset ?? 'freeplay/albumRoll/remnants-placeholder';
+    return super.getAlbumArtAssetKey();
   }
 
   override public function getAlbumOSTName():Null<String>
   {
-    var curSelectedFreeplaySong:FreeplaySongData = getFreeplaySongData();
+    var freeplaySongData:FreeplaySongData = getFreeplaySongData();
+    if (freeplaySongData == null) return super.getAlbumOSTName();
 
-    return switch (curSelectedFreeplaySong?.songId ?? '')
-    {
-      case 'grieving-remnants':
-        "CINEMA OST";
-      default:
-        _data?.albumOSTName;
-    }
+    var songId:String = freeplaySongData.songId;
+    var variationId:String = freeplaySongData.curVariation;
+
+    var json:Dynamic = RemnantsFreeplay.instance?.getReplaceSongData(songId, variationId);
+    var isSecret:Bool = RemnantsFreeplay.instance?.isSongSecret(songId, variationId);
+    if (isSecret && json?.secret?.hideOSTName ?? false) return super.getAlbumOSTName();
+
+    return json?.ostName ?? super.getAlbumOSTName();
   }
 
   public function getRemnantsAlbumAssetKey(songId:String, songVariation:String):String
   {
-    var curSongAlbumVariations:Dynamic = ReflectUtil.getProperty(albumArtJsonObj, songId);
-    var curVariationAlbum:String = ReflectUtil.getProperty(curSongAlbumVariations, songVariation);
+    var json:Dynamic = RemnantsFreeplay.instance?.getReplaceSongData(songId, songVariation);
+    var isSecret:Bool = RemnantsFreeplay.instance?.isSongSecret(songId, songVariation);
+    if (isSecret && json?.secret?.albumCover != null) return json.secret.albumCover;
 
-    return curVariationAlbum ?? 'remnants-placeholder';
+    return json?.albumCover;
   }
 
   function getFreeplaySongData():FreeplaySongData

@@ -1,5 +1,3 @@
-import flixel.FlxG;
-import funkin.play.PlayState;
 import funkin.play.stage.Stage;
 import flixel.addons.display.FlxBackdrop;
 import flixel.group.FlxTypedSpriteGroup;
@@ -29,7 +27,7 @@ class MallXmasRemnantsStage extends Stage
         snowGroup.scrollFactor.set(1.5, 1.5);
         snowGroup.zIndex = 401;
 
-        PlayState.instance.currentStage.add(snowGroup);
+        add(snowGroup);
       }
 
       for (snow in 1...8)
@@ -118,7 +116,7 @@ class MallXmasRemnantsStage extends Stage
         snowGroup.add(snowFall);
       }
 
-      PlayState.instance.currentStage.refresh(); // Apply z-index.
+      refresh(); // Apply z-index.
     }
   }
 

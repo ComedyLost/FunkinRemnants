@@ -1,4 +1,3 @@
-import flixel.FlxG;
 import funkin.play.PlayState;
 import funkin.graphics.FunkinSprite;
 import funkin.play.notes.notestyle.NoteStyle;
@@ -25,7 +24,7 @@ class RemnantsPlayState extends Module
     super.onCountdownStart(event);
 
     if (!RemnantsContentUtil.remnantsContentEnabled()) return;
-    this.legacyOpponentStrum();
+    #if !mobile this.legacyOpponentStrum(); #end
   }
 
   override function onUpdate(event:UpdateScriptEvent)
@@ -36,8 +35,13 @@ class RemnantsPlayState extends Module
 
     if (PlayState.instance != null && !PlayState.instance.isGamePaused)
     {
-      var mobileTap:Bool = (FlxG.onMobile && TouchUtil.justPressed && TouchUtil.overlapsComplex(PlayState.instance.iconP1));
-      if ((FlxG.keys.justPressed.NINE || mobileTap) && PlayState.instance.iconP1 != null)
+      var pressedNine:Bool = FlxG.keys.justPressed.NINE;
+
+      #if mobile
+      if (TouchUtil.justPressed && TouchUtil.overlapsComplex(PlayState.instance.iconP1)) pressedNine = true;
+      #end
+
+      if (pressedNine && PlayState.instance.iconP1 != null)
       {
         FlxG.signals.postUpdate.addOnce(remnantsOldIcon);
       }
@@ -61,6 +65,7 @@ class RemnantsPlayState extends Module
     }
   }
 
+  #if !mobile
   function legacyOpponentStrum()
   {
     if (PlayState.instance == null) return;
@@ -77,4 +82,5 @@ class RemnantsPlayState extends Module
       }
     }
   }
+  #end
 }
