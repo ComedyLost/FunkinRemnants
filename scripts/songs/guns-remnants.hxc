@@ -1,6 +1,7 @@
 import funkin.play.song.Song;
 import funkin.play.PlayState;
 import funkin.save.Save;
+import flixel.text.FlxTextBorderStyle;
 import funkin.ui.FullScreenScaleMode;
 import funkin.util.FlxTweenUtil;
 import flixel.util.FlxTimer;
