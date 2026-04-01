@@ -5,6 +5,37 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.1.0-expansion] - (2026-04-01)
+
+### Added
+
+- Added 2 New Remnants Mixes! [Smash (Remnants Mix) & Ridge (Remnants Mix)]
+
+### Changes
+
+- Updated Song Mixing for Remnants Erect!
+- Updated Base GF's Adobe Animate Atlases to be more optimized.
+- Updated the Remnants Freeplay Script to have more customization.
+- Updated Philly Nice (Remnants Mix) ending fade times.
+- Updated a ton of scripts to be more optimized and readable.
+
+### Fixes
+
+- Fixed Mommy Mearest being frozen on her dodge pose when dying.
+- Fixed Grieving's Game Over not showing during the flashbacks.
+- Fixed Opponent Strumline Note Hit Glow not showing on mobile.
+- Fixed Blazin' Characters not holding their animations.
+- Fixed being able to see body parts through some Week 2 Characters.
+- Fixed some Week 2 Dark Character Offsets. (Help me)
+- Fixed Remnants Pico Character Select Animation Errors.
+
+### Removed
+
+- Roses (Remnants Mix) [Hard] - Removed tiny Sustain Notes.
+- Removed Run (Remnants Mix).
+
+
+
 ## [1.0.3] - (2026-03-26)
 
 ### Added
@@ -18,12 +49,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added No Animation Notes to Cocoa (Remnants Mix).
 - Added Script Parenting to Remnants Pico and Remnants Nene's character scripts.
 - Added Censored version of the Roses Secret Dialogue.
-- Added new secret random chances to Remnants! (Pico Mix), & Weekend 1.
+- Added new secret random chances to Remnants! (Pico Mix) & Weekend 1.
 
 ### Changes
 
 - Updated a ton of characters to use Adobe Animate Atlases.
 - Updated BF's Adobe Animate Atlases to be more optimized.
+- Updated Spooky Kids, Pico & Senpai's Freeplay Pixel Icons to match their original designs. (Like a remnant!)
 - Updated Monster (Remnants Mix) Difficulty Ratings by incrementing them by 1.
 - Updated all character offsets to be consistent with base game's.
 - Updated Credits Video.
@@ -34,8 +66,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Fixed Blazin' (Remnants Mix) Giga Punch secret triggering on every pico uppercut if rolled.
 - Fixed the Remnants Overlay Event not resetting Retro Fades properly when resetting mid fade while "Tween On Restart?" is on.
 - Fixed Pico Speaker's animations spazing out.
-- Fixed Results Text being offset.
 - Fixed Flying Tanks during Week 7 cutscenes.
+- Fixed Results Text being offset.
+- Fixed Glitcher Characters not being alined properly.
 - Fixed many other minor stuffs.
 
 ### Removed
@@ -65,6 +98,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Removed
 
 - Removed Girlfriend's Sparrow Spritesheet for her "Car" Variation since it went Unused.
+- Removed Sammy's Cunt Ass Bitch Ass Sister
 
 
 
@@ -78,6 +112,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added Dialogue to Grieving (Remnants Mix).
 - Added Miss Poses to Luis in Grieving (Remnants Mix).
 - Added a New Secret Chance to the End of Roses (Remnants Mix).
+- Added the ability for the Merch button to cycle between Donate, Kickstarter & Goodies.
 - Added Censored BOOBIES Graphic for when Naughtyness is Off in Grieving (Remnants Mix).
 - Added a Fade-In to the Results Background. ([82f635b](https://github.com/RemnantsCrew/FunkinRemnants/commit/82f635bc067291d0b22c5c6e9b71c383bbabf031)) - by @macohi in [#1](https://github.com/RemnantsCrew/FunkinRemnants/pull/1)
 - Bopeebo (Remnants Mix) [Hard] - Added an Extra Note for Dad in Beat 93.
