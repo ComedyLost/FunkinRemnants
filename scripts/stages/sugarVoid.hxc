@@ -1,9 +1,16 @@
+import funkin.graphics.FunkinSprite;
 import funkin.play.stage.Stage;
+import flixel.tweens.FlxTween;
+import flixel.tweens.FlxEase;
 import funkin.play.PlayState;
 import funkin.play.Countdown;
 
 class SugarCrashVoidStage extends Stage
 {
+  public var skillIssue:FunkinSprite;
+
+  var skillIssueTween:FlxTween;
+
   public function new()
   {
     super("sugarVoid");
@@ -12,6 +19,19 @@ class SugarCrashVoidStage extends Stage
   function onCreate(event:ScriptEvent):Void
   {
     super.onCreate(event);
+
+    skillIssue = FunkinSprite.create(0, 0, "skill-issue");
+
+    skillIssue.setGraphicSize(FlxG.width, FlxG.height);
+    skillIssue.updateHitbox();
+
+    skillIssue.cameras = [PlayState.instance.camHUD];
+    skillIssue.zIndex = 0;
+
+    skillIssue.alpha = 0;
+
+    PlayState.instance.add(skillIssue);
+    PlayState.instance.refresh();
 
     PlayState.instance.opponentStrumline.visible = false;
   }
@@ -28,6 +48,42 @@ class SugarCrashVoidStage extends Stage
 
       PlayState.instance.opponentStrumline.visible = false;
     }
+  }
+
+  override public function onSongEvent(event:SongEventScriptEvent)
+  {
+    super.onSongEvent(event);
+
+    if (event.eventData.eventKind == "SkillIssue")
+    {
+      var fadeOut:Bool = event.eventData.value;
+
+      var newValue:Float = fadeOut ? 0 : 1;
+      var duration:Float = fadeOut ? 0.5 : 10;
+
+      skillIssueTween?.cancel();
+      skillIssueTween = FlxTween.tween(skillIssue, {alpha: newValue}, duration);
+    }
+  }
+
+  override public function onPause(event:ScriptEvent):Void
+  {
+    super.onPause(event);
+    skillIssueTween?.active = false;
+  }
+
+  override public function onResume(event:ScriptEvent):Void
+  {
+    super.onResume(event);
+    skillIssueTween?.active = true;
+  }
+
+  override public function onSongRetry(event:ScriptEvent):Void
+  {
+    super.onSongRetry(event);
+
+    skillIssueTween?.cancel();
+    skillIssueTween = FlxTween.tween(skillIssue, {alpha: 0}, 0.5, {ease: FlxEase.expoIn});
   }
 
   override public function onGameOver(event:ScriptEvent):Void
