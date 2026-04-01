@@ -15,19 +15,31 @@
     "stage": "sugarVoid",
     "noteStyle": "funkin",
     "ratings": {
-      "easy": 99,
+      "easy": 62,
       "normal": 67,
       "hard": 69
     },
     "album": "remnants",
-    "previewStart": 0.729752517,
-    "previewEnd": 0.8503694887
+    "previewStart": 0.744262261918008,
+    "previewEnd": 0.871000306080131
   },
   "generatedBy": "Friday Night Funkin' - v0.8.4",
   "timeChanges": [
     {
       "t": 0,
       "b": 0,
+      "bpm": 212,
+      "bt": [4, 4, 4, 4]
+    },
+    {
+      "t": 73585,
+      "b": 260.0003,
+      "bpm": 180,
+      "bt": [4, 4, 4, 4]
+    },
+    {
+      "t": 85917,
+      "b": 296.9963,
       "bpm": 212,
       "bt": [4, 4, 4, 4]
     }
