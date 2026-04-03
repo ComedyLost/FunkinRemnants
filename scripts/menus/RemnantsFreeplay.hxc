@@ -137,6 +137,8 @@ class RemnantsFreeplay extends Module
     super.onCapsuleSelected(event);
     selectedSong = false;
 
+    if (!RemnantsContentUtil.remnantsContentEnabled()) return;
+
     replaceRandomSong(event);
     handleAlbumRollUpdate(event);
     customCapsules(event);
