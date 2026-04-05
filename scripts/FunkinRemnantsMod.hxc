@@ -1,0 +1,13 @@
+#if funkin_autochecker
+import funkin.autochecker.mod.GitHubMod;
+#end
+
+class FunkinRemnantsMod #if funkin_autochecker extends GitHubMod #end
+{
+  #if funkin_autochecker
+  public function new()
+  {
+    super('funkin-remnants', 'RemnantsCrew/FunkinRemnants');
+  }
+  #end
+}
