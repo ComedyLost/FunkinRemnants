@@ -21,7 +21,7 @@
   "stickerPack": "remnants-default",
   "freeplayDJ": {
     "assetPath": "freeplay/freeplay-bf-remnants",
-    "scriptClass": "BoyfriendRemnantsFreeplayDJ",
+    "scriptClass": "funkin.remnants.players.djs.BoyfriendRemnantsFreeplayDJ",
     "fistPump": {
       "introStartFrame": 0,
       "introEndFrame": 4,
@@ -120,7 +120,7 @@
     "perfectGold": [
       {
         "renderType": "animateatlas",
-        "scriptClass": "BFRemnantsBedPerfectResults",
+        "scriptClass": "funkin.remnants.players.results.bf.BFRemnantsBedPerfectResults",
         "startFrameLabel": "INTRO",
         "filter": "naughty",
         "zIndex": 500,
@@ -138,7 +138,7 @@
       },
       {
         "renderType": "animateatlas",
-        "scriptClass": "BFRemnantsBedPerfectResults",
+        "scriptClass": "funkin.remnants.players.results.bf.BFRemnantsBedPerfectResults",
         "startFrameLabel": "INTRO 2",
         "filter": "safe",
         "zIndex": 500,
@@ -160,7 +160,7 @@
     "perfect": [
       {
         "renderType": "animateatlas",
-        "scriptClass": "BFRemnantsBedPerfectResults",
+        "scriptClass": "funkin.remnants.players.results.bf.BFRemnantsBedPerfectResults",
         "startFrameLabel": "INTRO",
         "filter": "naughty",
         "zIndex": 500,
@@ -178,7 +178,7 @@
       },
       {
         "renderType": "animateatlas",
-        "scriptClass": "BFRemnantsBedPerfectResults",
+        "scriptClass": "funkin.remnants.players.results.bf.BFRemnantsBedPerfectResults",
         "startFrameLabel": "INTRO 2",
         "filter": "safe",
         "zIndex": 500,
@@ -249,7 +249,7 @@
     "loss": [
       {
         "renderType": "animateatlas",
-        "scriptClass": "BFRemnantsShitResults",
+        "scriptClass": "funkin.remnants.players.results.bf.BFRemnantsShitResults",
         "zIndex": 500,
         "offsets": [570.5, -390.5],
         "loopFrameLabel": "Loop Start"

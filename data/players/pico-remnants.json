@@ -86,7 +86,7 @@
     "perfectGold": [
       {
         "renderType": "animateatlas",
-        "scriptClass": "PicoRemnantsPerfectResults",
+        "scriptClass": "funkin.remnants.players.results.pico.PicoRemnantsPerfectResults",
         "zIndex": 500,
         "scale": 0.88,
         "offsets": [-169.5, -219],
@@ -96,7 +96,7 @@
     "perfect": [
       {
         "renderType": "animateatlas",
-        "scriptClass": "PicoRemnantsPerfectResults",
+        "scriptClass": "funkin.remnants.players.results.pico.PicoRemnantsPerfectResults",
         "zIndex": 500,
         "scale": 0.88,
         "offsets": [-169.5, -219],
@@ -106,7 +106,7 @@
     "excellent": [
       {
         "renderType": "animateatlas",
-        "scriptClass": "PicoRemnantsGreatResults",
+        "scriptClass": "funkin.remnants.players.results.pico.PicoRemnantsGreatResults",
         "zIndex": 500,
         "scale": 1.25,
         "offsets": [160, -235.5],
@@ -117,7 +117,7 @@
     "great": [
       {
         "renderType": "animateatlas",
-        "scriptClass": "PicoRemnantsGreatResults",
+        "scriptClass": "funkin.remnants.players.results.pico.PicoRemnantsGreatResults",
         "zIndex": 500,
         "scale": 1.25,
         "offsets": [160, -235.5],
@@ -128,7 +128,7 @@
     "good": [
       {
         "renderType": "animateatlas",
-        "scriptClass": "PicoRemnantsGoodResults",
+        "scriptClass": "funkin.remnants.players.results.pico.PicoRemnantsGoodResults",
         "zIndex": 500,
         "scale": 1.25,
         "offsets": [-200, -120],
