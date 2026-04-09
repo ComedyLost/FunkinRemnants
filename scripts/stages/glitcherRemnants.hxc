@@ -1,5 +1,7 @@
 package funkin.remnants.stages;
 
+import funkin.play.character.CharacterDataParser;
+
 class GlitcherRemnantsStage extends Stage
 {
   var wentDark:Bool = false;
