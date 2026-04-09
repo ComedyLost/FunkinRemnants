@@ -5,6 +5,20 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.1.1] - (2026-04-09)
+
+### Changes
+
+- Updated Line Art for Dad & Darnell's Stickers.
+- Updated every script to be contained in the "funkin.remnants" package.
+
+### Fixes
+
+- Fixed Random song being overridden incorrectly.
+- Fixed GF's Left Pose Repeating.
+
+
+
 ## [1.1.0-expansion] - (2026-04-01)
 
 ### Added
