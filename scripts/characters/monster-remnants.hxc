@@ -1,8 +1,5 @@
 package funkin.remnants.characters;
 
-import funkin.play.character.AnimateAtlasCharacter;
-import funkin.play.character.CharacterType;
-
 using StringTools;
 
 class MonsterRemnantsCharacter extends AnimateAtlasCharacter

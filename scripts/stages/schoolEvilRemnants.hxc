@@ -1,10 +1,8 @@
 package funkin.remnants.stages;
 
 import funkin.graphics.shaders.AdjustColorShader;
-import funkin.play.stage.Stage;
 import funkin.graphics.shaders.WiggleEffectRuntime;
 import funkin.graphics.shaders.WiggleEffectType;
-import funkin.play.character.CharacterType;
 
 class SchoolEvilRemnantsStage extends Stage
 {

@@ -1,4 +1,5 @@
-import funkin.modding.module.Module;
+package funkin.remnants.utils;
+
 import flixel.FlxSprite;
 
 using StringTools;

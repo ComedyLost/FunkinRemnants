@@ -1,17 +1,8 @@
 package funkin.remnants.characters;
 
-import funkin.util.HapticUtil;
-import funkin.graphics.FunkinSprite;
-import funkin.audio.FunkinSound;
 import funkin.play.PauseSubState;
 import flixel.effects.FlxFlicker;
-import funkin.play.character.MultiAnimateAtlasCharacter;
-import funkin.play.character.CharacterType;
 import funkin.play.GameOverSubState;
-import funkin.play.PlayState;
-import flixel.tweens.FlxTween;
-import flixel.util.FlxTimer;
-import funkin.FunkinMemory;
 
 class BoyfriendRemnantsCharacter extends MultiAnimateAtlasCharacter
 {

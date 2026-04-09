@@ -1,15 +1,9 @@
 package funkin.remnants.stages;
 
-import funkin.audio.FunkinSound;
 import funkin.graphics.shaders.RuntimeRainShader;
-import funkin.play.character.CharacterType;
-import funkin.play.PlayState;
-import funkin.play.stage.Stage;
 import openfl.filters.ShaderFilter;
-import flixel.tweens.FlxTween;
 import flixel.addons.display.FlxTiledSprite;
 import funkin.util.MathUtil;
-import funkin.util.HapticUtil;
 
 using StringTools;
 

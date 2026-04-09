@@ -1,10 +1,5 @@
 package funkin.remnants.stages;
 
-import funkin.play.stage.Stage;
-import funkin.play.character.CharacterType;
-import funkin.data.character.CharacterDataParser;
-import flixel.tweens.FlxTween;
-
 class GlitcherRemnantsStage extends Stage
 {
   var wentDark:Bool = false;

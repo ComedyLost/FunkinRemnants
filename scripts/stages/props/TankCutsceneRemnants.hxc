@@ -1,8 +1,5 @@
 package funkin.remnants.stages.props;
 
-import funkin.graphics.FunkinSprite;
-import funkin.play.PlayState;
-
 // a unique object for tankman talking in his cutscenes
 class TankCutsceneRemnants extends FunkinSprite
 {

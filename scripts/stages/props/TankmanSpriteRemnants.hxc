@@ -1,7 +1,5 @@
 package funkin.remnants.stages.props;
 
-import funkin.graphics.FunkinSprite;
-import funkin.Conductor;
 import flixel.effects.FlxFlicker;
 
 /**

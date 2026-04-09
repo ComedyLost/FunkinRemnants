@@ -1,8 +1,7 @@
-import funkin.modding.module.Module;
+package funkin.remnants.utils;
+
 import funkin.modding.ModStore;
 import lime.app.Application;
-import funkin.play.PlayState;
-import flixel.util.FlxTimer;
 
 class LastRemnantsCharHelper extends Module
 {
@@ -23,9 +22,11 @@ class LastRemnantsCharHelper extends Module
       {
         shouldSave = false;
         timer?.cancel();
-        return;  
+        return;
       }
-      timer = FlxTimer.wait(0.1, () -> {timer = null;});
+      timer = FlxTimer.wait(0.1, () -> {
+        timer = null;
+      });
     }
     else
     {

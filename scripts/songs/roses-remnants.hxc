@@ -1,17 +1,5 @@
 package funkin.remnants.songs;
 
-import funkin.save.Save;
-import funkin.play.song.Song;
-import funkin.play.PlayState;
-import funkin.util.HapticUtil;
-import funkin.graphics.FunkinSprite;
-import funkin.audio.FunkinSound;
-import funkin.util.FlxTweenUtil;
-import flixel.tweens.FlxTween;
-import flixel.tweens.FlxEase;
-import flixel.util.FlxTimer;
-import funkin.util.SongSequence;
-import funkin.Conductor;
 #if mobile
 import funkin.mobile.input.ControlsHandler;
 #end

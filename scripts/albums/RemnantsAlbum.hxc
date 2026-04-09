@@ -3,7 +3,6 @@ package funkin.remnants.album;
 import funkin.ui.freeplay.Album;
 import funkin.ui.freeplay.FreeplaySongData;
 import funkin.util.ReflectUtil;
-import funkin.save.Save;
 import haxe.Json;
 
 class RemnantsAlbum extends Album

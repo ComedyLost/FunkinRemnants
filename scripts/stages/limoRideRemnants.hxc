@@ -1,14 +1,9 @@
 package funkin.remnants.stages;
 
 import flixel.FlxSprite;
-import funkin.audio.FunkinSound;
-import funkin.play.stage.Stage;
 import funkin.graphics.shaders.AdjustColorShader;
 import funkin.graphics.shaders.OverlayBlend;
 import flixel.addons.display.FlxBackdrop;
-import funkin.util.HapticUtil;
-import funkin.util.Sequence;
-import funkin.play.character.CharacterType;
 
 class LimoRideRemnantsStage extends Stage
 {

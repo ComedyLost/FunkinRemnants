@@ -1,7 +1,5 @@
 package funkin.remnants.stages.props;
 
-import funkin.graphics.FunkinSprite;
-
 // a unique object for santa getting KILLED
 class DadShootsSpriteRemnants extends FunkinSprite
 {

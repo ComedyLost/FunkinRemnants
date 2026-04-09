@@ -1,8 +1,5 @@
 package funkin.remnants.songs;
 
-import funkin.play.song.Song;
-import funkin.play.PlayState;
-import funkin.save.Save;
 #if mobile
 import funkin.mobile.input.ControlsHandler;
 #end

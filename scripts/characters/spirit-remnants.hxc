@@ -1,7 +1,6 @@
 package funkin.remnants.characters;
 
 import funkin.play.character.PackerCharacter;
-import funkin.play.PlayState;
 import funkin.effects.FunkTrail;
 
 class SpiritRemnantsCharacter extends PackerCharacter

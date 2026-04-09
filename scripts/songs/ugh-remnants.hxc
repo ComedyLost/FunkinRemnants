@@ -1,20 +1,10 @@
 package funkin.remnants.songs;
 
-import funkin.audio.FunkinSound;
-import funkin.graphics.FunkinSprite;
-import funkin.play.song.Song;
-import funkin.play.PlayState;
-import funkin.save.Save;
 import funkin.ui.FullScreenScaleMode;
 import flixel.text.FlxText;
 import flixel.text.FlxTextBorderStyle;
 import funkin.util.TouchUtil;
-import flixel.tweens.FlxTween;
-import flixel.tweens.FlxEase;
-import flixel.util.FlxTimer;
 import flixel.util.FlxTimerManager;
-import funkin.util.SongSequence;
-import funkin.Conductor;
 
 class UghRemnantsMixSong extends Song
 {

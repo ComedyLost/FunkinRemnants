@@ -1,8 +1,5 @@
 package funkin.remnants.characters;
 
-import funkin.play.character.MultiAnimateAtlasCharacter;
-import funkin.play.PlayState;
-
 class TankmanRemnantsCharacter extends MultiAnimateAtlasCharacter
 {
   function new()

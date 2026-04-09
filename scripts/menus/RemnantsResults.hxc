@@ -1,18 +1,14 @@
 package funkin.remnants.menus;
 
 import flixel.FlxSprite;
-import flixel.tweens.FlxEase;
-import flixel.tweens.FlxTween;
 import flixel.util.FlxGradient;
 import flixel.group.FlxTypedGroup;
-import funkin.modding.module.Module;
 import flixel.addons.display.FlxBackdrop;
 import flixel.graphics.frames.FlxBitmapFont;
 import funkin.graphics.FunkinCamera;
 import flixel.effects.FlxFlicker;
 import flixel.math.FlxBasePoint;
 import funkin.play.ResultState;
-import flixel.util.FlxTimer;
 import StringTools;
 import Std;
 

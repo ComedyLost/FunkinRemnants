@@ -5,7 +5,6 @@ import funkin.ui.transition.stickers.StickerSubState;
 import funkin.data.freeplay.player.PlayerRegistry;
 import funkin.ui.freeplay.FreeplayState;
 import funkin.ui.MusicBeatSubState;
-import funkin.play.PlayState;
 #if mobile
 import funkin.util.TouchUtil;
 import flixel.util.FlxColor;

@@ -1,9 +1,7 @@
 package funkin.remnants.characters;
 
-import funkin.play.character.AnimateAtlasCharacter;
 import animate.internal.elements.FlxSpriteElement;
 import openfl.filters.DropShadowFilter;
-import funkin.graphics.FunkinSprite;
 import animate.internal.Frame;
 import animate.internal.Layer;
 import animate.internal.Timeline;

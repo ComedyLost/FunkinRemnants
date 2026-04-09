@@ -1,8 +1,5 @@
 package funkin.remnants.songs;
 
-import funkin.play.song.Song;
-import funkin.save.Save;
-
 class FreshRemnantsMixSong extends Song
 {
   public function new()

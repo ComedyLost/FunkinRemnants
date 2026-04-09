@@ -1,8 +1,5 @@
 package funkin.remnants.characters;
 
-import funkin.play.character.AnimateAtlasCharacter;
-import funkin.play.PlayState;
-
 class GirlfriendRemnantsPotCharacter extends AnimateAtlasCharacter
 {
   function new()

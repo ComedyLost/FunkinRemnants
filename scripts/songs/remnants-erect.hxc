@@ -1,13 +1,5 @@
 package funkin.remnants.songs;
 
-import funkin.play.song.Song;
-import funkin.save.Save;
-import funkin.play.PlayState;
-import funkin.util.FlxTweenUtil;
-import flixel.tweens.FlxTween;
-import funkin.util.SongSequence;
-import funkin.Conductor;
-
 class RemnantsErectSong extends Song
 {
   var sequence:SongSequence;

@@ -1,16 +1,9 @@
 package funkin.remnants.characters;
 
-import flixel.tweens.FlxTween;
-import flixel.util.FlxTimer;
-import funkin.audio.FunkinSound;
-import funkin.graphics.FunkinSprite;
 import flixel.group.FlxTypedSpriteGroup;
 import funkin.play.character.PicoPlayerBaseCharacter;
 import funkin.play.GameOverSubState;
 import funkin.play.PauseSubState;
-import funkin.util.HapticUtil;
-import funkin.play.PlayState;
-import funkin.FunkinMemory;
 
 using StringTools;
 

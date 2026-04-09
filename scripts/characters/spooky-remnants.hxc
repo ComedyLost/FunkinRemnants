@@ -1,8 +1,5 @@
 package funkin.remnants.characters;
 
-import funkin.play.PlayState;
-import funkin.play.character.SparrowCharacter;
-
 class SpookyRemnantsCharacter extends SparrowCharacter
 {
   function new()

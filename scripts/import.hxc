@@ -1,3 +1,16 @@
 package funkin.remnants;
 
-// all imports put here will be used for ALL SCRIPTS, basically removing the need to put it in any file
+// All imports put here will be used for ALL SCRIPTS, basically removing the need to put it in any file
+import funkin.play.PlayState;
+import funkin.util.FlxTweenUtil;
+import flixel.tweens.FlxTween;
+import flixel.tweens.FlxEase;
+import funkin.save.Save;
+import funkin.modding.module.Module;
+import funkin.graphics.FunkinSprite;
+import funkin.audio.FunkinSound;
+import funkin.util.HapticUtil;
+import funkin.FunkinMemory;
+import funkin.play.character.CharacterType;
+import flixel.util.FlxTimer;
+import funkin.Conductor;

@@ -1,11 +1,7 @@
 package funkin.remnants.stages;
 
-import funkin.play.stage.Stage;
 import flixel.addons.display.FlxBackdrop;
 import flixel.group.FlxTypedSpriteGroup;
-import funkin.util.FlxTweenUtil;
-import flixel.tweens.FlxTween;
-import flixel.tweens.FlxEase;
 import funkin.graphics.shaders.WiggleEffectRuntime;
 import funkin.graphics.shaders.WiggleEffectType;
 

@@ -1,29 +1,14 @@
 package funkin.remnants.songs;
 
-import funkin.play.song.Song;
-import funkin.play.PlayState;
-import funkin.save.Save;
 import funkin.play.GameOverSubState;
-import funkin.modding.base.ScriptedFlxSpriteGroup;
 import flixel.text.FlxText;
 import flixel.text.FlxTextBorderStyle;
 import funkin.play.character.BaseCharacter;
 import funkin.play.character.CharacterDataParser;
 import funkin.modding.events.ScriptEventDispatcher;
 import funkin.modding.events.SongTimeScriptEvent;
-import funkin.play.character.CharacterType;
-import funkin.data.song.SongRegistry;
-import funkin.ui.FullScreenScaleMode;
-import funkin.Conductor;
-import funkin.graphics.FunkinSprite;
-import flixel.tweens.FlxEase;
-import flixel.tweens.FlxTween;
-import flixel.util.FlxTimer;
 import flixel.util.FlxTimerManager;
-import funkin.graphics.FunkinSprite;
-import funkin.audio.FunkinSound;
 import funkin.util.TouchUtil;
-import funkin.util.SongSequence;
 
 class StressRemnantsMixSong extends Song
 {

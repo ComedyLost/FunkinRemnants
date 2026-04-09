@@ -1,14 +1,6 @@
 package funkin.remnants.songs;
 
-import funkin.play.song.Song;
-import funkin.play.PlayState;
-import funkin.save.Save;
-import flixel.tweens.FlxTween;
-import flixel.tweens.FlxEase;
-import funkin.util.FlxTweenUtil;
 import flixel.addons.display.FlxBackdrop;
-import funkin.util.SongSequence;
-import funkin.Conductor;
 
 class LitUpRemnantsMixSong extends Song
 {
@@ -22,6 +14,7 @@ class LitUpRemnantsMixSong extends Song
 
   var outro:Bool = false;
   var sequence:SongSequence;
+  var fart:FunkinSound;
 
   public function new()
   {
@@ -66,7 +59,7 @@ class LitUpRemnantsMixSong extends Song
     mist0.scrollFactor.set(1.1, 1.1);
     mist0.zIndex = 5001;
     mist0.blend = 0;
-    mist0.color = 0xFF5c5c5c; // Chnage this to 0xFF748500; on all mists for funni ;)
+    mist0.color = 0xFF5c5c5c;
     mist0.alpha = 0;
     mist0.velocity.x = -400;
     mist0.scale.set(3.5, 3.5);
@@ -144,6 +137,8 @@ class LitUpRemnantsMixSong extends Song
     PlayState.instance.currentStage.add(mist6);
 
     PlayState.instance.currentStage.refresh(); // Apply z-index.
+
+    fart = FunkinSound.load(Paths.sound('gameplay/secret/fart'), 1);
   }
 
   function mistOn(duration:Float)
@@ -186,6 +181,8 @@ class LitUpRemnantsMixSong extends Song
   function onSongRetry(event:ScriptEvent)
   {
     super.onSongRetry(event);
+
+    if (fart?.isPlaying) fart.stop();
 
     if (mist0.alpha > 0 && !RemnantsOptions.getPerformanceOption()) mistOff(1);
 
@@ -260,8 +257,23 @@ class LitUpRemnantsMixSong extends Song
           time: Conductor.instance.getBeatTimeInMs(96) / 1000,
           callback: () -> {
             mistOn(3);
+
+            if (FlxG.random.bool(0.67) && Save.instance.hasBeatenSong(this.id, null, this.variation))
+            {
+              mist0.color = 0xFF748500;
+              mist1.color = 0xFF748500;
+              mist2.color = 0xFF748500;
+              mist3.color = 0xFF748500;
+              mist4.color = 0xFF748500;
+              mist5.color = 0xFF748500;
+              mist6.color = 0xFF748500;
+
+              fart.play();
+              FunkinSound.playOnce(Paths.sound('gameplay/secret/secret', "shared"), 1);
+            }
           }
         });
+
       sequenceData.push(
         {
           time: Conductor.instance.getBeatTimeInMs(160) / 1000,

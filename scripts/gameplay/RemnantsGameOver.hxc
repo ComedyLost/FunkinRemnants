@@ -1,11 +1,6 @@
 package funkin.remnants.gameplay;
 
-import funkin.play.PlayState;
-import funkin.graphics.FunkinSprite;
-import flixel.tweens.FlxEase;
-import flixel.tweens.FlxTween;
 import funkin.play.GameOverSubState;
-import funkin.modding.module.Module;
 
 using StringTools;
 

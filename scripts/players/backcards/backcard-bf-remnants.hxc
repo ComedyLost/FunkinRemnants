@@ -4,11 +4,7 @@ import funkin.ui.freeplay.BGScrollingText;
 import funkin.ui.freeplay.FreeplayState;
 import funkin.ui.freeplay.backcards.BackingCard;
 import flixel.FlxSprite;
-import flixel.util.FlxTimer;
-import flixel.tweens.FlxEase;
-import flixel.tweens.FlxTween;
 import flixel.util.FlxSpriteUtil;
-import funkin.audio.FunkinSound;
 import funkin.data.freeplay.player.PlayerRegistry;
 
 class BFRemnantsCard extends BackingCard

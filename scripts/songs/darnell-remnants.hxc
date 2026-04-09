@@ -1,22 +1,14 @@
 package funkin.remnants.songs;
 
-import funkin.graphics.FunkinSprite;
 import flixel.text.FlxTextBorderStyle;
 import funkin.data.song.SongRegistry;
 import funkin.ui.FullScreenScaleMode;
 import flixel.util.FlxTimerManager;
 import funkin.play.stage.StageProp;
-import funkin.audio.FunkinSound;
-import flixel.tweens.FlxTween;
 import funkin.play.song.Song;
 import funkin.play.Countdown;
-import funkin.play.PlayState;
-import flixel.tweens.FlxEase;
 import funkin.util.TouchUtil;
-import flixel.util.FlxTimer;
 import flixel.text.FlxText;
-import funkin.save.Save;
-import funkin.Conductor;
 
 class DarnellRemnantsMixSong extends Song
 {

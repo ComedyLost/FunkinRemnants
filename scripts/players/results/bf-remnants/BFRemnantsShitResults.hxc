@@ -1,8 +1,5 @@
 package funkin.remnants.players.results.bf;
 
-import funkin.graphics.FunkinSprite;
-import funkin.util.HapticUtil;
-
 class BFRemnantsShitResults extends FunkinSprite
 {
   function new(x:Float, y:Float)

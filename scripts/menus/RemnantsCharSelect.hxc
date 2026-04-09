@@ -1,6 +1,5 @@
 package funkin.remnants.menus;
 
-import funkin.modding.module.Module;
 import funkin.ui.charSelect.CharSelectSubState;
 import funkin.ui.PixelatedIcon;
 

@@ -1,16 +1,5 @@
 package funkin.remnants.songs;
 
-import funkin.play.song.Song;
-import funkin.save.Save;
-import funkin.play.PlayState;
-import funkin.graphics.FunkinSprite;
-import funkin.audio.FunkinSound;
-import funkin.util.FlxTweenUtil;
-import flixel.util.FlxTimer;
-import flixel.tweens.FlxTween;
-import funkin.util.SongSequence;
-import funkin.Conductor;
-
 class RemnantsPicoSong extends Song
 {
   var playedCutscene:Bool = false;

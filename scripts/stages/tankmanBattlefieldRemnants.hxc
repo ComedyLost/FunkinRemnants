@@ -1,12 +1,8 @@
 package funkin.remnants.stages;
 
 import flixel.math.FlxAngle;
-import funkin.play.stage.Stage;
 import flixel.addons.display.FlxBackdrop;
 import flixel.addons.display.FlxTiledSprite;
-import funkin.util.FlxTweenUtil;
-import flixel.tweens.FlxTween;
-import flixel.tweens.FlxEase;
 
 class TankmanBattlefieldRemnantsStage extends Stage
 {

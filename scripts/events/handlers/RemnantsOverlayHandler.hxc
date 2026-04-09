@@ -1,14 +1,8 @@
 package funkin.remnants.events.handlers;
 
-import funkin.modding.module.Module;
-import funkin.graphics.FunkinSprite;
 import funkin.play.event.SongEvent;
 import funkin.util.ReflectUtil;
-import funkin.play.PlayState;
-import flixel.tweens.FlxTween;
-import flixel.tweens.FlxEase;
 import openfl.filters.ColorMatrixFilter;
-import funkin.Conductor;
 import Std;
 
 class RemnantsOverlayHandler extends Module

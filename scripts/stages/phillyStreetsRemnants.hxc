@@ -1,16 +1,9 @@
 package funkin.remnants.stages;
 
 import flixel.math.FlxMath;
-import flixel.tweens.FlxEase;
-import flixel.tweens.FlxTween;
-import funkin.Conductor;
 import funkin.graphics.shaders.RuntimeRainShader;
-import funkin.play.character.CharacterType;
-import funkin.play.PlayState;
-import funkin.play.stage.Stage;
 import openfl.filters.ShaderFilter;
 import flixel.addons.display.FlxBackdrop;
-import funkin.util.FlxTweenUtil;
 
 using StringTools;
 

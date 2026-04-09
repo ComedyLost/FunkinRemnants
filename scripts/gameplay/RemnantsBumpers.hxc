@@ -1,8 +1,6 @@
 package funkin.remnants.gameplay;
 
-import funkin.play.PlayState;
 import funkin.play.cutscene.VideoCutscene;
-import funkin.modding.module.Module;
 
 class RemnantsBumpers extends Module
 {

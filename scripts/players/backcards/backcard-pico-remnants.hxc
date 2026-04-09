@@ -5,12 +5,7 @@ import flixel.math.FlxMath;
 import flixel.FlxSprite;
 import funkin.ui.freeplay.FreeplayState;
 import funkin.util.BitmapUtil;
-import flixel.tweens.FlxEase;
-import flixel.tweens.FlxTween;
-import flixel.util.FlxTimer;
-import funkin.graphics.FunkinSprite;
 import flixel.addons.display.FlxBackdrop;
-import funkin.audio.FunkinSound;
 
 class PicoRemnantsCard extends BackingCard
 {

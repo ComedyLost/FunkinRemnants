@@ -1,15 +1,7 @@
 package funkin.remnants.songs;
 
-import flixel.tweens.FlxEase;
-import funkin.graphics.FunkinSprite;
 import funkin.effects.RetroCameraFade;
-import flixel.tweens.FlxTween;
-import funkin.play.PlayState;
-import funkin.play.song.Song;
-import flixel.util.FlxTimer;
-import funkin.save.Save;
 import flixel.FlxSprite;
-import funkin.util.FlxTweenUtil;
 
 class SenpaiRemnantsMixSong extends Song
 {
