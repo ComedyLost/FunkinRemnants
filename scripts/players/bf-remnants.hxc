@@ -1,3 +1,5 @@
+package funkin.remnants.players;
+
 import funkin.ui.freeplay.charselect.PlayableCharacter;
 import funkin.save.Save;
 

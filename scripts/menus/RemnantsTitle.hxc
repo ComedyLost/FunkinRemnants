@@ -1,3 +1,5 @@
+package funkin.remnants.menus;
+
 import flixel.FlxSprite;
 import funkin.graphics.FunkinSprite;
 import funkin.modding.module.Module;

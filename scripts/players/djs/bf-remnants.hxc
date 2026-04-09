@@ -1,3 +1,5 @@
+package funkin.remnants.players.djs;
+
 import openfl.utils.Assets;
 import funkin.audio.FunkinSound;
 import funkin.ui.freeplay.dj.AnimateAtlasFreeplayDJ;

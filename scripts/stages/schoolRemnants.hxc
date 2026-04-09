@@ -1,3 +1,5 @@
+package funkin.remnants.stages;
+
 import funkin.play.PlayState;
 import funkin.play.stage.Stage;
 

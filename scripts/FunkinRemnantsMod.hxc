@@ -1,3 +1,5 @@
+package funkin.remnants;
+
 #if funkin_autochecker
 import funkin.autochecker.mod.GamebananaMod;
 #end

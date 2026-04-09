@@ -1,3 +1,5 @@
+package funkin.remnants.levels;
+
 import funkin.ui.story.Level;
 import funkin.save.Save;
 

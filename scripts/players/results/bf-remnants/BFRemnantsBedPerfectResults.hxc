@@ -1,3 +1,5 @@
+package funkin.remnants.players.results.bf;
+
 import funkin.graphics.FunkinSprite;
 import funkin.util.HapticUtil;
 

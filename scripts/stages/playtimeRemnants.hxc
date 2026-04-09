@@ -1,3 +1,5 @@
+package funkin.remnants.stages;
+
 import funkin.Conductor;
 import funkin.play.stage.Stage;
 import funkin.util.FlxTweenUtil;

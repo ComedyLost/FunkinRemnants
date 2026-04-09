@@ -1,3 +1,5 @@
+package funkin.remnants.characters;
+
 import funkin.util.HapticUtil;
 import funkin.graphics.FunkinSprite;
 import funkin.audio.FunkinSound;

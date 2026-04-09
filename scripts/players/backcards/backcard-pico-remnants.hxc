@@ -1,3 +1,5 @@
+package funkin.remnants.players.backcards;
+
 import funkin.ui.freeplay.backcards.BackingCard;
 import flixel.math.FlxMath;
 import flixel.FlxSprite;

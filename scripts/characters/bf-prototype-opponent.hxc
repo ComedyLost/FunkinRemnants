@@ -1,3 +1,5 @@
+package funkin.remnants.characters;
+
 import funkin.play.character.AnimateAtlasCharacter;
 import funkin.data.notestyle.NoteStyleRegistry;
 import funkin.play.character.CharacterType;

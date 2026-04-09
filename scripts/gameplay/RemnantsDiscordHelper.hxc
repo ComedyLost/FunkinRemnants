@@ -1,3 +1,5 @@
+package funkin.remnants.gameplay;
+
 import funkin.data.freeplay.album.AlbumRegistry;
 import funkin.modding.module.Module;
 import funkin.play.PlayState;

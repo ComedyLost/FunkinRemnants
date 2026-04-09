@@ -1,3 +1,5 @@
+package funkin.remnants.dialogue.boxes;
+
 import funkin.play.cutscene.dialogue.DialogueBox;
 import funkin.audio.FunkinSound;
 import funkin.play.PlayState;

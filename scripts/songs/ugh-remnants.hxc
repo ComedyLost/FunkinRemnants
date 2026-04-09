@@ -1,3 +1,5 @@
+package funkin.remnants.songs;
+
 import funkin.audio.FunkinSound;
 import funkin.graphics.FunkinSprite;
 import funkin.play.song.Song;

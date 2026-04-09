@@ -1,3 +1,5 @@
+package funkin.remnants.songs;
+
 import funkin.save.Save;
 import funkin.util.TouchUtil;
 import funkin.util.FlxTweenUtil;

@@ -1,3 +1,5 @@
+package funkin.remnants.menus;
+
 import funkin.modding.module.ModuleHandler;
 import funkin.ui.mainmenu.MainMenuState;
 import funkin.modding.module.Module;

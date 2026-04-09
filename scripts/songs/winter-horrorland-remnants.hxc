@@ -1,3 +1,5 @@
+package funkin.remnants.songs;
+
 import funkin.modding.module.ModuleHandler;
 import flixel.text.FlxTextBorderStyle;
 import funkin.ui.FullScreenScaleMode;

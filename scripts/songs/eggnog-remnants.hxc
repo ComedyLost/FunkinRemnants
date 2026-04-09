@@ -1,3 +1,5 @@
+package funkin.remnants.songs;
+
 import flixel.math.FlxBasePoint;
 import flixel.tweens.FlxEase;
 import flixel.tweens.FlxTween;

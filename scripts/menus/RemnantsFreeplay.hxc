@@ -1,3 +1,5 @@
+package funkin.remnants.menus;
+
 import funkin.ui.freeplay.FreeplayState;
 import funkin.ui.freeplay.SongMenuItem;
 import funkin.modding.module.Module;

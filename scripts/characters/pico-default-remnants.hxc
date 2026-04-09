@@ -1,3 +1,5 @@
+package funkin.remnants.characters;
+
 import funkin.play.character.PicoPlayerBaseCharacter;
 
 class PicoDefaultRemnantsCharacter extends PicoPlayerBaseCharacter

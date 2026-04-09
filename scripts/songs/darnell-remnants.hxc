@@ -1,3 +1,5 @@
+package funkin.remnants.songs;
+
 import funkin.graphics.FunkinSprite;
 import flixel.text.FlxTextBorderStyle;
 import funkin.data.song.SongRegistry;

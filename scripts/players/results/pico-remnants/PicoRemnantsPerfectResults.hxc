@@ -1,3 +1,5 @@
+package funkin.remnants.players.results.pico;
+
 import funkin.graphics.FunkinSprite;
 import funkin.util.HapticUtil;
 

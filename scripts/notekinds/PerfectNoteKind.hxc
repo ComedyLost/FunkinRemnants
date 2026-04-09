@@ -1,4 +1,4 @@
-package remnants.notekinds.battle;
+package funkin.remnants.notekinds;
 
 import funkin.play.notes.notekind.NoteKind;
 

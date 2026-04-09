@@ -1,3 +1,5 @@
+package funkin.remnants.events.handlers;
+
 import funkin.modding.module.Module;
 import funkin.graphics.FunkinSprite;
 import funkin.play.event.SongEvent;

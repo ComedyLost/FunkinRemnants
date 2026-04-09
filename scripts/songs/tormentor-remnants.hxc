@@ -1,3 +1,5 @@
+package funkin.remnants.songs;
+
 import flixel.FlxSprite;
 import flixel.text.FlxText;
 import funkin.play.song.Song;

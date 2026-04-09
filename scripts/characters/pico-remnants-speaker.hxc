@@ -1,3 +1,5 @@
+package funkin.remnants.characters;
+
 import funkin.play.character.AnimateAtlasCharacter;
 import funkin.play.PlayState;
 import flixel.util.FlxSort;

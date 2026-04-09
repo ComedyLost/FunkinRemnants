@@ -1,3 +1,5 @@
+package funkin.remnants;
+
 import funkin.modding.module.Module;
 import Math;
 

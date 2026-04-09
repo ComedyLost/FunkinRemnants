@@ -1,0 +1,3 @@
+package funkin.remnants;
+
+// all imports put here will be used for ALL SCRIPTS, basically removing the need to put it in any file

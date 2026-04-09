@@ -1,3 +1,5 @@
+package funkin.remnants.notestyles;
+
 import funkin.play.notes.notestyle.NoteStyle;
 import funkin.play.notes.NoteSprite;
 import funkin.play.notes.Strumline;

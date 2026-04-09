@@ -1,3 +1,5 @@
+package funkin.remnants.characters;
+
 import funkin.data.character.CharacterDataParser;
 import funkin.play.character.CharacterType;
 import funkin.play.character.MultiAnimateAtlasCharacter;

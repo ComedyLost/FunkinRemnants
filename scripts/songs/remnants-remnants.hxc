@@ -1,3 +1,5 @@
+package funkin.remnants.songs;
+
 import funkin.util.SongSequence;
 import funkin.play.PlayState;
 import flixel.util.FlxTimer;

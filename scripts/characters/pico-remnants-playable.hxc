@@ -1,3 +1,5 @@
+package funkin.remnants.characters;
+
 import flixel.tweens.FlxTween;
 import flixel.util.FlxTimer;
 import funkin.audio.FunkinSound;

@@ -1,3 +1,5 @@
+package funkin.remnants.dialogue.conversations;
+
 import funkin.play.cutscene.dialogue.Conversation;
 
 class SenpaiRemnantsCensoredConversation extends Conversation

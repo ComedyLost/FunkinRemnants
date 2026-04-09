@@ -1,3 +1,5 @@
+package funkin.remnants.shaders;
+
 import flixel.addons.display.FlxRuntimeShader;
 
 class OneColorShader extends FlxRuntimeShader
