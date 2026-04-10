@@ -1,5 +1,4 @@
-import funkin.play.character.AnimateAtlasCharacter;
-import funkin.play.character.CharacterType;
+package funkin.remnants.characters;
 
 class MonsterRemnantsChristmasCharacter extends AnimateAtlasCharacter
 {

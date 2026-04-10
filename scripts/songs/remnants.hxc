@@ -1,12 +1,6 @@
-import funkin.play.song.Song;
-import funkin.save.Save;
-import funkin.play.PlayState;
-import funkin.util.FlxTweenUtil;
-import flixel.tweens.FlxTween;
-import flixel.tweens.FlxEase;
+package funkin.remnants.songs;
+
 import funkin.play.cutscene.VideoCutscene;
-import funkin.util.SongSequence;
-import funkin.Conductor;
 import funkin.play.PlayStatePlaylist;
 
 class RemnantsSong extends Song

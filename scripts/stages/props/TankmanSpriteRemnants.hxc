@@ -1,5 +1,5 @@
-import funkin.graphics.FunkinSprite;
-import funkin.Conductor;
+package funkin.remnants.stages.props;
+
 import flixel.effects.FlxFlicker;
 
 /**

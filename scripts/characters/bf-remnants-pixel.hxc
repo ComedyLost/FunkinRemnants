@@ -1,6 +1,5 @@
-import funkin.play.character.MultiSparrowCharacter;
-import funkin.play.PlayState;
-import funkin.util.HapticUtil;
+package funkin.remnants.characters;
+
 import funkin.play.GameOverSubState;
 import funkin.play.PauseSubState;
 

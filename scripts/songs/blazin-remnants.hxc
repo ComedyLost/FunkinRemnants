@@ -1,12 +1,4 @@
-import flixel.util.FlxTimer;
-import flixel.tweens.FlxTween;
-import funkin.graphics.FunkinSprite;
-import funkin.audio.FunkinSound;
-import funkin.play.song.Song;
-import funkin.play.PlayState;
-import funkin.save.Save;
-import funkin.util.SongSequence;
-import funkin.Conductor;
+package funkin.remnants.songs;
 
 class BlazinRemnantsMixSong extends Song
 {

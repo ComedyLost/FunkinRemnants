@@ -1,3 +1,5 @@
+package funkin.remnants.stages.props;
+
 /**
  * A sprite which represents a bullet flying through the air after Pico reloads.
  * But remnants B)

@@ -1,3 +1,5 @@
+package funkin.remnants.events;
+
 import funkin.play.event.SongEvent;
 
 class RemnantsOverlaySongEvent extends SongEvent

@@ -1,6 +1,6 @@
+package funkin.remnants.stages;
+
 import funkin.graphics.shaders.AdjustColorShader;
-import funkin.play.stage.Stage;
-import funkin.play.character.CharacterType;
 
 class SketchRemnantsPicoStage extends Stage
 {

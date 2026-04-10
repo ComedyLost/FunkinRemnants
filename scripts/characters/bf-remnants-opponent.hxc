@@ -1,5 +1,4 @@
-import funkin.play.character.MultiAnimateAtlasCharacter;
-import funkin.play.character.CharacterType;
+package funkin.remnants.characters;
 
 class BFRemnantsOpponentCharacter extends MultiAnimateAtlasCharacter
 {

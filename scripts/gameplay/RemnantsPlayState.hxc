@@ -1,12 +1,8 @@
-import funkin.play.PlayState;
-import funkin.graphics.FunkinSprite;
+package funkin.remnants.gameplay;
+
 import funkin.play.notes.notestyle.NoteStyle;
-import funkin.modding.module.Module;
-import flixel.tweens.FlxTween;
 import funkin.util.TouchUtil;
-import funkin.FunkinMemory;
 import funkin.Highscore;
-import funkin.Conductor;
 import funkin.play.notes.StrumlineNote;
 import funkin.util.tools.StringTools;
 

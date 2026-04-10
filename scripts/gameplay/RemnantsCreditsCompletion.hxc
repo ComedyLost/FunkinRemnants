@@ -1,6 +1,5 @@
-import funkin.modding.module.Module;
-import funkin.save.Save;
-import funkin.play.PlayState;
+package funkin.remnants.gameplay;
+
 import funkin.ui.credits.CreditsState;
 import funkin.ui.freeplay.FreeplayState;
 

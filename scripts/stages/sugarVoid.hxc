@@ -1,8 +1,5 @@
-import funkin.graphics.FunkinSprite;
-import funkin.play.stage.Stage;
-import flixel.tweens.FlxTween;
-import flixel.tweens.FlxEase;
-import funkin.play.PlayState;
+package funkin.remnants.stages;
+
 import funkin.play.Countdown;
 
 class SugarCrashVoidStage extends Stage

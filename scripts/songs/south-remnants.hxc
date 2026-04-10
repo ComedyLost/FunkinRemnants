@@ -1,14 +1,6 @@
-import funkin.play.song.Song;
-import funkin.play.PlayState;
+package funkin.remnants.songs;
+
 import funkin.modding.module.ModuleHandler;
-import funkin.save.Save;
-import funkin.graphics.FunkinSprite;
-import funkin.util.FlxTweenUtil;
-import flixel.util.FlxTimer;
-import flixel.tweens.FlxTween;
-import funkin.audio.FunkinSound;
-import funkin.util.SongSequence;
-import funkin.Conductor;
 
 class SouthRemnantsMixSong extends Song
 {

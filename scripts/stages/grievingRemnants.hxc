@@ -1,4 +1,4 @@
-import funkin.play.stage.Stage;
+package funkin.remnants.stages;
 
 class GrievingRemnantsStage extends Stage
 {

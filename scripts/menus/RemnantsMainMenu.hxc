@@ -1,12 +1,10 @@
+package funkin.remnants.menus;
+
 import funkin.modding.module.ModuleHandler;
 import funkin.ui.mainmenu.MainMenuState;
-import funkin.modding.module.Module;
-import funkin.graphics.FunkinSprite;
 import funkin.ui.title.TitleState;
 import funkin.util.WindowUtil;
-import flixel.util.FlxTimer;
 import funkin.ui.UIState;
-import funkin.save.Save;
 import flixel.FlxSprite;
 import Std;
 

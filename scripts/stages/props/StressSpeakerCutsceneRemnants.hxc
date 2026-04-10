@@ -1,7 +1,6 @@
-import funkin.graphics.FunkinSprite;
-import funkin.play.PlayState;
+package funkin.remnants.stages.props;
+
 import flixel.util.FlxSignal;
-import funkin.FunkinMemory;
 
 // a unique object for pico and girlfriend in the stress cutscene
 class StressSpeakerCutsceneRemnants extends FunkinSprite

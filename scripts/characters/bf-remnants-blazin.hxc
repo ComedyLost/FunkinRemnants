@@ -1,6 +1,5 @@
-import flixel.util.FlxTimer;
-import funkin.play.PlayState;
-import funkin.play.character.AnimateAtlasCharacter;
+package funkin.remnants.characters;
+
 import funkin.play.GameOverSubState;
 import funkin.play.PauseSubState;
 import StringTools;

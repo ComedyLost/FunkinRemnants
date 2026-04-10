@@ -1,16 +1,7 @@
-import funkin.save.Save;
-import funkin.play.song.Song;
-import funkin.play.PlayState;
-import funkin.audio.FunkinSound;
-import funkin.graphics.FunkinSprite;
-import funkin.util.FlxTweenUtil;
-import flixel.util.FlxTimer;
-import flixel.tweens.FlxTween;
-import flixel.tweens.FlxEase;
+package funkin.remnants.songs;
+
 import flixel.util.FlxSort;
 import flixel.FlxSprite;
-import funkin.util.SongSequence;
-import funkin.Conductor;
 
 /**
  * Hey, Eric here!

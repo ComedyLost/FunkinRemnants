@@ -1,13 +1,7 @@
+package funkin.remnants.songs;
+
 import flixel.FlxSprite;
 import flixel.text.FlxText;
-import funkin.play.song.Song;
-import funkin.play.PlayState;
-import funkin.save.Save;
-import funkin.util.FlxTweenUtil;
-import flixel.tweens.FlxTween;
-import funkin.util.SongSequence;
-import flixel.util.FlxTimer;
-import funkin.Conductor;
 
 class TormentorSong extends Song
 {

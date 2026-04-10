@@ -1,6 +1,6 @@
-import funkin.util.HapticUtil;
+package funkin.remnants.characters;
+
 import funkin.play.PauseSubState;
-import funkin.play.character.MultiAnimateAtlasCharacter;
 import funkin.play.GameOverSubState;
 
 class BoyfriendRemnantsMindCharacter extends MultiAnimateAtlasCharacter

@@ -1,12 +1,4 @@
-import flixel.tweens.FlxEase;
-import flixel.tweens.FlxTween;
-import flixel.util.FlxTimer;
-import funkin.audio.FunkinSound;
-import funkin.graphics.FunkinSprite;
-import funkin.play.stage.Stage;
-import funkin.play.PlayState;
-import funkin.util.HapticUtil;
-import funkin.util.FlxTweenUtil;
+package funkin.remnants.stages;
 
 class SpookyMansionRemnantsStage extends Stage
 {

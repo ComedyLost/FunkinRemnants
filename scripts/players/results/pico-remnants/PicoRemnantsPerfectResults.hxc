@@ -1,5 +1,4 @@
-import funkin.graphics.FunkinSprite;
-import funkin.util.HapticUtil;
+package funkin.remnants.players.results.pico;
 
 class PicoRemnantsPerfectResults extends FunkinSprite
 {

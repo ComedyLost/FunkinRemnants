@@ -1,4 +1,4 @@
-import funkin.graphics.FunkinSprite;
+package funkin.remnants.stages.props;
 
 class SpraycanAtlasSpriteRemnants extends SpraycanAtlasSprite
 {

@@ -1,5 +1,4 @@
-import funkin.FunkinMemory;
-import funkin.play.PlayState;
+package funkin.remnants.stages.props;
 
 class TankmanSpriteGroupRemnants extends TankmanSpriteGroup
 {

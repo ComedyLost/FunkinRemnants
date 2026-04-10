@@ -1,6 +1,6 @@
-import funkin.play.stage.Stage;
+package funkin.remnants.stages;
+
 import funkin.graphics.shaders.DropShadowShader;
-import funkin.play.character.CharacterType;
 
 class MindRemnantsStage extends Stage
 {

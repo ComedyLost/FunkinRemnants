@@ -1,8 +1,6 @@
+package funkin.remnants.characters;
+
 import funkin.data.character.CharacterDataParser;
-import funkin.play.character.CharacterType;
-import funkin.play.character.MultiAnimateAtlasCharacter;
-import funkin.play.PlayState;
-import funkin.util.HapticUtil;
 
 class BoyfriendRemnantsDarkCharacter extends MultiAnimateAtlasCharacter
 {

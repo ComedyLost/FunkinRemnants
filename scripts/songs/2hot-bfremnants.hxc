@@ -1,15 +1,8 @@
-import flixel.util.FlxTimer;
-import funkin.util.HapticUtil;
-import flixel.tweens.FlxTween;
+package funkin.remnants.songs;
+
 import funkin.modding.base.ScriptedFunkinSprite;
-import funkin.graphics.FunkinSprite;
 import funkin.play.GameOverSubState;
 import funkin.play.stage.StageProp;
-import funkin.play.song.Song;
-import funkin.play.PlayState;
-import funkin.FunkinMemory;
-import funkin.save.Save;
-import funkin.audio.FunkinSound;
 
 class TwoHOTRemnantsBFMixSong extends Song
 {

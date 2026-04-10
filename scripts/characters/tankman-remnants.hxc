@@ -1,5 +1,4 @@
-import funkin.play.character.MultiAnimateAtlasCharacter;
-import funkin.play.PlayState;
+package funkin.remnants.characters;
 
 class TankmanRemnantsCharacter extends MultiAnimateAtlasCharacter
 {

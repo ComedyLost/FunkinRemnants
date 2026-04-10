@@ -1,10 +1,5 @@
-import funkin.graphics.FunkinSprite;
-import funkin.util.FlxTweenUtil;
-import funkin.play.song.Song;
-import flixel.tweens.FlxTween;
-import flixel.tweens.FlxEase;
-import funkin.play.PlayState;
-import funkin.save.Save;
+package funkin.remnants.songs;
+
 #if mobile
 import funkin.mobile.input.ControlsHandler;
 #end

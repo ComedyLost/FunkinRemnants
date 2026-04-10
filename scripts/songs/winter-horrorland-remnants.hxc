@@ -1,22 +1,13 @@
+package funkin.remnants.songs;
+
 import funkin.modding.module.ModuleHandler;
 import flixel.text.FlxTextBorderStyle;
 import funkin.ui.FullScreenScaleMode;
-import funkin.graphics.FunkinSprite;
 import funkin.data.song.SongRegistry;
 import flixel.util.FlxTimerManager;
 import openfl.filters.ShaderFilter;
-import funkin.audio.FunkinSound;
-import funkin.util.FlxTweenUtil;
-import flixel.tweens.FlxTween;
-import funkin.play.song.Song;
-import flixel.tweens.FlxEase;
-import funkin.play.PlayState;
 import funkin.util.TouchUtil;
-import flixel.util.FlxTimer;
 import flixel.text.FlxText;
-import funkin.save.Save;
-import funkin.Conductor;
-import funkin.util.SongSequence;
 
 class WinterHorrorlandRemnantsMixSong extends Song
 {

@@ -1,5 +1,5 @@
-import funkin.play.PlayState;
-import funkin.play.character.AnimateAtlasCharacter;
+package funkin.remnants.characters;
+
 import StringTools;
 
 class DarnellRemnantsBlazinCharacter extends AnimateAtlasCharacter

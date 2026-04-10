@@ -1,5 +1,4 @@
-import funkin.play.PlayState;
-import funkin.play.character.SparrowCharacter;
+package funkin.remnants.characters;
 
 class SpookyRemnantsCharacter extends SparrowCharacter
 {

@@ -1,4 +1,5 @@
-import funkin.modding.module.Module;
+package funkin.remnants;
+
 import Math;
 
 class GoodRemnantsModule extends Module

@@ -1,7 +1,6 @@
-import funkin.play.stage.Stage;
-import funkin.play.character.CharacterType;
-import funkin.data.character.CharacterDataParser;
-import flixel.tweens.FlxTween;
+package funkin.remnants.stages;
+
+import funkin.play.character.CharacterDataParser;
 
 class GlitcherRemnantsStage extends Stage
 {

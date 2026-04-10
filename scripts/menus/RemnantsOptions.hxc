@@ -1,7 +1,6 @@
-import funkin.save.Save;
-import funkin.modding.module.Module;
+package funkin.remnants.menus;
+
 import funkin.ui.options.OptionsState;
-import funkin.audio.FunkinSound;
 
 class RemnantsOptions extends Module
 {

@@ -1,5 +1,4 @@
-import funkin.play.song.Song;
-import funkin.save.Save;
+package funkin.remnants.songs;
 
 class BopeeboRemnantsMixSong extends Song
 {

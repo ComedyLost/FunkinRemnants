@@ -1,5 +1,4 @@
-import funkin.play.PlayState;
-import funkin.play.stage.Stage;
+package funkin.remnants.stages;
 
 class SchoolRemnantsStage extends Stage
 {

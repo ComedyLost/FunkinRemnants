@@ -5,9 +5,27 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.1.1] - (2026-04-09)
+
+### Changes
+
+- Updated Line Art for Dad & Darnell's Stickers.
+- Updated every script to be contained in the "funkin.remnants" package.
+
+### Fixes
+
+- Fixed Random song being overridden incorrectly.
+- Fixed GF's Left Pose Repeating.
+
+### Removed
+
+- Removed the Fart Chance.
+
+
+
 ## [1.1.0-expansion] - (2026-04-01)
 
-### Added
+### Additions
 
 - Added 2 New Remnants Mixes! [Smash (Remnants Mix) & Ridge (Remnants Mix)]
 
@@ -38,7 +56,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [1.0.3] - (2026-03-26)
 
-### Added
+### Additions
 
 - Added new overlay events to Tormentor (Remnants Mix).
 - Added alternate GF bop animation during the ending of Cocoa (Remnants Mix).
@@ -85,7 +103,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [1.0.2] - (2026-02-25)
 
-### Added
+### Additions
 
 - Added Custom "introText" that appears on Remnants Menu Boot.
 
@@ -109,7 +127,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [1.0.1] - (2026-02-24)
 
-### Added
+### Additions
 
 - Added this Lovely Changelog!
 - Added New "Metronome" Intro to the Tutorial (Remnants Mix) Cutscene.

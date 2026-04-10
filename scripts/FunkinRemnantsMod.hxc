@@ -1,0 +1,15 @@
+package funkin.remnants;
+
+#if funkin_autochecker
+import funkin.autochecker.mod.GamebananaMod;
+#end
+
+class FunkinRemnantsMod #if funkin_autochecker extends GamebananaMod #end
+{
+  #if funkin_autochecker
+  public function new()
+  {
+    super('funkin-remnants', 'Mod/653229');
+  }
+  #end
+}

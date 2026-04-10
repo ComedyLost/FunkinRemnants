@@ -1,8 +1,7 @@
+package funkin.remnants.utils;
+
 import funkin.ui.freeplay.FreeplayState;
 import funkin.data.song.SongRegistry;
-import funkin.modding.module.Module;
-import funkin.audio.FunkinSound;
-import funkin.Conductor;
 import StringTools;
 
 /**

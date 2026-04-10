@@ -1,10 +1,4 @@
-import funkin.save.Save;
-import funkin.play.song.Song;
-import funkin.play.PlayState;
-import funkin.util.FlxTweenUtil;
-import flixel.tweens.FlxTween;
-import funkin.util.SongSequence;
-import funkin.Conductor;
+package funkin.remnants.songs;
 
 class SpookeezRemnantsMixSong extends Song
 {

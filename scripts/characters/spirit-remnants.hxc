@@ -1,5 +1,6 @@
+package funkin.remnants.characters;
+
 import funkin.play.character.PackerCharacter;
-import funkin.play.PlayState;
 import funkin.effects.FunkTrail;
 
 class SpiritRemnantsCharacter extends PackerCharacter
@@ -23,14 +24,8 @@ class SpiritRemnantsCharacter extends PackerCharacter
 
   function addToStage(sprite:FlxSprite)
   {
-    if (this.debug)
-    {
-      // We are in the chart editor or something.
-      FlxG.stage.add(sprite);
-    }
-    else
-    {
-      PlayState.instance.currentStage.add(sprite);
-    }
+    if (this.debug) return;
+
+    currentStage.add(sprite);
   }
 }

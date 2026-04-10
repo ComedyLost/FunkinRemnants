@@ -1,5 +1,4 @@
-import funkin.play.character.AnimateAtlasCharacter;
-import funkin.play.PlayState;
+package funkin.remnants.characters;
 
 class GirlfriendRemnantsPotCharacter extends AnimateAtlasCharacter
 {

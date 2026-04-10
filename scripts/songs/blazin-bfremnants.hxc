@@ -1,7 +1,4 @@
-import funkin.play.song.Song;
-import funkin.play.PlayState;
-import funkin.save.Save;
-import funkin.util.SongSequence;
+package funkin.remnants.songs;
 
 class BlazinBFRemnantsMixSong extends Song
 {
