@@ -17,6 +17,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Fixed Random song being overridden incorrectly.
 - Fixed GF's Left Pose Repeating.
 
+### Removed
+
+- Removed the Fart Chance.
+
 
 
 ## [1.1.0-expansion] - (2026-04-01)
