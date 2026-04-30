@@ -166,7 +166,7 @@ class RemnantsBumpers extends Module
     return false;
   }
 
-  public function cutsceneFinishVideo()
+  public function cutsceneFinishVideo():Void
   {
     FlxTween.cancelTweensOf(FlxG.camera, ["zoom"]);
     FlxTween.cancelTweensOf(VideoCutscene.blackScreen, ["alpha"]);
