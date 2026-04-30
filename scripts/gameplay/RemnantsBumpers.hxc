@@ -85,6 +85,9 @@ class RemnantsBumpers extends Module
     "grieving" => grievingList
   ];
 
+  // Make fade from black and countdown start at the same time for these weeks.
+  public var skipTransitionWeeks:Array<String> = ['week5-scary', 'week7'];
+
   public function new()
   {
     super('remnantsBumpers', -1000, {state: PlayState});
@@ -147,7 +150,7 @@ class RemnantsBumpers extends Module
       trace("Playing the bumper '" + currentWeek + "'");
 
       VideoCutscene.play(Paths.videos(currentWeek));
-      if (currentWeek == 'week7')
+      if (skipTransitionWeeks.contains(currentWeek))
       {
         VideoCutscene.vid.bitmap.onEncounteredError.add(cutsceneFinishVideo);    
         VideoCutscene.vid.bitmap.onEndReached.add(cutsceneFinishVideo);  
@@ -187,7 +190,7 @@ class RemnantsBumpers extends Module
 
   public function onResume(event)
   {
-    if (!isPlaying || VideoCutscene.vid != null || currentWeek != 'week7') return;
+    if (!isPlaying || !skipTransitionWeeks.contains(currentWeek) || VideoCutscene.vid != null) return;
     cutsceneFinishVideo();
   }
   /**
