@@ -1,9 +1,6 @@
 package funkin.remnants.gameplay;
 
 import funkin.play.cutscene.VideoCutscene;
-import funkin.modding.module.Module;
-import flixel.tweens.FlxTween;
-import flixel.tweens.FlxEase;
 
 class RemnantsBumpers extends Module
 {
