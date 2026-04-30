@@ -185,7 +185,7 @@ class RemnantsBumpers extends Module
     VideoCutscene.onCutsceneFinish(cutsceneType);
   }
 
-  public function onResume(event)
+  public function onResume(event:ScriptEvent):Void
   {
     if (!isPlaying || !skipTransitionWeeks.contains(currentWeek) || VideoCutscene.vid != null) return;
     cutsceneFinishVideo();
